@@ -11,7 +11,8 @@
    ## Availability
    
    ### Original archives
-    Original SteelBreeze was distributed via following archives:
+   
+   
 
    1. FTP: You can download the software from the following ftp sites:
 	ftp://ftp.mao.kiev.ua/pub/SteelBreeze,
@@ -22,7 +23,7 @@
    3. Sourceforge page: http://steelbreeze.sourceforge.net/
 
 
-   ## Installation.
+   ## Installation
 
    See the file INSTALL for general instructions how to compile and install
 the software using GNU's configure.
@@ -48,7 +49,7 @@ have not permission to write to it, you must say another writable for you path
 
 
 
-   ## Supported platforms.
+   ## Supported platforms
 
    Currently, SteelBreeze is known to build and execute on the following
 platforms:
@@ -65,13 +66,13 @@ Solaris | 2.5.1         | SS-20/SPARC   |  egcs-1.1.2  |
 If you have experience on other platforms, please, let me know about it.
 
 
-   ## Features.
+   ## Features
 
 
-   ## Documentation.
+   ## Documentation
 
 
-   ## Legal notes.
+   ## Legal notes
 
    SteelBreeze is distributed under the GNU Public License. For details
 read the 'COPYING' file and check the URL http://www.gnu.org.
