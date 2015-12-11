@@ -1,0 +1,145 @@
+.TH "SBProjectSel::ProjectListItem" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBProjectSel::ProjectListItem \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQListViewItem\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBProjectListItem\fP (\fBQListView\fP *, \fBSBProject\fP *)"
+.br
+.ti -1c
+.RI "virtual QString \fBtext\fP (int) const "
+.br
+.ti -1c
+.RI "virtual QString \fBkey\fP (int, bool) const "
+.br
+.ti -1c
+.RI "const QString & \fBname\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBName\fP"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBTStart\fP"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBTFinis\fP"
+.br
+.ti -1c
+.RI "double \fBInterval\fP"
+.br
+.ti -1c
+.RI "int \fBNumObs\fP"
+.br
+.ti -1c
+.RI "int \fBNumSes\fP"
+.br
+.ti -1c
+.RI "int \fBNumSta\fP"
+.br
+.ti -1c
+.RI "int \fBNumBas\fP"
+.br
+.ti -1c
+.RI "int \fBNumSou\fP"
+.br
+.ti -1c
+.RI "int \fBVer\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 174 of file SbIProject\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBProjectSel::ProjectListItem::ProjectListItem (\fBQListView\fP *parent, \fBSBProject\fP *P_)"
+.PP
+Definition at line 500 of file SbIProject\&.C'\&.
+.PP
+References Interval, Name, SBNamed::name(), NumBas, SBProject::numBases(), NumObs, SBProject::numObs(), NumSes, NumSou, SBProject::numSources(), NumSta, SBProject::numStations(), SBProject::numVLBISessions(), TFinis, SBProject::tFinis(), SBProject::tInterval(), TStart, SBProject::tStart(), Ver, and SBProject::version()\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QString SBProjectSel::ProjectListItem::key (intcol, bool) const\fC [virtual]\fP"
+.PP
+Definition at line 544 of file SbIProject\&.C'\&.
+.PP
+References TmpString\&.
+.SS "const QString& SBProjectSel::ProjectListItem::name ()\fC [inline]\fP"
+.PP
+Definition at line 191 of file SbIProject\&.H'\&.
+.PP
+References Name\&.
+.PP
+Referenced by SBProjectSel::remove()\&.
+.SS "QString SBProjectSel::ProjectListItem::text (intcol) const\fC [virtual]\fP"
+.PP
+Definition at line 515 of file SbIProject\&.C'\&.
+.PP
+References SBMJD::F_DDMonYYYY, and TmpString\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double \fBSBProjectSel::ProjectListItem::Interval\fP\fC [private]\fP"
+.PP
+Definition at line 180 of file SbIProject\&.H'\&.
+.PP
+Referenced by ProjectListItem()\&.
+.SS "QString \fBSBProjectSel::ProjectListItem::Name\fP\fC [private]\fP"
+.PP
+Definition at line 177 of file SbIProject\&.H'\&.
+.PP
+Referenced by name(), and ProjectListItem()\&.
+.SS "int \fBSBProjectSel::ProjectListItem::NumBas\fP\fC [private]\fP"
+.PP
+Definition at line 184 of file SbIProject\&.H'\&.
+.PP
+Referenced by ProjectListItem()\&.
+.SS "int \fBSBProjectSel::ProjectListItem::NumObs\fP\fC [private]\fP"
+.PP
+Definition at line 181 of file SbIProject\&.H'\&.
+.PP
+Referenced by ProjectListItem()\&.
+.SS "int \fBSBProjectSel::ProjectListItem::NumSes\fP\fC [private]\fP"
+.PP
+Definition at line 182 of file SbIProject\&.H'\&.
+.PP
+Referenced by ProjectListItem()\&.
+.SS "int \fBSBProjectSel::ProjectListItem::NumSou\fP\fC [private]\fP"
+.PP
+Definition at line 185 of file SbIProject\&.H'\&.
+.PP
+Referenced by ProjectListItem()\&.
+.SS "int \fBSBProjectSel::ProjectListItem::NumSta\fP\fC [private]\fP"
+.PP
+Definition at line 183 of file SbIProject\&.H'\&.
+.PP
+Referenced by ProjectListItem()\&.
+.SS "\fBSBMJD\fP \fBSBProjectSel::ProjectListItem::TFinis\fP\fC [private]\fP"
+.PP
+Definition at line 179 of file SbIProject\&.H'\&.
+.PP
+Referenced by ProjectListItem()\&.
+.SS "\fBSBMJD\fP \fBSBProjectSel::ProjectListItem::TStart\fP\fC [private]\fP"
+.PP
+Definition at line 178 of file SbIProject\&.H'\&.
+.PP
+Referenced by ProjectListItem()\&.
+.SS "int \fBSBProjectSel::ProjectListItem::Ver\fP\fC [private]\fP"
+.PP
+Definition at line 186 of file SbIProject\&.H'\&.
+.PP
+Referenced by ProjectListItem()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

@@ -1,0 +1,383 @@
+.TH "SBVLBISetView" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBVLBISetView \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIObsVLBI\&.H>\fP
+.PP
+Inherits \fBSBVLBISetViewBase\fP'\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBstBarReset\fP ()"
+.br
+.ti -1c
+.RI "void \fBstBarSetTotalSteps\fP (int)"
+.br
+.ti -1c
+.RI "void \fBstBarSetProgress\fP (int)"
+.br
+.ti -1c
+.RI "void \fBmessage\fP (const QString &)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBVLBISetView\fP (\fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "virtual \fB~SBVLBISetView\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBdrawInfo\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBQWidget\fP * \fBVLBIList\fP (\fBQWidget\fP *, \fBBrowseMode\fP, \fBSBProject\fP *)"
+.br
+.ti -1c
+.RI "virtual \fBQWidget\fP * \fBunitsGroup\fP (\fBQWidget\fP *)"
+.br
+.ti -1c
+.RI "virtual \fBQWidget\fP * \fBinfoGroup\fP (\fBQWidget\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBcloseEvent\fP (QCloseEvent *e)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBVLBISet\fP * \fBWvlbi\fP"
+.br
+.ti -1c
+.RI "QString \fBstr\fP"
+.br
+.ti -1c
+.RI "\fBSBBrowseSessions\fP * \fBbrwsSes\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBLNumSes\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBLNumObs\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBLNumPPS\fP"
+.br
+.ti -1c
+.RI "QRadioButton * \fBRBUnit\fP [3]"
+.br
+.ti -1c
+.RI "bool \fBisModified\fP"
+.br
+.ti -1c
+.RI "int \fBnumOpenedWindows\fP"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBnetworksModified\fP (bool, \fBSBVLBISet::NetList\fP *)"
+.br
+.ti -1c
+.RI "void \fBmasterRecordModified\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBimportNGS\fP ()"
+.br
+.ti -1c
+.RI "void \fBimportDBH\fP ()"
+.br
+.ti -1c
+.RI "void \fBimport\fP (\fBSBVLBISession::ObsImportedFrom\fP)"
+.br
+.ti -1c
+.RI "void \fBeditEntry\fP (\fBQListViewItem\fP *)"
+.br
+.ti -1c
+.RI "void \fBdeleteEntry\fP ()"
+.br
+.ti -1c
+.RI "void \fBeditNetworks\fP ()"
+.br
+.ti -1c
+.RI "void \fBbrowseMRecords\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBinit\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBQWidget\fP * \fBoptionsGroup\fP (\fBQWidget\fP *)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QCheckBox * \fBCBDump\fP"
+.br
+.ti -1c
+.RI "QPushButton * \fBDelete\fP"
+.br
+.ti -1c
+.RI "QRadioButton * \fBRBIfExistedAskUser\fP"
+.br
+.ti -1c
+.RI "QRadioButton * \fBRBIfExistedDrop\fP"
+.br
+.ti -1c
+.RI "QRadioButton * \fBRBIfExistedImport\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 467 of file SbIObsVLBI\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBVLBISetView::SBVLBISetView (\fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 1912 of file SbIObsVLBI\&.C'\&.
+.PP
+References init()\&.
+.SS "virtual SBVLBISetView::~SBVLBISetView ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 472 of file SbIObsVLBI\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBVLBISetView::browseMRecords ()\fC [private, slot]\fP"
+.PP
+Definition at line 2168 of file SbIObsVLBI\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, masterRecordModified(), SBVLBISetViewBase::numOpenedWindows, SBLog::write(), and SBVLBISetViewBase::Wvlbi\&.
+.PP
+Referenced by init()\&.
+.SS "virtual QString SBVLBISetView::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Reimplemented from \fBSBVLBISetViewBase\fP'\&.
+.PP
+Definition at line 474 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by browseMRecords(), deleteEntry(), editEntry(), editNetworks(), and import()\&.
+.SS "virtual void SBVLBISetViewBase::closeEvent (QCloseEvent *e)\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Definition at line 456 of file SbIObsVLBI\&.H'\&.
+.PP
+References SBVLBISetViewBase::numOpenedWindows\&.
+.SS "void SBVLBISetView::deleteEntry ()\fC [private, slot]\fP"
+.PP
+Definition at line 2054 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBVLBISetViewBase::brwsSes, ClassName(), SBLog::DBG, Delete, SBVLBISetViewBase::drawInfo(), SBLog::INTERFACE, SBVLBISetViewBase::isModified, Log, SBBrowseSessions::lvSessions(), SBNamed::name(), SBVLBISet::removeSession(), SBVLBISesInfoLI::sessionInfo(), SBVLBISetViewBase::str, SBLog::write(), and SBVLBISetViewBase::Wvlbi\&.
+.PP
+Referenced by init()\&.
+.SS "void SBVLBISetViewBase::drawInfo ()\fC [protected, virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSBProjectCreate\fP'\&.
+.PP
+Definition at line 1883 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBVLBISetViewBase::brwsSes, SBVLBISetViewBase::LNumObs, SBVLBISetViewBase::LNumPPS, SBVLBISetViewBase::LNumSes, SBBrowseSessions::numPPSess(), SBVLBISetViewBase::str, SBVLBISet::totalObs(), and SBVLBISetViewBase::Wvlbi\&.
+.PP
+Referenced by deleteEntry(), import(), and SBVLBISetViewBase::infoGroup()\&.
+.SS "void SBVLBISetView::editEntry (\fBQListViewItem\fP *SesItem)\fC [private, slot]\fP"
+.PP
+Definition at line 2044 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBVLBISetViewBase::childWindowClosed(), ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, SBVLBISetViewBase::modified(), SBVLBISetViewBase::numOpenedWindows, SBLog::write(), and SBVLBISetViewBase::Wvlbi\&.
+.SS "void SBVLBISetView::editNetworks ()\fC [private, slot]\fP"
+.PP
+Definition at line 2158 of file SbIObsVLBI\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, networksModified(), SBVLBISetViewBase::numOpenedWindows, SBLog::write(), and SBVLBISetViewBase::Wvlbi\&.
+.PP
+Referenced by init()\&.
+.SS "void SBVLBISetView::import (\fBSBVLBISession::ObsImportedFrom\fPIType)\fC [private, slot]\fP"
+.PP
+Definition at line 2084 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBVLBISetViewBase::brwsSes, CBDump, ClassName(), SBLog::DATA, SBLog::DBG, SBVLBISetViewBase::drawInfo(), SBVLBISet::import(), SBLog::INTERFACE, SBLog::IO, SBVLBISetViewBase::isModified, SBVLBISet::loadMaster(), Log, message(), SBVLBISetViewBase::numOpenedWindows, SBSetUp::path2Compil(), RBIfExistedDrop, RBIfExistedImport, SBVLBISet::releaseMaster(), SetUp, stBarReset(), stBarSetProgress(), stBarSetTotalSteps(), SBBrowseSessions::updateList(), SBLog::write(), and SBVLBISetViewBase::Wvlbi\&.
+.SS "void SBVLBISetView::importDBH ()\fC [inline, private, slot]\fP"
+.PP
+Definition at line 488 of file SbIObsVLBI\&.H'\&.
+.PP
+References SBVLBISesInfo::IF_DBH\&.
+.PP
+Referenced by init()\&.
+.SS "void SBVLBISetView::importNGS ()\fC [inline, private, slot]\fP"
+.PP
+Definition at line 487 of file SbIObsVLBI\&.H'\&.
+.PP
+References SBVLBISesInfo::IF_NGS\&.
+.PP
+Referenced by init()\&.
+.SS "\fBQWidget\fP * SBVLBISetViewBase::infoGroup (\fBQWidget\fP *parent)\fC [protected, virtual, inherited]\fP"
+.PP
+Definition at line 1828 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBVLBISetViewBase::brwsSes, SBVLBISetViewBase::drawInfo(), SBVLBISetViewBase::LNumObs, SBVLBISetViewBase::LNumPPS, SBVLBISetViewBase::LNumSes, SBBrowseSessions::numObs(), SBBrowseSessions::numPPSess(), SBVLBISetViewBase::str, and SBVLBISetViewBase::Wvlbi\&.
+.PP
+Referenced by SBProjectCreate::init(), and init()\&.
+.SS "void SBVLBISetView::init ()\fC [private, virtual]\fP"
+.PP
+Implements \fBSBVLBISetViewBase\fP'\&.
+.PP
+Definition at line 1918 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBVLBISetViewBase::accept(), BM_GENERAL, browseMRecords(), Delete, deleteEntry(), editNetworks(), importDBH(), importNGS(), SBVLBISetViewBase::infoGroup(), MainWin, message(), optionsGroup(), SBVLBISetViewBase::reject(), stBarReset(), stBarSetProgress(), stBarSetTotalSteps(), SBVLBISetViewBase::unitsGroup(), and SBVLBISetViewBase::VLBIList()\&.
+.PP
+Referenced by SBVLBISetView()\&.
+.SS "void SBVLBISetView::masterRecordModified (boolisModified_)\fC [private, slot]\fP"
+.PP
+Definition at line 2035 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBVLBISetViewBase::isModified, and SBVLBISetViewBase::numOpenedWindows\&.
+.PP
+Referenced by browseMRecords()\&.
+.SS "void SBVLBISetView::message (const QString &t0)\fC [signal]\fP"
+.PP
+Definition at line 687 of file SbIObsVLBI\&.moc\&.C'\&.
+.PP
+Referenced by import(), and init()\&.
+.SS "void SBVLBISetView::networksModified (boolisModified_, \fBSBVLBISet::NetList\fP *Nets_)\fC [private, slot]\fP"
+.PP
+Definition at line 2023 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBVLBISetViewBase::isModified, SBVLBISet::networks(), SBVLBISetViewBase::numOpenedWindows, and SBVLBISetViewBase::Wvlbi\&.
+.PP
+Referenced by editNetworks()\&.
+.SS "\fBQWidget\fP * SBVLBISetView::optionsGroup (\fBQWidget\fP *parent)\fC [private, virtual]\fP"
+.PP
+Reimplemented from \fBSBVLBISetViewBase\fP'\&.
+.PP
+Definition at line 1983 of file SbIObsVLBI\&.C'\&.
+.PP
+References CBDump, RBIfExistedAskUser, RBIfExistedDrop, and RBIfExistedImport\&.
+.PP
+Referenced by init()\&.
+.SS "void SBVLBISetView::stBarReset ()\fC [signal]\fP"
+.PP
+Definition at line 669 of file SbIObsVLBI\&.moc\&.C'\&.
+.PP
+Referenced by import(), and init()\&.
+.SS "void SBVLBISetView::stBarSetProgress (intt0)\fC [signal]\fP"
+.PP
+Definition at line 681 of file SbIObsVLBI\&.moc\&.C'\&.
+.PP
+Referenced by import(), and init()\&.
+.SS "void SBVLBISetView::stBarSetTotalSteps (intt0)\fC [signal]\fP"
+.PP
+Definition at line 675 of file SbIObsVLBI\&.moc\&.C'\&.
+.PP
+Referenced by import(), and init()\&.
+.SS "\fBQWidget\fP * SBVLBISetViewBase::unitsGroup (\fBQWidget\fP *parent)\fC [protected, virtual, inherited]\fP"
+.PP
+Definition at line 1803 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBVLBISetViewBase::RBUnit, SetUp, SBSetUp::units(), and SBVLBISetViewBase::unitsChanged()\&.
+.PP
+Referenced by SBProjectCreate::init(), and init()\&.
+.SS "\fBQWidget\fP * SBVLBISetViewBase::VLBIList (\fBQWidget\fP *parent, \fBBrowseMode\fPMode_, \fBSBProject\fP *Prj)\fC [protected, virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSBVLBIPreProcess\fP'\&.
+.PP
+Definition at line 1793 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBVLBISetViewBase::brwsSes, SBBrowseSessions::lvSessions(), and SBVLBISetViewBase::Wvlbi\&.
+.PP
+Referenced by SBProjectCreate::init(), and init()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSBBrowseSessions\fP* \fBSBVLBISetViewBase::brwsSes\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 441 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by SBVLBIPreProcess::auxWindowsChanged(), SBVLBIPreProcess::blockInput(), SBProjectCreate::createProject(), deleteEntry(), SBProjectCreate::drawInfo(), SBVLBISetViewBase::drawInfo(), import(), SBVLBISetViewBase::infoGroup(), SBProjectCreate::init(), SBVLBIPreProcess::procScenario_4(), SBVLBIPreProcess::restoreInput(), SBProjectCreate::selectAll(), SBProjectCreate::unselectAll(), SBVLBIPreProcess::VLBIList(), and SBVLBISetViewBase::VLBIList()\&.
+.SS "QCheckBox* \fBSBVLBISetView::CBDump\fP\fC [private]\fP"
+.PP
+Definition at line 497 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by import(), and optionsGroup()\&.
+.SS "QPushButton* \fBSBVLBISetView::Delete\fP\fC [private]\fP"
+.PP
+Definition at line 499 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by deleteEntry(), and init()\&.
+.SS "bool \fBSBVLBISetViewBase::isModified\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 446 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by SBVLBISetViewBase::accept(), deleteEntry(), import(), masterRecordModified(), SBVLBISetViewBase::modified(), networksModified(), SBVLBIPreProcess::saveSession(), SBVLBISetViewBase::SBVLBISetViewBase(), SBVLBIPreProcess::toggleEntryMarkEnable(), SBVLBIPreProcess::toggleEntryMoveEnable(), and SBVLBIPreProcess::~SBVLBIPreProcess()\&.
+.SS "QLabel* \fBSBVLBISetViewBase::LNumObs\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 443 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by SBProjectCreate::drawInfo(), SBVLBISetViewBase::drawInfo(), and SBVLBISetViewBase::infoGroup()\&.
+.SS "QLabel* \fBSBVLBISetViewBase::LNumPPS\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 444 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by SBProjectCreate::drawInfo(), SBVLBISetViewBase::drawInfo(), and SBVLBISetViewBase::infoGroup()\&.
+.SS "QLabel* \fBSBVLBISetViewBase::LNumSes\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 442 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by SBProjectCreate::drawInfo(), SBVLBISetViewBase::drawInfo(), and SBVLBISetViewBase::infoGroup()\&.
+.SS "int \fBSBVLBISetViewBase::numOpenedWindows\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 447 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by SBVLBISetViewBase::accept(), browseMRecords(), SBVLBISetViewBase::childWindowClosed(), SBVLBISetViewBase::closeEvent(), SBProjectCreate::editEntry(), editEntry(), editNetworks(), import(), masterRecordModified(), networksModified(), SBVLBISetViewBase::reject(), and SBVLBISetViewBase::SBVLBISetViewBase()\&.
+.SS "QRadioButton* \fBSBVLBISetView::RBIfExistedAskUser\fP\fC [private]\fP"
+.PP
+Definition at line 500 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by optionsGroup()\&.
+.SS "QRadioButton* \fBSBVLBISetView::RBIfExistedDrop\fP\fC [private]\fP"
+.PP
+Definition at line 501 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by import(), and optionsGroup()\&.
+.SS "QRadioButton* \fBSBVLBISetView::RBIfExistedImport\fP\fC [private]\fP"
+.PP
+Definition at line 502 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by import(), and optionsGroup()\&.
+.SS "QRadioButton* \fBSBVLBISetViewBase::RBUnit\fP[3]\fC [protected, inherited]\fP"
+.PP
+Definition at line 445 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by SBVLBISetViewBase::unitsGroup()\&.
+.SS "QString \fBSBVLBISetViewBase::str\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 439 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by deleteEntry(), SBProjectCreate::drawInfo(), SBVLBISetViewBase::drawInfo(), and SBVLBISetViewBase::infoGroup()\&.
+.SS "\fBSBVLBISet\fP* \fBSBVLBISetViewBase::Wvlbi\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 436 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by SBVLBISetViewBase::accept(), browseMRecords(), SBVLBIPreProcess::clearPars(), SBProjectCreate::createProject(), SBVLBIPreProcess::currentSesChange(), deleteEntry(), SBProjectCreate::drawInfo(), SBVLBISetViewBase::drawInfo(), SBProjectCreate::editEntry(), editEntry(), editNetworks(), SBVLBIPreProcess::fillSessAttr(), SBVLBIPreProcess::fixSession(), import(), SBVLBISetViewBase::infoGroup(), networksModified(), SBVLBIPreProcess::preProcess(), SBVLBIPreProcess::saveSession(), SBVLBISetViewBase::SBVLBISetViewBase(), SBVLBIPreProcess::VLBIList(), SBVLBISetViewBase::VLBIList(), SBVLBIPreProcess::wAttributes(), SBVLBIPreProcess::~SBVLBIPreProcess(), and SBVLBISetViewBase::~SBVLBISetViewBase()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

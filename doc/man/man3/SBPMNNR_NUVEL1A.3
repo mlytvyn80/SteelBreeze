@@ -1,0 +1,176 @@
+.TH "SBPMNNR_NUVEL1A" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBPMNNR_NUVEL1A \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoStations\&.H>\fP
+.PP
+Inherits \fBSBPlateMotion\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBPMNNR_NUVEL1A\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual \fBVector3\fP \fBoperator()\fP (const \fBSBMJD\fP &T_, const \fBSBMJD\fP &T0_, \fBSBStation\fP &Station) const "
+.br
+.ti -1c
+.RI "virtual \fBVector3\fP \fBvelocity\fP (\fBSBStation\fP &Station) const "
+.br
+.ti -1c
+.RI "virtual QString \fBmodelName\fP () const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBVector3\fP \fBdisplacement\fP (const \fBSBMJD\fP &, const \fBSBMJD\fP &, \fBSBStation\fP &) const "
+.br
+.ti -1c
+.RI "virtual int \fBcompareItems\fP (QCollection::Item item1, QCollection::Item item2)"
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBwrite\fP (QDataStream &s, QCollection::Item Entry) const "
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBread\fP (QDataStream &s, QCollection::Item &Entry)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBN\fP"
+.br
+.ti -1c
+.RI "const \fBSBPlateEntry\fP * \fBPlates\fP"
+.br
+.ti -1c
+.RI "QDict< \fBSBPlateEntry\fP > * \fBPlDict\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const \fBSBPlateEntry\fP \fBNNR_NUVEL1A\fP [16]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 293 of file SbGeoStations\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBPMNNR_NUVEL1A::SBPMNNR_NUVEL1A ()\fC [inline]\fP"
+.PP
+Definition at line 298 of file SbGeoStations\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBPMNNR_NUVEL1A::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Reimplemented from \fBSBPlateMotion\fP'\&.
+.PP
+Definition at line 299 of file SbGeoStations\&.H'\&.
+.SS "virtual int SBNList::compareItems (QCollection::Itemitem1, QCollection::Itemitem2)\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP, \fBSBStationList\fP, and \fBSBStationIDList\fP'\&.
+.PP
+Definition at line 277 of file SbGeo\&.H'\&.
+.SS "\fBVector3\fP SBPlateMotion::displacement (const \fBSBMJD\fP &T_, const \fBSBMJD\fP &T0_, \fBSBStation\fP &Station) const\fC [protected, virtual, inherited]\fP"
+.PP
+Definition at line 234 of file SbGeoStations\&.C'\&.
+.PP
+References Vector3::at(), SBPlateMotion::ClassName(), SBLog::DBG, SBPlateEntry::displacement(), SBLog::ERR, SBStation::id(), SBLog::isEligible(), Log, SBNamed::name(), SBSite::plate(), SBLog::PLATES, SBPlateMotion::PlDict, SBStation::rt(), SBStation::site(), SBStationID::toString(), v3Zero, SBLog::write(), X_AXIS, Y_AXIS, and Z_AXIS\&.
+.PP
+Referenced by SBPlateMotion::operator()(), SBPMNUVEL1A::operator()(), and operator()()\&.
+.SS "virtual QString SBPMNNR_NUVEL1A::modelName () const\fC [inline, virtual]\fP"
+.PP
+Reimplemented from \fBSBPlateMotion\fP'\&.
+.PP
+Definition at line 308 of file SbGeoStations\&.H'\&.
+.SS "virtual \fBVector3\fP SBPMNNR_NUVEL1A::operator() (const \fBSBMJD\fP &T_, const \fBSBMJD\fP &T0_, \fBSBStation\fP &Station) const\fC [inline, virtual]\fP"Calculates station's displacement due to plate motion'\&. Look up the plate, then calls SBPlateEntry::displacement(long double, SBStation&) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdt\fP time in days 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBSBPlateMotion\fP'\&.
+.PP
+Definition at line 304 of file SbGeoStations\&.H'\&.
+.PP
+References SBPlateMotion::displacement()\&.
+.SS "virtual QDataStream& SBNList::read (QDataStream &s, QCollection::Item &Entry)\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP, \fBSBStationList\fP, \fBSBStationIDList\fP, \fBSBInstitutionList\fP, \fBSB_CRF\fP, and \fBSBFCList\fP'\&.
+.PP
+Definition at line 284 of file SbGeo\&.H'\&.
+.SS "virtual \fBVector3\fP SBPMNNR_NUVEL1A::velocity (\fBSBStation\fP &Station) const\fC [inline, virtual]\fP"
+.PP
+Reimplemented from \fBSBPlateMotion\fP'\&.
+.PP
+Definition at line 306 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by SBAploChunk::import(), and SBAploEphem::importHPS()\&.
+.SS "virtual QDataStream& SBNList::write (QDataStream &s, QCollection::ItemEntry) const\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP, \fBSBStationList\fP, \fBSBStationIDList\fP, \fBSBInstitutionList\fP, \fBSB_CRF\fP, and \fBSBFCList\fP'\&.
+.PP
+Definition at line 282 of file SbGeo\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int \fBSBPlateMotion::N\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 242 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by SBPlateMotion::SBPlateMotion()\&.
+.SS "const \fBSBPlateEntry\fP \fBSBPMNNR_NUVEL1A::NNR_NUVEL1A\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+{
+  SBPlateEntry('AFRC',  0\&.891, -3\&.099,  3\&.922),
+  SBPlateEntry('ANTA', -0\&.821, -1\&.701,  3\&.706),
+  SBPlateEntry('ARAB',  6\&.685, -0\&.521,  6\&.760),
+  SBPlateEntry('AUST',  7\&.839,  5\&.124,  6\&.282),
+  SBPlateEntry('CARB', -0\&.178, -3\&.385,  1\&.581),
+  SBPlateEntry('COCO',-10\&.425,-21\&.605, 10\&.925),
+  SBPlateEntry('EURA', -0\&.981, -2\&.395,  3\&.153),
+  SBPlateEntry('INDI',  6\&.670,  0\&.040,  6\&.790),
+  SBPlateEntry('JUFU',  5\&.200,  8\&.610, -5\&.820),
+  SBPlateEntry('NAZC', -1\&.532, -8\&.577,  9\&.609),
+  SBPlateEntry('NOAM',  0\&.258, -3\&.599, -0\&.153),
+  SBPlateEntry('PCFC', -1\&.510,  4\&.840, -9\&.970),
+  SBPlateEntry('PHIL', 10\&.090, -7\&.160, -9\&.670),
+  SBPlateEntry('RIVR', -9\&.390,-30\&.960, 12\&.050), 
+  SBPlateEntry('SCOT', -0\&.410, -2\&.660, -1\&.270),
+  SBPlateEntry('SOAM', -1\&.038, -1\&.515, -0\&.870)
+}
+.fi
+.PP
+Definition at line 296 of file SbGeoStations\&.H'\&.
+.SS "const \fBSBPlateEntry\fP* \fBSBPlateMotion::Plates\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 243 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by SBPlateMotion::SBPlateMotion()\&.
+.SS "QDict<\fBSBPlateEntry\fP>* \fBSBPlateMotion::PlDict\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 244 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by SBPlateMotion::displacement(), SBPlateMotion::SBPlateMotion(), SBPlateMotion::velocity(), and SBPlateMotion::~SBPlateMotion()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

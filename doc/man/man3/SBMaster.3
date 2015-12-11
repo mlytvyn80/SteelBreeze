@@ -1,0 +1,161 @@
+.TH "SBMaster" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBMaster \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoObsVLBI\&.H>\fP
+.PP
+Inherits \fBQList< SBMasterFile >\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBMaster\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~SBMaster\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "\fBSBMasterRecord\fP * \fBlookupMR\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBimportMF\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBcheckNewFiles\fP (const QString &)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual int \fBcompareItems\fP (QCollection::Item item1, QCollection::Item item2)"
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBwrite\fP (QDataStream &s, QCollection::Item Entry) const "
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBread\fP (QDataStream &s, QCollection::Item &Entry)"
+.br
+.ti -1c
+.RI "void \fBmapRecords\fP ()"
+.br
+.ti -1c
+.RI "void \fBmapFiles\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QDict< \fBSBMasterRecord\fP > * \fBRecordByName\fP"
+.br
+.ti -1c
+.RI "QDict< \fBSBMasterFile\fP > * \fBFileByName\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBMaster\fP &M)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBMaster\fP &M)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 1197 of file SbGeoObsVLBI\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBMaster::SBMaster ()"A constructor'\&.
+.PP
+A constructor'\&. Creates a copy of object'\&. 
+.PP
+Definition at line 2147 of file SbGeoObsVLBI\&.C'\&.
+.PP
+References FileByName, and RecordByName\&.
+.SS "SBMaster::~SBMaster ()\fC [virtual]\fP"A destructor'\&. 
+.PP
+Definition at line 2158 of file SbGeoObsVLBI\&.C'\&.
+.PP
+References FileByName, and RecordByName\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBMaster::checkNewFiles (const QString &DirName)"
+.PP
+Definition at line 2323 of file SbGeoObsVLBI\&.C'\&.
+.PP
+References importMF()\&.
+.PP
+Referenced by SBSetUp::LoadStuff()\&.
+.SS "virtual QString SBMaster::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 1219 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by importMF(), mapFiles(), and mapRecords()\&.
+.SS "virtual int SBMaster::compareItems (QCollection::Itemitem1, QCollection::Itemitem2)\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 1200 of file SbGeoObsVLBI\&.H'\&.
+.SS "void SBMaster::importMF (const QString &FName)"
+.PP
+Definition at line 2241 of file SbGeoObsVLBI\&.C'\&.
+.PP
+References SBAttributed::addAttr(), ClassName(), SBLog::DATA, SBLog::DBG, SBLog::ERR, FileByName, SBMasterFile::Intensive, SBLog::IO, Log, SBNamed::name(), SBMasterFile::tModified(), SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by checkNewFiles()\&.
+.SS "\fBSBMasterRecord\fP * SBMaster::lookupMR (const QString &name_)"
+.PP
+Definition at line 2225 of file SbGeoObsVLBI\&.C'\&.
+.PP
+References RecordByName\&.
+.PP
+Referenced by SBVLBISet::import(), SBRunManager::makeReportEOP(), and SBRunManager::makeReportTroposphere()\&.
+.SS "void SBMaster::mapFiles ()\fC [protected]\fP"
+.PP
+Definition at line 2202 of file SbGeoObsVLBI\&.C'\&.
+.PP
+References ClassName(), SBLog::DATA, SBLog::ERR, FileByName, Log, SBNamed::name(), and SBLog::write()\&.
+.SS "void SBMaster::mapRecords ()\fC [protected]\fP"
+.PP
+Definition at line 2172 of file SbGeoObsVLBI\&.C'\&.
+.PP
+References ClassName(), SBLog::DATA, SBLog::ERR, Log, SBNamed::name(), RecordByName, SBLog::write(), and SBLog::WRN\&.
+.SS "virtual QDataStream& SBMaster::read (QDataStream &s, QCollection::Item &Entry)\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 1204 of file SbGeoObsVLBI\&.H'\&.
+.SS "virtual QDataStream& SBMaster::write (QDataStream &s, QCollection::ItemEntry) const\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 1202 of file SbGeoObsVLBI\&.H'\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBMaster\fP &M)\fC [friend]\fP"
+.PP
+Definition at line 1228 of file SbGeoObsVLBI\&.H'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBMaster\fP &M)\fC [friend]\fP"
+.PP
+Definition at line 1230 of file SbGeoObsVLBI\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QDict<\fBSBMasterFile\fP>* \fBSBMaster::FileByName\fP\fC [protected]\fP"
+.PP
+Definition at line 1208 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by importMF(), mapFiles(), SBMaster(), and ~SBMaster()\&.
+.SS "QDict<\fBSBMasterRecord\fP>* \fBSBMaster::RecordByName\fP\fC [protected]\fP"
+.PP
+Definition at line 1205 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by lookupMR(), mapRecords(), SBMaster(), and ~SBMaster()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

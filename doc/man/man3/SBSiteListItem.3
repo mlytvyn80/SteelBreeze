@@ -1,0 +1,105 @@
+.TH "SBSiteListItem" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBSiteListItem \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIStuffStation\&.H>\fP
+.PP
+Inherits \fBQListViewItem\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSiteListItem\fP (\fBQListView\fP *, \fBSBSite\fP *)"
+.br
+.ti -1c
+.RI "\fB~SBSiteListItem\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual QString \fBtext\fP (int) const "
+.br
+.ti -1c
+.RI "virtual QString \fBkey\fP (int, bool) const "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSite\fP * \fBSite\fP"
+.br
+.ti -1c
+.RI "bool \fBisFaked\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSBStuffStations\fP"
+.br
+.ti -1c
+.RI "class \fBSBSiteEditor\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 84 of file SbIStuffStation\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBSiteListItem::SBSiteListItem (\fBQListView\fP *parent, \fBSBSite\fP *Site_)"
+.PP
+Definition at line 184 of file SbIStuffStation\&.C'\&.
+.PP
+References isFaked, and Site\&.
+.SS "SBSiteListItem::~SBSiteListItem ()"
+.PP
+Definition at line 196 of file SbIStuffStation\&.C'\&.
+.PP
+References isFaked, and Site\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBSiteListItem::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 92 of file SbIStuffStation\&.H'\&.
+.SS "QString SBSiteListItem::key (intcol, bool) const\fC [virtual]\fP"
+.PP
+Definition at line 238 of file SbIStuffStation\&.C'\&.
+.PP
+References SBSite::country(), SBSite::domeMajor(), SBSite::height(), SBSite::latitude(), SBSite::longitude(), SBNamed::name(), SBSite::oLoad(), SBOLoad::pickedUp(), SBSite::plate(), Site, SBSite::stations(), and TmpString\&.
+.SS "QString SBSiteListItem::text (intcol) const\fC [virtual]\fP"
+.PP
+Definition at line 202 of file SbIStuffStation\&.C'\&.
+.PP
+References SBSite::country(), SBSite::domeMajor(), SBSite::height(), SBSite::latitude(), SBSite::longitude(), SBNamed::name(), SBSite::oLoad(), SBOLoad::pickedUp(), SBSite::plate(), rad2dms(), rad2dmsl(), Site, SBSite::stations(), and TmpString\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBSBSiteEditor\fP\fC [friend]\fP"
+.PP
+Definition at line 97 of file SbIStuffStation\&.H'\&.
+.SS "friend class \fBSBStuffStations\fP\fC [friend]\fP"
+.PP
+Definition at line 96 of file SbIStuffStation\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool \fBSBSiteListItem::isFaked\fP\fC [private]\fP"
+.PP
+Definition at line 88 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by SBSiteListItem(), and ~SBSiteListItem()\&.
+.SS "\fBSBSite\fP* \fBSBSiteListItem::Site\fP\fC [private]\fP"
+.PP
+Definition at line 87 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by SBStuffStations::deleteEntryS(), key(), SBSiteEditor::SBSiteEditor(), SBSiteListItem(), text(), and ~SBSiteListItem()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

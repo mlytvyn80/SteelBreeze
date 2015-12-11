@@ -1,0 +1,375 @@
+.TH "SBTestAPLoad" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBTestAPLoad \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbITest\&.H>\fP
+.PP
+Inherits \fBSBTest\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBTestAPLoad\fP (\fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "virtual \fB~SBTestAPLoad\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBaccept\fP ()"
+.br
+.ti -1c
+.RI "void \fBreject\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBcloseEvent\fP (QCloseEvent *)"
+.br
+.ti -1c
+.RI "virtual void \fBcreateWidgets\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBSBMJD\fP * \fBtStart\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBSBMJD\fP * \fBtFinis\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBstr\fP"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP * \fBDate\fP"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP * \fBTStart\fP"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP * \fBTFinis\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBLMJD\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBLDate\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBLRange\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEYear\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEMonth\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEDay\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEHour\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEMin\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBESec\fP"
+.br
+.ti -1c
+.RI "bool \fBIsDateModified\fP"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBrecalc\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBstationChange\fP (\fBQListViewItem\fP *)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBfillData4Plotting\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBQWidget\fP * \fBcreateWidget4Test\fP (\fBQWidget\fP *)"
+.br
+.ti -1c
+.RI "virtual \fBQWidget\fP * \fBauxWidgetRt\fP (\fBQWidget\fP *)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBAploEphem\fP * \fBAploEphem\fP"
+.br
+.ti -1c
+.RI "\fBSB_TRF\fP * \fBTRF\fP"
+.br
+.ti -1c
+.RI "\fBSBStation\fP * \fBStation\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBNumOfPts\fP"
+.br
+.ti -1c
+.RI "double \fBStep\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBENumPts\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEStep\fP"
+.br
+.ti -1c
+.RI "\fBQListView\fP * \fBStLV\fP"
+.br
+.ti -1c
+.RI "\fBSBPlotCarrier\fP * \fBPlotCarrier\fP"
+.br
+.ti -1c
+.RI "\fBSBPlot\fP * \fBPlot\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 581 of file SbITest\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBTestAPLoad::SBTestAPLoad (\fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 2375 of file SbITest\&.C'\&.
+.PP
+References AploEphem, SBPlotCarrier::AT_MJD, SBPlotCarrier::columnNames(), SBPlotCarrier::createBranch(), SBTest::createWidgets(), SBMJD::currentMJD(), SBTest::Date, fillData4Plotting(), SBAploEphem::interval(), SBSetUp::loadAploEphem(), SBSetUp::loadTRF(), SBNamed::name(), NumOfPts, PlotCarrier, SB_TRF::prepare4Run(), SBPlotCarrier::setFile4SaveBaseName(), SBPlotCarrier::setType(), SetUp, Station, SB_TRF::stations(), Step, SBTest::TFinis, SBAploEphem::tFinis(), TRF, SBTest::TStart, and SBAploEphem::tStart()\&.
+.SS "SBTestAPLoad::~SBTestAPLoad ()\fC [virtual]\fP"
+.PP
+Definition at line 2418 of file SbITest\&.C'\&.
+.PP
+References AploEphem, SB_TRF::finisRun(), PlotCarrier, and TRF\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBTest::accept ()\fC [protected, slot, inherited]\fP"
+.PP
+Definition at line 230 of file SbITest\&.C'\&.
+.PP
+Referenced by SBTest::createWidgets()\&.
+.SS "\fBQWidget\fP * SBTestAPLoad::auxWidgetRt (\fBQWidget\fP *parent)\fC [private, virtual]\fP"
+.PP
+Reimplemented from \fBSBTest\fP'\&.
+.PP
+Definition at line 2515 of file SbITest\&.C'\&.
+.PP
+References ENumPts, EStep, NumOfPts, stationChange(), SB_TRF::stations(), Step, StLV, and TRF\&.
+.SS "virtual QString SBTestAPLoad::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Reimplemented from \fBSBTest\fP'\&.
+.PP
+Definition at line 588 of file SbITest\&.H'\&.
+.SS "virtual void SBTest::closeEvent (QCloseEvent *)\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Definition at line 61 of file SbITest\&.H'\&.
+.SS "\fBQWidget\fP * SBTestAPLoad::createWidget4Test (\fBQWidget\fP *parent)\fC [private, virtual]\fP"
+.PP
+Reimplemented from \fBSBTest\fP'\&.
+.PP
+Definition at line 2440 of file SbITest\&.C'\&.
+.PP
+References Plot, and PlotCarrier\&.
+.SS "void SBTest::createWidgets ()\fC [protected, virtual, inherited]\fP"
+.PP
+Definition at line 76 of file SbITest\&.C'\&.
+.PP
+References SBTest::accept(), SBTest::auxWidgetRt(), SBTest::createWidget4Test(), SBTest::Date, SBMJD::day(), SBTest::EDay, SBTest::EHour, SBTest::EMin, SBTest::EMonth, SBTest::ESec, SBTest::EYear, SBMJD::F_DDMonYYYY, SBMJD::F_Short, SBMJD::hour(), SBTest::LDate, SBTest::LMJD, SBTest::LRange, SBMJD::min(), SBMJD::month(), SBTest::recalc(), SBTest::reject(), SBMJD::sec(), SBTest::str, SBTest::tFinis(), SBMJD::toString(), SBTest::tStart(), and SBMJD::year()\&.
+.PP
+Referenced by SBTestAPLoad(), SBTestDiurnEOP::SBTestDiurnEOP(), SBTestEOP::SBTestEOP(), SBTestEphem::SBTestEphem(), SBTestFrame::SBTestFrame(), SBTestNutation::SBTestNutation(), SBTestOceanTides::SBTestOceanTides(), SBTestPolarTides::SBTestPolarTides(), SBTestPrecession::SBTestPrecession(), and SBTestSolidTides::SBTestSolidTides()\&.
+.SS "void SBTestAPLoad::fillData4Plotting ()\fC [private]\fP"
+.PP
+Definition at line 2445 of file SbITest\&.C'\&.
+.PP
+References AploEphem, Vector3::at(), SBMatrix::at(), SBSpline::b(), SBPlotCarrier::branches(), SBTest::Date, SBAploEphem::dismissed(), SBAploEphem::displacement(), SBAploEphem::getReady(), SBStation::id(), SBAploEphem::interval(), SBMatrix::nCol(), SBMatrix::nRow(), NumOfPts, PlotCarrier, SBAploEphem::registerStation(), SBMatrix::resize(), SBMatrix::set(), SBAploEphem::spline4station(), Station, Step, v3Zero, X_AXIS, Y_AXIS, and Z_AXIS\&.
+.PP
+Referenced by recalc(), SBTestAPLoad(), and stationChange()\&.
+.SS "void SBTestAPLoad::recalc ()\fC [private, virtual, slot]\fP"
+.PP
+Reimplemented from \fBSBTest\fP'\&.
+.PP
+Definition at line 2580 of file SbITest\&.C'\&.
+.PP
+References SBPlot::dataChanged(), ENumPts, EStep, fillData4Plotting(), SBTest::IsDateModified, NumOfPts, Plot, and Step\&.
+.PP
+Referenced by stationChange()\&.
+.SS "void SBTest::reject ()\fC [protected, slot, inherited]\fP"
+.PP
+Definition at line 236 of file SbITest\&.C'\&.
+.PP
+Referenced by SBTest::createWidgets()\&.
+.SS "void SBTestAPLoad::stationChange (\fBQListViewItem\fP *LI)\fC [private, virtual, slot]\fP"
+.PP
+Definition at line 2610 of file SbITest\&.C'\&.
+.PP
+References SBPlot::dataChanged(), fillData4Plotting(), SBNamed::name(), Plot, PlotCarrier, recalc(), SBNamed::setName(), and Station\&.
+.PP
+Referenced by auxWidgetRt()\&.
+.SS "virtual \fBSBMJD\fP* SBTest::tFinis ()\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Definition at line 84 of file SbITest\&.H'\&.
+.PP
+References SBTest::TFinis\&.
+.PP
+Referenced by SBTest::createWidgets()\&.
+.SS "virtual \fBSBMJD\fP* SBTest::tStart ()\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Definition at line 83 of file SbITest\&.H'\&.
+.PP
+References SBTest::TStart\&.
+.PP
+Referenced by SBTest::createWidgets()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSBAploEphem\fP* \fBSBTestAPLoad::AploEphem\fP\fC [private]\fP"
+.PP
+Definition at line 597 of file SbITest\&.H'\&.
+.PP
+Referenced by fillData4Plotting(), SBTestAPLoad(), and ~SBTestAPLoad()\&.
+.SS "\fBSBMJD\fP* \fBSBTest::Date\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 64 of file SbITest\&.H'\&.
+.PP
+Referenced by SBTestPrecession::createWidget4Test(), SBTestNutation::createWidget4Test(), SBTestFrame::createWidget4Test(), SBTestEphem::createWidget4Test(), SBTest::createWidgets(), SBTestEOP::fillData4Plotting(), SBTestDiurnEOP::fillData4Plotting(), SBTestSolidTides::fillData4Plotting(), SBTestOceanTides::fillData4Plotting(), SBTestPolarTides::fillData4Plotting(), fillData4Plotting(), SBTestEphem::frameChanged(), SBTest::recalc(), SBTestPrecession::recalc(), SBTestNutation::recalc(), SBTestFrame::recalc(), SBTestEphem::recalc(), SBTest::SBTest(), SBTestAPLoad(), SBTestDiurnEOP::SBTestDiurnEOP(), SBTestEOP::SBTestEOP(), SBTestEphem::SBTestEphem(), SBTestFrame::SBTestFrame(), SBTestNutation::SBTestNutation(), SBTestOceanTides::SBTestOceanTides(), SBTestPolarTides::SBTestPolarTides(), SBTestPrecession::SBTestPrecession(), SBTestSolidTides::SBTestSolidTides(), and SBTest::~SBTest()\&.
+.SS "QLineEdit* \fBSBTest::EDay\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 74 of file SbITest\&.H'\&.
+.PP
+Referenced by SBTest::createWidgets(), and SBTest::recalc()\&.
+.SS "QLineEdit* \fBSBTest::EHour\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 75 of file SbITest\&.H'\&.
+.PP
+Referenced by SBTest::createWidgets(), and SBTest::recalc()\&.
+.SS "QLineEdit* \fBSBTest::EMin\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 76 of file SbITest\&.H'\&.
+.PP
+Referenced by SBTest::createWidgets(), and SBTest::recalc()\&.
+.SS "QLineEdit* \fBSBTest::EMonth\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 73 of file SbITest\&.H'\&.
+.PP
+Referenced by SBTest::createWidgets(), and SBTest::recalc()\&.
+.SS "QLineEdit* \fBSBTestAPLoad::ENumPts\fP\fC [private]\fP"
+.PP
+Definition at line 606 of file SbITest\&.H'\&.
+.PP
+Referenced by auxWidgetRt(), and recalc()\&.
+.SS "QLineEdit* \fBSBTest::ESec\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 77 of file SbITest\&.H'\&.
+.PP
+Referenced by SBTest::createWidgets(), and SBTest::recalc()\&.
+.SS "QLineEdit* \fBSBTestAPLoad::EStep\fP\fC [private]\fP"
+.PP
+Definition at line 607 of file SbITest\&.H'\&.
+.PP
+Referenced by auxWidgetRt(), and recalc()\&.
+.SS "QLineEdit* \fBSBTest::EYear\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 72 of file SbITest\&.H'\&.
+.PP
+Referenced by SBTest::createWidgets(), and SBTest::recalc()\&.
+.SS "bool \fBSBTest::IsDateModified\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 78 of file SbITest\&.H'\&.
+.PP
+Referenced by SBTest::recalc(), SBTestEOP::recalc(), SBTestDiurnEOP::recalc(), SBTestSolidTides::recalc(), SBTestOceanTides::recalc(), SBTestPolarTides::recalc(), recalc(), and SBTest::SBTest()\&.
+.SS "QLabel* \fBSBTest::LDate\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 70 of file SbITest\&.H'\&.
+.PP
+Referenced by SBTest::createWidgets(), and SBTest::recalc()\&.
+.SS "QLabel* \fBSBTest::LMJD\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 69 of file SbITest\&.H'\&.
+.PP
+Referenced by SBTest::createWidgets(), and SBTest::recalc()\&.
+.SS "QLabel* \fBSBTest::LRange\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 71 of file SbITest\&.H'\&.
+.PP
+Referenced by SBTest::createWidgets()\&.
+.SS "unsigned int \fBSBTestAPLoad::NumOfPts\fP\fC [private]\fP"
+.PP
+Definition at line 601 of file SbITest\&.H'\&.
+.PP
+Referenced by auxWidgetRt(), fillData4Plotting(), recalc(), and SBTestAPLoad()\&.
+.SS "\fBSBPlot\fP* \fBSBTestAPLoad::Plot\fP\fC [private]\fP"
+.PP
+Definition at line 613 of file SbITest\&.H'\&.
+.PP
+Referenced by createWidget4Test(), recalc(), and stationChange()\&.
+.SS "\fBSBPlotCarrier\fP* \fBSBTestAPLoad::PlotCarrier\fP\fC [private]\fP"
+.PP
+Definition at line 612 of file SbITest\&.H'\&.
+.PP
+Referenced by createWidget4Test(), fillData4Plotting(), SBTestAPLoad(), stationChange(), and ~SBTestAPLoad()\&.
+.SS "\fBSBStation\fP* \fBSBTestAPLoad::Station\fP\fC [private]\fP"
+.PP
+Definition at line 599 of file SbITest\&.H'\&.
+.PP
+Referenced by fillData4Plotting(), SBTestAPLoad(), and stationChange()\&.
+.SS "double \fBSBTestAPLoad::Step\fP\fC [private]\fP"
+.PP
+Definition at line 602 of file SbITest\&.H'\&.
+.PP
+Referenced by auxWidgetRt(), fillData4Plotting(), recalc(), and SBTestAPLoad()\&.
+.SS "\fBQListView\fP* \fBSBTestAPLoad::StLV\fP\fC [private]\fP"
+.PP
+Definition at line 609 of file SbITest\&.H'\&.
+.PP
+Referenced by auxWidgetRt()\&.
+.SS "QString \fBSBTest::str\fP\fC [protected, inherited]\fP"
+.PP
+Reimplemented in \fBSBTestFrame\fP, \fBSBTestNutation\fP, \fBSBTestPrecession\fP, and \fBSBTestMatrix\fP'\&.
+.PP
+Definition at line 61 of file SbITest\&.H'\&.
+.PP
+Referenced by SBTestEphem::createWidget4Test(), SBTest::createWidgets(), SBTestEphem::displayCoo(), and SBTest::recalc()\&.
+.SS "\fBSBMJD\fP* \fBSBTest::TFinis\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 66 of file SbITest\&.H'\&.
+.PP
+Referenced by SBTest::recalc(), SBTest::SBTest(), SBTestAPLoad(), SBTestEOP::SBTestEOP(), SBTestEphem::SBTestEphem(), SBTestFrame::SBTestFrame(), SBTestNutation::SBTestNutation(), SBTestOceanTides::SBTestOceanTides(), SBTestPolarTides::SBTestPolarTides(), SBTestSolidTides::SBTestSolidTides(), SBTest::tFinis(), and SBTest::~SBTest()\&.
+.SS "\fBSB_TRF\fP* \fBSBTestAPLoad::TRF\fP\fC [private]\fP"
+.PP
+Definition at line 598 of file SbITest\&.H'\&.
+.PP
+Referenced by auxWidgetRt(), SBTestAPLoad(), and ~SBTestAPLoad()\&.
+.SS "\fBSBMJD\fP* \fBSBTest::TStart\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 65 of file SbITest\&.H'\&.
+.PP
+Referenced by SBTest::recalc(), SBTest::SBTest(), SBTestAPLoad(), SBTestEOP::SBTestEOP(), SBTestEphem::SBTestEphem(), SBTestFrame::SBTestFrame(), SBTestNutation::SBTestNutation(), SBTestOceanTides::SBTestOceanTides(), SBTestPolarTides::SBTestPolarTides(), SBTestSolidTides::SBTestSolidTides(), SBTest::tStart(), and SBTest::~SBTest()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

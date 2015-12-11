@@ -1,0 +1,587 @@
+.TH "SBSolutionBrowser" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBSolutionBrowser \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbISolution\&.H>\fP
+.PP
+Inherits \fBSBTabDialog\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSolutionBrowser\fP (\fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "\fB~SBSolutionBrowser\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBmodified\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBbatch4StochStChanged\fP (\fBQListViewItem\fP *)"
+.br
+.ti -1c
+.RI "void \fBbatch4StochSoChanged\fP (\fBQListViewItem\fP *)"
+.br
+.ti -1c
+.RI "void \fBbatch4StochEOPChanged\fP (\fBQListViewItem\fP *)"
+.br
+.ti -1c
+.RI "void \fBdumpSolution\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateCRF\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateTRF\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBmakeApply\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBmakeDefaults\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBdone\fP (int r)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBcloseEvent\fP (QCloseEvent *)"
+.br
+.ti -1c
+.RI "virtual void \fBacquireData\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQWidget\fP * \fBwGeneralInfo\fP ()"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBwWRMSs\fP ()"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBwGlobalPars\fP ()"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBwLocalStPars\fP ()"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBwLocalSoPars\fP ()"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBwLocalEOPPars\fP ()"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBwStochStPars\fP ()"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBwStochSoPars\fP ()"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBwStochEOPPars\fP ()"
+.br
+.ti -1c
+.RI "void \fBlookupParameters\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBisModified\fP"
+.br
+.ti -1c
+.RI "\fBSBProject\fP * \fBPrj\fP"
+.br
+.ti -1c
+.RI "\fBSBSolution\fP * \fBSolution\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlGenVarF\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlGenWRMS\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlGenNumObs\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlGenNumPars\fP"
+.br
+.ti -1c
+.RI "\fBQListView\fP * \fBBatchesLV\fP"
+.br
+.ti -1c
+.RI "bool \fBIsGlobalPars\fP"
+.br
+.ti -1c
+.RI "\fBQListView\fP * \fBGlobalParsLV\fP"
+.br
+.ti -1c
+.RI "\fBSBPlotCarrier\fP * \fBPC_SessRMS\fP"
+.br
+.ti -1c
+.RI "bool \fBIsLocalSta\fP"
+.br
+.ti -1c
+.RI "\fBSBStochParameterList\fP \fBLocalStPars\fP"
+.br
+.ti -1c
+.RI "\fBSBPlotCarrier\fP * \fBPC_LocalStPars\fP"
+.br
+.ti -1c
+.RI "\fBQList\fP< QString > \fBLocStationParameters\fP"
+.br
+.ti -1c
+.RI "\fBSBStationInfoList\fP \fBLocStations\fP"
+.br
+.ti -1c
+.RI "bool \fBIsLocalSou\fP"
+.br
+.ti -1c
+.RI "\fBSBStochParameterList\fP \fBLocalSoPars\fP"
+.br
+.ti -1c
+.RI "\fBSBPlotCarrier\fP * \fBPC_LocalSoPars\fP"
+.br
+.ti -1c
+.RI "\fBQList\fP< QString > \fBLocSourceParameters\fP"
+.br
+.ti -1c
+.RI "\fBSBSourceInfoList\fP \fBLocSources\fP"
+.br
+.ti -1c
+.RI "bool \fBIsLocalEOP\fP"
+.br
+.ti -1c
+.RI "\fBSBStochParameterList\fP \fBLocalEOPPars\fP"
+.br
+.ti -1c
+.RI "\fBSBPlotCarrier\fP * \fBPC_LocalEOPPars\fP"
+.br
+.ti -1c
+.RI "bool \fBIsStochSta\fP"
+.br
+.ti -1c
+.RI "\fBSBStochParameterList\fP \fBStochStPars\fP"
+.br
+.ti -1c
+.RI "\fBSBPlotCarrier\fP * \fBStochasticsStationsPC\fP"
+.br
+.ti -1c
+.RI "\fBSBPlot\fP * \fBStochasticsStationsPlot\fP"
+.br
+.ti -1c
+.RI "bool \fBIsStochSou\fP"
+.br
+.ti -1c
+.RI "\fBSBStochParameterList\fP \fBStochSoPars\fP"
+.br
+.ti -1c
+.RI "\fBSBPlotCarrier\fP * \fBStochasticsSourcesPC\fP"
+.br
+.ti -1c
+.RI "\fBSBPlot\fP * \fBStochasticsSourcesPlot\fP"
+.br
+.ti -1c
+.RI "bool \fBIsStochEOP\fP"
+.br
+.ti -1c
+.RI "\fBSBStochParameterList\fP \fBStochEOPPars\fP"
+.br
+.ti -1c
+.RI "\fBSBPlotCarrier\fP * \fBStochasticsEOPsPC\fP"
+.br
+.ti -1c
+.RI "\fBSBPlot\fP * \fBStochasticsEOPsPlot\fP"
+.br
+.ti -1c
+.RI "double \fBScale\fP"
+.br
+.ti -1c
+.RI "QString \fBScaleName\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 98 of file SbISolution\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBSolutionBrowser::SBSolutionBrowser (\fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 168 of file SbISolution\&.C'\&.
+.PP
+References ClassName(), dumpSolution(), SBLog::ERR, IsGlobalPars, IsLocalEOP, IsLocalSou, IsLocalSta, isModified, IsStochEOP, IsStochSou, IsStochSta, SBSetUp::loadProject(), Log, lookupParameters(), mainSetOperation(), SBNamed::name(), SBSetUp::path2Output(), PC_LocalEOPPars, PC_LocalSoPars, PC_LocalStPars, PC_SessRMS, Prj, SBLog::RUN, Scale, SBSetUp::scale(), ScaleName, SBSetUp::scaleName(), SBVersion::selfName(), SetUp, Solution, StochasticsEOPsPC, StochasticsEOPsPlot, StochasticsSourcesPC, StochasticsSourcesPlot, StochasticsStationsPC, StochasticsStationsPlot, updateCRF(), updateTRF(), Version, wGeneralInfo(), wGlobalPars(), wLocalEOPPars(), wLocalSoPars(), wLocalStPars(), SBLog::write(), wStochEOPPars(), wStochSoPars(), wStochStPars(), and wWRMSs()\&.
+.SS "SBSolutionBrowser::~SBSolutionBrowser ()"
+.PP
+Definition at line 250 of file SbISolution\&.C'\&.
+.PP
+References PC_LocalEOPPars, PC_LocalSoPars, PC_LocalStPars, PC_SessRMS, Prj, Solution, StochasticsEOPsPC, StochasticsSourcesPC, and StochasticsStationsPC\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void SBTabDialog::acquireData ()\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSBVLBISessionEditor\fP, \fBSBStationEditor\fP, \fBSBSiteEditor\fP, \fBSBParametersEditor\fP, \fBSBSourceEditor\fP, \fBSBModelEditor\fP, \fBSBProjectEdit\fP, and \fBSBSetupDialog\fP'\&.
+.PP
+Definition at line 91 of file SbInterface\&.H'\&.
+.PP
+Referenced by SBTabDialog::done(), and SBTabDialog::makeApply()\&.
+.SS "void SBSolutionBrowser::batch4StochEOPChanged (\fBQListViewItem\fP *LI)\fC [protected, slot]\fP"
+.PP
+Definition at line 1335 of file SbISolution\&.C'\&.
+.PP
+References SBPlotCarrier::AT_MJD, SBPlotCarrier::branches(), SBStochParameterList::clear(), SBPlotCarrier::columnNames(), SBPlotCarrier::createBranch(), SBPlotBranch::data(), SBPlot::dataChanged(), SBParameter::e(), SBStochParameterList::find(), SBPlotBranch::Idx, SBStochParameterList::inSort(), SBNamed::name(), SBSolution::prepare4Batch(), Prj, SBParameter::s(), SBParameter::scale(), SBMatrix::set(), SBPlotCarrier::setFile4SaveBaseName(), SBPlotCarrier::setStdVarIdx(), SBPlotCarrier::setType(), Solution, SBSolution::stochastic(), StochasticsEOPsPC, StochasticsEOPsPlot, StochEOPPars, SBDerivation::tEpoch(), and SBParameter::v()\&.
+.PP
+Referenced by wStochEOPPars()\&.
+.SS "void SBSolutionBrowser::batch4StochSoChanged (\fBQListViewItem\fP *LI)\fC [protected, slot]\fP"
+.PP
+Definition at line 1148 of file SbISolution\&.C'\&.
+.PP
+References SBObjectObsInfo::aka(), SBPlotCarrier::AT_MJD, SBPlotCarrier::branches(), ClassName(), SBStochParameterList::clear(), SBPlotCarrier::columnNames(), SBPlotCarrier::createBranch(), SBPlotBranch::data(), SBPlot::dataChanged(), SBParameter::e(), SBLog::ERR, SBSourceInfoList::find(), SBStochParameterList::find(), SBPlotCarrier::findBranch(), SBPlotBranch::Idx, SBStochParameterList::inSort(), SBLog::INTERFACE, Log, SBNamed::name(), SBObjectObsInfo::num(), SBSolution::prepare4Batch(), Prj, SBParameter::s(), SBParameter::scale(), SBMatrix::set(), SBPlotCarrier::setFile4SaveBaseName(), SBObjectObsInfo::setNum(), SBPlotCarrier::setStdVarIdx(), SBPlotCarrier::setType(), Solution, SBProject::sourceList(), SBSolution::stochastic(), StochasticsSourcesPC, StochasticsSourcesPlot, StochSoPars, SBDerivation::tEpoch(), SBParameter::v(), and SBLog::write()\&.
+.PP
+Referenced by wStochSoPars()\&.
+.SS "void SBSolutionBrowser::batch4StochStChanged (\fBQListViewItem\fP *LI)\fC [protected, slot]\fP"
+.PP
+Definition at line 942 of file SbISolution\&.C'\&.
+.PP
+References SBObjectObsInfo::aka(), SBPlotCarrier::AT_MJD, SBPlotCarrier::branches(), ClassName(), SBStochParameterList::clear(), SBPlotCarrier::columnNames(), SBPlotCarrier::createBranch(), SBPlotBranch::data(), SBPlot::dataChanged(), SBParameter::e(), SBLog::ERR, SBLog::ESTIMATOR, SBStationInfoList::find(), SBStochParameterList::find(), SBPlotCarrier::findBranch(), SBPlotBranch::Idx, SBStochParameterList::inSort(), SBLog::INTERFACE, Log, SBNamed::name(), SBObjectObsInfo::num(), SBSolution::prepare4Batch(), Prj, SBParameter::s(), SBParameter::scale(), SBMatrix::set(), SBPlotCarrier::setFile4SaveBaseName(), SBObjectObsInfo::setNum(), SBPlotCarrier::setStdVarIdx(), SBPlotCarrier::setType(), Solution, SBProject::stationList(), SBSolution::stochastic(), StochasticsStationsPC, StochasticsStationsPlot, StochStPars, SBDerivation::tEpoch(), SBStationID::toString(), SBParameter::v(), and SBLog::write()\&.
+.PP
+Referenced by wStochStPars()\&.
+.SS "virtual QString SBSolutionBrowser::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 104 of file SbISolution\&.H'\&.
+.PP
+Referenced by batch4StochSoChanged(), batch4StochStChanged(), lookupParameters(), SBSolutionBrowser(), updateCRF(), updateTRF(), wLocalEOPPars(), wLocalSoPars(), and wLocalStPars()\&.
+.SS "virtual void SBTabDialog::closeEvent (QCloseEvent *)\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSBSiteEditor\fP, and \fBSBParametersEditor\fP'\&.
+.PP
+Definition at line 90 of file SbInterface\&.H'\&.
+.SS "virtual void SBTabDialog::done (intr)\fC [inline, protected, virtual, slot, inherited]\fP"
+.PP
+Reimplemented in \fBSBSiteEditor\fP, and \fBSBProjectEdit\fP'\&.
+.PP
+Definition at line 82 of file SbInterface\&.H'\&.
+.PP
+References SBTabDialog::acquireData()\&.
+.SS "void SBSolutionBrowser::dumpSolution ()\fC [protected, slot]\fP"
+.PP
+Definition at line 312 of file SbISolution\&.C'\&.
+.PP
+References SBSolution::dumpParameters(), and Solution\&.
+.PP
+Referenced by SBSolutionBrowser()\&.
+.SS "void SBSolutionBrowser::lookupParameters ()\fC [private]\fP"
+.PP
+Definition at line 496 of file SbISolution\&.C'\&.
+.PP
+References SBObjectObsInfo::aka(), ClassName(), SBStochParameterList::clear(), SBLog::ERR, SBLog::ESTIMATOR, SBStationInfoList::find(), SBSourceInfoList::find(), SBStochParameterList::find(), SBSolution::global(), SBLog::INF, SBStochParameterList::inSort(), IsGlobalPars, IsLocalEOP, IsLocalSou, IsLocalSta, IsStochEOP, IsStochSou, IsStochSta, SBSolution::local(), LocalEOPPars, LocalSoPars, LocalStPars, LocSourceParameters, LocSources, LocStationParameters, LocStations, Log, SBNamed::name(), SBSolution::prepare4Batch(), Prj, SBParameter::scale(), SBObjectObsInfo::setNum(), Solution, SBProject::sourceList(), SBSolution::statByBatch(), SBProject::stationList(), SBSolution::stochastic(), SBStationID::toString(), and SBLog::write()\&.
+.PP
+Referenced by SBSolutionBrowser()\&.
+.SS "virtual void SBTabDialog::makeApply ()\fC [inline, protected, virtual, slot, inherited]\fP"
+.PP
+Reimplemented in \fBSBVLBISessionEditor\fP, \fBSBStationEditor\fP, \fBSBSiteEditor\fP, \fBSBParametersEditor\fP, \fBSBSourceEditor\fP, \fBSBModelEditor\fP, \fBSBProjectEdit\fP, and \fBSBSetupDialog\fP'\&.
+.PP
+Definition at line 78 of file SbInterface\&.H'\&.
+.PP
+References SBTabDialog::acquireData()\&.
+.SS "virtual void SBTabDialog::makeDefaults ()\fC [inline, protected, virtual, slot, inherited]\fP"
+.PP
+Reimplemented in \fBSBSetupDialog\fP'\&.
+.PP
+Definition at line 79 of file SbInterface\&.H'\&.
+.SS "void SBSolutionBrowser::modified (boolisModified_)\fC [protected, slot]\fP"
+.PP
+Definition at line 307 of file SbISolution\&.C'\&.
+.PP
+References isModified\&.
+.SS "void SBSolutionBrowser::updateCRF ()\fC [protected, slot]\fP"
+.PP
+Definition at line 1421 of file SbISolution\&.C'\&.
+.PP
+References SBAttributed::addAttr(), SBSymMatrix::at(), ClassName(), SBLog::DATA, SBLog::DBG, SBSource::dn_t(), SBSourceInfo::EstCoo, SBSourceInfoList::find(), SB_CRF::finisRun(), SB_CRF::first(), SBSource::getGlobalParameters4Report(), SBParameterList::idx(), SBAttributed::isAttr(), SBSetUp::loadCRF(), SBSolution::loadGlbCor(), Log, SB_CRF::next(), SBSourceInfo::notValid, SBSource::OrigEstimated, SBSource::p_DN(), SBSource::p_RA(), SB_CRF::prepare4Run(), Prj, SBSource::ra_t(), SBSetUp::saveCRF(), SBSource::setCorrRA_DN(), SBSource::setDN(), SBSource::setRA(), SetUp, Solution, SBProject::sourceList(), and SBLog::write()\&.
+.PP
+Referenced by SBSolutionBrowser()\&.
+.SS "void SBSolutionBrowser::updateTRF ()\fC [protected, slot]\fP"
+.PP
+Definition at line 1476 of file SbISolution\&.C'\&.
+.PP
+References SBAttributed::addAttr(), ClassName(), SBLog::DATA, SBLog::DBG, SBStationInfo::EstCoo, SBStationInfoList::find(), SB_TRF::finisRun(), SBStationList::first(), SB_TRF::first(), SBStation::getGlobalParameters4UpdateTRF(), SBStation::id(), SBAttributed::isAttr(), SBSetUp::loadTRF(), Log, SBStationList::next(), SB_TRF::next(), SBStationInfo::notValid, SBStation::OrigEstimated, SB_TRF::prepare4Run(), Prj, SBSetUp::saveTRF(), SetUp, Solution, SBProject::stationList(), SBSite::stations(), and SBLog::write()\&.
+.PP
+Referenced by SBSolutionBrowser()\&.
+.SS "\fBQWidget\fP * SBSolutionBrowser::wGeneralInfo ()\fC [private]\fP"
+.PP
+Definition at line 322 of file SbISolution\&.C'\&.
+.PP
+References BatchesLV, lGenNumObs, lGenNumPars, lGenVarF, lGenWRMS, SBStatistics::numConstr(), SBStatistics::numObs(), SBStatistics::numPars(), Scale, ScaleName, Solution, SBSolution::statByBatch(), SBSolution::statGeneral(), SBStatistics::VarFactor_unit(), and SBStatistics::WRMS_unit()\&.
+.PP
+Referenced by SBSolutionBrowser()\&.
+.SS "\fBQWidget\fP * SBSolutionBrowser::wGlobalPars ()\fC [private]\fP"
+.PP
+Definition at line 417 of file SbISolution\&.C'\&.
+.PP
+References SBSolution::global(), GlobalParsLV, and Solution\&.
+.PP
+Referenced by SBSolutionBrowser()\&.
+.SS "\fBQWidget\fP * SBSolutionBrowser::wLocalEOPPars ()\fC [private]\fP"
+.PP
+Definition at line 829 of file SbISolution\&.C'\&.
+.PP
+References SBPlotCarrier::AT_MJD, SBPlotCarrier::branches(), ClassName(), SBPlotCarrier::columnNames(), SBPlotCarrier::createBranch(), SBPlotBranch::data(), SBParameter::e(), SBLog::ERR, SBPlotBranch::Idx, SBLog::INTERFACE, LocalEOPPars, Log, SBNamed::name(), PC_LocalEOPPars, Prj, SBParameter::s(), SBParameter::scale(), SBMatrix::set(), SBPlotCarrier::setFile4SaveBaseName(), SBPlotCarrier::setStdVarIdx(), SBPlotCarrier::setType(), SBDerivation::tEpoch(), SBParameter::v(), and SBLog::write()\&.
+.PP
+Referenced by SBSolutionBrowser()\&.
+.SS "\fBQWidget\fP * SBSolutionBrowser::wLocalSoPars ()\fC [private]\fP"
+.PP
+Definition at line 745 of file SbISolution\&.C'\&.
+.PP
+References SBObjectObsInfo::aka(), SBPlotCarrier::AT_MJD, ClassName(), SBPlotCarrier::columnNames(), SBPlotCarrier::createBranch(), SBPlotBranch::data(), SBParameter::e(), SBLog::ERR, SBSourceInfoList::find(), SBPlotCarrier::findBranch(), SBPlotBranch::Idx, SBLog::INTERFACE, LocalSoPars, LocSourceParameters, LocSources, Log, SBNamed::name(), SBObjectObsInfo::num(), PC_LocalSoPars, Prj, SBParameter::s(), SBParameter::scale(), SBMatrix::set(), SBPlotCarrier::setFile4SaveBaseName(), SBPlotCarrier::setStdVarIdx(), SBPlotCarrier::setType(), SBDerivation::tEpoch(), SBParameter::v(), and SBLog::write()\&.
+.PP
+Referenced by SBSolutionBrowser()\&.
+.SS "\fBQWidget\fP * SBSolutionBrowser::wLocalStPars ()\fC [private]\fP"
+.PP
+Definition at line 646 of file SbISolution\&.C'\&.
+.PP
+References SBObjectObsInfo::aka(), SBPlotCarrier::AT_MJD, ClassName(), SBPlotCarrier::columnNames(), SBPlotCarrier::createBranch(), SBPlotBranch::data(), SBParameter::e(), SBLog::ERR, SBLog::ESTIMATOR, SBStationInfoList::find(), SBPlotCarrier::findBranch(), SBPlotBranch::Idx, SBLog::INTERFACE, LocalStPars, LocStationParameters, LocStations, Log, SBNamed::name(), SBObjectObsInfo::num(), PC_LocalStPars, Prj, SBParameter::s(), SBParameter::scale(), SBMatrix::set(), SBPlotCarrier::setFile4SaveBaseName(), SBPlotCarrier::setStdVarIdx(), SBPlotCarrier::setType(), SBDerivation::tEpoch(), SBParameter::v(), and SBLog::write()\&.
+.PP
+Referenced by SBSolutionBrowser()\&.
+.SS "\fBQWidget\fP * SBSolutionBrowser::wStochEOPPars ()\fC [private]\fP"
+.PP
+Definition at line 1288 of file SbISolution\&.C'\&.
+.PP
+References batch4StochEOPChanged(), SBNamed::name(), Prj, Scale, SBPlotCarrier::setFile4SaveBaseName(), Solution, SBSolution::statByBatch(), StochasticsEOPsPC, and StochasticsEOPsPlot\&.
+.PP
+Referenced by SBSolutionBrowser()\&.
+.SS "\fBQWidget\fP * SBSolutionBrowser::wStochSoPars ()\fC [private]\fP"
+.PP
+Definition at line 1101 of file SbISolution\&.C'\&.
+.PP
+References batch4StochSoChanged(), SBNamed::name(), Prj, Scale, SBPlotCarrier::setFile4SaveBaseName(), Solution, SBSolution::statByBatch(), StochasticsSourcesPC, and StochasticsSourcesPlot\&.
+.PP
+Referenced by SBSolutionBrowser()\&.
+.SS "\fBQWidget\fP * SBSolutionBrowser::wStochStPars ()\fC [private]\fP"
+.PP
+Definition at line 894 of file SbISolution\&.C'\&.
+.PP
+References batch4StochStChanged(), SBNamed::name(), Prj, Scale, SBPlotCarrier::setFile4SaveBaseName(), Solution, SBSolution::statByBatch(), StochasticsStationsPC, and StochasticsStationsPlot\&.
+.PP
+Referenced by SBSolutionBrowser()\&.
+.SS "\fBQWidget\fP * SBSolutionBrowser::wWRMSs ()\fC [private]\fP"
+.PP
+Definition at line 456 of file SbISolution\&.C'\&.
+.PP
+References SBPlotCarrier::AT_MJD, SBPlotCarrier::branches(), SBPlotCarrier::columnNames(), SBPlotCarrier::createBranch(), SBPlotBranch::data(), SBPlotBranch::Idx, SBNamed::name(), PC_SessRMS, SBPlot::PM_HAS_HAVE_ZERO, SBPlot::PM_IMPULSE, Prj, SBSetUp::scale(), SBSetUp::scaleName(), SBMatrix::set(), SBPlotCarrier::setFile4SaveBaseName(), SBPlotCarrier::setType(), SetUp, and SBProject::VLBIsessionList()\&.
+.PP
+Referenced by SBSolutionBrowser()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBQListView\fP* \fBSBSolutionBrowser::BatchesLV\fP\fC [private]\fP"
+.PP
+Definition at line 142 of file SbISolution\&.H'\&.
+.PP
+Referenced by wGeneralInfo()\&.
+.SS "\fBQListView\fP* \fBSBSolutionBrowser::GlobalParsLV\fP\fC [private]\fP"
+.PP
+Definition at line 148 of file SbISolution\&.H'\&.
+.PP
+Referenced by wGlobalPars()\&.
+.SS "bool \fBSBSolutionBrowser::IsGlobalPars\fP\fC [private]\fP"
+.PP
+Definition at line 147 of file SbISolution\&.H'\&.
+.PP
+Referenced by lookupParameters(), and SBSolutionBrowser()\&.
+.SS "bool \fBSBSolutionBrowser::IsLocalEOP\fP\fC [private]\fP"
+.PP
+Definition at line 169 of file SbISolution\&.H'\&.
+.PP
+Referenced by lookupParameters(), and SBSolutionBrowser()\&.
+.SS "bool \fBSBSolutionBrowser::IsLocalSou\fP\fC [private]\fP"
+.PP
+Definition at line 162 of file SbISolution\&.H'\&.
+.PP
+Referenced by lookupParameters(), and SBSolutionBrowser()\&.
+.SS "bool \fBSBSolutionBrowser::IsLocalSta\fP\fC [private]\fP"
+.PP
+Definition at line 155 of file SbISolution\&.H'\&.
+.PP
+Referenced by lookupParameters(), and SBSolutionBrowser()\&.
+.SS "bool \fBSBSolutionBrowser::isModified\fP\fC [private]\fP"
+.PP
+Definition at line 117 of file SbISolution\&.H'\&.
+.PP
+Referenced by modified(), and SBSolutionBrowser()\&.
+.SS "bool \fBSBSolutionBrowser::IsStochEOP\fP\fC [private]\fP"
+.PP
+Definition at line 190 of file SbISolution\&.H'\&.
+.PP
+Referenced by lookupParameters(), and SBSolutionBrowser()\&.
+.SS "bool \fBSBSolutionBrowser::IsStochSou\fP\fC [private]\fP"
+.PP
+Definition at line 183 of file SbISolution\&.H'\&.
+.PP
+Referenced by lookupParameters(), and SBSolutionBrowser()\&.
+.SS "bool \fBSBSolutionBrowser::IsStochSta\fP\fC [private]\fP"
+.PP
+Definition at line 177 of file SbISolution\&.H'\&.
+.PP
+Referenced by lookupParameters(), and SBSolutionBrowser()\&.
+.SS "QLabel* \fBSBSolutionBrowser::lGenNumObs\fP\fC [private]\fP"
+.PP
+Definition at line 140 of file SbISolution\&.H'\&.
+.PP
+Referenced by wGeneralInfo()\&.
+.SS "QLabel* \fBSBSolutionBrowser::lGenNumPars\fP\fC [private]\fP"
+.PP
+Definition at line 141 of file SbISolution\&.H'\&.
+.PP
+Referenced by wGeneralInfo()\&.
+.SS "QLabel* \fBSBSolutionBrowser::lGenVarF\fP\fC [private]\fP"
+.PP
+Definition at line 138 of file SbISolution\&.H'\&.
+.PP
+Referenced by wGeneralInfo()\&.
+.SS "QLabel* \fBSBSolutionBrowser::lGenWRMS\fP\fC [private]\fP"
+.PP
+Definition at line 139 of file SbISolution\&.H'\&.
+.PP
+Referenced by wGeneralInfo()\&.
+.SS "\fBSBStochParameterList\fP \fBSBSolutionBrowser::LocalEOPPars\fP\fC [private]\fP"
+.PP
+Definition at line 170 of file SbISolution\&.H'\&.
+.PP
+Referenced by lookupParameters(), and wLocalEOPPars()\&.
+.SS "\fBSBStochParameterList\fP \fBSBSolutionBrowser::LocalSoPars\fP\fC [private]\fP"
+.PP
+Definition at line 163 of file SbISolution\&.H'\&.
+.PP
+Referenced by lookupParameters(), and wLocalSoPars()\&.
+.SS "\fBSBStochParameterList\fP \fBSBSolutionBrowser::LocalStPars\fP\fC [private]\fP"
+.PP
+Definition at line 156 of file SbISolution\&.H'\&.
+.PP
+Referenced by lookupParameters(), and wLocalStPars()\&.
+.SS "\fBQList\fP<QString> \fBSBSolutionBrowser::LocSourceParameters\fP\fC [private]\fP"
+.PP
+Definition at line 165 of file SbISolution\&.H'\&.
+.PP
+Referenced by lookupParameters(), and wLocalSoPars()\&.
+.SS "\fBSBSourceInfoList\fP \fBSBSolutionBrowser::LocSources\fP\fC [private]\fP"
+.PP
+Definition at line 166 of file SbISolution\&.H'\&.
+.PP
+Referenced by lookupParameters(), and wLocalSoPars()\&.
+.SS "\fBQList\fP<QString> \fBSBSolutionBrowser::LocStationParameters\fP\fC [private]\fP"
+.PP
+Definition at line 158 of file SbISolution\&.H'\&.
+.PP
+Referenced by lookupParameters(), and wLocalStPars()\&.
+.SS "\fBSBStationInfoList\fP \fBSBSolutionBrowser::LocStations\fP\fC [private]\fP"
+.PP
+Definition at line 159 of file SbISolution\&.H'\&.
+.PP
+Referenced by lookupParameters(), and wLocalStPars()\&.
+.SS "\fBSBPlotCarrier\fP* \fBSBSolutionBrowser::PC_LocalEOPPars\fP\fC [private]\fP"
+.PP
+Definition at line 171 of file SbISolution\&.H'\&.
+.PP
+Referenced by SBSolutionBrowser(), wLocalEOPPars(), and ~SBSolutionBrowser()\&.
+.SS "\fBSBPlotCarrier\fP* \fBSBSolutionBrowser::PC_LocalSoPars\fP\fC [private]\fP"
+.PP
+Definition at line 164 of file SbISolution\&.H'\&.
+.PP
+Referenced by SBSolutionBrowser(), wLocalSoPars(), and ~SBSolutionBrowser()\&.
+.SS "\fBSBPlotCarrier\fP* \fBSBSolutionBrowser::PC_LocalStPars\fP\fC [private]\fP"
+.PP
+Definition at line 157 of file SbISolution\&.H'\&.
+.PP
+Referenced by SBSolutionBrowser(), wLocalStPars(), and ~SBSolutionBrowser()\&.
+.SS "\fBSBPlotCarrier\fP* \fBSBSolutionBrowser::PC_SessRMS\fP\fC [private]\fP"
+.PP
+Definition at line 149 of file SbISolution\&.H'\&.
+.PP
+Referenced by SBSolutionBrowser(), wWRMSs(), and ~SBSolutionBrowser()\&.
+.SS "\fBSBProject\fP* \fBSBSolutionBrowser::Prj\fP\fC [private]\fP"
+.PP
+Definition at line 118 of file SbISolution\&.H'\&.
+.PP
+Referenced by batch4StochEOPChanged(), batch4StochSoChanged(), batch4StochStChanged(), lookupParameters(), SBSolutionBrowser(), updateCRF(), updateTRF(), wLocalEOPPars(), wLocalSoPars(), wLocalStPars(), wStochEOPPars(), wStochSoPars(), wStochStPars(), wWRMSs(), and ~SBSolutionBrowser()\&.
+.SS "double \fBSBSolutionBrowser::Scale\fP\fC [private]\fP"
+.PP
+Definition at line 200 of file SbISolution\&.H'\&.
+.PP
+Referenced by SBSolutionBrowser(), wGeneralInfo(), wStochEOPPars(), wStochSoPars(), and wStochStPars()\&.
+.SS "QString \fBSBSolutionBrowser::ScaleName\fP\fC [private]\fP"
+.PP
+Definition at line 201 of file SbISolution\&.H'\&.
+.PP
+Referenced by SBSolutionBrowser(), and wGeneralInfo()\&.
+.SS "\fBSBSolution\fP* \fBSBSolutionBrowser::Solution\fP\fC [private]\fP"
+.PP
+Definition at line 119 of file SbISolution\&.H'\&.
+.PP
+Referenced by batch4StochEOPChanged(), batch4StochSoChanged(), batch4StochStChanged(), dumpSolution(), lookupParameters(), SBSolutionBrowser(), updateCRF(), updateTRF(), wGeneralInfo(), wGlobalPars(), wStochEOPPars(), wStochSoPars(), wStochStPars(), and ~SBSolutionBrowser()\&.
+.SS "\fBSBPlotCarrier\fP* \fBSBSolutionBrowser::StochasticsEOPsPC\fP\fC [private]\fP"
+.PP
+Definition at line 192 of file SbISolution\&.H'\&.
+.PP
+Referenced by batch4StochEOPChanged(), SBSolutionBrowser(), wStochEOPPars(), and ~SBSolutionBrowser()\&.
+.SS "\fBSBPlot\fP* \fBSBSolutionBrowser::StochasticsEOPsPlot\fP\fC [private]\fP"
+.PP
+Definition at line 193 of file SbISolution\&.H'\&.
+.PP
+Referenced by batch4StochEOPChanged(), SBSolutionBrowser(), and wStochEOPPars()\&.
+.SS "\fBSBPlotCarrier\fP* \fBSBSolutionBrowser::StochasticsSourcesPC\fP\fC [private]\fP"
+.PP
+Definition at line 185 of file SbISolution\&.H'\&.
+.PP
+Referenced by batch4StochSoChanged(), SBSolutionBrowser(), wStochSoPars(), and ~SBSolutionBrowser()\&.
+.SS "\fBSBPlot\fP* \fBSBSolutionBrowser::StochasticsSourcesPlot\fP\fC [private]\fP"
+.PP
+Definition at line 186 of file SbISolution\&.H'\&.
+.PP
+Referenced by batch4StochSoChanged(), SBSolutionBrowser(), and wStochSoPars()\&.
+.SS "\fBSBPlotCarrier\fP* \fBSBSolutionBrowser::StochasticsStationsPC\fP\fC [private]\fP"
+.PP
+Definition at line 179 of file SbISolution\&.H'\&.
+.PP
+Referenced by batch4StochStChanged(), SBSolutionBrowser(), wStochStPars(), and ~SBSolutionBrowser()\&.
+.SS "\fBSBPlot\fP* \fBSBSolutionBrowser::StochasticsStationsPlot\fP\fC [private]\fP"
+.PP
+Definition at line 180 of file SbISolution\&.H'\&.
+.PP
+Referenced by batch4StochStChanged(), SBSolutionBrowser(), and wStochStPars()\&.
+.SS "\fBSBStochParameterList\fP \fBSBSolutionBrowser::StochEOPPars\fP\fC [private]\fP"
+.PP
+Definition at line 191 of file SbISolution\&.H'\&.
+.PP
+Referenced by batch4StochEOPChanged()\&.
+.SS "\fBSBStochParameterList\fP \fBSBSolutionBrowser::StochSoPars\fP\fC [private]\fP"
+.PP
+Definition at line 184 of file SbISolution\&.H'\&.
+.PP
+Referenced by batch4StochSoChanged()\&.
+.SS "\fBSBStochParameterList\fP \fBSBSolutionBrowser::StochStPars\fP\fC [private]\fP"
+.PP
+Definition at line 178 of file SbISolution\&.H'\&.
+.PP
+Referenced by batch4StochStChanged()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

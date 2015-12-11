@@ -1,0 +1,103 @@
+.TH "SBAliasListItem" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBAliasListItem \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIStuffSource\&.H>\fP
+.PP
+Inherits \fBQListViewItem\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBAliasListItem\fP (\fBQListView\fP *, const char *=0, const char *=0)"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual QString \fBtext\fP (int) const "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBAlias\fP"
+.br
+.ti -1c
+.RI "QString \fBReference\fP"
+.br
+.ti -1c
+.RI "bool \fBisFaked\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSBStuffSources\fP"
+.br
+.ti -1c
+.RI "class \fBSBStuffStations\fP"
+.br
+.ti -1c
+.RI "class \fBSBAliasEditor\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 82 of file SbIStuffSource\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBAliasListItem::SBAliasListItem (\fBQListView\fP *parent, const char *Ali_ = \fC0\fP, const char *Ref_ = \fC0\fP)"
+.PP
+Definition at line 203 of file SbIStuffSource\&.C'\&.
+.PP
+References Alias, isFaked, and Reference\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBAliasListItem::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 90 of file SbIStuffSource\&.H'\&.
+.SS "QString SBAliasListItem::text (intcol) const\fC [virtual]\fP"
+.PP
+Definition at line 220 of file SbIStuffSource\&.C'\&.
+.PP
+References Alias, and Reference\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBSBAliasEditor\fP\fC [friend]\fP"
+.PP
+Definition at line 94 of file SbIStuffSource\&.H'\&.
+.SS "friend class \fBSBStuffSources\fP\fC [friend]\fP"
+.PP
+Definition at line 92 of file SbIStuffSource\&.H'\&.
+.SS "friend class \fBSBStuffStations\fP\fC [friend]\fP"
+.PP
+Definition at line 93 of file SbIStuffSource\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString \fBSBAliasListItem::Alias\fP\fC [private]\fP"
+.PP
+Definition at line 85 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by SBStuffSources::deleteEntryA(), SBStuffStations::deleteEntryA(), SBAliasEditor::SBAliasEditor(), SBAliasListItem(), and text()\&.
+.SS "bool \fBSBAliasListItem::isFaked\fP\fC [private]\fP"
+.PP
+Definition at line 87 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by SBAliasListItem()\&.
+.SS "QString \fBSBAliasListItem::Reference\fP\fC [private]\fP"
+.PP
+Definition at line 86 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by SBAliasEditor::accept(), SBStuffSources::deleteEntryA(), SBStuffStations::deleteEntryA(), SBAliasEditor::SBAliasEditor(), SBAliasListItem(), and text()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

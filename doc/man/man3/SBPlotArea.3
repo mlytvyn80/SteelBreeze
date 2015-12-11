@@ -1,0 +1,861 @@
+.TH "SBPlotArea" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBPlotArea \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIPlot\&.H>\fP
+.PP
+Inherits \fBQWidget\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBPlotArea\fP (\fBSBPlotCarrier\fP *, \fBQWidget\fP *parent=0, const char *name=0, WFlags f=0)"
+.br
+.ti -1c
+.RI "virtual \fB~SBPlotArea\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "unsigned int \fBxCol\fP () const "
+.br
+.ti -1c
+.RI "unsigned int \fByCol\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetXCol\fP (unsigned int)"
+.br
+.ti -1c
+.RI "void \fBsetYCol\fP (unsigned int)"
+.br
+.ti -1c
+.RI "void \fBsetBPSaturation\fP (int)"
+.br
+.ti -1c
+.RI "void \fBsetBPValue\fP (int)"
+.br
+.ti -1c
+.RI "void \fBsetIsPlotPoints\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetIsPlotLines\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetIsPlotErrBars\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetIsPlotImpulses\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetIsHasHaveZero\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetIsAllData\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetIsLimitsOnVisible\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetIsStdVar\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBoutput4Print\fP (QPainter *, int, int)"
+.br
+.ti -1c
+.RI "void \fBoutput4Files\fP ()"
+.br
+.ti -1c
+.RI "void \fBdataChanged\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBshowData\fP (QPainter *)"
+.br
+.ti -1c
+.RI "void \fBdrawFrames\fP (QPainter *)"
+.br
+.ti -1c
+.RI "void \fBdrawYTics\fP (QPainter *)"
+.br
+.ti -1c
+.RI "void \fBdrawXTics\fP (QPainter *)"
+.br
+.ti -1c
+.RI "void \fBdrawXmjdTics\fP (QPainter *)"
+.br
+.ti -1c
+.RI "void \fBdrawData\fP (QPainter *)"
+.br
+.ti -1c
+.RI "void \fBgetLimits\fP ()"
+.br
+.ti -1c
+.RI "void \fBcalcTransforms\fP ()"
+.br
+.ti -1c
+.RI "void \fBdefineAreas\fP (QPainter *)"
+.br
+.ti -1c
+.RI "int \fBcalcX\fP (double X_)"
+.br
+.ti -1c
+.RI "int \fBcalcY\fP (double Y_)"
+.br
+.ti -1c
+.RI "void \fBsetBranchColors\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitBranchPens\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBpaintEvent\fP (QPaintEvent *)"
+.br
+.ti -1c
+.RI "virtual void \fBresizeEvent\fP (QResizeEvent *)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBWidth\fP"
+.br
+.ti -1c
+.RI "int \fBHeight\fP"
+.br
+.ti -1c
+.RI "int \fBUpMarg\fP"
+.br
+.ti -1c
+.RI "int \fBRtMarg\fP"
+.br
+.ti -1c
+.RI "int \fBXLabelWidth\fP"
+.br
+.ti -1c
+.RI "int \fBLabelsHeight\fP"
+.br
+.ti -1c
+.RI "int \fBYLabelWidth\fP"
+.br
+.ti -1c
+.RI "int \fBYLabelHeight\fP"
+.br
+.ti -1c
+.RI "int \fBXTicsWidth\fP"
+.br
+.ti -1c
+.RI "int \fBYTicsWidth\fP"
+.br
+.ti -1c
+.RI "int \fBXFrameBegin\fP"
+.br
+.ti -1c
+.RI "int \fBXFrameEnd\fP"
+.br
+.ti -1c
+.RI "int \fBYFrameBegin\fP"
+.br
+.ti -1c
+.RI "int \fBYFrameEnd\fP"
+.br
+.ti -1c
+.RI "int \fBXDataBegin\fP"
+.br
+.ti -1c
+.RI "int \fBXDataEnd\fP"
+.br
+.ti -1c
+.RI "int \fBYDataBegin\fP"
+.br
+.ti -1c
+.RI "int \fBYDataEnd\fP"
+.br
+.ti -1c
+.RI "int \fBTitleWidth\fP"
+.br
+.ti -1c
+.RI "int \fBNumOfXTics\fP"
+.br
+.ti -1c
+.RI "int \fBXStepP\fP"
+.br
+.ti -1c
+.RI "double \fBXTicsStep\fP"
+.br
+.ti -1c
+.RI "double \fBXTicsBias\fP"
+.br
+.ti -1c
+.RI "bool \fBisXTicsBiased\fP"
+.br
+.ti -1c
+.RI "bool \fBisXTicsMJD\fP"
+.br
+.ti -1c
+.RI "int \fBXTicsMJD\fP"
+.br
+.ti -1c
+.RI "int \fBNumOfYTics\fP"
+.br
+.ti -1c
+.RI "int \fBYStepP\fP"
+.br
+.ti -1c
+.RI "double \fBYTicsStep\fP"
+.br
+.ti -1c
+.RI "double \fBYTicsBias\fP"
+.br
+.ti -1c
+.RI "bool \fBisYTicsBiased\fP"
+.br
+.ti -1c
+.RI "QString * \fBXLabel\fP"
+.br
+.ti -1c
+.RI "QString * \fBYLabel\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBXcol\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBYcol\fP"
+.br
+.ti -1c
+.RI "double \fBMaxX\fP"
+.br
+.ti -1c
+.RI "double \fBMaxY\fP"
+.br
+.ti -1c
+.RI "double \fBMinX\fP"
+.br
+.ti -1c
+.RI "double \fBMinY\fP"
+.br
+.ti -1c
+.RI "double \fBf_Ax\fP"
+.br
+.ti -1c
+.RI "double \fBf_Bx\fP"
+.br
+.ti -1c
+.RI "double \fBf_Ay\fP"
+.br
+.ti -1c
+.RI "double \fBf_By\fP"
+.br
+.ti -1c
+.RI "QPen * \fBFramePen\fP"
+.br
+.ti -1c
+.RI "QPen * \fBBranchPens\fP"
+.br
+.ti -1c
+.RI "QPen * \fBZeroPen\fP"
+.br
+.ti -1c
+.RI "QPen * \fBBarPen\fP"
+.br
+.ti -1c
+.RI "int \fBBPSaturation\fP"
+.br
+.ti -1c
+.RI "int \fBBPValue\fP"
+.br
+.ti -1c
+.RI "bool \fBIsPlotPoints\fP"
+.br
+.ti -1c
+.RI "bool \fBIsPlotLines\fP"
+.br
+.ti -1c
+.RI "bool \fBIsPlotErrBars\fP"
+.br
+.ti -1c
+.RI "bool \fBIsPlotImpulses\fP"
+.br
+.ti -1c
+.RI "bool \fBIsLimitsOnVisible\fP"
+.br
+.ti -1c
+.RI "bool \fBIsAllData\fP"
+.br
+.ti -1c
+.RI "bool \fBIsStdVar\fP"
+.br
+.ti -1c
+.RI "\fBSBPlotCarrier\fP * \fBPlotCarrier\fP"
+.br
+.ti -1c
+.RI "bool \fBIsHasHaveZero\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static QString \fBXLabel4Unknown\fP"
+.br
+.ti -1c
+.RI "static QString \fBYLabel4Unknown\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 161 of file SbIPlot\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBPlotArea::SBPlotArea (\fBSBPlotCarrier\fP *PlotCarrier_, \fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 174 of file SbIPlot\&.C'\&.
+.PP
+References BarPen, BPSaturation, BPValue, BranchPens, f_Ax, f_Ay, f_Bx, f_By, FramePen, Height, initBranchPens(), IsAllData, IsHasHaveZero, IsLimitsOnVisible, IsPlotErrBars, IsPlotImpulses, IsPlotLines, IsPlotPoints, IsStdVar, isXTicsBiased, isXTicsMJD, isYTicsBiased, LabelsHeight, MaxX, MaxY, MinX, MinY, NumOfXTics, NumOfYTics, PlotCarrier, RtMarg, setXCol(), setYCol(), TitleWidth, UpMarg, Width, Xcol, XDataBegin, XDataEnd, XFrameBegin, XFrameEnd, XLabel, XLabel4Unknown, XLabelWidth, XStepP, XTicsBias, XTicsMJD, XTicsStep, XTicsWidth, Ycol, YDataBegin, YDataEnd, YFrameBegin, YFrameEnd, YLabel, YLabel4Unknown, YLabelHeight, YLabelWidth, YStepP, YTicsBias, YTicsStep, YTicsWidth, and ZeroPen\&.
+.SS "SBPlotArea::~SBPlotArea ()\fC [virtual]\fP"
+.PP
+Definition at line 259 of file SbIPlot\&.C'\&.
+.PP
+References BarPen, BranchPens, FramePen, and ZeroPen\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBPlotArea::calcTransforms ()\fC [protected]\fP"
+.PP
+Definition at line 425 of file SbIPlot\&.C'\&.
+.PP
+References f_Ax, f_Ay, f_Bx, f_By, MaxX, MaxY, MinX, MinY, XDataBegin, XDataEnd, YDataBegin, and YDataEnd\&.
+.PP
+Referenced by showData()\&.
+.SS "int SBPlotArea::calcX (doubleX_)\fC [inline, protected]\fP"
+.PP
+Definition at line 288 of file SbIPlot\&.H'\&.
+.PP
+References f_Ax, f_Bx, and Width\&.
+.PP
+Referenced by drawData(), drawXmjdTics(), and drawXTics()\&.
+.SS "int SBPlotArea::calcY (doubleY_)\fC [inline, protected]\fP"
+.PP
+Definition at line 290 of file SbIPlot\&.H'\&.
+.PP
+References f_Ay, f_By, and Height\&.
+.PP
+Referenced by drawData(), and drawYTics()\&.
+.SS "virtual QString SBPlotArea::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 253 of file SbIPlot\&.H'\&.
+.PP
+Referenced by output4Files()\&.
+.SS "void SBPlotArea::dataChanged ()\fC [inline]\fP"
+.PP
+Definition at line 276 of file SbIPlot\&.H'\&.
+.PP
+References initBranchPens()\&.
+.PP
+Referenced by SBPlot::dataChanged()\&.
+.SS "void SBPlotArea::defineAreas (QPainter *P)\fC [protected]\fP"
+.PP
+Definition at line 434 of file SbIPlot\&.C'\&.
+.PP
+References SBMJD::F_DateShort, Height, isXTicsBiased, isXTicsMJD, isYTicsBiased, LabelsHeight, MaxX, MaxY, MinX, MinY, SBNamed::name(), NumOfXTics, NumOfYTics, PlotCarrier, RtMarg, TitleWidth, UpMarg, Width, XDataBegin, XDataEnd, XFrameBegin, XFrameEnd, XLabel, XLabelWidth, XStepP, XTicsBias, XTicsMJD, XTicsStep, XTicsWidth, YDataBegin, YDataEnd, YFrameBegin, YFrameEnd, YLabel, YLabelHeight, YLabelWidth, YStepP, YTicsBias, YTicsStep, and YTicsWidth\&.
+.PP
+Referenced by showData()\&.
+.SS "void SBPlotArea::drawData (QPainter *P)\fC [protected]\fP"
+.PP
+Definition at line 1236 of file SbIPlot\&.C'\&.
+.PP
+References BarPen, SBPlotCarrier::branches(), BranchPens, calcX(), calcY(), SBPlotCarrier::DA_BAR, SBPlotCarrier::DA_IGN, IsAllData, SBPlotCarrier::isOK(), IsPlotErrBars, IsPlotImpulses, IsPlotLines, IsPlotPoints, PlotCarrier, SBPlotCarrier::stdVarIdx(), Xcol, Ycol, YDataBegin, and YDataEnd\&.
+.PP
+Referenced by showData()\&.
+.SS "void SBPlotArea::drawFrames (QPainter *P)\fC [protected]\fP"
+.PP
+Definition at line 660 of file SbIPlot\&.C'\&.
+.PP
+References SBMJD::F_DateShort, FramePen, Height, isXTicsBiased, isXTicsMJD, isYTicsBiased, LabelsHeight, MaxX, MinX, SBNamed::name(), PlotCarrier, TitleWidth, XFrameBegin, XFrameEnd, XLabel, XLabelWidth, XTicsBias, XTicsMJD, YFrameBegin, YFrameEnd, YLabel, YLabelWidth, and YTicsBias\&.
+.PP
+Referenced by showData()\&.
+.SS "void SBPlotArea::drawXmjdTics (QPainter *P)\fC [protected]\fP"
+.PP
+Definition at line 872 of file SbIPlot\&.C'\&.
+.PP
+References calcX(), f_Ax, f_Bx, SBMJD::F_DateShort, SBMJD::F_TimeShort, SBMJD::F_TimeVShort, FramePen, LabelsHeight, MinX, SBMJD::toString(), XFrameBegin, XFrameEnd, XTicsMJD, XTicsStep, YFrameBegin, YFrameEnd, and ZeroPen\&.
+.PP
+Referenced by showData()\&.
+.SS "void SBPlotArea::drawXTics (QPainter *P)\fC [protected]\fP"
+.PP
+Definition at line 782 of file SbIPlot\&.C'\&.
+.PP
+References calcX(), f_Ax, f_Bx, FramePen, isXTicsBiased, LabelsHeight, MaxX, MinX, XFrameBegin, XFrameEnd, XTicsBias, XTicsStep, XTicsWidth, YFrameBegin, YFrameEnd, and ZeroPen\&.
+.PP
+Referenced by showData()\&.
+.SS "void SBPlotArea::drawYTics (QPainter *P)\fC [protected]\fP"
+.PP
+Definition at line 690 of file SbIPlot\&.C'\&.
+.PP
+References calcY(), f_Ay, f_By, FramePen, isYTicsBiased, LabelsHeight, MaxY, MinY, XFrameBegin, XFrameEnd, YFrameBegin, YFrameEnd, YStepP, YTicsBias, YTicsStep, YTicsWidth, and ZeroPen\&.
+.PP
+Referenced by showData()\&.
+.SS "void SBPlotArea::getLimits ()\fC [protected]\fP"
+.PP
+Definition at line 350 of file SbIPlot\&.C'\&.
+.PP
+References SBMatrix::at(), SBPlotCarrier::AT_MJD, SBPlotCarrier::branches(), SBPlotCarrier::DA_IGN, SBPlotBranch::data(), SBPlotBranch::dataAttr(), IsAllData, SBPlotBranch::isBrowsable(), IsHasHaveZero, IsLimitsOnVisible, SBPlotCarrier::isOK(), IsStdVar, MaxX, MaxY, MinX, MinY, SBMatrix::nRow(), PlotCarrier, SBPlotCarrier::stdVarIdx(), SBPlotCarrier::type(), Xcol, and Ycol\&.
+.PP
+Referenced by showData()\&.
+.SS "void SBPlotArea::initBranchPens ()\fC [protected]\fP"
+.PP
+Definition at line 283 of file SbIPlot\&.C'\&.
+.PP
+References SBPlotCarrier::branches(), BranchPens, PlotCarrier, and setBranchColors()\&.
+.PP
+Referenced by dataChanged(), and SBPlotArea()\&.
+.SS "void SBPlotArea::output4Files ()"
+.PP
+Definition at line 1320 of file SbIPlot\&.C'\&.
+.PP
+References SBPlotCarrier::branches(), ClassName(), SBPlotCarrier::DA_IGN, SBLog::DBG, SBLog::ERR, SBMJD::F_YYYYMMDDHHMMSSSS, SBPlotCarrier::file4SaveBaseName(), SBLog::IO, IsAllData, isXTicsMJD, Log, SBNamed::name(), PlotCarrier, SBNamed::setName(), SBPlotCarrier::stdVarIdx(), SBLog::write(), Xcol, XLabel, Ycol, and YLabel\&.
+.PP
+Referenced by SBPlot::save2File()\&.
+.SS "void SBPlotArea::output4Print (QPainter *P, intWidth_, intHeight_)"
+.PP
+Definition at line 630 of file SbIPlot\&.C'\&.
+.PP
+References Height, showData(), and Width\&.
+.PP
+Referenced by SBPlot::save2PS()\&.
+.SS "void SBPlotArea::paintEvent (QPaintEvent *)\fC [protected, virtual]\fP"
+.PP
+Definition at line 624 of file SbIPlot\&.C'\&.
+.PP
+References showData()\&.
+.SS "void SBPlotArea::resizeEvent (QResizeEvent *ev)\fC [protected, virtual]\fP"
+.PP
+Definition at line 617 of file SbIPlot\&.C'\&.
+.PP
+References Height, and Width\&.
+.SS "void SBPlotArea::setBPSaturation (intSat_)"
+.PP
+Definition at line 297 of file SbIPlot\&.C'\&.
+.PP
+References BPSaturation, and setBranchColors()\&.
+.PP
+Referenced by SBPlot::colorSChanged()\&.
+.SS "void SBPlotArea::setBPValue (intVal_)"
+.PP
+Definition at line 304 of file SbIPlot\&.C'\&.
+.PP
+References BPValue, and setBranchColors()\&.
+.PP
+Referenced by SBPlot::colorVChanged()\&.
+.SS "void SBPlotArea::setBranchColors ()\fC [protected]\fP"
+.PP
+Definition at line 311 of file SbIPlot\&.C'\&.
+.PP
+References BPSaturation, BPValue, SBPlotCarrier::branches(), BranchPens, and PlotCarrier\&.
+.PP
+Referenced by initBranchPens(), setBPSaturation(), and setBPValue()\&.
+.SS "void SBPlotArea::setIsAllData (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 270 of file SbIPlot\&.H'\&.
+.PP
+References IsAllData\&.
+.PP
+Referenced by SBPlot::ODataAllChanged()\&.
+.SS "void SBPlotArea::setIsHasHaveZero (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 267 of file SbIPlot\&.H'\&.
+.PP
+References IsHasHaveZero\&.
+.PP
+Referenced by SBPlot::SBPlot()\&.
+.SS "void SBPlotArea::setIsLimitsOnVisible (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 271 of file SbIPlot\&.H'\&.
+.PP
+References IsLimitsOnVisible\&.
+.PP
+Referenced by SBPlot::OVisRang()\&.
+.SS "void SBPlotArea::setIsPlotErrBars (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 263 of file SbIPlot\&.H'\&.
+.PP
+References IsPlotErrBars\&.
+.PP
+Referenced by SBPlot::DMErrBarsChanged()\&.
+.SS "void SBPlotArea::setIsPlotImpulses (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 264 of file SbIPlot\&.H'\&.
+.PP
+References IsPlotImpulses\&.
+.PP
+Referenced by SBPlot::DMImpulsesChanged()\&.
+.SS "void SBPlotArea::setIsPlotLines (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 262 of file SbIPlot\&.H'\&.
+.PP
+References IsPlotLines\&.
+.PP
+Referenced by SBPlot::DMLinesChanged()\&.
+.SS "void SBPlotArea::setIsPlotPoints (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 261 of file SbIPlot\&.H'\&.
+.PP
+References IsPlotPoints\&.
+.PP
+Referenced by SBPlot::DMPointsChanged()\&.
+.SS "void SBPlotArea::setIsStdVar (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 272 of file SbIPlot\&.H'\&.
+.PP
+References IsStdVar\&.
+.PP
+Referenced by SBPlot::OWStdVar()\&.
+.SS "void SBPlotArea::setXCol (unsigned intX_)"
+.PP
+Definition at line 322 of file SbIPlot\&.C'\&.
+.PP
+References SBPlotCarrier::AT_MJD, SBPlotCarrier::columnNames(), SBPlotCarrier::isOK(), isXTicsMJD, SBPlotCarrier::numOfCols(), PlotCarrier, SBPlotCarrier::type(), Xcol, XLabel, and XLabel4Unknown\&.
+.PP
+Referenced by SBPlotArea(), and SBPlot::xAxisChanged()\&.
+.SS "void SBPlotArea::setYCol (unsigned intY_)"
+.PP
+Definition at line 338 of file SbIPlot\&.C'\&.
+.PP
+References SBPlotCarrier::columnNames(), SBPlotCarrier::isOK(), SBPlotCarrier::numOfCols(), PlotCarrier, Ycol, YLabel, and YLabel4Unknown\&.
+.PP
+Referenced by SBPlotArea(), and SBPlot::yAxisChanged()\&.
+.SS "void SBPlotArea::showData (QPainter *P)\fC [protected]\fP"
+.PP
+Definition at line 644 of file SbIPlot\&.C'\&.
+.PP
+References calcTransforms(), defineAreas(), drawData(), drawFrames(), drawXmjdTics(), drawXTics(), drawYTics(), getLimits(), and isXTicsMJD\&.
+.PP
+Referenced by output4Print(), and paintEvent()\&.
+.SS "unsigned int SBPlotArea::xCol () const\fC [inline]\fP"
+.PP
+Definition at line 254 of file SbIPlot\&.H'\&.
+.PP
+References Xcol\&.
+.PP
+Referenced by SBPlot::save2PS()\&.
+.SS "unsigned int SBPlotArea::yCol () const\fC [inline]\fP"
+.PP
+Definition at line 255 of file SbIPlot\&.H'\&.
+.PP
+References Ycol\&.
+.PP
+Referenced by SBPlot::save2PS()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QPen* \fBSBPlotArea::BarPen\fP\fC [private]\fP"
+.PP
+Definition at line 228 of file SbIPlot\&.H'\&.
+.PP
+Referenced by drawData(), SBPlotArea(), and ~SBPlotArea()\&.
+.SS "int \fBSBPlotArea::BPSaturation\fP\fC [private]\fP"
+.PP
+Definition at line 229 of file SbIPlot\&.H'\&.
+.PP
+Referenced by SBPlotArea(), setBPSaturation(), and setBranchColors()\&.
+.SS "int \fBSBPlotArea::BPValue\fP\fC [private]\fP"
+.PP
+Definition at line 230 of file SbIPlot\&.H'\&.
+.PP
+Referenced by SBPlotArea(), setBPValue(), and setBranchColors()\&.
+.SS "QPen* \fBSBPlotArea::BranchPens\fP\fC [private]\fP"
+.PP
+Definition at line 226 of file SbIPlot\&.H'\&.
+.PP
+Referenced by drawData(), initBranchPens(), SBPlotArea(), setBranchColors(), and ~SBPlotArea()\&.
+.SS "double \fBSBPlotArea::f_Ax\fP\fC [private]\fP"
+.PP
+Definition at line 219 of file SbIPlot\&.H'\&.
+.PP
+Referenced by calcTransforms(), calcX(), drawXmjdTics(), drawXTics(), and SBPlotArea()\&.
+.SS "double \fBSBPlotArea::f_Ay\fP\fC [private]\fP"
+.PP
+Definition at line 221 of file SbIPlot\&.H'\&.
+.PP
+Referenced by calcTransforms(), calcY(), drawYTics(), and SBPlotArea()\&.
+.SS "double \fBSBPlotArea::f_Bx\fP\fC [private]\fP"
+.PP
+Definition at line 220 of file SbIPlot\&.H'\&.
+.PP
+Referenced by calcTransforms(), calcX(), drawXmjdTics(), drawXTics(), and SBPlotArea()\&.
+.SS "double \fBSBPlotArea::f_By\fP\fC [private]\fP"
+.PP
+Definition at line 222 of file SbIPlot\&.H'\&.
+.PP
+Referenced by calcTransforms(), calcY(), drawYTics(), and SBPlotArea()\&.
+.SS "QPen* \fBSBPlotArea::FramePen\fP\fC [private]\fP"
+.PP
+Definition at line 225 of file SbIPlot\&.H'\&.
+.PP
+Referenced by drawFrames(), drawXmjdTics(), drawXTics(), drawYTics(), SBPlotArea(), and ~SBPlotArea()\&.
+.SS "int \fBSBPlotArea::Height\fP\fC [private]\fP"
+.PP
+Definition at line 167 of file SbIPlot\&.H'\&.
+.PP
+Referenced by calcY(), defineAreas(), drawFrames(), output4Print(), resizeEvent(), and SBPlotArea()\&.
+.SS "bool \fBSBPlotArea::IsAllData\fP\fC [private]\fP"
+.PP
+Definition at line 240 of file SbIPlot\&.H'\&.
+.PP
+Referenced by drawData(), getLimits(), output4Files(), SBPlotArea(), and setIsAllData()\&.
+.SS "bool \fBSBPlotArea::IsHasHaveZero\fP\fC [private]\fP"
+.PP
+Definition at line 247 of file SbIPlot\&.H'\&.
+.PP
+Referenced by getLimits(), SBPlotArea(), and setIsHasHaveZero()\&.
+.SS "bool \fBSBPlotArea::IsLimitsOnVisible\fP\fC [private]\fP"
+.PP
+Definition at line 239 of file SbIPlot\&.H'\&.
+.PP
+Referenced by getLimits(), SBPlotArea(), and setIsLimitsOnVisible()\&.
+.SS "bool \fBSBPlotArea::IsPlotErrBars\fP\fC [private]\fP"
+.PP
+Definition at line 235 of file SbIPlot\&.H'\&.
+.PP
+Referenced by drawData(), SBPlotArea(), and setIsPlotErrBars()\&.
+.SS "bool \fBSBPlotArea::IsPlotImpulses\fP\fC [private]\fP"
+.PP
+Definition at line 236 of file SbIPlot\&.H'\&.
+.PP
+Referenced by drawData(), SBPlotArea(), and setIsPlotImpulses()\&.
+.SS "bool \fBSBPlotArea::IsPlotLines\fP\fC [private]\fP"
+.PP
+Definition at line 234 of file SbIPlot\&.H'\&.
+.PP
+Referenced by drawData(), SBPlotArea(), and setIsPlotLines()\&.
+.SS "bool \fBSBPlotArea::IsPlotPoints\fP\fC [private]\fP"
+.PP
+Definition at line 233 of file SbIPlot\&.H'\&.
+.PP
+Referenced by drawData(), SBPlotArea(), and setIsPlotPoints()\&.
+.SS "bool \fBSBPlotArea::IsStdVar\fP\fC [private]\fP"
+.PP
+Definition at line 241 of file SbIPlot\&.H'\&.
+.PP
+Referenced by getLimits(), SBPlotArea(), and setIsStdVar()\&.
+.SS "bool \fBSBPlotArea::isXTicsBiased\fP\fC [private]\fP"
+.PP
+Definition at line 194 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawFrames(), drawXTics(), and SBPlotArea()\&.
+.SS "bool \fBSBPlotArea::isXTicsMJD\fP\fC [private]\fP"
+.PP
+Definition at line 195 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawFrames(), output4Files(), SBPlotArea(), setXCol(), and showData()\&.
+.SS "bool \fBSBPlotArea::isYTicsBiased\fP\fC [private]\fP"
+.PP
+Definition at line 202 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawFrames(), drawYTics(), and SBPlotArea()\&.
+.SS "int \fBSBPlotArea::LabelsHeight\fP\fC [private]\fP"
+.PP
+Definition at line 172 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawFrames(), drawXmjdTics(), drawXTics(), drawYTics(), and SBPlotArea()\&.
+.SS "double \fBSBPlotArea::MaxX\fP\fC [private]\fP"
+.PP
+Definition at line 213 of file SbIPlot\&.H'\&.
+.PP
+Referenced by calcTransforms(), defineAreas(), drawFrames(), drawXTics(), getLimits(), and SBPlotArea()\&.
+.SS "double \fBSBPlotArea::MaxY\fP\fC [private]\fP"
+.PP
+Definition at line 214 of file SbIPlot\&.H'\&.
+.PP
+Referenced by calcTransforms(), defineAreas(), drawYTics(), getLimits(), and SBPlotArea()\&.
+.SS "double \fBSBPlotArea::MinX\fP\fC [private]\fP"
+.PP
+Definition at line 215 of file SbIPlot\&.H'\&.
+.PP
+Referenced by calcTransforms(), defineAreas(), drawFrames(), drawXmjdTics(), drawXTics(), getLimits(), and SBPlotArea()\&.
+.SS "double \fBSBPlotArea::MinY\fP\fC [private]\fP"
+.PP
+Definition at line 216 of file SbIPlot\&.H'\&.
+.PP
+Referenced by calcTransforms(), defineAreas(), drawYTics(), getLimits(), and SBPlotArea()\&.
+.SS "int \fBSBPlotArea::NumOfXTics\fP\fC [private]\fP"
+.PP
+Definition at line 190 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), and SBPlotArea()\&.
+.SS "int \fBSBPlotArea::NumOfYTics\fP\fC [private]\fP"
+.PP
+Definition at line 198 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), and SBPlotArea()\&.
+.SS "\fBSBPlotCarrier\fP* \fBSBPlotArea::PlotCarrier\fP\fC [private]\fP"
+.PP
+Definition at line 244 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawData(), drawFrames(), getLimits(), initBranchPens(), output4Files(), SBPlotArea(), setBranchColors(), setXCol(), and setYCol()\&.
+.SS "int \fBSBPlotArea::RtMarg\fP\fC [private]\fP"
+.PP
+Definition at line 169 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), and SBPlotArea()\&.
+.SS "int \fBSBPlotArea::TitleWidth\fP\fC [private]\fP"
+.PP
+Definition at line 188 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawFrames(), and SBPlotArea()\&.
+.SS "int \fBSBPlotArea::UpMarg\fP\fC [private]\fP"
+.PP
+Definition at line 168 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), and SBPlotArea()\&.
+.SS "int \fBSBPlotArea::Width\fP\fC [private]\fP"
+.PP
+Definition at line 166 of file SbIPlot\&.H'\&.
+.PP
+Referenced by calcX(), defineAreas(), output4Print(), resizeEvent(), and SBPlotArea()\&.
+.SS "unsigned int \fBSBPlotArea::Xcol\fP\fC [private]\fP"
+.PP
+Definition at line 211 of file SbIPlot\&.H'\&.
+.PP
+Referenced by drawData(), getLimits(), output4Files(), SBPlotArea(), setXCol(), and xCol()\&.
+.SS "int \fBSBPlotArea::XDataBegin\fP\fC [private]\fP"
+.PP
+Definition at line 183 of file SbIPlot\&.H'\&.
+.PP
+Referenced by calcTransforms(), defineAreas(), and SBPlotArea()\&.
+.SS "int \fBSBPlotArea::XDataEnd\fP\fC [private]\fP"
+.PP
+Definition at line 184 of file SbIPlot\&.H'\&.
+.PP
+Referenced by calcTransforms(), defineAreas(), and SBPlotArea()\&.
+.SS "int \fBSBPlotArea::XFrameBegin\fP\fC [private]\fP"
+.PP
+Definition at line 178 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawFrames(), drawXmjdTics(), drawXTics(), drawYTics(), and SBPlotArea()\&.
+.SS "int \fBSBPlotArea::XFrameEnd\fP\fC [private]\fP"
+.PP
+Definition at line 179 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawFrames(), drawXmjdTics(), drawXTics(), drawYTics(), and SBPlotArea()\&.
+.SS "QString* \fBSBPlotArea::XLabel\fP\fC [private]\fP"
+.PP
+Definition at line 205 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawFrames(), output4Files(), SBPlotArea(), and setXCol()\&.
+.SS "QString \fBSBPlotArea::XLabel4Unknown\fP\fC [static, private]\fP"
+.PP
+Definition at line 207 of file SbIPlot\&.H'\&.
+.PP
+Referenced by SBPlotArea(), and setXCol()\&.
+.SS "int \fBSBPlotArea::XLabelWidth\fP\fC [private]\fP"
+.PP
+Definition at line 171 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawFrames(), and SBPlotArea()\&.
+.SS "int \fBSBPlotArea::XStepP\fP\fC [private]\fP"
+.PP
+Definition at line 191 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), and SBPlotArea()\&.
+.SS "double \fBSBPlotArea::XTicsBias\fP\fC [private]\fP"
+.PP
+Definition at line 193 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawFrames(), drawXTics(), and SBPlotArea()\&.
+.SS "int \fBSBPlotArea::XTicsMJD\fP\fC [private]\fP"
+.PP
+Definition at line 196 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawFrames(), drawXmjdTics(), and SBPlotArea()\&.
+.SS "double \fBSBPlotArea::XTicsStep\fP\fC [private]\fP"
+.PP
+Definition at line 192 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawXmjdTics(), drawXTics(), and SBPlotArea()\&.
+.SS "int \fBSBPlotArea::XTicsWidth\fP\fC [private]\fP"
+.PP
+Definition at line 175 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawXTics(), and SBPlotArea()\&.
+.SS "unsigned int \fBSBPlotArea::Ycol\fP\fC [private]\fP"
+.PP
+Definition at line 212 of file SbIPlot\&.H'\&.
+.PP
+Referenced by drawData(), getLimits(), output4Files(), SBPlotArea(), setYCol(), and yCol()\&.
+.SS "int \fBSBPlotArea::YDataBegin\fP\fC [private]\fP"
+.PP
+Definition at line 185 of file SbIPlot\&.H'\&.
+.PP
+Referenced by calcTransforms(), defineAreas(), drawData(), and SBPlotArea()\&.
+.SS "int \fBSBPlotArea::YDataEnd\fP\fC [private]\fP"
+.PP
+Definition at line 186 of file SbIPlot\&.H'\&.
+.PP
+Referenced by calcTransforms(), defineAreas(), drawData(), and SBPlotArea()\&.
+.SS "int \fBSBPlotArea::YFrameBegin\fP\fC [private]\fP"
+.PP
+Definition at line 180 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawFrames(), drawXmjdTics(), drawXTics(), drawYTics(), and SBPlotArea()\&.
+.SS "int \fBSBPlotArea::YFrameEnd\fP\fC [private]\fP"
+.PP
+Definition at line 181 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawFrames(), drawXmjdTics(), drawXTics(), drawYTics(), and SBPlotArea()\&.
+.SS "QString* \fBSBPlotArea::YLabel\fP\fC [private]\fP"
+.PP
+Definition at line 206 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawFrames(), output4Files(), SBPlotArea(), and setYCol()\&.
+.SS "QString \fBSBPlotArea::YLabel4Unknown\fP\fC [static, private]\fP"
+.PP
+Definition at line 208 of file SbIPlot\&.H'\&.
+.PP
+Referenced by SBPlotArea(), and setYCol()\&.
+.SS "int \fBSBPlotArea::YLabelHeight\fP\fC [private]\fP"
+.PP
+Definition at line 174 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), and SBPlotArea()\&.
+.SS "int \fBSBPlotArea::YLabelWidth\fP\fC [private]\fP"
+.PP
+Definition at line 173 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawFrames(), and SBPlotArea()\&.
+.SS "int \fBSBPlotArea::YStepP\fP\fC [private]\fP"
+.PP
+Definition at line 199 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawYTics(), and SBPlotArea()\&.
+.SS "double \fBSBPlotArea::YTicsBias\fP\fC [private]\fP"
+.PP
+Definition at line 201 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawFrames(), drawYTics(), and SBPlotArea()\&.
+.SS "double \fBSBPlotArea::YTicsStep\fP\fC [private]\fP"
+.PP
+Definition at line 200 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawYTics(), and SBPlotArea()\&.
+.SS "int \fBSBPlotArea::YTicsWidth\fP\fC [private]\fP"
+.PP
+Definition at line 176 of file SbIPlot\&.H'\&.
+.PP
+Referenced by defineAreas(), drawYTics(), and SBPlotArea()\&.
+.SS "QPen* \fBSBPlotArea::ZeroPen\fP\fC [private]\fP"
+.PP
+Definition at line 227 of file SbIPlot\&.H'\&.
+.PP
+Referenced by drawXmjdTics(), drawXTics(), drawYTics(), SBPlotArea(), and ~SBPlotArea()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

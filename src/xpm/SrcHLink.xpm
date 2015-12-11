@@ -1,0 +1,22 @@
+/* XPM */
+static const char * SrcHLink_xpm[] = {
+"16 16 3 1",
+" 	c None",
+".	c #666",
+"X	c Light Blue",
+"       .        ",
+"       .        ",
+"     .....      ",
+"   ..XX.XX..    ",
+"   .XXX.XXX.    ",
+"  .XX.....XX.   ",
+"  .XX.X.X.XX.   ",
+"............... ",
+"  .XX.X.X.XX.   ",
+"  .XX.....XX.   ",
+"   .XXX.XXX.    ",
+"   ..XX.XX..    ",
+"     .....      ",
+"       .        ",
+"       .        ",
+"                "};

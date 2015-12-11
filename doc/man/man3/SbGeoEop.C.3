@@ -1,0 +1,82 @@
+.TH "SbGeoEop.C" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SbGeoEop.C \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SbGeoEop\&.H'\fP
+.br
+\fC#include <qdir\&.h>\fP
+.br
+\fC#include <qfile\&.h>\fP
+.br
+\fC#include <qmessagebox\&.h>\fP
+.br
+\fC#include 'SbSetup\&.H'\fP
+.br
+\fC#include 'SbGeoParameter\&.H'\fP
+.br
+\fC#include 'SbGeoProject\&.H'\fP
+.br
+\fC#include 'SbMathSpline\&.H'\fP
+.br
+\fC#include 'SbVector\&.H'\fP
+.br
+\fC#include 'SbGeoRefFrame\&.H'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQTextStream\fP & \fBoperator<<\fP (\fBQTextStream\fP &s, const \fBSBEOPEntry\fP &eop)"
+.br
+.ti -1c
+.RI "\fBQTextStream\fP & \fBoperator>>\fP (\fBQTextStream\fP &s, \fBSBEOPEntry\fP &eop)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBEOP\fP &EOP)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBEOP\fP &EOP)"
+.br
+.ti -1c
+.RI "\fBQTextStream\fP & \fBoperator<<\fP (\fBQTextStream\fP &s, const \fBSBEOP\fP &)"
+.br
+.ti -1c
+.RI "\fBQTextStream\fP & \fBoperator>>\fP (\fBQTextStream\fP &s, \fBSBEOP\fP &)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBQTextStream\fP& operator<< (\fBQTextStream\fP &s, const \fBSBEOPEntry\fP &eop)"
+.PP
+Definition at line 55 of file SbGeoEop\&.C'\&.
+.PP
+References SBMJD::date(), SBMJD::day(), SBEOPEntry::Eps, SBEOPEntry::LOD, SBMJD::month2Str(), SBEOPEntry::Psi, SBEOPEntry::UT, SBEOPEntry::Xp, and SBEOPEntry::Yp\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBEOP\fP &EOP)"
+.PP
+Definition at line 1223 of file SbGeoEop\&.C'\&.
+.PP
+References SBEOP::Epoch, SBEOP::Eps, SBEOP::Epss, SBEOP::Label, SBEOP::Psi, SBEOP::Psis, SBEOP::UT, SBEOP::UTHasHiTide, SBEOP::UTHasLoTide, SBEOP::UTs, SBEOP::Xp, SBEOP::Xps, SBEOP::Yp, and SBEOP::Yps\&.
+.SS "\fBQTextStream\fP& operator<< (\fBQTextStream\fP &s, const \fBSBEOP\fP &)"
+.PP
+Definition at line 1245 of file SbGeoEop\&.C'\&.
+.SS "\fBQTextStream\fP& operator>> (\fBQTextStream\fP &s, \fBSBEOPEntry\fP &eop)"
+.PP
+Definition at line 70 of file SbGeoEop\&.C'\&.
+.PP
+References SBMJD::date(), SBEOPEntry::Eps, SBEOPEntry::LOD, SBEOPEntry::Psi, SBEOPEntry::UT, SBEOPEntry::Xp, and SBEOPEntry::Yp\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBEOP\fP &EOP)"
+.PP
+Definition at line 1233 of file SbGeoEop\&.C'\&.
+.PP
+References SBEOP::checkRanges(), SBEOP::Epoch, SBEOP::Eps, SBEOP::Epss, SBEOP::Label, SBEOP::Psi, SBEOP::Psis, SBEOP::UT, SBEOP::UTHasHiTide, SBEOP::UTHasLoTide, SBEOP::UTs, SBEOP::Xp, SBEOP::Xps, SBEOP::Yp, and SBEOP::Yps\&.
+.SS "\fBQTextStream\fP& operator>> (\fBQTextStream\fP &s, \fBSBEOP\fP &)"
+.PP
+Definition at line 1250 of file SbGeoEop\&.C'\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

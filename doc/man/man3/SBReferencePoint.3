@@ -1,0 +1,243 @@
+.TH "SBReferencePoint" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBReferencePoint \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoStations\&.H>\fP
+.PP
+Inherits \fBQList< SBCoordinates >\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBReferencePoint\fP ()"
+.br
+.ti -1c
+.RI "\fBSBReferencePoint\fP (const \fBSBReferencePoint\fP &)"
+.br
+.ti -1c
+.RI "virtual \fB~SBReferencePoint\fP ()"
+.br
+.ti -1c
+.RI "QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "\fBSBReferencePoint\fP & \fBoperator=\fP (const \fBSBReferencePoint\fP &)"
+.br
+.ti -1c
+.RI "\fBSBCoordinates\fP * \fBfindCoords\fP (const \fBSBMJD\fP &)"
+.br
+.ti -1c
+.RI "bool \fBregisterCoords\fP (const \fBVector3\fP &, const \fBVector3\fP &, const \fBVector3\fP &, const \fBVector3\fP &, const \fBSBMJD\fP &, const QString &)"
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBr\fP (const \fBSBMJD\fP &)"
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBdR\fP (const \fBSBMJD\fP &)"
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBv\fP (const \fBSBMJD\fP &)"
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBdV\fP (const \fBSBMJD\fP &)"
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBr_0\fP () const "
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBdR_0\fP () const "
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBv_0\fP () const "
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBdV_0\fP () const "
+.br
+.ti -1c
+.RI "void \fBcheckRanges\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual int \fBcompareItems\fP (QCollection::Item item1, QCollection::Item item2)"
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBwrite\fP (QDataStream &s, QCollection::Item Entry) const "
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBread\fP (QDataStream &s, QCollection::Item &Entry)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "const \fBVector3\fP * \fBR_0\fP"
+.br
+.ti -1c
+.RI "const \fBVector3\fP * \fBDR_0\fP"
+.br
+.ti -1c
+.RI "const \fBVector3\fP * \fBV_0\fP"
+.br
+.ti -1c
+.RI "const \fBVector3\fP * \fBDV_0\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBReferencePoint\fP &RP_)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBReferencePoint\fP &RP_)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 388 of file SbGeoStations\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBReferencePoint::SBReferencePoint ()\fC [inline]\fP"
+.PP
+Definition at line 410 of file SbGeoStations\&.H'\&.
+.PP
+References DR_0, DV_0, R_0, and V_0\&.
+.SS "SBReferencePoint::SBReferencePoint (const \fBSBReferencePoint\fP &RP_)"
+.PP
+Definition at line 380 of file SbGeoStations\&.C'\&.
+.PP
+References checkRanges()\&.
+.SS "virtual SBReferencePoint::~SBReferencePoint ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 412 of file SbGeoStations\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBReferencePoint::checkRanges ()"
+.PP
+Definition at line 491 of file SbGeoStations\&.C'\&.
+.PP
+References DR_0, DV_0, R_0, and V_0\&.
+.PP
+Referenced by operator=(), registerCoords(), and SBReferencePoint()\&.
+.SS "QString SBReferencePoint::ClassName () const\fC [inline]\fP"
+.PP
+Definition at line 413 of file SbGeoStations\&.H'\&.
+.SS "virtual int SBReferencePoint::compareItems (QCollection::Itemitem1, QCollection::Itemitem2)\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 391 of file SbGeoStations\&.H'\&.
+.SS "const \fBVector3\fP & SBReferencePoint::dR (const \fBSBMJD\fP &t)"
+.PP
+Definition at line 473 of file SbGeoStations\&.C'\&.
+.PP
+References SBCoordinates::cooErrors(), findCoords(), and v3Zero\&.
+.PP
+Referenced by SBStation::dR()\&.
+.SS "const \fBVector3\fP& SBReferencePoint::dR_0 () const\fC [inline]\fP"
+.PP
+Definition at line 429 of file SbGeoStations\&.H'\&.
+.PP
+References DR_0, and v3Zero\&.
+.PP
+Referenced by SBStation::dR_first()\&.
+.SS "const \fBVector3\fP & SBReferencePoint::dV (const \fBSBMJD\fP &t)"
+.PP
+Definition at line 485 of file SbGeoStations\&.C'\&.
+.PP
+References findCoords(), v3Zero, and SBCoordinates::velErrors()\&.
+.SS "const \fBVector3\fP& SBReferencePoint::dV_0 () const\fC [inline]\fP"
+.PP
+Definition at line 431 of file SbGeoStations\&.H'\&.
+.PP
+References DV_0, and v3Zero\&.
+.SS "\fBSBCoordinates\fP * SBReferencePoint::findCoords (const \fBSBMJD\fP &T)"
+.PP
+Definition at line 417 of file SbGeoStations\&.C'\&.
+.PP
+Referenced by dR(), dV(), r(), registerCoords(), and v()\&.
+.SS "\fBSBReferencePoint\fP & SBReferencePoint::operator= (const \fBSBReferencePoint\fP &RP)"
+.PP
+Definition at line 399 of file SbGeoStations\&.C'\&.
+.PP
+References checkRanges()\&.
+.SS "const \fBVector3\fP & SBReferencePoint::r (const \fBSBMJD\fP &t)"
+.PP
+Definition at line 467 of file SbGeoStations\&.C'\&.
+.PP
+References SBCoordinates::coo(), findCoords(), and v3Zero\&.
+.PP
+Referenced by SBStation::calcDisplacement(), SBStation::getGlobalParameters4Report(), operator>>(), SBStation::r(), and SBStation::updateGeodCoo()\&.
+.SS "const \fBVector3\fP& SBReferencePoint::r_0 () const\fC [inline]\fP"
+.PP
+Definition at line 428 of file SbGeoStations\&.H'\&.
+.PP
+References R_0, and v3Zero\&.
+.PP
+Referenced by SBStation::r_first()\&.
+.SS "virtual QDataStream& SBReferencePoint::read (QDataStream &s, QCollection::Item &Entry)\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 399 of file SbGeoStations\&.H'\&.
+.SS "bool SBReferencePoint::registerCoords (const \fBVector3\fP &R_, const \fBVector3\fP &dR_, const \fBVector3\fP &V_, const \fBVector3\fP &dV_, const \fBSBMJD\fP &T_, const QString &Name_)"
+.PP
+Definition at line 431 of file SbGeoStations\&.C'\&.
+.PP
+References checkRanges(), SBCoordinates::coo(), SBCoordinates::cooErrors(), DR_0, DV_0, SBCoordinates::epoch(), findCoords(), R_0, SBCoordinates::setCoo(), SBCoordinates::setCooErrors(), SBCoordinates::setEventName(), SBCoordinates::setVel(), SBCoordinates::setVelErrors(), v3Zero, V_0, SBCoordinates::vel(), and SBCoordinates::velErrors()\&.
+.PP
+Referenced by SBStation::setCoords()\&.
+.SS "const \fBVector3\fP & SBReferencePoint::v (const \fBSBMJD\fP &t)"
+.PP
+Definition at line 479 of file SbGeoStations\&.C'\&.
+.PP
+References findCoords(), SBCoordinates::isUseVels(), v3Zero, and SBCoordinates::vel()\&.
+.PP
+Referenced by SBStation::calcDisplacement(), SBStation::getGlobalParameters4Report(), SBStation::getGlobalParameters4Report4Axel(), and SBStation::getGlobalParameters4UpdateTRF()\&.
+.SS "const \fBVector3\fP& SBReferencePoint::v_0 () const\fC [inline]\fP"
+.PP
+Definition at line 430 of file SbGeoStations\&.H'\&.
+.PP
+References v3Zero, and V_0\&.
+.SS "virtual QDataStream& SBReferencePoint::write (QDataStream &s, QCollection::ItemEntry) const\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 397 of file SbGeoStations\&.H'\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBReferencePoint\fP &RP_)\fC [friend]\fP"
+.PP
+Definition at line 436 of file SbGeoStations\&.H'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBReferencePoint\fP &RP_)\fC [friend]\fP"
+.PP
+Definition at line 438 of file SbGeoStations\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const \fBVector3\fP* \fBSBReferencePoint::DR_0\fP\fC [protected]\fP"
+.PP
+Definition at line 403 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by checkRanges(), dR_0(), registerCoords(), and SBReferencePoint()\&.
+.SS "const \fBVector3\fP* \fBSBReferencePoint::DV_0\fP\fC [protected]\fP"
+.PP
+Definition at line 405 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by checkRanges(), dV_0(), registerCoords(), and SBReferencePoint()\&.
+.SS "const \fBVector3\fP* \fBSBReferencePoint::R_0\fP\fC [protected]\fP"
+.PP
+Definition at line 400 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by checkRanges(), r_0(), registerCoords(), and SBReferencePoint()\&.
+.SS "const \fBVector3\fP* \fBSBReferencePoint::V_0\fP\fC [protected]\fP"
+.PP
+Definition at line 404 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by checkRanges(), registerCoords(), SBReferencePoint(), and v_0()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

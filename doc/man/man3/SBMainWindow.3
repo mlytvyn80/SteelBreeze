@@ -1,0 +1,1013 @@
+.TH "SBMainWindow" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBMainWindow \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIMainWin\&.H>\fP
+.PP
+Inherits \fBQMainWindow\fP'\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBControlConfigure\fP ()"
+.br
+.ti -1c
+.RI "void \fBControlDefault\fP ()"
+.br
+.ti -1c
+.RI "void \fBControlSelectFont\fP ()"
+.br
+.ti -1c
+.RI "void \fBControlFlushLog\fP ()"
+.br
+.ti -1c
+.RI "void \fBControlStyleDefault\fP ()"
+.br
+.ti -1c
+.RI "void \fBControlStyleMotifPlus\fP ()"
+.br
+.ti -1c
+.RI "void \fBControlStyleCDE\fP ()"
+.br
+.ti -1c
+.RI "void \fBControlStyleSGI\fP ()"
+.br
+.ti -1c
+.RI "void \fBControlStyleInterlace\fP ()"
+.br
+.ti -1c
+.RI "void \fBControlStyleWindows\fP ()"
+.br
+.ti -1c
+.RI "void \fBControlStylePlatinum\fP ()"
+.br
+.ti -1c
+.RI "void \fBStuffStations\fP ()"
+.br
+.ti -1c
+.RI "void \fBStuffSources\fP ()"
+.br
+.ti -1c
+.RI "void \fBStuffEOPs\fP ()"
+.br
+.ti -1c
+.RI "void \fBStuffVLBIObs\fP ()"
+.br
+.ti -1c
+.RI "void \fBStuffEccenticities\fP ()"
+.br
+.ti -1c
+.RI "void \fBStuffEphemerides\fP ()"
+.br
+.ti -1c
+.RI "void \fBStuffAplo\fP ()"
+.br
+.ti -1c
+.RI "void \fBStuffPlateMotion\fP ()"
+.br
+.ti -1c
+.RI "void \fBStuffModels\fP ()"
+.br
+.ti -1c
+.RI "void \fBStuffModelsNutPsi\fP ()"
+.br
+.ti -1c
+.RI "void \fBStuffModelsNutEps\fP ()"
+.br
+.ti -1c
+.RI "void \fBStuffModelsUT1High\fP ()"
+.br
+.ti -1c
+.RI "void \fBStuffModelsUT1Low\fP ()"
+.br
+.ti -1c
+.RI "void \fBStuffModelsUT1Diurn\fP ()"
+.br
+.ti -1c
+.RI "void \fBStuffModelsPolDiurn\fP ()"
+.br
+.ti -1c
+.RI "void \fBExecuteGenProj\fP ()"
+.br
+.ti -1c
+.RI "void \fBExecuteSelProj\fP ()"
+.br
+.ti -1c
+.RI "void \fBExecuteEditProj\fP ()"
+.br
+.ti -1c
+.RI "void \fBExecuteModels\fP ()"
+.br
+.ti -1c
+.RI "void \fBExecuteParameters\fP ()"
+.br
+.ti -1c
+.RI "void \fBExecuteRunProj\fP ()"
+.br
+.ti -1c
+.RI "void \fBExecuteDoubleRunProj\fP ()"
+.br
+.ti -1c
+.RI "void \fBExecuteReportProj\fP ()"
+.br
+.ti -1c
+.RI "void \fBExecuteBrowseSolution\fP ()"
+.br
+.ti -1c
+.RI "void \fBExecuteDrop\fP ()"
+.br
+.ti -1c
+.RI "void \fBUtilitiesPreProc\fP ()"
+.br
+.ti -1c
+.RI "void \fBUtilitiesSpectrum\fP ()"
+.br
+.ti -1c
+.RI "void \fBUtilitiesFilters\fP ()"
+.br
+.ti -1c
+.RI "void \fBUtilitiesDumpUI\fP ()"
+.br
+.ti -1c
+.RI "void \fBUtilitiesRestoreUI\fP ()"
+.br
+.ti -1c
+.RI "void \fBUtilitiesCollectStat4Prj\fP ()"
+.br
+.ti -1c
+.RI "void \fBUtilitiesCollectStat4All\fP ()"
+.br
+.ti -1c
+.RI "void \fBUtilitiesBrowseStat4Prj\fP ()"
+.br
+.ti -1c
+.RI "void \fBUtilitiesBrowseStat4All\fP ()"
+.br
+.ti -1c
+.RI "void \fBTestPrecession\fP ()"
+.br
+.ti -1c
+.RI "void \fBTestNutation\fP ()"
+.br
+.ti -1c
+.RI "void \fBTestRotation\fP ()"
+.br
+.ti -1c
+.RI "void \fBTestEphemerides\fP ()"
+.br
+.ti -1c
+.RI "void \fBTestEOPs\fP ()"
+.br
+.ti -1c
+.RI "void \fBTestDiurnalEOPs\fP ()"
+.br
+.ti -1c
+.RI "void \fBTestSolidTide\fP ()"
+.br
+.ti -1c
+.RI "void \fBTestOceanTide\fP ()"
+.br
+.ti -1c
+.RI "void \fBTestPoleTide\fP ()"
+.br
+.ti -1c
+.RI "void \fBTestAplo\fP ()"
+.br
+.ti -1c
+.RI "void \fBTestJustATest\fP ()"
+.br
+.ti -1c
+.RI "void \fBHelpHelp\fP ()"
+.br
+.ti -1c
+.RI "void \fBHelpAboutQt\fP ()"
+.br
+.ti -1c
+.RI "void \fBHelpAbout\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetMessage\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBtoggleToolBar\fP ()"
+.br
+.ti -1c
+.RI "void \fBtoggleStatusBar\fP ()"
+.br
+.ti -1c
+.RI "void \fBtoggleTBLabels\fP ()"
+.br
+.ti -1c
+.RI "void \fBstBarReset\fP ()"
+.br
+.ti -1c
+.RI "void \fBstBarSetTotalSteps\fP (int)"
+.br
+.ti -1c
+.RI "void \fBstBarSetProgress\fP (int)"
+.br
+.ti -1c
+.RI "void \fBsetTRFName\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBsetCRFName\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBsetEOPName\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBsetPrjName\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBsetStatus\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBsetOperation\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBsetProcSes\fP (int, int)"
+.br
+.ti -1c
+.RI "void \fBsetProcObs\fP (int, int)"
+.br
+.ti -1c
+.RI "void \fBsetSessName\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBsetCacheSizes\fP (int, int, int, int)"
+.br
+.ti -1c
+.RI "void \fBsetRunning\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBstopRunning\fP (void)"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBrun\fP (bool)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBMainWindow\fP (\fBQWidget\fP *=0, const char *=0, WFlags=0)"
+.br
+.ti -1c
+.RI "virtual \fB~SBMainWindow\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBresizeEvent\fP (QResizeEvent *)"
+.br
+.ti -1c
+.RI "virtual void \fBmoveEvent\fP (QMoveEvent *)"
+.br
+.ti -1c
+.RI "void \fBchangeStyle\fP (\fBSBSetUp::GUIStyle\fP)"
+.br
+.ti -1c
+.RI "void \fBsetupMenu\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetupStatusBar\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetupToolBar\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBCentralPanel\fP * \fBCentralWidget\fP"
+.br
+.ti -1c
+.RI "QIconSet * \fBisStop\fP"
+.br
+.ti -1c
+.RI "QToolButton * \fBbStop\fP"
+.br
+.ti -1c
+.RI "QToolButton * \fBbExit\fP"
+.br
+.ti -1c
+.RI "QPopupMenu * \fBControlMenu\fP"
+.br
+.ti -1c
+.RI "QPopupMenu * \fBStyleMenu\fP"
+.br
+.ti -1c
+.RI "int \fBtoolbarChk\fP"
+.br
+.ti -1c
+.RI "int \fBstatusbarChk\fP"
+.br
+.ti -1c
+.RI "int \fBlabelsChk\fP"
+.br
+.ti -1c
+.RI "int \fBStyles\fP [8]"
+.br
+.ti -1c
+.RI "QLabel * \fBStBarLabel\fP"
+.br
+.ti -1c
+.RI "QProgressBar * \fBStBarProgress\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBStBarMessage\fP"
+.br
+.ti -1c
+.RI "QToolBar * \fBToolBar\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 89 of file SbIMainWin\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBMainWindow::SBMainWindow (\fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 271 of file SbIMainWin\&.C'\&.
+.PP
+References SBSetUp::centralPanelPosition(), SBSetUp::centralPanelSize(), CentralWidget, SBSetUp::defaultFont(), SBSetUp::eops(), SBLog::INF, SBLog::IO, IsNeedToStop, SBSetUp::loadProject(), Log, pmSrcHLink, pmSrcStatus, SBSetUp::project(), run(), setCRFName(), setEOPName(), setMessage(), setPrjName(), setProcObs(), setProcSes(), setRunning(), setSessName(), setTRFName(), SetUp, setupMenu(), setupStatusBar(), setupToolBar(), SBSetUp::sources(), SBSetUp::stations(), and SBLog::write()\&.
+.SS "SBMainWindow::~SBMainWindow ()\fC [virtual]\fP"
+.PP
+Definition at line 340 of file SbIMainWin\&.C'\&.
+.PP
+References Institutions, isStop, Log, pmSrcHLink, pmSrcStatus, SBSetUp::SaveConfig(), SBSetUp::SaveStuff(), SBSetUp::setCentralPanelPosition(), SBSetUp::setCentralPanelSize(), and SetUp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBMainWindow::changeStyle (\fBSBSetUp::GUIStyle\fPStyle)\fC [protected]\fP"
+.PP
+Definition at line 716 of file SbIMainWin\&.C'\&.
+.PP
+References SBSetUp::S_CDE, SBSetUp::S_Default, SBSetUp::S_Interlace, SBSetUp::S_MotifPlus, SBSetUp::S_Platinum, SBSetUp::S_SGI, SBSetUp::S_Windows, SBSetUp::setGUIStyle(), SetUp, StyleMenu, and Styles\&.
+.PP
+Referenced by ControlStyleCDE(), ControlStyleDefault(), ControlStyleInterlace(), ControlStyleMotifPlus(), ControlStylePlatinum(), ControlStyleSGI(), ControlStyleWindows(), and setupMenu()\&.
+.SS "virtual QString SBMainWindow::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 96 of file SbIMainWin\&.H'\&.
+.PP
+Referenced by ControlConfigure(), ControlDefault(), ControlFlushLog(), ControlSelectFont(), ExecuteBrowseSolution(), ExecuteDoubleRunProj(), ExecuteDrop(), ExecuteEditProj(), ExecuteGenProj(), ExecuteModels(), ExecuteParameters(), ExecuteReportProj(), ExecuteRunProj(), ExecuteSelProj(), HelpAbout(), HelpAboutQt(), HelpHelp(), StuffAplo(), StuffEccenticities(), StuffEOPs(), StuffEphemerides(), StuffModels(), StuffModelsNutEps(), StuffModelsNutPsi(), StuffModelsPolDiurn(), StuffModelsUT1Diurn(), StuffModelsUT1High(), StuffModelsUT1Low(), StuffPlateMotion(), StuffSources(), StuffStations(), StuffVLBIObs(), TestAplo(), TestDiurnalEOPs(), TestEOPs(), TestEphemerides(), TestJustATest(), TestNutation(), TestOceanTide(), TestPoleTide(), TestPrecession(), TestRotation(), TestSolidTide(), UtilitiesBrowseStat4All(), UtilitiesBrowseStat4Prj(), UtilitiesCollectStat4All(), UtilitiesCollectStat4Prj(), UtilitiesDumpUI(), UtilitiesFilters(), UtilitiesPreProc(), UtilitiesRestoreUI(), and UtilitiesSpectrum()\&.
+.SS "void SBMainWindow::ControlConfigure ()\fC [slot]\fP"
+.PP
+Definition at line 657 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu(), and setupToolBar()\&.
+.SS "void SBMainWindow::ControlDefault ()\fC [slot]\fP"
+.PP
+Definition at line 663 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, SBSetUp::SetDefaults(), SetUp, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ControlFlushLog ()\fC [slot]\fP"
+.PP
+Definition at line 749 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::clearSpool(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ControlSelectFont ()\fC [slot]\fP"
+.PP
+Definition at line 669 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBSetUp::defaultFont(), SBLog::INTERFACE, Log, SBSetUp::setDefaultFont(), SetUp, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ControlStyleCDE ()\fC [slot]\fP"
+.PP
+Definition at line 691 of file SbIMainWin\&.C'\&.
+.PP
+References changeStyle(), and SBSetUp::S_CDE\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ControlStyleDefault ()\fC [slot]\fP"
+.PP
+Definition at line 681 of file SbIMainWin\&.C'\&.
+.PP
+References changeStyle(), and SBSetUp::S_Default\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ControlStyleInterlace ()\fC [slot]\fP"
+.PP
+Definition at line 701 of file SbIMainWin\&.C'\&.
+.PP
+References changeStyle(), and SBSetUp::S_Interlace\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ControlStyleMotifPlus ()\fC [slot]\fP"
+.PP
+Definition at line 686 of file SbIMainWin\&.C'\&.
+.PP
+References changeStyle(), and SBSetUp::S_MotifPlus\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ControlStylePlatinum ()\fC [slot]\fP"
+.PP
+Definition at line 711 of file SbIMainWin\&.C'\&.
+.PP
+References changeStyle(), and SBSetUp::S_Platinum\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ControlStyleSGI ()\fC [slot]\fP"
+.PP
+Definition at line 696 of file SbIMainWin\&.C'\&.
+.PP
+References changeStyle(), and SBSetUp::S_SGI\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ControlStyleWindows ()\fC [slot]\fP"
+.PP
+Definition at line 706 of file SbIMainWin\&.C'\&.
+.PP
+References changeStyle(), and SBSetUp::S_Windows\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ExecuteBrowseSolution ()\fC [slot]\fP"
+.PP
+Definition at line 963 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ExecuteDoubleRunProj ()\fC [slot]\fP"
+.PP
+Definition at line 909 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, IsNeedToStop, Log, SBRunManager::process(), SBSetUp::project(), SBSetUp::ProjectFileName(), SBLog::RUN, run(), SetUp, stBarReset(), SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ExecuteDrop ()\fC [slot]\fP"
+.PP
+Definition at line 969 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBSolution::deleteSolution(), SBLog::INTERFACE, SBSetUp::loadProject(), Log, SBSetUp::project(), SBVersion::selfName(), SetUp, Version, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ExecuteEditProj ()\fC [slot]\fP"
+.PP
+Definition at line 849 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, SBSetUp::project(), SBSetUp::ProjectFileName(), SetUp, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ExecuteGenProj ()\fC [slot]\fP"
+.PP
+Definition at line 837 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ExecuteModels ()\fC [slot]\fP"
+.PP
+Definition at line 859 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, SBSetUp::project(), SBSetUp::ProjectFileName(), SetUp, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ExecuteParameters ()\fC [slot]\fP"
+.PP
+Definition at line 869 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, SBSetUp::project(), SBSetUp::ProjectFileName(), SetUp, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ExecuteReportProj ()\fC [slot]\fP"
+.PP
+Definition at line 947 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, SBRunManager::makeReports(), SBSetUp::project(), SBSetUp::ProjectFileName(), SetUp, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ExecuteRunProj ()\fC [slot]\fP"
+.PP
+Definition at line 879 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, IsNeedToStop, Log, SBRunManager::process(), SBSetUp::project(), SBSetUp::ProjectFileName(), SBLog::RUN, run(), SetUp, stBarReset(), SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::ExecuteSelProj ()\fC [slot]\fP"
+.PP
+Definition at line 843 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::HelpAbout ()\fC [slot]\fP"
+.PP
+Definition at line 1144 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, SBCompilerDate, SBCompilerDomainName, SBCompilerHostName, SBCompilerLoginName, SBCompilerName, SBCompilerOS, SBCompilerTime, SBCompilerUserName, SBCompilerVersion, SBVersion::selfName(), SBVersion::toString(), Version, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::HelpAboutQt ()\fC [slot]\fP"
+.PP
+Definition at line 1138 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, SBVersion::selfName(), Version, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::HelpHelp ()\fC [slot]\fP"
+.PP
+Definition at line 1133 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::moveEvent (QMoveEvent *QME)\fC [protected, virtual]\fP"
+.PP
+Definition at line 640 of file SbIMainWin\&.C'\&.
+.PP
+References SBSetUp::setCentralPanelPosition(), and SetUp\&.
+.SS "void SBMainWindow::resizeEvent (QResizeEvent *QRE)\fC [protected, virtual]\fP"
+.PP
+Definition at line 634 of file SbIMainWin\&.C'\&.
+.PP
+References SBSetUp::setCentralPanelSize(), and SetUp\&.
+.SS "void SBMainWindow::run (boolt0)\fC [signal]\fP"
+.PP
+Definition at line 684 of file SbIMainWin\&.moc\&.C'\&.
+.PP
+Referenced by ExecuteDoubleRunProj(), ExecuteRunProj(), and SBMainWindow()\&.
+.SS "void SBMainWindow::setCacheSizes (intnObs, intnSes, intnCRF, intnTRF)\fC [slot]\fP"
+.PP
+Definition at line 1245 of file SbIMainWin\&.C'\&.
+.PP
+References SBCentralPanel::CasheSizes, and CentralWidget\&.
+.PP
+Referenced by mainSetCacheSizes()\&.
+.SS "void SBMainWindow::setCRFName (const QString &N_)\fC [slot]\fP"
+.PP
+Definition at line 1197 of file SbIMainWin\&.C'\&.
+.PP
+References CentralWidget, and SBCentralPanel::CRFName\&.
+.PP
+Referenced by mainSetCRFName(), and SBMainWindow()\&.
+.SS "void SBMainWindow::setEOPName (const QString &N_)\fC [slot]\fP"
+.PP
+Definition at line 1203 of file SbIMainWin\&.C'\&.
+.PP
+References CentralWidget, and SBCentralPanel::EOPName\&.
+.PP
+Referenced by mainSetEOPName(), and SBMainWindow()\&.
+.SS "void SBMainWindow::setMessage (const QString &message_)\fC [slot]\fP"
+.PP
+Definition at line 629 of file SbIMainWin\&.C'\&.
+.PP
+References StBarMessage\&.
+.PP
+Referenced by mainMessage(), and SBMainWindow()\&.
+.SS "void SBMainWindow::setOperation (const QString &O_)\fC [slot]\fP"
+.PP
+Definition at line 1221 of file SbIMainWin\&.C'\&.
+.PP
+References CentralWidget, and SBCentralPanel::Operation\&.
+.PP
+Referenced by mainSetOperation()\&.
+.SS "void SBMainWindow::setPrjName (const QString &N_)\fC [slot]\fP"
+.PP
+Definition at line 1209 of file SbIMainWin\&.C'\&.
+.PP
+References CentralWidget, and SBCentralPanel::PrjName\&.
+.PP
+Referenced by mainSetPrjName(), and SBMainWindow()\&.
+.SS "void SBMainWindow::setProcObs (intn, intTotal)\fC [slot]\fP"
+.PP
+Definition at line 1233 of file SbIMainWin\&.C'\&.
+.PP
+References CentralWidget, and SBCentralPanel::ProcObs\&.
+.PP
+Referenced by mainSetProcObs(), and SBMainWindow()\&.
+.SS "void SBMainWindow::setProcSes (intn, intTotal)\fC [slot]\fP"
+.PP
+Definition at line 1227 of file SbIMainWin\&.C'\&.
+.PP
+References CentralWidget, and SBCentralPanel::ProcSess\&.
+.PP
+Referenced by mainSetProcSes(), and SBMainWindow()\&.
+.SS "void SBMainWindow::setRunning (boolisRun)\fC [slot]\fP"
+.PP
+Definition at line 646 of file SbIMainWin\&.C'\&.
+.PP
+References bExit, and bStop\&.
+.PP
+Referenced by SBMainWindow()\&.
+.SS "void SBMainWindow::setSessName (const QString &N_)\fC [slot]\fP"
+.PP
+Definition at line 1239 of file SbIMainWin\&.C'\&.
+.PP
+References CentralWidget, and SBCentralPanel::SessName\&.
+.PP
+Referenced by mainSetSessName(), and SBMainWindow()\&.
+.SS "void SBMainWindow::setStatus (const QString &S_)\fC [slot]\fP"
+.PP
+Definition at line 1215 of file SbIMainWin\&.C'\&.
+.PP
+References CentralWidget, and SBCentralPanel::Status\&.
+.PP
+Referenced by mainSetStatus()\&.
+.SS "void SBMainWindow::setTRFName (const QString &N_)\fC [slot]\fP"
+.PP
+Definition at line 1191 of file SbIMainWin\&.C'\&.
+.PP
+References CentralWidget, and SBCentralPanel::TRFName\&.
+.PP
+Referenced by mainSetTRFName(), and SBMainWindow()\&.
+.SS "void SBMainWindow::setupMenu ()\fC [protected]\fP"
+.PP
+Definition at line 467 of file SbIMainWin\&.C'\&.
+.PP
+References changeStyle(), ControlConfigure(), ControlDefault(), ControlFlushLog(), ControlMenu, ControlSelectFont(), ControlStyleCDE(), ControlStyleDefault(), ControlStyleInterlace(), ControlStyleMotifPlus(), ControlStylePlatinum(), ControlStyleSGI(), ControlStyleWindows(), ExecuteBrowseSolution(), ExecuteDoubleRunProj(), ExecuteDrop(), ExecuteEditProj(), ExecuteGenProj(), ExecuteModels(), ExecuteParameters(), ExecuteReportProj(), ExecuteRunProj(), ExecuteSelProj(), SBSetUp::guiStyle(), HelpAbout(), HelpAboutQt(), HelpHelp(), labelsChk, SBSetUp::S_Default, SetUp, statusbarChk, StuffAplo(), StuffEccenticities(), StuffEOPs(), StuffEphemerides(), StuffModels(), StuffPlateMotion(), StuffSources(), StuffStations(), StuffVLBIObs(), StyleMenu, Styles, TestAplo(), TestDiurnalEOPs(), TestEOPs(), TestEphemerides(), TestJustATest(), TestNutation(), TestOceanTide(), TestPoleTide(), TestPrecession(), TestRotation(), TestSolidTide(), toggleStatusBar(), toggleTBLabels(), toggleToolBar(), toolbarChk, UtilitiesBrowseStat4All(), UtilitiesBrowseStat4Prj(), UtilitiesCollectStat4All(), UtilitiesCollectStat4Prj(), UtilitiesDumpUI(), UtilitiesFilters(), UtilitiesPreProc(), UtilitiesRestoreUI(), and UtilitiesSpectrum()\&.
+.PP
+Referenced by SBMainWindow()\&.
+.SS "void SBMainWindow::setupStatusBar ()\fC [protected]\fP"
+.PP
+Definition at line 443 of file SbIMainWin\&.C'\&.
+.PP
+References SBVersion::name(), StBarLabel, StBarMessage, StBarProgress, and Version\&.
+.PP
+Referenced by SBMainWindow()\&.
+.SS "void SBMainWindow::setupToolBar ()\fC [protected]\fP"
+.PP
+Definition at line 364 of file SbIMainWin\&.C'\&.
+.PP
+References bExit, bStop, ControlConfigure(), isStop, stopRunning(), StuffEOPs(), StuffSources(), StuffStations(), StuffVLBIObs(), and ToolBar\&.
+.PP
+Referenced by SBMainWindow()\&.
+.SS "void SBMainWindow::stBarReset ()\fC [slot]\fP"
+.PP
+Definition at line 1176 of file SbIMainWin\&.C'\&.
+.PP
+References StBarProgress\&.
+.PP
+Referenced by ExecuteDoubleRunProj(), ExecuteRunProj(), and mainPrBarReset()\&.
+.SS "void SBMainWindow::stBarSetProgress (intp)\fC [slot]\fP"
+.PP
+Definition at line 1186 of file SbIMainWin\&.C'\&.
+.PP
+References StBarProgress\&.
+.PP
+Referenced by mainPrBarSetProgress()\&.
+.SS "void SBMainWindow::stBarSetTotalSteps (intts)\fC [slot]\fP"
+.PP
+Definition at line 1181 of file SbIMainWin\&.C'\&.
+.PP
+References StBarProgress\&.
+.PP
+Referenced by mainPrBarSetTotalSteps()\&.
+.SS "void SBMainWindow::stopRunning (void)\fC [slot]\fP"
+.PP
+Definition at line 652 of file SbIMainWin\&.C'\&.
+.PP
+References IsNeedToStop\&.
+.PP
+Referenced by setupToolBar()\&.
+.SS "void SBMainWindow::StuffAplo ()\fC [slot]\fP"
+.PP
+Definition at line 785 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::StuffEccenticities ()\fC [slot]\fP"
+.PP
+Definition at line 791 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::StuffEOPs ()\fC [slot]\fP"
+.PP
+Definition at line 767 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu(), and setupToolBar()\&.
+.SS "void SBMainWindow::StuffEphemerides ()\fC [slot]\fP"
+.PP
+Definition at line 779 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::StuffModels ()\fC [slot]\fP"
+.PP
+Definition at line 801 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), Config, SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::StuffModelsNutEps ()\fC [slot]\fP"
+.PP
+Definition at line 812 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.SS "void SBMainWindow::StuffModelsNutPsi ()\fC [slot]\fP"
+.PP
+Definition at line 807 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.SS "void SBMainWindow::StuffModelsPolDiurn ()\fC [slot]\fP"
+.PP
+Definition at line 832 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.SS "void SBMainWindow::StuffModelsUT1Diurn ()\fC [slot]\fP"
+.PP
+Definition at line 827 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.SS "void SBMainWindow::StuffModelsUT1High ()\fC [slot]\fP"
+.PP
+Definition at line 817 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.SS "void SBMainWindow::StuffModelsUT1Low ()\fC [slot]\fP"
+.PP
+Definition at line 822 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.SS "void SBMainWindow::StuffPlateMotion ()\fC [slot]\fP"
+.PP
+Definition at line 796 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::StuffSources ()\fC [slot]\fP"
+.PP
+Definition at line 761 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu(), and setupToolBar()\&.
+.SS "void SBMainWindow::StuffStations ()\fC [slot]\fP"
+.PP
+Definition at line 755 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu(), and setupToolBar()\&.
+.SS "void SBMainWindow::StuffVLBIObs ()\fC [slot]\fP"
+.PP
+Definition at line 773 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu(), and setupToolBar()\&.
+.SS "void SBMainWindow::TestAplo ()\fC [slot]\fP"
+.PP
+Definition at line 1110 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::TestDiurnalEOPs ()\fC [slot]\fP"
+.PP
+Definition at line 1086 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::TestEOPs ()\fC [slot]\fP"
+.PP
+Definition at line 1080 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::TestEphemerides ()\fC [slot]\fP"
+.PP
+Definition at line 1074 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::TestJustATest ()\fC [slot]\fP"
+.PP
+Definition at line 1116 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::TestNutation ()\fC [slot]\fP"
+.PP
+Definition at line 1062 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::TestOceanTide ()\fC [slot]\fP"
+.PP
+Definition at line 1098 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::TestPoleTide ()\fC [slot]\fP"
+.PP
+Definition at line 1104 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::TestPrecession ()\fC [slot]\fP"
+.PP
+Definition at line 1056 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::TestRotation ()\fC [slot]\fP"
+.PP
+Definition at line 1068 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::TestSolidTide ()\fC [slot]\fP"
+.PP
+Definition at line 1092 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::toggleStatusBar ()\fC [slot]\fP"
+.PP
+Definition at line 615 of file SbIMainWin\&.C'\&.
+.PP
+References ControlMenu, and statusbarChk\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::toggleTBLabels ()\fC [slot]\fP"
+.PP
+Definition at line 601 of file SbIMainWin\&.C'\&.
+.PP
+References ControlMenu, and labelsChk\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::toggleToolBar ()\fC [slot]\fP"
+.PP
+Definition at line 587 of file SbIMainWin\&.C'\&.
+.PP
+References ControlMenu, ToolBar, and toolbarChk\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::UtilitiesBrowseStat4All ()\fC [slot]\fP"
+.PP
+Definition at line 1050 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::UtilitiesBrowseStat4Prj ()\fC [slot]\fP"
+.PP
+Definition at line 1044 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::UtilitiesCollectStat4All ()\fC [slot]\fP"
+.PP
+Definition at line 1035 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBObsVLBIStatistics::collectStatistics(), SBLog::DBG, SBLog::INTERFACE, Log, SBSetUp::saveObsVLBIStatistics(), SetUp, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::UtilitiesCollectStat4Prj ()\fC [slot]\fP"
+.PP
+Definition at line 1019 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBObsVLBIStatistics::collectStatistics(), SBLog::DBG, SBLog::ERR, SBLog::INTERFACE, SBSetUp::loadProject(), Log, SBNamed::name(), SBSetUp::saveObsVLBIStatistics(), SetUp, SBProject::VLBIsessionList(), and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::UtilitiesDumpUI ()\fC [slot]\fP"
+.PP
+Definition at line 1002 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBVLBISet::dumpUserInfo(), SBLog::INTERFACE, SBSetUp::loadVLBI(), Log, SetUp, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::UtilitiesFilters ()\fC [slot]\fP"
+.PP
+Definition at line 996 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::UtilitiesPreProc ()\fC [slot]\fP"
+.PP
+Definition at line 984 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::UtilitiesRestoreUI ()\fC [slot]\fP"
+.PP
+Definition at line 1011 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, SBSetUp::loadVLBI(), Log, SBVLBISet::restoreUserInfo(), SetUp, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SS "void SBMainWindow::UtilitiesSpectrum ()\fC [slot]\fP"
+.PP
+Definition at line 990 of file SbIMainWin\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by setupMenu()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QToolButton* \fBSBMainWindow::bExit\fP\fC [protected]\fP"
+.PP
+Definition at line 213 of file SbIMainWin\&.H'\&.
+.PP
+Referenced by setRunning(), and setupToolBar()\&.
+.SS "QToolButton* \fBSBMainWindow::bStop\fP\fC [protected]\fP"
+.PP
+Definition at line 212 of file SbIMainWin\&.H'\&.
+.PP
+Referenced by setRunning(), and setupToolBar()\&.
+.SS "\fBSBCentralPanel\fP* \fBSBMainWindow::CentralWidget\fP\fC [protected]\fP"
+.PP
+Definition at line 202 of file SbIMainWin\&.H'\&.
+.PP
+Referenced by SBMainWindow(), setCacheSizes(), setCRFName(), setEOPName(), setOperation(), setPrjName(), setProcObs(), setProcSes(), setSessName(), setStatus(), and setTRFName()\&.
+.SS "QPopupMenu* \fBSBMainWindow::ControlMenu\fP\fC [protected]\fP"
+.PP
+Definition at line 216 of file SbIMainWin\&.H'\&.
+.PP
+Referenced by setupMenu(), toggleStatusBar(), toggleTBLabels(), and toggleToolBar()\&.
+.SS "QIconSet* \fBSBMainWindow::isStop\fP\fC [protected]\fP"
+.PP
+Definition at line 209 of file SbIMainWin\&.H'\&.
+.PP
+Referenced by setupToolBar(), and ~SBMainWindow()\&.
+.SS "int \fBSBMainWindow::labelsChk\fP\fC [protected]\fP"
+.PP
+Definition at line 221 of file SbIMainWin\&.H'\&.
+.PP
+Referenced by setupMenu(), and toggleTBLabels()\&.
+.SS "int \fBSBMainWindow::statusbarChk\fP\fC [protected]\fP"
+.PP
+Definition at line 220 of file SbIMainWin\&.H'\&.
+.PP
+Referenced by setupMenu(), and toggleStatusBar()\&.
+.SS "QLabel* \fBSBMainWindow::StBarLabel\fP\fC [protected]\fP"
+.PP
+Definition at line 225 of file SbIMainWin\&.H'\&.
+.PP
+Referenced by setupStatusBar()\&.
+.SS "QLabel* \fBSBMainWindow::StBarMessage\fP\fC [protected]\fP"
+.PP
+Definition at line 227 of file SbIMainWin\&.H'\&.
+.PP
+Referenced by setMessage(), and setupStatusBar()\&.
+.SS "QProgressBar* \fBSBMainWindow::StBarProgress\fP\fC [protected]\fP"
+.PP
+Definition at line 226 of file SbIMainWin\&.H'\&.
+.PP
+Referenced by setupStatusBar(), stBarReset(), stBarSetProgress(), and stBarSetTotalSteps()\&.
+.SS "QPopupMenu* \fBSBMainWindow::StyleMenu\fP\fC [protected]\fP"
+.PP
+Definition at line 217 of file SbIMainWin\&.H'\&.
+.PP
+Referenced by changeStyle(), and setupMenu()\&.
+.SS "int \fBSBMainWindow::Styles\fP[8]\fC [protected]\fP"
+.PP
+Definition at line 222 of file SbIMainWin\&.H'\&.
+.PP
+Referenced by changeStyle(), and setupMenu()\&.
+.SS "QToolBar* \fBSBMainWindow::ToolBar\fP\fC [protected]\fP"
+.PP
+Definition at line 231 of file SbIMainWin\&.H'\&.
+.PP
+Referenced by setupToolBar(), and toggleToolBar()\&.
+.SS "int \fBSBMainWindow::toolbarChk\fP\fC [protected]\fP"
+.PP
+Definition at line 219 of file SbIMainWin\&.H'\&.
+.PP
+Referenced by setupMenu(), and toggleToolBar()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

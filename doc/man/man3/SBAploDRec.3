@@ -1,0 +1,578 @@
+.TH "SBAploDRec" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBAploDRec \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoAtmLoad\&.H>\fP
+.PP
+Inherits \fBSBMJD\fP'\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBFormat\fP { \fBF_YYYYMMDD\fP, \fBF_DDMonYYYY\fP, \fBF_Short\fP, \fBF_Long\fP, \fBF_Year\fP, \fBF_YYMonDD\fP, \fBF_HHMMSS\fP, \fBF_YYYYMMDDSSSSSS\fP, \fBF_INTERNAL\fP, \fBF_YYYYMMDDHHMMSSSS\fP, \fBF_DateShort\fP, \fBF_TimeShort\fP, \fBF_TimeVShort\fP, \fBF_ECCDAT\fP, \fBF_MJD\fP, \fBF_UNIX\fP, \fBF_SINEX\fP, \fBF_SINEX_S\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBAploDRec\fP (\fBSBAploEntry\fP *Owner_)"
+.br
+.ti -1c
+.RI "virtual \fB~SBAploDRec\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBdisplacement\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetDisplacement\fP (const \fBVector3\fP &D_)"
+.br
+.ti -1c
+.RI "virtual void \fBsetMJD\fP (int, int, int, int=0, int=0, double=0\&.0, bool=TRUE)"
+.br
+.ti -1c
+.RI "virtual void \fBsetMJD\fP (\fBFormat\fP, QString, bool=TRUE)"
+.br
+.ti -1c
+.RI "virtual void \fBsetDate\fP (int Date_)"
+.br
+.ti -1c
+.RI "virtual void \fBsetTime\fP (long double Time_)"
+.br
+.ti -1c
+.RI "virtual QString \fBtoString\fP (\fBFormat\fP=F_Short) const "
+.br
+.ti -1c
+.RI "virtual bool \fBisGood\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBoperator long double\fP () const "
+.br
+.ti -1c
+.RI "virtual bool \fBoperator==\fP (const \fBSBMJD\fP &) const "
+.br
+.ti -1c
+.RI "virtual bool \fBoperator!=\fP (const \fBSBMJD\fP &) const "
+.br
+.ti -1c
+.RI "virtual bool \fBoperator<\fP (const \fBSBMJD\fP &) const "
+.br
+.ti -1c
+.RI "virtual bool \fBoperator<=\fP (const \fBSBMJD\fP &) const "
+.br
+.ti -1c
+.RI "virtual bool \fBoperator>\fP (const \fBSBMJD\fP &) const "
+.br
+.ti -1c
+.RI "virtual bool \fBoperator>\fP (double) const "
+.br
+.ti -1c
+.RI "virtual bool \fBoperator>=\fP (const \fBSBMJD\fP &) const "
+.br
+.ti -1c
+.RI "virtual \fBSBMJD\fP & \fBoperator+=\fP (const \fBSBMJD\fP &MJD)"
+.br
+.ti -1c
+.RI "virtual \fBSBMJD\fP & \fBoperator-=\fP (const \fBSBMJD\fP &MJD)"
+.br
+.ti -1c
+.RI "int \fBdate\fP () const "
+.br
+.ti -1c
+.RI "long double \fBtime\fP () const "
+.br
+.ti -1c
+.RI "int \fByear\fP () const "
+.br
+.ti -1c
+.RI "int \fBmonth\fP () const "
+.br
+.ti -1c
+.RI "int \fBhour\fP () const "
+.br
+.ti -1c
+.RI "int \fBmin\fP () const "
+.br
+.ti -1c
+.RI "double \fBsec\fP () const "
+.br
+.ti -1c
+.RI "QString \fBmonth2Str\fP () const "
+.br
+.ti -1c
+.RI "int \fBday\fP () const "
+.br
+.ti -1c
+.RI "int \fBdayOfYear\fP () const "
+.br
+.ti -1c
+.RI "int \fBdayOfWeek\fP () const "
+.br
+.ti -1c
+.RI "QString \fBdayOfWeek2Str\fP () const "
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBMJD_date\fP (int, int, int)"
+.br
+.ti -1c
+.RI "static long double \fBMJD_time\fP (int, int, double)"
+.br
+.ti -1c
+.RI "static void \fBMJD_rev\fP (int, long double, int &, int &, int &, int &, int &, double &)"
+.br
+.ti -1c
+.RI "static \fBSBMJD\fP \fBcurrentMJD\fP ()"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const char * \fBmonthNames\fP []"
+.br
+.ti -1c
+.RI "static const char * \fBweekdayNames\fP []"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBVector3\fP \fBDisplacement\fP"
+.br
+.ti -1c
+.RI "\fBSBAploEntry\fP * \fBOwner\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBAploDRec\fP &DRec)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBAploDRec\fP &DRec)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator+\fP (const \fBSBMJD\fP &, const \fBSBMJD\fP &)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator+\fP (const \fBSBMJD\fP &, long double)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator+\fP (const \fBSBMJD\fP &, double)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator+\fP (const \fBSBMJD\fP &, float)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator+\fP (long double, const \fBSBMJD\fP &)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator+\fP (double, const \fBSBMJD\fP &)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator+\fP (float, const \fBSBMJD\fP &)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator-\fP (const \fBSBMJD\fP &, const \fBSBMJD\fP &)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator-\fP (const \fBSBMJD\fP &, long double)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator-\fP (const \fBSBMJD\fP &, double)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator-\fP (long double, const \fBSBMJD\fP &)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator-\fP (int, const \fBSBMJD\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBMJD\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBMJD\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 44 of file SbGeoAtmLoad\&.H'\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBSBMJD::Format\fP\fC [inherited]\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIF_YYYYMMDD \fP\fP
+.TP
+\fB\fIF_DDMonYYYY \fP\fP
+.TP
+\fB\fIF_Short \fP\fP
+.TP
+\fB\fIF_Long \fP\fP
+.TP
+\fB\fIF_Year \fP\fP
+.TP
+\fB\fIF_YYMonDD \fP\fP
+.TP
+\fB\fIF_HHMMSS \fP\fP
+.TP
+\fB\fIF_YYYYMMDDSSSSSS \fP\fP
+.TP
+\fB\fIF_INTERNAL \fP\fP
+.TP
+\fB\fIF_YYYYMMDDHHMMSSSS \fP\fP
+.TP
+\fB\fIF_DateShort \fP\fP
+.TP
+\fB\fIF_TimeShort \fP\fP
+.TP
+\fB\fIF_TimeVShort \fP\fP
+.TP
+\fB\fIF_ECCDAT \fP\fP
+.TP
+\fB\fIF_MJD \fP\fP
+.TP
+\fB\fIF_UNIX \fP\fP
+.TP
+\fB\fIF_SINEX \fP\fP
+.TP
+\fB\fIF_SINEX_S \fP\fP
+
+.PP
+Definition at line 49 of file SbGeoTime\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBAploDRec::SBAploDRec (\fBSBAploEntry\fP *Owner_)\fC [inline]\fP"
+.PP
+Definition at line 53 of file SbGeoAtmLoad\&.H'\&.
+.PP
+References Owner\&.
+.SS "virtual SBAploDRec::~SBAploDRec ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 55 of file SbGeoAtmLoad\&.H'\&.
+.PP
+References Owner\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBAploDRec::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Reimplemented from \fBSBMJD\fP'\&.
+.PP
+Definition at line 56 of file SbGeoAtmLoad\&.H'\&.
+.SS "\fBSBMJD\fP SBMJD::currentMJD ()\fC [static, inherited]\fP"
+.PP
+Definition at line 134 of file SbGeoTime\&.C'\&.
+.PP
+Referenced by operator<<(), SBRunManager::process_m1(), SBTestAPLoad::SBTestAPLoad(), SBTestDiurnEOP::SBTestDiurnEOP(), SBTestEOP::SBTestEOP(), SBTestEphem::SBTestEphem(), SBTestFrame::SBTestFrame(), SBTestNutation::SBTestNutation(), SBTestOceanTides::SBTestOceanTides(), SBTestPolarTides::SBTestPolarTides(), SBTestPrecession::SBTestPrecession(), SBTestSolidTides::SBTestSolidTides(), and writeNormalEquationSystem()\&.
+.SS "int SBMJD::date () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 121 of file SbGeoTime\&.H'\&.
+.PP
+References SBMJD::Date\&.
+.PP
+Referenced by SBNutation::calcGST(), SBTime::DefineTAI_UTC(), SBRunManager::loadVLBISession_m1(), operator<<(), operator>>(), SBTestEphem::recalc(), and SBTime::setUTC()\&.
+.SS "int SBMJD::day () const\fC [inherited]\fP"
+.PP
+Definition at line 208 of file SbGeoTime\&.C'\&.
+.PP
+References SBMJD::Date, SBMJD::MJD_rev(), and SBMJD::Time\&.
+.PP
+Referenced by SBTest::createWidgets(), operator<<(), SBTest::recalc(), SBClockBreakEditor::SBClockBreakEditor(), and SBCoordsEditor::SBCoordsEditor()\&.
+.SS "int SBMJD::dayOfWeek () const\fC [inherited]\fP"
+.PP
+Definition at line 225 of file SbGeoTime\&.C'\&.
+.PP
+References SBMJD::Date, and SBMJD::SBMJD()\&.
+.PP
+Referenced by SBMJD::dayOfWeek2Str()\&.
+.SS "QString SBMJD::dayOfWeek2Str () const\fC [inherited]\fP"
+.PP
+Definition at line 231 of file SbGeoTime\&.C'\&.
+.PP
+References SBMJD::Date, SBMJD::dayOfWeek(), and SBMJD::weekdayNames\&.
+.PP
+Referenced by SBMJD::toString()\&.
+.SS "int SBMJD::dayOfYear () const\fC [inherited]\fP"
+.PP
+Definition at line 220 of file SbGeoTime\&.C'\&.
+.PP
+References SBMJD::Date, SBMJD::MJD_date(), and SBMJD::year()\&.
+.PP
+Referenced by SBHMf_NMF::operator()(), and SBMJD::toString()\&.
+.SS "const \fBVector3\fP& SBAploDRec::displacement () const\fC [inline]\fP"
+.PP
+Definition at line 60 of file SbGeoAtmLoad\&.H'\&.
+.PP
+References Displacement\&.
+.SS "int SBMJD::hour () const\fC [inherited]\fP"
+.PP
+Definition at line 167 of file SbGeoTime\&.C'\&.
+.PP
+References SBMJD::Date, SBMJD::MJD_rev(), and SBMJD::Time\&.
+.PP
+Referenced by SBTest::createWidgets(), SBTest::recalc(), SBClockBreakEditor::SBClockBreakEditor(), and SBCoordsEditor::SBCoordsEditor()\&.
+.SS "virtual bool SBMJD::isGood ()\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 87 of file SbGeoTime\&.H'\&.
+.PP
+References SBMJD::Date, and SBMJD::Time\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), SBAploChunk::import(), SBEcc::importEccDat(), operator>>(), and SBVLBISession::parseObsDumpString()\&.
+.SS "int SBMJD::min () const\fC [inherited]\fP"
+.PP
+Definition at line 179 of file SbGeoTime\&.C'\&.
+.PP
+References SBMJD::Date, SBMJD::MJD_rev(), and SBMJD::Time\&.
+.PP
+Referenced by SBTest::createWidgets(), SBTest::recalc(), SBClockBreakEditor::SBClockBreakEditor(), SBCoordsEditor::SBCoordsEditor(), SBMJD::setMJD(), and SBMJD::toString()\&.
+.SS "int SBMJD::MJD_date (inty, intm, intd)\fC [static, inherited]\fP"
+.PP
+Definition at line 72 of file SbGeoTime\&.C'\&.
+.PP
+Referenced by SBMJD::dayOfYear(), and SBMJD::setMJD()\&.
+.SS "void SBMJD::MJD_rev (intdate_, long doubletime_, int &y, int &m, int &d, int &hr, int &mi, double &se)\fC [static, inherited]\fP"
+.PP
+Definition at line 95 of file SbGeoTime\&.C'\&.
+.PP
+References DAY2SEC\&.
+.PP
+Referenced by SBMJD::day(), SBMJD::hour(), SBMJD::min(), SBMJD::month(), SBMJD::sec(), SBMJD::toString(), and SBMJD::year()\&.
+.SS "long double SBMJD::MJD_time (intHour, intMin, doubleSec)\fC [static, inherited]\fP"
+.PP
+Definition at line 90 of file SbGeoTime\&.C'\&.
+.PP
+References DAY2SEC\&.
+.PP
+Referenced by SBMJD::setMJD()\&.
+.SS "int SBMJD::month () const\fC [inherited]\fP"
+.PP
+Definition at line 155 of file SbGeoTime\&.C'\&.
+.PP
+References SBMJD::Date, SBMJD::MJD_rev(), and SBMJD::Time\&.
+.PP
+Referenced by SBTest::createWidgets(), SBMJD::month2Str(), SBTest::recalc(), SBClockBreakEditor::SBClockBreakEditor(), and SBCoordsEditor::SBCoordsEditor()\&.
+.SS "QString SBMJD::month2Str () const\fC [inherited]\fP"
+.PP
+Definition at line 203 of file SbGeoTime\&.C'\&.
+.PP
+References SBMJD::month(), and SBMJD::monthNames\&.
+.PP
+Referenced by operator<<()\&.
+.SS "virtual SBMJD::operator long double () const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 89 of file SbGeoTime\&.H'\&.
+.PP
+References SBMJD::Date, and SBMJD::Time\&.
+.SS "bool SBMJD::operator!= (const \fBSBMJD\fP &MJD) const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 206 of file SbGeoTime\&.H'\&.
+.PP
+References SBMJD::Date, and SBMJD::Time\&.
+.SS "\fBSBMJD\fP & SBMJD::operator+= (const \fBSBMJD\fP &MJD)\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 254 of file SbGeoTime\&.H'\&.
+.PP
+References SBMJD::Date, and SBMJD::Time\&.
+.SS "\fBSBMJD\fP & SBMJD::operator-= (const \fBSBMJD\fP &MJD)\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 262 of file SbGeoTime\&.H'\&.
+.PP
+References SBMJD::Date, and SBMJD::Time\&.
+.SS "bool SBMJD::operator< (const \fBSBMJD\fP &MJD) const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 211 of file SbGeoTime\&.H'\&.
+.PP
+References SBMJD::Date, and SBMJD::Time\&.
+.SS "bool SBMJD::operator<= (const \fBSBMJD\fP &MJD) const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 217 of file SbGeoTime\&.H'\&.
+.PP
+References SBMJD::Date, and SBMJD::Time\&.
+.SS "bool SBMJD::operator== (const \fBSBMJD\fP &MJD) const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 201 of file SbGeoTime\&.H'\&.
+.PP
+References SBMJD::Date, and SBMJD::Time\&.
+.SS "bool SBMJD::operator> (const \fBSBMJD\fP &MJD) const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 223 of file SbGeoTime\&.H'\&.
+.PP
+References SBMJD::Date, and SBMJD::Time\&.
+.SS "bool SBMJD::operator> (doubled) const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 229 of file SbGeoTime\&.H'\&.
+.PP
+References SBMJD::SBMJD()\&.
+.SS "bool SBMJD::operator>= (const \fBSBMJD\fP &MJD) const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 234 of file SbGeoTime\&.H'\&.
+.PP
+References SBMJD::Date, and SBMJD::Time\&.
+.SS "double SBMJD::sec () const\fC [inherited]\fP"
+.PP
+Definition at line 191 of file SbGeoTime\&.C'\&.
+.PP
+References SBMJD::Date, SBMJD::MJD_rev(), and SBMJD::Time\&.
+.PP
+Referenced by SBTest::createWidgets(), SBTest::recalc(), SBClockBreakEditor::SBClockBreakEditor(), SBCoordsEditor::SBCoordsEditor(), SBMJD::setMJD(), and SBMJD::toString()\&.
+.SS "virtual void SBMJD::setDate (intDate_)\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 81 of file SbGeoTime\&.H'\&.
+.PP
+References SBMJD::Date\&.
+.PP
+Referenced by SBAploChunk::import()\&.
+.SS "void SBAploDRec::setDisplacement (const \fBVector3\fP &D_)\fC [inline]\fP"
+.PP
+Definition at line 61 of file SbGeoAtmLoad\&.H'\&.
+.PP
+References Displacement\&.
+.PP
+Referenced by SBAploChunk::import()\&.
+.SS "void SBMJD::setMJD (intYear, intMonth, intDay, intHour = \fC0\fP, intMin = \fC0\fP, doubleSec = \fC0\&.0\fP, bool = \fCTRUE\fP)\fC [virtual, inherited]\fP"
+.PP
+Definition at line 64 of file SbGeoTime\&.C'\&.
+.PP
+References SBMJD::Date, SBMJD::MJD_date(), SBMJD::MJD_time(), and SBMJD::Time\&.
+.PP
+Referenced by SBStuffEOPs::accept(), SBStuffSources::accept(), SBStuffStations::accept(), SBSourceEditor::acquireData(), SBEcc::importEccDat(), operator>>(), SBVLBISession::parseObsDumpString(), SBTest::recalc(), SBStationInfo::restoreUserInfo(), SBMJD::SBMJD(), and SBMJD::setMJD()\&.
+.SS "void SBMJD::setMJD (\fBFormat\fPF, QStrings, boolisReset = \fCTRUE\fP)\fC [virtual, inherited]\fP"
+.PP
+Definition at line 357 of file SbGeoTime\&.C'\&.
+.PP
+References SBMJD::ClassName(), SBMJD::Date, SBLog::ERR, SBMJD::F_DateShort, SBMJD::F_DDMonYYYY, SBMJD::F_ECCDAT, SBMJD::F_HHMMSS, SBMJD::F_INTERNAL, SBMJD::F_Long, SBMJD::F_Short, SBMJD::F_SINEX, SBMJD::F_SINEX_S, SBMJD::F_TimeShort, SBMJD::F_TimeVShort, SBMJD::F_Year, SBMJD::F_YYMonDD, SBMJD::F_YYYYMMDD, SBMJD::F_YYYYMMDDHHMMSSSS, SBLog::INF, Log, SBMJD::min(), SBMJD::MJD_date(), SBMJD::monthNames, SBMJD::sec(), SBMJD::setMJD(), SBMJD::Time, SBLog::TIME, SBLog::write(), and SBLog::WRN\&.
+.SS "virtual void SBMJD::setTime (long doubleTime_)\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 82 of file SbGeoTime\&.H'\&.
+.PP
+References SBMJD::Date, and SBMJD::Time\&.
+.PP
+Referenced by SBAploChunk::import()\&.
+.SS "long double SBMJD::time () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 122 of file SbGeoTime\&.H'\&.
+.PP
+References SBMJD::Time\&.
+.PP
+Referenced by SBOceanTideLd::ARG_IERS(), SBNutation::calcGST(), and SBTestEOP::fillData4Plotting()\&.
+.SS "QString SBMJD::toString (\fBFormat\fPF = \fCF_Short\fP) const\fC [virtual, inherited]\fP"
+.PP
+Definition at line 243 of file SbGeoTime\&.C'\&.
+.PP
+References SBMJD::Date, DAY2SEC, SBMJD::dayOfWeek2Str(), SBMJD::dayOfYear(), SBMJD::F_DateShort, SBMJD::F_DDMonYYYY, SBMJD::F_ECCDAT, SBMJD::F_HHMMSS, SBMJD::F_INTERNAL, SBMJD::F_Long, SBMJD::F_MJD, SBMJD::F_Short, SBMJD::F_SINEX, SBMJD::F_SINEX_S, SBMJD::F_TimeShort, SBMJD::F_TimeVShort, SBMJD::F_UNIX, SBMJD::F_Year, SBMJD::F_YYMonDD, SBMJD::F_YYYYMMDD, SBMJD::F_YYYYMMDDHHMMSSSS, SBMJD::F_YYYYMMDDSSSSSS, SBMJD::min(), SBMJD::MJD_rev(), SBMJD::monthNames, SBMJD::sec(), SBMJD::Time, TUnix0, TZero, and SBMJD::year()\&.
+.PP
+Referenced by SBStuffSources::accept(), SBStuffStations::accept(), SBSourceEditor::acquireData(), SBDelay::calc(), SBEphem::calc(), SBFrameClassic::calc(), SBNutThIAU1980::calc(), SBNutThIAU1996::calc(), SBNutThIAU2000A::calc(), SBEphem::calcI(), SBRunManager::checkParameterLists(), SBEOP::checkRanges(), SBStuffEOPs::createInfoGroup(), SBTestFrame::createWidget4Test(), SBTest::createWidgets(), SBStationEditor::delCoordinates(), SBStuffStationsEcc::deleteEntry(), SBStaParsEditor::deleteEntry(), SBEOP::dEps(), SBTestPrecession::displayValues(), SBTestNutation::displayValues(), SBTestFrame::displayValues(), SBEOP::dLOD(), SBEOP::dPsi(), SBStuffSources::drawInfo(), SBStuffStations::drawInfo(), SBPlotArea::drawXmjdTics(), SBDBHHistTriplet::dump(), SBDBHStartBlock::dump(), SBStochParameter::dump2File(), SBSolution::dumpParameters(), SBEOP::dUT1_UTC(), SBEOP::dX(), SBEOP::dY(), SBVLBIPreProcess::fillSessAttr(), SBEstimator::GroupList::find(), SBStochParameter::find(), SBAploEphem::getReady(), SBEphem::import(), SBEstimator::GroupList::inSort(), SBEOP::interpolateEOPs(), SBObsVLBIStatSrcLI::key(), SBObsVLBIStatStaLI::key(), SBSolutionBatchLI::key(), SBObsVLBIStatRecordLI::key(), SBEccListItem::key(), SBCoordsListItem::key(), SBAploHeaderLI::key(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportTRFVariations(), SBAploHeader::name(), SBEphem::openFile(), SBSolidTideLd::operator()(), SBPrec_IAU1976::operator()(), SBTideLd::operator()(), SBPrec_IAU2000::operator()(), SBRefraction::operator()(), SBNut_IAU1980::operator()(), SBNut_IAU2000::operator()(), SBPolus::operator()(), operator<<(), operator>>(), SBEOP::prepare4Date(), SBTest::recalc(), SBStationEcc::registerEcc(), SBEstimator::GroupList::remove(), SBParameterList::report(), SBStochParameter::report(), SBStuffAplo::SBStuffAplo(), SBStuffEphem::SBStuffEphem(), SBStuffSources::SBStuffSources(), SBStuffStations::SBStuffStations(), SBTime::setUTC(), sinex_HeaderLine(), sinex_InputFilesBlock(), sinex_InputHistoryBlock(), sinex_SiteEccentricityBlock(), sinex_SolutionEpochsBlock(), sinex_tro_HeaderLine(), SBParameterLI::text(), SBObsVLBIStatSrcLI::text(), SBVLBIObsPPLI::text(), SBObsVLBIStatStaLI::text(), SBVLBISesInfoLI::text(), SBObsVLBIStatRecordLI::text(), SBEccListItem::text(), SBVLBIObsLI::text(), SBCoordsListItem::text(), SBAploHeaderLI::text(), SBClockBreakLI::text(), SBParameter::timeStamp(), SBStuffEOPs::updateEOP(), SBStuffEphem::updateEphem(), SBStuffAplo::updateEphem(), SBVLBIPreProcess::wAttributes(), SBVLBISessionEditor::wParameters(), and SBSourceEditor::wStats()\&.
+.SS "int SBMJD::year () const\fC [inherited]\fP"
+.PP
+Definition at line 143 of file SbGeoTime\&.C'\&.
+.PP
+References SBMJD::Date, SBMJD::MJD_rev(), and SBMJD::Time\&.
+.PP
+Referenced by SBVLBISesInfo::checkPath(), SBTest::createWidgets(), SBMJD::dayOfYear(), SBVLBISesInfo::fileName(), SBTest::recalc(), SBClockBreakEditor::SBClockBreakEditor(), SBCoordsEditor::SBCoordsEditor(), and SBMJD::toString()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "\fBSBMJD\fP operator+ (const \fBSBMJD\fP &A, const \fBSBMJD\fP &B)\fC [friend, inherited]\fP"
+.PP
+Definition at line 270 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator+ (const \fBSBMJD\fP &A, long doubleb)\fC [friend, inherited]\fP"
+.PP
+Definition at line 275 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator+ (const \fBSBMJD\fP &A, doubleb)\fC [friend, inherited]\fP"
+.PP
+Definition at line 280 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator+ (const \fBSBMJD\fP &A, floatb)\fC [friend, inherited]\fP"
+.PP
+Definition at line 285 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator+ (long doublea, const \fBSBMJD\fP &B)\fC [friend, inherited]\fP"
+.PP
+Definition at line 290 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator+ (doublea, const \fBSBMJD\fP &B)\fC [friend, inherited]\fP"
+.PP
+Definition at line 295 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator+ (floata, const \fBSBMJD\fP &B)\fC [friend, inherited]\fP"
+.PP
+Definition at line 300 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator- (const \fBSBMJD\fP &A, const \fBSBMJD\fP &B)\fC [friend, inherited]\fP"
+.PP
+Definition at line 305 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator- (const \fBSBMJD\fP &A, long doubleb)\fC [friend, inherited]\fP"
+.PP
+Definition at line 310 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator- (const \fBSBMJD\fP &A, doubleb)\fC [friend, inherited]\fP"
+.PP
+Definition at line 315 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator- (long doublea, const \fBSBMJD\fP &B)\fC [friend, inherited]\fP"
+.PP
+Definition at line 320 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator- (inta, const \fBSBMJD\fP &B)\fC [friend, inherited]\fP"
+.PP
+Definition at line 325 of file SbGeoTime\&.H'\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBAploDRec\fP &DRec)\fC [friend]\fP"
+.PP
+Definition at line 68 of file SbGeoAtmLoad\&.H'\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBMJD\fP &MJD)\fC [friend, inherited]\fP"
+.PP
+Definition at line 330 of file SbGeoTime\&.H'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBAploDRec\fP &DRec)\fC [friend]\fP"
+.PP
+Definition at line 70 of file SbGeoAtmLoad\&.H'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBMJD\fP &MJD)\fC [friend, inherited]\fP"
+.PP
+Definition at line 337 of file SbGeoTime\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBVector3\fP \fBSBAploDRec::Displacement\fP\fC [private]\fP"
+.PP
+Definition at line 47 of file SbGeoAtmLoad\&.H'\&.
+.PP
+Referenced by displacement(), and setDisplacement()\&.
+.SS "const char * \fBSBMJD::monthNames\fP\fC [static, protected, inherited]\fP"\fBInitial value:\fP
+.PP
+.nf
+ 
+{
+  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+}
+.fi
+.PP
+Definition at line 63 of file SbGeoTime\&.H'\&.
+.PP
+Referenced by SBMJD::month2Str(), SBMJD::setMJD(), and SBMJD::toString()\&.
+.SS "\fBSBAploEntry\fP* \fBSBAploDRec::Owner\fP\fC [private]\fP"
+.PP
+Definition at line 48 of file SbGeoAtmLoad\&.H'\&.
+.PP
+Referenced by SBAploDRec(), and ~SBAploDRec()\&.
+.SS "const char * \fBSBMJD::weekdayNames\fP\fC [static, protected, inherited]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+{
+  'Mon','Tue','Wed','Thu','Fri','Sat','Sun'
+}
+.fi
+.PP
+Definition at line 64 of file SbGeoTime\&.H'\&.
+.PP
+Referenced by SBMJD::dayOfWeek2Str()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

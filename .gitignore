@@ -3,6 +3,7 @@
 *.lo
 *.o
 *.obj
+*.Po
 
 # Precompiled Headers
 *.gch
@@ -26,3 +27,10 @@
 *.exe
 *.out
 *.app
+
+stamp-h1
+VERSION
+config.status
+config.log
+config.h
+Makefile

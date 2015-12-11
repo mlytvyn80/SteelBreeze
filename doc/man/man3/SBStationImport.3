@@ -1,0 +1,1095 @@
+.TH "SBStationImport" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBStationImport \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIStuffStation\&.H>\fP
+.PP
+Inherits \fBQWizard\fP'\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBstationsImported\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBStationImport\fP (\fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBcloseEvent\fP (QCloseEvent *)"
+.br
+.ti -1c
+.RI "void \fBsetupPage1\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetupPage2_1\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetupPage2_2\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetupPage3\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetupPage4\fP ()"
+.br
+.ti -1c
+.RI "bool \fBcheckFileExists\fP (const QString &)"
+.br
+.in -1c
+.SS "Private Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBFileFormat\fP { \fBF_UNKN\fP = 0, \fBF_ITRF94\fP = 1, \fBF_ITRF96\fP = 2, \fBF_ITRF97\fP = 3, \fBF_ITRF2000\fP = 4, \fBF_SINEX\fP = 5 }"
+.br
+.ti -1c
+.RI "enum \fBFileType\fP { \fBSITE\fP = 0, \fBDIR\fP = 1, \fBSSC_Z\fP = 2, \fBDORIS\fP = 2, \fBSSC_C\fP = 3, \fBGPS\fP = 3, \fBSSC_B\fP = 4, \fBSLR\fP = 4, \fBSSC_A\fP = 5, \fBVLBI\fP = 5, \fBBLQ\fP = 6 }"
+.br
+.ti -1c
+.RI "enum \fBImportMode\fP { \fBREPLACE\fP = 0, \fBAPP_ONLY\fP = 1, \fBAPP_UPD\fP = 2, \fBUPD_ONLY\fP = 3 }"
+.br
+.ti -1c
+.RI "enum \fBImportFilter\fP { \fBFILT_COO\fP = 0, \fBFILT_TECH\fP = 1, \fBFILT_VLBI\fP = 2, \fBFILT_ALL\fP = 3 }"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBaccept\fP ()"
+.br
+.ti -1c
+.RI "void \fBformatChanged\fP (int)"
+.br
+.ti -1c
+.RI "void \fBselectDIRfile1994\fP ()"
+.br
+.ti -1c
+.RI "void \fBselectSITEfile1994\fP ()"
+.br
+.ti -1c
+.RI "void \fBselectSSCAfile1994\fP ()"
+.br
+.ti -1c
+.RI "void \fBselectSSCBfile1994\fP ()"
+.br
+.ti -1c
+.RI "void \fBselectSSCCfile1994\fP ()"
+.br
+.ti -1c
+.RI "void \fBselectSSCZfile1994\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetDIRstate1994\fP (bool T)"
+.br
+.ti -1c
+.RI "void \fBsetSITEstate1994\fP (bool T)"
+.br
+.ti -1c
+.RI "void \fBsetSSCAstate1994\fP (bool T)"
+.br
+.ti -1c
+.RI "void \fBsetSSCBstate1994\fP (bool T)"
+.br
+.ti -1c
+.RI "void \fBsetSSCCstate1994\fP (bool T)"
+.br
+.ti -1c
+.RI "void \fBsetSSCZstate1994\fP (bool T)"
+.br
+.ti -1c
+.RI "void \fBfnDIRChanged1994\fP (const QString &FN_)"
+.br
+.ti -1c
+.RI "void \fBfnSITEChanged1994\fP (const QString &FN_)"
+.br
+.ti -1c
+.RI "void \fBfnSSCAChanged1994\fP (const QString &FN_)"
+.br
+.ti -1c
+.RI "void \fBfnSSCBChanged1994\fP (const QString &FN_)"
+.br
+.ti -1c
+.RI "void \fBfnSSCCChanged1994\fP (const QString &FN_)"
+.br
+.ti -1c
+.RI "void \fBfnSSCZChanged1994\fP (const QString &FN_)"
+.br
+.ti -1c
+.RI "void \fBselectDIRfile2000\fP ()"
+.br
+.ti -1c
+.RI "void \fBselectSITEfile2000\fP ()"
+.br
+.ti -1c
+.RI "void \fBselectSSCAfile2000\fP ()"
+.br
+.ti -1c
+.RI "void \fBselectSSCBfile2000\fP ()"
+.br
+.ti -1c
+.RI "void \fBselectSSCCfile2000\fP ()"
+.br
+.ti -1c
+.RI "void \fBselectSSCZfile2000\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetDIRstate2000\fP (bool T)"
+.br
+.ti -1c
+.RI "void \fBsetSITEstate2000\fP (bool T)"
+.br
+.ti -1c
+.RI "void \fBsetSSCAstate2000\fP (bool T)"
+.br
+.ti -1c
+.RI "void \fBsetSSCBstate2000\fP (bool T)"
+.br
+.ti -1c
+.RI "void \fBsetSSCCstate2000\fP (bool T)"
+.br
+.ti -1c
+.RI "void \fBsetSSCZstate2000\fP (bool T)"
+.br
+.ti -1c
+.RI "void \fBfnDIRChanged2000\fP (const QString &FN_)"
+.br
+.ti -1c
+.RI "void \fBfnSITEChanged2000\fP (const QString &FN_)"
+.br
+.ti -1c
+.RI "void \fBfnSSCAChanged2000\fP (const QString &FN_)"
+.br
+.ti -1c
+.RI "void \fBfnSSCBChanged2000\fP (const QString &FN_)"
+.br
+.ti -1c
+.RI "void \fBfnSSCCChanged2000\fP (const QString &FN_)"
+.br
+.ti -1c
+.RI "void \fBfnSSCZChanged2000\fP (const QString &FN_)"
+.br
+.ti -1c
+.RI "void \fBselectNSCfileAux\fP ()"
+.br
+.ti -1c
+.RI "void \fBselectECCfileAux\fP ()"
+.br
+.ti -1c
+.RI "void \fBselectBLQfileAux\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetNSCstateAux\fP (bool T)"
+.br
+.ti -1c
+.RI "void \fBsetECCstateAux\fP (bool T)"
+.br
+.ti -1c
+.RI "void \fBsetBLQstateAux\fP (bool T)"
+.br
+.ti -1c
+.RI "void \fBfnNSCChangedAux\fP (const QString &FN_)"
+.br
+.ti -1c
+.RI "void \fBfnECCChangedAux\fP (const QString &FN_)"
+.br
+.ti -1c
+.RI "void \fBfnBLQChangedAux\fP (const QString &FN_)"
+.br
+.ti -1c
+.RI "void \fBmodeChanged\fP (int)"
+.br
+.ti -1c
+.RI "void \fBfilterChanged\fP (int)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcheckPage2_1State\fP ()"
+.br
+.ti -1c
+.RI "void \fBcheckPage2_2State\fP ()"
+.br
+.ti -1c
+.RI "void \fBcheckPage3State\fP ()"
+.br
+.ti -1c
+.RI "void \fBselectFile1994\fP (\fBFileType\fP)"
+.br
+.ti -1c
+.RI "void \fBsetState1994\fP (\fBFileType\fP, bool)"
+.br
+.ti -1c
+.RI "void \fBfileNameChanged1994\fP (\fBFileType\fP, const QString &)"
+.br
+.ti -1c
+.RI "void \fBselectFile2000\fP (\fBFileType\fP)"
+.br
+.ti -1c
+.RI "void \fBsetState2000\fP (\fBFileType\fP, bool)"
+.br
+.ti -1c
+.RI "void \fBfileNameChanged2000\fP (\fBFileType\fP, const QString &)"
+.br
+.ti -1c
+.RI "void \fBselectFileAux\fP (int)"
+.br
+.ti -1c
+.RI "void \fBsetStateAux\fP (int, bool)"
+.br
+.ti -1c
+.RI "void \fBfileNameChangedAux\fP (int, const QString &)"
+.br
+.ti -1c
+.RI "void \fBimportITRF\fP ()"
+.br
+.ti -1c
+.RI "void \fBloadFile1994\fP (\fBSB_TRF\fP *, const QString &, \fBFileType\fP)"
+.br
+.ti -1c
+.RI "void \fBloadFile2000\fP (\fBSB_TRF\fP *, const QString &, \fBFileType\fP)"
+.br
+.ti -1c
+.RI "void \fBapplyFilter\fP (\fBImportFilter\fP, \fBSB_TRF\fP *)"
+.br
+.ti -1c
+.RI "bool \fBloadOLoad\fP (\fBSB_TRF\fP *, QString)"
+.br
+.ti -1c
+.RI "bool \fBloadNScodes\fP (\fBSB_TRF\fP *, const QString &)"
+.br
+.ti -1c
+.RI "bool \fBloadECCdat\fP (\fBSB_TRF\fP *, const QString &)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBFileFormat\fP \fBFFormat\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBpage1\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBpage2_1\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBpage2_2\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBpage3\fP"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBpage4\fP"
+.br
+.ti -1c
+.RI "const int \fBNumOf1994Files\fP"
+.br
+.ti -1c
+.RI "QString \fBsFileName1994\fP [6]"
+.br
+.ti -1c
+.RI "QCheckBox * \fBcbFileName1994\fP [6]"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleFileName1994\fP [6]"
+.br
+.ti -1c
+.RI "QPushButton * \fBbFile1994\fP [6]"
+.br
+.ti -1c
+.RI "const int \fBNumOf2000Files\fP"
+.br
+.ti -1c
+.RI "QString \fBsFileName2000\fP [6]"
+.br
+.ti -1c
+.RI "QCheckBox * \fBcbFileName2000\fP [6]"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleFileName2000\fP [6]"
+.br
+.ti -1c
+.RI "QPushButton * \fBbFile2000\fP [6]"
+.br
+.ti -1c
+.RI "const int \fBNumOfAuxFiles\fP"
+.br
+.ti -1c
+.RI "QString \fBsFileNameAux\fP [3]"
+.br
+.ti -1c
+.RI "QCheckBox * \fBcbFileNameAux\fP [3]"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleFileNameAux\fP [3]"
+.br
+.ti -1c
+.RI "QPushButton * \fBbFileAux\fP [3]"
+.br
+.ti -1c
+.RI "\fBImportMode\fP \fBMode\fP"
+.br
+.ti -1c
+.RI "\fBImportFilter\fP \fBFilter\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 260 of file SbIStuffStation\&.H'\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBSBStationImport::FileFormat\fP\fC [private]\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIF_UNKN \fP\fP
+.TP
+\fB\fIF_ITRF94 \fP\fP
+.TP
+\fB\fIF_ITRF96 \fP\fP
+.TP
+\fB\fIF_ITRF97 \fP\fP
+.TP
+\fB\fIF_ITRF2000 \fP\fP
+.TP
+\fB\fIF_SINEX \fP\fP
+
+.PP
+Definition at line 268 of file SbIStuffStation\&.H'\&.
+.SS "enum \fBSBStationImport::FileType\fP\fC [private]\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fISITE \fP\fP
+.TP
+\fB\fIDIR \fP\fP
+.TP
+\fB\fISSC_Z \fP\fP
+.TP
+\fB\fIDORIS \fP\fP
+.TP
+\fB\fISSC_C \fP\fP
+.TP
+\fB\fIGPS \fP\fP
+.TP
+\fB\fISSC_B \fP\fP
+.TP
+\fB\fISLR \fP\fP
+.TP
+\fB\fISSC_A \fP\fP
+.TP
+\fB\fIVLBI \fP\fP
+.TP
+\fB\fIBLQ \fP\fP
+
+.PP
+Definition at line 269 of file SbIStuffStation\&.H'\&.
+.SS "enum \fBSBStationImport::ImportFilter\fP\fC [private]\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIFILT_COO \fP\fP
+.TP
+\fB\fIFILT_TECH \fP\fP
+.TP
+\fB\fIFILT_VLBI \fP\fP
+.TP
+\fB\fIFILT_ALL \fP\fP
+
+.PP
+Definition at line 272 of file SbIStuffStation\&.H'\&.
+.SS "enum \fBSBStationImport::ImportMode\fP\fC [private]\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIREPLACE \fP\fP
+.TP
+\fB\fIAPP_ONLY \fP\fP
+.TP
+\fB\fIAPP_UPD \fP\fP
+.TP
+\fB\fIUPD_ONLY \fP\fP
+
+.PP
+Definition at line 271 of file SbIStuffStation\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBStationImport::SBStationImport (\fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 1173 of file SbIStuffStation\&.C'\&.
+.PP
+References F_UNKN, FFormat, FILT_COO, Filter, Mode, REPLACE, setupPage1(), setupPage2_1(), setupPage2_2(), setupPage3(), and setupPage4()\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBStationImport::accept ()\fC [private, slot]\fP"
+.PP
+Definition at line 1657 of file SbIStuffStation\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, F_ITRF2000, F_ITRF94, F_ITRF96, F_ITRF97, F_SINEX, FFormat, importITRF(), SBLog::INTERFACE, Log, SBLog::write(), and SBLog::WRN\&.
+.SS "void SBStationImport::applyFilter (\fBImportFilter\fPF, \fBSB_TRF\fP *W)\fC [private]\fP"
+.PP
+Definition at line 2043 of file SbIStuffStation\&.C'\&.
+.PP
+References SBSite::delStation(), FILT_ALL, FILT_COO, FILT_TECH, FILT_VLBI, SBStation::r_first(), SB_TRF::remove(), SBSite::stations(), SBStation::tech(), TECH_UNKN, TECH_VLBI, and v3Zero\&.
+.PP
+Referenced by importITRF()\&.
+.SS "bool SBStationImport::checkFileExists (const QString &fil)\fC [protected]\fP"
+.PP
+Definition at line 1252 of file SbIStuffStation\&.C'\&.
+.PP
+Referenced by checkPage2_1State(), checkPage2_2State(), checkPage3State(), setupPage2_1(), setupPage2_2(), and setupPage3()\&.
+.SS "void SBStationImport::checkPage2_1State ()\fC [private]\fP"
+.PP
+Definition at line 1577 of file SbIStuffStation\&.C'\&.
+.PP
+References cbFileName1994, checkFileExists(), NumOf1994Files, page2_1, and sFileName1994\&.
+.PP
+Referenced by fileNameChanged1994(), selectFile1994(), and setState1994()\&.
+.SS "void SBStationImport::checkPage2_2State ()\fC [private]\fP"
+.PP
+Definition at line 1612 of file SbIStuffStation\&.C'\&.
+.PP
+References cbFileName2000, checkFileExists(), NumOf2000Files, page2_2, and sFileName2000\&.
+.PP
+Referenced by fileNameChanged2000(), selectFile2000(), and setState2000()\&.
+.SS "void SBStationImport::checkPage3State ()\fC [private]\fP"
+.PP
+Definition at line 1648 of file SbIStuffStation\&.C'\&.
+.PP
+References cbFileNameAux, checkFileExists(), NumOfAuxFiles, page3, and sFileNameAux\&.
+.PP
+Referenced by fileNameChangedAux(), selectFileAux(), and setStateAux()\&.
+.SS "virtual QString SBStationImport::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 265 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by accept(), importITRF(), loadECCdat(), loadFile1994(), loadFile2000(), loadNScodes(), and loadOLoad()\&.
+.SS "virtual void SBStationImport::closeEvent (QCloseEvent *)\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 347 of file SbIStuffStation\&.H'\&.
+.SS "void SBStationImport::fileNameChanged1994 (\fBFileType\fPType, const QString &)\fC [private]\fP"
+.PP
+Definition at line 1571 of file SbIStuffStation\&.C'\&.
+.PP
+References checkPage2_1State(), leFileName1994, and sFileName1994\&.
+.PP
+Referenced by fnDIRChanged1994(), fnSITEChanged1994(), fnSSCAChanged1994(), fnSSCBChanged1994(), fnSSCCChanged1994(), and fnSSCZChanged1994()\&.
+.SS "void SBStationImport::fileNameChanged2000 (\fBFileType\fPType, const QString &)\fC [private]\fP"
+.PP
+Definition at line 1606 of file SbIStuffStation\&.C'\&.
+.PP
+References checkPage2_2State(), leFileName2000, and sFileName2000\&.
+.PP
+Referenced by fnDIRChanged2000(), fnSITEChanged2000(), fnSSCAChanged2000(), fnSSCBChanged2000(), fnSSCCChanged2000(), and fnSSCZChanged2000()\&.
+.SS "void SBStationImport::fileNameChangedAux (intType, const QString &)\fC [private]\fP"
+.PP
+Definition at line 1642 of file SbIStuffStation\&.C'\&.
+.PP
+References checkPage3State(), leFileNameAux, and sFileNameAux\&.
+.PP
+Referenced by fnBLQChangedAux(), fnECCChangedAux(), and fnNSCChangedAux()\&.
+.SS "void SBStationImport::filterChanged (intid)\fC [private, slot]\fP"
+.PP
+Definition at line 1237 of file SbIStuffStation\&.C'\&.
+.PP
+References FILT_ALL, FILT_COO, FILT_TECH, FILT_VLBI, and Filter\&.
+.PP
+Referenced by setupPage4()\&.
+.SS "void SBStationImport::fnBLQChangedAux (const QString &FN_)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 340 of file SbIStuffStation\&.H'\&.
+.PP
+References fileNameChangedAux()\&.
+.PP
+Referenced by setupPage3()\&.
+.SS "void SBStationImport::fnDIRChanged1994 (const QString &FN_)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 299 of file SbIStuffStation\&.H'\&.
+.PP
+References DIR, and fileNameChanged1994()\&.
+.PP
+Referenced by setupPage2_1()\&.
+.SS "void SBStationImport::fnDIRChanged2000 (const QString &FN_)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 322 of file SbIStuffStation\&.H'\&.
+.PP
+References DIR, and fileNameChanged2000()\&.
+.PP
+Referenced by setupPage2_2()\&.
+.SS "void SBStationImport::fnECCChangedAux (const QString &FN_)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 339 of file SbIStuffStation\&.H'\&.
+.PP
+References fileNameChangedAux()\&.
+.PP
+Referenced by setupPage3()\&.
+.SS "void SBStationImport::fnNSCChangedAux (const QString &FN_)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 338 of file SbIStuffStation\&.H'\&.
+.PP
+References fileNameChangedAux()\&.
+.PP
+Referenced by setupPage3()\&.
+.SS "void SBStationImport::fnSITEChanged1994 (const QString &FN_)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 300 of file SbIStuffStation\&.H'\&.
+.PP
+References fileNameChanged1994(), and SITE\&.
+.PP
+Referenced by setupPage2_1()\&.
+.SS "void SBStationImport::fnSITEChanged2000 (const QString &FN_)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 323 of file SbIStuffStation\&.H'\&.
+.PP
+References fileNameChanged2000(), and SITE\&.
+.PP
+Referenced by setupPage2_2()\&.
+.SS "void SBStationImport::fnSSCAChanged1994 (const QString &FN_)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 301 of file SbIStuffStation\&.H'\&.
+.PP
+References fileNameChanged1994(), and SSC_A\&.
+.PP
+Referenced by setupPage2_1()\&.
+.SS "void SBStationImport::fnSSCAChanged2000 (const QString &FN_)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 324 of file SbIStuffStation\&.H'\&.
+.PP
+References fileNameChanged2000(), and SSC_A\&.
+.PP
+Referenced by setupPage2_2()\&.
+.SS "void SBStationImport::fnSSCBChanged1994 (const QString &FN_)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 302 of file SbIStuffStation\&.H'\&.
+.PP
+References fileNameChanged1994(), and SSC_B\&.
+.PP
+Referenced by setupPage2_1()\&.
+.SS "void SBStationImport::fnSSCBChanged2000 (const QString &FN_)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 325 of file SbIStuffStation\&.H'\&.
+.PP
+References fileNameChanged2000(), and SSC_B\&.
+.PP
+Referenced by setupPage2_2()\&.
+.SS "void SBStationImport::fnSSCCChanged1994 (const QString &FN_)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 303 of file SbIStuffStation\&.H'\&.
+.PP
+References fileNameChanged1994(), and SSC_C\&.
+.PP
+Referenced by setupPage2_1()\&.
+.SS "void SBStationImport::fnSSCCChanged2000 (const QString &FN_)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 326 of file SbIStuffStation\&.H'\&.
+.PP
+References fileNameChanged2000(), and SSC_C\&.
+.PP
+Referenced by setupPage2_2()\&.
+.SS "void SBStationImport::fnSSCZChanged1994 (const QString &FN_)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 304 of file SbIStuffStation\&.H'\&.
+.PP
+References fileNameChanged1994(), and SSC_Z\&.
+.PP
+Referenced by setupPage2_1()\&.
+.SS "void SBStationImport::fnSSCZChanged2000 (const QString &FN_)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 327 of file SbIStuffStation\&.H'\&.
+.PP
+References fileNameChanged2000(), and SSC_Z\&.
+.PP
+Referenced by setupPage2_2()\&.
+.SS "void SBStationImport::formatChanged (intid)\fC [private, slot]\fP"
+.PP
+Definition at line 1187 of file SbIStuffStation\&.C'\&.
+.PP
+References F_ITRF2000, F_ITRF94, F_ITRF96, F_ITRF97, F_SINEX, F_UNKN, FFormat, page1, page2_1, and page2_2\&.
+.PP
+Referenced by setupPage1()\&.
+.SS "void SBStationImport::importITRF ()\fC [private]\fP"
+.PP
+Definition at line 1691 of file SbIStuffStation\&.C'\&.
+.PP
+References SBCatalog::aliasDict(), APP_ONLY, APP_UPD, applyFilter(), cbFileName1994, cbFileName2000, cbFileNameAux, ClassName(), SBCatalog::comment(), SBLog::DBG, F_ITRF2000, F_ITRF94, FFormat, Filter, SB_TRF::find(), SB_TRF::first(), SB_TRF::inSort(), SBLog::INTERFACE, SBCatalog::label(), leFileName1994, leFileName2000, leFileNameAux, loadECCdat(), loadFile1994(), loadFile2000(), loadNScodes(), loadOLoad(), SBSetUp::loadTRF(), Log, Mode, Vector3::module(), SB_TRF::next(), NumOf1994Files, NumOf2000Files, SB_TRF::prepareDicts(), REPLACE, SBSetUp::saveTRF(), SBSolutionName::setAcronym(), SBCatalog::setComment(), SBCatalog::setLabel(), SBSolutionName::setTech(), SetUp, SBSite::setV(), SBSite::setV_err(), SBSolutionName::setYear(), sFileName1994, sFileName2000, sFileNameAux, SBSite::stations(), stationsImported(), TECH_COMBINED, UPD_ONLY, SBSite::updateSite(), v3Zero, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by accept()\&.
+.SS "bool SBStationImport::loadECCdat (\fBSB_TRF\fP *W, const QString &FileName)\fC [private]\fP"
+.PP
+Definition at line 2574 of file SbIStuffStation\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SB_TRF::ecc(), SBEcc::importEccDat(), SBLog::IO, Log, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by importITRF()\&.
+.SS "void SBStationImport::loadFile1994 (\fBSB_TRF\fP *W, const QString &FileName, \fBFileType\fPType)\fC [private]\fP"
+.PP
+Definition at line 1955 of file SbIStuffStation\&.C'\&.
+.PP
+References BLQ, SBStation::Class_Z, ClassName(), SBLog::DBG, DIR, SBLog::ERR, SBLog::IO, Log, SITE, SSC_A, SSC_B, SSC_C, SSC_Z, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by importITRF()\&.
+.SS "void SBStationImport::loadFile2000 (\fBSB_TRF\fP *W, const QString &FileName, \fBFileType\fPType)\fC [private]\fP"
+.PP
+Definition at line 1999 of file SbIStuffStation\&.C'\&.
+.PP
+References BLQ, ClassName(), SBLog::DBG, DIR, SBLog::ERR, SBLog::IO, Log, SITE, SSC_A, SSC_B, SSC_C, SSC_Z, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by importITRF()\&.
+.SS "bool SBStationImport::loadNScodes (\fBSB_TRF\fP *W, const QString &FileName)\fC [private]\fP"
+.PP
+Definition at line 2450 of file SbIStuffStation\&.C'\&.
+.PP
+References SBSite::addStation(), SBCatalog::aliasDict(), ClassName(), SBStation::comments(), SBLog::DATA, SBLog::DBG, SBStation::description(), SBStationID::domeMajor(), SBStationID::domeMinor(), SB_TRF::find(), SBStation::id(), SBLog::INF, SB_TRF::inSort(), SBLog::IO, SBStationID::isValidStr(), Log, SB_TRF::lookupStation(), SBNamed::name(), SBStationID::ptType(), SBStation::setCDP(), SBStation::setCharID(), SBStation::setComments(), SBStation::setDescription(), SBStation::setDomeMinor(), SBStationID::setID(), SBStation::setPointType(), SBStation::setTech(), TECH_VLBI, SBStationID::toString(), SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by importITRF()\&.
+.SS "bool SBStationImport::loadOLoad (\fBSB_TRF\fP *W, QStringFileName)\fC [private]\fP"
+.PP
+Definition at line 2076 of file SbIStuffStation\&.C'\&.
+.PP
+References APP_ONLY, APP_UPD, SBOLoadCarrier::calcDistance(), SBSite::calcRLF(), SBStation::CDP(), SBOLoadCarrier::CDP(), SBStation::charID(), SBOLoadCarrier::charID(), ClassName(), SBStation::createOLoad(), SBLog::DBG, SBOLoad::dist(), SBStationID::domeMajor(), SB_TRF::find(), SBStation::hasOwnOLoad, SBStation::id(), SBOLoadCarrier::id(), SBOLoad::info(), SBLog::IO, SBAttributed::isAttr(), SBStationID::isValidId(), SBStation::latitude(), SBSite::latitude(), Log, SBStation::longitude(), SBSite::longitude(), Mode, SBNamed::name(), SBStation::oLoad(), SBSite::oLoad(), SBOLoadCarrier::oLoad(), SBOLoad::P_CDPNum, SBOLoad::P_Distance, SBOLoad::P_Domes, SBOLoad::P_DomesNum, SBOLoad::P_NA, SBOLoad::P_Name, SBOLoad::pickedUp(), SBSite::r(), SBStation::r_first(), REPLACE, SBOLoad::setDist(), SBOLoad::setInfo(), SBSite::setOLoad(), SBOLoad::setPickedUp(), SBSite::stations(), SBStationID::toString(), UPD_ONLY, v3Zero, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by importITRF()\&.
+.SS "void SBStationImport::modeChanged (intid)\fC [private, slot]\fP"
+.PP
+Definition at line 1222 of file SbIStuffStation\&.C'\&.
+.PP
+References APP_ONLY, APP_UPD, Mode, REPLACE, and UPD_ONLY\&.
+.PP
+Referenced by setupPage4()\&.
+.SS "void SBStationImport::selectBLQfileAux ()\fC [inline, private, slot]\fP"
+.PP
+Definition at line 332 of file SbIStuffStation\&.H'\&.
+.PP
+References selectFileAux()\&.
+.PP
+Referenced by setupPage3()\&.
+.SS "void SBStationImport::selectDIRfile1994 ()\fC [inline, private, slot]\fP"
+.PP
+Definition at line 285 of file SbIStuffStation\&.H'\&.
+.PP
+References DIR, and selectFile1994()\&.
+.PP
+Referenced by setupPage2_1()\&.
+.SS "void SBStationImport::selectDIRfile2000 ()\fC [inline, private, slot]\fP"
+.PP
+Definition at line 308 of file SbIStuffStation\&.H'\&.
+.PP
+References DIR, and selectFile2000()\&.
+.PP
+Referenced by setupPage2_2()\&.
+.SS "void SBStationImport::selectECCfileAux ()\fC [inline, private, slot]\fP"
+.PP
+Definition at line 331 of file SbIStuffStation\&.H'\&.
+.PP
+References selectFileAux()\&.
+.PP
+Referenced by setupPage3()\&.
+.SS "void SBStationImport::selectFile1994 (\fBFileType\fPType)\fC [private]\fP"
+.PP
+Definition at line 1551 of file SbIStuffStation\&.C'\&.
+.PP
+References checkPage2_1State(), leFileName1994, SBSetUp::path2ImpITRF(), SetUp, and sFileName1994\&.
+.PP
+Referenced by selectDIRfile1994(), selectSITEfile1994(), selectSSCAfile1994(), selectSSCBfile1994(), selectSSCCfile1994(), and selectSSCZfile1994()\&.
+.SS "void SBStationImport::selectFile2000 (\fBFileType\fPType)\fC [private]\fP"
+.PP
+Definition at line 1586 of file SbIStuffStation\&.C'\&.
+.PP
+References checkPage2_2State(), leFileName2000, SBSetUp::path2ImpITRF(), SetUp, and sFileName2000\&.
+.PP
+Referenced by selectDIRfile2000(), selectSITEfile2000(), selectSSCAfile2000(), selectSSCBfile2000(), selectSSCCfile2000(), and selectSSCZfile2000()\&.
+.SS "void SBStationImport::selectFileAux (intType)\fC [private]\fP"
+.PP
+Definition at line 1621 of file SbIStuffStation\&.C'\&.
+.PP
+References checkPage3State(), leFileNameAux, SBSetUp::path2ImpOLoad(), SBSetUp::path2Import(), SetUp, and sFileNameAux\&.
+.PP
+Referenced by selectBLQfileAux(), selectECCfileAux(), and selectNSCfileAux()\&.
+.SS "void SBStationImport::selectNSCfileAux ()\fC [inline, private, slot]\fP"
+.PP
+Definition at line 330 of file SbIStuffStation\&.H'\&.
+.PP
+References selectFileAux()\&.
+.PP
+Referenced by setupPage3()\&.
+.SS "void SBStationImport::selectSITEfile1994 ()\fC [inline, private, slot]\fP"
+.PP
+Definition at line 286 of file SbIStuffStation\&.H'\&.
+.PP
+References selectFile1994(), and SITE\&.
+.PP
+Referenced by setupPage2_1()\&.
+.SS "void SBStationImport::selectSITEfile2000 ()\fC [inline, private, slot]\fP"
+.PP
+Definition at line 309 of file SbIStuffStation\&.H'\&.
+.PP
+References selectFile2000(), and SITE\&.
+.PP
+Referenced by setupPage2_2()\&.
+.SS "void SBStationImport::selectSSCAfile1994 ()\fC [inline, private, slot]\fP"
+.PP
+Definition at line 287 of file SbIStuffStation\&.H'\&.
+.PP
+References selectFile1994(), and SSC_A\&.
+.PP
+Referenced by setupPage2_1()\&.
+.SS "void SBStationImport::selectSSCAfile2000 ()\fC [inline, private, slot]\fP"
+.PP
+Definition at line 310 of file SbIStuffStation\&.H'\&.
+.PP
+References selectFile2000(), and SSC_A\&.
+.PP
+Referenced by setupPage2_2()\&.
+.SS "void SBStationImport::selectSSCBfile1994 ()\fC [inline, private, slot]\fP"
+.PP
+Definition at line 288 of file SbIStuffStation\&.H'\&.
+.PP
+References selectFile1994(), and SSC_B\&.
+.PP
+Referenced by setupPage2_1()\&.
+.SS "void SBStationImport::selectSSCBfile2000 ()\fC [inline, private, slot]\fP"
+.PP
+Definition at line 311 of file SbIStuffStation\&.H'\&.
+.PP
+References selectFile2000(), and SSC_B\&.
+.PP
+Referenced by setupPage2_2()\&.
+.SS "void SBStationImport::selectSSCCfile1994 ()\fC [inline, private, slot]\fP"
+.PP
+Definition at line 289 of file SbIStuffStation\&.H'\&.
+.PP
+References selectFile1994(), and SSC_C\&.
+.PP
+Referenced by setupPage2_1()\&.
+.SS "void SBStationImport::selectSSCCfile2000 ()\fC [inline, private, slot]\fP"
+.PP
+Definition at line 312 of file SbIStuffStation\&.H'\&.
+.PP
+References selectFile2000(), and SSC_C\&.
+.PP
+Referenced by setupPage2_2()\&.
+.SS "void SBStationImport::selectSSCZfile1994 ()\fC [inline, private, slot]\fP"
+.PP
+Definition at line 290 of file SbIStuffStation\&.H'\&.
+.PP
+References selectFile1994(), and SSC_Z\&.
+.PP
+Referenced by setupPage2_1()\&.
+.SS "void SBStationImport::selectSSCZfile2000 ()\fC [inline, private, slot]\fP"
+.PP
+Definition at line 313 of file SbIStuffStation\&.H'\&.
+.PP
+References selectFile2000(), and SSC_Z\&.
+.PP
+Referenced by setupPage2_2()\&.
+.SS "void SBStationImport::setBLQstateAux (boolT)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 336 of file SbIStuffStation\&.H'\&.
+.PP
+References setStateAux()\&.
+.PP
+Referenced by setupPage3()\&.
+.SS "void SBStationImport::setDIRstate1994 (boolT)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 292 of file SbIStuffStation\&.H'\&.
+.PP
+References DIR, and setState1994()\&.
+.PP
+Referenced by setupPage2_1()\&.
+.SS "void SBStationImport::setDIRstate2000 (boolT)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 315 of file SbIStuffStation\&.H'\&.
+.PP
+References DIR, and setState2000()\&.
+.PP
+Referenced by setupPage2_2()\&.
+.SS "void SBStationImport::setECCstateAux (boolT)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 335 of file SbIStuffStation\&.H'\&.
+.PP
+References setStateAux()\&.
+.PP
+Referenced by setupPage3()\&.
+.SS "void SBStationImport::setNSCstateAux (boolT)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 334 of file SbIStuffStation\&.H'\&.
+.PP
+References setStateAux()\&.
+.PP
+Referenced by setupPage3()\&.
+.SS "void SBStationImport::setSITEstate1994 (boolT)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 293 of file SbIStuffStation\&.H'\&.
+.PP
+References setState1994(), and SITE\&.
+.PP
+Referenced by setupPage2_1()\&.
+.SS "void SBStationImport::setSITEstate2000 (boolT)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 316 of file SbIStuffStation\&.H'\&.
+.PP
+References setState2000(), and SITE\&.
+.PP
+Referenced by setupPage2_2()\&.
+.SS "void SBStationImport::setSSCAstate1994 (boolT)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 294 of file SbIStuffStation\&.H'\&.
+.PP
+References setState1994(), and SSC_A\&.
+.PP
+Referenced by setupPage2_1()\&.
+.SS "void SBStationImport::setSSCAstate2000 (boolT)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 317 of file SbIStuffStation\&.H'\&.
+.PP
+References setState2000(), and SSC_A\&.
+.PP
+Referenced by setupPage2_2()\&.
+.SS "void SBStationImport::setSSCBstate1994 (boolT)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 295 of file SbIStuffStation\&.H'\&.
+.PP
+References setState1994(), and SSC_B\&.
+.PP
+Referenced by setupPage2_1()\&.
+.SS "void SBStationImport::setSSCBstate2000 (boolT)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 318 of file SbIStuffStation\&.H'\&.
+.PP
+References setState2000(), and SSC_B\&.
+.PP
+Referenced by setupPage2_2()\&.
+.SS "void SBStationImport::setSSCCstate1994 (boolT)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 296 of file SbIStuffStation\&.H'\&.
+.PP
+References setState1994(), and SSC_C\&.
+.PP
+Referenced by setupPage2_1()\&.
+.SS "void SBStationImport::setSSCCstate2000 (boolT)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 319 of file SbIStuffStation\&.H'\&.
+.PP
+References setState2000(), and SSC_C\&.
+.PP
+Referenced by setupPage2_2()\&.
+.SS "void SBStationImport::setSSCZstate1994 (boolT)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 297 of file SbIStuffStation\&.H'\&.
+.PP
+References setState1994(), and SSC_Z\&.
+.PP
+Referenced by setupPage2_1()\&.
+.SS "void SBStationImport::setSSCZstate2000 (boolT)\fC [inline, private, slot]\fP"
+.PP
+Definition at line 320 of file SbIStuffStation\&.H'\&.
+.PP
+References setState2000(), and SSC_Z\&.
+.PP
+Referenced by setupPage2_2()\&.
+.SS "void SBStationImport::setState1994 (\fBFileType\fPType, boolT)\fC [private]\fP"
+.PP
+Definition at line 1564 of file SbIStuffStation\&.C'\&.
+.PP
+References bFile1994, checkPage2_1State(), and leFileName1994\&.
+.PP
+Referenced by setDIRstate1994(), setSITEstate1994(), setSSCAstate1994(), setSSCBstate1994(), setSSCCstate1994(), and setSSCZstate1994()\&.
+.SS "void SBStationImport::setState2000 (\fBFileType\fPType, boolT)\fC [private]\fP"
+.PP
+Definition at line 1599 of file SbIStuffStation\&.C'\&.
+.PP
+References bFile2000, checkPage2_2State(), and leFileName2000\&.
+.PP
+Referenced by setDIRstate2000(), setSITEstate2000(), setSSCAstate2000(), setSSCBstate2000(), setSSCCstate2000(), and setSSCZstate2000()\&.
+.SS "void SBStationImport::setStateAux (intType, boolT)\fC [private]\fP"
+.PP
+Definition at line 1635 of file SbIStuffStation\&.C'\&.
+.PP
+References bFileAux, checkPage3State(), and leFileNameAux\&.
+.PP
+Referenced by setBLQstateAux(), setECCstateAux(), and setNSCstateAux()\&.
+.SS "void SBStationImport::setupPage1 ()\fC [protected]\fP"
+.PP
+Definition at line 1258 of file SbIStuffStation\&.C'\&.
+.PP
+References formatChanged(), and page1\&.
+.PP
+Referenced by SBStationImport()\&.
+.SS "void SBStationImport::setupPage2_1 ()\fC [protected]\fP"
+.PP
+Definition at line 1292 of file SbIStuffStation\&.C'\&.
+.PP
+References bFile1994, cbFileName1994, checkFileExists(), fnDIRChanged1994(), fnSITEChanged1994(), fnSSCAChanged1994(), fnSSCBChanged1994(), fnSSCCChanged1994(), fnSSCZChanged1994(), leFileName1994, NumOf1994Files, page2_1, SBSetUp::path2ImpITRF(), selectDIRfile1994(), selectSITEfile1994(), selectSSCAfile1994(), selectSSCBfile1994(), selectSSCCfile1994(), selectSSCZfile1994(), setDIRstate1994(), setSITEstate1994(), setSSCAstate1994(), setSSCBstate1994(), setSSCCstate1994(), setSSCZstate1994(), SetUp, and sFileName1994\&.
+.PP
+Referenced by SBStationImport()\&.
+.SS "void SBStationImport::setupPage2_2 ()\fC [protected]\fP"
+.PP
+Definition at line 1367 of file SbIStuffStation\&.C'\&.
+.PP
+References bFile2000, cbFileName2000, checkFileExists(), fnDIRChanged2000(), fnSITEChanged2000(), fnSSCAChanged2000(), fnSSCBChanged2000(), fnSSCCChanged2000(), fnSSCZChanged2000(), leFileName2000, NumOf2000Files, page2_2, SBSetUp::path2ImpITRF(), selectDIRfile2000(), selectSITEfile2000(), selectSSCAfile2000(), selectSSCBfile2000(), selectSSCCfile2000(), selectSSCZfile2000(), setDIRstate2000(), setSITEstate2000(), setSSCAstate2000(), setSSCBstate2000(), setSSCCstate2000(), setSSCZstate2000(), SetUp, and sFileName2000\&.
+.PP
+Referenced by SBStationImport()\&.
+.SS "void SBStationImport::setupPage3 ()\fC [protected]\fP"
+.PP
+Definition at line 1443 of file SbIStuffStation\&.C'\&.
+.PP
+References bFileAux, cbFileNameAux, checkFileExists(), fnBLQChangedAux(), fnECCChangedAux(), fnNSCChangedAux(), leFileNameAux, NumOfAuxFiles, page3, SBSetUp::path2ImpOLoad(), SBSetUp::path2Import(), selectBLQfileAux(), selectECCfileAux(), selectNSCfileAux(), setBLQstateAux(), setECCstateAux(), setNSCstateAux(), SetUp, and sFileNameAux\&.
+.PP
+Referenced by SBStationImport()\&.
+.SS "void SBStationImport::setupPage4 ()\fC [protected]\fP"
+.PP
+Definition at line 1502 of file SbIStuffStation\&.C'\&.
+.PP
+References Filter, filterChanged(), Mode, modeChanged(), and page4\&.
+.PP
+Referenced by SBStationImport()\&.
+.SS "void SBStationImport::stationsImported ()\fC [signal]\fP"
+.PP
+Definition at line 690 of file SbIStuffStation\&.moc\&.C'\&.
+.PP
+Referenced by importITRF()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QPushButton* \fBSBStationImport::bFile1994\fP[6]\fC [private]\fP"
+.PP
+Definition at line 372 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by setState1994(), and setupPage2_1()\&.
+.SS "QPushButton* \fBSBStationImport::bFile2000\fP[6]\fC [private]\fP"
+.PP
+Definition at line 381 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by setState2000(), and setupPage2_2()\&.
+.SS "QPushButton* \fBSBStationImport::bFileAux\fP[3]\fC [private]\fP"
+.PP
+Definition at line 389 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by setStateAux(), and setupPage3()\&.
+.SS "QCheckBox* \fBSBStationImport::cbFileName1994\fP[6]\fC [private]\fP"
+.PP
+Definition at line 370 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by checkPage2_1State(), importITRF(), and setupPage2_1()\&.
+.SS "QCheckBox* \fBSBStationImport::cbFileName2000\fP[6]\fC [private]\fP"
+.PP
+Definition at line 379 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by checkPage2_2State(), importITRF(), and setupPage2_2()\&.
+.SS "QCheckBox* \fBSBStationImport::cbFileNameAux\fP[3]\fC [private]\fP"
+.PP
+Definition at line 387 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by checkPage3State(), importITRF(), and setupPage3()\&.
+.SS "\fBFileFormat\fP \fBSBStationImport::FFormat\fP\fC [private]\fP"
+.PP
+Definition at line 359 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by accept(), formatChanged(), importITRF(), and SBStationImport()\&.
+.SS "\fBImportFilter\fP \fBSBStationImport::Filter\fP\fC [private]\fP"
+.PP
+Definition at line 395 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by filterChanged(), importITRF(), SBStationImport(), and setupPage4()\&.
+.SS "QLineEdit* \fBSBStationImport::leFileName1994\fP[6]\fC [private]\fP"
+.PP
+Definition at line 371 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by fileNameChanged1994(), importITRF(), selectFile1994(), setState1994(), and setupPage2_1()\&.
+.SS "QLineEdit* \fBSBStationImport::leFileName2000\fP[6]\fC [private]\fP"
+.PP
+Definition at line 380 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by fileNameChanged2000(), importITRF(), selectFile2000(), setState2000(), and setupPage2_2()\&.
+.SS "QLineEdit* \fBSBStationImport::leFileNameAux\fP[3]\fC [private]\fP"
+.PP
+Definition at line 388 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by fileNameChangedAux(), importITRF(), selectFileAux(), setStateAux(), and setupPage3()\&.
+.SS "\fBImportMode\fP \fBSBStationImport::Mode\fP\fC [private]\fP"
+.PP
+Definition at line 394 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by importITRF(), loadOLoad(), modeChanged(), SBStationImport(), and setupPage4()\&.
+.SS "const int \fBSBStationImport::NumOf1994Files\fP\fC [private]\fP"
+.PP
+Definition at line 368 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by checkPage2_1State(), importITRF(), and setupPage2_1()\&.
+.SS "const int \fBSBStationImport::NumOf2000Files\fP\fC [private]\fP"
+.PP
+Definition at line 377 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by checkPage2_2State(), importITRF(), and setupPage2_2()\&.
+.SS "const int \fBSBStationImport::NumOfAuxFiles\fP\fC [private]\fP"
+.PP
+Definition at line 385 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by checkPage3State(), and setupPage3()\&.
+.SS "\fBQWidget\fP* \fBSBStationImport::page1\fP\fC [private]\fP"
+.PP
+Definition at line 361 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by formatChanged(), and setupPage1()\&.
+.SS "\fBQWidget\fP* \fBSBStationImport::page2_1\fP\fC [private]\fP"
+.PP
+Definition at line 362 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by checkPage2_1State(), formatChanged(), and setupPage2_1()\&.
+.SS "\fBQWidget\fP* \fBSBStationImport::page2_2\fP\fC [private]\fP"
+.PP
+Definition at line 363 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by checkPage2_2State(), formatChanged(), and setupPage2_2()\&.
+.SS "\fBQWidget\fP* \fBSBStationImport::page3\fP\fC [private]\fP"
+.PP
+Definition at line 364 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by checkPage3State(), and setupPage3()\&.
+.SS "\fBQWidget\fP* \fBSBStationImport::page4\fP\fC [private]\fP"
+.PP
+Definition at line 365 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by setupPage4()\&.
+.SS "QString \fBSBStationImport::sFileName1994\fP[6]\fC [private]\fP"
+.PP
+Definition at line 369 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by checkPage2_1State(), fileNameChanged1994(), importITRF(), selectFile1994(), and setupPage2_1()\&.
+.SS "QString \fBSBStationImport::sFileName2000\fP[6]\fC [private]\fP"
+.PP
+Definition at line 378 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by checkPage2_2State(), fileNameChanged2000(), importITRF(), selectFile2000(), and setupPage2_2()\&.
+.SS "QString \fBSBStationImport::sFileNameAux\fP[3]\fC [private]\fP"
+.PP
+Definition at line 386 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by checkPage3State(), fileNameChangedAux(), importITRF(), selectFileAux(), and setupPage3()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

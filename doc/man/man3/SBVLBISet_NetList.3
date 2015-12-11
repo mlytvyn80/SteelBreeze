@@ -1,0 +1,61 @@
+.TH "SBVLBISet::NetList" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBVLBISet::NetList \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoObsVLBI\&.H>\fP
+.PP
+Inherits \fBQList< Network >\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "QString \fBlookup\fP (const QString &)"
+.br
+.ti -1c
+.RI "\fBNetList\fP & \fBoperator=\fP (\fBNetList\fP &)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual int \fBcompareItems\fP (QCollection::Item item1, QCollection::Item item2)"
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBwrite\fP (QDataStream &s, QCollection::Item Entry) const "
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBread\fP (QDataStream &s, QCollection::Item &Entry)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 1277 of file SbGeoObsVLBI\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual int SBVLBISet::NetList::compareItems (QCollection::Itemitem1, QCollection::Itemitem2)\fC [inline, private, virtual]\fP"
+.PP
+Definition at line 1279 of file SbGeoObsVLBI\&.H'\&.
+.SS "QString SBVLBISet::NetList::lookup (const QString &T)"Looks for network id key'\&. 
+.PP
+Definition at line 2391 of file SbGeoObsVLBI\&.C'\&.
+.PP
+Referenced by SBVLBISet::import()\&.
+.SS "\fBSBVLBISet::NetList\fP & SBVLBISet::NetList::operator= (\fBNetList\fP &N_)"
+.PP
+Definition at line 2404 of file SbGeoObsVLBI\&.C'\&.
+.SS "virtual QDataStream& SBVLBISet::NetList::read (QDataStream &s, QCollection::Item &Entry)\fC [inline, private, virtual]\fP"
+.PP
+Definition at line 1286 of file SbGeoObsVLBI\&.H'\&.
+.SS "virtual QDataStream& SBVLBISet::NetList::write (QDataStream &s, QCollection::ItemEntry) const\fC [inline, private, virtual]\fP"
+.PP
+Definition at line 1284 of file SbGeoObsVLBI\&.H'\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

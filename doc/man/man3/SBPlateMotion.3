@@ -1,0 +1,155 @@
+.TH "SBPlateMotion" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBPlateMotion \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoStations\&.H>\fP
+.PP
+Inherits \fBSBNList\fP'\&.
+.PP
+Inherited by \fBSBPMNNR_NUVEL1A\fP, and \fBSBPMNUVEL1A\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBPlateMotion\fP (const \fBSBPlateEntry\fP[]=NULL, int=0)"
+.br
+.ti -1c
+.RI "virtual \fB~SBPlateMotion\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBVector3\fP \fBoperator()\fP (const \fBSBMJD\fP &T_, const \fBSBMJD\fP &T0_, \fBSBStation\fP &Station) const "
+.br
+.ti -1c
+.RI "virtual \fBVector3\fP \fBvelocity\fP (\fBSBStation\fP &Station) const "
+.br
+.ti -1c
+.RI "virtual QString \fBmodelName\fP () const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual \fBVector3\fP \fBdisplacement\fP (const \fBSBMJD\fP &, const \fBSBMJD\fP &, \fBSBStation\fP &) const "
+.br
+.ti -1c
+.RI "virtual int \fBcompareItems\fP (QCollection::Item item1, QCollection::Item item2)"
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBwrite\fP (QDataStream &s, QCollection::Item Entry) const "
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBread\fP (QDataStream &s, QCollection::Item &Entry)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBN\fP"
+.br
+.ti -1c
+.RI "const \fBSBPlateEntry\fP * \fBPlates\fP"
+.br
+.ti -1c
+.RI "QDict< \fBSBPlateEntry\fP > * \fBPlDict\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 239 of file SbGeoStations\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBPlateMotion::SBPlateMotion (const \fBSBPlateEntry\fPMod_[] = \fCNULL\fP, intN_ = \fC0\fP)"
+.PP
+Definition at line 218 of file SbGeoStations\&.C'\&.
+.PP
+References N, SBNamed::name(), Plates, and PlDict\&.
+.SS "SBPlateMotion::~SBPlateMotion ()\fC [virtual]\fP"
+.PP
+Definition at line 229 of file SbGeoStations\&.C'\&.
+.PP
+References PlDict\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBPlateMotion::ClassName () const\fC [inline, protected, virtual]\fP"
+.PP
+Reimplemented in \fBSBPMNNR_NUVEL1A\fP, and \fBSBPMNUVEL1A\fP'\&.
+.PP
+Definition at line 245 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by displacement(), and velocity()\&.
+.SS "virtual int SBNList::compareItems (QCollection::Itemitem1, QCollection::Itemitem2)\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP, \fBSBStationList\fP, and \fBSBStationIDList\fP'\&.
+.PP
+Definition at line 277 of file SbGeo\&.H'\&.
+.SS "\fBVector3\fP SBPlateMotion::displacement (const \fBSBMJD\fP &T_, const \fBSBMJD\fP &T0_, \fBSBStation\fP &Station) const\fC [protected, virtual]\fP"
+.PP
+Definition at line 234 of file SbGeoStations\&.C'\&.
+.PP
+References Vector3::at(), ClassName(), SBLog::DBG, SBPlateEntry::displacement(), SBLog::ERR, SBStation::id(), SBLog::isEligible(), Log, SBNamed::name(), SBSite::plate(), SBLog::PLATES, PlDict, SBStation::rt(), SBStation::site(), SBStationID::toString(), v3Zero, SBLog::write(), X_AXIS, Y_AXIS, and Z_AXIS\&.
+.PP
+Referenced by operator()(), SBPMNUVEL1A::operator()(), and SBPMNNR_NUVEL1A::operator()()\&.
+.SS "virtual QString SBPlateMotion::modelName () const\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSBPMNNR_NUVEL1A\fP, and \fBSBPMNUVEL1A\fP'\&.
+.PP
+Definition at line 256 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by SBRunManager::constraintStationVeloc()\&.
+.SS "virtual \fBVector3\fP SBPlateMotion::operator() (const \fBSBMJD\fP &T_, const \fBSBMJD\fP &T0_, \fBSBStation\fP &Station) const\fC [inline, virtual]\fP"Calculates station's displacement due to plate motion'\&. This is a fake entry, returns zero displacement, (0,0,0)'\&. 
+.PP
+Reimplemented in \fBSBPMNNR_NUVEL1A\fP, and \fBSBPMNUVEL1A\fP'\&.
+.PP
+Definition at line 253 of file SbGeoStations\&.H'\&.
+.PP
+References displacement()\&.
+.SS "virtual QDataStream& SBNList::read (QDataStream &s, QCollection::Item &Entry)\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP, \fBSBStationList\fP, \fBSBStationIDList\fP, \fBSBInstitutionList\fP, \fBSB_CRF\fP, and \fBSBFCList\fP'\&.
+.PP
+Definition at line 284 of file SbGeo\&.H'\&.
+.SS "\fBVector3\fP SBPlateMotion::velocity (\fBSBStation\fP &Station) const\fC [virtual]\fP"
+.PP
+Reimplemented in \fBSBPMNNR_NUVEL1A\fP, and \fBSBPMNUVEL1A\fP'\&.
+.PP
+Definition at line 268 of file SbGeoStations\&.C'\&.
+.PP
+References Vector3::at(), ClassName(), SBLog::DBG, SBLog::ERR, SBStation::id(), SBLog::isEligible(), Log, SBNamed::name(), SBSite::plate(), SBLog::PLATES, PlDict, SBStation::r_first(), SBStation::site(), SBStationID::toString(), v3Zero, SBPlateEntry::velocity(), SBLog::write(), X_AXIS, Y_AXIS, and Z_AXIS\&.
+.PP
+Referenced by SBStation::calcDisplacement(), SBRunManager::constraintStationVeloc(), SBStation::getGlobalParameters4Report(), SBStation::getGlobalParameters4Report4Axel(), SBStation::getGlobalParameters4UpdateTRF(), SBRunManager::makeReportMaps(), and SBStation::vModel()\&.
+.SS "virtual QDataStream& SBNList::write (QDataStream &s, QCollection::ItemEntry) const\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP, \fBSBStationList\fP, \fBSBStationIDList\fP, \fBSBInstitutionList\fP, \fBSB_CRF\fP, and \fBSBFCList\fP'\&.
+.PP
+Definition at line 282 of file SbGeo\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int \fBSBPlateMotion::N\fP\fC [protected]\fP"
+.PP
+Definition at line 242 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by SBPlateMotion()\&.
+.SS "const \fBSBPlateEntry\fP* \fBSBPlateMotion::Plates\fP\fC [protected]\fP"
+.PP
+Definition at line 243 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by SBPlateMotion()\&.
+.SS "QDict<\fBSBPlateEntry\fP>* \fBSBPlateMotion::PlDict\fP\fC [protected]\fP"
+.PP
+Definition at line 244 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by displacement(), SBPlateMotion(), velocity(), and ~SBPlateMotion()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

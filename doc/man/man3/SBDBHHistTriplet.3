@@ -1,0 +1,139 @@
+.TH "SBDBHHistTriplet" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBDBHHistTriplet \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoObsVLBI_IO\&.H>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBDBHHistTriplet\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisHistLine\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisLast\fP ()"
+.br
+.ti -1c
+.RI "int \fBverNum\fP ()"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBdate\fP ()"
+.br
+.ti -1c
+.RI "const QString & \fBtext\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisOk\fP ()"
+.br
+.ti -1c
+.RI "void \fBdump\fP (\fBQTextStream\fP &s)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBDBHLRecHS1\fP \fBRec1\fP"
+.br
+.ti -1c
+.RI "\fBSBDBHPhysRec\fP \fBRec2\fP"
+.br
+.ti -1c
+.RI "\fBSBDBHDRecString\fP \fBRec3\fP"
+.br
+.ti -1c
+.RI "bool \fBisOK\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "\fBSBDS_dbh\fP & \fBoperator>>\fP (\fBSBDS_dbh\fP &, \fBSBDBHHistTriplet\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 384 of file SbGeoObsVLBI_IO\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBDBHHistTriplet::SBDBHHistTriplet ()\fC [inline]\fP"
+.PP
+Definition at line 392 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References isOK\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBSBMJD\fP SBDBHHistTriplet::date ()\fC [inline]\fP"
+.PP
+Definition at line 396 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References SBDBHLRecHS1::date(), and Rec1\&.
+.SS "void SBDBHHistTriplet::dump (\fBQTextStream\fP &s)\fC [inline]\fP"
+.PP
+Definition at line 399 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References SBDBHLRecHS1::date(), SBMJD::F_Short, Rec1, Rec3, SBDBHDRecString::text(), SBMJD::toString(), and SBDBHLRecHS1::verNum()\&.
+.SS "bool SBDBHHistTriplet::isHistLine ()\fC [inline]\fP"
+.PP
+Definition at line 393 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References SBDBHLRecPrefixed::isP(), and Rec1\&.
+.SS "bool SBDBHHistTriplet::isLast ()\fC [inline]\fP"
+.PP
+Definition at line 394 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References SBDBHLRecHS1::isZ1(), and Rec1\&.
+.SS "bool SBDBHHistTriplet::isOk ()\fC [inline]\fP"
+.PP
+Definition at line 398 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References isOK\&.
+.SS "const QString& SBDBHHistTriplet::text ()\fC [inline]\fP"
+.PP
+Definition at line 397 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References Rec3, and SBDBHDRecString::text()\&.
+.SS "int SBDBHHistTriplet::verNum ()\fC [inline]\fP"
+.PP
+Definition at line 395 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References Rec1, and SBDBHLRecHS1::verNum()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "\fBSBDS_dbh\fP& operator>> (\fBSBDS_dbh\fP &s, \fBSBDBHHistTriplet\fP &HT)\fC [friend]\fP"
+.PP
+Definition at line 2478 of file SbGeoObsVLBI_IO\&.C'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool \fBSBDBHHistTriplet::isOK\fP\fC [protected]\fP"
+.PP
+Definition at line 390 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by isOk(), operator>>(), and SBDBHHistTriplet()\&.
+.SS "\fBSBDBHLRecHS1\fP \fBSBDBHHistTriplet::Rec1\fP\fC [protected]\fP"
+.PP
+Definition at line 387 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by date(), dump(), isHistLine(), isLast(), operator>>(), and verNum()\&.
+.SS "\fBSBDBHPhysRec\fP \fBSBDBHHistTriplet::Rec2\fP\fC [protected]\fP"
+.PP
+Definition at line 388 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by operator>>()\&.
+.SS "\fBSBDBHDRecString\fP \fBSBDBHHistTriplet::Rec3\fP\fC [protected]\fP"
+.PP
+Definition at line 389 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by dump(), operator>>(), and text()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

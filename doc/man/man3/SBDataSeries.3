@@ -1,0 +1,212 @@
+.TH "SBDataSeries" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBDataSeries \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbMathDataSeries\&.H>\fP
+.PP
+Inherits \fBQList< SBDataSeriesEntry >\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBDataSeries\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~SBDataSeries\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "int \fBnumOfDataColumns\fP () const "
+.br
+.ti -1c
+.RI "double \fBdT\fP () const "
+.br
+.ti -1c
+.RI "double \fBdTMin\fP () const "
+.br
+.ti -1c
+.RI "double \fBdTMax\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisEquiDistant\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisChecked\fP () const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual int \fBcompareItems\fP (QCollection::Item item1, QCollection::Item item2)"
+.br
+.ti -1c
+.RI "void \fBcheckRecords\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBNumOfDataColumns\fP"
+.br
+.RI "\fIthe number of columns in the data part (not counting the arg) \fP"
+.ti -1c
+.RI "double \fBDT\fP"
+.br
+.RI "\fI[mean] time spacing interval \fP"
+.ti -1c
+.RI "double \fBDTMin\fP"
+.br
+.RI "\fImin time spacing interval \fP"
+.ti -1c
+.RI "double \fBDTMax\fP"
+.br
+.RI "\fImax time spacing interval \fP"
+.ti -1c
+.RI "bool \fBIsEquiDistant\fP"
+.br
+.RI "\fItrue if DT is const \fP"
+.ti -1c
+.RI "bool \fBIsChecked\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "\fBQTextStream\fP & \fBoperator<<\fP (\fBQTextStream\fP &, const \fBSBDataSeries\fP &)"
+.br
+.ti -1c
+.RI "\fBQTextStream\fP & \fBoperator>>\fP (\fBQTextStream\fP &, \fBSBDataSeries\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 74 of file SbMathDataSeries\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBDataSeries::SBDataSeries ()"
+.PP
+Definition at line 134 of file SbMathDataSeries\&.C'\&.
+.PP
+References DT, IsChecked, IsEquiDistant, and NumOfDataColumns\&.
+.SS "SBDataSeries::~SBDataSeries ()\fC [virtual]\fP"
+.PP
+Definition at line 143 of file SbMathDataSeries\&.C'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBDataSeries::checkRecords ()\fC [protected]\fP"
+.PP
+Definition at line 148 of file SbMathDataSeries\&.C'\&.
+.PP
+References ClassName(), SBLog::DATA, SBLog::DBG, DT, DTMax, DTMin, SBLog::ERR, IsChecked, IsEquiDistant, Log, NumOfDataColumns, and SBLog::write()\&.
+.PP
+Referenced by operator>>()\&.
+.SS "virtual QString SBDataSeries::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 96 of file SbMathDataSeries\&.H'\&.
+.PP
+Referenced by checkRecords()\&.
+.SS "virtual int SBDataSeries::compareItems (QCollection::Itemitem1, QCollection::Itemitem2)\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 77 of file SbMathDataSeries\&.H'\&.
+.SS "double SBDataSeries::dT () const\fC [inline]\fP"
+.PP
+Definition at line 101 of file SbMathDataSeries\&.H'\&.
+.PP
+References DT\&.
+.PP
+Referenced by SBFilterGauss::interpolate(), SBFilterGauss::interpolateMinusModel(), SBFilteringGauss::readDataFile(), SBFilteringGauss::redrawDataPlot(), SBFilteringGauss::redrawDataPlot_ExpMode(), and SBFilteringGauss::redrawTFPlot()\&.
+.SS "double SBDataSeries::dTMax () const\fC [inline]\fP"
+.PP
+Definition at line 103 of file SbMathDataSeries\&.H'\&.
+.PP
+References DTMax\&.
+.PP
+Referenced by SBFilteringGauss::readDataFile()\&.
+.SS "double SBDataSeries::dTMin () const\fC [inline]\fP"
+.PP
+Definition at line 102 of file SbMathDataSeries\&.H'\&.
+.PP
+References DTMin\&.
+.PP
+Referenced by SBFilteringGauss::readDataFile()\&.
+.SS "bool SBDataSeries::isChecked () const\fC [inline]\fP"
+.PP
+Definition at line 105 of file SbMathDataSeries\&.H'\&.
+.PP
+References IsChecked\&.
+.SS "bool SBDataSeries::isEquiDistant () const\fC [inline]\fP"
+.PP
+Definition at line 104 of file SbMathDataSeries\&.H'\&.
+.PP
+References IsEquiDistant\&.
+.SS "int SBDataSeries::numOfDataColumns () const\fC [inline]\fP"
+.PP
+Definition at line 100 of file SbMathDataSeries\&.H'\&.
+.PP
+References NumOfDataColumns\&.
+.PP
+Referenced by SBFilteringGauss::readDataFile()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "\fBQTextStream\fP& operator<< (\fBQTextStream\fP &s, const \fBSBDataSeries\fP &series)\fC [friend]\fP"
+.PP
+Definition at line 231 of file SbMathDataSeries\&.C'\&.
+.SS "\fBQTextStream\fP& operator>> (\fBQTextStream\fP &s, \fBSBDataSeries\fP &series)\fC [friend]\fP"
+.PP
+Definition at line 242 of file SbMathDataSeries\&.C'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double \fBSBDataSeries::DT\fP\fC [private]\fP"
+.PP
+[mean] time spacing interval 
+.PP
+Definition at line 85 of file SbMathDataSeries\&.H'\&.
+.PP
+Referenced by checkRecords(), dT(), and SBDataSeries()\&.
+.SS "double \fBSBDataSeries::DTMax\fP\fC [private]\fP"
+.PP
+max time spacing interval 
+.PP
+Definition at line 87 of file SbMathDataSeries\&.H'\&.
+.PP
+Referenced by checkRecords(), and dTMax()\&.
+.SS "double \fBSBDataSeries::DTMin\fP\fC [private]\fP"
+.PP
+min time spacing interval 
+.PP
+Definition at line 86 of file SbMathDataSeries\&.H'\&.
+.PP
+Referenced by checkRecords(), and dTMin()\&.
+.SS "bool \fBSBDataSeries::IsChecked\fP\fC [private]\fP"
+.PP
+Definition at line 89 of file SbMathDataSeries\&.H'\&.
+.PP
+Referenced by checkRecords(), isChecked(), and SBDataSeries()\&.
+.SS "bool \fBSBDataSeries::IsEquiDistant\fP\fC [private]\fP"
+.PP
+true if DT is const 
+.PP
+Definition at line 88 of file SbMathDataSeries\&.H'\&.
+.PP
+Referenced by checkRecords(), isEquiDistant(), and SBDataSeries()\&.
+.SS "int \fBSBDataSeries::NumOfDataColumns\fP\fC [private]\fP"
+.PP
+the number of columns in the data part (not counting the arg) 
+.PP
+Definition at line 84 of file SbMathDataSeries\&.H'\&.
+.PP
+Referenced by checkRecords(), numOfDataColumns(), and SBDataSeries()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

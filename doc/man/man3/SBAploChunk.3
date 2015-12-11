@@ -1,0 +1,247 @@
+.TH "SBAploChunk" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBAploChunk \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoAtmLoad\&.H>\fP
+.PP
+Inherits \fBQList< SBAploEntry >\fP, and \fBSBAploHeader\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBAploChunk\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~SBAploChunk\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "const \fBSBAploHeader\fP & \fBheader\fP () const "
+.br
+.ti -1c
+.RI "void \fBimport\fP (\fBQTextStream\fP &, \fBSB_TRF\fP *, bool &)"
+.br
+.ti -1c
+.RI "\fBSBAploEntry\fP * \fBentryByID\fP (const \fBSBStationID\fP &)"
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP & \fBtStart\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetTStart\fP (const \fBSBMJD\fP &T_)"
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP & \fBtFinis\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetTFinis\fP (const \fBSBMJD\fP &T_)"
+.br
+.ti -1c
+.RI "double \fBinterval\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetInterval\fP (double dt_)"
+.br
+.ti -1c
+.RI "QString \fBname\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual int \fBcompareItems\fP (QCollection::Item item1, QCollection::Item item2)"
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBwrite\fP (QDataStream &s, QCollection::Item Entry) const "
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBread\fP (QDataStream &s, QCollection::Item &Entry)"
+.br
+.ti -1c
+.RI "void \fBfillDict\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QDict< \fBSBAploEntry\fP > * \fBEntryByID\fP"
+.br
+.ti -1c
+.RI "QIntDict< \fBSBAploEntry\fP > * \fBEntryByDomes\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBAploChunk\fP &C)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBAploChunk\fP &C)"
+.br
+.ti -1c
+.RI "\fBQTextStream\fP & \fBoperator<<\fP (\fBQTextStream\fP &, const \fBSBAploChunk\fP &)"
+.br
+.ti -1c
+.RI "\fBQTextStream\fP & \fBoperator>>\fP (\fBQTextStream\fP &, \fBSBAploChunk\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBAploHeader\fP &H)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBAploHeader\fP &H)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 176 of file SbGeoAtmLoad\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBAploChunk::SBAploChunk ()"
+.PP
+Definition at line 79 of file SbGeoAtmLoad\&.C'\&.
+.PP
+References EntryByDomes, and EntryByID\&.
+.SS "SBAploChunk::~SBAploChunk ()\fC [virtual]\fP"
+.PP
+Definition at line 89 of file SbGeoAtmLoad\&.C'\&.
+.PP
+References EntryByDomes, and EntryByID\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBAploChunk::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Reimplemented from \fBSBAploHeader\fP'\&.
+.PP
+Definition at line 199 of file SbGeoAtmLoad\&.H'\&.
+.PP
+Referenced by fillDict(), and import()\&.
+.SS "virtual int SBAploChunk::compareItems (QCollection::Itemitem1, QCollection::Itemitem2)\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 179 of file SbGeoAtmLoad\&.H'\&.
+.SS "\fBSBAploEntry\fP * SBAploChunk::entryByID (const \fBSBStationID\fP &ID)"
+.PP
+Definition at line 103 of file SbGeoAtmLoad\&.C'\&.
+.PP
+References SBStationID::domeMajor(), EntryByDomes, EntryByID, and SBStationID::toString()\&.
+.PP
+Referenced by SBAploEphem::getReady()\&.
+.SS "void SBAploChunk::fillDict ()\fC [protected]\fP"
+.PP
+Definition at line 111 of file SbGeoAtmLoad\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, EntryByDomes, EntryByID, SBAploEntry::id(), Log, SBNamed::name(), SBLog::TIDES, SBStationID::toString(), SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by import()\&.
+.SS "const \fBSBAploHeader\fP& SBAploChunk::header () const\fC [inline]\fP"
+.PP
+Definition at line 203 of file SbGeoAtmLoad\&.H'\&.
+.PP
+Referenced by SBAploEphem::importEphem()\&.
+.SS "void SBAploChunk::import (\fBQTextStream\fP &s, \fBSB_TRF\fP *TRF, bool &IsTRFModified)"
+.PP
+Definition at line 143 of file SbGeoAtmLoad\&.C'\&.
+.PP
+References SBAttributed::addAttr(), ClassName(), SBLog::DATA, SBLog::DBG, EAST, SBCatalog::epoch(), SBLog::ERR, fillDict(), SBStation::id(), SBLog::INF, SBAploHeader::interval(), SBMJD::isGood(), SBStationID::isValidId(), Log, SB_TRF::lookupNearest(), SB_TRF::lookupStation(), SBAploHeader::name(), SBNamed::name(), NORT, SBStation::OrigEdited, SBStation::r_first(), SBStation::setCoords(), SBMJD::setDate(), SBAploDRec::setDisplacement(), SBAploHeader::setInterval(), SBAploHeader::setTFinis(), SBMJD::setTime(), SBAploHeader::setTStart(), SBStation::setV(), SBSite::setV(), SBStation::site(), SBLog::STATION, TECH_ANY, SBLog::TIDES, SBStationID::toString(), SBAploHeader::tStart(), TZero, SBSite::v(), v3Unit, v3Zero, SBPMNNR_NUVEL1A::velocity(), VERT, SBLog::write(), SBLog::WRN, X_AXIS, Y_AXIS, and Z_AXIS\&.
+.PP
+Referenced by SBAploEphem::importEphem()\&.
+.SS "double SBAploHeader::interval () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 152 of file SbGeoAtmLoad\&.H'\&.
+.PP
+References SBAploHeader::Interval\&.
+.PP
+Referenced by import(), SBAploHeaderLI::key(), and SBAploHeaderLI::text()\&.
+.SS "QString SBAploHeader::name ()\fC [inline, inherited]\fP"
+.PP
+Definition at line 157 of file SbGeoAtmLoad\&.H'\&.
+.PP
+References SBMJD::F_INTERNAL, SBMJD::toString(), and SBAploHeader::TStart\&.
+.PP
+Referenced by import(), SBAploEphem::loadChunk(), and SBAploEphem::saveChunk()\&.
+.SS "virtual QDataStream& SBAploChunk::read (QDataStream &s, QCollection::Item &Entry)\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 187 of file SbGeoAtmLoad\&.H'\&.
+.SS "void SBAploHeader::setInterval (doubledt_)\fC [inline, inherited]\fP"
+.PP
+Definition at line 153 of file SbGeoAtmLoad\&.H'\&.
+.PP
+References SBAploHeader::Interval\&.
+.PP
+Referenced by import()\&.
+.SS "void SBAploHeader::setTFinis (const \fBSBMJD\fP &T_)\fC [inline, inherited]\fP"
+.PP
+Definition at line 151 of file SbGeoAtmLoad\&.H'\&.
+.PP
+References SBAploHeader::TFinis\&.
+.PP
+Referenced by import()\&.
+.SS "void SBAploHeader::setTStart (const \fBSBMJD\fP &T_)\fC [inline, inherited]\fP"
+.PP
+Definition at line 149 of file SbGeoAtmLoad\&.H'\&.
+.PP
+References SBAploHeader::TStart\&.
+.PP
+Referenced by import()\&.
+.SS "const \fBSBMJD\fP& SBAploHeader::tFinis () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 150 of file SbGeoAtmLoad\&.H'\&.
+.PP
+References SBAploHeader::TFinis\&.
+.PP
+Referenced by SBAploHeaderLI::key(), and SBAploHeaderLI::text()\&.
+.SS "const \fBSBMJD\fP& SBAploHeader::tStart () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 148 of file SbGeoAtmLoad\&.H'\&.
+.PP
+References SBAploHeader::TStart\&.
+.PP
+Referenced by import(), SBAploEphem::importEphem(), SBAploHeaderLI::key(), and SBAploHeaderLI::text()\&.
+.SS "virtual QDataStream& SBAploChunk::write (QDataStream &s, QCollection::ItemEntry) const\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 185 of file SbGeoAtmLoad\&.H'\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBAploHeader\fP &H)\fC [friend, inherited]\fP"
+.PP
+Definition at line 161 of file SbGeoAtmLoad\&.H'\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBAploChunk\fP &C)\fC [friend]\fP"
+.PP
+Definition at line 213 of file SbGeoAtmLoad\&.H'\&.
+.SS "\fBQTextStream\fP& operator<< (\fBQTextStream\fP &s, const \fBSBAploChunk\fP &)\fC [friend]\fP"
+.PP
+Definition at line 458 of file SbGeoAtmLoad\&.C'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBAploHeader\fP &H)\fC [friend, inherited]\fP"
+.PP
+Definition at line 163 of file SbGeoAtmLoad\&.H'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBAploChunk\fP &C)\fC [friend]\fP"
+.PP
+Definition at line 215 of file SbGeoAtmLoad\&.H'\&.
+.SS "\fBQTextStream\fP& operator>> (\fBQTextStream\fP &s, \fBSBAploChunk\fP &)\fC [friend]\fP"
+.PP
+Definition at line 464 of file SbGeoAtmLoad\&.C'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QIntDict<\fBSBAploEntry\fP>* \fBSBAploChunk::EntryByDomes\fP\fC [protected]\fP"
+.PP
+Definition at line 191 of file SbGeoAtmLoad\&.H'\&.
+.PP
+Referenced by entryByID(), fillDict(), SBAploChunk(), and ~SBAploChunk()\&.
+.SS "QDict<\fBSBAploEntry\fP>* \fBSBAploChunk::EntryByID\fP\fC [protected]\fP"
+.PP
+Definition at line 188 of file SbGeoAtmLoad\&.H'\&.
+.PP
+Referenced by entryByID(), fillDict(), SBAploChunk(), and ~SBAploChunk()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

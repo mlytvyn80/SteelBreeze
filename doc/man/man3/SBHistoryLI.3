@@ -1,0 +1,121 @@
+.TH "SBHistoryLI" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBHistoryLI \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIObsVLBI\&.H>\fP
+.PP
+Inherits \fBQListViewItem\fP'\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBOType\fP { \fBDBH\fP, \fBLOCAL\fP, \fBUNKN\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBHistoryLI\fP (\fBQListView\fP *parent, \fBOType\fP Type_, \fBSBHistory::SBHistoryEntry\fP *HEntry_)"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "\fBSBHistory::SBHistoryEntry\fP * \fBhEntry\fP ()"
+.br
+.ti -1c
+.RI "\fBOType\fP \fBtype\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBtext\fP (int) const "
+.br
+.ti -1c
+.RI "virtual QString \fBkey\fP (int, bool) const "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBHistory::SBHistoryEntry\fP * \fBHEntry\fP"
+.br
+.ti -1c
+.RI "\fBOType\fP \fBType\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 202 of file SbIObsVLBI\&.H'\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBSBHistoryLI::OType\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIDBH \fP\fP
+.TP
+\fB\fILOCAL \fP\fP
+.TP
+\fB\fIUNKN \fP\fP
+
+.PP
+Definition at line 205 of file SbIObsVLBI\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBHistoryLI::SBHistoryLI (\fBQListView\fP *parent, \fBOType\fPType_, \fBSBHistory::SBHistoryEntry\fP *HEntry_)\fC [inline]\fP"
+.PP
+Definition at line 210 of file SbIObsVLBI\&.H'\&.
+.PP
+References HEntry, and Type\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBHistoryLI::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 212 of file SbIObsVLBI\&.H'\&.
+.SS "\fBSBHistory::SBHistoryEntry\fP* SBHistoryLI::hEntry ()\fC [inline]\fP"
+.PP
+Definition at line 213 of file SbIObsVLBI\&.H'\&.
+.PP
+References HEntry\&.
+.PP
+Referenced by SBBrowseHistory::deleteHistoryLine()\&.
+.SS "QString SBHistoryLI::key (intcol, bool) const\fC [virtual]\fP"
+.PP
+Definition at line 937 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBDated::date(), DBH, HEntry, SBHistory::SBHistoryEntry::text(), TmpString, Type, and SBHistory::SBHistoryEntry::version()\&.
+.SS "QString SBHistoryLI::text (intcol) const\fC [virtual]\fP"
+.PP
+Definition at line 919 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBDated::date(), DBH, SBMJD::F_Short, HEntry, SBHistory::SBHistoryEntry::text(), TmpString, Type, and SBHistory::SBHistoryEntry::version()\&.
+.SS "\fBOType\fP SBHistoryLI::type ()\fC [inline]\fP"
+.PP
+Definition at line 214 of file SbIObsVLBI\&.H'\&.
+.PP
+References Type\&.
+.PP
+Referenced by SBBrowseHistory::deleteHistoryLine()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSBHistory::SBHistoryEntry\fP* \fBSBHistoryLI::HEntry\fP\fC [private]\fP"
+.PP
+Definition at line 207 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by hEntry(), key(), SBHistoryLI(), and text()\&.
+.SS "\fBOType\fP \fBSBHistoryLI::Type\fP\fC [private]\fP"
+.PP
+Definition at line 208 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by key(), SBHistoryLI(), text(), and type()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

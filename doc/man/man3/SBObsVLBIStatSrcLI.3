@@ -1,0 +1,79 @@
+.TH "SBObsVLBIStatSrcLI" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBObsVLBIStatSrcLI \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIObsVLBIStat\&.H>\fP
+.PP
+Inherits \fBQListViewItem\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBObsVLBIStatSrcLI\fP (\fBQListView\fP *parent, \fBSBObsVLBIStatSource\fP *SS_)"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "\fBSBObsVLBIStatSource\fP * \fBsourceStatistics\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBtext\fP (int) const "
+.br
+.ti -1c
+.RI "virtual QString \fBkey\fP (int, bool) const "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBObsVLBIStatSource\fP * \fBSS\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 43 of file SbIObsVLBIStat\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBObsVLBIStatSrcLI::SBObsVLBIStatSrcLI (\fBQListView\fP *parent, \fBSBObsVLBIStatSource\fP *SS_)\fC [inline]\fP"
+.PP
+Definition at line 48 of file SbIObsVLBIStat\&.H'\&.
+.PP
+References SS\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBObsVLBIStatSrcLI::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 50 of file SbIObsVLBIStat\&.H'\&.
+.SS "QString SBObsVLBIStatSrcLI::key (intcol, bool) const\fC [virtual]\fP"
+.PP
+Definition at line 71 of file SbIObsVLBIStat\&.C'\&.
+.PP
+References SBObsVLBIStatSource::aka(), SBMJD::F_MJD, SBNamed::name(), SBObsVLBIStatRecord::numProc(), SBObsVLBIStatRecord::numTotal(), SS, SBObsVLBIStatSource::statPerSession(), SBObsVLBIStatRecord::tFinisProc(), SBObsVLBIStatRecord::tFinisTotal(), TmpString, SBMJD::toString(), SBObsVLBIStatRecord::tStartProc(), and SBObsVLBIStatRecord::tStartTotal()\&.
+.SS "\fBSBObsVLBIStatSource\fP* SBObsVLBIStatSrcLI::sourceStatistics ()\fC [inline]\fP"
+.PP
+Definition at line 51 of file SbIObsVLBIStat\&.H'\&.
+.PP
+References SS\&.
+.SS "QString SBObsVLBIStatSrcLI::text (intcol) const\fC [virtual]\fP"
+.PP
+Definition at line 41 of file SbIObsVLBIStat\&.C'\&.
+.PP
+References SBObsVLBIStatSource::aka(), SBMJD::F_DDMonYYYY, SBNamed::name(), SBObsVLBIStatRecord::numProc(), SBObsVLBIStatRecord::numTotal(), SS, SBObsVLBIStatSource::statPerSession(), SBObsVLBIStatRecord::tFinisProc(), SBObsVLBIStatRecord::tFinisTotal(), TmpString, SBMJD::toString(), SBObsVLBIStatRecord::tStartProc(), SBObsVLBIStatRecord::tStartTotal(), and TZero\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSBObsVLBIStatSource\fP* \fBSBObsVLBIStatSrcLI::SS\fP\fC [private]\fP"
+.PP
+Definition at line 46 of file SbIObsVLBIStat\&.H'\&.
+.PP
+Referenced by key(), SBObsVLBIStatSrcLI(), sourceStatistics(), and text()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

@@ -1,0 +1,1595 @@
+.TH "SBSetUp" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBSetUp \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbSetup\&.H>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBDUnits\fP { \fBU_SEC\fP = 0, \fBU_METER\fP = 1, \fBU_INCH\fP = 2 }"
+.br
+.ti -1c
+.RI "enum \fBGUIStyle\fP { \fBS_Default\fP = 0, \fBS_MotifPlus\fP = 1, \fBS_CDE\fP = 2, \fBS_SGI\fP = 3, \fBS_Interlace\fP = 4, \fBS_Windows\fP = 5, \fBS_Platinum\fP = 6 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSetUp\fP ()"
+.br
+.ti -1c
+.RI "\fBSBSetUp\fP (const \fBSBSetUp\fP &)"
+.br
+.ti -1c
+.RI "virtual \fB~SBSetUp\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBSetDefaults\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBPeekUpOldConfig\fP (QDataStream &)"
+.br
+.ti -1c
+.RI "virtual void \fBCheckConfig\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBSaveConfig\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBSaveStuff\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBLoadConfig\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBLoadStuff\fP ()"
+.br
+.ti -1c
+.RI "virtual const \fBSBSetUp\fP & \fBoperator=\fP (const \fBSBSetUp\fP &)"
+.br
+.ti -1c
+.RI "virtual const QString & \fBhomeDir\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBdataDir\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBcompileDir\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBstuffDir\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBoutputDir\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBsolutionsDir\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBprojectDir\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBlogDir\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBworkDir\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBimportDir\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBimportEOPDir\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBimportITRFDir\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBimportICRFDir\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBimportOLoadDir\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBimportMFilesDir\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBimportAploDir\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBstations\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBsources\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBeops\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBephem\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBproject\fP () const "
+.br
+.ti -1c
+.RI "virtual int \fBlogStoreInFile\fP () const "
+.br
+.ti -1c
+.RI "virtual int \fBlogTimeLabel\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString & \fBlogFileName\fP () const "
+.br
+.ti -1c
+.RI "virtual uint \fBlogFacilities\fP (\fBSBLog::LogLevel\fP _) const "
+.br
+.ti -1c
+.RI "virtual uint \fBlogCapacity\fP () const "
+.br
+.ti -1c
+.RI "virtual const QPoint & \fBcentralPanelPosition\fP () const "
+.br
+.ti -1c
+.RI "virtual const QSize & \fBcentralPanelSize\fP () const "
+.br
+.ti -1c
+.RI "virtual const QFont & \fBdefaultFont\fP () const "
+.br
+.ti -1c
+.RI "virtual \fBGUIStyle\fP \fBguiStyle\fP () const "
+.br
+.ti -1c
+.RI "virtual \fBDUnits\fP \fBunits\fP () const "
+.br
+.ti -1c
+.RI "virtual \fBSBFCList\fP * \fBfcList\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBsetHomeDir\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetDataDir\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetCompileDir\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetStuffDir\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetOutputDir\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetSolutionsDir\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetProjectDir\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetLogDir\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetWorkDir\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetImportDir\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetImportEOPDir\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetImportITRFDir\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetImportICRFDir\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetImportOLoadDir\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetImportMFilesDir\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetImportAploDir\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetStations\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetSources\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetEOPs\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetEphem\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetProject\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetLogStoreInFile\fP (const int V)"
+.br
+.ti -1c
+.RI "virtual void \fBsetLogTimeLabel\fP (const int V)"
+.br
+.ti -1c
+.RI "virtual void \fBsetLogFileName\fP (const QString &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetLogFacilities\fP (\fBSBLog::LogLevel\fP Lvl, const uint V)"
+.br
+.ti -1c
+.RI "virtual void \fBsetLogCapacity\fP (const uint V)"
+.br
+.ti -1c
+.RI "virtual void \fBsetCentralPanelPosition\fP (const QPoint &P)"
+.br
+.ti -1c
+.RI "virtual void \fBsetCentralPanelSize\fP (const QSize &S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetDefaultFont\fP (const QFont &F)"
+.br
+.ti -1c
+.RI "virtual void \fBsetGUIStyle\fP (const \fBGUIStyle\fP S)"
+.br
+.ti -1c
+.RI "virtual void \fBsetUnits\fP (const \fBDUnits\fP U)"
+.br
+.ti -1c
+.RI "virtual void \fBUpdateLogger\fP ()"
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2Home\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2Data\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2Log\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2Compil\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2Stuff\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2StuffAplo\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2StuffObsStat\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2UIDump\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2Output\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2Sols\fP (const QString &) const "
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2Proj\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2Work\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2Import\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2ImpEOP\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2ImpITRF\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2ImpICRF\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2ImpOLoad\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2ImpMFiles\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBpath2ImpAplo\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBEOPfileName\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBEphemfileName\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBCRFfileName\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBTRFfileName\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBAploFileName\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBVLBIfileName\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBmodelsFileName\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBmasterFileName\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBProjectFileName\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBObsStatFileName\fP (bool IsGlb) const "
+.br
+.ti -1c
+.RI "const QString \fBpath2TimeSeries\fP () const "
+.br
+.ti -1c
+.RI "double \fBscale\fP () const "
+.br
+.ti -1c
+.RI "QString \fBscaleName\fP () const "
+.br
+.ti -1c
+.RI "virtual const QString \fBInstitutionsFileName\fP ()"
+.br
+.ti -1c
+.RI "\fBSBEOP\fP * \fBloadEOP\fP (\fBSBEOP\fP *=NULL)"
+.br
+.ti -1c
+.RI "void \fBsaveEOP\fP (\fBSBEOP\fP *)"
+.br
+.ti -1c
+.RI "\fBSB_CRF\fP * \fBloadCRF\fP (\fBSB_CRF\fP *=NULL)"
+.br
+.ti -1c
+.RI "void \fBsaveCRF\fP (\fBSB_CRF\fP *)"
+.br
+.ti -1c
+.RI "\fBSB_TRF\fP * \fBloadTRF\fP (\fBSB_TRF\fP *=NULL)"
+.br
+.ti -1c
+.RI "void \fBsaveTRF\fP (\fBSB_TRF\fP *)"
+.br
+.ti -1c
+.RI "\fBSBVLBISet\fP * \fBloadVLBI\fP (\fBSBVLBISet\fP *=NULL)"
+.br
+.ti -1c
+.RI "void \fBsaveVLBI\fP (\fBSBVLBISet\fP *)"
+.br
+.ti -1c
+.RI "\fBSBProject\fP * \fBloadProject\fP (\fBSBProject\fP *=NULL)"
+.br
+.ti -1c
+.RI "void \fBsaveProject\fP (\fBSBProject\fP *)"
+.br
+.ti -1c
+.RI "\fBSBAploEphem\fP * \fBloadAploEphem\fP (\fBSBAploEphem\fP *=NULL)"
+.br
+.ti -1c
+.RI "void \fBsaveAploEphem\fP (\fBSBAploEphem\fP *)"
+.br
+.ti -1c
+.RI "\fBSBObsVLBIStatistics\fP * \fBloadObsVLBIStatistics\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBsaveObsVLBIStatistics\fP (\fBSBObsVLBIStatistics\fP *)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBCheckDir\fP (const QString, bool=TRUE)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBSetUpFName\fP"
+.br
+.ti -1c
+.RI "bool \fBHaveToSave\fP"
+.br
+.ti -1c
+.RI "QString \fBHomeDir\fP"
+.br
+.ti -1c
+.RI "QString \fBDataDir\fP"
+.br
+.ti -1c
+.RI "QString \fBCompileDir\fP"
+.br
+.ti -1c
+.RI "QString \fBStuffDir\fP"
+.br
+.ti -1c
+.RI "QString \fBOutputDir\fP"
+.br
+.ti -1c
+.RI "QString \fBSolutionsDir\fP"
+.br
+.ti -1c
+.RI "QString \fBProjectDir\fP"
+.br
+.ti -1c
+.RI "QString \fBLogDir\fP"
+.br
+.ti -1c
+.RI "QString \fBWorkDir\fP"
+.br
+.ti -1c
+.RI "QString \fBImportDir\fP"
+.br
+.ti -1c
+.RI "QString \fBImportEOPDir\fP"
+.br
+.ti -1c
+.RI "QString \fBImportITRFDir\fP"
+.br
+.ti -1c
+.RI "QString \fBImportICRFDir\fP"
+.br
+.ti -1c
+.RI "QString \fBImportOLoadDir\fP"
+.br
+.ti -1c
+.RI "QString \fBImportMFilesDir\fP"
+.br
+.ti -1c
+.RI "QString \fBImportAploDir\fP"
+.br
+.ti -1c
+.RI "QString \fBStations\fP"
+.br
+.ti -1c
+.RI "QString \fBSources\fP"
+.br
+.ti -1c
+.RI "QString \fBEOPs\fP"
+.br
+.ti -1c
+.RI "QString \fBEphem\fP"
+.br
+.ti -1c
+.RI "QString \fBProject\fP"
+.br
+.ti -1c
+.RI "int \fBLogStoreInFile\fP"
+.br
+.ti -1c
+.RI "int \fBLogTimeLabel\fP"
+.br
+.ti -1c
+.RI "QString \fBLogFileName\fP"
+.br
+.ti -1c
+.RI "uint \fBLogFacilities\fP [4]"
+.br
+.ti -1c
+.RI "uint \fBLogCapacity\fP"
+.br
+.ti -1c
+.RI "QPoint \fBCentralPanelPosition\fP"
+.br
+.ti -1c
+.RI "QSize \fBCentralPanelSize\fP"
+.br
+.ti -1c
+.RI "\fBGUIStyle\fP \fBGUI_Style\fP"
+.br
+.ti -1c
+.RI "QFont \fBDefaultFont\fP"
+.br
+.ti -1c
+.RI "\fBDUnits\fP \fBUnits\fP"
+.br
+.ti -1c
+.RI "\fBSBFCList\fP \fBFCL\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const char * \fBsInstitutions\fP = 'institutions\&.bin'"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBSetUp\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBSetUp\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 170 of file SbSetup\&.H'\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBSBSetUp::DUnits\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIU_SEC \fP\fP
+.TP
+\fB\fIU_METER \fP\fP
+.TP
+\fB\fIU_INCH \fP\fP
+
+.PP
+Definition at line 173 of file SbSetup\&.H'\&.
+.SS "enum \fBSBSetUp::GUIStyle\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIS_Default \fP\fP
+.TP
+\fB\fIS_MotifPlus \fP\fP
+.TP
+\fB\fIS_CDE \fP\fP
+.TP
+\fB\fIS_SGI \fP\fP
+.TP
+\fB\fIS_Interlace \fP\fP
+.TP
+\fB\fIS_Windows \fP\fP
+.TP
+\fB\fIS_Platinum \fP\fP
+
+.PP
+Definition at line 174 of file SbSetup\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBSetUp::SBSetUp ()"
+.PP
+Definition at line 432 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), SBLog::CONFIG, HaveToSave, SBLog::INF, Log, SetDefaults(), SetUpFName, and SBLog::write()\&.
+.SS "SBSetUp::SBSetUp (const \fBSBSetUp\fP &SetUp_)"
+.PP
+Definition at line 860 of file SbSetup\&.C'\&.
+.SS "SBSetUp::~SBSetUp ()\fC [virtual]\fP"
+.PP
+Definition at line 440 of file SbSetup\&.C'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual const QString SBSetUp::AploFileName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 350 of file SbSetup\&.H'\&.
+.PP
+References path2Stuff()\&.
+.PP
+Referenced by loadAploEphem(), and saveAploEphem()\&.
+.SS "virtual const QPoint& SBSetUp::centralPanelPosition () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 280 of file SbSetup\&.H'\&.
+.PP
+References CentralPanelPosition\&.
+.PP
+Referenced by SBMainWindow::SBMainWindow()\&.
+.SS "virtual const QSize& SBSetUp::centralPanelSize () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 281 of file SbSetup\&.H'\&.
+.PP
+References CentralPanelSize\&.
+.PP
+Referenced by SBMainWindow::SBMainWindow()\&.
+.SS "void SBSetUp::CheckConfig ()\fC [virtual]\fP"
+.PP
+Definition at line 555 of file SbSetup\&.C'\&.
+.PP
+References CheckDir(), HomeDir, path2Compil(), path2Data(), path2Home(), path2ImpAplo(), path2ImpEOP(), path2ImpICRF(), path2ImpITRF(), path2ImpMFiles(), path2ImpOLoad(), path2Import(), path2Log(), path2Output(), path2Proj(), path2Stuff(), path2StuffAplo(), path2StuffObsStat(), path2TimeSeries(), path2UIDump(), path2Work(), and SolutionsDir\&.
+.SS "void SBSetUp::CheckDir (const QStringDir, boolhave2write = \fCTRUE\fP)\fC [private]\fP"
+.PP
+Definition at line 523 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), SBLog::CONFIG, Log, SBVersion::selfName(), Version, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by CheckConfig()\&.
+.SS "virtual QString SBSetUp::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 236 of file SbSetup\&.H'\&.
+.PP
+Referenced by CheckDir(), loadAploEphem(), LoadConfig(), loadCRF(), loadEOP(), loadObsVLBIStatistics(), loadProject(), LoadStuff(), loadTRF(), loadVLBI(), saveAploEphem(), SaveConfig(), saveCRF(), saveEOP(), saveObsVLBIStatistics(), saveProject(), SaveStuff(), saveTRF(), saveVLBI(), and SBSetUp()\&.
+.SS "virtual const QString& SBSetUp::compileDir () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 256 of file SbSetup\&.H'\&.
+.PP
+References CompileDir\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual const QString SBSetUp::CRFfileName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 348 of file SbSetup\&.H'\&.
+.PP
+References path2Stuff(), and Sources\&.
+.PP
+Referenced by loadCRF(), and saveCRF()\&.
+.SS "virtual const QString& SBSetUp::dataDir () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 255 of file SbSetup\&.H'\&.
+.PP
+References DataDir\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual const QFont& SBSetUp::defaultFont () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 282 of file SbSetup\&.H'\&.
+.PP
+References DefaultFont\&.
+.PP
+Referenced by SBMainWindow::ControlSelectFont(), and SBMainWindow::SBMainWindow()\&.
+.SS "virtual const QString SBSetUp::EOPfileName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 346 of file SbSetup\&.H'\&.
+.PP
+References EOPs, and path2Stuff()\&.
+.PP
+Referenced by loadEOP(), and saveEOP()\&.
+.SS "virtual const QString& SBSetUp::eops () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 272 of file SbSetup\&.H'\&.
+.PP
+References EOPs\&.
+.PP
+Referenced by SBCentralPanel::genInfoPanel(), SBSetupDialog::makeApply(), SBSetupDialog::makeDefaults(), SBMainWindow::SBMainWindow(), and SBSetupDialog::setData()\&.
+.SS "virtual const QString& SBSetUp::ephem () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 273 of file SbSetup\&.H'\&.
+.PP
+References Ephem\&.
+.SS "virtual const QString SBSetUp::EphemfileName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 347 of file SbSetup\&.H'\&.
+.PP
+References Ephem, and path2Stuff()\&.
+.SS "virtual \fBSBFCList\fP* SBSetUp::fcList ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 285 of file SbSetup\&.H'\&.
+.PP
+References FCL\&.
+.PP
+Referenced by SBSetupDialog::acquireData(), SBSetupDialog::addPacker(), SBSetupDialog::delPacker(), SBVLBISession::dumpUserInfo(), SBEstimator::finisLocal(), SBEphem::import(), SBVLBISet::import(), SBAploEphem::importEphem(), SBAploEphem::loadChunk(), SBSolution::loadGlbCor(), SBSolution::loadGlbPar(), SBSolution::loadLocCor(), SBSolution::loadLocPar(), SBSolution::loadNormalEqs(), SBSolution::loadStcPar(), SBSetupDialog::packer(), SBEstimator::prepare4Local(), SBVLBISession::restoreUserInfo(), SBAploEphem::saveChunk(), SBSolution::saveGlbCor(), SBSolution::saveGlbPar(), SBSolution::saveLocCor(), SBSolution::saveLocPar(), SBSolution::saveNormalEqs(), SBSolution::saveStcPar(), SBSetupDialog::setData(), SBEstimator::solveLocals(), and SBEstimator::solveStochs()\&.
+.SS "virtual \fBGUIStyle\fP SBSetUp::guiStyle () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 283 of file SbSetup\&.H'\&.
+.PP
+References GUI_Style\&.
+.PP
+Referenced by SBMainWindow::setupMenu()\&.
+.SS "virtual const QString& SBSetUp::homeDir () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 254 of file SbSetup\&.H'\&.
+.PP
+References HomeDir\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual const QString& SBSetUp::importAploDir () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 269 of file SbSetup\&.H'\&.
+.PP
+References ImportAploDir\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual const QString& SBSetUp::importDir () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 263 of file SbSetup\&.H'\&.
+.PP
+References ImportDir\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual const QString& SBSetUp::importEOPDir () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 264 of file SbSetup\&.H'\&.
+.PP
+References ImportEOPDir\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual const QString& SBSetUp::importICRFDir () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 266 of file SbSetup\&.H'\&.
+.PP
+References ImportICRFDir\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual const QString& SBSetUp::importITRFDir () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 265 of file SbSetup\&.H'\&.
+.PP
+References ImportITRFDir\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual const QString& SBSetUp::importMFilesDir () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 268 of file SbSetup\&.H'\&.
+.PP
+References ImportMFilesDir\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual const QString& SBSetUp::importOLoadDir () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 267 of file SbSetup\&.H'\&.
+.PP
+References ImportOLoadDir\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual const QString SBSetUp::InstitutionsFileName ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 388 of file SbSetup\&.H'\&.
+.PP
+References path2Stuff(), and sInstitutions\&.
+.PP
+Referenced by LoadStuff(), and SaveStuff()\&.
+.SS "\fBSBAploEphem\fP * SBSetUp::loadAploEphem (\fBSBAploEphem\fP *Aplo = \fCNULL\fP)"
+.PP
+Definition at line 1247 of file SbSetup\&.C'\&.
+.PP
+References AploFileName(), ClassName(), SBLog::DBG, SBLog::ERR, SBLog::IO, Log, and SBLog::write()\&.
+.PP
+Referenced by SBRunManager::SBRunManager(), SBStuffAplo::SBStuffAplo(), and SBTestAPLoad::SBTestAPLoad()\&.
+.SS "void SBSetUp::LoadConfig ()\fC [virtual]\fP"
+.PP
+Definition at line 449 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), SBLog::CONFIG, SBLog::DBG, SBLog::ERR, HaveToSave, SBLog::INF, Log, PeekUpOldConfig(), SaveConfig(), SBVersion::selfName(), SetDefaults(), SetUpFName, Version, SBLog::write(), and SBLog::WRN\&.
+.SS "\fBSB_CRF\fP * SBSetUp::loadCRF (\fBSB_CRF\fP *W = \fCNULL\fP)"
+.PP
+Definition at line 1092 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), CRFfileName(), SBLog::DBG, SBLog::ERR, SBLog::IO, Log, and SBLog::write()\&.
+.PP
+Referenced by SBSourceImport::importICRF(), SBStuffSources::reloadCRF(), SBProjectEdit::SBProjectEdit(), SBRunManager::SBRunManager(), SBStuffSources::SBStuffSources(), and SBSolutionBrowser::updateCRF()\&.
+.SS "\fBSBEOP\fP * SBSetUp::loadEOP (\fBSBEOP\fP *W = \fCNULL\fP)"
+.PP
+Definition at line 1053 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, EOPfileName(), SBLog::ERR, SBLog::IO, Log, and SBLog::write()\&.
+.PP
+Referenced by SBStuffEOPs::import(), SBFrame::SBFrame(), SBStuffEOPs::SBStuffEOPs(), SBTestEOP::SBTestEOP(), SBTestNutation::SBTestNutation(), and SBStuffEOPs::updateEOP()\&.
+.SS "\fBSBObsVLBIStatistics\fP * SBSetUp::loadObsVLBIStatistics (boolIsGlb)"
+.PP
+Definition at line 1287 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::ERR, SBLog::IO, Log, ObsStatFileName(), and SBLog::write()\&.
+.PP
+Referenced by SBObsVLBIStatBrowser::SBObsVLBIStatBrowser()\&.
+.SS "\fBSBProject\fP * SBSetUp::loadProject (\fBSBProject\fP *P = \fCNULL\fP)"
+.PP
+Definition at line 1207 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::ERR, SBLog::IO, Log, ProjectFileName(), and SBLog::write()\&.
+.PP
+Referenced by SBMainWindow::ExecuteDrop(), SBMainWindow::SBMainWindow(), SBModelEditor::SBModelEditor(), SBParametersEditor::SBParametersEditor(), SBProjectEdit::SBProjectEdit(), SBRunManager::SBRunManager(), SBSolutionBrowser::SBSolutionBrowser(), and SBMainWindow::UtilitiesCollectStat4Prj()\&.
+.SS "void SBSetUp::LoadStuff ()\fC [virtual]\fP"
+.PP
+Definition at line 581 of file SbSetup\&.C'\&.
+.PP
+References SBMaster::checkNewFiles(), ClassName(), Config, SBLog::DBG, DefaultConfig, SBInstitution::descr(), SBLog::ERR, SBLog::INF, Institutions, InstitutionsFileName(), SBLog::IO, Log, masterFileName(), modelsFileName(), path2ImpMFiles(), VLBIfileName(), and SBLog::write()\&.
+.SS "\fBSB_TRF\fP * SBSetUp::loadTRF (\fBSB_TRF\fP *W = \fCNULL\fP)"
+.PP
+Definition at line 1131 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::ERR, SBLog::IO, Log, TRFfileName(), and SBLog::write()\&.
+.PP
+Referenced by SBStuffAplo::import(), SBStuffAplo::importHPS(), SBStationImport::importITRF(), SBStuffStations::reloadTRF(), SBRunManager::SBRunManager(), SBStuffStations::SBStuffStations(), SBTestAPLoad::SBTestAPLoad(), SBTestOceanTides::SBTestOceanTides(), SBTestPolarTides::SBTestPolarTides(), SBTestSolidTides::SBTestSolidTides(), and SBSolutionBrowser::updateTRF()\&.
+.SS "\fBSBVLBISet\fP * SBSetUp::loadVLBI (\fBSBVLBISet\fP *W = \fCNULL\fP)"
+.PP
+Definition at line 1169 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::ERR, SBLog::IO, Log, VLBIfileName(), and SBLog::write()\&.
+.PP
+Referenced by SBObsVLBIStatistics::collectStatistics(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportEOP(), SBRunManager::makeReportNormalEqs(), SBRunManager::makeReportSessionStatistics(), SBRunManager::makeReportTRF(), SBRunManager::makeReportTroposphere(), SBRunManager::prepare4Run_m1(), SBRunManager::prepare4Run_m2(), SBProjectEdit::SBProjectEdit(), SBVLBISetViewBase::SBVLBISetViewBase(), SBMainWindow::UtilitiesDumpUI(), and SBMainWindow::UtilitiesRestoreUI()\&.
+.SS "virtual uint SBSetUp::logCapacity () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 279 of file SbSetup\&.H'\&.
+.PP
+References LogCapacity\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual const QString& SBSetUp::logDir () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 261 of file SbSetup\&.H'\&.
+.PP
+References LogDir\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual uint SBSetUp::logFacilities (\fBSBLog::LogLevel\fP_) const\fC [inline, virtual]\fP"
+.PP
+Definition at line 278 of file SbSetup\&.H'\&.
+.PP
+References LogFacilities\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual const QString& SBSetUp::logFileName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 277 of file SbSetup\&.H'\&.
+.PP
+References LogFileName\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual int SBSetUp::logStoreInFile () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 275 of file SbSetup\&.H'\&.
+.PP
+References LogStoreInFile\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual int SBSetUp::logTimeLabel () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 276 of file SbSetup\&.H'\&.
+.PP
+References LogTimeLabel\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual const QString SBSetUp::masterFileName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 353 of file SbSetup\&.H'\&.
+.PP
+References path2Stuff()\&.
+.PP
+Referenced by SBVLBISet::loadMaster(), and LoadStuff()\&.
+.SS "virtual const QString SBSetUp::modelsFileName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 352 of file SbSetup\&.H'\&.
+.PP
+References path2Stuff()\&.
+.PP
+Referenced by LoadStuff(), and SaveStuff()\&.
+.SS "virtual const QString SBSetUp::ObsStatFileName (boolIsGlb) const\fC [inline, virtual]\fP"
+.PP
+Definition at line 356 of file SbSetup\&.H'\&.
+.PP
+References path2StuffObsStat(), and Project\&.
+.PP
+Referenced by loadObsVLBIStatistics(), and saveObsVLBIStatistics()\&.
+.SS "const \fBSBSetUp\fP & SBSetUp::operator= (const \fBSBSetUp\fP &SetUp_)\fC [virtual]\fP"
+.PP
+Definition at line 865 of file SbSetup\&.C'\&.
+.PP
+References CentralPanelPosition, CentralPanelSize, CompileDir, DataDir, DefaultFont, EOPs, Ephem, FCL, GUI_Style, HomeDir, ImportAploDir, ImportDir, ImportEOPDir, ImportICRFDir, ImportITRFDir, ImportMFilesDir, ImportOLoadDir, LogCapacity, LogDir, LogFacilities, LogFileName, LogStoreInFile, LogTimeLabel, OutputDir, Project, ProjectDir, SolutionsDir, Sources, Stations, StuffDir, Units, and WorkDir\&.
+.SS "virtual const QString& SBSetUp::outputDir () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 258 of file SbSetup\&.H'\&.
+.PP
+References OutputDir\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "const QString SBSetUp::path2Compil () const\fC [virtual]\fP"
+.PP
+Definition at line 790 of file SbSetup\&.C'\&.
+.PP
+References CompileDir, and HomeDir\&.
+.PP
+Referenced by CheckConfig(), SBVLBISetView::import(), and SBVLBISet::import()\&.
+.SS "const QString SBSetUp::path2Data () const\fC [virtual]\fP"
+.PP
+Definition at line 780 of file SbSetup\&.C'\&.
+.PP
+References DataDir, HomeDir, and LogDir\&.
+.PP
+Referenced by CheckConfig(), SBVLBISesInfo::checkPath(), and SBVLBISesInfo::fileName()\&.
+.SS "virtual const QString SBSetUp::path2Home () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 327 of file SbSetup\&.H'\&.
+.PP
+References HomeDir\&.
+.PP
+Referenced by CheckConfig()\&.
+.SS "const QString SBSetUp::path2ImpAplo () const\fC [virtual]\fP"
+.PP
+Definition at line 855 of file SbSetup\&.C'\&.
+.PP
+References HomeDir, and ImportAploDir\&.
+.PP
+Referenced by CheckConfig(), SBStuffAplo::import(), and SBStuffAplo::importHPS()\&.
+.SS "const QString SBSetUp::path2ImpEOP () const\fC [virtual]\fP"
+.PP
+Definition at line 830 of file SbSetup\&.C'\&.
+.PP
+References HomeDir, and ImportEOPDir\&.
+.PP
+Referenced by CheckConfig(), and SBStuffEOPs::import()\&.
+.SS "const QString SBSetUp::path2ImpICRF () const\fC [virtual]\fP"
+.PP
+Definition at line 840 of file SbSetup\&.C'\&.
+.PP
+References HomeDir, and ImportICRFDir\&.
+.PP
+Referenced by CheckConfig(), SBSourceImport::selectFile1995(), SBSourceImport::selectFile1999(), SBSourceImport::selectFile2009(), SBSourceImport::setupPage2_1(), SBSourceImport::setupPage2_2(), and SBSourceImport::setupPage2_3()\&.
+.SS "const QString SBSetUp::path2ImpITRF () const\fC [virtual]\fP"
+.PP
+Definition at line 835 of file SbSetup\&.C'\&.
+.PP
+References HomeDir, and ImportITRFDir\&.
+.PP
+Referenced by CheckConfig(), SBStationImport::selectFile1994(), SBStationImport::selectFile2000(), SBStationImport::setupPage2_1(), and SBStationImport::setupPage2_2()\&.
+.SS "const QString SBSetUp::path2ImpMFiles () const\fC [virtual]\fP"
+.PP
+Definition at line 850 of file SbSetup\&.C'\&.
+.PP
+References HomeDir, and ImportMFilesDir\&.
+.PP
+Referenced by CheckConfig(), and LoadStuff()\&.
+.SS "const QString SBSetUp::path2ImpOLoad () const\fC [virtual]\fP"
+.PP
+Definition at line 845 of file SbSetup\&.C'\&.
+.PP
+References HomeDir, and ImportOLoadDir\&.
+.PP
+Referenced by CheckConfig(), SBStationImport::selectFileAux(), and SBStationImport::setupPage3()\&.
+.SS "const QString SBSetUp::path2Import () const\fC [virtual]\fP"
+.PP
+Definition at line 825 of file SbSetup\&.C'\&.
+.PP
+References HomeDir, and ImportDir\&.
+.PP
+Referenced by CheckConfig(), SBStuffEphem::import(), SBStuffStationsEcc::importData(), SBStationImport::selectFileAux(), and SBStationImport::setupPage3()\&.
+.SS "const QString SBSetUp::path2Log () const\fC [virtual]\fP"
+.PP
+Definition at line 785 of file SbSetup\&.C'\&.
+.PP
+References HomeDir, and LogDir\&.
+.PP
+Referenced by CheckConfig(), and UpdateLogger()\&.
+.SS "const QString SBSetUp::path2Output () const\fC [virtual]\fP"
+.PP
+Definition at line 805 of file SbSetup\&.C'\&.
+.PP
+References HomeDir, and OutputDir\&.
+.PP
+Referenced by CheckConfig(), SBSolution::dumpParameters(), SBStuffSources::exportData(), SBStuffStations::exportData(), SBVLBISet::import(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportEOP(), SBRunManager::makeReportMaps(), SBRunManager::makeReportNormalEqs(), SBRunManager::makeReportSessionStatistics(), SBRunManager::makeReportTRF(), SBRunManager::makeReportTRFVariations(), SBRunManager::makeReportTroposphere(), SB_TRF::prepare4Run(), SBPlotCarrier::SBPlotCarrier(), SBSolution::SBSolution(), SBSolutionBrowser::SBSolutionBrowser(), and SBPlotCarrier::setFile4SaveBaseName()\&.
+.SS "const QString SBSetUp::path2Proj () const\fC [virtual]\fP"
+.PP
+Definition at line 815 of file SbSetup\&.C'\&.
+.PP
+References HomeDir, and ProjectDir\&.
+.PP
+Referenced by CheckConfig(), ProjectFileName(), SBProjectSel::remove(), and SBProjectSel::SBProjectSel()\&.
+.SS "const QString SBSetUp::path2Sols (const QString &PrjName_) const\fC [virtual]\fP"
+.PP
+Definition at line 810 of file SbSetup\&.C'\&.
+.PP
+References HomeDir, and SolutionsDir\&.
+.PP
+Referenced by SBSolution::deleteSolution(), SBSolution::loadStatistics(), SBSolution::path2GlbDir(), SBSolution::path2LocDir(), SBSolution::path2StcDir(), and SBSolution::SBSolution()\&.
+.SS "const QString SBSetUp::path2Stuff () const\fC [virtual]\fP"
+.PP
+Definition at line 795 of file SbSetup\&.C'\&.
+.PP
+References HomeDir, and StuffDir\&.
+.PP
+Referenced by AploFileName(), CheckConfig(), CRFfileName(), EOPfileName(), EphemfileName(), SBEphem::import(), InstitutionsFileName(), masterFileName(), modelsFileName(), SBEphem::openFile(), path2StuffAplo(), path2StuffObsStat(), path2UIDump(), TRFfileName(), and VLBIfileName()\&.
+.SS "virtual const QString SBSetUp::path2StuffAplo () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 332 of file SbSetup\&.H'\&.
+.PP
+References path2Stuff()\&.
+.PP
+Referenced by CheckConfig(), SBAploEphem::loadChunk(), and SBAploEphem::saveChunk()\&.
+.SS "virtual const QString SBSetUp::path2StuffObsStat () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 333 of file SbSetup\&.H'\&.
+.PP
+References path2Stuff()\&.
+.PP
+Referenced by CheckConfig(), and ObsStatFileName()\&.
+.SS "const QString SBSetUp::path2TimeSeries () const\fC [inline]\fP"
+.PP
+Definition at line 359 of file SbSetup\&.H'\&.
+.PP
+References HomeDir\&.
+.PP
+Referenced by CheckConfig(), SBFilteringGauss::readDataFile(), SBSpectrumAnalyserMEM::readDataFile(), SBFilteringGauss::redrawDataPlot(), SBSpectrumAnalyserMEM::redrawDataPlot(), SBFilteringGauss::redrawDataPlot_ExpMode(), SBSpectrumAnalyserMEM::redrawFPEPlot(), SBSpectrumAnalyserMEM::redrawSpectrumPlot(), SBFilteringGauss::wBrowseData(), SBSpectrumAnalyserMEM::wBrowseData(), SBSpectrumAnalyserMEM::wBrowseSpectrum(), SBFilteringGauss::wBrowseTF(), SBSpectrumAnalyserMEM::wMEMCoeffList(), and SBFilteringGauss::wrote2File()\&.
+.SS "const QString SBSetUp::path2UIDump () const\fC [virtual]\fP"
+.PP
+Definition at line 800 of file SbSetup\&.C'\&.
+.PP
+References path2Stuff()\&.
+.PP
+Referenced by CheckConfig(), SBVLBIPreProcess::dumpUI(), SBVLBISet::dumpUserInfo(), SBVLBIPreProcess::restoreUI(), and SBVLBISet::restoreUserInfo()\&.
+.SS "const QString SBSetUp::path2Work () const\fC [virtual]\fP"
+.PP
+Definition at line 820 of file SbSetup\&.C'\&.
+.PP
+References HomeDir, and WorkDir\&.
+.PP
+Referenced by CheckConfig(), and SBEstimator::SBEstimator()\&.
+.SS "void SBSetUp::PeekUpOldConfig (QDataStream &s)\fC [virtual]\fP"
+.PP
+Definition at line 998 of file SbSetup\&.C'\&.
+.PP
+References CentralPanelPosition, CentralPanelSize, CompileDir, DataDir, DefaultFont, EOPs, Ephem, FCL, GUI_Style, HomeDir, ImportAploDir, ImportDir, ImportEOPDir, ImportICRFDir, ImportITRFDir, ImportMFilesDir, ImportOLoadDir, LogCapacity, LogDir, LogFacilities, LogFileName, LogStoreInFile, LogTimeLabel, OutputDir, Project, ProjectDir, SetDefaults(), SolutionsDir, Sources, Stations, StuffDir, Units, and WorkDir\&.
+.PP
+Referenced by LoadConfig()\&.
+.SS "virtual const QString& SBSetUp::project () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 274 of file SbSetup\&.H'\&.
+.PP
+References Project\&.
+.PP
+Referenced by SBMainWindow::ExecuteDoubleRunProj(), SBMainWindow::ExecuteDrop(), SBMainWindow::ExecuteEditProj(), SBMainWindow::ExecuteModels(), SBMainWindow::ExecuteParameters(), SBMainWindow::ExecuteReportProj(), SBMainWindow::ExecuteRunProj(), SBCentralPanel::genInfoPanel(), SBSetupDialog::makeApply(), SBSetupDialog::makeDefaults(), SB_TRF::prepare4Run(), and SBMainWindow::SBMainWindow()\&.
+.SS "virtual const QString& SBSetUp::projectDir () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 260 of file SbSetup\&.H'\&.
+.PP
+References ProjectDir\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual const QString SBSetUp::ProjectFileName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 354 of file SbSetup\&.H'\&.
+.PP
+References path2Proj(), and Project\&.
+.PP
+Referenced by SBMainWindow::ExecuteDoubleRunProj(), SBMainWindow::ExecuteEditProj(), SBMainWindow::ExecuteModels(), SBMainWindow::ExecuteParameters(), SBMainWindow::ExecuteReportProj(), SBMainWindow::ExecuteRunProj(), loadProject(), and saveProject()\&.
+.SS "void SBSetUp::saveAploEphem (\fBSBAploEphem\fP *Aplo)"
+.PP
+Definition at line 1271 of file SbSetup\&.C'\&.
+.PP
+References AploFileName(), ClassName(), SBLog::DBG, SBLog::ERR, SBLog::IO, Log, and SBLog::write()\&.
+.PP
+Referenced by SBStuffAplo::accept()\&.
+.SS "void SBSetUp::SaveConfig ()\fC [virtual]\fP"
+.PP
+Definition at line 693 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), SBLog::CONFIG, SBLog::INF, Log, SetUpFName, and SBLog::write()\&.
+.PP
+Referenced by LoadConfig(), and SBMainWindow::~SBMainWindow()\&.
+.SS "void SBSetUp::saveCRF (\fBSB_CRF\fP *W)"
+.PP
+Definition at line 1115 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), CRFfileName(), SBLog::DBG, SBLog::ERR, SBLog::IO, Log, and SBLog::write()\&.
+.PP
+Referenced by SBStuffSources::accept(), SBStuffSources::importData(), SBSourceImport::importICRF(), and SBSolutionBrowser::updateCRF()\&.
+.SS "void SBSetUp::saveEOP (\fBSBEOP\fP *W)"
+.PP
+Definition at line 1076 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, EOPfileName(), SBLog::ERR, SBLog::IO, Log, and SBLog::write()\&.
+.PP
+Referenced by SBStuffEOPs::accept(), and SBStuffEOPs::import()\&.
+.SS "void SBSetUp::saveObsVLBIStatistics (\fBSBObsVLBIStatistics\fP *Stats)"
+.PP
+Definition at line 1312 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::ERR, SBLog::IO, SBObsVLBIStatistics::isGlobal(), Log, ObsStatFileName(), and SBLog::write()\&.
+.PP
+Referenced by SBMainWindow::UtilitiesCollectStat4All(), and SBMainWindow::UtilitiesCollectStat4Prj()\&.
+.SS "void SBSetUp::saveProject (\fBSBProject\fP *P)"
+.PP
+Definition at line 1231 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::ERR, SBLog::IO, Log, ProjectFileName(), and SBLog::write()\&.
+.PP
+Referenced by SBProjectCreate::createProject(), SBRunManager::finisRun_m1(), SBModelEditor::~SBModelEditor(), SBParametersEditor::~SBParametersEditor(), and SBProjectEdit::~SBProjectEdit()\&.
+.SS "void SBSetUp::SaveStuff ()\fC [virtual]\fP"
+.PP
+Definition at line 665 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), Config, SBLog::DBG, Institutions, InstitutionsFileName(), SBLog::IO, SBConfig::isChanged(), SBInstitutionList::isChanged(), Log, modelsFileName(), and SBLog::write()\&.
+.PP
+Referenced by SBMainWindow::~SBMainWindow()\&.
+.SS "void SBSetUp::saveTRF (\fBSB_TRF\fP *W)"
+.PP
+Definition at line 1154 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::ERR, SBLog::IO, Log, TRFfileName(), and SBLog::write()\&.
+.PP
+Referenced by SBStuffStations::accept(), SBStuffAplo::import(), SBStuffStations::importData(), SBStuffAplo::importHPS(), SBStationImport::importITRF(), and SBSolutionBrowser::updateTRF()\&.
+.SS "void SBSetUp::saveVLBI (\fBSBVLBISet\fP *W)"
+.PP
+Definition at line 1192 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::ERR, SBLog::IO, Log, VLBIfileName(), and SBLog::write()\&.
+.PP
+Referenced by SBVLBISetViewBase::accept(), SBRunManager::finisRun_m1(), and SBVLBIPreProcess::fixSession()\&.
+.SS "double SBSetUp::scale () const\fC [inline]\fP"
+.PP
+Definition at line 361 of file SbSetup\&.H'\&.
+.PP
+References U_INCH, U_METER, U_SEC, and Units\&.
+.PP
+Referenced by SBVLBIPreProcess::fillObsListView(), SBVLBISesInfoLI::key(), SBObsVLBIStatRecordLI::key(), SBVLBISesPreProcLI::key(), SBStaInfoLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBRunManager::process_m1(), SBSolutionBrowser::SBSolutionBrowser(), SBVLBIObsPPLI::text(), SBObsVLBIStatRecordLI::text(), SBStaInfoLI::text(), SBBasInfoLI::text(), SBSouInfoLI::text(), and SBSolutionBrowser::wWRMSs()\&.
+.SS "QString SBSetUp::scaleName () const\fC [inline]\fP"
+.PP
+Definition at line 373 of file SbSetup\&.H'\&.
+.PP
+References U_INCH, U_METER, U_SEC, and Units\&.
+.PP
+Referenced by SBRunManager::process_m1(), SBBrowseBases::SBBrowseBases(), SBBrowseSources::SBBrowseSources(), SBBrowseStations::SBBrowseStations(), SBSolutionBrowser::SBSolutionBrowser(), SBVLBIPreProcess::SBVLBIPreProcess(), and SBSolutionBrowser::wWRMSs()\&.
+.SS "virtual void SBSetUp::setCentralPanelPosition (const QPoint &P)\fC [inline, virtual]\fP"
+.PP
+Definition at line 313 of file SbSetup\&.H'\&.
+.PP
+References CentralPanelPosition\&.
+.PP
+Referenced by SBMainWindow::moveEvent(), and SBMainWindow::~SBMainWindow()\&.
+.SS "virtual void SBSetUp::setCentralPanelSize (const QSize &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 314 of file SbSetup\&.H'\&.
+.PP
+References CentralPanelSize\&.
+.PP
+Referenced by SBMainWindow::resizeEvent(), and SBMainWindow::~SBMainWindow()\&.
+.SS "virtual void SBSetUp::setCompileDir (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 289 of file SbSetup\&.H'\&.
+.PP
+References CompileDir\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setDataDir (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 288 of file SbSetup\&.H'\&.
+.PP
+References DataDir\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setDefaultFont (const QFont &F)\fC [inline, virtual]\fP"
+.PP
+Definition at line 315 of file SbSetup\&.H'\&.
+.PP
+References DefaultFont\&.
+.PP
+Referenced by SBMainWindow::ControlSelectFont()\&.
+.SS "void SBSetUp::SetDefaults ()\fC [virtual]\fP"
+.PP
+Definition at line 704 of file SbSetup\&.C'\&.
+.PP
+References CentralPanelPosition, CentralPanelSize, CompileDir, DataDir, DefaultFont, SBInstitution::descr(), EOPs, Ephem, FCL, GUI_Style, HomeDir, ImportAploDir, ImportDir, ImportEOPDir, ImportICRFDir, ImportITRFDir, ImportMFilesDir, ImportOLoadDir, SBFCList::insert(), Institutions, LogCapacity, LogDir, LogFacilities, LogFileName, LogStoreInFile, LogTimeLabel, OutputDir, Project, ProjectDir, S_Default, SolutionsDir, Sources, Stations, StuffDir, U_SEC, Units, and WorkDir\&.
+.PP
+Referenced by SBMainWindow::ControlDefault(), LoadConfig(), SBSetupDialog::makeDefaults(), PeekUpOldConfig(), and SBSetUp()\&.
+.SS "virtual void SBSetUp::setEOPs (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 305 of file SbSetup\&.H'\&.
+.PP
+References EOPs, and mainSetEOPName()\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setEphem (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 306 of file SbSetup\&.H'\&.
+.PP
+References Ephem\&.
+.SS "virtual void SBSetUp::setGUIStyle (const \fBGUIStyle\fPS)\fC [inline, virtual]\fP"
+.PP
+Definition at line 316 of file SbSetup\&.H'\&.
+.PP
+References GUI_Style\&.
+.PP
+Referenced by SBMainWindow::changeStyle()\&.
+.SS "virtual void SBSetUp::setHomeDir (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 287 of file SbSetup\&.H'\&.
+.PP
+References HomeDir\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setImportAploDir (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 302 of file SbSetup\&.H'\&.
+.PP
+References ImportAploDir\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setImportDir (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 296 of file SbSetup\&.H'\&.
+.PP
+References ImportDir\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setImportEOPDir (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 297 of file SbSetup\&.H'\&.
+.PP
+References ImportEOPDir\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setImportICRFDir (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 299 of file SbSetup\&.H'\&.
+.PP
+References ImportICRFDir\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setImportITRFDir (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 298 of file SbSetup\&.H'\&.
+.PP
+References ImportITRFDir\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setImportMFilesDir (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 301 of file SbSetup\&.H'\&.
+.PP
+References ImportMFilesDir\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setImportOLoadDir (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 300 of file SbSetup\&.H'\&.
+.PP
+References ImportOLoadDir\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setLogCapacity (const uintV)\fC [inline, virtual]\fP"
+.PP
+Definition at line 312 of file SbSetup\&.H'\&.
+.PP
+References LogCapacity\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setLogDir (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 294 of file SbSetup\&.H'\&.
+.PP
+References LogDir\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setLogFacilities (\fBSBLog::LogLevel\fPLvl, const uintV)\fC [inline, virtual]\fP"
+.PP
+Definition at line 311 of file SbSetup\&.H'\&.
+.PP
+References LogFacilities\&.
+.SS "virtual void SBSetUp::setLogFileName (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 310 of file SbSetup\&.H'\&.
+.PP
+References LogFileName\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setLogStoreInFile (const intV)\fC [inline, virtual]\fP"
+.PP
+Definition at line 308 of file SbSetup\&.H'\&.
+.PP
+References LogStoreInFile\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setLogTimeLabel (const intV)\fC [inline, virtual]\fP"
+.PP
+Definition at line 309 of file SbSetup\&.H'\&.
+.PP
+References LogTimeLabel\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setOutputDir (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 291 of file SbSetup\&.H'\&.
+.PP
+References OutputDir\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setProject (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 307 of file SbSetup\&.H'\&.
+.PP
+References mainSetPrjName(), and Project\&.
+.PP
+Referenced by SBProjectSel::accept(), and SBProjectCreate::createProject()\&.
+.SS "virtual void SBSetUp::setProjectDir (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 293 of file SbSetup\&.H'\&.
+.PP
+References ProjectDir\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setSolutionsDir (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 292 of file SbSetup\&.H'\&.
+.PP
+References SolutionsDir\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setSources (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 304 of file SbSetup\&.H'\&.
+.PP
+References mainSetCRFName(), and Sources\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setStations (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 303 of file SbSetup\&.H'\&.
+.PP
+References mainSetTRFName(), and Stations\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setStuffDir (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 290 of file SbSetup\&.H'\&.
+.PP
+References StuffDir\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual void SBSetUp::setUnits (const \fBDUnits\fPU)\fC [inline, virtual]\fP"
+.PP
+Definition at line 317 of file SbSetup\&.H'\&.
+.PP
+References Units\&.
+.PP
+Referenced by SBSetupDialog::acquireData(), and SBVLBISetViewBase::unitsChanged()\&.
+.SS "virtual void SBSetUp::setWorkDir (const QString &S)\fC [inline, virtual]\fP"
+.PP
+Definition at line 295 of file SbSetup\&.H'\&.
+.PP
+References WorkDir\&.
+.PP
+Referenced by SBSetupDialog::acquireData()\&.
+.SS "virtual const QString& SBSetUp::solutionsDir () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 259 of file SbSetup\&.H'\&.
+.PP
+References SolutionsDir\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual const QString& SBSetUp::sources () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 271 of file SbSetup\&.H'\&.
+.PP
+References Sources\&.
+.PP
+Referenced by SBStuffSources::exportData(), SBCentralPanel::genInfoPanel(), SBSetupDialog::makeApply(), SBSetupDialog::makeDefaults(), SBMainWindow::SBMainWindow(), and SBSetupDialog::setData()\&.
+.SS "virtual const QString& SBSetUp::stations () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 270 of file SbSetup\&.H'\&.
+.PP
+References Stations\&.
+.PP
+Referenced by SBStuffStations::exportData(), SBCentralPanel::genInfoPanel(), SBSetupDialog::makeApply(), SBSetupDialog::makeDefaults(), SBMainWindow::SBMainWindow(), and SBSetupDialog::setData()\&.
+.SS "virtual const QString& SBSetUp::stuffDir () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 257 of file SbSetup\&.H'\&.
+.PP
+References StuffDir\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SS "virtual const QString SBSetUp::TRFfileName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 349 of file SbSetup\&.H'\&.
+.PP
+References path2Stuff(), and Stations\&.
+.PP
+Referenced by loadTRF(), and saveTRF()\&.
+.SS "virtual \fBDUnits\fP SBSetUp::units () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 284 of file SbSetup\&.H'\&.
+.PP
+References Units\&.
+.PP
+Referenced by SBSetupDialog::misc(), SBVLBISessionEditor::SBVLBISessionEditor(), SBSetupDialog::setData(), SBVLBISesInfoLI::text(), SBVLBISesPreProcLI::text(), SBVLBIObsLI::text(), and SBVLBISetViewBase::unitsGroup()\&.
+.SS "void SBSetUp::UpdateLogger ()\fC [virtual]\fP"
+.PP
+Definition at line 768 of file SbSetup\&.C'\&.
+.PP
+References SBLog::DBG, SBLog::ERR, SBLog::INF, Log, LogCapacity, LogFacilities, LogFileName, LogStoreInFile, LogTimeLabel, path2Log(), SBLog::setCapacity(), SBLog::setLogFacilities(), SBLog::setLogFileName(), SBLog::setStoreInFile(), SBLog::setTimeLabel(), and SBLog::WRN\&.
+.PP
+Referenced by SBSetupDialog::makeApply()\&.
+.SS "virtual const QString SBSetUp::VLBIfileName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 351 of file SbSetup\&.H'\&.
+.PP
+References path2Stuff()\&.
+.PP
+Referenced by LoadStuff(), loadVLBI(), and saveVLBI()\&.
+.SS "virtual const QString& SBSetUp::workDir () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 262 of file SbSetup\&.H'\&.
+.PP
+References WorkDir\&.
+.PP
+Referenced by SBSetupDialog::setData()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBSetUp\fP &SetUp_)\fC [friend]\fP"
+.PP
+Definition at line 905 of file SbSetup\&.C'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBSetUp\fP &SetUp_)\fC [friend]\fP"
+.PP
+Definition at line 950 of file SbSetup\&.C'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QPoint \fBSBSetUp::CentralPanelPosition\fP\fC [private]\fP"
+.PP
+Definition at line 219 of file SbSetup\&.H'\&.
+.PP
+Referenced by centralPanelPosition(), operator<<(), operator=(), operator>>(), PeekUpOldConfig(), setCentralPanelPosition(), and SetDefaults()\&.
+.SS "QSize \fBSBSetUp::CentralPanelSize\fP\fC [private]\fP"
+.PP
+Definition at line 220 of file SbSetup\&.H'\&.
+.PP
+Referenced by centralPanelSize(), operator<<(), operator=(), operator>>(), PeekUpOldConfig(), setCentralPanelSize(), and SetDefaults()\&.
+.SS "QString \fBSBSetUp::CompileDir\fP\fC [private]\fP"
+.PP
+Definition at line 189 of file SbSetup\&.H'\&.
+.PP
+Referenced by compileDir(), operator<<(), operator=(), operator>>(), path2Compil(), PeekUpOldConfig(), setCompileDir(), and SetDefaults()\&.
+.SS "QString \fBSBSetUp::DataDir\fP\fC [private]\fP"
+.PP
+Definition at line 188 of file SbSetup\&.H'\&.
+.PP
+Referenced by dataDir(), operator<<(), operator=(), operator>>(), path2Data(), PeekUpOldConfig(), setDataDir(), and SetDefaults()\&.
+.SS "QFont \fBSBSetUp::DefaultFont\fP\fC [private]\fP"
+.PP
+Definition at line 222 of file SbSetup\&.H'\&.
+.PP
+Referenced by defaultFont(), operator<<(), operator=(), operator>>(), PeekUpOldConfig(), setDefaultFont(), and SetDefaults()\&.
+.SS "QString \fBSBSetUp::EOPs\fP\fC [private]\fP"
+.PP
+Definition at line 206 of file SbSetup\&.H'\&.
+.PP
+Referenced by EOPfileName(), eops(), operator<<(), operator=(), operator>>(), PeekUpOldConfig(), SetDefaults(), and setEOPs()\&.
+.SS "QString \fBSBSetUp::Ephem\fP\fC [private]\fP"
+.PP
+Definition at line 207 of file SbSetup\&.H'\&.
+.PP
+Referenced by ephem(), EphemfileName(), operator<<(), operator=(), operator>>(), PeekUpOldConfig(), SetDefaults(), and setEphem()\&.
+.SS "\fBSBFCList\fP \fBSBSetUp::FCL\fP\fC [private]\fP"
+.PP
+Definition at line 226 of file SbSetup\&.H'\&.
+.PP
+Referenced by fcList(), operator<<(), operator=(), operator>>(), PeekUpOldConfig(), and SetDefaults()\&.
+.SS "\fBGUIStyle\fP \fBSBSetUp::GUI_Style\fP\fC [private]\fP"
+.PP
+Definition at line 221 of file SbSetup\&.H'\&.
+.PP
+Referenced by guiStyle(), operator<<(), operator=(), operator>>(), PeekUpOldConfig(), SetDefaults(), and setGUIStyle()\&.
+.SS "bool \fBSBSetUp::HaveToSave\fP\fC [private]\fP"
+.PP
+Definition at line 181 of file SbSetup\&.H'\&.
+.PP
+Referenced by LoadConfig(), and SBSetUp()\&.
+.SS "QString \fBSBSetUp::HomeDir\fP\fC [private]\fP"
+.PP
+Definition at line 187 of file SbSetup\&.H'\&.
+.PP
+Referenced by CheckConfig(), homeDir(), operator<<(), operator=(), operator>>(), path2Compil(), path2Data(), path2Home(), path2ImpAplo(), path2ImpEOP(), path2ImpICRF(), path2ImpITRF(), path2ImpMFiles(), path2ImpOLoad(), path2Import(), path2Log(), path2Output(), path2Proj(), path2Sols(), path2Stuff(), path2TimeSeries(), path2Work(), PeekUpOldConfig(), SetDefaults(), and setHomeDir()\&.
+.SS "QString \fBSBSetUp::ImportAploDir\fP\fC [private]\fP"
+.PP
+Definition at line 202 of file SbSetup\&.H'\&.
+.PP
+Referenced by importAploDir(), operator<<(), operator=(), operator>>(), path2ImpAplo(), PeekUpOldConfig(), SetDefaults(), and setImportAploDir()\&.
+.SS "QString \fBSBSetUp::ImportDir\fP\fC [private]\fP"
+.PP
+Definition at line 196 of file SbSetup\&.H'\&.
+.PP
+Referenced by importDir(), operator<<(), operator=(), operator>>(), path2Import(), PeekUpOldConfig(), SetDefaults(), and setImportDir()\&.
+.SS "QString \fBSBSetUp::ImportEOPDir\fP\fC [private]\fP"
+.PP
+Definition at line 197 of file SbSetup\&.H'\&.
+.PP
+Referenced by importEOPDir(), operator<<(), operator=(), operator>>(), path2ImpEOP(), PeekUpOldConfig(), SetDefaults(), and setImportEOPDir()\&.
+.SS "QString \fBSBSetUp::ImportICRFDir\fP\fC [private]\fP"
+.PP
+Definition at line 199 of file SbSetup\&.H'\&.
+.PP
+Referenced by importICRFDir(), operator<<(), operator=(), operator>>(), path2ImpICRF(), PeekUpOldConfig(), SetDefaults(), and setImportICRFDir()\&.
+.SS "QString \fBSBSetUp::ImportITRFDir\fP\fC [private]\fP"
+.PP
+Definition at line 198 of file SbSetup\&.H'\&.
+.PP
+Referenced by importITRFDir(), operator<<(), operator=(), operator>>(), path2ImpITRF(), PeekUpOldConfig(), SetDefaults(), and setImportITRFDir()\&.
+.SS "QString \fBSBSetUp::ImportMFilesDir\fP\fC [private]\fP"
+.PP
+Definition at line 201 of file SbSetup\&.H'\&.
+.PP
+Referenced by importMFilesDir(), operator<<(), operator=(), operator>>(), path2ImpMFiles(), PeekUpOldConfig(), SetDefaults(), and setImportMFilesDir()\&.
+.SS "QString \fBSBSetUp::ImportOLoadDir\fP\fC [private]\fP"
+.PP
+Definition at line 200 of file SbSetup\&.H'\&.
+.PP
+Referenced by importOLoadDir(), operator<<(), operator=(), operator>>(), path2ImpOLoad(), PeekUpOldConfig(), SetDefaults(), and setImportOLoadDir()\&.
+.SS "uint \fBSBSetUp::LogCapacity\fP\fC [private]\fP"
+.PP
+Definition at line 217 of file SbSetup\&.H'\&.
+.PP
+Referenced by logCapacity(), operator<<(), operator=(), operator>>(), PeekUpOldConfig(), SetDefaults(), setLogCapacity(), and UpdateLogger()\&.
+.SS "QString \fBSBSetUp::LogDir\fP\fC [private]\fP"
+.PP
+Definition at line 194 of file SbSetup\&.H'\&.
+.PP
+Referenced by logDir(), operator<<(), operator=(), operator>>(), path2Data(), path2Log(), PeekUpOldConfig(), SetDefaults(), and setLogDir()\&.
+.SS "uint \fBSBSetUp::LogFacilities\fP[4]\fC [private]\fP"
+.PP
+Definition at line 216 of file SbSetup\&.H'\&.
+.PP
+Referenced by logFacilities(), operator<<(), operator=(), operator>>(), PeekUpOldConfig(), SetDefaults(), setLogFacilities(), and UpdateLogger()\&.
+.SS "QString \fBSBSetUp::LogFileName\fP\fC [private]\fP"
+.PP
+Definition at line 215 of file SbSetup\&.H'\&.
+.PP
+Referenced by logFileName(), operator<<(), operator=(), operator>>(), PeekUpOldConfig(), SetDefaults(), setLogFileName(), and UpdateLogger()\&.
+.SS "int \fBSBSetUp::LogStoreInFile\fP\fC [private]\fP"
+.PP
+Definition at line 213 of file SbSetup\&.H'\&.
+.PP
+Referenced by logStoreInFile(), operator<<(), operator=(), operator>>(), PeekUpOldConfig(), SetDefaults(), setLogStoreInFile(), and UpdateLogger()\&.
+.SS "int \fBSBSetUp::LogTimeLabel\fP\fC [private]\fP"
+.PP
+Definition at line 214 of file SbSetup\&.H'\&.
+.PP
+Referenced by logTimeLabel(), operator<<(), operator=(), operator>>(), PeekUpOldConfig(), SetDefaults(), setLogTimeLabel(), and UpdateLogger()\&.
+.SS "QString \fBSBSetUp::OutputDir\fP\fC [private]\fP"
+.PP
+Definition at line 191 of file SbSetup\&.H'\&.
+.PP
+Referenced by operator<<(), operator=(), operator>>(), outputDir(), path2Output(), PeekUpOldConfig(), SetDefaults(), and setOutputDir()\&.
+.SS "QString \fBSBSetUp::Project\fP\fC [private]\fP"
+.PP
+Definition at line 208 of file SbSetup\&.H'\&.
+.PP
+Referenced by ObsStatFileName(), operator<<(), operator=(), operator>>(), PeekUpOldConfig(), project(), ProjectFileName(), SetDefaults(), and setProject()\&.
+.SS "QString \fBSBSetUp::ProjectDir\fP\fC [private]\fP"
+.PP
+Definition at line 193 of file SbSetup\&.H'\&.
+.PP
+Referenced by operator<<(), operator=(), operator>>(), path2Proj(), PeekUpOldConfig(), projectDir(), SetDefaults(), and setProjectDir()\&.
+.SS "QString \fBSBSetUp::SetUpFName\fP\fC [private]\fP"
+.PP
+Definition at line 180 of file SbSetup\&.H'\&.
+.PP
+Referenced by LoadConfig(), SaveConfig(), and SBSetUp()\&.
+.SS "const char * \fBSBSetUp::sInstitutions\fP = 'institutions\&.bin'\fC [static, private]\fP"
+.PP
+Definition at line 177 of file SbSetup\&.H'\&.
+.PP
+Referenced by InstitutionsFileName()\&.
+.SS "QString \fBSBSetUp::SolutionsDir\fP\fC [private]\fP"
+.PP
+Definition at line 192 of file SbSetup\&.H'\&.
+.PP
+Referenced by CheckConfig(), operator<<(), operator=(), operator>>(), path2Sols(), PeekUpOldConfig(), SetDefaults(), setSolutionsDir(), and solutionsDir()\&.
+.SS "QString \fBSBSetUp::Sources\fP\fC [private]\fP"
+.PP
+Definition at line 205 of file SbSetup\&.H'\&.
+.PP
+Referenced by CRFfileName(), operator<<(), operator=(), operator>>(), PeekUpOldConfig(), SetDefaults(), setSources(), and sources()\&.
+.SS "QString \fBSBSetUp::Stations\fP\fC [private]\fP"
+.PP
+Definition at line 204 of file SbSetup\&.H'\&.
+.PP
+Referenced by operator<<(), operator=(), operator>>(), PeekUpOldConfig(), SetDefaults(), setStations(), stations(), and TRFfileName()\&.
+.SS "QString \fBSBSetUp::StuffDir\fP\fC [private]\fP"
+.PP
+Definition at line 190 of file SbSetup\&.H'\&.
+.PP
+Referenced by operator<<(), operator=(), operator>>(), path2Stuff(), PeekUpOldConfig(), SetDefaults(), setStuffDir(), and stuffDir()\&.
+.SS "\fBDUnits\fP \fBSBSetUp::Units\fP\fC [private]\fP"
+.PP
+Definition at line 224 of file SbSetup\&.H'\&.
+.PP
+Referenced by operator<<(), operator=(), operator>>(), PeekUpOldConfig(), scale(), scaleName(), SetDefaults(), setUnits(), and units()\&.
+.SS "QString \fBSBSetUp::WorkDir\fP\fC [private]\fP"
+.PP
+Definition at line 195 of file SbSetup\&.H'\&.
+.PP
+Referenced by operator<<(), operator=(), operator>>(), path2Work(), PeekUpOldConfig(), SetDefaults(), setWorkDir(), and workDir()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

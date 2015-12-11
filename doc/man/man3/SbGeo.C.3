@@ -1,0 +1,156 @@
+.TH "SbGeo.C" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SbGeo.C \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SbGeo\&.H'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBInstitutionList\fP &L)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBInstitutionList\fP &L)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBSolutionName\fP &Sol)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBSolutionName\fP &Sol)"
+.br
+.ti -1c
+.RI "\fBQTextStream\fP & \fBoperator<<\fP (\fBQTextStream\fP &s, const \fBSBSolutionName\fP &Sol)"
+.br
+.ti -1c
+.RI "\fBQTextStream\fP & \fBoperator>>\fP (\fBQTextStream\fP &s, \fBSBSolutionName\fP &Sol)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBCatalog\fP &C)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBCatalog\fP &C)"
+.br
+.ti -1c
+.RI "void \fBrad2hms\fP (double rad, int &h, int &m, double &s)"
+.br
+.ti -1c
+.RI "void \fBrad2dms\fP (double rad, int &d, int &m, double &s)"
+.br
+.ti -1c
+.RI "void \fBrad2dmsl\fP (double rad, int &d, int &m, double &s)"
+.br
+.ti -1c
+.RI "QString \fBrad2dmsStr\fP (double DN_)"
+.br
+.ti -1c
+.RI "QString \fBrad2dmslStr\fP (double DN_)"
+.br
+.ti -1c
+.RI "QString \fBrad2hmsStr\fP (double RA_)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBSBInstitutionList\fP * \fBInstitutions\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBInstitutionList\fP &L)"
+.PP
+Definition at line 135 of file SbGeo\&.C'\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBSolutionName\fP &Sol)"
+.PP
+Definition at line 223 of file SbGeo\&.C'\&.
+.PP
+References SBSolutionName::Acronym, SBSolutionName::Serial, SBSolutionName::Tech, SBSolutionName::Type, and SBSolutionName::Year\&.
+.SS "\fBQTextStream\fP& operator<< (\fBQTextStream\fP &s, const \fBSBSolutionName\fP &Sol)"
+.PP
+Definition at line 233 of file SbGeo\&.C'\&.
+.PP
+References SBSolutionName::toString()\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBCatalog\fP &C)"
+.PP
+Definition at line 438 of file SbGeo\&.C'\&.
+.PP
+References SBCatalog::Aliases, SBCatalog::Comment, SBCatalog::Epoch, and SBCatalog::Label\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBInstitutionList\fP &L)"
+.PP
+Definition at line 140 of file SbGeo\&.C'\&.
+.PP
+References SBInstitutionList::ClassName(), SBLog::CONFIG, SBLog::INF, SBInstitutionList::InstByAcronym, SBLog::IO, SBInstitutionList::IsChanged, Log, and SBLog::write()\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBSolutionName\fP &Sol)"
+.PP
+Definition at line 228 of file SbGeo\&.C'\&.
+.PP
+References SBSolutionName::Acronym, SBSolutionName::Serial, SBSolutionName::Tech, SBSolutionName::Type, and SBSolutionName::Year\&.
+.SS "\fBQTextStream\fP& operator>> (\fBQTextStream\fP &s, \fBSBSolutionName\fP &Sol)"
+.PP
+Definition at line 238 of file SbGeo\&.C'\&.
+.PP
+References SBSolutionName::Acronym, SBLog::DBG, SBInstitution::descr(), SBLog::ERR, SBInstitutionList::find(), SBLog::INF, SBLog::IO, Log, SBSolutionName::Serial, SBSolutionName::Tech, TECH_AD, TECH_CG, TECH_COMBINED, TECH_DORIS, TECH_GPS, TECH_LLR, TECH_OA, TECH_SLR, TECH_TIE, TECH_UNKN, TECH_VLBI, SBSolutionName::Type, SBSolutionName::TYPE_AAM, SBSolutionName::TYPE_EOP, SBSolutionName::TYPE_RSC, SBSolutionName::TYPE_SSC, SBSolutionName::TYPE_SSV, SBSolutionName::TYPE_UNKN, SBLog::write(), SBLog::WRN, and SBSolutionName::Year\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBCatalog\fP &C)"
+.PP
+Definition at line 450 of file SbGeo\&.C'\&.
+.PP
+References SBCatalog::Aliases, SBCatalog::Comment, SBCatalog::Dict, SBCatalog::Epoch, and SBCatalog::Label\&.
+.SS "void rad2dms (double, int &, int &, double &)"Converts Radians to Degree, Min and Sec'\&. [-M_PI; M_PI] 
+.PP
+Definition at line 494 of file SbGeo\&.C'\&.
+.PP
+References RAD2DEG\&.
+.PP
+Referenced by SBSource::DN2str(), SBStationEditor::makeApply(), operator<<(), rad2dmsStr(), sinex_SiteIDBlock(), sinex_tro_SiteIDBlock(), SBSiteListItem::text(), SBSourceEditor::wCoordinates(), and SBStationEditor::wCoordinates()\&.
+.SS "void rad2dmsl (double, int &, int &, double &)"Converts Radians to Degree, Min and Sec'\&. [0; 2'\&.0*M_PI] 
+.PP
+Definition at line 503 of file SbGeo\&.C'\&.
+.PP
+References RAD2DEG\&.
+.PP
+Referenced by SBStationEditor::makeApply(), operator<<(), rad2dmslStr(), sinex_SiteIDBlock(), sinex_tro_SiteIDBlock(), SBSiteListItem::text(), and SBStationEditor::wCoordinates()\&.
+.SS "QString rad2dmslStr (double)"Converts Radians to string with Degree, Min and Sec'\&. [0; 2'\&.0*M_PI] 
+.PP
+Definition at line 521 of file SbGeo\&.C'\&.
+.PP
+References rad2dmsl()\&.
+.PP
+Referenced by SBFrameClassic::calc(), SBTestFrame::createWidget4Test(), SBTestFrame::displayValues(), SBRefraction::operator()(), SBNut_IAU1980::operator()(), SBNut_IAU2000::operator()(), and SBTime::setUTC()\&.
+.SS "QString rad2dmsStr (double)"Converts Radians to string with Degree, Min and Sec'\&. [-M_PI; M_PI] 
+.PP
+Definition at line 512 of file SbGeo\&.C'\&.
+.PP
+References rad2dms()\&.
+.PP
+Referenced by SBTestPrecession::createWidget4Test(), SBTestNutation::createWidget4Test(), SBTestEphem::displayCoo(), SBTestPrecession::displayValues(), SBTestNutation::displayValues(), and SBRefraction::operator()()\&.
+.SS "void rad2hms (double, int &, int &, double &)"Converts Radians to Hour, Min and Sec'\&. 
+.PP
+Definition at line 485 of file SbGeo\&.C'\&.
+.PP
+References RAD2HR\&.
+.PP
+Referenced by operator<<(), SBSource::RA2str(), rad2hmsStr(), SBVLBISesInfoLI::text(), and SBSourceEditor::wCoordinates()\&.
+.SS "QString rad2hmsStr (double)"Converts Radians to string with Hour, Min and Sec'\&. 
+.PP
+Definition at line 530 of file SbGeo\&.C'\&.
+.PP
+References rad2hms()\&.
+.PP
+Referenced by SBFrameClassic::calc(), SBTestEphem::displayCoo(), and SBTime::setUTC()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "\fBSBInstitutionList\fP* \fBInstitutions\fP"
+.PP
+Definition at line 27 of file SbGeo\&.C'\&.
+.PP
+Referenced by SBSetUp::LoadStuff(), SBSetupDialog::makeApply(), SBSetUp::SaveStuff(), SBSetupDialog::SBSetupDialog(), SBSetUp::SetDefaults(), and SBMainWindow::~SBMainWindow()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

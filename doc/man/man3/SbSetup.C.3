@@ -1,0 +1,102 @@
+.TH "SbSetup.C" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SbSetup.C \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SbSetup\&.H'\fP
+.br
+\fC#include <qapplication\&.h>\fP
+.br
+\fC#include <qdir\&.h>\fP
+.br
+\fC#include <qfile\&.h>\fP
+.br
+\fC#include <qfileinfo\&.h>\fP
+.br
+\fC#include <qmessagebox\&.h>\fP
+.br
+\fC#include <qregexp\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <errno\&.h>\fP
+.br
+\fC#include 'SbGeoAtmLoad\&.H'\fP
+.br
+\fC#include 'SbGeoEop\&.H'\fP
+.br
+\fC#include 'SbGeoSources\&.H'\fP
+.br
+\fC#include 'SbGeoStations\&.H'\fP
+.br
+\fC#include 'SbGeoObsVLBI\&.H'\fP
+.br
+\fC#include 'SbGeoObsVLBIStat\&.H'\fP
+.br
+\fC#include 'SbGeoProject\&.H'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBFCList\fP &L)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBFCList\fP &L)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBSetUp\fP &SetUp_)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBSetUp\fP &SetUp_)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSetUp\fP * \fBSetUp\fP"
+.br
+.ti -1c
+.RI "const \fBSBInstitution\fP \fBInstitutionsDefault\fP [59]"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBFCList\fP &L)"
+.PP
+Definition at line 406 of file SbSetup\&.C'\&.
+.PP
+References SBFCList::Default\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBSetUp\fP &SetUp_)"
+.PP
+Definition at line 905 of file SbSetup\&.C'\&.
+.PP
+References SBSetUp::CentralPanelPosition, SBSetUp::CentralPanelSize, SBSetUp::CompileDir, SBSetUp::DataDir, SBSetUp::DefaultFont, SBSetUp::EOPs, SBSetUp::Ephem, SBSetUp::FCL, SBSetUp::GUI_Style, SBSetUp::HomeDir, SBSetUp::ImportAploDir, SBSetUp::ImportDir, SBSetUp::ImportEOPDir, SBSetUp::ImportICRFDir, SBSetUp::ImportITRFDir, SBSetUp::ImportMFilesDir, SBSetUp::ImportOLoadDir, SBSetUp::LogCapacity, SBSetUp::LogDir, SBSetUp::LogFacilities, SBSetUp::LogFileName, SBSetUp::LogStoreInFile, SBSetUp::LogTimeLabel, SBSetUp::OutputDir, SBSetUp::Project, SBSetUp::ProjectDir, SBSetUp::SolutionsDir, SBSetUp::Sources, SBSetUp::Stations, SBSetUp::StuffDir, SBSetUp::Units, Version, and SBSetUp::WorkDir\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBFCList\fP &L)"
+.PP
+Definition at line 411 of file SbSetup\&.C'\&.
+.PP
+References SBFCList::Default, SBFCList::ExtDict, and SBFCList::setDefault()\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBSetUp\fP &SetUp_)"
+.PP
+Definition at line 950 of file SbSetup\&.C'\&.
+.PP
+References SBSetUp::CentralPanelPosition, SBSetUp::CentralPanelSize, SBSetUp::CompileDir, SBSetUp::DataDir, SBSetUp::DefaultFont, SBSetUp::EOPs, SBSetUp::Ephem, SBSetUp::FCL, SBSetUp::GUI_Style, SBSetUp::HomeDir, SBSetUp::ImportAploDir, SBSetUp::ImportDir, SBSetUp::ImportEOPDir, SBSetUp::ImportICRFDir, SBSetUp::ImportITRFDir, SBSetUp::ImportMFilesDir, SBSetUp::ImportOLoadDir, SBSetUp::LogCapacity, SBSetUp::LogDir, SBSetUp::LogFacilities, SBSetUp::LogFileName, SBSetUp::LogStoreInFile, SBSetUp::LogTimeLabel, SBSetUp::OutputDir, SBSetUp::Project, SBSetUp::ProjectDir, SBSetUp::SolutionsDir, SBSetUp::Sources, SBSetUp::Stations, SBSetUp::StuffDir, SBSetUp::Units, and SBSetUp::WorkDir\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const \fBSBInstitution\fP \fBInstitutionsDefault\fP[59]"
+.PP
+Definition at line 47 of file SbSetup\&.C'\&.
+.SS "\fBSBSetUp\fP* \fBSetUp\fP"
+.PP
+Definition at line 46 of file SbSetup\&.C'\&.
+.PP
+Referenced by SBStuffEOPs::accept(), SBStuffSources::accept(), SBProjectSel::accept(), SBStuffStations::accept(), SBStuffAplo::accept(), SBVLBISetViewBase::accept(), SBMainWindow::changeStyle(), SBVLBISesInfo::checkPath(), SBObsVLBIStatistics::collectStatistics(), SBMainWindow::ControlDefault(), SBMainWindow::ControlSelectFont(), SBProjectCreate::createProject(), SBSolution::deleteSolution(), SBSolution::dumpParameters(), SBVLBIPreProcess::dumpUI(), SBVLBISession::dumpUserInfo(), SBVLBISet::dumpUserInfo(), SBMainWindow::ExecuteDoubleRunProj(), SBMainWindow::ExecuteDrop(), SBMainWindow::ExecuteEditProj(), SBMainWindow::ExecuteModels(), SBMainWindow::ExecuteParameters(), SBMainWindow::ExecuteReportProj(), SBMainWindow::ExecuteRunProj(), SBStuffSources::exportData(), SBStuffStations::exportData(), SBVLBISesInfo::fileName(), SBVLBIPreProcess::fillObsListView(), SBEstimator::finisLocal(), SBRunManager::finisRun_m1(), SBVLBIPreProcess::fixSession(), SBCentralPanel::genInfoPanel(), SBStuffEOPs::import(), SBStuffEphem::import(), SBEphem::import(), SBStuffAplo::import(), SBVLBISetView::import(), SBVLBISet::import(), SBStuffSources::importData(), SBStuffStations::importData(), SBStuffStationsEcc::importData(), SBAploEphem::importEphem(), SBStuffAplo::importHPS(), SBSourceImport::importICRF(), SBStationImport::importITRF(), SBVLBISesInfoLI::key(), SBVLBISesPreProcLI::key(), SBObsVLBIStatRecordLI::key(), SBStaInfoLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBAploEphem::loadChunk(), SBSolution::loadGlbCor(), SBSolution::loadGlbPar(), SBSolution::loadLocCor(), SBSolution::loadLocPar(), SBVLBISet::loadMaster(), SBSolution::loadNormalEqs(), SBSolution::loadStatistics(), SBSolution::loadStcPar(), SBSetupDialog::makeApply(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportEOP(), SBRunManager::makeReportMaps(), SBRunManager::makeReportNormalEqs(), SBRunManager::makeReportSessionStatistics(), SBRunManager::makeReportTRF(), SBRunManager::makeReportTRFVariations(), SBRunManager::makeReportTroposphere(), SBMainWindow::moveEvent(), SBEphem::openFile(), SBSolution::path2GlbDir(), SBSolution::path2LocDir(), SBSolution::path2StcDir(), SBEstimator::prepare4Local(), SB_TRF::prepare4Run(), SBRunManager::prepare4Run_m1(), SBRunManager::prepare4Run_m2(), SBRunManager::process_m1(), SBFilteringGauss::readDataFile(), SBSpectrumAnalyserMEM::readDataFile(), SBFilteringGauss::redrawDataPlot(), SBSpectrumAnalyserMEM::redrawDataPlot(), SBFilteringGauss::redrawDataPlot_ExpMode(), SBSpectrumAnalyserMEM::redrawFPEPlot(), SBSpectrumAnalyserMEM::redrawSpectrumPlot(), SBStuffSources::reloadCRF(), SBStuffStations::reloadTRF(), SBProjectSel::remove(), SBMainWindow::resizeEvent(), SBVLBIPreProcess::restoreUI(), SBVLBISession::restoreUserInfo(), SBVLBISet::restoreUserInfo(), SBAploEphem::saveChunk(), SBSolution::saveGlbCor(), SBSolution::saveGlbPar(), SBSolution::saveLocCor(), SBSolution::saveLocPar(), SBSolution::saveNormalEqs(), SBSolution::saveStcPar(), SBBrowseBases::SBBrowseBases(), SBBrowseSources::SBBrowseSources(), SBBrowseStations::SBBrowseStations(), SBEstimator::SBEstimator(), SBFrame::SBFrame(), SBMainWindow::SBMainWindow(), SBModelEditor::SBModelEditor(), SBObsVLBIStatBrowser::SBObsVLBIStatBrowser(), SBParametersEditor::SBParametersEditor(), SBPlotCarrier::SBPlotCarrier(), SBProjectEdit::SBProjectEdit(), SBProjectSel::SBProjectSel(), SBRunManager::SBRunManager(), SBSetupDialog::SBSetupDialog(), SBSolution::SBSolution(), SBSolutionBrowser::SBSolutionBrowser(), SBStuffAplo::SBStuffAplo(), SBStuffEOPs::SBStuffEOPs(), SBStuffSources::SBStuffSources(), SBStuffStations::SBStuffStations(), SBTestAPLoad::SBTestAPLoad(), SBTestEOP::SBTestEOP(), SBTestNutation::SBTestNutation(), SBTestOceanTides::SBTestOceanTides(), SBTestPolarTides::SBTestPolarTides(), SBTestSolidTides::SBTestSolidTides(), SBVLBIPreProcess::SBVLBIPreProcess(), SBVLBISessionEditor::SBVLBISessionEditor(), SBVLBISetViewBase::SBVLBISetViewBase(), SBStationImport::selectFile1994(), SBSourceImport::selectFile1995(), SBSourceImport::selectFile1999(), SBStationImport::selectFile2000(), SBSourceImport::selectFile2009(), SBStationImport::selectFileAux(), SBPlotCarrier::setFile4SaveBaseName(), SBMainWindow::setupMenu(), SBSourceImport::setupPage2_1(), SBStationImport::setupPage2_1(), SBSourceImport::setupPage2_2(), SBStationImport::setupPage2_2(), SBSourceImport::setupPage2_3(), SBStationImport::setupPage3(), SBEstimator::solveLocals(), SBEstimator::solveStochs(), SBVLBIObsPPLI::text(), SBVLBISesInfoLI::text(), SBObsVLBIStatRecordLI::text(), SBVLBISesPreProcLI::text(), SBVLBIObsLI::text(), SBStaInfoLI::text(), SBBasInfoLI::text(), SBSouInfoLI::text(), SBVLBISetViewBase::unitsChanged(), SBVLBISetViewBase::unitsGroup(), SBSolutionBrowser::updateCRF(), SBStuffEOPs::updateEOP(), SBSolutionBrowser::updateTRF(), SBMainWindow::UtilitiesCollectStat4All(), SBMainWindow::UtilitiesCollectStat4Prj(), SBMainWindow::UtilitiesDumpUI(), SBMainWindow::UtilitiesRestoreUI(), SBFilteringGauss::wBrowseData(), SBSpectrumAnalyserMEM::wBrowseData(), SBSpectrumAnalyserMEM::wBrowseSpectrum(), SBFilteringGauss::wBrowseTF(), SBSpectrumAnalyserMEM::wMEMCoeffList(), SBFilteringGauss::wrote2File(), SBSolutionBrowser::wWRMSs(), SBMainWindow::~SBMainWindow(), SBModelEditor::~SBModelEditor(), SBParametersEditor::~SBParametersEditor(), and SBProjectEdit::~SBProjectEdit()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

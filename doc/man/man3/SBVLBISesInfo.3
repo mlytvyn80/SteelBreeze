@@ -1,0 +1,1115 @@
+.TH "SBVLBISesInfo" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBVLBISesInfo \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoObsVLBI\&.H>\fP
+.PP
+Inherits \fBSBNamed\fP, and \fBSBAttributed\fP'\&.
+.PP
+Inherited by \fBSBVLBISession\fP'\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAttributes\fP { \fBpreProc\fP =  1<<0, \fBnotValid\fP =  1<<1, \fBBadCable\fP =  1<<2, \fBBadAllCables\fP =  1<<3, \fBBadMeteo\fP =  1<<4, \fBBadAllMeteos\fP =  1<<5, \fBHasClockBreak\fP =  1<<6, \fBConstrEOP\fP =  1<<7, \fBArtMeteo\fP =  1<<8, \fBArtAllMeteos\fP =  1<<9 }"
+.br
+.ti -1c
+.RI "enum \fBObsImportedFrom\fP { \fBIF_NGS\fP = 0, \fBIF_VBD\fP = 1, \fBIF_DBH\fP = 2, \fBIF_UNKN\fP = 3 }"
+.br
+.ti -1c
+.RI "enum \fBObsDelayType\fP { \fBDT_GR\fP = 0, \fBDT_PH\fP = 1, \fBDT_UNKN\fP = 2 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBVLBISesInfo\fP (const QString &='70JAN01ZZ')"
+.br
+.ti -1c
+.RI "\fBSBVLBISesInfo\fP (const \fBSBVLBISesInfo\fP &)"
+.br
+.ti -1c
+.RI "\fBSBVLBISesInfo\fP & \fBoperator=\fP (const \fBSBVLBISesInfo\fP &)"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "\fBObsImportedFrom\fP \fBimportedFrom\fP () const "
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP & \fBdateCreat\fP () const "
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP & \fBtStart\fP () const "
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP & \fBtFinis\fP () const "
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP & \fBtMean\fP () const "
+.br
+.ti -1c
+.RI "double \fBtInterval\fP () const "
+.br
+.ti -1c
+.RI "int \fBversion\fP () const "
+.br
+.ti -1c
+.RI "int \fBlocalVersion\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBsubKey\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBnetworkID\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBexpDescr\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBuserFlag\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBofficialName\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBcode\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBcorrelatorName\fP () const "
+.br
+.ti -1c
+.RI "\fBObsDelayType\fP \fBdelayType\fP () const "
+.br
+.ti -1c
+.RI "virtual int \fBnumSta\fP () const "
+.br
+.ti -1c
+.RI "virtual int \fBnumBas\fP () const "
+.br
+.ti -1c
+.RI "virtual int \fBnumSou\fP () const "
+.br
+.ti -1c
+.RI "virtual int \fBnumObs\fP () const "
+.br
+.ti -1c
+.RI "double \fBdelayRMS2\fP () const "
+.br
+.ti -1c
+.RI "double \fBrateRMS2\fP () const "
+.br
+.ti -1c
+.RI "double \fBdelaySumW2\fP () const "
+.br
+.ti -1c
+.RI "double \fBrateSumW2\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetImportedFrom\fP (\fBObsImportedFrom\fP ImportedFrom_)"
+.br
+.ti -1c
+.RI "void \fBsetTStart\fP (\fBSBMJD\fP TStart_)"
+.br
+.ti -1c
+.RI "void \fBsetTFinis\fP (\fBSBMJD\fP TFinis_)"
+.br
+.ti -1c
+.RI "void \fBsetTMean\fP (\fBSBMJD\fP TMean_)"
+.br
+.ti -1c
+.RI "void \fBsetDateCreat\fP (\fBSBMJD\fP DateCreat_)"
+.br
+.ti -1c
+.RI "void \fBsetVersion\fP (int V_)"
+.br
+.ti -1c
+.RI "void \fBsetSubKey\fP (QString SubKey_)"
+.br
+.ti -1c
+.RI "void \fBsetNetworkID\fP (QString NetworkID_)"
+.br
+.ti -1c
+.RI "void \fBsetExpDescr\fP (QString ExpDescr_)"
+.br
+.ti -1c
+.RI "void \fBsetUserFlag\fP (QString UserFlag_)"
+.br
+.ti -1c
+.RI "void \fBsetOfficialName\fP (QString OfficialName_)"
+.br
+.ti -1c
+.RI "void \fBsetCode\fP (QString Code_)"
+.br
+.ti -1c
+.RI "void \fBsetCorrelatorName\fP (QString CName_)"
+.br
+.ti -1c
+.RI "void \fBsetDelayType\fP (\fBObsDelayType\fP DelayType_)"
+.br
+.ti -1c
+.RI "void \fBsetDelayRMS2\fP (double DelayRMS_)"
+.br
+.ti -1c
+.RI "void \fBsetRateRMS2\fP (double RateRMS_)"
+.br
+.ti -1c
+.RI "void \fBsetDelaySumW2\fP (double d_)"
+.br
+.ti -1c
+.RI "void \fBsetRateSumW2\fP (double d_)"
+.br
+.ti -1c
+.RI "void \fBaddDelayRMS\fP (double o_c_, double w_)"
+.br
+.ti -1c
+.RI "void \fBaddRateRMS\fP (double o_c_, double w_)"
+.br
+.ti -1c
+.RI "virtual void \fBclearRMSs\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBoperator==\fP (const \fBSBVLBISesInfo\fP &I) const "
+.br
+.ti -1c
+.RI "virtual void \fBincVersion\fP ()"
+.br
+.ti -1c
+.RI "double \fBdWRMS\fP () const "
+.br
+.ti -1c
+.RI "double \fBrWRMS\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBname\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetName\fP (const QString &Name_)"
+.br
+.ti -1c
+.RI "uint \fBattributes\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetAttributes\fP (uint A_)"
+.br
+.ti -1c
+.RI "void \fBaddAttr\fP (uint A_)"
+.br
+.ti -1c
+.RI "void \fBdelAttr\fP (uint A_)"
+.br
+.ti -1c
+.RI "void \fBxorAttr\fP (uint A_)"
+.br
+.ti -1c
+.RI "bool \fBisAttr\fP (uint A_) const "
+.br
+.ti -1c
+.RI "void \fBclearAll\fP ()"
+.br
+.in -1c
+.SS "Protected Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBFile_Type\fP { \fBFT_DAT\fP = 0, \fBFT_AUX\fP = 1, \fBFT_UNKN\fP = 2 }"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "QString \fBfileName\fP (\fBFile_Type\fP=FT_DAT)"
+.br
+.ti -1c
+.RI "void \fBcheckPath\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBcalcTMean\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBObsImportedFrom\fP \fBImportedFrom\fP"
+.br
+.RI "\fIorigin of the session; \fP"
+.ti -1c
+.RI "\fBSBMJD\fP \fBDateCreat\fP"
+.br
+.RI "\fIdate of MkIII creation (just for curiosity); \fP"
+.ti -1c
+.RI "\fBSBMJD\fP \fBTStart\fP"
+.br
+.RI "\fIfirst epoch of the observations; \fP"
+.ti -1c
+.RI "\fBSBMJD\fP \fBTFinis\fP"
+.br
+.RI "\fIlast epoch of the observations; \fP"
+.ti -1c
+.RI "\fBSBMJD\fP \fBTMean\fP"
+.br
+.RI "\fImean epoch of the observations; \fP"
+.ti -1c
+.RI "QString \fBSubKey\fP"
+.br
+.RI "\fIaux key; \fP"
+.ti -1c
+.RI "QString \fBNetworkID\fP"
+.br
+.RI "\fINetwork ID (a key);'\&. \fP"
+.ti -1c
+.RI "QString \fBExpDescr\fP"
+.br
+.RI "\fIExperiment description;'\&. \fP"
+.ti -1c
+.RI "QString \fBUserFlag\fP"
+.br
+.RI "\fIFlag assigned by user'\&. \fP"
+.ti -1c
+.RI "QString \fBOfficialName\fP"
+.br
+.RI "\fIOfficial Name (from MasterFile) \fP"
+.ti -1c
+.RI "QString \fBCode\fP"
+.br
+.RI "\fICode (from MasterFile) \fP"
+.ti -1c
+.RI "QString \fBCorrelatorName\fP"
+.br
+.RI "\fICorrelator Name (from MasterFile) \fP"
+.ti -1c
+.RI "\fBObsDelayType\fP \fBDelayType\fP"
+.br
+.RI "\fItype of delay; \fP"
+.ti -1c
+.RI "int \fBNumSta\fP"
+.br
+.ti -1c
+.RI "int \fBNumBas\fP"
+.br
+.ti -1c
+.RI "int \fBNumSou\fP"
+.br
+.ti -1c
+.RI "int \fBNumObs\fP"
+.br
+.ti -1c
+.RI "double \fBDelayRMS2\fP"
+.br
+.ti -1c
+.RI "double \fBRateRMS2\fP"
+.br
+.ti -1c
+.RI "double \fBDelaySumW2\fP"
+.br
+.ti -1c
+.RI "double \fBRateSumW2\fP"
+.br
+.ti -1c
+.RI "int \fBVersion\fP"
+.br
+.RI "\fIversion; \fP"
+.ti -1c
+.RI "int \fBLocalVersion\fP"
+.br
+.ti -1c
+.RI "QString \fBName\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSBVLBISet\fP"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBVLBISesInfo\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBVLBISesInfo\fP &)"
+.br
+.ti -1c
+.RI "\fBSBDS_dat\fP & \fBoperator<<\fP (\fBSBDS_dat\fP &, const \fBSBVLBISesInfo\fP &)"
+.br
+.ti -1c
+.RI "\fBSBDS_dat\fP & \fBoperator>>\fP (\fBSBDS_dat\fP &, \fBSBVLBISesInfo\fP &)"
+.br
+.ti -1c
+.RI "\fBSBDS_aux\fP & \fBoperator<<\fP (\fBSBDS_aux\fP &, const \fBSBVLBISesInfo\fP &)"
+.br
+.ti -1c
+.RI "\fBSBDS_aux\fP & \fBoperator>>\fP (\fBSBDS_aux\fP &, \fBSBVLBISesInfo\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "int \fBcmp\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBAttributed\fP &A)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBAttributed\fP &A)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 793 of file SbGeoObsVLBI\&.H'\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBSBVLBISesInfo::Attributes\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIpreProc \fP\fP
+session is preprocessed 
+.TP
+\fB\fInotValid \fP\fP
+omit this session from the project 
+.TP
+\fB\fIBadCable \fP\fP
+has at least one station without cable correction 
+.TP
+\fB\fIBadAllCables \fP\fP
+has all stations without cable correction 
+.TP
+\fB\fIBadMeteo \fP\fP
+has at least one station without meteo data 
+.TP
+\fB\fIBadAllMeteos \fP\fP
+has all stations without meteo data 
+.TP
+\fB\fIHasClockBreak \fP\fP
+there is/are `clock break(s)' 
+.TP
+\fB\fIConstrEOP \fP\fP
+.TP
+\fB\fIArtMeteo \fP\fP
+has at least one station with artificial meteo data 
+.TP
+\fB\fIArtAllMeteos \fP\fP
+has all stations with artificial meteo data 
+.PP
+Definition at line 797 of file SbGeoObsVLBI\&.H'\&.
+.SS "enum \fBSBVLBISesInfo::File_Type\fP\fC [protected]\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIFT_DAT \fP\fP
+.TP
+\fB\fIFT_AUX \fP\fP
+.TP
+\fB\fIFT_UNKN \fP\fP
+
+.PP
+Definition at line 814 of file SbGeoObsVLBI\&.H'\&.
+.SS "enum \fBSBVLBISesInfo::ObsDelayType\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIDT_GR \fP\fP
+.TP
+\fB\fIDT_PH \fP\fP
+.TP
+\fB\fIDT_UNKN \fP\fP
+
+.PP
+Definition at line 811 of file SbGeoObsVLBI\&.H'\&.
+.SS "enum \fBSBVLBISesInfo::ObsImportedFrom\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIIF_NGS \fP\fP
+.TP
+\fB\fIIF_VBD \fP\fP
+.TP
+\fB\fIIF_DBH \fP\fP
+.TP
+\fB\fIIF_UNKN \fP\fP
+
+.PP
+Definition at line 810 of file SbGeoObsVLBI\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBVLBISesInfo::SBVLBISesInfo (const QString &Name_ = \fC'70JAN01ZZ'\fP)"
+.PP
+Definition at line 1071 of file SbGeoObsVLBI\&.C'\&.
+.PP
+References Code, CorrelatorName, DateCreat, DelayRMS2, DelaySumW2, DelayType, DT_UNKN, ExpDescr, IF_UNKN, ImportedFrom, LocalVersion, NetworkID, NumBas, NumObs, NumSou, NumSta, OfficialName, RateRMS2, RateSumW2, SubKey, TFinis, TMean, TStart, TZero, UserFlag, and Version\&.
+.SS "SBVLBISesInfo::SBVLBISesInfo (const \fBSBVLBISesInfo\fP &Si)"
+.PP
+Definition at line 1098 of file SbGeoObsVLBI\&.C'\&.
+.PP
+References Code, code(), CorrelatorName, correlatorName(), DateCreat, dateCreat(), DelayRMS2, delayRMS2(), DelaySumW2, DelayType, delayType(), ExpDescr, expDescr(), ImportedFrom, importedFrom(), LocalVersion, localVersion(), NetworkID, networkID(), NumBas, numBas(), NumObs, numObs(), NumSou, numSou(), NumSta, numSta(), OfficialName, officialName(), RateRMS2, rateRMS2(), RateSumW2, SubKey, subKey(), TFinis, tFinis(), TMean, TStart, tStart(), UserFlag, userFlag(), Version, and version()\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBAttributed::addAttr (uintA_)\fC [inline, inherited]\fP"Adds the attribute to the storage'\&. 
+.PP
+Definition at line 247 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBVLBISession::checkArtMeteo(), SBVLBISession::checkAttributres(), SBStation::createOLoad(), SBVLBIPreProcess::fixSession(), SBAploChunk::import(), SBAploEphem::importHPS(), SBMaster::importMF(), SBFilteringGauss::makeAnalysisWith3Sigma(), SBSourceEditor::makeApply(), SBStationEditor::makeApply(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportTRF(), operator>>(), SBFilterGauss::prepareModels(), SBObsVLBIEntry::process(), SBStationInfo::restoreUserInfo(), SBBaseInfo::restoreUserInfo(), SBSourceInfo::restoreUserInfo(), SBVLBISession::restoreUserInfo(), SBEphem::SBEphem(), SBSourceInfo::SBSourceInfo(), SBStationInfo::SBStationInfo(), SBSpectrumAnalyserMEM::setMEMAssumeEquiDistant(), SBSpectrumAnalyserMEM::setMEMFillMissingImag(), SBSpectrumAnalyserMEM::setMEMRemoveShifts(), SBSpectrumAnalyserMEM::setMEMRemoveTrends(), SBParameter::tuneParameter(), SBSolutionBrowser::updateCRF(), and SBSolutionBrowser::updateTRF()\&.
+.SS "void SBVLBISesInfo::addDelayRMS (doubleo_c_, doublew_)\fC [inline]\fP"
+.PP
+Definition at line 896 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References DelayRMS2, and DelaySumW2\&.
+.PP
+Referenced by SBObsVLBIEntry::process()\&.
+.SS "void SBVLBISesInfo::addRateRMS (doubleo_c_, doublew_)\fC [inline]\fP"
+.PP
+Definition at line 897 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References RateRMS2, and RateSumW2\&.
+.SS "uint SBAttributed::attributes () const\fC [inline, inherited]\fP"Returns the attributes'\&. 
+.PP
+Definition at line 243 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBCoordinates::operator==(), and SBVLBISessionEditor::~SBVLBISessionEditor()\&.
+.SS "virtual void SBVLBISesInfo::calcTMean ()\fC [inline, protected, virtual]\fP"
+.PP
+Reimplemented in \fBSBVLBISession\fP'\&.
+.PP
+Definition at line 842 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References TFinis, TMean, and TStart\&.
+.SS "void SBVLBISesInfo::checkPath ()\fC [protected]\fP"
+.PP
+Definition at line 1163 of file SbGeoObsVLBI\&.C'\&.
+.PP
+References ClassName(), SBLog::DATA, SBLog::ERR, Log, SBSetUp::path2Data(), SetUp, SubKey, TStart, SBLog::write(), and SBMJD::year()\&.
+.PP
+Referenced by SBVLBISet::import()\&.
+.SS "virtual QString SBVLBISesInfo::ClassName () const\fC [inline, virtual]\fP"Refers to a class name (debug info) 
+.PP
+Reimplemented from \fBSBAttributed\fP'\&.
+.PP
+Reimplemented in \fBSBVLBISession\fP'\&.
+.PP
+Definition at line 850 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by checkPath()\&.
+.SS "void SBAttributed::clearAll ()\fC [inline, inherited]\fP"Removes all attributes'\&. 
+.PP
+Definition at line 255 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.SS "virtual void SBVLBISesInfo::clearRMSs ()\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSBVLBISession\fP'\&.
+.PP
+Definition at line 899 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References DelayRMS2, DelaySumW2, RateRMS2, and RateSumW2\&.
+.PP
+Referenced by SBProject::addSession()\&.
+.SS "const QString& SBVLBISesInfo::code () const\fC [inline]\fP"
+.PP
+Definition at line 866 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References Code\&.
+.PP
+Referenced by SBVLBIPreProcess::fillSessAttr(), SBRunManager::makeReportSessionStatistics(), operator=(), SBVLBISesInfo(), SBVLBIPreProcess::wAttributes(), and SBVLBISessionEditor::wParameters()\&.
+.SS "const QString& SBVLBISesInfo::correlatorName () const\fC [inline]\fP"
+.PP
+Definition at line 867 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References CorrelatorName\&.
+.PP
+Referenced by SBVLBIPreProcess::fillSessAttr(), SBVLBISesInfoLI::key(), operator=(), SBVLBISesInfo(), SBVLBISesInfoLI::text(), SBVLBIPreProcess::wAttributes(), and SBVLBISessionEditor::wParameters()\&.
+.SS "const \fBSBMJD\fP& SBVLBISesInfo::dateCreat () const\fC [inline]\fP"
+.PP
+Definition at line 854 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References DateCreat\&.
+.PP
+Referenced by SBVLBIPreProcess::fillSessAttr(), operator=(), SBVLBISesInfo(), SBVLBIPreProcess::wAttributes(), and SBVLBISessionEditor::wParameters()\&.
+.SS "void SBAttributed::delAttr (uintA_)\fC [inline, inherited]\fP"Deletes the attribute from the storage'\&. 
+.PP
+Definition at line 249 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBProject::addSession(), SBVLBISession::checkAttributres(), SBVLBIPreProcess::clearPars(), SBStation::deleteOLoad(), SBObsVLBIEntry::isEligible(), SBFilteringGauss::makeAnalysisWith3Sigma(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportTRF(), SBStationInfo::restoreUserInfo(), SBBaseInfo::restoreUserInfo(), SBSourceInfo::restoreUserInfo(), SBVLBISession::restoreUserInfo(), SBParameter::rw(), SBEphem::SBEphem(), SBStation::SBStation(), SBSpectrumAnalyserMEM::setMEMAssumeEquiDistant(), SBSpectrumAnalyserMEM::setMEMFillMissingImag(), SBSpectrumAnalyserMEM::setMEMRemoveShifts(), SBSpectrumAnalyserMEM::setMEMRemoveTrends(), and SBParameter::tuneParameter()\&.
+.SS "double SBVLBISesInfo::delayRMS2 () const\fC [inline]\fP"
+.PP
+Definition at line 873 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References DelayRMS2\&.
+.PP
+Referenced by SBVLBISet::loadSession(), operator=(), SBVLBISet::saveSession(), SBRunManager::saveVLBISessions_m1(), and SBVLBISesInfo()\&.
+.SS "double SBVLBISesInfo::delaySumW2 () const\fC [inline]\fP"
+.PP
+Definition at line 875 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References DelaySumW2\&.
+.PP
+Referenced by SBRunManager::saveVLBISessions_m1()\&.
+.SS "\fBObsDelayType\fP SBVLBISesInfo::delayType () const\fC [inline]\fP"
+.PP
+Definition at line 868 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References DelayType\&.
+.PP
+Referenced by operator=(), and SBVLBISesInfo()\&.
+.SS "double SBVLBISesInfo::dWRMS () const\fC [inline]\fP"
+.PP
+Definition at line 907 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References DelayRMS2, and DelaySumW2\&.
+.PP
+Referenced by SBVLBISesInfoLI::key(), SBVLBISesPreProcLI::key(), SBVLBISesInfoLI::text(), and SBVLBISesPreProcLI::text()\&.
+.SS "const QString& SBVLBISesInfo::expDescr () const\fC [inline]\fP"
+.PP
+Definition at line 863 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References ExpDescr\&.
+.PP
+Referenced by SBVLBIPreProcess::fillSessAttr(), SBVLBISet::import(), operator=(), SBVLBISesInfo(), SBVLBIPreProcess::wAttributes(), and SBVLBISessionEditor::wParameters()\&.
+.SS "QString SBVLBISesInfo::fileName (\fBFile_Type\fPFType = \fCFT_DAT\fP)\fC [protected]\fP"
+.PP
+Definition at line 1155 of file SbGeoObsVLBI\&.C'\&.
+.PP
+References FT_DAT, SBNamed::Name, SBSetUp::path2Data(), SetUp, SubKey, TStart, Version, and SBMJD::year()\&.
+.PP
+Referenced by SBVLBISet::import(), SBVLBISet::loadSession(), SBVLBISet::removeSession(), and SBVLBISet::saveSession()\&.
+.SS "\fBObsImportedFrom\fP SBVLBISesInfo::importedFrom () const\fC [inline]\fP"
+.PP
+Definition at line 853 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References ImportedFrom\&.
+.PP
+Referenced by SBVLBISesInfoLI::key(), operator=(), SBVLBISesInfo(), and SBVLBISesInfoLI::text()\&.
+.SS "virtual void SBVLBISesInfo::incVersion ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 905 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References LocalVersion\&.
+.PP
+Referenced by SBVLBISessionEditor::histVerInced()\&.
+.SS "bool SBAttributed::isAttr (uintA_) const\fC [inline, inherited]\fP"Returns TRUE if the attribute is set'\&. 
+.PP
+Definition at line 253 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBStationEditor::acquireData(), SBStaParsEditor::acquireData(), SBObsVLBIEntry::ambientH_1(), SBObsVLBIEntry::ambientH_2(), SBObsVLBIEntry::ambientP_1(), SBObsVLBIEntry::ambientP_2(), SBObsVLBIEntry::ambientT_1(), SBObsVLBIEntry::ambientT_2(), SBDelay::calc(), SBVLBISession::checkArtMeteo(), SBVLBISession::checkAttributres(), collectListOfSINEXParameters(), SBStationInfo::dumpUserInfo(), SBBaseInfo::dumpUserInfo(), SBSourceInfo::dumpUserInfo(), SBVLBISession::dumpUserInfo(), SBFilterModel::eliminateAfter(), SBFilterModel::eliminateBefore(), SBVLBIPreProcess::fillObsListView(), SBRunManager::fillParameterList(), SBMEM::fpe(), SBFilterGauss::interpolate(), SBObservation::isEligible(), SBObsVLBIEntry::isEligible(), SBVLBIObsPPLI::key(), SBSourceListItem::key(), SBStationListItem::key(), SBVLBISesInfoLI::key(), SBVLBISesPreProcLI::key(), SBVLBIObsLI::key(), SBStaInfoLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBStationImport::loadOLoad(), SBParameter::m(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportMaps(), SBRunManager::makeReportTRF(), SBRunManager::makeReportTRFVariations(), operator<<(), operator>>(), SBVLBIObsPPLI::paintCell(), SBObsVLBIEntry::process(), SBRunManager::process_m1(), SBMEM::readDataFile(), SBParameter::rw(), SBStaParsEditor::SBStaParsEditor(), SBProjectCreate::selChanged(), sinex_SiteEccentricityBlock(), sinex_SiteIDBlock(), sinex_SourceIDBlock(), SBParameter::str4compare(), SBVLBIObsPPLI::text(), SBSourceListItem::text(), SBStationListItem::text(), SBVLBISesInfoLI::text(), SBVLBISesPreProcLI::text(), SBVLBIObsLI::text(), SBStaInfoLI::text(), SBBasInfoLI::text(), SBSouInfoLI::text(), SBMasterRecBrowser::SBMRListItem::text(), SBSolutionBrowser::updateCRF(), SBBrowseSources::updateList(), SBSolutionBrowser::updateTRF(), SBVLBISessionEditor::wObservs(), SBSourceEditor::wStats(), SBStationEditor::wStats(), and SBStation::~SBStation()\&.
+.SS "int SBVLBISesInfo::localVersion () const\fC [inline]\fP"
+.PP
+Definition at line 860 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References LocalVersion\&.
+.PP
+Referenced by SBVLBISession::addHistoryLine(), operator=(), SBVLBISesInfo(), SBVLBISessionEditor::SBVLBISessionEditor(), SBVLBIPreProcess::sesTab(), SBVLBISesInfoLI::text(), and SBVLBIPreProcess::updateSession()\&.
+.SS "const QString& SBNamed::name () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 215 of file SbGeo\&.H'\&.
+.PP
+References SBNamed::Name\&.
+.PP
+Referenced by SBVLBINetEntryEditor::accept(), SBSourceEditor::acquireData(), SBSiteEditor::acquireData(), SBStationEditor::acquireData(), SBStochParameter::addPar(), SBProject::addSession(), SBSite::addStation(), SBParameterList::append(), SBVector::at(), SBMatrix::at(), SBUpperMatrix::at(), SBSymMatrix::at(), SBStation::axisOffsetLenght(), SBSolutionBrowser::batch4StochEOPChanged(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBEphem::calc(), SBStation::calcDisplacement(), SBSetupDialog::chkPacker(), SBVLBIPreProcess::clearPars(), SBEstimator::collectContStochs4NextBatch(), collectListOfSINEXParameters(), collectListOfSINEXParameters4NEQ(), SB_CRF::collectObjAliases(), SBObsVLBIStatistics::collectStatistics(), SBRunManager::constraintSourceCoord(), SBRunManager::constraintStationCoord(), SBRunManager::constraintStationVeloc(), SBSource::createParameters(), SBProjectCreate::createProject(), SBTestFrame::createWidget4Test(), SBTestEphem::createWidget4Test(), SBVLBIPreProcess::currentSesChange(), SBPlotArea::defineAreas(), SBSiteEditor::deleteEntry(), SBVLBISetView::deleteEntry(), SBStuffSources::deleteEntryS(), SBStuffStations::deleteEntryS(), SBSolution::deleteSolution(), SBSetupDialog::delInst(), SBSetupDialog::delPacker(), SBEstimator::Group::delParameter(), SBProjectEdit::delSession(), SBProject::delSession(), SBSite::delStation(), SBPlateMotion::displacement(), SBStuffAplo::draw(), SBPlotArea::drawFrames(), SBStochParameter::dump2File(), SBSolution::dumpParameters(), SBBaseInfo::dumpUserInfo(), SBSourceInfo::dumpUserInfo(), SBVLBISession::dumpUserInfo(), SBVLBISet::dumpUserInfo(), SBParametersEditor::editParameter(), SBAploChunk::fillDict(), SBVLBISet::fillDicts(), SBVLBIPreProcess::fillObsListView(), SBVLBIPreProcess::fillSessAttr(), SBCatalog::find(), SBSolution::getGlobalParameter4Report(), SBAploChunk::import(), SBVLBISet::import(), SBEcc::importEccDat(), SBAploEphem::importHPS(), SBMaster::importMF(), SBProjectCreate::init(), SBFCList::insert(), SBInstitutionList::insert(), SBCatalog::insert(), SBParameterList::inSort(), SBCatalog::inSort(), SBStochParameterList::inSort(), SB_TRF::inSort(), SBObsVLBIStatSrcLI::key(), SBParameterLI::key(), SBSourceListItem::key(), SBStationListItem::key(), SBObsVLBIStatStaLI::key(), SBVLBISesInfoLI::key(), SBSiteListItem::key(), SBObsVLBIStatRecordLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBAploEntryLI::key(), SBTestStationLI::key(), SBStationImport::loadNScodes(), SBStationImport::loadOLoad(), SBSolution::loadStatistics(), SBRunManager::loadVLBISession_m1(), SBRunManager::loadVLBISessions_m2(), SB_CRF::lookupNearest(), SB_TRF::lookupNearest(), SBSolutionBrowser::lookupParameters(), SBSourceEditor::makeApply(), SBSiteEditor::makeApply(), SBStationEditor::makeApply(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportEOP(), SBRunManager::makeReportMaps(), SBRunManager::makeReportNormalEqs(), SBRunManager::makeReports(), SBRunManager::makeReportSessionStatistics(), SBRunManager::makeReportTRF(), SBRunManager::makeReportTRFVariations(), SBRunManager::makeReportTroposphere(), SBEstimator::mapContStochs4NewBatch(), SBMaster::mapFiles(), SBMaster::mapRecords(), matT_x_mat(), SBEstimator::moveGlobalInfo(), SBEstimator::moveGlobalInfo_Old(), SBFileConv::open4In(), SBFileConv::open4Out(), SBEphem::openFile(), SBVector::operator()(), SBSolidTideLd::operator()(), SBTideLd::operator()(), SBMatrix::operator()(), SBRefraction::operator()(), SBUpperMatrix::operator()(), operator*(), operator+(), SBVector::operator+=(), SBMatrix::operator+=(), SBUpperMatrix::operator+=(), operator-(), SBVector::operator-=(), SBMatrix::operator-=(), SBUpperMatrix::operator-=(), SBObsVLBIEntry::operator<(), operator<<(), SBVector::operator=(), SBMatrix::operator=(), SBUpperMatrix::operator=(), operator=(), SBVector::operator==(), SBObsVLBIEntry::operator==(), operator==(), operator>>(), operator~(), SBSymMatrix::operator~(), SBPlotArea::output4Files(), SBSolution::path2GlbDir(), SBSolution::path2LocDir(), SBSolution::path2StcDir(), SBEstimator::prepare4Local(), SBSite::prepareDicts(), SBVLBIPreProcess::preProcess(), SBObsVLBIEntry::process(), SBRunManager::process_m1(), SBRunManager::process_m2(), SBVLBIPreProcess::procScenario_2(), SBProjectSel::ProjectListItem::ProjectListItem(), QuadraticForm(), SBRefraction::refrDir(), SBAploEphem::registerStation(), SBInstitutionList::remove(), SBParameterList::remove(), SBStochParameterList::remove(), SBVLBISet::removeSession(), SBParameterList::report(), SBStochParameter::report(), SBBaseInfo::restoreUserInfo(), SBSourceInfo::restoreUserInfo(), SBVLBISession::restoreUserInfo(), RRT(), RTR(), SBParameter::rw(), SBPlot::save2PS(), SBVLBISet::saveSession(), SBRunManager::saveVLBISessions_m1(), SBRunManager::saveVLBISessions_m2(), SBCoordsEditor::SBCoordsEditor(), SBEstimator::SBEstimator(), SBModelEditor::SBModelEditor(), SBObsVLBIStatBrowser::SBObsVLBIStatBrowser(), SBObsVLBIStatSrc::SBObsVLBIStatSrc(), SBObsVLBIStatSta::SBObsVLBIStatSta(), SBParametersEditor::SBParametersEditor(), SBPlateMotion::SBPlateMotion(), SBPlot::SBPlot(), SBPlotDialog::SBPlotDialog(), SBProjectEdit::SBProjectEdit(), SBRunManager::SBRunManager(), SBSolution::SBSolution(), SBSolutionBrowser::SBSolutionBrowser(), SBStuffEphem::SBStuffEphem(), SBTestAPLoad::SBTestAPLoad(), SBTestDiurnEOP::SBTestDiurnEOP(), SBTestEphem::SBTestEphem(), SBTestFrame::SBTestFrame(), SBTestNutation::SBTestNutation(), SBTestOceanTides::SBTestOceanTides(), SBTestPolarTides::SBTestPolarTides(), SBTestSolidTides::SBTestSolidTides(), SBVLBINetEntryEditor::SBVLBINetEntryEditor(), SBVLBISessionEditor::SBVLBISessionEditor(), SBVector::set(), SBMatrix::set(), SBUpperMatrix::set(), SBMatrix::setCol(), SBUpperMatrix::setCol(), SBFCList::setDefault(), SB_TRF::setSiteName(), SBMatrix::setVector(), SBUpperMatrix::setVector(), Solve(), SBEstimator::solveLocals(), SBObsVLBIEntry::source(), SBTestSolidTides::stationChange(), SBTestOceanTides::stationChange(), SBTestPolarTides::stationChange(), SBTestAPLoad::stationChange(), SBParameter::str4compare(), SBRunManager::stripTRF(), SBSolution::submitGlobalParameters(), SBSolution::submitLocalParameters(), SBSolution::submitStochasticParameters(), SBMatrix::T(), SBUpperMatrix::T(), SBFileConvLI::text(), SBParameterLI::text(), SBObsVLBIStatSrcLI::text(), SBSourceListItem::text(), SBStationListItem::text(), SBObsVLBIStatStaLI::text(), SBVLBISesInfoLI::text(), SBSolutionBatchLI::text(), SBSiteListItem::text(), SBVLBISesPreProcLI::text(), SBObsVLBIStatRecordLI::text(), SBSetupDialog::SBInstLI::text(), SBBasInfoLI::text(), SBSouInfoLI::text(), SBAploEntryLI::text(), SBTestStationLI::text(), SBVLBINetworkEditor::NetworkListItem::text(), SBMasterRecBrowser::SBMRListItem::text(), SBStochParameter::update(), SBSolution::updateParameter(), SBVLBIPreProcess::updateSession(), SBParameterList::updateSolution(), SBMainWindow::UtilitiesCollectStat4Prj(), SBPlateMotion::velocity(), SBVLBIPreProcess::wAttributes(), SBSourceEditor::wCoordinates(), SBParametersEditor::wEOPParameters(), SBSolutionBrowser::wLocalEOPPars(), SBSolutionBrowser::wLocalSoPars(), SBSolutionBrowser::wLocalStPars(), SBStationEditor::wNames(), SBVLBISessionEditor::wObservs(), SBParametersEditor::wOtherParameters(), SBVLBISessionEditor::wParameters(), writeNormalEquationSystem(), SBSiteEditor::wSite(), SBParametersEditor::wSourceParameters(), SBParametersEditor::wStationParameters(), SBSolutionBrowser::wStochEOPPars(), SBSolutionBrowser::wStochSoPars(), SBSolutionBrowser::wStochStPars(), SBParametersEditor::wTestParameters(), and SBSolutionBrowser::wWRMSs()\&.
+.SS "const QString& SBVLBISesInfo::networkID () const\fC [inline]\fP"
+.PP
+Definition at line 862 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References NetworkID\&.
+.PP
+Referenced by SBVLBISessionEditor::acquireData(), SBVLBIPreProcess::fillSessAttr(), SBVLBISet::import(), SBVLBISesInfoLI::key(), operator=(), SBVLBIPreProcess::saveSession(), SBVLBISesInfo(), SBVLBISesInfoLI::text(), SBVLBIPreProcess::wAttributes(), and SBVLBISessionEditor::wParameters()\&.
+.SS "virtual int SBVLBISesInfo::numBas () const\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSBVLBISession\fP'\&.
+.PP
+Definition at line 870 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References NumBas\&.
+.PP
+Referenced by SBVLBISesInfoLI::key(), operator=(), SBVLBISesInfo(), and SBVLBISesInfoLI::text()\&.
+.SS "virtual int SBVLBISesInfo::numObs () const\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSBVLBISession\fP'\&.
+.PP
+Definition at line 872 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References NumObs\&.
+.PP
+Referenced by SBVLBISet::fillDicts(), SBVLBISesInfoLI::key(), SBVLBISesPreProcLI::key(), operator=(), SBVLBISesInfo(), SBProjectCreate::selChanged(), SBVLBISesInfoLI::text(), and SBVLBISesPreProcLI::text()\&.
+.SS "virtual int SBVLBISesInfo::numSou () const\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSBVLBISession\fP'\&.
+.PP
+Definition at line 871 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References NumSou\&.
+.PP
+Referenced by SBVLBISesInfoLI::key(), operator=(), SBVLBISesInfo(), and SBVLBISesInfoLI::text()\&.
+.SS "virtual int SBVLBISesInfo::numSta () const\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSBVLBISession\fP'\&.
+.PP
+Definition at line 869 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References NumSta\&.
+.PP
+Referenced by SBVLBISesInfoLI::key(), operator=(), SBVLBISesInfo(), and SBVLBISesInfoLI::text()\&.
+.SS "const QString& SBVLBISesInfo::officialName () const\fC [inline]\fP"
+.PP
+Definition at line 865 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References OfficialName\&.
+.PP
+Referenced by SBVLBIPreProcess::fillSessAttr(), SBRunManager::makeReportSessionStatistics(), operator<<(), operator=(), SBVLBISesInfo(), SBVLBIPreProcess::wAttributes(), and SBVLBISessionEditor::wParameters()\&.
+.SS "\fBSBVLBISesInfo\fP & SBVLBISesInfo::operator= (const \fBSBVLBISesInfo\fP &Si)"
+.PP
+Definition at line 1125 of file SbGeoObsVLBI\&.C'\&.
+.PP
+References Code, code(), CorrelatorName, correlatorName(), DateCreat, dateCreat(), DelayRMS2, delayRMS2(), DelaySumW2, DelayType, delayType(), ExpDescr, expDescr(), ImportedFrom, importedFrom(), LocalVersion, localVersion(), SBNamed::name(), NetworkID, networkID(), NumBas, numBas(), NumObs, numObs(), NumSou, numSou(), NumSta, numSta(), OfficialName, officialName(), RateRMS2, rateRMS2(), RateSumW2, SBNamed::setName(), SubKey, subKey(), TFinis, tFinis(), TMean, tMean(), TStart, tStart(), UserFlag, userFlag(), Version, and version()\&.
+.SS "virtual bool SBVLBISesInfo::operator== (const \fBSBVLBISesInfo\fP &I) const\fC [inline, virtual]\fP"
+.PP
+Definition at line 901 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References SBNamed::name()\&.
+.SS "double SBVLBISesInfo::rateRMS2 () const\fC [inline]\fP"
+.PP
+Definition at line 874 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References RateRMS2\&.
+.PP
+Referenced by SBVLBISet::loadSession(), operator=(), SBVLBISet::saveSession(), SBRunManager::saveVLBISessions_m1(), and SBVLBISesInfo()\&.
+.SS "double SBVLBISesInfo::rateSumW2 () const\fC [inline]\fP"
+.PP
+Definition at line 876 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References RateSumW2\&.
+.PP
+Referenced by SBRunManager::saveVLBISessions_m1()\&.
+.SS "double SBVLBISesInfo::rWRMS () const\fC [inline]\fP"
+.PP
+Definition at line 908 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References RateRMS2, and RateSumW2\&.
+.PP
+Referenced by SBVLBISesInfoLI::key(), and SBVLBISesInfoLI::text()\&.
+.SS "void SBAttributed::setAttributes (uintA_)\fC [inline, inherited]\fP"Sets up the attributes'\&. 
+.PP
+Definition at line 245 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBCelestBody::SBCelestBody(), and SBVLBISessionEditor::~SBVLBISessionEditor()\&.
+.SS "void SBVLBISesInfo::setCode (QStringCode_)\fC [inline]\fP"
+.PP
+Definition at line 889 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References Code\&.
+.PP
+Referenced by SBVLBISet::import()\&.
+.SS "void SBVLBISesInfo::setCorrelatorName (QStringCName_)\fC [inline]\fP"
+.PP
+Definition at line 890 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References CorrelatorName\&.
+.PP
+Referenced by SBVLBISet::import()\&.
+.SS "void SBVLBISesInfo::setDateCreat (\fBSBMJD\fPDateCreat_)\fC [inline]\fP"
+.PP
+Definition at line 882 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References DateCreat\&.
+.SS "void SBVLBISesInfo::setDelayRMS2 (doubleDelayRMS_)\fC [inline]\fP"
+.PP
+Definition at line 892 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References DelayRMS2\&.
+.PP
+Referenced by SBVLBISet::loadSession(), SBVLBISet::saveSession(), and SBRunManager::saveVLBISessions_m1()\&.
+.SS "void SBVLBISesInfo::setDelaySumW2 (doubled_)\fC [inline]\fP"
+.PP
+Definition at line 894 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References DelaySumW2\&.
+.PP
+Referenced by SBVLBISet::loadSession(), SBVLBISet::saveSession(), and SBRunManager::saveVLBISessions_m1()\&.
+.SS "void SBVLBISesInfo::setDelayType (\fBObsDelayType\fPDelayType_)\fC [inline]\fP"
+.PP
+Definition at line 891 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References DelayType\&.
+.SS "void SBVLBISesInfo::setExpDescr (QStringExpDescr_)\fC [inline]\fP"
+.PP
+Definition at line 886 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References ExpDescr\&.
+.SS "void SBVLBISesInfo::setImportedFrom (\fBObsImportedFrom\fPImportedFrom_)\fC [inline]\fP"
+.PP
+Definition at line 878 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References ImportedFrom\&.
+.SS "void SBNamed::setName (const QString &Name_)\fC [inline, inherited]\fP"
+.PP
+Definition at line 216 of file SbGeo\&.H'\&.
+.PP
+References SBNamed::Name\&.
+.PP
+Referenced by SBVLBINetEntryEditor::accept(), SBSourceEditor::acquireData(), SBSiteEditor::acquireData(), SBStationEditor::acquireData(), SBObsVLBIStatistics::collectStatistics(), SBVLBIPreProcess::currentSesChange(), SBVLBISet::import(), SBVLBISet::loadSession(), operator=(), operator>>(), SBPlotArea::output4Files(), SBFilteringGauss::redrawDataPlot_ExpMode(), SBBaseInfoList::restoreUserInfo(), SBSourceInfoList::restoreUserInfo(), SBMasterRecord::SBMasterRecord(), SBSolution::SBSolution(), SB_TRF::setSiteName(), SBTestSolidTides::stationChange(), SBTestOceanTides::stationChange(), SBTestPolarTides::stationChange(), SBTestAPLoad::stationChange(), and SBVLBIPreProcess::updateSession()\&.
+.SS "void SBVLBISesInfo::setNetworkID (QStringNetworkID_)\fC [inline]\fP"
+.PP
+Definition at line 885 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References NetworkID\&.
+.PP
+Referenced by SBVLBISessionEditor::acquireData(), SBVLBISet::import(), SBVLBISession::restoreUserInfo(), and SBVLBIPreProcess::saveSession()\&.
+.SS "void SBVLBISesInfo::setOfficialName (QStringOfficialName_)\fC [inline]\fP"
+.PP
+Definition at line 888 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References OfficialName\&.
+.PP
+Referenced by SBVLBISet::import()\&.
+.SS "void SBVLBISesInfo::setRateRMS2 (doubleRateRMS_)\fC [inline]\fP"
+.PP
+Definition at line 893 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References RateRMS2\&.
+.PP
+Referenced by SBVLBISet::loadSession(), SBVLBISet::saveSession(), and SBRunManager::saveVLBISessions_m1()\&.
+.SS "void SBVLBISesInfo::setRateSumW2 (doubled_)\fC [inline]\fP"
+.PP
+Definition at line 895 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References RateSumW2\&.
+.PP
+Referenced by SBVLBISet::loadSession(), SBVLBISet::saveSession(), and SBRunManager::saveVLBISessions_m1()\&.
+.SS "void SBVLBISesInfo::setSubKey (QStringSubKey_)\fC [inline]\fP"
+.PP
+Definition at line 884 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References SubKey\&.
+.SS "void SBVLBISesInfo::setTFinis (\fBSBMJD\fPTFinis_)\fC [inline]\fP"
+.PP
+Definition at line 880 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References TFinis\&.
+.PP
+Referenced by SBVLBISet::saveSession()\&.
+.SS "void SBVLBISesInfo::setTMean (\fBSBMJD\fPTMean_)\fC [inline]\fP"
+.PP
+Definition at line 881 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References TMean\&.
+.PP
+Referenced by SBVLBISet::saveSession()\&.
+.SS "void SBVLBISesInfo::setTStart (\fBSBMJD\fPTStart_)\fC [inline]\fP"
+.PP
+Definition at line 879 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References TStart\&.
+.PP
+Referenced by SBVLBISet::saveSession()\&.
+.SS "void SBVLBISesInfo::setUserFlag (QStringUserFlag_)\fC [inline]\fP"
+.PP
+Definition at line 887 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References UserFlag\&.
+.PP
+Referenced by SBVLBISessionEditor::acquireData(), SBVLBISet::import(), SBVLBISession::restoreUserInfo(), and SBVLBIPreProcess::saveSession()\&.
+.SS "void SBVLBISesInfo::setVersion (intV_)\fC [inline]\fP"
+.PP
+Definition at line 883 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References Version\&.
+.SS "const QString& SBVLBISesInfo::subKey () const\fC [inline]\fP"
+.PP
+Definition at line 861 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References SubKey\&.
+.PP
+Referenced by operator=(), and SBVLBISesInfo()\&.
+.SS "const \fBSBMJD\fP& SBVLBISesInfo::tFinis () const\fC [inline]\fP"
+.PP
+Definition at line 856 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References TFinis\&.
+.PP
+Referenced by SBObsVLBIStatistics::collectStatistics(), SBVLBISesInfoList::compareItems(), SBVLBIPreProcess::fillSessAttr(), SBRunManager::loadVLBISession_m1(), SBRunManager::makeReportSessionStatistics(), operator=(), SBVLBISet::saveSession(), SBVLBISesInfo(), SBVLBIPreProcess::wAttributes(), and SBVLBISessionEditor::wParameters()\&.
+.SS "double SBVLBISesInfo::tInterval () const\fC [inline]\fP"
+.PP
+Definition at line 858 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References TFinis, and TStart\&.
+.PP
+Referenced by SBVLBISesInfoLI::key(), and SBVLBISesInfoLI::text()\&.
+.SS "const \fBSBMJD\fP& SBVLBISesInfo::tMean () const\fC [inline]\fP"
+.PP
+Definition at line 857 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References TMean\&.
+.PP
+Referenced by SBVLBIPreProcess::fillSessAttr(), operator<<(), operator=(), SBObsVLBIEntry::process(), SBVLBISet::saveSession(), SBVLBIPreProcess::wAttributes(), and SBVLBISessionEditor::wParameters()\&.
+.SS "const \fBSBMJD\fP& SBVLBISesInfo::tStart () const\fC [inline]\fP"
+.PP
+Definition at line 855 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References TStart\&.
+.PP
+Referenced by SBObsVLBIStatistics::collectStatistics(), SBVLBISesInfoList::compareItems(), SBVLBIPreProcess::fillSessAttr(), SBVLBISesInfoLI::key(), SBVLBISesPreProcLI::key(), SBRunManager::makeReportSessionStatistics(), operator=(), SBVLBISet::saveSession(), SBVLBISesInfo(), SBVLBISessionEditor::SBVLBISessionEditor(), SBVLBIPreProcess::sesTab(), SBVLBISesInfoLI::text(), SBVLBIPreProcess::updateSession(), SBVLBIPreProcess::wAttributes(), and SBVLBISessionEditor::wParameters()\&.
+.SS "const QString& SBVLBISesInfo::userFlag () const\fC [inline]\fP"
+.PP
+Definition at line 864 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References UserFlag\&.
+.PP
+Referenced by SBVLBISessionEditor::acquireData(), SBVLBIPreProcess::fillSessAttr(), SBVLBISesInfoLI::key(), operator=(), SBVLBIPreProcess::saveSession(), SBVLBISesInfo(), SBVLBISesInfoLI::text(), SBVLBIPreProcess::wAttributes(), and SBVLBISessionEditor::wParameters()\&.
+.SS "int SBVLBISesInfo::version () const\fC [inline]\fP"
+.PP
+Definition at line 859 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References Version\&.
+.PP
+Referenced by SBVLBISet::import(), SBVLBISesInfoLI::key(), operator<<(), operator=(), SBVLBISesInfo(), SBVLBISessionEditor::SBVLBISessionEditor(), and SBVLBISesInfoLI::text()\&.
+.SS "void SBAttributed::xorAttr (uintA_)\fC [inline, inherited]\fP"Toggles the attribute in the storage'\&. 
+.PP
+Definition at line 251 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBStaParsEditor::acquireData(), SBVLBIPreProcess::toggleEntryMarkEnable(), and SBVLBIPreProcess::toggleEntryMoveEnable()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "int cmp (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP, returns (-1:0:+1)'\&. 
+.PP
+Definition at line 253 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBStochParameterList::compareItems(), and SBMasterFile::compareItems()\&.
+.SS "bool operator!= (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 238 of file SbGeo\&.H'\&.
+.SS "bool operator< (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 243 of file SbGeo\&.H'\&.
+.SS "QDataStream & operator<< (QDataStream &s, const \fBSBNamed\fP &W)\fC [friend, inherited]\fP"Saves object to the data stream'\&. 
+.PP
+Definition at line 258 of file SbGeo\&.H'\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBAttributed\fP &A)\fC [friend, inherited]\fP"
+.PP
+Definition at line 259 of file SbGeneral\&.H'\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBVLBISesInfo\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 1188 of file SbGeoObsVLBI\&.C'\&.
+.SS "\fBSBDS_dat\fP& operator<< (\fBSBDS_dat\fP &s, const \fBSBVLBISesInfo\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 1214 of file SbGeoObsVLBI\&.C'\&.
+.SS "\fBSBDS_aux\fP& operator<< (\fBSBDS_aux\fP &s, const \fBSBVLBISesInfo\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 1230 of file SbGeoObsVLBI\&.C'\&.
+.SS "bool operator== (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 233 of file SbGeo\&.H'\&.
+.SS "bool operator> (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 248 of file SbGeo\&.H'\&.
+.SS "QDataStream & operator>> (QDataStream &s, \fBSBNamed\fP &W)\fC [friend, inherited]\fP"Loads object from the data stream'\&. 
+.PP
+Definition at line 263 of file SbGeo\&.H'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBAttributed\fP &A)\fC [friend, inherited]\fP"
+.PP
+Definition at line 260 of file SbGeneral\&.H'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBVLBISesInfo\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 1200 of file SbGeoObsVLBI\&.C'\&.
+.SS "\fBSBDS_dat\fP& operator>> (\fBSBDS_dat\fP &s, \fBSBVLBISesInfo\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 1222 of file SbGeoObsVLBI\&.C'\&.
+.SS "\fBSBDS_aux\fP& operator>> (\fBSBDS_aux\fP &s, \fBSBVLBISesInfo\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 1235 of file SbGeoObsVLBI\&.C'\&.
+.SS "friend class \fBSBVLBISet\fP\fC [friend]\fP"
+.PP
+Reimplemented in \fBSBVLBISession\fP'\&.
+.PP
+Definition at line 795 of file SbGeoObsVLBI\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString \fBSBVLBISesInfo::Code\fP\fC [protected]\fP"
+.PP
+Code (from MasterFile) 
+.PP
+Definition at line 826 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by code(), operator<<(), operator=(), operator>>(), SBVLBISesInfo(), and setCode()\&.
+.SS "QString \fBSBVLBISesInfo::CorrelatorName\fP\fC [protected]\fP"
+.PP
+Correlator Name (from MasterFile) 
+.PP
+Definition at line 827 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by correlatorName(), operator<<(), operator=(), operator>>(), SBVLBISesInfo(), and setCorrelatorName()\&.
+.SS "\fBSBMJD\fP \fBSBVLBISesInfo::DateCreat\fP\fC [protected]\fP"
+.PP
+date of MkIII creation (just for curiosity); 
+.PP
+Definition at line 817 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by dateCreat(), operator<<(), operator=(), operator>>(), SBVLBISesInfo(), and setDateCreat()\&.
+.SS "double \fBSBVLBISesInfo::DelayRMS2\fP\fC [protected]\fP"
+.PP
+Definition at line 833 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by addDelayRMS(), clearRMSs(), delayRMS2(), dWRMS(), operator<<(), operator=(), operator>>(), SBVLBISesInfo(), and setDelayRMS2()\&.
+.SS "double \fBSBVLBISesInfo::DelaySumW2\fP\fC [protected]\fP"
+.PP
+Definition at line 835 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by addDelayRMS(), clearRMSs(), delaySumW2(), dWRMS(), SBVLBISet::loadSession(), operator<<(), operator=(), operator>>(), SBVLBISet::saveSession(), SBVLBISesInfo(), and setDelaySumW2()\&.
+.SS "\fBObsDelayType\fP \fBSBVLBISesInfo::DelayType\fP\fC [protected]\fP"
+.PP
+type of delay; 
+.PP
+Definition at line 828 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by delayType(), operator<<(), operator=(), operator>>(), SBVLBISesInfo(), and setDelayType()\&.
+.SS "QString \fBSBVLBISesInfo::ExpDescr\fP\fC [protected]\fP"
+.PP
+Experiment description;'\&. 
+.PP
+Definition at line 823 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by expDescr(), operator<<(), operator=(), operator>>(), SBVLBISesInfo(), and setExpDescr()\&.
+.SS "\fBObsImportedFrom\fP \fBSBVLBISesInfo::ImportedFrom\fP\fC [protected]\fP"
+.PP
+origin of the session; 
+.PP
+Definition at line 816 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by importedFrom(), operator<<(), operator=(), operator>>(), SBVLBISesInfo(), and setImportedFrom()\&.
+.SS "int \fBSBVLBISesInfo::LocalVersion\fP\fC [protected]\fP"
+.PP
+Definition at line 838 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by SBVLBISession::addHistoryLine(), incVersion(), localVersion(), operator<<(), operator=(), operator>>(), and SBVLBISesInfo()\&.
+.SS "QString \fBSBNamed::Name\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 206 of file SbGeo\&.H'\&.
+.PP
+Referenced by fileName(), SBNamed::name(), operator<<(), SBNamed::operator=(), SBStation::operator=(), SBSite::operator=(), SBOLoadCarrier::operator==(), operator>>(), SBStochParameter::report(), SBNamed::SBNamed(), SBNamed::setName(), SBSite::updateSite(), and SBStation::updateStation()\&.
+.SS "QString \fBSBVLBISesInfo::NetworkID\fP\fC [protected]\fP"
+.PP
+Network ID (a key);'\&. 
+.PP
+Definition at line 822 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by SBVLBISession::dumpUserInfo(), networkID(), operator<<(), operator=(), operator>>(), SBVLBISesInfo(), and setNetworkID()\&.
+.SS "int \fBSBVLBISesInfo::NumBas\fP\fC [protected]\fP"
+.PP
+Definition at line 830 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by numBas(), operator<<(), operator=(), operator>>(), and SBVLBISesInfo()\&.
+.SS "int \fBSBVLBISesInfo::NumObs\fP\fC [protected]\fP"
+.PP
+Definition at line 832 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by numObs(), operator<<(), operator=(), operator>>(), and SBVLBISesInfo()\&.
+.SS "int \fBSBVLBISesInfo::NumSou\fP\fC [protected]\fP"
+.PP
+Definition at line 831 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by numSou(), operator<<(), operator=(), operator>>(), and SBVLBISesInfo()\&.
+.SS "int \fBSBVLBISesInfo::NumSta\fP\fC [protected]\fP"
+.PP
+Definition at line 829 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by numSta(), operator<<(), operator=(), operator>>(), and SBVLBISesInfo()\&.
+.SS "QString \fBSBVLBISesInfo::OfficialName\fP\fC [protected]\fP"
+.PP
+Official Name (from MasterFile) 
+.PP
+Definition at line 825 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by officialName(), operator<<(), operator=(), operator>>(), SBVLBISesInfo(), and setOfficialName()\&.
+.SS "double \fBSBVLBISesInfo::RateRMS2\fP\fC [protected]\fP"
+.PP
+Definition at line 834 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by addRateRMS(), clearRMSs(), operator<<(), operator=(), operator>>(), rateRMS2(), rWRMS(), SBVLBISesInfo(), and setRateRMS2()\&.
+.SS "double \fBSBVLBISesInfo::RateSumW2\fP\fC [protected]\fP"
+.PP
+Definition at line 836 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by addRateRMS(), clearRMSs(), SBVLBISet::loadSession(), operator<<(), operator=(), operator>>(), rateSumW2(), rWRMS(), SBVLBISet::saveSession(), SBVLBISesInfo(), and setRateSumW2()\&.
+.SS "QString \fBSBVLBISesInfo::SubKey\fP\fC [protected]\fP"
+.PP
+aux key; 
+.PP
+Definition at line 821 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by checkPath(), fileName(), operator<<(), operator=(), operator>>(), SBVLBISesInfo(), setSubKey(), and subKey()\&.
+.SS "\fBSBMJD\fP \fBSBVLBISesInfo::TFinis\fP\fC [protected]\fP"
+.PP
+last epoch of the observations; 
+.PP
+Definition at line 819 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by calcTMean(), SBVLBISession::calcTMean(), operator<<(), operator=(), operator>>(), SBVLBISesInfo(), setTFinis(), tFinis(), and tInterval()\&.
+.SS "\fBSBMJD\fP \fBSBVLBISesInfo::TMean\fP\fC [protected]\fP"
+.PP
+mean epoch of the observations; 
+.PP
+Definition at line 820 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by calcTMean(), SBVLBISession::calcTMean(), operator<<(), operator=(), operator>>(), SBVLBISesInfo(), setTMean(), and tMean()\&.
+.SS "\fBSBMJD\fP \fBSBVLBISesInfo::TStart\fP\fC [protected]\fP"
+.PP
+first epoch of the observations; 
+.PP
+Definition at line 818 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by calcTMean(), SBVLBISession::calcTMean(), checkPath(), fileName(), operator<<(), operator=(), operator>>(), SBVLBISesInfo(), setTStart(), tInterval(), and tStart()\&.
+.SS "QString \fBSBVLBISesInfo::UserFlag\fP\fC [protected]\fP"
+.PP
+Flag assigned by user'\&. 
+.PP
+Definition at line 824 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by SBVLBISession::dumpUserInfo(), operator<<(), operator=(), operator>>(), SBVLBISesInfo(), setUserFlag(), and userFlag()\&.
+.SS "int \fBSBVLBISesInfo::Version\fP\fC [protected]\fP"
+.PP
+version; 
+.PP
+Definition at line 837 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by SBVLBISession::dumpUserInfo(), fileName(), operator<<(), operator=(), operator>>(), SBVLBISesInfo(), setVersion(), and version()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

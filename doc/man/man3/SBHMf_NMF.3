@@ -1,0 +1,178 @@
+.TH "SBHMf_NMF" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBHMf_NMF \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoRefraction\&.H>\fP
+.PP
+Inherits \fBSBMappingFunc\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual double \fBoperator()\fP (double, float, float, float, const \fBSBStation\fP *, const \fBSBMJD\fP &)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBlinterpol\fP (double, double, double, double, double)"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const double \fBModelArg\fP [5]"
+.br
+.ti -1c
+.RI "static const double \fBModelA_avg\fP [5]"
+.br
+.ti -1c
+.RI "static const double \fBModelB_avg\fP [5]"
+.br
+.ti -1c
+.RI "static const double \fBModelC_avg\fP [5]"
+.br
+.ti -1c
+.RI "static const double \fBModelA_amp\fP [5]"
+.br
+.ti -1c
+.RI "static const double \fBModelB_amp\fP [5]"
+.br
+.ti -1c
+.RI "static const double \fBModelC_amp\fP [5]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+NMF Hydrostatic mapping Function by Niell, 1996'\&. 
+.PP
+Definition at line 292 of file SbGeoRefraction\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBHMf_NMF::ClassName () const\fC [inline, virtual]\fP"Refers to a class name (debug info) 
+.PP
+Reimplemented from \fBSBMappingFunc\fP'\&.
+.PP
+Definition at line 305 of file SbGeoRefraction\&.H'\&.
+.SS "double SBHMf_NMF::linterpol (doublex1, doublex2, doubley1, doubley2, doublex)\fC [private]\fP"
+.PP
+Definition at line 386 of file SbGeoRefraction\&.C'\&.
+.PP
+Referenced by operator()()\&.
+.SS "double SBHMf_NMF::operator() (doubleE, float, float, float, const \fBSBStation\fP *Station, const \fBSBMJD\fP &MJD)\fC [virtual]\fP"Calcs hydrostatic mapping function'\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIE\fP is a source elevation angle, rad; 
+.br
+\fIT\fP is an atmospheric temperature, C; 
+.br
+\fIP\fP is an atmospheric pressure, mbar; 
+.br
+\fIRH\fP is an atmospheric relative humidity, %; 
+.br
+\fIStation\fP is a pointer to the \fBSBStation\fP; 
+.br
+\fIMJD\fP is a epoch of observation'\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+hydrostatic mapping function value'\&. 
+.RE
+.PP
+A'\&.E'\&. Niell, 'Global mapping functions for the atmosphere delay at radio wavelengths', J'\&.G'\&.R'\&. 101, b2, 3227-3246, 1996 (Equations 4 and 5 corrected)
+.PP
+available on <http://web.haystack.mit.edu/Geodesy/GeodesyIndex.html>, thanks to Arthur
+.PP
+Reimplemented from \fBSBMappingFunc\fP'\&.
+.PP
+Definition at line 402 of file SbGeoRefraction\&.C'\&.
+.PP
+References SBMJD::dayOfYear(), SBStation::height(), SBStation::latitude(), linterpol(), ModelA_amp, ModelA_avg, ModelArg, ModelB_amp, ModelB_avg, ModelC_amp, and ModelC_avg\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const double \fBSBHMf_NMF::ModelA_amp\fP\fC [static, private]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+{ 0\&.0, 1\&.2709626e-5, 2\&.6523662e-5, 3\&.4000452e-5, 4\&.1202191e-5}
+.fi
+.PP
+Definition at line 299 of file SbGeoRefraction\&.H'\&.
+.PP
+Referenced by operator()()\&.
+.SS "const double \fBSBHMf_NMF::ModelA_avg\fP\fC [static, private]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+{ 1\&.2769934e-3, 1\&.2683230e-3, 1\&.2465397e-3, 1\&.2196049e-3, 1\&.2045996e-3}
+.fi
+.PP
+Definition at line 296 of file SbGeoRefraction\&.H'\&.
+.PP
+Referenced by operator()()\&.
+.SS "const double \fBSBHMf_NMF::ModelArg\fP\fC [static, private]\fP"\fBInitial value:\fP
+.PP
+.nf
+ 
+{ 15\&.0*DEG2RAD, 30\&.0*DEG2RAD, 45\&.0*DEG2RAD, 60\&.0*DEG2RAD, 75\&.0*DEG2RAD}
+.fi
+.PP
+Definition at line 295 of file SbGeoRefraction\&.H'\&.
+.PP
+Referenced by operator()()\&.
+.SS "const double \fBSBHMf_NMF::ModelB_amp\fP\fC [static, private]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+{ 0\&.0, 2\&.1414979e-5, 3\&.0160779e-5, 7\&.2562722e-5, 11\&.723375e-5}
+.fi
+.PP
+Definition at line 300 of file SbGeoRefraction\&.H'\&.
+.PP
+Referenced by operator()()\&.
+.SS "const double \fBSBHMf_NMF::ModelB_avg\fP\fC [static, private]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+{ 2\&.9153695e-3, 2\&.9152299e-3, 2\&.9288445e-3, 2\&.9022565e-3, 2\&.9024912e-3}
+.fi
+.PP
+Definition at line 297 of file SbGeoRefraction\&.H'\&.
+.PP
+Referenced by operator()()\&.
+.SS "const double \fBSBHMf_NMF::ModelC_amp\fP\fC [static, private]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+{ 0\&.0, 9\&.0128400e-5, 4\&.3497037e-5, 84\&.795348e-5, 170\&.37206e-5}
+.fi
+.PP
+Definition at line 301 of file SbGeoRefraction\&.H'\&.
+.PP
+Referenced by operator()()\&.
+.SS "const double \fBSBHMf_NMF::ModelC_avg\fP\fC [static, private]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+{ 62\&.610505e-3, 62\&.837393e-3, 63\&.721774e-3, 63\&.824265e-3, 64\&.258455e-3}
+.fi
+.PP
+Definition at line 298 of file SbGeoRefraction\&.H'\&.
+.PP
+Referenced by operator()()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

@@ -1,0 +1,578 @@
+.TH "SBParametersDesc" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBParametersDesc \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoParameter\&.H>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBParametersDesc\fP ()"
+.br
+.ti -1c
+.RI "\fBSBParametersDesc\fP (const \fBSBParametersDesc\fP &D)"
+.br
+.ti -1c
+.RI "virtual \fB~SBParametersDesc\fP ()"
+.br
+.ti -1c
+.RI "\fBSBParametersDesc\fP & \fBoperator=\fP (const \fBSBParametersDesc\fP &)"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBclock0\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetClock0\fP (const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual void \fBsetClock0Type\fP (\fBSBParameterCfg::PType\fP T_)"
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBclock1\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetClock1\fP (const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual void \fBsetClock1Type\fP (\fBSBParameterCfg::PType\fP T_)"
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBclock2\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetClock2\fP (const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual void \fBsetClock2Type\fP (\fBSBParameterCfg::PType\fP T_)"
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBclock3\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetClock3\fP (const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual void \fBsetClock3Type\fP (\fBSBParameterCfg::PType\fP T_)"
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBsrcCoo\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetSrcCoo\fP (const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBstaCoo\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetStaCoo\fP (const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBstaVel\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetStaVel\fP (const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBzenith\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetZenith\fP (const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual void \fBsetZenithType\fP (\fBSBParameterCfg::PType\fP T_)"
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBatmGrad\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetAtmGrad\fP (const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBaxisOffset\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetAxisOffset\fP (const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBpolusXY\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetPolusXY\fP (const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBpolusUT\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetPolusUT\fP (const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBpolusNut\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetPolusNut\fP (const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBtest\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetTest\fP (const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBcable\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetCable\fP (const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual void \fBsetCableType\fP (\fBSBParameterCfg::PType\fP T_)"
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBlove_h2\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetLove_h2\fP (const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual void \fBsetLove_h2Type\fP (\fBSBParameterCfg::PType\fP T_)"
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBlove_l2\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetLove_l2\fP (const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual void \fBsetLove_l2Type\fP (\fBSBParameterCfg::PType\fP T_)"
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBtideLag\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetTideLag\fP (const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual void \fBsetTideLagType\fP (\fBSBParameterCfg::PType\fP T_)"
+.br
+.ti -1c
+.RI "virtual const \fBSBParameterCfg\fP & \fBpar\fP (int i) const "
+.br
+.ti -1c
+.RI "virtual void \fBsetPar\fP (int i, const \fBSBParameterCfg\fP &P)"
+.br
+.ti -1c
+.RI "virtual void \fBsetType\fP (int i, \fBSBParameterCfg::PType\fP T_)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBnum\fP ()"
+.br
+.ti -1c
+.RI "static int \fBn\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBParameterCfg\fP \fBPars\fP [NUMBER_OF_PARAMETERS]"
+.br
+.RI "\fIThe array of the parameters'\&. \fP"
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBNum\fP"
+.br
+.RI "\fIThe number of elemenths in the array'\&. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBParametersDesc\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBParametersDesc\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class ParametersDesc'\&. Just an array (and some other structures) of SBParameterCfgs, describes estimated parameters 
+.PP
+Definition at line 131 of file SbGeoParameter\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBParametersDesc::SBParametersDesc ()"A constructor'\&. 
+.PP
+Definition at line 140 of file SbGeoParameter\&.C'\&.
+.PP
+References DAY2SEC, Pars, SBParameterCfg::PT_LOC, SBParameterCfg::PT_NONE, and RAD2SEC\&.
+.SS "SBParametersDesc::SBParametersDesc (const \fBSBParametersDesc\fP &D)\fC [inline]\fP"A constructor'\&. Creates a copy of object'\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fID_\fP the Parameters' descriptor'\&. 
+.RE
+.PP
+
+.PP
+Definition at line 146 of file SbGeoParameter\&.H'\&.
+.SS "virtual SBParametersDesc::~SBParametersDesc ()\fC [inline, virtual]\fP"A destructor'\&. 
+.PP
+Definition at line 148 of file SbGeoParameter\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::atmGrad () const\fC [inline, virtual]\fP"Returns atmospheric gradient parameter'\&. 
+.PP
+Definition at line 194 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBDelay::calc(), SBRunManager::fillParameterList(), and sinex_tro_TropDescriptionBlock()\&.
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::axisOffset () const\fC [inline, virtual]\fP"Returns Axis offset'\&. 
+.PP
+Definition at line 198 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBRunManager::fillParameterList()\&.
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::cable () const\fC [inline, virtual]\fP"Returns cable correction'\&. 
+.PP
+Definition at line 219 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBRunManager::fillParameterList(), and SBVLBIPreProcess::preProcess()\&.
+.SS "virtual QString SBParametersDesc::ClassName () const\fC [inline, virtual]\fP"Refers to a class name (debug info)'\&. 
+.PP
+Definition at line 151 of file SbGeoParameter\&.H'\&.
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::clock0 () const\fC [inline, virtual]\fP"Returns Clock at station (zero order)'\&. 
+.PP
+Definition at line 156 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBRunManager::constrainClocks(), SBRunManager::fillParameterList(), SBVLBIPreProcess::preProcess(), SBObsVLBIEntry::process(), SBRunManager::process_m1(), and SBVLBIPreProcess::wEstPars()\&.
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::clock1 () const\fC [inline, virtual]\fP"Returns Clock at station (first order)'\&. 
+.PP
+Definition at line 161 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBRunManager::constrainClocks(), and SBRunManager::fillParameterList()\&.
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::clock2 () const\fC [inline, virtual]\fP"Returns Clock at station (second order)'\&. 
+.PP
+Definition at line 166 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBRunManager::constrainClocks(), and SBRunManager::fillParameterList()\&.
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::clock3 () const\fC [inline, virtual]\fP"Returns Clock at station (third order)'\&. 
+.PP
+Definition at line 171 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::love_h2 () const\fC [inline, virtual]\fP"Returns love number h2'\&. 
+.PP
+Definition at line 225 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBDelay::calcDerivatives(), and SBRunManager::fillParameterList()\&.
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::love_l2 () const\fC [inline, virtual]\fP"Returns love number l2'\&. 
+.PP
+Definition at line 230 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBDelay::calcDerivatives(), and SBRunManager::fillParameterList()\&.
+.SS "static int SBParametersDesc::n ()\fC [inline, static]\fP"Returns currently used number of the parameters'\&. 
+.PP
+Definition at line 250 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBParametersEditor::acquireData(), SBParametersEditor::browseData(), and SBParEditor::SBParEditor()\&.
+.SS "static int SBParametersDesc::num ()\fC [inline, static]\fP"Returns total number of the parameters'\&. 
+.PP
+Definition at line 248 of file SbGeoParameter\&.H'\&.
+.PP
+References Num\&.
+.PP
+Referenced by operator=(), SBParameterCfg::operator>>(), and SBConfig::setAllPars2Type()\&.
+.SS "\fBSBParametersDesc\fP & SBParametersDesc::operator= (const \fBSBParametersDesc\fP &D)"
+.PP
+Definition at line 207 of file SbGeoParameter\&.C'\&.
+.PP
+References num(), par(), and setPar()\&.
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::par (inti) const\fC [inline, virtual]\fP"Returns i-th parameter'\&. 
+.PP
+Definition at line 244 of file SbGeoParameter\&.H'\&.
+.PP
+References Num, and Pars\&.
+.PP
+Referenced by SBParametersEditor::acquireData(), SBParametersEditor::browseData(), SBParametersEditor::editParameter(), SBParEditor::makeDefault(), operator=(), SBStationInfo::SBStationInfo(), SBParametersEditor::wEOPParameters(), SBParametersEditor::wOtherParameters(), SBParametersEditor::wSourceParameters(), SBParametersEditor::wStationParameters(), and SBParametersEditor::wTestParameters()\&.
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::polusNut () const\fC [inline, virtual]\fP"Returns Nutation in obliquity and longitude'\&. 
+.PP
+Definition at line 210 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBDelay::calcDerivatives(), collectListOfSINEXParameters4NEQ(), SBRunManager::constraintEOP(), SBRunManager::fillParameterList(), and SBRunManager::process_m1()\&.
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::polusUT () const\fC [inline, virtual]\fP"Returns Polus d(UT1-UTC)'\&. 
+.PP
+Definition at line 206 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBDelay::calcDerivatives(), collectListOfSINEXParameters4NEQ(), SBRunManager::constraintEOP(), SBRunManager::fillParameterList(), and SBRunManager::process_m1()\&.
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::polusXY () const\fC [inline, virtual]\fP"Returns Polus coordinates'\&. 
+.PP
+Definition at line 202 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBDelay::calcDerivatives(), collectListOfSINEXParameters4NEQ(), SBRunManager::constraintEOP(), SBRunManager::fillParameterList(), and SBRunManager::process_m1()\&.
+.SS "virtual void SBParametersDesc::setAtmGrad (const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets atmospheric parameter'\&. 
+.PP
+Definition at line 196 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.SS "virtual void SBParametersDesc::setAxisOffset (const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets Axis offset'\&. 
+.PP
+Definition at line 200 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.SS "virtual void SBParametersDesc::setCable (const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets cable correction'\&. 
+.PP
+Definition at line 221 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBVLBIPreProcess::preProcess()\&.
+.SS "virtual void SBParametersDesc::setCableType (\fBSBParameterCfg::PType\fPT_)\fC [inline, virtual]\fP"
+.PP
+Definition at line 222 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars, and SBParameterCfg::setType()\&.
+.PP
+Referenced by SBVLBIPreProcess::preProcess()\&.
+.SS "virtual void SBParametersDesc::setClock0 (const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets Clock at station (zero order)'\&. 
+.PP
+Definition at line 158 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBVLBIPreProcess::preProcess()\&.
+.SS "virtual void SBParametersDesc::setClock0Type (\fBSBParameterCfg::PType\fPT_)\fC [inline, virtual]\fP"
+.PP
+Definition at line 159 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars, and SBParameterCfg::setType()\&.
+.PP
+Referenced by SBVLBIPreProcess::preProcess()\&.
+.SS "virtual void SBParametersDesc::setClock1 (const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets Clock at station (first order)'\&. 
+.PP
+Definition at line 163 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.SS "virtual void SBParametersDesc::setClock1Type (\fBSBParameterCfg::PType\fPT_)\fC [inline, virtual]\fP"
+.PP
+Definition at line 164 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars, and SBParameterCfg::setType()\&.
+.PP
+Referenced by SBVLBIPreProcess::preProcess()\&.
+.SS "virtual void SBParametersDesc::setClock2 (const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets Clock at station (second order)'\&. 
+.PP
+Definition at line 168 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.SS "virtual void SBParametersDesc::setClock2Type (\fBSBParameterCfg::PType\fPT_)\fC [inline, virtual]\fP"
+.PP
+Definition at line 169 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars, and SBParameterCfg::setType()\&.
+.PP
+Referenced by SBVLBIPreProcess::preProcess()\&.
+.SS "virtual void SBParametersDesc::setClock3 (const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets Clock at station (third order)'\&. 
+.PP
+Definition at line 173 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.SS "virtual void SBParametersDesc::setClock3Type (\fBSBParameterCfg::PType\fPT_)\fC [inline, virtual]\fP"
+.PP
+Definition at line 174 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars, and SBParameterCfg::setType()\&.
+.SS "virtual void SBParametersDesc::setLove_h2 (const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets love number h2'\&. 
+.PP
+Definition at line 227 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.SS "virtual void SBParametersDesc::setLove_h2Type (\fBSBParameterCfg::PType\fPT_)\fC [inline, virtual]\fP"
+.PP
+Definition at line 228 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars, and SBParameterCfg::setType()\&.
+.SS "virtual void SBParametersDesc::setLove_l2 (const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets love number l2'\&. 
+.PP
+Definition at line 232 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.SS "virtual void SBParametersDesc::setLove_l2Type (\fBSBParameterCfg::PType\fPT_)\fC [inline, virtual]\fP"
+.PP
+Definition at line 233 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars, and SBParameterCfg::setType()\&.
+.SS "virtual void SBParametersDesc::setPar (inti, const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets i-th parameter'\&. 
+.PP
+Definition at line 246 of file SbGeoParameter\&.H'\&.
+.PP
+References Num, and Pars\&.
+.PP
+Referenced by operator=(), and SBParameterCfg::operator>>()\&.
+.SS "virtual void SBParametersDesc::setPolusNut (const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets Nutation in obliquity and longitude'\&. 
+.PP
+Definition at line 212 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.SS "virtual void SBParametersDesc::setPolusUT (const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets Polus d(UT1-UTC)'\&. 
+.PP
+Definition at line 208 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.SS "virtual void SBParametersDesc::setPolusXY (const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets Polus coordinates'\&. 
+.PP
+Definition at line 204 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.SS "virtual void SBParametersDesc::setSrcCoo (const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets Coordinates of a radio source'\&. 
+.PP
+Definition at line 178 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.SS "virtual void SBParametersDesc::setStaCoo (const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets Coordinates of a station'\&. 
+.PP
+Definition at line 182 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.SS "virtual void SBParametersDesc::setStaVel (const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets Velocities of a station'\&. 
+.PP
+Definition at line 186 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.SS "virtual void SBParametersDesc::setTest (const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets test parameter'\&. 
+.PP
+Definition at line 216 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.SS "virtual void SBParametersDesc::setTideLag (const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets Tide Lag'\&. 
+.PP
+Definition at line 237 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.SS "virtual void SBParametersDesc::setTideLagType (\fBSBParameterCfg::PType\fPT_)\fC [inline, virtual]\fP"
+.PP
+Definition at line 238 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars, and SBParameterCfg::setType()\&.
+.SS "virtual void SBParametersDesc::setType (inti, \fBSBParameterCfg::PType\fPT_)\fC [inline, virtual]\fP"
+.PP
+Definition at line 254 of file SbGeoParameter\&.H'\&.
+.PP
+References Num, Pars, and SBParameterCfg::setType()\&.
+.PP
+Referenced by SBParametersEditor::acquireData(), and SBConfig::setAllPars2Type()\&.
+.SS "virtual void SBParametersDesc::setZenith (const \fBSBParameterCfg\fP &P)\fC [inline, virtual]\fP"Sets Zenith delay'\&. 
+.PP
+Definition at line 191 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBVLBIPreProcess::preProcess()\&.
+.SS "virtual void SBParametersDesc::setZenithType (\fBSBParameterCfg::PType\fPT_)\fC [inline, virtual]\fP"
+.PP
+Definition at line 192 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars, and SBParameterCfg::setType()\&.
+.PP
+Referenced by SBVLBIPreProcess::preProcess()\&.
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::srcCoo () const\fC [inline, virtual]\fP"Returns Coordinates of a radio source'\&. 
+.PP
+Definition at line 176 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBDelay::calcDerivatives(), collectListOfSINEXParameters4NEQ(), SBRunManager::fillParameterList(), and SBRunManager::process_m1()\&.
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::staCoo () const\fC [inline, virtual]\fP"Returns Coordinates of a station'\&. 
+.PP
+Definition at line 180 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBDelay::calcDerivatives(), collectListOfSINEXParameters(), collectListOfSINEXParameters4NEQ(), SBRunManager::fillParameterList(), and SBRunManager::process_m1()\&.
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::staVel () const\fC [inline, virtual]\fP"Returns Velocities of a station'\&. 
+.PP
+Definition at line 184 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBDelay::calcDerivatives(), collectListOfSINEXParameters(), SBRunManager::fillParameterList(), and SBRunManager::process_m1()\&.
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::test () const\fC [inline, virtual]\fP"Returns test parameter'\&. 
+.PP
+Definition at line 214 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBDelay::calcDerivatives(), and SBRunManager::fillParameterList()\&.
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::tideLag () const\fC [inline, virtual]\fP"Returns love number h2'\&. 
+.PP
+Definition at line 235 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBDelay::calcDerivatives(), and SBRunManager::fillParameterList()\&.
+.SS "virtual const \fBSBParameterCfg\fP& SBParametersDesc::zenith () const\fC [inline, virtual]\fP"Returns Zenith delay'\&. 
+.PP
+Definition at line 189 of file SbGeoParameter\&.H'\&.
+.PP
+References Pars\&.
+.PP
+Referenced by SBDelay::calc(), SBRunManager::fillParameterList(), SBVLBIPreProcess::preProcess(), sinex_tro_TropDescriptionBlock(), and SBVLBIPreProcess::wEstPars()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "QDataStream & operator<< (QDataStream &s, const \fBSBParametersDesc\fP &D)\fC [friend]\fP"Output to the data stream'\&. 
+.PP
+Definition at line 224 of file SbGeoParameter\&.C'\&.
+.SS "QDataStream& operator>> (QDataStream &, \fBSBParametersDesc\fP &)\fC [friend]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "const int \fBSBParametersDesc::Num\fP\fC [static, private]\fP"
+.PP
+The number of elemenths in the array'\&. 
+.PP
+Definition at line 135 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by num(), par(), setPar(), and setType()\&.
+.SS "\fBSBParameterCfg\fP \fBSBParametersDesc::Pars\fP[NUMBER_OF_PARAMETERS]\fC [private]\fP"
+.PP
+The array of the parameters'\&. 
+.PP
+Definition at line 136 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by atmGrad(), axisOffset(), cable(), clock0(), clock1(), clock2(), clock3(), love_h2(), love_l2(), par(), polusNut(), polusUT(), polusXY(), SBParametersDesc(), setAtmGrad(), setAxisOffset(), setCable(), setCableType(), setClock0(), setClock0Type(), setClock1(), setClock1Type(), setClock2(), setClock2Type(), setClock3(), setClock3Type(), setLove_h2(), setLove_h2Type(), setLove_l2(), setLove_l2Type(), setPar(), setPolusNut(), setPolusUT(), setPolusXY(), setSrcCoo(), setStaCoo(), setStaVel(), setTest(), setTideLag(), setTideLagType(), setType(), setZenith(), setZenithType(), srcCoo(), staCoo(), staVel(), test(), tideLag(), and zenith()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

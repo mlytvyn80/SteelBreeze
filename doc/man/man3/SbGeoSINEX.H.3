@@ -1,0 +1,84 @@
+.TH "SbGeoSINEX.H" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SbGeoSINEX.H \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <config\&.h>\fP
+.br
+\fC#include 'SbGeo\&.H'\fP
+.br
+\fC#include 'SbGeoParameter\&.H'\fP
+.br
+\fC#include <qdatastream\&.h>\fP
+.br
+\fC#include <qintdict\&.h>\fP
+.br
+\fC#include <qlist\&.h>\fP
+.br
+\fC#include <qstring\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSBSINEXParameter\fP"
+.br
+.ti -1c
+.RI "class \fBSBSINEXParameterList\fP"
+.br
+.ti -1c
+.RI "class \fBSBTropRecord\fP"
+.br
+.ti -1c
+.RI "class \fBSBTropRecordList\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSINEX_SolutionContents\fP { \fBSNX_SC_STATIONS\fP =  1<< 0, \fBSNX_SC_ORBITS\fP =  1<< 1, \fBSNX_SC_EOP\fP =  1<< 2, \fBSNX_SC_TROPOSPHERE\fP =  1<< 3, \fBSNX_SC_SOURCES\fP =  1<< 4 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBwriteNormalEquationSystem\fP (\fBSBTS_SINEX\fP &, \fBSBParameterList\fP *, \fBSBVector\fP *, \fBSBUpperMatrix\fP *, \fBSBParameterList\fP *, \fBSBVector\fP *, \fBSBUpperMatrix\fP *, \fBSBMatrix\fP *, const QString &, const QString &)"
+.br
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSINEX_SolutionContents\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fISNX_SC_STATIONS \fP\fP
+.TP
+\fB\fISNX_SC_ORBITS \fP\fP
+.TP
+\fB\fISNX_SC_EOP \fP\fP
+.TP
+\fB\fISNX_SC_TROPOSPHERE \fP\fP
+.TP
+\fB\fISNX_SC_SOURCES \fP\fP
+
+.PP
+Definition at line 44 of file SbGeoSINEX\&.H'\&.
+.SH "Function Documentation"
+.PP 
+.SS "void writeNormalEquationSystem (\fBSBTS_SINEX\fP &, \fBSBParameterList\fP *, \fBSBVector\fP *, \fBSBUpperMatrix\fP *, \fBSBParameterList\fP *, \fBSBVector\fP *, \fBSBUpperMatrix\fP *, \fBSBMatrix\fP *, const QString &, const QString &)"
+.PP
+Definition at line 2066 of file SbGeoSINEX\&.C'\&.
+.PP
+References SBParameterList::append(), SBVector::at(), SBMatrix::at(), SBUpperMatrix::at(), SBProject::cfg(), SBVector::clear(), SBParameterList::clear(), collectListOfSINEXParameters4NEQ(), SBRunManager::crf(), SBMJD::currentMJD(), DAY2SEC, SBLog::DBG, SBFrame::eop(), SBLog::ERR, SBLog::ESTIMATOR, SBParameterList::find(), SBRunManager::frame(), SBParameterList::idx(), SBLog::INF, SBLog::IO, SBEOP::label(), Log, SBNamed::name(), SBConfig::NM_IAU1980, SBConfig::NM_IAU1996, SBConfig::NM_IAU2000, SBConfig::nutModel(), SBRunManager::prj(), RAD2MAS, SBConfig::reportNormalEqsEOPs(), SBConfig::reportNormalEqsSRCs(), SBConfig::reportNormalEqsSTCs(), RTR(), SBLog::RUN, SBTS_SINEX::runMgr(), SBVector::set(), SBMatrix::set(), SBUpperMatrix::set(), sign(), sinex_Comments(), sinex_FileCommentBlock(), sinex_FileReferenceBlock(), sinex_HeaderLine(), sinex_InputAcknowledgementsBlock(), sinex_InputFilesBlock(), sinex_InputHistoryBlock(), sinex_NutationDataBlock(), sinex_PrecessionDataBlock(), sinex_SiteEccentricityBlock(), sinex_SiteIDBlock(), sinex_SolutionAprioriBlock(), sinex_SolutionEpochsBlock(), sinex_SolutionNormalEquationMatrixBlock(), sinex_SolutionNormalEquationVectorBlock(), sinex_SolutionStatisticsBlock(), sinex_SourceIDBlock(), sinex_TrailerLine(), SNX_SC_EOP, SNX_SC_SOURCES, SNX_SC_STATIONS, SBRunManager::solution(), SBSolution::stat4CurrentBatch(), SBConfig::STR_Classic, SBConfig::sysTransform(), SBSolutionName::toString(), SBRunManager::trf(), TZero, SBRunManager::vlbi(), and SBLog::write()\&.
+.PP
+Referenced by SBRunManager::makeReportNormalEqs()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

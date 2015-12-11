@@ -1,0 +1,125 @@
+.TH "SBBrowseBases" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBBrowseBases \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIObsVLBI\&.H>\fP
+.PP
+Inherits \fBQWidget\fP'\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBmodified\fP (bool)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBBrowseBases\fP (\fBSBBaseInfoList\fP *, \fBQWidget\fP *=0, const char *=0, WFlags=0)"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "\fBQListView\fP * \fBlvBases\fP ()"
+.br
+.ti -1c
+.RI "const \fBSBBaseInfoList\fP * \fBbasInfoList\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetBasInfoList\fP (\fBSBBaseInfoList\fP *)"
+.br
+.ti -1c
+.RI "void \fBupdateList\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBBaseInfoList\fP * \fBBasInfoList\fP"
+.br
+.ti -1c
+.RI "\fBQListView\fP * \fBLVBases\fP"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBtoggleEntryMarkEnable\fP (\fBQListViewItem\fP *, const QPoint &, int)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 351 of file SbIObsVLBI\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBBrowseBases::SBBrowseBases (\fBSBBaseInfoList\fP *BIList_, \fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 1567 of file SbIObsVLBI\&.C'\&.
+.PP
+References BasInfoList, LVBases, SBSetUp::scaleName(), SetUp, toggleEntryMarkEnable(), and updateList()\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "const \fBSBBaseInfoList\fP* SBBrowseBases::basInfoList () const\fC [inline]\fP"
+.PP
+Definition at line 366 of file SbIObsVLBI\&.H'\&.
+.PP
+References BasInfoList\&.
+.SS "virtual QString SBBrowseBases::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 364 of file SbIObsVLBI\&.H'\&.
+.SS "\fBQListView\fP* SBBrowseBases::lvBases ()\fC [inline]\fP"
+.PP
+Definition at line 365 of file SbIObsVLBI\&.H'\&.
+.PP
+References LVBases\&.
+.SS "void SBBrowseBases::modified (boolt0)\fC [signal]\fP"
+.PP
+Definition at line 329 of file SbIObsVLBI\&.moc\&.C'\&.
+.PP
+Referenced by toggleEntryMarkEnable()\&.
+.SS "void SBBrowseBases::setBasInfoList (\fBSBBaseInfoList\fP *BIList_)"
+.PP
+Definition at line 1613 of file SbIObsVLBI\&.C'\&.
+.PP
+References BasInfoList, LVBases, and updateList()\&.
+.PP
+Referenced by SBVLBIPreProcess::updateSession()\&.
+.SS "void SBBrowseBases::toggleEntryMarkEnable (\fBQListViewItem\fP *Item, const QPoint &, intn)\fC [private, slot]\fP"
+.PP
+Definition at line 1624 of file SbIObsVLBI\&.C'\&.
+.PP
+References modified(), and SBBaseInfo::notValid\&.
+.PP
+Referenced by SBBrowseBases()\&.
+.SS "void SBBrowseBases::updateList ()"
+.PP
+Definition at line 1605 of file SbIObsVLBI\&.C'\&.
+.PP
+References BasInfoList, and LVBases\&.
+.PP
+Referenced by SBBrowseBases(), SBProjectEdit::sessionListChanged(), and setBasInfoList()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSBBaseInfoList\fP* \fBSBBrowseBases::BasInfoList\fP\fC [protected]\fP"
+.PP
+Definition at line 355 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by basInfoList(), SBBrowseBases(), setBasInfoList(), and updateList()\&.
+.SS "\fBQListView\fP* \fBSBBrowseBases::LVBases\fP\fC [protected]\fP"
+.PP
+Definition at line 356 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by lvBases(), SBBrowseBases(), setBasInfoList(), and updateList()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

@@ -1,0 +1,388 @@
+.TH "SBSetupDialog" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBSetupDialog \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbISetup\&.H>\fP
+.PP
+Inherits \fBSBTabDialog\fP'\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSBInstLI\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSetupDialog\fP (\fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "\fB~SBSetupDialog\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBdone\fP (int r)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQWidget\fP * \fBpathes\fP ()"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBlogger\fP ()"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBpacker\fP ()"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBmisc\fP ()"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBinstitutions\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBcloseEvent\fP (QCloseEvent *)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSetUp\fP * \fBsetup\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBPathLE\fP [19]"
+.br
+.ti -1c
+.RI "QCheckBox * \fBcbLogStoreInFile\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBcbLogTimeLabel\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBeLogFileName\fP"
+.br
+.ti -1c
+.RI "QSpinBox * \fBsLogCapacity\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBcbLLevel\fP [4][32]"
+.br
+.ti -1c
+.RI "\fBQListView\fP * \fBFConv\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBFCName\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBFCComp\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBFCExtr\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBFCExt\fP"
+.br
+.ti -1c
+.RI "QComboBox * \fBFCDefault\fP"
+.br
+.ti -1c
+.RI "QRadioButton * \fBrbUnitNames\fP [3]"
+.br
+.ti -1c
+.RI "\fBSBInstitutionList\fP * \fBInstList\fP"
+.br
+.ti -1c
+.RI "\fBQListView\fP * \fBlvInst\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleAcronym\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleDescr\fP"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBsetData\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBmakeApply\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBmakeDefaults\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddPacker\fP ()"
+.br
+.ti -1c
+.RI "void \fBdelPacker\fP ()"
+.br
+.ti -1c
+.RI "void \fBchkPacker\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddInst\fP ()"
+.br
+.ti -1c
+.RI "void \fBdelInst\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBacquireData\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBSBSetupDialog\fP'\&. Allows users to configure the software (general thingth, not related to geodynamics at all)'\&. 
+.PP
+Definition at line 69 of file SbISetup\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBSetupDialog::SBSetupDialog (\fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 132 of file SbISetup\&.C'\&.
+.PP
+References Institutions, institutions(), InstList, logger(), makeApply(), makeDefaults(), misc(), packer(), pathes(), setData(), SetUp, and setup\&.
+.SS "SBSetupDialog::~SBSetupDialog ()"
+.PP
+Definition at line 588 of file SbISetup\&.C'\&.
+.PP
+References InstList, and setup\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBSetupDialog::acquireData ()\fC [private, virtual]\fP"
+.PP
+Reimplemented from \fBSBTabDialog\fP'\&.
+.PP
+Definition at line 840 of file SbISetup\&.C'\&.
+.PP
+References cbLLevel, cbLogStoreInFile, cbLogTimeLabel, SBLog::DBG, eLogFileName, SBLog::ERR, FCDefault, SBSetUp::fcList(), SBLog::INF, LogFacilities, PathLE, rbUnitNames, SBSetUp::setCompileDir(), SBSetUp::setDataDir(), SBFCList::setDefault(), SBSetUp::setEOPs(), SBSetUp::setHomeDir(), SBSetUp::setImportAploDir(), SBSetUp::setImportDir(), SBSetUp::setImportEOPDir(), SBSetUp::setImportICRFDir(), SBSetUp::setImportITRFDir(), SBSetUp::setImportMFilesDir(), SBSetUp::setImportOLoadDir(), SBSetUp::setLogCapacity(), SBSetUp::setLogDir(), SBSetUp::setLogFileName(), SBSetUp::setLogStoreInFile(), SBSetUp::setLogTimeLabel(), SBSetUp::setOutputDir(), SBSetUp::setProjectDir(), SBSetUp::setSolutionsDir(), SBSetUp::setSources(), SBSetUp::setStations(), SBSetUp::setStuffDir(), SBSetUp::setUnits(), setup, SBSetUp::setWorkDir(), sLogCapacity, SBSetUp::U_INCH, SBSetUp::U_METER, SBSetUp::U_SEC, and SBLog::WRN\&.
+.SS "void SBSetupDialog::addInst ()\fC [private, slot]\fP"
+.PP
+Definition at line 594 of file SbISetup\&.C'\&.
+.PP
+References SBInstitutionList::find(), SBInstitutionList::insert(), InstList, leAcronym, leDescr, and lvInst\&.
+.PP
+Referenced by institutions()\&.
+.SS "void SBSetupDialog::addPacker ()\fC [private, slot]\fP"
+.PP
+Definition at line 695 of file SbISetup\&.C'\&.
+.PP
+References SBFileConv::check(), FCComp, FCExt, FCExtr, SBSetUp::fcList(), FCName, FConv, SBFCList::insert(), and setup\&.
+.PP
+Referenced by packer()\&.
+.SS "void SBSetupDialog::chkPacker ()\fC [private, slot]\fP"
+.PP
+Definition at line 680 of file SbISetup\&.C'\&.
+.PP
+References SBFileConv::check(), SBFileConv::comCompr(), SBFileConv::comUncom(), SBFileConvLI::entry(), FConv, and SBNamed::name()\&.
+.PP
+Referenced by packer()\&.
+.SS "virtual QString SBSetupDialog::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 76 of file SbISetup\&.H'\&.
+.PP
+Referenced by delInst(), delPacker(), makeApply(), and makeDefaults()\&.
+.SS "virtual void SBTabDialog::closeEvent (QCloseEvent *)\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSBSiteEditor\fP, and \fBSBParametersEditor\fP'\&.
+.PP
+Definition at line 90 of file SbInterface\&.H'\&.
+.SS "void SBSetupDialog::delInst ()\fC [private, slot]\fP"
+.PP
+Definition at line 622 of file SbISetup\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::ERR, SBSetupDialog::SBInstLI::inst(), InstList, SBLog::INTERFACE, Log, lvInst, SBNamed::name(), SBInstitutionList::remove(), and SBLog::write()\&.
+.PP
+Referenced by institutions()\&.
+.SS "void SBSetupDialog::delPacker ()\fC [private, slot]\fP"
+.PP
+Definition at line 651 of file SbISetup\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBFileConvLI::entry(), SBLog::ERR, SBSetUp::fcList(), FConv, SBLog::INTERFACE, Log, SBNamed::name(), SBFCList::remove(), setup, and SBLog::write()\&.
+.PP
+Referenced by packer()\&.
+.SS "virtual void SBTabDialog::done (intr)\fC [inline, protected, virtual, slot, inherited]\fP"
+.PP
+Reimplemented in \fBSBSiteEditor\fP, and \fBSBProjectEdit\fP'\&.
+.PP
+Definition at line 82 of file SbInterface\&.H'\&.
+.PP
+References SBTabDialog::acquireData()\&.
+.SS "\fBQWidget\fP * SBSetupDialog::institutions ()\fC [protected]\fP"
+.PP
+Definition at line 529 of file SbISetup\&.C'\&.
+.PP
+References addInst(), delInst(), InstList, leAcronym, leDescr, and lvInst\&.
+.PP
+Referenced by SBSetupDialog()\&.
+.SS "\fBQWidget\fP * SBSetupDialog::logger ()\fC [protected]\fP"
+.PP
+Definition at line 228 of file SbISetup\&.C'\&.
+.PP
+References cbLLevel, cbLogStoreInFile, cbLogTimeLabel, eLogFileName, and sLogCapacity\&.
+.PP
+Referenced by SBSetupDialog()\&.
+.SS "void SBSetupDialog::makeApply ()\fC [private, virtual, slot]\fP"
+.PP
+Reimplemented from \fBSBTabDialog\fP'\&.
+.PP
+Definition at line 806 of file SbISetup\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBSetUp::eops(), Institutions, InstList, SBLog::INTERFACE, Log, mainSetCRFName(), mainSetEOPName(), mainSetPrjName(), mainSetTRFName(), SBSetUp::project(), SetUp, setup, SBSetUp::sources(), SBSetUp::stations(), SBSetUp::UpdateLogger(), and SBLog::write()\&.
+.PP
+Referenced by SBSetupDialog()\&.
+.SS "void SBSetupDialog::makeDefaults ()\fC [private, virtual, slot]\fP"
+.PP
+Reimplemented from \fBSBTabDialog\fP'\&.
+.PP
+Definition at line 824 of file SbISetup\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBSetUp::eops(), SBLog::INTERFACE, Log, mainSetCRFName(), mainSetEOPName(), mainSetPrjName(), mainSetTRFName(), SBSetUp::project(), setData(), SBSetUp::SetDefaults(), setup, SBSetUp::sources(), SBSetUp::stations(), and SBLog::write()\&.
+.PP
+Referenced by SBSetupDialog()\&.
+.SS "\fBQWidget\fP * SBSetupDialog::misc ()\fC [protected]\fP"
+.PP
+Definition at line 494 of file SbISetup\&.C'\&.
+.PP
+References rbUnitNames, setup, and SBSetUp::units()\&.
+.PP
+Referenced by SBSetupDialog()\&.
+.SS "\fBQWidget\fP * SBSetupDialog::packer ()\fC [protected]\fP"
+.PP
+Definition at line 386 of file SbISetup\&.C'\&.
+.PP
+References addPacker(), chkPacker(), SBFCList::defaultName(), delPacker(), FCComp, FCDefault, FCExt, FCExtr, SBSetUp::fcList(), FCName, FConv, and setup\&.
+.PP
+Referenced by SBSetupDialog()\&.
+.SS "\fBQWidget\fP * SBSetupDialog::pathes ()\fC [protected]\fP"
+.PP
+Definition at line 158 of file SbISetup\&.C'\&.
+.PP
+References PathLE\&.
+.PP
+Referenced by SBSetupDialog()\&.
+.SS "void SBSetupDialog::setData ()\fC [private, virtual, slot]\fP"
+.PP
+Definition at line 736 of file SbISetup\&.C'\&.
+.PP
+References cbLLevel, cbLogStoreInFile, cbLogTimeLabel, SBSetUp::compileDir(), SBSetUp::dataDir(), SBLog::DBG, SBFCList::defaultName(), eLogFileName, SBSetUp::eops(), SBLog::ERR, FCDefault, SBSetUp::fcList(), FConv, SBSetUp::homeDir(), SBSetUp::importAploDir(), SBSetUp::importDir(), SBSetUp::importEOPDir(), SBSetUp::importICRFDir(), SBSetUp::importITRFDir(), SBSetUp::importMFilesDir(), SBSetUp::importOLoadDir(), SBLog::INF, InstList, leAcronym, leDescr, SBSetUp::logCapacity(), SBSetUp::logDir(), LogFacilities, SBSetUp::logFacilities(), SBSetUp::logFileName(), SBSetUp::logStoreInFile(), SBSetUp::logTimeLabel(), lvInst, SBSetUp::outputDir(), PathLE, SBSetUp::projectDir(), rbUnitNames, setup, sLogCapacity, SBSetUp::solutionsDir(), SBSetUp::sources(), SBSetUp::stations(), SBSetUp::stuffDir(), SBSetUp::units(), SBSetUp::workDir(), and SBLog::WRN\&.
+.PP
+Referenced by makeDefaults(), and SBSetupDialog()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QCheckBox* \fBSBSetupDialog::cbLLevel\fP[4][32]\fC [protected]\fP"
+.PP
+Definition at line 115 of file SbISetup\&.H'\&.
+.PP
+Referenced by acquireData(), logger(), and setData()\&.
+.SS "QCheckBox* \fBSBSetupDialog::cbLogStoreInFile\fP\fC [protected]\fP"
+.PP
+Definition at line 111 of file SbISetup\&.H'\&.
+.PP
+Referenced by acquireData(), logger(), and setData()\&.
+.SS "QCheckBox* \fBSBSetupDialog::cbLogTimeLabel\fP\fC [protected]\fP"
+.PP
+Definition at line 112 of file SbISetup\&.H'\&.
+.PP
+Referenced by acquireData(), logger(), and setData()\&.
+.SS "QLineEdit* \fBSBSetupDialog::eLogFileName\fP\fC [protected]\fP"
+.PP
+Definition at line 113 of file SbISetup\&.H'\&.
+.PP
+Referenced by acquireData(), logger(), and setData()\&.
+.SS "QLineEdit* \fBSBSetupDialog::FCComp\fP\fC [protected]\fP"
+.PP
+Definition at line 121 of file SbISetup\&.H'\&.
+.PP
+Referenced by addPacker(), and packer()\&.
+.SS "QComboBox* \fBSBSetupDialog::FCDefault\fP\fC [protected]\fP"
+.PP
+Definition at line 124 of file SbISetup\&.H'\&.
+.PP
+Referenced by acquireData(), packer(), and setData()\&.
+.SS "QLineEdit* \fBSBSetupDialog::FCExt\fP\fC [protected]\fP"
+.PP
+Definition at line 123 of file SbISetup\&.H'\&.
+.PP
+Referenced by addPacker(), and packer()\&.
+.SS "QLineEdit* \fBSBSetupDialog::FCExtr\fP\fC [protected]\fP"
+.PP
+Definition at line 122 of file SbISetup\&.H'\&.
+.PP
+Referenced by addPacker(), and packer()\&.
+.SS "QLineEdit* \fBSBSetupDialog::FCName\fP\fC [protected]\fP"
+.PP
+Definition at line 120 of file SbISetup\&.H'\&.
+.PP
+Referenced by addPacker(), and packer()\&.
+.SS "\fBQListView\fP* \fBSBSetupDialog::FConv\fP\fC [protected]\fP"
+.PP
+Definition at line 119 of file SbISetup\&.H'\&.
+.PP
+Referenced by addPacker(), chkPacker(), delPacker(), packer(), and setData()\&.
+.SS "\fBSBInstitutionList\fP* \fBSBSetupDialog::InstList\fP\fC [protected]\fP"
+.PP
+Definition at line 132 of file SbISetup\&.H'\&.
+.PP
+Referenced by addInst(), delInst(), institutions(), makeApply(), SBSetupDialog(), setData(), and ~SBSetupDialog()\&.
+.SS "QLineEdit* \fBSBSetupDialog::leAcronym\fP\fC [protected]\fP"
+.PP
+Definition at line 134 of file SbISetup\&.H'\&.
+.PP
+Referenced by addInst(), institutions(), and setData()\&.
+.SS "QLineEdit* \fBSBSetupDialog::leDescr\fP\fC [protected]\fP"
+.PP
+Definition at line 135 of file SbISetup\&.H'\&.
+.PP
+Referenced by addInst(), institutions(), and setData()\&.
+.SS "\fBQListView\fP* \fBSBSetupDialog::lvInst\fP\fC [protected]\fP"
+.PP
+Definition at line 133 of file SbISetup\&.H'\&.
+.PP
+Referenced by addInst(), delInst(), institutions(), and setData()\&.
+.SS "QLineEdit* \fBSBSetupDialog::PathLE\fP[19]\fC [protected]\fP"
+.PP
+Definition at line 107 of file SbISetup\&.H'\&.
+.PP
+Referenced by acquireData(), pathes(), and setData()\&.
+.SS "QRadioButton* \fBSBSetupDialog::rbUnitNames\fP[3]\fC [protected]\fP"
+.PP
+Definition at line 128 of file SbISetup\&.H'\&.
+.PP
+Referenced by acquireData(), misc(), and setData()\&.
+.SS "\fBSBSetUp\fP* \fBSBSetupDialog::setup\fP\fC [protected]\fP"
+.PP
+Definition at line 103 of file SbISetup\&.H'\&.
+.PP
+Referenced by acquireData(), addPacker(), delPacker(), makeApply(), makeDefaults(), misc(), packer(), SBSetupDialog(), setData(), and ~SBSetupDialog()\&.
+.SS "QSpinBox* \fBSBSetupDialog::sLogCapacity\fP\fC [protected]\fP"
+.PP
+Definition at line 114 of file SbISetup\&.H'\&.
+.PP
+Referenced by acquireData(), logger(), and setData()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

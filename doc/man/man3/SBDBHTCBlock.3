@@ -1,0 +1,161 @@
+.TH "SBDBHTCBlock" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBDBHTCBlock \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoObsVLBI_IO\&.H>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBDBHTCBlock\fP ()"
+.br
+.ti -1c
+.RI "\fB~SBDBHTCBlock\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisLast\fP ()"
+.br
+.ti -1c
+.RI "\fBQList\fP< \fBSBDBHTEBlock\fP > * \fBteBlocks\fP ()"
+.br
+.ti -1c
+.RI "QDict< \fBSBDBHPar\fP > * \fBparByAbbrev\fP ()"
+.br
+.ti -1c
+.RI "short \fBnumTEBlocks\fP ()"
+.br
+.ti -1c
+.RI "short \fBtocType\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisOk\fP ()"
+.br
+.ti -1c
+.RI "void \fBdump\fP (\fBQTextStream\fP &s)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBDBHLRecTC\fP \fBRec\fP"
+.br
+.ti -1c
+.RI "\fBQList\fP< \fBSBDBHTEBlock\fP > \fBListTEBlock\fP"
+.br
+.ti -1c
+.RI "bool \fBisOK\fP"
+.br
+.ti -1c
+.RI "QDict< \fBSBDBHPar\fP > * \fBParByAbbrev\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSBDBHFormat\fP"
+.br
+.ti -1c
+.RI "\fBSBDS_dbh\fP & \fBoperator>>\fP (\fBSBDS_dbh\fP &, \fBSBDBHTCBlock\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 467 of file SbGeoObsVLBI_IO\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBDBHTCBlock::SBDBHTCBlock ()\fC [inline]\fP"
+.PP
+Definition at line 476 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References isOK, ListTEBlock, and ParByAbbrev\&.
+.SS "SBDBHTCBlock::~SBDBHTCBlock ()\fC [inline]\fP"
+.PP
+Definition at line 478 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References ParByAbbrev\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBDBHTCBlock::dump (\fBQTextStream\fP &s)\fC [inline]\fP"
+.PP
+Definition at line 485 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References SBDBHLRecTC::dump(), ListTEBlock, Rec, and tocType()\&.
+.SS "bool SBDBHTCBlock::isLast ()\fC [inline]\fP"
+.PP
+Definition at line 479 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References SBDBHLRecTC::isZ2(), and Rec\&.
+.PP
+Referenced by operator>>()\&.
+.SS "bool SBDBHTCBlock::isOk ()\fC [inline]\fP"
+.PP
+Definition at line 484 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References isOK\&.
+.SS "short SBDBHTCBlock::numTEBlocks ()\fC [inline]\fP"
+.PP
+Definition at line 482 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References SBDBHLRecTC::numTEBlocks(), and Rec\&.
+.SS "QDict<\fBSBDBHPar\fP>* SBDBHTCBlock::parByAbbrev ()\fC [inline]\fP"
+.PP
+Definition at line 481 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References ParByAbbrev\&.
+.PP
+Referenced by SBDBHFormat::lookupPar()\&.
+.SS "\fBQList\fP<\fBSBDBHTEBlock\fP>* SBDBHTCBlock::teBlocks ()\fC [inline]\fP"
+.PP
+Definition at line 480 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References ListTEBlock\&.
+.PP
+Referenced by SBDBHFormat::getBlock(), SBDBHFormat::lookupPar(), and SBDBHFormat::parRecord()\&.
+.SS "short SBDBHTCBlock::tocType ()\fC [inline]\fP"
+.PP
+Definition at line 483 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References Rec, and SBDBHLRecTC::tocType()\&.
+.PP
+Referenced by dump()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "\fBSBDS_dbh\fP& operator>> (\fBSBDS_dbh\fP &s, \fBSBDBHTCBlock\fP &B)\fC [friend]\fP"
+.PP
+Definition at line 2557 of file SbGeoObsVLBI_IO\&.C'\&.
+.SS "friend class \fBSBDBHFormat\fP\fC [friend]\fP"
+.PP
+Definition at line 469 of file SbGeoObsVLBI_IO\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool \fBSBDBHTCBlock::isOK\fP\fC [protected]\fP"
+.PP
+Definition at line 473 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by isOk(), operator>>(), and SBDBHTCBlock()\&.
+.SS "\fBQList\fP<\fBSBDBHTEBlock\fP> \fBSBDBHTCBlock::ListTEBlock\fP\fC [protected]\fP"
+.PP
+Definition at line 472 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by dump(), operator>>(), SBDBHTCBlock(), and teBlocks()\&.
+.SS "QDict<\fBSBDBHPar\fP>* \fBSBDBHTCBlock::ParByAbbrev\fP\fC [protected]\fP"
+.PP
+Definition at line 474 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by parByAbbrev(), SBDBHTCBlock(), and ~SBDBHTCBlock()\&.
+.SS "\fBSBDBHLRecTC\fP \fBSBDBHTCBlock::Rec\fP\fC [protected]\fP"
+.PP
+Definition at line 471 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by dump(), isLast(), numTEBlocks(), operator>>(), and tocType()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

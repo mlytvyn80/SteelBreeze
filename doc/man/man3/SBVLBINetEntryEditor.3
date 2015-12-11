@@ -1,0 +1,203 @@
+.TH "SBVLBINetEntryEditor" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBVLBINetEntryEditor \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIObsVLBI\&.H>\fP
+.PP
+Inherits \fBQDialog\fP'\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBnetworkModified\fP (bool, \fBSBVLBISet::Network\fP *)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBVLBINetEntryEditor\fP (\fBSBVLBISet::Network\fP *, \fBQListViewItem\fP *, \fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "\fB~SBVLBINetEntryEditor\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBaccept\fP ()"
+.br
+.ti -1c
+.RI "void \fBreject\fP ()"
+.br
+.ti -1c
+.RI "void \fBdelKey\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddKey\fP ()"
+.br
+.ti -1c
+.RI "void \fBmodKey\fP ()"
+.br
+.ti -1c
+.RI "void \fBshowKey\fP (int)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBcloseEvent\fP (QCloseEvent)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBVLBISet::Network\fP * \fBNetwork\fP"
+.br
+.ti -1c
+.RI "\fBQListViewItem\fP * \fBLI\fP"
+.br
+.ti -1c
+.RI "bool \fBisModified\fP"
+.br
+.ti -1c
+.RI "QString \fBStr\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBID\fP"
+.br
+.ti -1c
+.RI "\fBQMultiLineEdit\fP * \fBDescr\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBKey\fP"
+.br
+.ti -1c
+.RI "QListBox * \fBKeyList\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 637 of file SbIObsVLBI\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBVLBINetEntryEditor::SBVLBINetEntryEditor (\fBSBVLBISet::Network\fP *N_, \fBQListViewItem\fP *LI_, \fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 2928 of file SbIObsVLBI\&.C'\&.
+.PP
+References accept(), addKey(), delKey(), Descr, SBVLBISet::Network::descr(), ID, isModified, Key, KeyList, SBVLBISet::Network::keys(), LI, modKey(), SBNamed::name(), Network, reject(), and showKey()\&.
+.SS "SBVLBINetEntryEditor::~SBVLBINetEntryEditor ()"
+.PP
+Definition at line 3032 of file SbIObsVLBI\&.C'\&.
+.PP
+References isModified, Network, and networkModified()\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBVLBINetEntryEditor::accept ()\fC [protected, slot]\fP"
+.PP
+Definition at line 3078 of file SbIObsVLBI\&.C'\&.
+.PP
+References Descr, SBVLBISet::Network::descr(), ID, isModified, LI, SBNamed::name(), Network, SBVLBISet::Network::setDescr(), SBNamed::setName(), and Str\&.
+.PP
+Referenced by SBVLBINetEntryEditor()\&.
+.SS "void SBVLBINetEntryEditor::addKey ()\fC [protected, slot]\fP"
+.PP
+Definition at line 3054 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBVLBISet::Network::addKey(), isModified, Key, KeyList, SBVLBISet::Network::keys(), Network, and Str\&.
+.PP
+Referenced by SBVLBINetEntryEditor()\&.
+.SS "virtual QString SBVLBINetEntryEditor::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 644 of file SbIObsVLBI\&.H'\&.
+.SS "virtual void SBVLBINetEntryEditor::closeEvent (QCloseEvent)\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 668 of file SbIObsVLBI\&.H'\&.
+.SS "void SBVLBINetEntryEditor::delKey ()\fC [protected, slot]\fP"
+.PP
+Definition at line 3042 of file SbIObsVLBI\&.C'\&.
+.PP
+References isModified, KeyList, SBVLBISet::Network::keys(), Network, and Str\&.
+.PP
+Referenced by SBVLBINetEntryEditor()\&.
+.SS "void SBVLBINetEntryEditor::modKey ()\fC [protected, slot]\fP"
+.PP
+Definition at line 3065 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBVLBISet::Network::addKey(), isModified, Key, KeyList, SBVLBISet::Network::keys(), Network, and Str\&.
+.PP
+Referenced by SBVLBINetEntryEditor()\&.
+.SS "void SBVLBINetEntryEditor::networkModified (boolt0, \fBSBVLBISet::Network\fP *t1)\fC [signal]\fP"
+.PP
+Definition at line 1072 of file SbIObsVLBI\&.moc\&.C'\&.
+.PP
+Referenced by ~SBVLBINetEntryEditor()\&.
+.SS "void SBVLBINetEntryEditor::reject ()\fC [inline, protected, slot]\fP"
+.PP
+Definition at line 652 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by SBVLBINetEntryEditor()\&.
+.SS "void SBVLBINetEntryEditor::showKey (intidx)\fC [protected, slot]\fP"
+.PP
+Definition at line 3037 of file SbIObsVLBI\&.C'\&.
+.PP
+References Key, and KeyList\&.
+.PP
+Referenced by SBVLBINetEntryEditor()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBQMultiLineEdit\fP* \fBSBVLBINetEntryEditor::Descr\fP\fC [private]\fP"
+.PP
+Definition at line 664 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by accept(), and SBVLBINetEntryEditor()\&.
+.SS "QLineEdit* \fBSBVLBINetEntryEditor::ID\fP\fC [private]\fP"
+.PP
+Definition at line 663 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by accept(), and SBVLBINetEntryEditor()\&.
+.SS "bool \fBSBVLBINetEntryEditor::isModified\fP\fC [private]\fP"
+.PP
+Definition at line 661 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by accept(), addKey(), delKey(), modKey(), SBVLBINetEntryEditor(), and ~SBVLBINetEntryEditor()\&.
+.SS "QLineEdit* \fBSBVLBINetEntryEditor::Key\fP\fC [private]\fP"
+.PP
+Definition at line 665 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by addKey(), modKey(), SBVLBINetEntryEditor(), and showKey()\&.
+.SS "QListBox* \fBSBVLBINetEntryEditor::KeyList\fP\fC [private]\fP"
+.PP
+Definition at line 666 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by addKey(), delKey(), modKey(), SBVLBINetEntryEditor(), and showKey()\&.
+.SS "\fBQListViewItem\fP* \fBSBVLBINetEntryEditor::LI\fP\fC [private]\fP"
+.PP
+Definition at line 660 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by accept(), and SBVLBINetEntryEditor()\&.
+.SS "\fBSBVLBISet::Network\fP* \fBSBVLBINetEntryEditor::Network\fP\fC [private]\fP"
+.PP
+Definition at line 659 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by accept(), addKey(), delKey(), modKey(), SBVLBINetEntryEditor(), and ~SBVLBINetEntryEditor()\&.
+.SS "QString \fBSBVLBINetEntryEditor::Str\fP\fC [private]\fP"
+.PP
+Definition at line 662 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by accept(), addKey(), delKey(), and modKey()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

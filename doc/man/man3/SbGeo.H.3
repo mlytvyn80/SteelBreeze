@@ -1,0 +1,319 @@
+.TH "SbGeo.H" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SbGeo.H \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <config\&.h>\fP
+.br
+\fC#include <qdatetime\&.h>\fP
+.br
+\fC#include <qdict\&.h>\fP
+.br
+\fC#include <qtextstream\&.h>\fP
+.br
+\fC#include 'SbGeneral\&.H'\fP
+.br
+\fC#include 'SbGeoTime\&.H'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSBDated\fP"
+.br
+.ti -1c
+.RI "class \fBSBDList\fP"
+.br
+.ti -1c
+.RI "class \fBSBNamed\fP"
+.br
+.ti -1c
+.RI "class \fBSBNList\fP"
+.br
+.ti -1c
+.RI "class \fBSBInstitution\fP"
+.br
+.ti -1c
+.RI "class \fBSBInstitutionList\fP"
+.br
+.ti -1c
+.RI "class \fBSBSolutionName\fP"
+.br
+.ti -1c
+.RI "class \fBSBCatalog\fP"
+.br
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBRAD2DEG\fP   (180\&.0/M_PI)"
+.br
+.ti -1c
+.RI "#define \fBRAD2HR\fP   (12\&.0 /M_PI)"
+.br
+.ti -1c
+.RI "#define \fBDEG2RAD\fP   (M_PI/180\&.0)"
+.br
+.ti -1c
+.RI "#define \fBHR2RAD\fP   (M_PI/ 12\&.0)"
+.br
+.ti -1c
+.RI "#define \fBSEC2RAD\fP   (DEG2RAD/3600\&.0)"
+.br
+.ti -1c
+.RI "#define \fBRAD2SEC\fP   (RAD2DEG*3600\&.0)"
+.br
+.ti -1c
+.RI "#define \fBDAY2SEC\fP   (86400\&.0)"
+.br
+.ti -1c
+.RI "#define \fBRAD2MAS\fP   (RAD2SEC*1000\&.0)"
+.br
+.ti -1c
+.RI "#define \fBRAD2MS\fP   (RAD2HR*3600\&.0*1000\&.0)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBQList\fP< \fBSBDated\fP > \fBSBDoubleList\fP"
+.br
+.ti -1c
+.RI "typedef \fBQListIterator\fP< \fBSBDated\fP > \fBSBDIterator\fP"
+.br
+.ti -1c
+.RI "typedef \fBQListIterator\fP< \fBSBNamed\fP > \fBSBNIterator\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBTechnique\fP { \fBTECH_VLBI\fP, \fBTECH_OA\fP, \fBTECH_LLR\fP, \fBTECH_GPS\fP, \fBTECH_SLR\fP, \fBTECH_DORIS\fP, \fBTECH_COMBINED\fP, \fBTECH_CG\fP, \fBTECH_AD\fP, \fBTECH_TIE\fP, \fBTECH_UNKN\fP, \fBTECH_ANY\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBsign\fP (const double x)"
+.br
+.ti -1c
+.RI "double \fBsign\fP (const double a1, const double a2)"
+.br
+.ti -1c
+.RI "double \fBhms2rad\fP (int h, int m, double s)"
+.br
+.ti -1c
+.RI "double \fBdms2rad\fP (int d, int m, double s)"
+.br
+.ti -1c
+.RI "void \fBrad2hms\fP (double, int &, int &, double &)"
+.br
+.ti -1c
+.RI "void \fBrad2dms\fP (double, int &, int &, double &)"
+.br
+.ti -1c
+.RI "void \fBrad2dmsl\fP (double, int &, int &, double &)"
+.br
+.ti -1c
+.RI "QString \fBrad2hmsStr\fP (double)"
+.br
+.ti -1c
+.RI "QString \fBrad2dmsStr\fP (double)"
+.br
+.ti -1c
+.RI "QString \fBrad2dmslStr\fP (double)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBSBInstitutionList\fP * \fBInstitutions\fP"
+.br
+.in -1c
+.SH "Define Documentation"
+.PP 
+.SS "#define DAY2SEC   (86400\&.0)"seconds in one day 
+.PP
+Definition at line 56 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBDelay::calc(), SBNutation::calcGST(), collectListOfSINEXParameters4NEQ(), SBRunManager::constraintEOP(), SBTestFrame::createWidget4Test(), SBTime::DefineTAI_UTC(), SBTestFrame::displayValues(), SBTestEOP::fillData4Plotting(), SBTestDiurnEOP::fillData4Plotting(), SBRunManager::fillParameterList(), SBEphem::interp(), SBEOP::interpolateEOPs(), SBRunManager::makeReportEOP(), SBMJD::MJD_rev(), SBMJD::MJD_time(), SBEphemDE200::SBEphemDE200(), SBEphemDE403::SBEphemDE403(), SBEphemDE405::SBEphemDE405(), SBParametersDesc::SBParametersDesc(), SBTime::setUTC(), sinex_tro_MakeMeansTrops(), SBMJD::toString(), and writeNormalEquationSystem()\&.
+.SS "#define DEG2RAD   (M_PI/180\&.0)"degrees to radians 
+.PP
+Definition at line 44 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBRefraction::altitudeCorr(), SBOceanTideLd::ARG_IERS(), SBStation::axisOffsetLenght(), SBNutThIAU1996::calc(), SBOTideEOPRay1994_1996::calc(), dms2rad(), SBOceanTideLd::operator()(), operator>>(), SBConfig::SBConfig(), SBSource::SBSource(), and SBTime::setUTC()\&.
+.SS "#define HR2RAD   (M_PI/ 12\&.0)"hours to radians 
+.PP
+Definition at line 47 of file SbGeo\&.H'\&.
+.PP
+Referenced by hms2rad(), and SBSource::SBSource()\&.
+.SS "#define RAD2DEG   (180\&.0/M_PI)"radians to degrees 
+.PP
+Definition at line 38 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBSourceListItem::key(), SB_CRF::lookupNearest(), SBRefraction::makeDebugReport(), SBModelEditor::makeDefault(), SBRunManager::makeReportMaps(), operator<<(), rad2dms(), rad2dmsl(), SBSourceListItem::text(), and SBModelEditor::wLightPropagation()\&.
+.SS "#define RAD2HR   (12\&.0 /M_PI)"radians to hours 
+.PP
+Definition at line 41 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBSourceListItem::key(), operator<<(), rad2hms(), and SBSourceListItem::text()\&.
+.SS "#define RAD2MAS   (RAD2SEC*1000\&.0)"radians to mas 
+.PP
+Definition at line 59 of file SbGeo\&.H'\&.
+.PP
+Referenced by writeNormalEquationSystem()\&.
+.SS "#define RAD2MS   (RAD2HR*3600\&.0*1000\&.0)"radians to ms 
+.PP
+Definition at line 62 of file SbGeo\&.H'\&.
+.SS "#define RAD2SEC   (RAD2DEG*3600\&.0)"radians to arc seconds 
+.PP
+Definition at line 53 of file SbGeo\&.H'\&.
+.PP
+Referenced by collectListOfSINEXParameters4NEQ(), SBTestNutation::createWidget4Test(), SBTestFrame::createWidget4Test(), SBTestNutation::displayValues(), SBTestFrame::displayValues(), SBRunManager::fillParameterList(), SBRunManager::makeReportEOP(), SBRunManager::makeReportMaps(), SBPolarTideLd::operator()(), and SBParametersDesc::SBParametersDesc()\&.
+.SS "#define SEC2RAD   (DEG2RAD/3600\&.0)"arc seconds to radians 
+.PP
+Definition at line 50 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBOTideEOPGenS::calc(), SBFrameClassic::calc(), SBNutThIAU1980::calc(), SBNutThIAU1996::calc(), SBNutThIAU2000A::calc(), SBNROThIAU2000A::calc(), SBOTideEOPRay1994_1996::calc(), SBOTideEOPRay1994_2003::calc(), SBATideEOP_BBP_02::calc(), SBNonTideEOP_Viron_02::calc(), SBGravTideEOP_B_02::calc(), SBNut_IAU2000::calcGST(), SBRunManager::constraintEOP(), SBRunManager::constraintSourceCoord(), SBTestEOP::fillData4Plotting(), SBTestDiurnEOP::fillData4Plotting(), SBTime::FundamentalArgs(), SBNut_IAU1980::geodesicNutation(), SBPrecNutNRO::geodesicNutation(), SBEOP::interpolateEOPs(), SBPrec_IAU1976::operator()(), SBPrec_IAU2000::operator()(), SBNut_IAU1980::operator()(), SBNut_IAU2000::operator()(), SBPolus::operator()(), SBPolusNRO::operator()(), and SBFrameClassic::SBFrameClassic()\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBQListIterator\fP<\fBSBDated\fP> \fBSBDIterator\fP"
+.PP
+Definition at line 186 of file SbGeo\&.H'\&.
+.SS "typedef \fBQList\fP<\fBSBDated\fP> \fBSBDoubleList\fP"
+.PP
+Definition at line 185 of file SbGeo\&.H'\&.
+.SS "typedef \fBQListIterator\fP<\fBSBNamed\fP> \fBSBNIterator\fP"
+.PP
+Definition at line 263 of file SbGeo\&.H'\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBTechnique\fP"Known techniques'\&. 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fITECH_VLBI \fP\fP
+R: Radio interferometry;'\&. 
+.TP
+\fB\fITECH_OA \fP\fP
+A: optical astrometry;'\&. 
+.TP
+\fB\fITECH_LLR \fP\fP
+M: Lunar laser ranging;'\&. 
+.TP
+\fB\fITECH_GPS \fP\fP
+P: Global Positioning System;'\&. 
+.TP
+\fB\fITECH_SLR \fP\fP
+L: satellite laser ranging;'\&. 
+.TP
+\fB\fITECH_DORIS \fP\fP
+D: satellite Doppler tracking;'\&. 
+.TP
+\fB\fITECH_COMBINED \fP\fP
+C: combined data;'\&. 
+.TP
+\fB\fITECH_CG \fP\fP
+G: conventional geodesy (for SSC) 
+.TP
+\fB\fITECH_AD \fP\fP
+*: atmospheric data 
+.TP
+\fB\fITECH_TIE \fP\fP
+T: ties;'\&. 
+.TP
+\fB\fITECH_UNKN \fP\fP
+?: uknown'\&. 
+.TP
+\fB\fITECH_ANY \fP\fP
+_: any above 
+.PP
+Definition at line 127 of file SbGeo\&.H'\&.
+.SH "Function Documentation"
+.PP 
+.SS "double dms2rad (intd, intm, doubles)\fC [inline]\fP"Converts Degree, Min and Sec to Radians'\&. 
+.PP
+Definition at line 73 of file SbGeo\&.H'\&.
+.PP
+References DEG2RAD\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), and operator>>()\&.
+.SS "double hms2rad (inth, intm, doubles)\fC [inline]\fP"Converts Hour, Min and Sec to Radians'\&. 
+.PP
+Definition at line 70 of file SbGeo\&.H'\&.
+.PP
+References HR2RAD\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), and operator>>()\&.
+.SS "void rad2dms (double, int &, int &, double &)"Converts Radians to Degree, Min and Sec'\&. [-M_PI; M_PI] 
+.PP
+Definition at line 494 of file SbGeo\&.C'\&.
+.PP
+References RAD2DEG\&.
+.PP
+Referenced by SBSource::DN2str(), SBStationEditor::makeApply(), operator<<(), rad2dmsStr(), sinex_SiteIDBlock(), sinex_tro_SiteIDBlock(), SBSiteListItem::text(), SBSourceEditor::wCoordinates(), and SBStationEditor::wCoordinates()\&.
+.SS "void rad2dmsl (double, int &, int &, double &)"Converts Radians to Degree, Min and Sec'\&. [0; 2'\&.0*M_PI] 
+.PP
+Definition at line 503 of file SbGeo\&.C'\&.
+.PP
+References RAD2DEG\&.
+.PP
+Referenced by SBStationEditor::makeApply(), operator<<(), rad2dmslStr(), sinex_SiteIDBlock(), sinex_tro_SiteIDBlock(), SBSiteListItem::text(), and SBStationEditor::wCoordinates()\&.
+.SS "QString rad2dmslStr (double)"Converts Radians to string with Degree, Min and Sec'\&. [0; 2'\&.0*M_PI] 
+.PP
+Definition at line 521 of file SbGeo\&.C'\&.
+.PP
+References rad2dmsl()\&.
+.PP
+Referenced by SBFrameClassic::calc(), SBTestFrame::createWidget4Test(), SBTestFrame::displayValues(), SBRefraction::operator()(), SBNut_IAU1980::operator()(), SBNut_IAU2000::operator()(), and SBTime::setUTC()\&.
+.SS "QString rad2dmsStr (double)"Converts Radians to string with Degree, Min and Sec'\&. [-M_PI; M_PI] 
+.PP
+Definition at line 512 of file SbGeo\&.C'\&.
+.PP
+References rad2dms()\&.
+.PP
+Referenced by SBTestPrecession::createWidget4Test(), SBTestNutation::createWidget4Test(), SBTestEphem::displayCoo(), SBTestPrecession::displayValues(), SBTestNutation::displayValues(), and SBRefraction::operator()()\&.
+.SS "void rad2hms (double, int &, int &, double &)"Converts Radians to Hour, Min and Sec'\&. 
+.PP
+Definition at line 485 of file SbGeo\&.C'\&.
+.PP
+References RAD2HR\&.
+.PP
+Referenced by operator<<(), SBSource::RA2str(), rad2hmsStr(), SBVLBISesInfoLI::text(), and SBSourceEditor::wCoordinates()\&.
+.SS "QString rad2hmsStr (double)"Converts Radians to string with Hour, Min and Sec'\&. 
+.PP
+Definition at line 530 of file SbGeo\&.C'\&.
+.PP
+References rad2hms()\&.
+.PP
+Referenced by SBFrameClassic::calc(), SBTestEphem::displayCoo(), and SBTime::setUTC()\&.
+.SS "double sign (const doublex)\fC [inline]\fP"
+.PP
+Definition at line 66 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBMEM::calcA_LSBackward(), SBMEM::calcA_LSFnB(), SBMEM::calcA_LSForward(), SBStation::calcRLF(), SBEstimator::dataUpdate(), SBEstimator::dataUpdateGlobalConstr(), makeHouseholder(), SBEstimator::mapContStochs4NewBatch(), SBEstimator::moveGlobalInfo(), SBEstimator::moveGlobalInfo_Old(), SBEstimator::propagateStochasticPars(), sign(), and writeNormalEquationSystem()\&.
+.SS "double sign (const doublea1, const doublea2)\fC [inline]\fP"
+.PP
+Definition at line 67 of file SbGeo\&.H'\&.
+.PP
+References sign()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "\fBSBInstitutionList\fP* \fBInstitutions\fP"
+.PP
+Definition at line 27 of file SbGeo\&.C'\&.
+.PP
+Referenced by SBSetUp::LoadStuff(), SBSetupDialog::makeApply(), SBSetUp::SaveStuff(), SBSetupDialog::SBSetupDialog(), SBSetUp::SetDefaults(), and SBMainWindow::~SBMainWindow()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

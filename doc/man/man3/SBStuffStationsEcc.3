@@ -1,0 +1,193 @@
+.TH "SBStuffStationsEcc" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBStuffStationsEcc \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIStuffStation\&.H>\fP
+.PP
+Inherits \fBQDialog\fP'\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBeccModified\fP (bool)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBStuffStationsEcc\fP (\fBSB_TRF\fP *, \fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "\fB~SBStuffStationsEcc\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBcloseEvent\fP (QCloseEvent *e)"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBimportData\fP ()"
+.br
+.ti -1c
+.RI "void \fBexportData\fP ()"
+.br
+.ti -1c
+.RI "void \fBaccept\fP ()"
+.br
+.ti -1c
+.RI "void \fBreject\fP ()"
+.br
+.ti -1c
+.RI "void \fBeditEntry\fP (\fBQListViewItem\fP *)"
+.br
+.ti -1c
+.RI "void \fBinsertEntry\fP ()"
+.br
+.ti -1c
+.RI "void \fBdeleteEntry\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBEcc\fP * \fBEcc\fP"
+.br
+.ti -1c
+.RI "\fBSB_TRF\fP * \fBWtrf\fP"
+.br
+.ti -1c
+.RI "\fBQListView\fP * \fBEccLV\fP"
+.br
+.ti -1c
+.RI "bool \fBisModified\fP"
+.br
+.ti -1c
+.RI "int \fBnumOpenedWindows\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 213 of file SbIStuffStation\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBStuffStationsEcc::SBStuffStationsEcc (\fBSB_TRF\fP *Wtrf_, \fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 461 of file SbIStuffStation\&.C'\&.
+.PP
+References accept(), deleteEntry(), Ecc, SB_TRF::ecc(), EccLV, editEntry(), exportData(), importData(), insertEntry(), isModified, numOpenedWindows, reject(), and Wtrf\&.
+.SS "SBStuffStationsEcc::~SBStuffStationsEcc ()"
+.PP
+Definition at line 561 of file SbIStuffStation\&.C'\&.
+.PP
+References eccModified(), and isModified\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBStuffStationsEcc::accept ()\fC [private, slot]\fP"
+.PP
+Definition at line 566 of file SbIStuffStation\&.C'\&.
+.PP
+References numOpenedWindows\&.
+.PP
+Referenced by SBStuffStationsEcc()\&.
+.SS "virtual QString SBStuffStationsEcc::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 220 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by deleteEntry(), editEntry(), importData(), and insertEntry()\&.
+.SS "virtual void SBStuffStationsEcc::closeEvent (QCloseEvent *e)\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 248 of file SbIStuffStation\&.H'\&.
+.PP
+References numOpenedWindows\&.
+.SS "void SBStuffStationsEcc::deleteEntry ()\fC [private, slot]\fP"
+.PP
+Definition at line 618 of file SbIStuffStation\&.C'\&.
+.PP
+References SBEccentricity::aka(), ClassName(), SBLog::DBG, SBEccListItem::ecc(), Ecc, EccLV, SBStationEcc::eccs(), SBLog::ERR, SBMJD::F_DateShort, SBLog::INTERFACE, isModified, Log, SBEccListItem::stEcc(), SBEccentricity::tFinis(), SBMJD::toString(), SBStationID::toString(), SBEccentricity::tStart(), and SBLog::write()\&.
+.PP
+Referenced by SBStuffStationsEcc()\&.
+.SS "void SBStuffStationsEcc::eccModified (boolt0)\fC [signal]\fP"
+.PP
+Definition at line 279 of file SbIStuffStation\&.moc\&.C'\&.
+.PP
+Referenced by ~SBStuffStationsEcc()\&.
+.SS "void SBStuffStationsEcc::editEntry (\fBQListViewItem\fP *)\fC [private, slot]\fP"
+.PP
+Definition at line 608 of file SbIStuffStation\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by SBStuffStationsEcc()\&.
+.SS "void SBStuffStationsEcc::exportData ()\fC [private, slot]\fP"
+.PP
+Definition at line 604 of file SbIStuffStation\&.C'\&.
+.PP
+Referenced by SBStuffStationsEcc()\&.
+.SS "void SBStuffStationsEcc::importData ()\fC [private, slot]\fP"
+.PP
+Definition at line 580 of file SbIStuffStation\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SB_TRF::ecc(), SBEcc::importEccDat(), SBLog::INTERFACE, isModified, Log, numOpenedWindows, SBSetUp::path2Import(), SetUp, SBLog::STATION, SBLog::write(), and Wtrf\&.
+.PP
+Referenced by SBStuffStationsEcc()\&.
+.SS "void SBStuffStationsEcc::insertEntry ()\fC [private, slot]\fP"
+.PP
+Definition at line 613 of file SbIStuffStation\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, Log, and SBLog::write()\&.
+.PP
+Referenced by SBStuffStationsEcc()\&.
+.SS "void SBStuffStationsEcc::reject ()\fC [private, slot]\fP"
+.PP
+Definition at line 573 of file SbIStuffStation\&.C'\&.
+.PP
+References numOpenedWindows\&.
+.PP
+Referenced by SBStuffStationsEcc()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSBEcc\fP* \fBSBStuffStationsEcc::Ecc\fP\fC [private]\fP"
+.PP
+Definition at line 239 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by deleteEntry(), and SBStuffStationsEcc()\&.
+.SS "\fBQListView\fP* \fBSBStuffStationsEcc::EccLV\fP\fC [private]\fP"
+.PP
+Definition at line 242 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by deleteEntry(), and SBStuffStationsEcc()\&.
+.SS "bool \fBSBStuffStationsEcc::isModified\fP\fC [private]\fP"
+.PP
+Definition at line 244 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by deleteEntry(), importData(), SBStuffStationsEcc(), and ~SBStuffStationsEcc()\&.
+.SS "int \fBSBStuffStationsEcc::numOpenedWindows\fP\fC [private]\fP"
+.PP
+Definition at line 245 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by accept(), closeEvent(), importData(), reject(), and SBStuffStationsEcc()\&.
+.SS "\fBSB_TRF\fP* \fBSBStuffStationsEcc::Wtrf\fP\fC [private]\fP"
+.PP
+Definition at line 240 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by importData(), and SBStuffStationsEcc()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

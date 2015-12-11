@@ -1,0 +1,95 @@
+.TH "SBMEMECoeffLI" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBMEMECoeffLI \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIMEM\&.H>\fP
+.PP
+Inherits \fBQListViewItem\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBMEMECoeffLI\fP (\fBQListView\fP *parent, unsigned int Idx_, std::complex< double > C_)"
+.br
+.ti -1c
+.RI "std::complex< double > \fBc\fP ()"
+.br
+.ti -1c
+.RI "unsigned int \fBidx\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual QString \fBtext\fP (int) const "
+.br
+.ti -1c
+.RI "virtual QString \fBkey\fP (int, bool) const "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::complex< double > \fBC\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBIdx\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 42 of file SbIMEM\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBMEMECoeffLI::SBMEMECoeffLI (\fBQListView\fP *parent, unsigned intIdx_, std::complex< double >C_)\fC [inline]\fP"
+.PP
+Definition at line 49 of file SbIMEM\&.H'\&.
+.PP
+References C, and Idx\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::complex<double> SBMEMECoeffLI::c ()\fC [inline]\fP"
+.PP
+Definition at line 51 of file SbIMEM\&.H'\&.
+.PP
+References C\&.
+.SS "virtual QString SBMEMECoeffLI::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 53 of file SbIMEM\&.H'\&.
+.SS "unsigned int SBMEMECoeffLI::idx ()\fC [inline]\fP"
+.PP
+Definition at line 52 of file SbIMEM\&.H'\&.
+.PP
+References Idx\&.
+.SS "QString SBMEMECoeffLI::key (intcol, bool) const\fC [virtual]\fP"
+.PP
+Definition at line 74 of file SbIMEM\&.C'\&.
+.PP
+References C, Idx, and TmpString\&.
+.SS "QString SBMEMECoeffLI::text (intcol) const\fC [virtual]\fP"
+.PP
+Definition at line 59 of file SbIMEM\&.C'\&.
+.PP
+References C, Idx, and TmpString\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::complex<double> \fBSBMEMECoeffLI::C\fP\fC [private]\fP"
+.PP
+Definition at line 45 of file SbIMEM\&.H'\&.
+.PP
+Referenced by c(), key(), SBMEMECoeffLI(), and text()\&.
+.SS "unsigned int \fBSBMEMECoeffLI::Idx\fP\fC [private]\fP"
+.PP
+Definition at line 46 of file SbIMEM\&.H'\&.
+.PP
+Referenced by idx(), key(), SBMEMECoeffLI(), and text()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

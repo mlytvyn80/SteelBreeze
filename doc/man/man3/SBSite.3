@@ -1,0 +1,723 @@
+.TH "SBSite" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBSite \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoStations\&.H>\fP
+.PP
+Inherits \fBSBNamed\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSite\fP (const QString &='Zabriski Point')"
+.br
+.ti -1c
+.RI "\fBSBSite\fP (const \fBSBSite\fP &)"
+.br
+.ti -1c
+.RI "virtual \fB~SBSite\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual \fBSBSite\fP & \fBoperator=\fP (const \fBSBSite\fP &)"
+.br
+.ti -1c
+.RI "int \fBdomeMajor\fP () const "
+.br
+.ti -1c
+.RI "QString \fBcountry\fP () const "
+.br
+.ti -1c
+.RI "QString \fBplate\fP () const "
+.br
+.ti -1c
+.RI "\fBSBOLoad\fP & \fBoLoad\fP ()"
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBr\fP () const "
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBv\fP () const "
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBv_err\fP () const "
+.br
+.ti -1c
+.RI "double \fBlongitude\fP () const "
+.br
+.ti -1c
+.RI "double \fBlatitude\fP () const "
+.br
+.ti -1c
+.RI "double \fBheight\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetDomeMajor\fP (int Domes_)"
+.br
+.ti -1c
+.RI "void \fBsetCountry\fP (const char *Country_)"
+.br
+.ti -1c
+.RI "void \fBsetPlate\fP (const char *Plate_)"
+.br
+.ti -1c
+.RI "void \fBsetOLoad\fP (const \fBSBOLoad\fP &OLoad_)"
+.br
+.ti -1c
+.RI "void \fBsetV\fP (const \fBVector3\fP &V_)"
+.br
+.ti -1c
+.RI "void \fBsetV_err\fP (const \fBVector3\fP &dV_)"
+.br
+.ti -1c
+.RI "void \fBsetLongitude\fP (double Longitude_)"
+.br
+.ti -1c
+.RI "void \fBsetLatitude\fP (double Latitude_)"
+.br
+.ti -1c
+.RI "void \fBsetHeight\fP (double Height_)"
+.br
+.ti -1c
+.RI "\fBSBStationList\fP & \fBstations\fP ()"
+.br
+.ti -1c
+.RI "\fBSBStation\fP * \fBoperator[]\fP (const \fBSBStationID\fP &ID)"
+.br
+.ti -1c
+.RI "\fBSBStation\fP * \fBfind\fP (const \fBSBStationID\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBaddStation\fP (\fBSBStation\fP *)"
+.br
+.ti -1c
+.RI "virtual bool \fBdelStation\fP (\fBSBStation\fP *)"
+.br
+.ti -1c
+.RI "void \fBcalcRLF\fP ()"
+.br
+.ti -1c
+.RI "int \fBfirstUnusedNumber\fP (\fBSBStation::SPointType\fP)"
+.br
+.ti -1c
+.RI "int \fBlastUnusedNumber\fP (\fBSBStation::SPointType\fP)"
+.br
+.ti -1c
+.RI "void \fBupdateSite\fP (const \fBSBSite\fP &)"
+.br
+.ti -1c
+.RI "const QString & \fBname\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetName\fP (const QString &Name_)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBName\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcopyStationsList\fP (const \fBSBStationList\fP &)"
+.br
+.ti -1c
+.RI "void \fBupdateStationsList\fP (const \fBSBStationList\fP &)"
+.br
+.ti -1c
+.RI "void \fBprepareDicts\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBDomeMajor\fP"
+.br
+.ti -1c
+.RI "QString \fBCountry\fP"
+.br
+.ti -1c
+.RI "QString \fBPlate\fP"
+.br
+.ti -1c
+.RI "\fBSBOLoad\fP \fBOLoad\fP"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBR\fP"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBV\fP"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBdV\fP"
+.br
+.ti -1c
+.RI "double \fBLongitude\fP"
+.br
+.ti -1c
+.RI "double \fBLatitude\fP"
+.br
+.ti -1c
+.RI "double \fBHeight\fP"
+.br
+.ti -1c
+.RI "\fBSBStationList\fP \fBStations\fP"
+.br
+.ti -1c
+.RI "QIntDict< \fBSBStation\fP > * \fBSt_S\fP"
+.br
+.ti -1c
+.RI "QIntDict< \fBSBStation\fP > * \fBSt_M\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSB_TRF\fP"
+.br
+.ti -1c
+.RI "class \fBSBStation\fP"
+.br
+.ti -1c
+.RI "class \fBSBSiteEditor\fP"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBSBSite\fP &S1, const \fBSBSite\fP &S2)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBSBSite\fP &S1, const \fBSBSite\fP &S2)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBSBSite\fP &S1, const \fBSBSite\fP &S2)"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBSBSite\fP &S1, const \fBSBSite\fP &S2)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBSite\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBSite\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_site1994\fP & \fBoperator<<\fP (\fBSBTS_site1994\fP &, const \fBSBSite\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_site1994\fP & \fBoperator>>\fP (\fBSBTS_site1994\fP &, \fBSBSite\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_site2000\fP & \fBoperator<<\fP (\fBSBTS_site2000\fP &, const \fBSBSite\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_site2000\fP & \fBoperator>>\fP (\fBSBTS_site2000\fP &, \fBSBSite\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_dir1994\fP & \fBoperator<<\fP (\fBSBTS_dir1994\fP &, const \fBSBSite\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_dir1994\fP & \fBoperator>>\fP (\fBSBTS_dir1994\fP &, \fBSBSite\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_dir1994\fP & \fBoperator>>\fP (\fBSBTS_dir1994\fP &, \fBSB_TRF\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_dir2000\fP & \fBoperator<<\fP (\fBSBTS_dir2000\fP &, const \fBSBSite\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_dir2000\fP & \fBoperator>>\fP (\fBSBTS_dir2000\fP &, \fBSBSite\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_dir2000\fP & \fBoperator>>\fP (\fBSBTS_dir2000\fP &, \fBSB_TRF\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_ssc1994\fP & \fBoperator<<\fP (\fBSBTS_ssc1994\fP &, const \fBSBSite\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_ssc1994\fP & \fBoperator>>\fP (\fBSBTS_ssc1994\fP &, \fBSB_TRF\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_ssc2000\fP & \fBoperator<<\fP (\fBSBTS_ssc2000\fP &, const \fBSBSite\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_ssc2000\fP & \fBoperator>>\fP (\fBSBTS_ssc2000\fP &, \fBSB_TRF\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_blqReq\fP & \fBoperator<<\fP (\fBSBTS_blqReq\fP &, const \fBSBSite\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "int \fBcmp\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBNamed\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 886 of file SbGeoStations\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBSite::SBSite (const QString &Name_ = \fC'Zabriski Point'\fP)"
+.PP
+Definition at line 1720 of file SbGeoStations\&.C'\&.
+.PP
+References Country, DomeMajor, Height, Latitude, Longitude, Plate, prepareDicts(), St_M, St_S, and Stations\&.
+.SS "SBSite::SBSite (const \fBSBSite\fP &S)"
+.PP
+Definition at line 1735 of file SbGeoStations\&.C'\&.
+.PP
+References copyStationsList(), Country, DomeMajor, Height, Latitude, Longitude, Plate, prepareDicts(), St_M, St_S, and Stations\&.
+.SS "virtual SBSite::~SBSite ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 920 of file SbGeoStations\&.H'\&.
+.PP
+References St_M, and St_S\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBSite::addStation (\fBSBStation\fP *Station)\fC [virtual]\fP"
+.PP
+Definition at line 1882 of file SbGeoStations\&.C'\&.
+.PP
+References ClassName(), SBStation::domeMinor(), SBLog::ERR, SBStation::id(), Log, SBNamed::name(), SBStation::pointType(), SBStation::Pt_Antenna, SBStation::Pt_Unkn, St_M, St_S, SBLog::STATION, Stations, SBStationID::toString(), and SBLog::write()\&.
+.PP
+Referenced by SBStationImport::loadNScodes(), SBStationEditor::makeApply(), operator>>(), SBStuffStations::reloadTRF(), SBStuffStations::SBStuffStations(), and updateStationsList()\&.
+.SS "void SBSite::calcRLF ()"
+.PP
+Definition at line 1938 of file SbGeoStations\&.C'\&.
+.PP
+References SBStationList::first(), Height, Latitude, Longitude, SBStationList::next(), R, Stations, and v3Zero\&.
+.PP
+Referenced by SBStationImport::loadOLoad(), and operator>>()\&.
+.SS "virtual QString SBSite::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Reimplemented from \fBSBNamed\fP'\&.
+.PP
+Definition at line 921 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by addStation(), delStation(), and prepareDicts()\&.
+.SS "void SBSite::copyStationsList (const \fBSBStationList\fP &SL)\fC [private]\fP"
+.PP
+Definition at line 1768 of file SbGeoStations\&.C'\&.
+.PP
+References SBStation, and Stations\&.
+.PP
+Referenced by operator=(), and SBSite()\&.
+.SS "QString SBSite::country () const\fC [inline]\fP"
+.PP
+Definition at line 926 of file SbGeoStations\&.H'\&.
+.PP
+References Country\&.
+.PP
+Referenced by SBSiteEditor::acquireData(), SBSiteListItem::key(), operator<<(), SBSiteListItem::text(), and SBSiteEditor::wSite()\&.
+.SS "bool SBSite::delStation (\fBSBStation\fP *Station)\fC [virtual]\fP"
+.PP
+Definition at line 1913 of file SbGeoStations\&.C'\&.
+.PP
+References ClassName(), SBStation::domeMinor(), SBLog::ERR, find(), SBStation::id(), Log, SBNamed::name(), SBStation::pointType(), SBStation::Pt_Antenna, St_M, St_S, SBLog::STATION, Stations, and SBLog::write()\&.
+.PP
+Referenced by SBStationImport::applyFilter(), and SBSiteEditor::deleteEntry()\&.
+.SS "int SBSite::domeMajor () const\fC [inline]\fP"
+.PP
+Definition at line 925 of file SbGeoStations\&.H'\&.
+.PP
+References DomeMajor\&.
+.PP
+Referenced by SBSiteEditor::acquireData(), SB_TRF::find(), SBStation::id(), SB_TRF::inSort(), SBSiteListItem::key(), SBSiteEditor::makeApply(), operator<<(), SBOLoadCarrier::SBOLoadCarrier(), SBSiteListItem::text(), and SBSiteEditor::wSite()\&.
+.SS "\fBSBStation\fP * SBSite::find (const \fBSBStationID\fP &ID)"
+.PP
+Definition at line 1866 of file SbGeoStations\&.C'\&.
+.PP
+References SBStationID::DomeMinor, SBStation::Pt_Antenna, SBStation::Pt_Marker, SBStation::Pt_Unkn, SBStationID::PtType, St_M, and St_S\&.
+.PP
+Referenced by delStation(), SB_TRF::find(), SBStationEditor::makeApply(), operator[](), and updateStationsList()\&.
+.SS "int SBSite::firstUnusedNumber (\fBSBStation::SPointType\fPTp)"Returns first unused domes number 
+.PP
+\fBReturns:\fP
+.RS 4
+least unused DomeMinor for this site (int)'\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1955 of file SbGeoStations\&.C'\&.
+.PP
+References SBStationID::domeMinor(), SBStation::id(), SBStation::Pt_Antenna, SBStation::Pt_Unkn, St_M, and St_S\&.
+.SS "double SBSite::height () const\fC [inline]\fP"
+.PP
+Definition at line 934 of file SbGeoStations\&.H'\&.
+.PP
+References Height\&.
+.PP
+Referenced by SBSiteListItem::key(), and SBSiteListItem::text()\&.
+.SS "int SBSite::lastUnusedNumber (\fBSBStation::SPointType\fPTp)"Returns last unused domes number 
+.PP
+\fBReturns:\fP
+.RS 4
+largest unused DomeMinor for this site (int)'\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1969 of file SbGeoStations\&.C'\&.
+.PP
+References SBStation::Pt_Antenna, SBStation::Pt_Unkn, St_M, and St_S\&.
+.SS "double SBSite::latitude () const\fC [inline]\fP"
+.PP
+Definition at line 933 of file SbGeoStations\&.H'\&.
+.PP
+References Latitude\&.
+.PP
+Referenced by SBSiteListItem::key(), SBStationImport::loadOLoad(), operator<<(), SBOLoadCarrier::SBOLoadCarrier(), and SBSiteListItem::text()\&.
+.SS "double SBSite::longitude () const\fC [inline]\fP"
+.PP
+Definition at line 932 of file SbGeoStations\&.H'\&.
+.PP
+References Longitude\&.
+.PP
+Referenced by SBSiteListItem::key(), SBStationImport::loadOLoad(), operator<<(), SBOLoadCarrier::SBOLoadCarrier(), and SBSiteListItem::text()\&.
+.SS "const QString& SBNamed::name () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 215 of file SbGeo\&.H'\&.
+.PP
+References SBNamed::Name\&.
+.PP
+Referenced by SBVLBINetEntryEditor::accept(), SBSourceEditor::acquireData(), SBSiteEditor::acquireData(), SBStationEditor::acquireData(), SBStochParameter::addPar(), SBProject::addSession(), addStation(), SBParameterList::append(), SBVector::at(), SBMatrix::at(), SBUpperMatrix::at(), SBSymMatrix::at(), SBStation::axisOffsetLenght(), SBSolutionBrowser::batch4StochEOPChanged(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBEphem::calc(), SBStation::calcDisplacement(), SBSetupDialog::chkPacker(), SBVLBIPreProcess::clearPars(), SBEstimator::collectContStochs4NextBatch(), collectListOfSINEXParameters(), collectListOfSINEXParameters4NEQ(), SB_CRF::collectObjAliases(), SBObsVLBIStatistics::collectStatistics(), SBRunManager::constraintSourceCoord(), SBRunManager::constraintStationCoord(), SBRunManager::constraintStationVeloc(), SBSource::createParameters(), SBProjectCreate::createProject(), SBTestFrame::createWidget4Test(), SBTestEphem::createWidget4Test(), SBVLBIPreProcess::currentSesChange(), SBPlotArea::defineAreas(), SBSiteEditor::deleteEntry(), SBVLBISetView::deleteEntry(), SBStuffSources::deleteEntryS(), SBStuffStations::deleteEntryS(), SBSolution::deleteSolution(), SBSetupDialog::delInst(), SBSetupDialog::delPacker(), SBEstimator::Group::delParameter(), SBProjectEdit::delSession(), SBProject::delSession(), delStation(), SBPlateMotion::displacement(), SBStuffAplo::draw(), SBPlotArea::drawFrames(), SBStochParameter::dump2File(), SBSolution::dumpParameters(), SBBaseInfo::dumpUserInfo(), SBSourceInfo::dumpUserInfo(), SBVLBISession::dumpUserInfo(), SBVLBISet::dumpUserInfo(), SBParametersEditor::editParameter(), SBAploChunk::fillDict(), SBVLBISet::fillDicts(), SBVLBIPreProcess::fillObsListView(), SBVLBIPreProcess::fillSessAttr(), SBCatalog::find(), SBSolution::getGlobalParameter4Report(), SBAploChunk::import(), SBVLBISet::import(), SBEcc::importEccDat(), SBAploEphem::importHPS(), SBMaster::importMF(), SBProjectCreate::init(), SBFCList::insert(), SBInstitutionList::insert(), SBCatalog::insert(), SBParameterList::inSort(), SBCatalog::inSort(), SBStochParameterList::inSort(), SB_TRF::inSort(), SBObsVLBIStatSrcLI::key(), SBParameterLI::key(), SBSourceListItem::key(), SBStationListItem::key(), SBObsVLBIStatStaLI::key(), SBVLBISesInfoLI::key(), SBSiteListItem::key(), SBObsVLBIStatRecordLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBAploEntryLI::key(), SBTestStationLI::key(), SBStationImport::loadNScodes(), SBStationImport::loadOLoad(), SBSolution::loadStatistics(), SBRunManager::loadVLBISession_m1(), SBRunManager::loadVLBISessions_m2(), SB_CRF::lookupNearest(), SB_TRF::lookupNearest(), SBSolutionBrowser::lookupParameters(), SBSourceEditor::makeApply(), SBSiteEditor::makeApply(), SBStationEditor::makeApply(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportEOP(), SBRunManager::makeReportMaps(), SBRunManager::makeReportNormalEqs(), SBRunManager::makeReports(), SBRunManager::makeReportSessionStatistics(), SBRunManager::makeReportTRF(), SBRunManager::makeReportTRFVariations(), SBRunManager::makeReportTroposphere(), SBEstimator::mapContStochs4NewBatch(), SBMaster::mapFiles(), SBMaster::mapRecords(), matT_x_mat(), SBEstimator::moveGlobalInfo(), SBEstimator::moveGlobalInfo_Old(), SBFileConv::open4In(), SBFileConv::open4Out(), SBEphem::openFile(), SBVector::operator()(), SBSolidTideLd::operator()(), SBTideLd::operator()(), SBMatrix::operator()(), SBRefraction::operator()(), SBUpperMatrix::operator()(), operator*(), operator+(), SBVector::operator+=(), SBMatrix::operator+=(), SBUpperMatrix::operator+=(), operator-(), SBVector::operator-=(), SBMatrix::operator-=(), SBUpperMatrix::operator-=(), SBObsVLBIEntry::operator<(), operator<<(), SBVector::operator=(), SBMatrix::operator=(), SBUpperMatrix::operator=(), SBVLBISesInfo::operator=(), SBVector::operator==(), SBObsVLBIEntry::operator==(), SBVLBISesInfo::operator==(), operator>>(), operator~(), SBSymMatrix::operator~(), SBPlotArea::output4Files(), SBSolution::path2GlbDir(), SBSolution::path2LocDir(), SBSolution::path2StcDir(), SBEstimator::prepare4Local(), prepareDicts(), SBVLBIPreProcess::preProcess(), SBObsVLBIEntry::process(), SBRunManager::process_m1(), SBRunManager::process_m2(), SBVLBIPreProcess::procScenario_2(), SBProjectSel::ProjectListItem::ProjectListItem(), QuadraticForm(), SBRefraction::refrDir(), SBAploEphem::registerStation(), SBInstitutionList::remove(), SBParameterList::remove(), SBStochParameterList::remove(), SBVLBISet::removeSession(), SBParameterList::report(), SBStochParameter::report(), SBBaseInfo::restoreUserInfo(), SBSourceInfo::restoreUserInfo(), SBVLBISession::restoreUserInfo(), RRT(), RTR(), SBParameter::rw(), SBPlot::save2PS(), SBVLBISet::saveSession(), SBRunManager::saveVLBISessions_m1(), SBRunManager::saveVLBISessions_m2(), SBCoordsEditor::SBCoordsEditor(), SBEstimator::SBEstimator(), SBModelEditor::SBModelEditor(), SBObsVLBIStatBrowser::SBObsVLBIStatBrowser(), SBObsVLBIStatSrc::SBObsVLBIStatSrc(), SBObsVLBIStatSta::SBObsVLBIStatSta(), SBParametersEditor::SBParametersEditor(), SBPlateMotion::SBPlateMotion(), SBPlot::SBPlot(), SBPlotDialog::SBPlotDialog(), SBProjectEdit::SBProjectEdit(), SBRunManager::SBRunManager(), SBSolution::SBSolution(), SBSolutionBrowser::SBSolutionBrowser(), SBStuffEphem::SBStuffEphem(), SBTestAPLoad::SBTestAPLoad(), SBTestDiurnEOP::SBTestDiurnEOP(), SBTestEphem::SBTestEphem(), SBTestFrame::SBTestFrame(), SBTestNutation::SBTestNutation(), SBTestOceanTides::SBTestOceanTides(), SBTestPolarTides::SBTestPolarTides(), SBTestSolidTides::SBTestSolidTides(), SBVLBINetEntryEditor::SBVLBINetEntryEditor(), SBVLBISessionEditor::SBVLBISessionEditor(), SBVector::set(), SBMatrix::set(), SBUpperMatrix::set(), SBMatrix::setCol(), SBUpperMatrix::setCol(), SBFCList::setDefault(), SB_TRF::setSiteName(), SBMatrix::setVector(), SBUpperMatrix::setVector(), Solve(), SBEstimator::solveLocals(), SBObsVLBIEntry::source(), SBTestSolidTides::stationChange(), SBTestOceanTides::stationChange(), SBTestPolarTides::stationChange(), SBTestAPLoad::stationChange(), SBParameter::str4compare(), SBRunManager::stripTRF(), SBSolution::submitGlobalParameters(), SBSolution::submitLocalParameters(), SBSolution::submitStochasticParameters(), SBMatrix::T(), SBUpperMatrix::T(), SBFileConvLI::text(), SBParameterLI::text(), SBObsVLBIStatSrcLI::text(), SBSourceListItem::text(), SBStationListItem::text(), SBObsVLBIStatStaLI::text(), SBVLBISesInfoLI::text(), SBSolutionBatchLI::text(), SBSiteListItem::text(), SBObsVLBIStatRecordLI::text(), SBVLBISesPreProcLI::text(), SBSetupDialog::SBInstLI::text(), SBBasInfoLI::text(), SBSouInfoLI::text(), SBAploEntryLI::text(), SBTestStationLI::text(), SBVLBINetworkEditor::NetworkListItem::text(), SBMasterRecBrowser::SBMRListItem::text(), SBStochParameter::update(), SBSolution::updateParameter(), SBVLBIPreProcess::updateSession(), SBParameterList::updateSolution(), SBMainWindow::UtilitiesCollectStat4Prj(), SBPlateMotion::velocity(), SBVLBIPreProcess::wAttributes(), SBSourceEditor::wCoordinates(), SBParametersEditor::wEOPParameters(), SBSolutionBrowser::wLocalEOPPars(), SBSolutionBrowser::wLocalSoPars(), SBSolutionBrowser::wLocalStPars(), SBStationEditor::wNames(), SBVLBISessionEditor::wObservs(), SBParametersEditor::wOtherParameters(), SBVLBISessionEditor::wParameters(), writeNormalEquationSystem(), SBSiteEditor::wSite(), SBParametersEditor::wSourceParameters(), SBParametersEditor::wStationParameters(), SBSolutionBrowser::wStochEOPPars(), SBSolutionBrowser::wStochSoPars(), SBSolutionBrowser::wStochStPars(), SBParametersEditor::wTestParameters(), and SBSolutionBrowser::wWRMSs()\&.
+.SS "\fBSBOLoad\fP& SBSite::oLoad ()\fC [inline]\fP"
+.PP
+Definition at line 928 of file SbGeoStations\&.H'\&.
+.PP
+References OLoad\&.
+.PP
+Referenced by SBTestOceanTides::fillData4Plotting(), SBSiteListItem::key(), SBStationImport::loadOLoad(), SBTideLd::operator()(), SBOLoadCarrier::SBOLoadCarrier(), and SBSiteListItem::text()\&.
+.SS "\fBSBSite\fP & SBSite::operator= (const \fBSBSite\fP &S)\fC [virtual]\fP"
+.PP
+Definition at line 1751 of file SbGeoStations\&.C'\&.
+.PP
+References copyStationsList(), Country, dV, Height, Latitude, Longitude, SBNamed::Name, OLoad, Plate, prepareDicts(), Stations, and V\&.
+.SS "\fBSBStation\fP* SBSite::operator[] (const \fBSBStationID\fP &ID)\fC [inline]\fP"
+.PP
+Definition at line 947 of file SbGeoStations\&.H'\&.
+.PP
+References find()\&.
+.SS "QString SBSite::plate () const\fC [inline]\fP"
+.PP
+Definition at line 927 of file SbGeoStations\&.H'\&.
+.PP
+References Plate\&.
+.PP
+Referenced by SBSiteEditor::acquireData(), SBPlateMotion::displacement(), SBSiteListItem::key(), operator<<(), SBSiteListItem::text(), SBPlateMotion::velocity(), and SBSiteEditor::wSite()\&.
+.SS "void SBSite::prepareDicts ()\fC [private]\fP"
+.PP
+Definition at line 1836 of file SbGeoStations\&.C'\&.
+.PP
+References ClassName(), SBStation::domeMinor(), SBLog::ERR, SBStation::id(), Log, SBNamed::name(), SBStation::pointType(), SBStation::Pt_Antenna, SBStation::Pt_Marker, SBStation::Site, St_M, St_S, SBLog::STATION, Stations, SBStationID::toString(), and SBLog::write()\&.
+.PP
+Referenced by operator=(), operator>>(), SBSite(), and updateSite()\&.
+.SS "const \fBVector3\fP& SBSite::r () const\fC [inline]\fP"
+.PP
+Definition at line 929 of file SbGeoStations\&.H'\&.
+.PP
+References R\&.
+.PP
+Referenced by SBStationListItem::key(), SBStationImport::loadOLoad(), and SBStationListItem::text()\&.
+.SS "void SBSite::setCountry (const char *Country_)\fC [inline]\fP"
+.PP
+Definition at line 937 of file SbGeoStations\&.H'\&.
+.PP
+References Country\&.
+.PP
+Referenced by SBSiteEditor::acquireData(), and operator>>()\&.
+.SS "void SBSite::setDomeMajor (intDomes_)\fC [inline]\fP"
+.PP
+Definition at line 936 of file SbGeoStations\&.H'\&.
+.PP
+References DomeMajor\&.
+.PP
+Referenced by SBSiteEditor::acquireData(), and operator>>()\&.
+.SS "void SBSite::setHeight (doubleHeight_)\fC [inline]\fP"
+.PP
+Definition at line 944 of file SbGeoStations\&.H'\&.
+.PP
+References Height\&.
+.SS "void SBSite::setLatitude (doubleLatitude_)\fC [inline]\fP"
+.PP
+Definition at line 943 of file SbGeoStations\&.H'\&.
+.PP
+References Latitude\&.
+.SS "void SBSite::setLongitude (doubleLongitude_)\fC [inline]\fP"
+.PP
+Definition at line 942 of file SbGeoStations\&.H'\&.
+.PP
+References Longitude\&.
+.SS "void SBNamed::setName (const QString &Name_)\fC [inline, inherited]\fP"
+.PP
+Definition at line 216 of file SbGeo\&.H'\&.
+.PP
+References SBNamed::Name\&.
+.PP
+Referenced by SBVLBINetEntryEditor::accept(), SBSourceEditor::acquireData(), SBSiteEditor::acquireData(), SBStationEditor::acquireData(), SBObsVLBIStatistics::collectStatistics(), SBVLBIPreProcess::currentSesChange(), SBVLBISet::import(), SBVLBISet::loadSession(), SBVLBISesInfo::operator=(), operator>>(), SBPlotArea::output4Files(), SBFilteringGauss::redrawDataPlot_ExpMode(), SBBaseInfoList::restoreUserInfo(), SBSourceInfoList::restoreUserInfo(), SBMasterRecord::SBMasterRecord(), SBSolution::SBSolution(), SB_TRF::setSiteName(), SBTestSolidTides::stationChange(), SBTestOceanTides::stationChange(), SBTestPolarTides::stationChange(), SBTestAPLoad::stationChange(), and SBVLBIPreProcess::updateSession()\&.
+.SS "void SBSite::setOLoad (const \fBSBOLoad\fP &OLoad_)\fC [inline]\fP"
+.PP
+Definition at line 939 of file SbGeoStations\&.H'\&.
+.PP
+References OLoad\&.
+.PP
+Referenced by SBStationImport::loadOLoad()\&.
+.SS "void SBSite::setPlate (const char *Plate_)\fC [inline]\fP"
+.PP
+Definition at line 938 of file SbGeoStations\&.H'\&.
+.PP
+References Plate\&.
+.PP
+Referenced by SBSiteEditor::acquireData(), and operator>>()\&.
+.SS "void SBSite::setV (const \fBVector3\fP &V_)\fC [inline]\fP"
+.PP
+Definition at line 940 of file SbGeoStations\&.H'\&.
+.PP
+References V\&.
+.PP
+Referenced by SBSiteEditor::acquireData(), SBAploChunk::import(), SBAploEphem::importHPS(), and SBStationImport::importITRF()\&.
+.SS "void SBSite::setV_err (const \fBVector3\fP &dV_)\fC [inline]\fP"
+.PP
+Definition at line 941 of file SbGeoStations\&.H'\&.
+.PP
+References dV\&.
+.PP
+Referenced by SBSiteEditor::acquireData(), and SBStationImport::importITRF()\&.
+.SS "\fBSBStationList\fP& SBSite::stations ()\fC [inline]\fP"
+.PP
+Definition at line 946 of file SbGeoStations\&.H'\&.
+.PP
+References Stations\&.
+.PP
+Referenced by SBStationImport::applyFilter(), SBStationImport::importITRF(), SBSiteListItem::key(), SBStationImport::loadOLoad(), SBSiteListItem::text(), SBSolutionBrowser::updateTRF(), and SBSiteEditor::wSite()\&.
+.SS "void SBSite::updateSite (const \fBSBSite\fP &S)"
+.PP
+Definition at line 1782 of file SbGeoStations\&.C'\&.
+.PP
+References Country, dV, Height, Latitude, Longitude, SBNamed::Name, OLoad, Plate, prepareDicts(), Stations, updateStationsList(), and V\&.
+.PP
+Referenced by SBStationImport::importITRF()\&.
+.SS "void SBSite::updateStationsList (const \fBSBStationList\fP &SL)\fC [private]\fP"
+.PP
+Definition at line 1818 of file SbGeoStations\&.C'\&.
+.PP
+References addStation(), find(), SBStation::id(), and SBStation::updateStation()\&.
+.PP
+Referenced by updateSite()\&.
+.SS "const \fBVector3\fP& SBSite::v () const\fC [inline]\fP"
+.PP
+Definition at line 930 of file SbGeoStations\&.H'\&.
+.PP
+References V\&.
+.PP
+Referenced by SBSiteEditor::acquireData(), SBAploChunk::import(), SBAploEphem::importHPS(), SBStationListItem::key(), SBStationListItem::text(), and SBSiteEditor::wSite()\&.
+.SS "const \fBVector3\fP& SBSite::v_err () const\fC [inline]\fP"
+.PP
+Definition at line 931 of file SbGeoStations\&.H'\&.
+.PP
+References dV\&.
+.PP
+Referenced by SBSiteEditor::acquireData(), and SBSiteEditor::wSite()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "int cmp (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP, returns (-1:0:+1)'\&. 
+.PP
+Definition at line 253 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBStochParameterList::compareItems(), and SBMasterFile::compareItems()\&.
+.SS "bool operator!= (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 238 of file SbGeo\&.H'\&.
+.SS "bool operator!= (const \fBSBSite\fP &S1, const \fBSBSite\fP &S2)\fC [friend]\fP"
+.PP
+Definition at line 911 of file SbGeoStations\&.H'\&.
+.SS "bool operator< (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 243 of file SbGeo\&.H'\&.
+.SS "bool operator< (const \fBSBSite\fP &S1, const \fBSBSite\fP &S2)\fC [friend]\fP"
+.PP
+Definition at line 913 of file SbGeoStations\&.H'\&.
+.SS "QDataStream & operator<< (QDataStream &s, const \fBSBNamed\fP &W)\fC [friend, inherited]\fP"Saves object to the data stream'\&. 
+.PP
+Definition at line 258 of file SbGeo\&.H'\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBSite\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 1988 of file SbGeoStations\&.C'\&.
+.SS "\fBSBTS_site1994\fP& operator<< (\fBSBTS_site1994\fP &s, const \fBSBSite\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 2003 of file SbGeoStations\&.C'\&.
+.SS "\fBSBTS_site2000\fP& operator<< (\fBSBTS_site2000\fP &s, const \fBSBSite\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 2055 of file SbGeoStations\&.C'\&.
+.SS "\fBSBTS_dir1994\fP& operator<< (\fBSBTS_dir1994\fP &s, const \fBSBSite\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 2109 of file SbGeoStations\&.C'\&.
+.SS "\fBSBTS_dir2000\fP& operator<< (\fBSBTS_dir2000\fP &s, const \fBSBSite\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 2183 of file SbGeoStations\&.C'\&.
+.SS "\fBSBTS_ssc1994\fP& operator<< (\fBSBTS_ssc1994\fP &s, const \fBSBSite\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 2271 of file SbGeoStations\&.C'\&.
+.SS "\fBSBTS_ssc2000\fP& operator<< (\fBSBTS_ssc2000\fP &s, const \fBSBSite\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 2279 of file SbGeoStations\&.C'\&.
+.SS "\fBSBTS_blqReq\fP& operator<< (\fBSBTS_blqReq\fP &s, const \fBSBSite\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 2287 of file SbGeoStations\&.C'\&.
+.SS "bool operator== (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 233 of file SbGeo\&.H'\&.
+.SS "bool operator== (const \fBSBSite\fP &S1, const \fBSBSite\fP &S2)\fC [friend]\fP"
+.PP
+Definition at line 909 of file SbGeoStations\&.H'\&.
+.SS "bool operator> (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 248 of file SbGeo\&.H'\&.
+.SS "bool operator> (const \fBSBSite\fP &S1, const \fBSBSite\fP &S2)\fC [friend]\fP"
+.PP
+Definition at line 915 of file SbGeoStations\&.H'\&.
+.SS "QDataStream & operator>> (QDataStream &s, \fBSBNamed\fP &W)\fC [friend, inherited]\fP"Loads object from the data stream'\&. 
+.PP
+Definition at line 263 of file SbGeo\&.H'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBSite\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 1994 of file SbGeoStations\&.C'\&.
+.SS "\fBSBTS_site1994\fP& operator>> (\fBSBTS_site1994\fP &s, \fBSBSite\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 2019 of file SbGeoStations\&.C'\&.
+.SS "\fBSBTS_site2000\fP& operator>> (\fBSBTS_site2000\fP &s, \fBSBSite\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 2071 of file SbGeoStations\&.C'\&.
+.SS "\fBSBTS_dir1994\fP& operator>> (\fBSBTS_dir1994\fP &s, \fBSBSite\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 2119 of file SbGeoStations\&.C'\&.
+.SS "\fBSBTS_dir1994\fP& operator>> (\fBSBTS_dir1994\fP &s, \fBSB_TRF\fP &TRF)\fC [friend]\fP"
+.PP
+Definition at line 3066 of file SbGeoStations\&.C'\&.
+.SS "\fBSBTS_dir2000\fP& operator>> (\fBSBTS_dir2000\fP &s, \fBSBSite\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 2193 of file SbGeoStations\&.C'\&.
+.SS "\fBSBTS_dir2000\fP& operator>> (\fBSBTS_dir2000\fP &s, \fBSB_TRF\fP &TRF)\fC [friend]\fP"
+.PP
+Definition at line 3131 of file SbGeoStations\&.C'\&.
+.SS "\fBSBTS_ssc1994\fP& operator>> (\fBSBTS_ssc1994\fP &s, \fBSB_TRF\fP &TRF)\fC [friend]\fP"
+.PP
+Definition at line 3237 of file SbGeoStations\&.C'\&.
+.SS "\fBSBTS_ssc2000\fP& operator>> (\fBSBTS_ssc2000\fP &s, \fBSB_TRF\fP &TRF)\fC [friend]\fP"
+.PP
+Definition at line 3498 of file SbGeoStations\&.C'\&.
+.SS "friend class \fBSB_TRF\fP\fC [friend]\fP"
+.PP
+Definition at line 888 of file SbGeoStations\&.H'\&.
+.SS "friend class \fBSBSiteEditor\fP\fC [friend]\fP"
+.PP
+Definition at line 890 of file SbGeoStations\&.H'\&.
+.SS "friend class \fBSBStation\fP\fC [friend]\fP"
+.PP
+Definition at line 889 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by copyStationsList()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString \fBSBSite::Country\fP\fC [private]\fP"
+.PP
+Definition at line 893 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by country(), operator<<(), operator=(), operator>>(), SBSite(), setCountry(), and updateSite()\&.
+.SS "int \fBSBSite::DomeMajor\fP\fC [private]\fP"
+.PP
+Definition at line 892 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by domeMajor(), operator<<(), operator>>(), SBSite(), and setDomeMajor()\&.
+.SS "\fBVector3\fP \fBSBSite::dV\fP\fC [private]\fP"
+.PP
+Definition at line 898 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by operator<<(), operator=(), operator>>(), setV_err(), updateSite(), and v_err()\&.
+.SS "double \fBSBSite::Height\fP\fC [private]\fP"
+.PP
+Definition at line 901 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by calcRLF(), height(), operator=(), SBSite(), setHeight(), and updateSite()\&.
+.SS "double \fBSBSite::Latitude\fP\fC [private]\fP"
+.PP
+Definition at line 900 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by calcRLF(), latitude(), operator=(), SBSite(), setLatitude(), and updateSite()\&.
+.SS "double \fBSBSite::Longitude\fP\fC [private]\fP"
+.PP
+Definition at line 899 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by calcRLF(), longitude(), operator=(), SBSite(), setLongitude(), and updateSite()\&.
+.SS "QString \fBSBNamed::Name\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 206 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBVLBISesInfo::fileName(), SBNamed::name(), operator<<(), SBNamed::operator=(), SBStation::operator=(), operator=(), SBOLoadCarrier::operator==(), operator>>(), SBStochParameter::report(), SBNamed::SBNamed(), SBNamed::setName(), updateSite(), and SBStation::updateStation()\&.
+.SS "\fBSBOLoad\fP \fBSBSite::OLoad\fP\fC [private]\fP"
+.PP
+Definition at line 895 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by oLoad(), operator<<(), operator=(), operator>>(), setOLoad(), updateSite(), and SBSiteEditor::wOLoad()\&.
+.SS "QString \fBSBSite::Plate\fP\fC [private]\fP"
+.PP
+Definition at line 894 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by operator<<(), operator=(), operator>>(), plate(), SBSite(), setPlate(), and updateSite()\&.
+.SS "\fBVector3\fP \fBSBSite::R\fP\fC [private]\fP"
+.PP
+Definition at line 896 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by calcRLF(), and r()\&.
+.SS "QIntDict<\fBSBStation\fP>* \fBSBSite::St_M\fP\fC [private]\fP"
+.PP
+Definition at line 904 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by addStation(), delStation(), find(), firstUnusedNumber(), lastUnusedNumber(), prepareDicts(), SBSite(), and ~SBSite()\&.
+.SS "QIntDict<\fBSBStation\fP>* \fBSBSite::St_S\fP\fC [private]\fP"
+.PP
+Definition at line 903 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by addStation(), delStation(), find(), firstUnusedNumber(), lastUnusedNumber(), prepareDicts(), SBSite(), and ~SBSite()\&.
+.SS "\fBSBStationList\fP \fBSBSite::Stations\fP\fC [private]\fP"
+.PP
+Definition at line 902 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by addStation(), calcRLF(), copyStationsList(), delStation(), SB_TRF::lookupNearest(), operator<<(), operator=(), operator>>(), prepareDicts(), SBSite(), stations(), and updateSite()\&.
+.SS "\fBVector3\fP \fBSBSite::V\fP\fC [private]\fP"
+.PP
+Definition at line 897 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by operator<<(), operator=(), operator>>(), setV(), updateSite(), and v()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

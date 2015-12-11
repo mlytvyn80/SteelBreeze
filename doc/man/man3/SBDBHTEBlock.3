@@ -1,0 +1,191 @@
+.TH "SBDBHTEBlock" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBDBHTEBlock \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoObsVLBI_IO\&.H>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSBDBHLRecP3\fP"
+.br
+.ti -1c
+.RI "class \fBSBDBHLRecP4\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBDBHTEBlock\fP ()"
+.br
+.ti -1c
+.RI "\fB~SBDBHTEBlock\fP ()"
+.br
+.ti -1c
+.RI "int \fBparseP3Rec\fP (\fBSBDS_dbh\fP &)"
+.br
+.ti -1c
+.RI "int \fBparseP4Rec\fP (\fBSBDS_dbh\fP &)"
+.br
+.ti -1c
+.RI "void \fBdump\fP (\fBQTextStream\fP &)"
+.br
+.ti -1c
+.RI "bool \fBisOk\fP ()"
+.br
+.ti -1c
+.RI "\fBQList\fP< \fBSBDBHPar\fP > * \fBparms\fP ()"
+.br
+.ti -1c
+.RI "\fBQList\fP< \fBSBDBHPhysRec\fP > * \fBrecs\fP ()"
+.br
+.ti -1c
+.RI "QIntDict< \fBSBDBHPhysRec\fP > * \fBrecByType\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBDBHLRecTE\fP \fBRec1\fP"
+.br
+.ti -1c
+.RI "\fBSBDBHLRecP3\fP \fBRec2\fP"
+.br
+.ti -1c
+.RI "\fBSBDBHLRecP4\fP \fBRec3\fP"
+.br
+.ti -1c
+.RI "bool \fBisOK\fP"
+.br
+.ti -1c
+.RI "\fBQList\fP< \fBSBDBHPar\fP > \fBListParms\fP"
+.br
+.ti -1c
+.RI "\fBQList\fP< \fBSBDBHPhysRec\fP > \fBListRecs\fP"
+.br
+.ti -1c
+.RI "QIntDict< \fBSBDBHPhysRec\fP > * \fBRecByType\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSBDBHFormat\fP"
+.br
+.ti -1c
+.RI "\fBSBDS_dbh\fP & \fBoperator>>\fP (\fBSBDS_dbh\fP &s, \fBSBDBHTEBlock\fP &B)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 415 of file SbGeoObsVLBI_IO\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBDBHTEBlock::SBDBHTEBlock ()\fC [inline]\fP"
+.PP
+Definition at line 441 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References isOK, ListParms, ListRecs, and RecByType\&.
+.SS "SBDBHTEBlock::~SBDBHTEBlock ()\fC [inline]\fP"
+.PP
+Definition at line 443 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References RecByType\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBDBHTEBlock::dump (\fBQTextStream\fP &s)"
+.PP
+Definition at line 2528 of file SbGeoObsVLBI_IO\&.C'\&.
+.PP
+References SBDBHLRecTE::dump(), ListParms, Rec1, and SBDBHLRecTE::TEBlockNum\&.
+.SS "bool SBDBHTEBlock::isOk ()\fC [inline]\fP"
+.PP
+Definition at line 453 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References isOK\&.
+.SS "\fBQList\fP<\fBSBDBHPar\fP>* SBDBHTEBlock::parms ()\fC [inline]\fP"
+.PP
+Definition at line 454 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References ListParms\&.
+.SS "int SBDBHTEBlock::parseP3Rec (\fBSBDS_dbh\fP &s)"
+.PP
+Definition at line 2500 of file SbGeoObsVLBI_IO\&.C'\&.
+.PP
+References SBDBHPar::Abbrev, SBDBHPar::Dim1, SBDBHPar::Dim2, SBDBHPar::Dim3, SBDBHLRecTE::GroupNum, ListParms, Rec1, and SBDBHPar::VerOfMod\&.
+.PP
+Referenced by SBDBHTEBlock::SBDBHLRecP3::parseLR()\&.
+.SS "int SBDBHTEBlock::parseP4Rec (\fBSBDS_dbh\fP &s)"
+.PP
+Definition at line 2515 of file SbGeoObsVLBI_IO\&.C'\&.
+.PP
+References SBDBHLRecTE::GroupNum, ListParms, and Rec1\&.
+.PP
+Referenced by SBDBHTEBlock::SBDBHLRecP4::parseLR()\&.
+.SS "QIntDict<\fBSBDBHPhysRec\fP>* SBDBHTEBlock::recByType ()\fC [inline]\fP"
+.PP
+Definition at line 456 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References RecByType\&.
+.PP
+Referenced by SBDBHFormat::parRecord()\&.
+.SS "\fBQList\fP<\fBSBDBHPhysRec\fP>* SBDBHTEBlock::recs ()\fC [inline]\fP"
+.PP
+Definition at line 455 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References ListRecs\&.
+.PP
+Referenced by SBDBHFormat::getBlock()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "\fBSBDS_dbh\fP& operator>> (\fBSBDS_dbh\fP &s, \fBSBDBHTEBlock\fP &B)\fC [friend]\fP"
+.PP
+Definition at line 444 of file SbGeoObsVLBI_IO\&.H'\&.
+.SS "friend class \fBSBDBHFormat\fP\fC [friend]\fP"
+.PP
+Definition at line 417 of file SbGeoObsVLBI_IO\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool \fBSBDBHTEBlock::isOK\fP\fC [protected]\fP"
+.PP
+Definition at line 436 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by isOk(), and SBDBHTEBlock()\&.
+.SS "\fBQList\fP<\fBSBDBHPar\fP> \fBSBDBHTEBlock::ListParms\fP\fC [protected]\fP"
+.PP
+Definition at line 437 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by dump(), parms(), parseP3Rec(), parseP4Rec(), and SBDBHTEBlock()\&.
+.SS "\fBQList\fP<\fBSBDBHPhysRec\fP> \fBSBDBHTEBlock::ListRecs\fP\fC [protected]\fP"
+.PP
+Definition at line 438 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by recs(), and SBDBHTEBlock()\&.
+.SS "\fBSBDBHLRecTE\fP \fBSBDBHTEBlock::Rec1\fP\fC [protected]\fP"
+.PP
+Definition at line 433 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by dump(), parseP3Rec(), and parseP4Rec()\&.
+.SS "\fBSBDBHLRecP3\fP \fBSBDBHTEBlock::Rec2\fP\fC [protected]\fP"
+.PP
+Definition at line 434 of file SbGeoObsVLBI_IO\&.H'\&.
+.SS "\fBSBDBHLRecP4\fP \fBSBDBHTEBlock::Rec3\fP\fC [protected]\fP"
+.PP
+Definition at line 435 of file SbGeoObsVLBI_IO\&.H'\&.
+.SS "QIntDict<\fBSBDBHPhysRec\fP>* \fBSBDBHTEBlock::RecByType\fP\fC [protected]\fP"
+.PP
+Definition at line 439 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by recByType(), SBDBHTEBlock(), and ~SBDBHTEBlock()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

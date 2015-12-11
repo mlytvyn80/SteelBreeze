@@ -1,0 +1,820 @@
+.TH "SBSrcMap" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBSrcMap \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoSourceMap\&.H>\fP
+.PP
+Inherits \fBSBAttributed\fP'\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAttributes\fP { \fBOne\fP =  1<<0, \fBTwo\fP =  2<<0 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSrcMap\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~SBSrcMap\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "bool \fBimportFITS\fP (const QString &)"
+.br
+.ti -1c
+.RI "uint \fBattributes\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetAttributes\fP (uint A_)"
+.br
+.ti -1c
+.RI "void \fBaddAttr\fP (uint A_)"
+.br
+.ti -1c
+.RI "void \fBdelAttr\fP (uint A_)"
+.br
+.ti -1c
+.RI "void \fBxorAttr\fP (uint A_)"
+.br
+.ti -1c
+.RI "bool \fBisAttr\fP (uint A_) const "
+.br
+.ti -1c
+.RI "void \fBclearAll\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBFITSFileName\fP"
+.br
+.RI "\fIname of a FITS file from which the map was imported \fP"
+.ti -1c
+.RI "QString \fBkAuthor\fP"
+.br
+.RI "\fIan author of the FITS file \fP"
+.ti -1c
+.RI "QString \fBkCreator\fP"
+.br
+.RI "\fIprogram which produced FITS file \fP"
+.ti -1c
+.RI "QString \fBkCType1\fP"
+.br
+.RI "\fIaxis #1 name \fP"
+.ti -1c
+.RI "QString \fBkCType2\fP"
+.br
+.RI "\fIaxis #2 name \fP"
+.ti -1c
+.RI "QString \fBkCType3\fP"
+.br
+.RI "\fIaxis #3 name \fP"
+.ti -1c
+.RI "QString \fBkCType4\fP"
+.br
+.RI "\fIaxis #4 name \fP"
+.ti -1c
+.RI "QString \fBkDateObs\fP"
+.br
+.RI "\fIobservation date \fP"
+.ti -1c
+.RI "QString \fBkInstrument\fP"
+.br
+.RI "\fIinstrument used \fP"
+.ti -1c
+.RI "QString \fBkObject\fP"
+.br
+.RI "\fIname of observed source (IAU name?) \fP"
+.ti -1c
+.RI "QString \fBkObserver\fP"
+.br
+.RI "\fIVLBA experiment code'\&. \fP"
+.ti -1c
+.RI "QString \fBkOrigin\fP"
+.br
+.RI "\fIorigin of data \fP"
+.ti -1c
+.RI "QString \fBkProject\fP"
+.br
+.ti -1c
+.RI "QString \fBkSegment\fP"
+.br
+.ti -1c
+.RI "QString \fBkTelescop\fP"
+.br
+.RI "\fItelescope used \fP"
+.ti -1c
+.RI "QString \fBkBUnit\fP"
+.br
+.RI "\fIunit of measurement \fP"
+.ti -1c
+.RI "int \fBkNIter\fP"
+.br
+.RI "\fInumber of model components \fP"
+.ti -1c
+.RI "double \fBkBMaj\fP"
+.br
+.RI "\fIClean beam major axis diameter (degrees) \fP"
+.ti -1c
+.RI "double \fBkBMin\fP"
+.br
+.RI "\fIClean beam minor axis diameter (degrees) \fP"
+.ti -1c
+.RI "double \fBkBPA\fP"
+.br
+.RI "\fIClean beam position angle (degrees) \fP"
+.ti -1c
+.RI "double \fBkCDelt1\fP"
+.br
+.RI "\fIPixel increment for axis #1'\&. \fP"
+.ti -1c
+.RI "double \fBkCDelt2\fP"
+.br
+.RI "\fIPixel increment for axis #2'\&. \fP"
+.ti -1c
+.RI "double \fBkCDelt3\fP"
+.br
+.RI "\fIPixel increment for axis #3'\&. \fP"
+.ti -1c
+.RI "double \fBkCDelt4\fP"
+.br
+.RI "\fIPixel increment for axis #4'\&. \fP"
+.ti -1c
+.RI "double \fBkCRota1\fP"
+.br
+.RI "\fIAxis #1 rotation'\&. \fP"
+.ti -1c
+.RI "double \fBkCRota2\fP"
+.br
+.RI "\fIAxis #2 rotation'\&. \fP"
+.ti -1c
+.RI "double \fBkCRota3\fP"
+.br
+.RI "\fIAxis #3 rotation'\&. \fP"
+.ti -1c
+.RI "double \fBkCRota4\fP"
+.br
+.RI "\fIAxis #4 rotation'\&. \fP"
+.ti -1c
+.RI "double \fBkCRPix1\fP"
+.br
+.RI "\fIReference pixel for axis #1'\&. \fP"
+.ti -1c
+.RI "double \fBkCRPix2\fP"
+.br
+.RI "\fIReference pixel for axis #2'\&. \fP"
+.ti -1c
+.RI "double \fBkCRPix3\fP"
+.br
+.RI "\fIReference pixel for axis #3'\&. \fP"
+.ti -1c
+.RI "double \fBkCRPix4\fP"
+.br
+.RI "\fIReference pixel for axis #4'\&. \fP"
+.ti -1c
+.RI "double \fBkCRVal1\fP"
+.br
+.RI "\fIReference value in right ascens'\&. (deg) \fP"
+.ti -1c
+.RI "double \fBkCRVal2\fP"
+.br
+.RI "\fIReference value in declination (deg) \fP"
+.ti -1c
+.RI "double \fBkCRVal3\fP"
+.br
+.RI "\fIReference value for axis #3'\&. \fP"
+.ti -1c
+.RI "double \fBkCRVal4\fP"
+.br
+.RI "\fIReference value for axis #4'\&. \fP"
+.ti -1c
+.RI "double \fBkEpoch\fP"
+.br
+.RI "\fIEquinox of coordinates'\&. \fP"
+.ti -1c
+.RI "double \fBkFluxInt\fP"
+.br
+.RI "\fITotal flux density integrated over the map (Jy) \fP"
+.ti -1c
+.RI "double \fBkFluxShr\fP"
+.br
+.RI "\fIFlux density at short baselines (Jy) \fP"
+.ti -1c
+.RI "double \fBkFluxUnr\fP"
+.br
+.RI "\fIUnresolved flux density at long baselines (Jy) \fP"
+.ti -1c
+.RI "double \fBkImageNoise\fP"
+.br
+.RI "\fIImage 1-sigma noise (Jy) \fP"
+.ti -1c
+.RI "double \fBkNoise\fP"
+.br
+.RI "\fIrms of the input visibilities (Jy) \fP"
+.ti -1c
+.RI "double \fBkObsDec\fP"
+.br
+.RI "\fIAntenna pointing Dec'\&. \fP"
+.ti -1c
+.RI "double \fBkObsRA\fP"
+.br
+.RI "\fIAntenna pointing RA'\&. \fP"
+.ti -1c
+.RI "double \fBkPOS_Err\fP"
+.br
+.RI "\fI1-sigma error ellipse semi-major axis (rad) \fP"
+.ti -1c
+.RI "double \fBkRA_D_Corr\fP"
+.br
+.RI "\fICorrel'\&. between right ascens'\&. and decl'\&. errors'\&. \fP"
+.ti -1c
+.RI "double \fBkDataMax\fP"
+.br
+.RI "\fIMax data'\&. \fP"
+.ti -1c
+.RI "double \fBkDataMin\fP"
+.br
+.RI "\fIMin data'\&. \fP"
+.ti -1c
+.RI "\fBSBMatrix\fP \fBImage\fP"
+.br
+.RI "\fIa map itself \fP"
+.ti -1c
+.RI "QString \fBName\fP"
+.br
+.RI "\fIname of a source \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBSrcMap\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBSrcMap\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBAttributed\fP &A)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBAttributed\fP &A)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a map of brightness distribution for radio source'\&. 
+.PP
+Definition at line 41 of file SbGeoSourceMap\&.H'\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBSBSrcMap::Attributes\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIOne \fP\fP
+test 1 
+.TP
+\fB\fITwo \fP\fP
+test 2 
+.PP
+Definition at line 44 of file SbGeoSourceMap\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBSrcMap::SBSrcMap ()"A default constructor'\&. < an author of the FITS file
+.PP
+< program which produced FITS file
+.PP
+< axis #1 name
+.PP
+< axis #2 name
+.PP
+< axis #3 name
+.PP
+< axis #4 name
+.PP
+< observation date
+.PP
+< instrument used
+.PP
+< name of observed source (IAU name?)
+.PP
+< VLBA experiment code
+.PP
+< origin of data
+.PP
+<
+.PP
+<
+.PP
+< telescope used
+.PP
+< unit of measurement
+.PP
+< number of model components
+.PP
+< Clean beam major axis diameter (degrees)
+.PP
+< Clean beam minor axis diameter (degrees)
+.PP
+< Clean beam position angle (degrees)
+.PP
+< Pixel increment for axis #1
+.PP
+< Pixel increment for axis #2
+.PP
+< Pixel increment for axis #3
+.PP
+< Pixel increment for axis #4
+.PP
+< Axis #1 rotation
+.PP
+< Axis #2 rotation
+.PP
+< Axis #3 rotation
+.PP
+< Axis #4 rotation
+.PP
+< Reference pixel for axis #1
+.PP
+< Reference pixel for axis #2
+.PP
+< Reference pixel for axis #3
+.PP
+< Reference pixel for axis #4
+.PP
+< Reference value in right ascens'\&. (deg)
+.PP
+< Reference value in declination (deg)
+.PP
+< Reference value for axis #3
+.PP
+< Reference value for axis #4
+.PP
+< Equinox of coordinates
+.PP
+< Total flux density integrated over the map (Jy)
+.PP
+< Flux density at short baselines (Jy)
+.PP
+< Unresolved flux density at long baselines (Jy)
+.PP
+< Image 1-sigma noise (Jy)
+.PP
+< rms of the input visibilities (Jy)
+.PP
+< Antenna pointing Dec
+.PP
+< Antenna pointing RA
+.PP
+< 1-sigma error ellipse semi-major axis (rad)
+.PP
+< Correl'\&. between right ascens'\&. and decl'\&. errors
+.PP
+< Max data
+.PP
+< Min data 
+.PP
+Definition at line 41 of file SbGeoSourceMap\&.C'\&.
+.PP
+References FITSFileName, kAuthor, kBMaj, kBMin, kBPA, kBUnit, kCDelt1, kCDelt2, kCDelt3, kCDelt4, kCreator, kCRota1, kCRota2, kCRota3, kCRota4, kCRPix1, kCRPix2, kCRPix3, kCRPix4, kCRVal1, kCRVal2, kCRVal3, kCRVal4, kCType1, kCType2, kCType3, kCType4, kDataMax, kDataMin, kDateObs, kEpoch, kFluxInt, kFluxShr, kFluxUnr, kImageNoise, kInstrument, kNIter, kNoise, kObject, kObsDec, kObserver, kObsRA, kOrigin, kPOS_Err, kProject, kRA_D_Corr, kSegment, kTelescop, and Name\&.
+.SS "SBSrcMap::~SBSrcMap ()\fC [virtual]\fP"A destructor'\&. 
+.PP
+Definition at line 95 of file SbGeoSourceMap\&.C'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBAttributed::addAttr (uintA_)\fC [inline, inherited]\fP"Adds the attribute to the storage'\&. 
+.PP
+Definition at line 247 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBVLBISession::checkArtMeteo(), SBVLBISession::checkAttributres(), SBStation::createOLoad(), SBVLBIPreProcess::fixSession(), SBAploChunk::import(), SBAploEphem::importHPS(), SBMaster::importMF(), SBFilteringGauss::makeAnalysisWith3Sigma(), SBSourceEditor::makeApply(), SBStationEditor::makeApply(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportTRF(), operator>>(), SBFilterGauss::prepareModels(), SBObsVLBIEntry::process(), SBStationInfo::restoreUserInfo(), SBBaseInfo::restoreUserInfo(), SBSourceInfo::restoreUserInfo(), SBVLBISession::restoreUserInfo(), SBEphem::SBEphem(), SBSourceInfo::SBSourceInfo(), SBStationInfo::SBStationInfo(), SBSpectrumAnalyserMEM::setMEMAssumeEquiDistant(), SBSpectrumAnalyserMEM::setMEMFillMissingImag(), SBSpectrumAnalyserMEM::setMEMRemoveShifts(), SBSpectrumAnalyserMEM::setMEMRemoveTrends(), SBParameter::tuneParameter(), SBSolutionBrowser::updateCRF(), and SBSolutionBrowser::updateTRF()\&.
+.SS "uint SBAttributed::attributes () const\fC [inline, inherited]\fP"Returns the attributes'\&. 
+.PP
+Definition at line 243 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBCoordinates::operator==(), and SBVLBISessionEditor::~SBVLBISessionEditor()\&.
+.SS "virtual QString SBSrcMap::ClassName () const\fC [inline, virtual]\fP"Refers to a class name (debug info) 
+.PP
+Reimplemented from \fBSBAttributed\fP'\&.
+.PP
+Definition at line 114 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS()\&.
+.SS "void SBAttributed::clearAll ()\fC [inline, inherited]\fP"Removes all attributes'\&. 
+.PP
+Definition at line 255 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.SS "void SBAttributed::delAttr (uintA_)\fC [inline, inherited]\fP"Deletes the attribute from the storage'\&. 
+.PP
+Definition at line 249 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBProject::addSession(), SBVLBISession::checkAttributres(), SBVLBIPreProcess::clearPars(), SBStation::deleteOLoad(), SBObsVLBIEntry::isEligible(), SBFilteringGauss::makeAnalysisWith3Sigma(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportTRF(), SBStationInfo::restoreUserInfo(), SBBaseInfo::restoreUserInfo(), SBSourceInfo::restoreUserInfo(), SBVLBISession::restoreUserInfo(), SBParameter::rw(), SBEphem::SBEphem(), SBStation::SBStation(), SBSpectrumAnalyserMEM::setMEMAssumeEquiDistant(), SBSpectrumAnalyserMEM::setMEMFillMissingImag(), SBSpectrumAnalyserMEM::setMEMRemoveShifts(), SBSpectrumAnalyserMEM::setMEMRemoveTrends(), and SBParameter::tuneParameter()\&.
+.SS "bool SBSrcMap::importFITS (const QString &FITSInputFileName)"
+.PP
+Definition at line 99 of file SbGeoSourceMap\&.C'\&.
+.PP
+References ClassName(), FITSFileName, SBLog::IO, kAuthor, kBMaj, kBMin, kBPA, kBUnit, kCDelt1, kCDelt2, kCDelt3, kCDelt4, kCreator, kCRota1, kCRota2, kCRota3, kCRota4, kCRPix1, kCRPix2, kCRPix3, kCRPix4, kCRVal1, kCRVal2, kCRVal3, kCRVal4, kCType1, kCType2, kCType3, kCType4, kDataMax, kDataMin, kDateObs, kEpoch, kFluxInt, kFluxShr, kFluxUnr, kImageNoise, kInstrument, kNIter, kNoise, kObject, kObsDec, kObserver, kObsRA, kOrigin, kPOS_Err, kProject, kRA_D_Corr, kSegment, kTelescop, Log, SBLog::write(), and SBLog::WRN\&.
+.SS "bool SBAttributed::isAttr (uintA_) const\fC [inline, inherited]\fP"Returns TRUE if the attribute is set'\&. 
+.PP
+Definition at line 253 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBStationEditor::acquireData(), SBStaParsEditor::acquireData(), SBObsVLBIEntry::ambientH_1(), SBObsVLBIEntry::ambientH_2(), SBObsVLBIEntry::ambientP_1(), SBObsVLBIEntry::ambientP_2(), SBObsVLBIEntry::ambientT_1(), SBObsVLBIEntry::ambientT_2(), SBDelay::calc(), SBVLBISession::checkArtMeteo(), SBVLBISession::checkAttributres(), collectListOfSINEXParameters(), SBStationInfo::dumpUserInfo(), SBBaseInfo::dumpUserInfo(), SBSourceInfo::dumpUserInfo(), SBVLBISession::dumpUserInfo(), SBFilterModel::eliminateAfter(), SBFilterModel::eliminateBefore(), SBVLBIPreProcess::fillObsListView(), SBRunManager::fillParameterList(), SBMEM::fpe(), SBFilterGauss::interpolate(), SBObservation::isEligible(), SBObsVLBIEntry::isEligible(), SBVLBIObsPPLI::key(), SBSourceListItem::key(), SBStationListItem::key(), SBVLBISesInfoLI::key(), SBVLBISesPreProcLI::key(), SBVLBIObsLI::key(), SBStaInfoLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBStationImport::loadOLoad(), SBParameter::m(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportMaps(), SBRunManager::makeReportTRF(), SBRunManager::makeReportTRFVariations(), operator<<(), operator>>(), SBVLBIObsPPLI::paintCell(), SBObsVLBIEntry::process(), SBRunManager::process_m1(), SBMEM::readDataFile(), SBParameter::rw(), SBStaParsEditor::SBStaParsEditor(), SBProjectCreate::selChanged(), sinex_SiteEccentricityBlock(), sinex_SiteIDBlock(), sinex_SourceIDBlock(), SBParameter::str4compare(), SBVLBIObsPPLI::text(), SBSourceListItem::text(), SBStationListItem::text(), SBVLBISesInfoLI::text(), SBVLBISesPreProcLI::text(), SBVLBIObsLI::text(), SBStaInfoLI::text(), SBBasInfoLI::text(), SBSouInfoLI::text(), SBMasterRecBrowser::SBMRListItem::text(), SBSolutionBrowser::updateCRF(), SBBrowseSources::updateList(), SBSolutionBrowser::updateTRF(), SBVLBISessionEditor::wObservs(), SBSourceEditor::wStats(), SBStationEditor::wStats(), and SBStation::~SBStation()\&.
+.SS "void SBAttributed::setAttributes (uintA_)\fC [inline, inherited]\fP"Sets up the attributes'\&. 
+.PP
+Definition at line 245 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBCelestBody::SBCelestBody(), and SBVLBISessionEditor::~SBVLBISessionEditor()\&.
+.SS "void SBAttributed::xorAttr (uintA_)\fC [inline, inherited]\fP"Toggles the attribute in the storage'\&. 
+.PP
+Definition at line 251 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBStaParsEditor::acquireData(), SBVLBIPreProcess::toggleEntryMarkEnable(), and SBVLBIPreProcess::toggleEntryMoveEnable()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "QDataStream & operator<< (QDataStream &s, const \fBSBSrcMap\fP &M)\fC [friend]\fP"Output to the data stream'\&. 
+.PP
+Definition at line 577 of file SbGeoSourceMap\&.C'\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBAttributed\fP &A)\fC [friend, inherited]\fP"
+.PP
+Definition at line 259 of file SbGeneral\&.H'\&.
+.SS "QDataStream & operator>> (QDataStream &s, \fBSBSrcMap\fP &M)\fC [friend]\fP"Input from the data stream'\&. 
+.PP
+Definition at line 640 of file SbGeoSourceMap\&.C'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBAttributed\fP &A)\fC [friend, inherited]\fP"
+.PP
+Definition at line 260 of file SbGeneral\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString \fBSBSrcMap::FITSFileName\fP\fC [private]\fP"
+.PP
+name of a FITS file from which the map was imported 
+.PP
+Definition at line 52 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "\fBSBMatrix\fP \fBSBSrcMap::Image\fP\fC [private]\fP"
+.PP
+a map itself 
+.PP
+Definition at line 102 of file SbGeoSourceMap\&.H'\&.
+.SS "QString \fBSBSrcMap::kAuthor\fP\fC [private]\fP"
+.PP
+an author of the FITS file 
+.PP
+Definition at line 54 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kBMaj\fP\fC [private]\fP"
+.PP
+Clean beam major axis diameter (degrees) 
+.PP
+Definition at line 70 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kBMin\fP\fC [private]\fP"
+.PP
+Clean beam minor axis diameter (degrees) 
+.PP
+Definition at line 71 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kBPA\fP\fC [private]\fP"
+.PP
+Clean beam position angle (degrees) 
+.PP
+Definition at line 72 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "QString \fBSBSrcMap::kBUnit\fP\fC [private]\fP"
+.PP
+unit of measurement 
+.PP
+Definition at line 68 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kCDelt1\fP\fC [private]\fP"
+.PP
+Pixel increment for axis #1'\&. 
+.PP
+Definition at line 73 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kCDelt2\fP\fC [private]\fP"
+.PP
+Pixel increment for axis #2'\&. 
+.PP
+Definition at line 74 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kCDelt3\fP\fC [private]\fP"
+.PP
+Pixel increment for axis #3'\&. 
+.PP
+Definition at line 75 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kCDelt4\fP\fC [private]\fP"
+.PP
+Pixel increment for axis #4'\&. 
+.PP
+Definition at line 76 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "QString \fBSBSrcMap::kCreator\fP\fC [private]\fP"
+.PP
+program which produced FITS file 
+.PP
+Definition at line 55 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kCRota1\fP\fC [private]\fP"
+.PP
+Axis #1 rotation'\&. 
+.PP
+Definition at line 77 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kCRota2\fP\fC [private]\fP"
+.PP
+Axis #2 rotation'\&. 
+.PP
+Definition at line 78 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kCRota3\fP\fC [private]\fP"
+.PP
+Axis #3 rotation'\&. 
+.PP
+Definition at line 79 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kCRota4\fP\fC [private]\fP"
+.PP
+Axis #4 rotation'\&. 
+.PP
+Definition at line 80 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kCRPix1\fP\fC [private]\fP"
+.PP
+Reference pixel for axis #1'\&. 
+.PP
+Definition at line 81 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kCRPix2\fP\fC [private]\fP"
+.PP
+Reference pixel for axis #2'\&. 
+.PP
+Definition at line 82 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kCRPix3\fP\fC [private]\fP"
+.PP
+Reference pixel for axis #3'\&. 
+.PP
+Definition at line 83 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kCRPix4\fP\fC [private]\fP"
+.PP
+Reference pixel for axis #4'\&. 
+.PP
+Definition at line 84 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kCRVal1\fP\fC [private]\fP"
+.PP
+Reference value in right ascens'\&. (deg) 
+.PP
+Definition at line 85 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kCRVal2\fP\fC [private]\fP"
+.PP
+Reference value in declination (deg) 
+.PP
+Definition at line 86 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kCRVal3\fP\fC [private]\fP"
+.PP
+Reference value for axis #3'\&. 
+.PP
+Definition at line 87 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kCRVal4\fP\fC [private]\fP"
+.PP
+Reference value for axis #4'\&. 
+.PP
+Definition at line 88 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "QString \fBSBSrcMap::kCType1\fP\fC [private]\fP"
+.PP
+axis #1 name 
+.PP
+Definition at line 56 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "QString \fBSBSrcMap::kCType2\fP\fC [private]\fP"
+.PP
+axis #2 name 
+.PP
+Definition at line 57 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "QString \fBSBSrcMap::kCType3\fP\fC [private]\fP"
+.PP
+axis #3 name 
+.PP
+Definition at line 58 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "QString \fBSBSrcMap::kCType4\fP\fC [private]\fP"
+.PP
+axis #4 name 
+.PP
+Definition at line 59 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kDataMax\fP\fC [private]\fP"
+.PP
+Max data'\&. 
+.PP
+Definition at line 99 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kDataMin\fP\fC [private]\fP"
+.PP
+Min data'\&. 
+.PP
+Definition at line 100 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "QString \fBSBSrcMap::kDateObs\fP\fC [private]\fP"
+.PP
+observation date 
+.PP
+Definition at line 60 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kEpoch\fP\fC [private]\fP"
+.PP
+Equinox of coordinates'\&. 
+.PP
+Definition at line 89 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kFluxInt\fP\fC [private]\fP"
+.PP
+Total flux density integrated over the map (Jy) 
+.PP
+Definition at line 90 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kFluxShr\fP\fC [private]\fP"
+.PP
+Flux density at short baselines (Jy) 
+.PP
+Definition at line 91 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kFluxUnr\fP\fC [private]\fP"
+.PP
+Unresolved flux density at long baselines (Jy) 
+.PP
+Definition at line 92 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kImageNoise\fP\fC [private]\fP"
+.PP
+Image 1-sigma noise (Jy) 
+.PP
+Definition at line 93 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "QString \fBSBSrcMap::kInstrument\fP\fC [private]\fP"
+.PP
+instrument used 
+.PP
+Definition at line 61 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "int \fBSBSrcMap::kNIter\fP\fC [private]\fP"
+.PP
+number of model components 
+.PP
+Definition at line 69 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kNoise\fP\fC [private]\fP"
+.PP
+rms of the input visibilities (Jy) 
+.PP
+Definition at line 94 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "QString \fBSBSrcMap::kObject\fP\fC [private]\fP"
+.PP
+name of observed source (IAU name?) 
+.PP
+Definition at line 62 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kObsDec\fP\fC [private]\fP"
+.PP
+Antenna pointing Dec'\&. 
+.PP
+Definition at line 95 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "QString \fBSBSrcMap::kObserver\fP\fC [private]\fP"
+.PP
+VLBA experiment code'\&. 
+.PP
+Definition at line 63 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kObsRA\fP\fC [private]\fP"
+.PP
+Antenna pointing RA'\&. 
+.PP
+Definition at line 96 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "QString \fBSBSrcMap::kOrigin\fP\fC [private]\fP"
+.PP
+origin of data 
+.PP
+Definition at line 64 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kPOS_Err\fP\fC [private]\fP"
+.PP
+1-sigma error ellipse semi-major axis (rad) 
+.PP
+Definition at line 97 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "QString \fBSBSrcMap::kProject\fP\fC [private]\fP"
+.PP
+Definition at line 65 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "double \fBSBSrcMap::kRA_D_Corr\fP\fC [private]\fP"
+.PP
+Correl'\&. between right ascens'\&. and decl'\&. errors'\&. 
+.PP
+Definition at line 98 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "QString \fBSBSrcMap::kSegment\fP\fC [private]\fP"
+.PP
+Definition at line 66 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "QString \fBSBSrcMap::kTelescop\fP\fC [private]\fP"
+.PP
+telescope used 
+.PP
+Definition at line 67 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by importFITS(), and SBSrcMap()\&.
+.SS "QString \fBSBSrcMap::Name\fP\fC [private]\fP"
+.PP
+name of a source 
+.PP
+Definition at line 103 of file SbGeoSourceMap\&.H'\&.
+.PP
+Referenced by SBSrcMap()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

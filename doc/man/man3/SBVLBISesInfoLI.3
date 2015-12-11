@@ -1,0 +1,105 @@
+.TH "SBVLBISesInfoLI" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBVLBISesInfoLI \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIObsVLBI\&.H>\fP
+.PP
+Inherits \fBQListViewItem\fP'\&.
+.PP
+Inherited by \fBSBVLBISesPreProcLI\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBVLBISesInfoLI\fP (\fBQListView\fP *parent_, \fBSBVLBISesInfo\fP *SI_, \fBBrowseMode\fP Mode_)"
+.br
+.ti -1c
+.RI "\fB~SBVLBISesInfoLI\fP ()"
+.br
+.ti -1c
+.RI "\fBSBVLBISesInfo\fP * \fBsessionInfo\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual QString \fBtext\fP (int) const "
+.br
+.ti -1c
+.RI "virtual QString \fBkey\fP (int, bool) const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBVLBISesInfo\fP * \fBSI\fP"
+.br
+.ti -1c
+.RI "\fBBrowseMode\fP \fBMode\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 62 of file SbIObsVLBI\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBVLBISesInfoLI::SBVLBISesInfoLI (\fBQListView\fP *parent_, \fBSBVLBISesInfo\fP *SI_, \fBBrowseMode\fPMode_)\fC [inline]\fP"
+.PP
+Definition at line 69 of file SbIObsVLBI\&.H'\&.
+.PP
+References Mode, and SI\&.
+.SS "SBVLBISesInfoLI::~SBVLBISesInfoLI ()\fC [inline]\fP"
+.PP
+Definition at line 72 of file SbIObsVLBI\&.H'\&.
+.PP
+References SI\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBVLBISesInfoLI::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSBVLBISesPreProcLI\fP'\&.
+.PP
+Definition at line 74 of file SbIObsVLBI\&.H'\&.
+.SS "QString SBVLBISesInfoLI::key (intcol, bool) const\fC [virtual]\fP"
+.PP
+Reimplemented in \fBSBVLBISesPreProcLI\fP'\&.
+.PP
+Definition at line 149 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBVLBISesInfo::ArtAllMeteos, SBVLBISesInfo::ArtMeteo, SBVLBISesInfo::BadAllCables, SBVLBISesInfo::BadAllMeteos, SBVLBISesInfo::BadCable, SBVLBISesInfo::BadMeteo, BM_PROJECT, SBVLBISesInfo::ConstrEOP, SBVLBISesInfo::correlatorName(), SBVLBISesInfo::dWRMS(), SBVLBISesInfo::HasClockBreak, SBVLBISesInfo::importedFrom(), SBAttributed::isAttr(), Mode, SBNamed::name(), SBVLBISesInfo::networkID(), SBVLBISesInfo::notValid, SBVLBISesInfo::numBas(), SBVLBISesInfo::numObs(), SBVLBISesInfo::numSou(), SBVLBISesInfo::numSta(), SBVLBISesInfo::preProc, SBVLBISesInfo::rWRMS(), SBSetUp::scale(), SetUp, SI, SBVLBISesInfo::tInterval(), TmpString, SBVLBISesInfo::tStart(), SBVLBISesInfo::userFlag(), and SBVLBISesInfo::version()\&.
+.SS "\fBSBVLBISesInfo\fP* SBVLBISesInfoLI::sessionInfo ()\fC [inline]\fP"
+.PP
+Definition at line 73 of file SbIObsVLBI\&.H'\&.
+.PP
+References SI\&.
+.PP
+Referenced by SBVLBIPreProcess::currentSesChange(), SBVLBISetView::deleteEntry(), SBProjectEdit::delSession(), and SBVLBISessionEditor::SBVLBISessionEditor()\&.
+.SS "QString SBVLBISesInfoLI::text (intcol) const\fC [virtual]\fP"
+.PP
+Reimplemented in \fBSBVLBISesPreProcLI\fP'\&.
+.PP
+Definition at line 62 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBVLBISesInfo::ArtAllMeteos, SBVLBISesInfo::ArtMeteo, SBVLBISesInfo::BadAllCables, SBVLBISesInfo::BadAllMeteos, SBVLBISesInfo::BadCable, SBVLBISesInfo::BadMeteo, BM_PROJECT, SBDelay::CLight, SBVLBISesInfo::ConstrEOP, SBVLBISesInfo::correlatorName(), SBVLBISesInfo::dWRMS(), SBMJD::F_DDMonYYYY, SBVLBISesInfo::HasClockBreak, SBVLBISesInfo::importedFrom(), SBAttributed::isAttr(), SBVLBISesInfo::localVersion(), Mode, SBNamed::name(), SBVLBISesInfo::networkID(), SBVLBISesInfo::notValid, SBVLBISesInfo::numBas(), SBVLBISesInfo::numObs(), SBVLBISesInfo::numSou(), SBVLBISesInfo::numSta(), SBVLBISesInfo::preProc, rad2hms(), SBVLBISesInfo::rWRMS(), SetUp, SI, SBVLBISesInfo::tInterval(), TmpString, SBMJD::toString(), SBVLBISesInfo::tStart(), SBSetUp::U_INCH, SBSetUp::U_METER, SBSetUp::U_SEC, SBSetUp::units(), SBVLBISesInfo::userFlag(), and SBVLBISesInfo::version()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBBrowseMode\fP \fBSBVLBISesInfoLI::Mode\fP\fC [protected]\fP"
+.PP
+Definition at line 66 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by key(), SBVLBISesInfoLI(), and text()\&.
+.SS "\fBSBVLBISesInfo\fP* \fBSBVLBISesInfoLI::SI\fP\fC [protected]\fP"
+.PP
+Definition at line 65 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by key(), SBVLBISesPreProcLI::key(), SBVLBISesInfoLI(), sessionInfo(), text(), SBVLBISesPreProcLI::text(), and ~SBVLBISesInfoLI()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

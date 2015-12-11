@@ -1,0 +1,99 @@
+.TH "SBEccListItem" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBEccListItem \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIStuffStation\&.H>\fP
+.PP
+Inherits \fBQListViewItem\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBEccListItem\fP (\fBQListView\fP *, \fBSBStationEcc\fP *, \fBSBEccentricity\fP *)"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual QString \fBtext\fP (int) const "
+.br
+.ti -1c
+.RI "virtual QString \fBkey\fP (int, bool) const "
+.br
+.ti -1c
+.RI "\fBSBStationEcc\fP * \fBstEcc\fP ()"
+.br
+.ti -1c
+.RI "\fBSBEccentricity\fP * \fBecc\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBStationEcc\fP * \fBStEcc\fP"
+.br
+.ti -1c
+.RI "\fBSBEccentricity\fP * \fBEcc\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 108 of file SbIStuffStation\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBEccListItem::SBEccListItem (\fBQListView\fP *parent_, \fBSBStationEcc\fP *StEcc_, \fBSBEccentricity\fP *Ecc_)"
+.PP
+Definition at line 298 of file SbIStuffStation\&.C'\&.
+.PP
+References Ecc, and StEcc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBEccListItem::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 115 of file SbIStuffStation\&.H'\&.
+.SS "\fBSBEccentricity\fP* SBEccListItem::ecc ()\fC [inline]\fP"
+.PP
+Definition at line 120 of file SbIStuffStation\&.H'\&.
+.PP
+References Ecc\&.
+.PP
+Referenced by SBStuffStationsEcc::deleteEntry()\&.
+.SS "QString SBEccListItem::key (intcol, bool) const\fC [virtual]\fP"
+.PP
+Definition at line 334 of file SbIStuffStation\&.C'\&.
+.PP
+References SBEccentricity::aka(), Vector3::at(), Ecc, SBEccentricity::ecc(), SBEccentricity::ET_NEU, SBMJD::F_INTERNAL, SBEccentricity::sessionName(), StEcc, SBEccentricity::tFinis(), TmpString, SBMJD::toString(), SBStationID::toString(), SBEccentricity::tStart(), SBEccentricity::type(), X_AXIS, Y_AXIS, and Z_AXIS\&.
+.SS "\fBSBStationEcc\fP* SBEccListItem::stEcc ()\fC [inline]\fP"
+.PP
+Definition at line 119 of file SbIStuffStation\&.H'\&.
+.PP
+References StEcc\&.
+.PP
+Referenced by SBStuffStationsEcc::deleteEntry()\&.
+.SS "QString SBEccListItem::text (intcol) const\fC [virtual]\fP"
+.PP
+Definition at line 305 of file SbIStuffStation\&.C'\&.
+.PP
+References SBEccentricity::aka(), Vector3::at(), Ecc, SBEccentricity::ecc(), SBEccentricity::ET_NEU, SBMJD::F_DateShort, SBEccentricity::sessionName(), StEcc, SBEccentricity::tFinis(), TmpString, SBMJD::toString(), SBStationID::toString(), SBEccentricity::tStart(), SBEccentricity::type(), X_AXIS, Y_AXIS, and Z_AXIS\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSBEccentricity\fP* \fBSBEccListItem::Ecc\fP\fC [private]\fP"
+.PP
+Definition at line 112 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by ecc(), key(), SBEccListItem(), and text()\&.
+.SS "\fBSBStationEcc\fP* \fBSBEccListItem::StEcc\fP\fC [private]\fP"
+.PP
+Definition at line 111 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by key(), SBEccListItem(), stEcc(), and text()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

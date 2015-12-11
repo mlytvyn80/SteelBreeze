@@ -1,0 +1,109 @@
+.TH "SBTS_SINEX" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBTS_SINEX \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoStations\&.H>\fP
+.PP
+Inherits \fBQTextStream\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBTS_SINEX\fP ()"
+.br
+.ti -1c
+.RI "\fBSBTS_SINEX\fP (QByteArray a, int mode)"
+.br
+.ti -1c
+.RI "\fBSBTS_SINEX\fP (QIODevice *iod)"
+.br
+.ti -1c
+.RI "\fBSBTS_SINEX\fP (QString &str, int fmode)"
+.br
+.ti -1c
+.RI "\fBSBTS_SINEX\fP (QString *str, int fmode)"
+.br
+.ti -1c
+.RI "\fBSBTS_SINEX\fP (FILE *fh, int mode)"
+.br
+.ti -1c
+.RI "\fBSBRunManager\fP * \fBrunMgr\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetRunMgr\fP (\fBSBRunManager\fP *Mgr_)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBRunManager\fP * \fBRunMgr\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 124 of file SbGeoStations\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBTS_SINEX::SBTS_SINEX ()\fC [inline]\fP"
+.PP
+Definition at line 129 of file SbGeoStations\&.H'\&.
+.PP
+References RunMgr\&.
+.SS "SBTS_SINEX::SBTS_SINEX (QByteArraya, intmode)\fC [inline]\fP"
+.PP
+Definition at line 130 of file SbGeoStations\&.H'\&.
+.PP
+References RunMgr\&.
+.SS "SBTS_SINEX::SBTS_SINEX (QIODevice *iod)\fC [inline]\fP"
+.PP
+Definition at line 131 of file SbGeoStations\&.H'\&.
+.PP
+References RunMgr\&.
+.SS "SBTS_SINEX::SBTS_SINEX (QString &str, intfmode)\fC [inline]\fP"
+.PP
+Definition at line 132 of file SbGeoStations\&.H'\&.
+.PP
+References RunMgr\&.
+.SS "SBTS_SINEX::SBTS_SINEX (QString *str, intfmode)\fC [inline]\fP"
+.PP
+Definition at line 133 of file SbGeoStations\&.H'\&.
+.PP
+References RunMgr\&.
+.SS "SBTS_SINEX::SBTS_SINEX (FILE *fh, intmode)\fC [inline]\fP"
+.PP
+Definition at line 134 of file SbGeoStations\&.H'\&.
+.PP
+References RunMgr\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBSBRunManager\fP* SBTS_SINEX::runMgr () const\fC [inline]\fP"
+.PP
+Definition at line 135 of file SbGeoStations\&.H'\&.
+.PP
+References RunMgr\&.
+.PP
+Referenced by operator<<(), and writeNormalEquationSystem()\&.
+.SS "void SBTS_SINEX::setRunMgr (\fBSBRunManager\fP *Mgr_)\fC [inline]\fP"
+.PP
+Definition at line 136 of file SbGeoStations\&.H'\&.
+.PP
+References RunMgr\&.
+.PP
+Referenced by SBRunManager::makeReportNormalEqs(), SBRunManager::makeReportTRF(), and SBRunManager::makeReportTroposphere()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSBRunManager\fP* \fBSBTS_SINEX::RunMgr\fP\fC [private]\fP"
+.PP
+Definition at line 127 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by runMgr(), SBTS_SINEX(), and setRunMgr()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

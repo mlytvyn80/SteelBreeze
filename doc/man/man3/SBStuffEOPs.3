@@ -1,0 +1,355 @@
+.TH "SBStuffEOPs" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBStuffEOPs \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIStuff\&.H>\fP
+.PP
+Inherits \fBQDialog\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBStuffEOPs\fP (\fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "virtual \fB~SBStuffEOPs\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBcloseEvent\fP (QCloseEvent *)"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBmodified\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBchildWindowClosed\fP ()"
+.br
+.ti -1c
+.RI "void \fBaccept\fP ()"
+.br
+.ti -1c
+.RI "void \fBreject\fP ()"
+.br
+.ti -1c
+.RI "void \fBimport\fP ()"
+.br
+.ti -1c
+.RI "void \fBdraw\fP ()"
+.br
+.ti -1c
+.RI "void \fBshowSeries\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateEOP\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQWidget\fP * \fBcreateInfoGroup\fP (\fBQWidget\fP *)"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBcreateOptionsGroup\fP (\fBQWidget\fP *)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBEOP\fP * \fBWeop\fP"
+.br
+.ti -1c
+.RI "QString \fBstr\fP"
+.br
+.ti -1c
+.RI "\fBQListView\fP * \fBEOPsLV\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBEOPTStart\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBEOPTFinis\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBEOPNum\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEOPEpoch\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEOPLabel\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBEOPHiTide\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBEOPLoTide\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEOPXp\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEOPXps\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEOPYp\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEOPYps\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEOPUT\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEOPUTs\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEOPPsi\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEOPPsis\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEOPEps\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEOPEpss\fP"
+.br
+.ti -1c
+.RI "bool \fBisModified\fP"
+.br
+.ti -1c
+.RI "int \fBnumOpenedWindows\fP"
+.br
+.ti -1c
+.RI "\fBSBPlotCarrier\fP * \fBPlotCarrier\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 71 of file SbIStuff\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBStuffEOPs::SBStuffEOPs (\fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 122 of file SbIStuff\&.C'\&.
+.PP
+References accept(), createInfoGroup(), createOptionsGroup(), draw(), EOPsLV, isModified, SBSetUp::loadEOP(), numOpenedWindows, PlotCarrier, reject(), SetUp, showSeries(), and Weop\&.
+.SS "SBStuffEOPs::~SBStuffEOPs ()\fC [virtual]\fP"
+.PP
+Definition at line 361 of file SbIStuff\&.C'\&.
+.PP
+References PlotCarrier, and Weop\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBStuffEOPs::accept ()\fC [private, slot]\fP"
+.PP
+Definition at line 376 of file SbIStuff\&.C'\&.
+.PP
+References EOPEpoch, EOPEps, EOPEpss, EOPHiTide, EOPLabel, EOPLoTide, EOPPsi, EOPPsis, EOPUT, EOPUTs, EOPXp, EOPXps, EOPYp, EOPYps, SBEOP::epoch(), SBEOP::eps(), SBEOP::epss(), SBMJD::F_Year, SBSolutionName::fromString(), isModified, SBEOP::label(), numOpenedWindows, SBEOP::psi(), SBEOP::psis(), SBSetUp::saveEOP(), SBEOP::setEpoch(), SBEOP::setEps(), SBEOP::setEpss(), SBEOP::setLabel(), SBMJD::setMJD(), SBEOP::setPsi(), SBEOP::setPsis(), SetUp, SBEOP::setUt(), SBEOP::setUtHasHiTide(), SBEOP::setUtHasLoTide(), SBEOP::setUts(), SBEOP::setXp(), SBEOP::setXps(), SBEOP::setYp(), SBEOP::setYps(), SBSolutionName::TYPE_EOP, SBEOP::ut(), SBEOP::utHasHiTide(), SBEOP::utHasLoTide(), SBEOP::uts(), Weop, SBEOP::xp(), SBEOP::xps(), SBEOP::yp(), and SBEOP::yps()\&.
+.PP
+Referenced by SBStuffEOPs()\&.
+.SS "void SBStuffEOPs::childWindowClosed ()\fC [private, slot]\fP"
+.PP
+Definition at line 495 of file SbIStuff\&.C'\&.
+.PP
+References numOpenedWindows\&.
+.PP
+Referenced by draw()\&.
+.SS "virtual QString SBStuffEOPs::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 78 of file SbIStuff\&.H'\&.
+.PP
+Referenced by draw()\&.
+.SS "virtual void SBStuffEOPs::closeEvent (QCloseEvent *)\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 92 of file SbIStuff\&.H'\&.
+.SS "\fBQWidget\fP * SBStuffEOPs::createInfoGroup (\fBQWidget\fP *parent)\fC [private]\fP"
+.PP
+Definition at line 205 of file SbIStuff\&.C'\&.
+.PP
+References EOPEpoch, EOPLabel, EOPNum, EOPTFinis, EOPTStart, SBMJD::F_DDMonYYYY, SBMJD::F_Year, SBEOP::label(), str, SBEOP::tFinis(), SBMJD::toString(), SBSolutionName::toString(), SBEOP::tStart(), and Weop\&.
+.PP
+Referenced by SBStuffEOPs()\&.
+.SS "\fBQWidget\fP * SBStuffEOPs::createOptionsGroup (\fBQWidget\fP *parent)\fC [private]\fP"
+.PP
+Definition at line 260 of file SbIStuff\&.C'\&.
+.PP
+References EOPEps, EOPEpss, EOPHiTide, EOPLoTide, EOPPsi, EOPPsis, EOPUT, EOPUTs, EOPXp, EOPXps, EOPYp, EOPYps, SBEOP::eps(), SBEOP::epss(), SBEOP::psi(), SBEOP::psis(), str, SBEOP::ut(), SBEOP::utHasHiTide(), SBEOP::uts(), Weop, SBEOP::xp(), SBEOP::xps(), SBEOP::yp(), and SBEOP::yps()\&.
+.PP
+Referenced by SBStuffEOPs()\&.
+.SS "void SBStuffEOPs::draw ()\fC [private, slot]\fP"
+.PP
+Definition at line 570 of file SbIStuff\&.C'\&.
+.PP
+References SBPlotCarrier::AT_MJD, SBPlotCarrier::branches(), childWindowClosed(), ClassName(), SBPlotCarrier::columnNames(), SBPlotCarrier::createBranch(), SBLog::DBG, SBLog::INTERFACE, SBEOP::label(), Log, numOpenedWindows, PlotCarrier, SBPlotCarrier::setFile4SaveBaseName(), SBPlotCarrier::setType(), SBSolutionName::toString(), Weop, and SBLog::write()\&.
+.PP
+Referenced by SBStuffEOPs()\&.
+.SS "void SBStuffEOPs::import ()\fC [private, slot]\fP"
+.PP
+Definition at line 529 of file SbIStuff\&.C'\&.
+.PP
+References EOPsLV, SBEOP::importSeries(), isModified, SBSetUp::loadEOP(), mainMessage(), mainPrBarReset(), mainPrBarSetProgress(), mainPrBarSetTotalSteps(), numOpenedWindows, SBSetUp::path2ImpEOP(), PlotCarrier, SBSetUp::saveEOP(), SetUp, updateEOP(), and Weop\&.
+.SS "void SBStuffEOPs::modified (boolisModified_)\fC [private, slot]\fP"
+.PP
+Definition at line 490 of file SbIStuff\&.C'\&.
+.PP
+References isModified\&.
+.SS "void SBStuffEOPs::reject ()\fC [private, slot]\fP"
+.PP
+Definition at line 483 of file SbIStuff\&.C'\&.
+.PP
+References numOpenedWindows\&.
+.PP
+Referenced by SBStuffEOPs()\&.
+.SS "void SBStuffEOPs::showSeries ()\fC [private, slot]\fP"
+.PP
+Definition at line 607 of file SbIStuff\&.C'\&.
+.PP
+References EOPsLV, mainMessage(), and Weop\&.
+.PP
+Referenced by SBStuffEOPs(), and updateEOP()\&.
+.SS "void SBStuffEOPs::updateEOP ()\fC [private, slot]\fP"
+.PP
+Definition at line 500 of file SbIStuff\&.C'\&.
+.PP
+References EOPEpoch, EOPEps, EOPEpss, EOPHiTide, EOPLoTide, EOPNum, EOPPsi, EOPPsis, EOPTFinis, EOPTStart, EOPUT, EOPUTs, EOPXp, EOPXps, EOPYp, EOPYps, SBEOP::eps(), SBEOP::epss(), SBMJD::F_DDMonYYYY, SBMJD::F_Year, SBSetUp::loadEOP(), SBEOP::psi(), SBEOP::psis(), SetUp, showSeries(), str, SBEOP::tFinis(), SBMJD::toString(), SBEOP::tStart(), SBEOP::ut(), SBEOP::utHasHiTide(), SBEOP::uts(), Weop, SBEOP::xp(), SBEOP::xps(), SBEOP::yp(), and SBEOP::yps()\&.
+.PP
+Referenced by import()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QLineEdit* \fBSBStuffEOPs::EOPEpoch\fP\fC [private]\fP"
+.PP
+Definition at line 102 of file SbIStuff\&.H'\&.
+.PP
+Referenced by accept(), createInfoGroup(), and updateEOP()\&.
+.SS "QLineEdit* \fBSBStuffEOPs::EOPEps\fP\fC [private]\fP"
+.PP
+Definition at line 117 of file SbIStuff\&.H'\&.
+.PP
+Referenced by accept(), createOptionsGroup(), and updateEOP()\&.
+.SS "QLineEdit* \fBSBStuffEOPs::EOPEpss\fP\fC [private]\fP"
+.PP
+Definition at line 118 of file SbIStuff\&.H'\&.
+.PP
+Referenced by accept(), createOptionsGroup(), and updateEOP()\&.
+.SS "QCheckBox* \fBSBStuffEOPs::EOPHiTide\fP\fC [private]\fP"
+.PP
+Definition at line 105 of file SbIStuff\&.H'\&.
+.PP
+Referenced by accept(), createOptionsGroup(), and updateEOP()\&.
+.SS "QLineEdit* \fBSBStuffEOPs::EOPLabel\fP\fC [private]\fP"
+.PP
+Definition at line 103 of file SbIStuff\&.H'\&.
+.PP
+Referenced by accept(), and createInfoGroup()\&.
+.SS "QCheckBox* \fBSBStuffEOPs::EOPLoTide\fP\fC [private]\fP"
+.PP
+Definition at line 106 of file SbIStuff\&.H'\&.
+.PP
+Referenced by accept(), createOptionsGroup(), and updateEOP()\&.
+.SS "QLabel* \fBSBStuffEOPs::EOPNum\fP\fC [private]\fP"
+.PP
+Definition at line 101 of file SbIStuff\&.H'\&.
+.PP
+Referenced by createInfoGroup(), and updateEOP()\&.
+.SS "QLineEdit* \fBSBStuffEOPs::EOPPsi\fP\fC [private]\fP"
+.PP
+Definition at line 115 of file SbIStuff\&.H'\&.
+.PP
+Referenced by accept(), createOptionsGroup(), and updateEOP()\&.
+.SS "QLineEdit* \fBSBStuffEOPs::EOPPsis\fP\fC [private]\fP"
+.PP
+Definition at line 116 of file SbIStuff\&.H'\&.
+.PP
+Referenced by accept(), createOptionsGroup(), and updateEOP()\&.
+.SS "\fBQListView\fP* \fBSBStuffEOPs::EOPsLV\fP\fC [private]\fP"
+.PP
+Definition at line 98 of file SbIStuff\&.H'\&.
+.PP
+Referenced by import(), SBStuffEOPs(), and showSeries()\&.
+.SS "QLabel* \fBSBStuffEOPs::EOPTFinis\fP\fC [private]\fP"
+.PP
+Definition at line 100 of file SbIStuff\&.H'\&.
+.PP
+Referenced by createInfoGroup(), and updateEOP()\&.
+.SS "QLabel* \fBSBStuffEOPs::EOPTStart\fP\fC [private]\fP"
+.PP
+Definition at line 99 of file SbIStuff\&.H'\&.
+.PP
+Referenced by createInfoGroup(), and updateEOP()\&.
+.SS "QLineEdit* \fBSBStuffEOPs::EOPUT\fP\fC [private]\fP"
+.PP
+Definition at line 113 of file SbIStuff\&.H'\&.
+.PP
+Referenced by accept(), createOptionsGroup(), and updateEOP()\&.
+.SS "QLineEdit* \fBSBStuffEOPs::EOPUTs\fP\fC [private]\fP"
+.PP
+Definition at line 114 of file SbIStuff\&.H'\&.
+.PP
+Referenced by accept(), createOptionsGroup(), and updateEOP()\&.
+.SS "QLineEdit* \fBSBStuffEOPs::EOPXp\fP\fC [private]\fP"
+.PP
+Definition at line 109 of file SbIStuff\&.H'\&.
+.PP
+Referenced by accept(), createOptionsGroup(), and updateEOP()\&.
+.SS "QLineEdit* \fBSBStuffEOPs::EOPXps\fP\fC [private]\fP"
+.PP
+Definition at line 110 of file SbIStuff\&.H'\&.
+.PP
+Referenced by accept(), createOptionsGroup(), and updateEOP()\&.
+.SS "QLineEdit* \fBSBStuffEOPs::EOPYp\fP\fC [private]\fP"
+.PP
+Definition at line 111 of file SbIStuff\&.H'\&.
+.PP
+Referenced by accept(), createOptionsGroup(), and updateEOP()\&.
+.SS "QLineEdit* \fBSBStuffEOPs::EOPYps\fP\fC [private]\fP"
+.PP
+Definition at line 112 of file SbIStuff\&.H'\&.
+.PP
+Referenced by accept(), createOptionsGroup(), and updateEOP()\&.
+.SS "bool \fBSBStuffEOPs::isModified\fP\fC [private]\fP"
+.PP
+Definition at line 120 of file SbIStuff\&.H'\&.
+.PP
+Referenced by accept(), import(), modified(), and SBStuffEOPs()\&.
+.SS "int \fBSBStuffEOPs::numOpenedWindows\fP\fC [private]\fP"
+.PP
+Definition at line 121 of file SbIStuff\&.H'\&.
+.PP
+Referenced by accept(), childWindowClosed(), draw(), import(), reject(), and SBStuffEOPs()\&.
+.SS "\fBSBPlotCarrier\fP* \fBSBStuffEOPs::PlotCarrier\fP\fC [private]\fP"
+.PP
+Definition at line 122 of file SbIStuff\&.H'\&.
+.PP
+Referenced by draw(), import(), SBStuffEOPs(), and ~SBStuffEOPs()\&.
+.SS "QString \fBSBStuffEOPs::str\fP\fC [private]\fP"
+.PP
+Definition at line 96 of file SbIStuff\&.H'\&.
+.PP
+Referenced by createInfoGroup(), createOptionsGroup(), and updateEOP()\&.
+.SS "\fBSBEOP\fP* \fBSBStuffEOPs::Weop\fP\fC [private]\fP"
+.PP
+Definition at line 92 of file SbIStuff\&.H'\&.
+.PP
+Referenced by accept(), createInfoGroup(), createOptionsGroup(), draw(), import(), SBStuffEOPs(), showSeries(), updateEOP(), and ~SBStuffEOPs()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

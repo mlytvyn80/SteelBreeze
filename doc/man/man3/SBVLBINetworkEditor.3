@@ -1,0 +1,198 @@
+.TH "SBVLBINetworkEditor" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBVLBINetworkEditor \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIObsVLBI\&.H>\fP
+.PP
+Inherits \fBQDialog\fP'\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBNetworkListItem\fP"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBnetworksModified\fP (bool, \fBSBVLBISet::NetList\fP *)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBVLBINetworkEditor\fP (\fBSBVLBISet\fP *, \fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "\fB~SBVLBINetworkEditor\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBaccept\fP ()"
+.br
+.ti -1c
+.RI "void \fBreject\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddEntry\fP ()"
+.br
+.ti -1c
+.RI "void \fBeditEntry\fP ()"
+.br
+.ti -1c
+.RI "void \fBdeleteEntry\fP ()"
+.br
+.ti -1c
+.RI "void \fBentryModified\fP (bool, \fBSBVLBISet::Network\fP *)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBcloseEvent\fP (QCloseEvent *e)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBVLBISet\fP * \fBWvlbi\fP"
+.br
+.ti -1c
+.RI "\fBSBVLBISet::NetList\fP * \fBNets\fP"
+.br
+.ti -1c
+.RI "bool \fBisModified\fP"
+.br
+.ti -1c
+.RI "int \fBnumOpenedWindows\fP"
+.br
+.ti -1c
+.RI "QString \fBStr\fP"
+.br
+.ti -1c
+.RI "\fBQListView\fP * \fBNetsLV\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 586 of file SbIObsVLBI\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBVLBINetworkEditor::SBVLBINetworkEditor (\fBSBVLBISet\fP *W_, \fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 2756 of file SbIObsVLBI\&.C'\&.
+.PP
+References accept(), addEntry(), deleteEntry(), editEntry(), isModified, Nets, NetsLV, SBVLBISet::networks(), numOpenedWindows, reject(), and Wvlbi\&.
+.SS "SBVLBINetworkEditor::~SBVLBINetworkEditor ()"
+.PP
+Definition at line 2839 of file SbIObsVLBI\&.C'\&.
+.PP
+References isModified, Nets, and networksModified()\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBVLBINetworkEditor::accept ()\fC [protected, slot]\fP"
+.PP
+Definition at line 2844 of file SbIObsVLBI\&.C'\&.
+.PP
+References numOpenedWindows\&.
+.PP
+Referenced by SBVLBINetworkEditor()\&.
+.SS "void SBVLBINetworkEditor::addEntry ()\fC [protected, slot]\fP"
+.PP
+Definition at line 2858 of file SbIObsVLBI\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, entryModified(), SBLog::INTERFACE, Log, numOpenedWindows, and SBLog::write()\&.
+.PP
+Referenced by SBVLBINetworkEditor()\&.
+.SS "virtual QString SBVLBINetworkEditor::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 592 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by addEntry(), deleteEntry(), and editEntry()\&.
+.SS "virtual void SBVLBINetworkEditor::closeEvent (QCloseEvent *e)\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 626 of file SbIObsVLBI\&.H'\&.
+.PP
+References numOpenedWindows\&.
+.SS "void SBVLBINetworkEditor::deleteEntry ()\fC [protected, slot]\fP"
+.PP
+Definition at line 2881 of file SbIObsVLBI\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, isModified, Log, Nets, NetsLV, and SBLog::write()\&.
+.PP
+Referenced by SBVLBINetworkEditor()\&.
+.SS "void SBVLBINetworkEditor::editEntry ()\fC [protected, slot]\fP"
+.PP
+Definition at line 2869 of file SbIObsVLBI\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, entryModified(), SBLog::INTERFACE, Log, NetsLV, numOpenedWindows, and SBLog::write()\&.
+.PP
+Referenced by SBVLBINetworkEditor()\&.
+.SS "void SBVLBINetworkEditor::entryModified (boolisModified_, \fBSBVLBISet::Network\fP *N_)\fC [protected, slot]\fP"
+.PP
+Definition at line 2902 of file SbIObsVLBI\&.C'\&.
+.PP
+References isModified, Nets, NetsLV, and numOpenedWindows\&.
+.PP
+Referenced by addEntry(), and editEntry()\&.
+.SS "void SBVLBINetworkEditor::networksModified (boolt0, \fBSBVLBISet::NetList\fP *t1)\fC [signal]\fP"
+.PP
+Definition at line 919 of file SbIObsVLBI\&.moc\&.C'\&.
+.PP
+Referenced by ~SBVLBINetworkEditor()\&.
+.SS "void SBVLBINetworkEditor::reject ()\fC [protected, slot]\fP"
+.PP
+Definition at line 2851 of file SbIObsVLBI\&.C'\&.
+.PP
+References numOpenedWindows\&.
+.PP
+Referenced by SBVLBINetworkEditor()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool \fBSBVLBINetworkEditor::isModified\fP\fC [private]\fP"
+.PP
+Definition at line 620 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by deleteEntry(), entryModified(), SBVLBINetworkEditor(), and ~SBVLBINetworkEditor()\&.
+.SS "\fBSBVLBISet::NetList\fP* \fBSBVLBINetworkEditor::Nets\fP\fC [private]\fP"
+.PP
+Definition at line 619 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by deleteEntry(), entryModified(), SBVLBINetworkEditor(), and ~SBVLBINetworkEditor()\&.
+.SS "\fBQListView\fP* \fBSBVLBINetworkEditor::NetsLV\fP\fC [private]\fP"
+.PP
+Definition at line 624 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by deleteEntry(), editEntry(), entryModified(), and SBVLBINetworkEditor()\&.
+.SS "int \fBSBVLBINetworkEditor::numOpenedWindows\fP\fC [private]\fP"
+.PP
+Definition at line 621 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by accept(), addEntry(), closeEvent(), editEntry(), entryModified(), reject(), and SBVLBINetworkEditor()\&.
+.SS "QString \fBSBVLBINetworkEditor::Str\fP\fC [private]\fP"
+.PP
+Definition at line 622 of file SbIObsVLBI\&.H'\&.
+.SS "\fBSBVLBISet\fP* \fBSBVLBINetworkEditor::Wvlbi\fP\fC [private]\fP"
+.PP
+Definition at line 618 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by SBVLBINetworkEditor()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

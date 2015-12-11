@@ -1,0 +1,375 @@
+.TH "SBOLoad" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBOLoad \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoStations\&.H>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPickUpBy\fP { \fBP_DomesNum\fP = 0, \fBP_CDPNum\fP = 1, \fBP_Domes\fP = 2, \fBP_Name\fP = 3, \fBP_Distance\fP = 4, \fBP_Manual\fP = 5, \fBP_NA\fP = 6 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBOLoad\fP ()"
+.br
+.ti -1c
+.RI "\fBSBOLoad\fP (const \fBSBOLoad\fP &)"
+.br
+.ti -1c
+.RI "virtual \fB~SBOLoad\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual \fBSBOLoad\fP & \fBoperator=\fP (const \fBSBOLoad\fP &)"
+.br
+.ti -1c
+.RI "virtual bool \fBoperator==\fP (const \fBSBOLoad\fP &) const "
+.br
+.ti -1c
+.RI "virtual bool \fBoperator!=\fP (const \fBSBOLoad\fP &) const "
+.br
+.ti -1c
+.RI "double \fBamplitude\fP (int i, int j) const "
+.br
+.ti -1c
+.RI "double \fBphase\fP (int i, int j) const "
+.br
+.ti -1c
+.RI "double \fBdist\fP () const "
+.br
+.ti -1c
+.RI "QString \fBinfo\fP () const "
+.br
+.ti -1c
+.RI "QString \fBcommentLine1\fP () const "
+.br
+.ti -1c
+.RI "QString \fBcommentLine2\fP () const "
+.br
+.ti -1c
+.RI "\fBPickUpBy\fP \fBpickedUp\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetAmplitude\fP (const double A_[3][11])"
+.br
+.ti -1c
+.RI "void \fBsetAmplitude\fP (int c, int j, double a)"
+.br
+.ti -1c
+.RI "void \fBsetPhase\fP (const double P_[11][3])"
+.br
+.ti -1c
+.RI "void \fBsetPhase\fP (int c, int j, double p)"
+.br
+.ti -1c
+.RI "void \fBsetDist\fP (double Dist_)"
+.br
+.ti -1c
+.RI "void \fBsetInfo\fP (const char *Info_)"
+.br
+.ti -1c
+.RI "void \fBsetPickedUp\fP (\fBPickUpBy\fP PickedUp_)"
+.br
+.ti -1c
+.RI "void \fBsetCommentLine1\fP (const char *CommentLine1_)"
+.br
+.ti -1c
+.RI "void \fBsetCommentLine2\fP (const char *CommentLine2_)"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBAmplitude\fP [3][11]"
+.br
+.ti -1c
+.RI "double \fBPhase\fP [3][11]"
+.br
+.ti -1c
+.RI "double \fBDist\fP"
+.br
+.ti -1c
+.RI "\fBPickUpBy\fP \fBPickedUp\fP"
+.br
+.ti -1c
+.RI "QString \fBInfo\fP"
+.br
+.ti -1c
+.RI "QString \fBCommentLine1\fP"
+.br
+.ti -1c
+.RI "QString \fBCommentLine2\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSBSite\fP"
+.br
+.ti -1c
+.RI "class \fBSBStation\fP"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBOLoad\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBOLoad\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_blq\fP & \fBoperator<<\fP (\fBSBTS_blq\fP &, const \fBSBOLoadCarrier\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_blq\fP & \fBoperator>>\fP (\fBSBTS_blq\fP &, \fBSBOLoadCarrier\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 146 of file SbGeoStations\&.H'\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBSBOLoad::PickUpBy\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIP_DomesNum \fP\fP
+.TP
+\fB\fIP_CDPNum \fP\fP
+.TP
+\fB\fIP_Domes \fP\fP
+.TP
+\fB\fIP_Name \fP\fP
+.TP
+\fB\fIP_Distance \fP\fP
+.TP
+\fB\fIP_Manual \fP\fP
+.TP
+\fB\fIP_NA \fP\fP
+
+.PP
+Definition at line 151 of file SbGeoStations\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBOLoad::SBOLoad ()"
+.PP
+Definition at line 93 of file SbGeoStations\&.C'\&.
+.PP
+References Amplitude, CommentLine1, CommentLine2, Dist, Info, P_NA, Phase, and PickedUp\&.
+.SS "SBOLoad::SBOLoad (const \fBSBOLoad\fP &Ol)"
+.PP
+Definition at line 107 of file SbGeoStations\&.C'\&.
+.PP
+References Amplitude, CommentLine1, CommentLine2, Dist, Info, Phase, and PickedUp\&.
+.SS "virtual SBOLoad::~SBOLoad ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 165 of file SbGeoStations\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double SBOLoad::amplitude (inti, intj) const\fC [inline]\fP"
+.PP
+Definition at line 172 of file SbGeoStations\&.H'\&.
+.PP
+References Amplitude\&.
+.PP
+Referenced by SBOLoadEditor::collectData(), SBOceanTideLd::operator()(), and SBOLoadEditor::SBOLoadEditor()\&.
+.SS "virtual QString SBOLoad::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 166 of file SbGeoStations\&.H'\&.
+.SS "void SBOLoad::clear ()\fC [inline]\fP"
+.PP
+Definition at line 195 of file SbGeoStations\&.H'\&.
+.PP
+References Amplitude, and Phase\&.
+.PP
+Referenced by SBOLoadCarrier::SBOLoadCarrier()\&.
+.SS "QString SBOLoad::commentLine1 () const\fC [inline]\fP"
+.PP
+Definition at line 176 of file SbGeoStations\&.H'\&.
+.PP
+References CommentLine1\&.
+.PP
+Referenced by SBOLoadEditor::collectData(), operator<<(), and SBOLoadEditor::SBOLoadEditor()\&.
+.SS "QString SBOLoad::commentLine2 () const\fC [inline]\fP"
+.PP
+Definition at line 177 of file SbGeoStations\&.H'\&.
+.PP
+References CommentLine2\&.
+.PP
+Referenced by SBOLoadEditor::collectData(), operator<<(), and SBOLoadEditor::SBOLoadEditor()\&.
+.SS "double SBOLoad::dist () const\fC [inline]\fP"
+.PP
+Definition at line 174 of file SbGeoStations\&.H'\&.
+.PP
+References Dist\&.
+.PP
+Referenced by SBStationImport::loadOLoad()\&.
+.SS "QString SBOLoad::info () const\fC [inline]\fP"
+.PP
+Definition at line 175 of file SbGeoStations\&.H'\&.
+.PP
+References Info\&.
+.PP
+Referenced by SBOLoadEditor::collectData(), SBStationImport::loadOLoad(), and SBOLoadEditor::SBOLoadEditor()\&.
+.SS "bool SBOLoad::operator!= (const \fBSBOLoad\fP &Ol) const\fC [virtual]\fP"
+.PP
+Definition at line 151 of file SbGeoStations\&.C'\&.
+.SS "\fBSBOLoad\fP & SBOLoad::operator= (const \fBSBOLoad\fP &Ol)\fC [virtual]\fP"
+.PP
+Definition at line 121 of file SbGeoStations\&.C'\&.
+.PP
+References Amplitude, CommentLine1, CommentLine2, Dist, Info, Phase, and PickedUp\&.
+.SS "bool SBOLoad::operator== (const \fBSBOLoad\fP &Ol) const\fC [virtual]\fP"
+.PP
+Definition at line 136 of file SbGeoStations\&.C'\&.
+.PP
+References Amplitude, CommentLine1, CommentLine2, Dist, Info, Phase, and PickedUp\&.
+.SS "double SBOLoad::phase (inti, intj) const\fC [inline]\fP"
+.PP
+Definition at line 173 of file SbGeoStations\&.H'\&.
+.PP
+References Phase\&.
+.PP
+Referenced by SBOLoadEditor::collectData(), SBOceanTideLd::operator()(), and SBOLoadEditor::SBOLoadEditor()\&.
+.SS "\fBPickUpBy\fP SBOLoad::pickedUp () const\fC [inline]\fP"
+.PP
+Definition at line 178 of file SbGeoStations\&.H'\&.
+.PP
+References PickedUp\&.
+.PP
+Referenced by SBSiteListItem::key(), SBStationImport::loadOLoad(), and SBSiteListItem::text()\&.
+.SS "void SBOLoad::setAmplitude (const doubleA_[3][11])\fC [inline]\fP"
+.PP
+Definition at line 180 of file SbGeoStations\&.H'\&.
+.PP
+References Amplitude\&.
+.PP
+Referenced by SBOLoadEditor::collectData()\&.
+.SS "void SBOLoad::setAmplitude (intc, intj, doublea)\fC [inline]\fP"
+.PP
+Definition at line 182 of file SbGeoStations\&.H'\&.
+.PP
+References Amplitude\&.
+.SS "void SBOLoad::setCommentLine1 (const char *CommentLine1_)\fC [inline]\fP"
+.PP
+Definition at line 191 of file SbGeoStations\&.H'\&.
+.PP
+References CommentLine1\&.
+.PP
+Referenced by SBOLoadEditor::collectData(), and operator>>()\&.
+.SS "void SBOLoad::setCommentLine2 (const char *CommentLine2_)\fC [inline]\fP"
+.PP
+Definition at line 192 of file SbGeoStations\&.H'\&.
+.PP
+References CommentLine2\&.
+.PP
+Referenced by SBOLoadEditor::collectData(), and operator>>()\&.
+.SS "void SBOLoad::setDist (doubleDist_)\fC [inline]\fP"
+.PP
+Definition at line 188 of file SbGeoStations\&.H'\&.
+.PP
+References Dist\&.
+.PP
+Referenced by SBStationImport::loadOLoad()\&.
+.SS "void SBOLoad::setInfo (const char *Info_)\fC [inline]\fP"
+.PP
+Definition at line 189 of file SbGeoStations\&.H'\&.
+.PP
+References Info\&.
+.PP
+Referenced by SBOLoadEditor::collectData(), and SBStationImport::loadOLoad()\&.
+.SS "void SBOLoad::setPhase (const doubleP_[11][3])\fC [inline]\fP"
+.PP
+Definition at line 184 of file SbGeoStations\&.H'\&.
+.PP
+References Phase\&.
+.PP
+Referenced by SBOLoadEditor::collectData()\&.
+.SS "void SBOLoad::setPhase (intc, intj, doublep)\fC [inline]\fP"
+.PP
+Definition at line 186 of file SbGeoStations\&.H'\&.
+.PP
+References Phase\&.
+.SS "void SBOLoad::setPickedUp (\fBPickUpBy\fPPickedUp_)\fC [inline]\fP"
+.PP
+Definition at line 190 of file SbGeoStations\&.H'\&.
+.PP
+References PickedUp\&.
+.PP
+Referenced by SBOLoadEditor::createOLoad(), SBOLoadEditor::deleteOLoad(), and SBStationImport::loadOLoad()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBOLoad\fP &Ol)\fC [friend]\fP"
+.PP
+Definition at line 164 of file SbGeoStations\&.C'\&.
+.SS "\fBSBTS_blq\fP& operator<< (\fBSBTS_blq\fP &s, const \fBSBOLoadCarrier\fP &OLC)\fC [friend]\fP"
+.PP
+Definition at line 4117 of file SbGeoStations\&.C'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBOLoad\fP &Ol)\fC [friend]\fP"
+.PP
+Definition at line 171 of file SbGeoStations\&.C'\&.
+.SS "\fBSBTS_blq\fP& operator>> (\fBSBTS_blq\fP &s, \fBSBOLoadCarrier\fP &OLC)\fC [friend]\fP"
+.PP
+Definition at line 3920 of file SbGeoStations\&.C'\&.
+.SS "friend class \fBSBSite\fP\fC [friend]\fP"
+.PP
+Definition at line 148 of file SbGeoStations\&.H'\&.
+.SS "friend class \fBSBStation\fP\fC [friend]\fP"
+.PP
+Definition at line 149 of file SbGeoStations\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double \fBSBOLoad::Amplitude\fP[3][11]\fC [private]\fP"
+.PP
+Definition at line 154 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by amplitude(), clear(), operator<<(), operator=(), operator==(), operator>>(), SBOLoad(), and setAmplitude()\&.
+.SS "QString \fBSBOLoad::CommentLine1\fP\fC [private]\fP"
+.PP
+Definition at line 159 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by commentLine1(), operator<<(), operator=(), operator==(), operator>>(), SBOLoad(), and setCommentLine1()\&.
+.SS "QString \fBSBOLoad::CommentLine2\fP\fC [private]\fP"
+.PP
+Definition at line 160 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by commentLine2(), operator<<(), operator=(), operator==(), operator>>(), SBOLoad(), and setCommentLine2()\&.
+.SS "double \fBSBOLoad::Dist\fP\fC [private]\fP"
+.PP
+Definition at line 156 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by dist(), operator<<(), operator=(), operator==(), operator>>(), SBOLoad(), and setDist()\&.
+.SS "QString \fBSBOLoad::Info\fP\fC [private]\fP"
+.PP
+Definition at line 158 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by info(), operator<<(), operator=(), operator==(), operator>>(), SBOLoad(), and setInfo()\&.
+.SS "double \fBSBOLoad::Phase\fP[3][11]\fC [private]\fP"
+.PP
+Definition at line 155 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by clear(), operator<<(), operator=(), operator==(), operator>>(), phase(), SBOLoad(), and setPhase()\&.
+.SS "\fBPickUpBy\fP \fBSBOLoad::PickedUp\fP\fC [private]\fP"
+.PP
+Definition at line 157 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by operator<<(), operator=(), operator==(), operator>>(), pickedUp(), SBOLoad(), and setPickedUp()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

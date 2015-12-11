@@ -1,0 +1,185 @@
+.TH "SBOLoadEditor" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBOLoadEditor \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIStuffStation\&.H>\fP
+.PP
+Inherits \fBQWidget\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBOLoadEditor\fP (\fBSBOLoad\fP *, bool, \fBQWidget\fP *=0, const char *=0)"
+.br
+.ti -1c
+.RI "\fB~SBOLoadEditor\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual bool \fBcollectData\fP ()"
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBcreateOLoad\fP ()"
+.br
+.ti -1c
+.RI "void \fBdeleteOLoad\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBisSite\fP"
+.br
+.ti -1c
+.RI "bool \fBisDisabled\fP"
+.br
+.ti -1c
+.RI "bool \fBisModified\fP"
+.br
+.ti -1c
+.RI "\fBSBOLoad\fP * \fBOLoad\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEAmplitude\fP [3][11]"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEPhase\fP [3][11]"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEInfo\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEComment1\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEComment2\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBLStatus\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSBStationEditor\fP"
+.br
+.ti -1c
+.RI "class \fBSBSiteEditor\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 574 of file SbIStuffStation\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBOLoadEditor::SBOLoadEditor (\fBSBOLoad\fP *OLoad_, boolisSite_, \fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP)"
+.PP
+Definition at line 3815 of file SbIStuffStation\&.C'\&.
+.PP
+References SBOLoad::amplitude(), SBOLoad::commentLine1(), SBOLoad::commentLine2(), createOLoad(), deleteOLoad(), EAmplitude, EComment1, EComment2, EInfo, EPhase, SBOLoad::info(), isDisabled, isModified, isSite, OLoad, and SBOLoad::phase()\&.
+.SS "SBOLoadEditor::~SBOLoadEditor ()"
+.PP
+Definition at line 3946 of file SbIStuffStation\&.C'\&.
+.PP
+References isSite, and OLoad\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBOLoadEditor::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 580 of file SbIStuffStation\&.H'\&.
+.SS "bool SBOLoadEditor::collectData ()\fC [virtual]\fP"
+.PP
+Definition at line 3989 of file SbIStuffStation\&.C'\&.
+.PP
+References SBOLoad::amplitude(), SBOLoad::commentLine1(), SBOLoad::commentLine2(), EAmplitude, EComment1, EComment2, EInfo, EPhase, SBOLoad::info(), isDisabled, isModified, OLoad, SBOLoad::phase(), SBOLoad::setAmplitude(), SBOLoad::setCommentLine1(), SBOLoad::setCommentLine2(), SBOLoad::setInfo(), and SBOLoad::setPhase()\&.
+.PP
+Referenced by SBSiteEditor::acquireData(), and SBStationEditor::acquireData()\&.
+.SS "void SBOLoadEditor::createOLoad ()\fC [protected, slot]\fP"
+.PP
+Definition at line 3951 of file SbIStuffStation\&.C'\&.
+.PP
+References EAmplitude, EComment1, EComment2, EInfo, EPhase, isDisabled, isModified, OLoad, SBOLoad::P_Manual, and SBOLoad::setPickedUp()\&.
+.PP
+Referenced by SBOLoadEditor()\&.
+.SS "void SBOLoadEditor::deleteOLoad ()\fC [protected, slot]\fP"
+.PP
+Definition at line 3970 of file SbIStuffStation\&.C'\&.
+.PP
+References EAmplitude, EComment1, EComment2, EInfo, EPhase, isDisabled, isModified, OLoad, SBOLoad::P_NA, and SBOLoad::setPickedUp()\&.
+.PP
+Referenced by SBOLoadEditor()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBSBSiteEditor\fP\fC [friend]\fP"
+.PP
+Definition at line 603 of file SbIStuffStation\&.H'\&.
+.SS "friend class \fBSBStationEditor\fP\fC [friend]\fP"
+.PP
+Definition at line 602 of file SbIStuffStation\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QLineEdit* \fBSBOLoadEditor::EAmplitude\fP[3][11]\fC [private]\fP"
+.PP
+Definition at line 593 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by collectData(), createOLoad(), deleteOLoad(), and SBOLoadEditor()\&.
+.SS "QLineEdit* \fBSBOLoadEditor::EComment1\fP\fC [private]\fP"
+.PP
+Definition at line 597 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by collectData(), createOLoad(), deleteOLoad(), and SBOLoadEditor()\&.
+.SS "QLineEdit* \fBSBOLoadEditor::EComment2\fP\fC [private]\fP"
+.PP
+Definition at line 598 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by collectData(), createOLoad(), deleteOLoad(), and SBOLoadEditor()\&.
+.SS "QLineEdit* \fBSBOLoadEditor::EInfo\fP\fC [private]\fP"
+.PP
+Definition at line 596 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by collectData(), createOLoad(), deleteOLoad(), and SBOLoadEditor()\&.
+.SS "QLineEdit* \fBSBOLoadEditor::EPhase\fP[3][11]\fC [private]\fP"
+.PP
+Definition at line 594 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by collectData(), createOLoad(), deleteOLoad(), and SBOLoadEditor()\&.
+.SS "bool \fBSBOLoadEditor::isDisabled\fP\fC [private]\fP"
+.PP
+Definition at line 590 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by SBStationEditor::acquireData(), collectData(), createOLoad(), deleteOLoad(), and SBOLoadEditor()\&.
+.SS "bool \fBSBOLoadEditor::isModified\fP\fC [private]\fP"
+.PP
+Definition at line 591 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by collectData(), createOLoad(), deleteOLoad(), and SBOLoadEditor()\&.
+.SS "bool \fBSBOLoadEditor::isSite\fP\fC [private]\fP"
+.PP
+Definition at line 589 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by SBOLoadEditor(), and ~SBOLoadEditor()\&.
+.SS "QLabel* \fBSBOLoadEditor::LStatus\fP\fC [private]\fP"
+.PP
+Definition at line 600 of file SbIStuffStation\&.H'\&.
+.SS "\fBSBOLoad\fP* \fBSBOLoadEditor::OLoad\fP\fC [private]\fP"
+.PP
+Definition at line 592 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by SBStationEditor::acquireData(), collectData(), createOLoad(), deleteOLoad(), SBOLoadEditor(), and ~SBOLoadEditor()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

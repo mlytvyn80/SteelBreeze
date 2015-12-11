@@ -1,0 +1,113 @@
+.TH "SBSourceListItem" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBSourceListItem \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIStuffSource\&.H>\fP
+.PP
+Inherits \fBQListViewItem\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSourceListItem\fP (\fBQListView\fP *, \fBSBSource\fP *=0)"
+.br
+.ti -1c
+.RI "virtual \fB~SBSourceListItem\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual QString \fBtext\fP (int) const "
+.br
+.ti -1c
+.RI "QString \fBkey\fP (int, bool) const "
+.br
+.ti -1c
+.RI "const QPixmap * \fBpixmap\fP (int) const "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSource\fP * \fBSource\fP"
+.br
+.ti -1c
+.RI "bool \fBisFaked\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSBStuffSources\fP"
+.br
+.ti -1c
+.RI "class \fBSBSourceEditor\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 58 of file SbIStuffSource\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBSourceListItem::SBSourceListItem (\fBQListView\fP *parent, \fBSBSource\fP *Source_ = \fC0\fP)"
+.PP
+Definition at line 61 of file SbIStuffSource\&.C'\&.
+.PP
+References isFaked, and Source\&.
+.SS "SBSourceListItem::~SBSourceListItem ()\fC [virtual]\fP"
+.PP
+Definition at line 73 of file SbIStuffSource\&.C'\&.
+.PP
+References isFaked, and Source\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBSourceListItem::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 66 of file SbIStuffSource\&.H'\&.
+.SS "QString SBSourceListItem::key (intcol, bool) const"
+.PP
+Definition at line 131 of file SbIStuffSource\&.C'\&.
+.PP
+References SBSource::dn(), SBSource::dn_err(), SBSource::firstMJD(), SBAttributed::isAttr(), SBSource::isHLink(), SBSource::lastMJD(), SBSource::mv(), SBNamed::name(), SBSource::nObsApr(), SBSource::nSessApr(), SBSource::ra(), SBSource::ra_err(), RAD2DEG, RAD2HR, Source, SBSource::status(), SBSource::StatusSuspected, TmpString, and SBSource::type()\&.
+.SS "const QPixmap * SBSourceListItem::pixmap (intcol) const"
+.PP
+Definition at line 172 of file SbIStuffSource\&.C'\&.
+.PP
+References SBSource::isHLink(), pmSrcHLink, pmSrcStatus, Source, and SBSource::status()\&.
+.SS "QString SBSourceListItem::text (intcol) const\fC [virtual]\fP"
+.PP
+Definition at line 79 of file SbIStuffSource\&.C'\&.
+.PP
+References SBSource::DN2str(), SBSource::dn_err(), SBSource::firstMJD(), SBAttributed::isAttr(), SBSource::lastMJD(), SBSource::mv(), SBNamed::name(), SBSource::nObsApr(), SBSource::nSessApr(), SBSource::RA2str(), SBSource::ra_err(), RAD2DEG, RAD2HR, Source, SBSource::StatusSuspected, TmpString, and SBSource::type()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBSBSourceEditor\fP\fC [friend]\fP"
+.PP
+Definition at line 71 of file SbIStuffSource\&.H'\&.
+.SS "friend class \fBSBStuffSources\fP\fC [friend]\fP"
+.PP
+Definition at line 70 of file SbIStuffSource\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool \fBSBSourceListItem::isFaked\fP\fC [private]\fP"
+.PP
+Definition at line 62 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by SBSourceListItem(), and ~SBSourceListItem()\&.
+.SS "\fBSBSource\fP* \fBSBSourceListItem::Source\fP\fC [private]\fP"
+.PP
+Definition at line 61 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by SBStuffSources::deleteEntryS(), key(), pixmap(), SBSourceEditor::SBSourceEditor(), SBSourceListItem(), text(), and ~SBSourceListItem()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

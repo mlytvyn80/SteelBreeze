@@ -1,0 +1,2028 @@
+.TH "SBConfig" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBConfig \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoProject\&.H>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBMSysTransform\fP { \fBSTR_Classic\fP, \fBSTR_NRO\fP }"
+.br
+.ti -1c
+.RI "enum \fBMSolidTideLd\fP { \fBST_IERS92\fP, \fBST_IERS96\fP }"
+.br
+.ti -1c
+.RI "enum \fBMSolidTideDegree\fP { \fBSTDEGREE_2\fP, \fBSTDEGREE_3\fP }"
+.br
+.ti -1c
+.RI "enum \fBMEOPDiurnal\fP { \fBEDM_NONE\fP, \fBEDM_Ray1995\fP, \fBEDM_JPL92\fP, \fBEDM_HD1994\fP, \fBEDM_GSFC95\fP, \fBEDM_Gipson1995\fP }"
+.br
+.ti -1c
+.RI "enum \fBMEOPDiurnalAtm\fP { \fBEDMA_NONE\fP, \fBEDMA_BBP\fP }"
+.br
+.ti -1c
+.RI "enum \fBMEOPDiurnalNonTidal\fP { \fBEDMNT_NONE\fP, \fBEDMNT_Viron\fP }"
+.br
+.ti -1c
+.RI "enum \fBMNutModel\fP { \fBNM_IAU1980\fP, \fBNM_IAU1996\fP, \fBNM_IAU2000\fP }"
+.br
+.ti -1c
+.RI "enum \fBMNutEqEquinox\fP { \fBNEE_IERS92\fP, \fBNEE_SOVERS\fP, \fBNEE_IERS96\fP }"
+.br
+.ti -1c
+.RI "enum \fBMEphModel\fP { \fBEM_LEDE200\fP, \fBEM_LEDE403\fP, \fBEM_LEDE405\fP }"
+.br
+.ti -1c
+.RI "enum \fBMPlateMotion\fP { \fBPM_NNR_NUVEL1A\fP, \fBPM_NUVEL1A\fP, \fBPM_NONE\fP }"
+.br
+.ti -1c
+.RI "enum \fBMRefrDryZenith\fP { \fBRDZ_NONE\fP, \fBRDZ_Saastamoinen\fP, \fBRDZ_Hopfield\fP }"
+.br
+.ti -1c
+.RI "enum \fBMRefrWetZenith\fP { \fBRWZ_NONE\fP, \fBRWZ_Saastamoinen\fP, \fBRWZ_Hopfield\fP }"
+.br
+.ti -1c
+.RI "enum \fBMRefrDryMapping\fP { \fBRDM_NONE\fP, \fBRDM_Chao\fP, \fBRDM_CfA2p2\fP, \fBRDM_Ifadis\fP, \fBRDM_MTT\fP, \fBRDM_NMFH2\fP }"
+.br
+.ti -1c
+.RI "enum \fBMRefrWetMapping\fP { \fBRWM_NONE\fP, \fBRWM_Chao\fP, \fBRWM_Ifadis\fP, \fBRWM_MTT\fP, \fBRDM_NMFW2\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBConfig\fP ()"
+.br
+.ti -1c
+.RI "\fBSBConfig\fP (const \fBSBConfig\fP &Cfg_)"
+.br
+.ti -1c
+.RI "virtual \fB~SBConfig\fP ()"
+.br
+.ti -1c
+.RI "\fBSBConfig\fP & \fBoperator=\fP (const \fBSBConfig\fP &)"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "\fBMSysTransform\fP \fBsysTransform\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetSysTransform\fP (\fBMSysTransform\fP E_)"
+.br
+.ti -1c
+.RI "\fBMEphModel\fP \fBephemModel\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisEphBody\fP (int i) const "
+.br
+.ti -1c
+.RI "bool \fBisGravDelayHO\fP () const "
+.br
+.ti -1c
+.RI "double \fBgravHOThreshold\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetEphemModel\fP (\fBMEphModel\fP E_)"
+.br
+.ti -1c
+.RI "void \fBsetIsEphBody\fP (int i, bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetIsGravDelayHO\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetGravHOThreshold\fP (double d_)"
+.br
+.ti -1c
+.RI "\fBMSolidTideLd\fP \fBsolidTideLd\fP () const "
+.br
+.ti -1c
+.RI "\fBMSolidTideDegree\fP \fBsolidTideDegree\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisSolidTideAnelastic\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisSolidTideLatDepend\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisRemovePermTide\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetSolidTideLd\fP (\fBMSolidTideLd\fP S_)"
+.br
+.ti -1c
+.RI "void \fBsetSolidTideDegree\fP (\fBMSolidTideDegree\fP D_)"
+.br
+.ti -1c
+.RI "void \fBsetIsSolidTideAnelastic\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetIsSolidTideLatDepend\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetIsRemovePermTide\fP (bool Is_)"
+.br
+.ti -1c
+.RI "\fBMEOPDiurnal\fP \fBeopDiurnal\fP () const "
+.br
+.ti -1c
+.RI "\fBMEOPDiurnalAtm\fP \fBeopDiurnalAtm\fP () const "
+.br
+.ti -1c
+.RI "\fBMEOPDiurnalNonTidal\fP \fBeopDiurnalNonTidal\fP () const "
+.br
+.ti -1c
+.RI "int \fBeopNumIntrplPoints\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisEOP_IAU2K_XY\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisEOPResrerved_1\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetEopDiurnal\fP (\fBMEOPDiurnal\fP E_)"
+.br
+.ti -1c
+.RI "void \fBsetEopDiurnalAtm\fP (\fBMEOPDiurnalAtm\fP E_)"
+.br
+.ti -1c
+.RI "void \fBsetEopDiurnalNonTidal\fP (\fBMEOPDiurnalNonTidal\fP E_)"
+.br
+.ti -1c
+.RI "void \fBsetEOPNumIntrplPoints\fP (int N_)"
+.br
+.ti -1c
+.RI "void \fBsetIsEOP_IAU2K_XY\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetIsEOPResrerved_1\fP (bool Is_)"
+.br
+.ti -1c
+.RI "\fBMNutModel\fP \fBnutModel\fP () const "
+.br
+.ti -1c
+.RI "\fBMNutEqEquinox\fP \fBnutEquinox\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisNeedGeodNut\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetNutModel\fP (\fBMNutModel\fP M_)"
+.br
+.ti -1c
+.RI "void \fBsetNutEquinox\fP (\fBMNutEqEquinox\fP E_)"
+.br
+.ti -1c
+.RI "void \fBsetIsNeedGeodNut\fP (bool Is_)"
+.br
+.ti -1c
+.RI "\fBMPlateMotion\fP \fBplateMotion\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetPlateMotion\fP (\fBMPlateMotion\fP P_)"
+.br
+.ti -1c
+.RI "bool \fBisUseStationVelocity\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisRollBack2Plates\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisUseAploEphem\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetIsUseStationVelocity\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetIsRollBack2Plates\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetIsUseAploEphem\fP (bool Is_)"
+.br
+.ti -1c
+.RI "\fBMRefrDryZenith\fP \fBrefrDryZenith\fP () const "
+.br
+.ti -1c
+.RI "\fBMRefrWetZenith\fP \fBrefrWetZenith\fP () const "
+.br
+.ti -1c
+.RI "\fBMRefrDryMapping\fP \fBrefrDryMapping\fP () const "
+.br
+.ti -1c
+.RI "\fBMRefrWetMapping\fP \fBrefrWetMapping\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisAltAxsCorr\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisRollBack2NMF\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetRefrDryZenith\fP (\fBMRefrDryZenith\fP DZ_)"
+.br
+.ti -1c
+.RI "void \fBsetRefrWetZenith\fP (\fBMRefrWetZenith\fP WZ_)"
+.br
+.ti -1c
+.RI "void \fBsetRefrDryMapping\fP (\fBMRefrDryMapping\fP DM_)"
+.br
+.ti -1c
+.RI "void \fBsetRefrWetMapping\fP (\fBMRefrWetMapping\fP WM_)"
+.br
+.ti -1c
+.RI "void \fBsetIsAltAxsCorr\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetIsRollBack2NMF\fP (bool Is_)"
+.br
+.ti -1c
+.RI "int \fBqCodeThreshold\fP () const "
+.br
+.ti -1c
+.RI "int \fBdUFlagThreshold\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisUseDelay\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisUseRate\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisUseBadIon\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetQCodeThreshold\fP (int Threshold_)"
+.br
+.ti -1c
+.RI "void \fBsetDUFlagThreshold\fP (int Threshold_)"
+.br
+.ti -1c
+.RI "void \fBsetIsUseDelay\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetIsUseRate\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetIsUseBadIon\fP (bool Is_)"
+.br
+.ti -1c
+.RI "bool \fBreportMaps\fP () const "
+.br
+.ti -1c
+.RI "bool \fBreportCRF_Changes\fP () const "
+.br
+.ti -1c
+.RI "bool \fBreportTRF_Changes\fP () const "
+.br
+.ti -1c
+.RI "bool \fBreportCRF\fP () const "
+.br
+.ti -1c
+.RI "bool \fBreportTRF_SINEX\fP () const "
+.br
+.ti -1c
+.RI "bool \fBreportEOP\fP () const "
+.br
+.ti -1c
+.RI "bool \fBreportTechDesc\fP () const "
+.br
+.ti -1c
+.RI "bool \fBreportNormalEqs\fP () const "
+.br
+.ti -1c
+.RI "bool \fBreportNormalEqsSRCs\fP () const "
+.br
+.ti -1c
+.RI "bool \fBreportNormalEqsSTCs\fP () const "
+.br
+.ti -1c
+.RI "bool \fBreportNormalEqsEOPs\fP () const "
+.br
+.ti -1c
+.RI "bool \fBreportTroposhere\fP () const "
+.br
+.ti -1c
+.RI "double \fBtropSamplInterval\fP () const "
+.br
+.ti -1c
+.RI "int \fBtropStartSec\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetReportMaps\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetReportCRF_Changes\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetReportTRF_Changes\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetReportCRF\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetReportTRF_SINEX\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetReportEOP\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetReportTechDesc\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetReportNormalEqs\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetReportNormalEqsSRCs\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetReportNormalEqsSTCs\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetReportNormalEqsEOPs\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetReportTroposhere\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetTropSamplInterval\fP (double d_)"
+.br
+.ti -1c
+.RI "void \fBsetTropStartSec\fP (int n_)"
+.br
+.ti -1c
+.RI "bool \fBuseAltStations\fP () const "
+.br
+.ti -1c
+.RI "bool \fBuseAltSources\fP () const "
+.br
+.ti -1c
+.RI "bool \fBuseAltEOPs\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBaltStations\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBaltSources\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBaltEOPs\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetUseAltStations\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetUseAltSources\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetUseAltEOPs\fP (bool Is_)"
+.br
+.ti -1c
+.RI "void \fBsetAltStations\fP (const QString &S_)"
+.br
+.ti -1c
+.RI "void \fBsetAltSources\fP (const QString &S_)"
+.br
+.ti -1c
+.RI "void \fBsetAltEOPs\fP (const QString &S_)"
+.br
+.ti -1c
+.RI "bool \fBisGenerateDSINEXes\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetIsGenerateDSINEXes\fP (bool Is_)"
+.br
+.ti -1c
+.RI "bool \fBisChanged\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetIsChanged\fP (bool Is_=TRUE)"
+.br
+.ti -1c
+.RI "const \fBSBParametersDesc\fP & \fBp\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetP\fP (const \fBSBParametersDesc\fP &P_)"
+.br
+.ti -1c
+.RI "void \fBsetAllPars2Type\fP (\fBSBParameterCfg::PType\fP)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBIsChanged\fP"
+.br
+.ti -1c
+.RI "\fBSBParametersDesc\fP \fBP\fP"
+.br
+.ti -1c
+.RI "\fBMSysTransform\fP \fBSysTransform\fP"
+.br
+.RI "\fIType of CRF<->TRF system transformation'\&. \fP"
+.ti -1c
+.RI "\fBMEphModel\fP \fBEphemModel\fP"
+.br
+.RI "\fIEphemerides model'\&. \fP"
+.ti -1c
+.RI "bool \fBIsEphBody\fP [11]"
+.br
+.RI "\fICelestial bodies taking into account'\&. \fP"
+.ti -1c
+.RI "bool \fBIsGravDelayHO\fP"
+.br
+.RI "\fIHigh order effects'\&. \fP"
+.ti -1c
+.RI "double \fBGravHOThreshold\fP"
+.br
+.RI "\fIThreshold for high order effects, rad'\&. \fP"
+.ti -1c
+.RI "\fBMSolidTideLd\fP \fBSolidTideLd\fP"
+.br
+.RI "\fISite displacement load model due to solid tide'\&. \fP"
+.ti -1c
+.RI "\fBMSolidTideDegree\fP \fBSolidTideDegree\fP"
+.br
+.RI "\fIMaximum degree of solid tide loading model'\&. \fP"
+.ti -1c
+.RI "bool \fBIsSolidTideAnelastic\fP"
+.br
+.RI "\fIAnelastic or elastic model'\&. \fP"
+.ti -1c
+.RI "bool \fBIsSolidTideLatDepend\fP"
+.br
+.RI "\fIInclude Solid Tide Latitude dependence'\&. \fP"
+.ti -1c
+.RI "bool \fBIsRemovePermTide\fP"
+.br
+.RI "\fIRemove permanent tide'\&. \fP"
+.ti -1c
+.RI "\fBMEOPDiurnal\fP \fBEOPDiurnal\fP"
+.br
+.RI "\fITake into account diurnal variations in EOP'\&. \fP"
+.ti -1c
+.RI "\fBMEOPDiurnalAtm\fP \fBEOPDiurnalAtm\fP"
+.br
+.RI "\fITake into account diurnal variations in EOP (atmosphere) \fP"
+.ti -1c
+.RI "\fBMEOPDiurnalNonTidal\fP \fBEOPDiurnalNonTidal\fP"
+.br
+.RI "\fITake into account diurnal variations in EOP (non-tidal) \fP"
+.ti -1c
+.RI "int \fBEOPNumIntrplPoints\fP"
+.br
+.RI "\fINumber of points for interpolation'\&. \fP"
+.ti -1c
+.RI "bool \fBIsEOP_IAU2K_XY\fP"
+.br
+.RI "\fINutations in EOP are dX and dY w/ respect to IAU2000'\&. \fP"
+.ti -1c
+.RI "bool \fBIsEOPResrerved_1\fP"
+.br
+.RI "\fIReserved for use with EOP'\&. \fP"
+.ti -1c
+.RI "\fBMNutModel\fP \fBNutModel\fP"
+.br
+.RI "\fINutation theory model'\&. \fP"
+.ti -1c
+.RI "\fBMNutEqEquinox\fP \fBNutEquinox\fP"
+.br
+.RI "\fIModel of the Equation of equinoxes'\&. \fP"
+.ti -1c
+.RI "bool \fBIsNutGeodNut\fP"
+.br
+.RI "\fITake into account geodesic nutation'\&. \fP"
+.ti -1c
+.RI "\fBMPlateMotion\fP \fBPlateMotion\fP"
+.br
+.RI "\fITectonic plate motion model'\&. \fP"
+.ti -1c
+.RI "bool \fBIsUseStationVelocity\fP"
+.br
+.RI "\fIUse velocity of a station from a catalogue'\&. \fP"
+.ti -1c
+.RI "bool \fBIsRollBack2Plates\fP"
+.br
+.RI "\fIUse plate motion vel'\&. if V=0'\&. \fP"
+.ti -1c
+.RI "bool \fBIsUseAploEphem\fP"
+.br
+.RI "\fIUse atmoshperic loading ephemerides'\&. \fP"
+.ti -1c
+.RI "\fBMRefrDryZenith\fP \fBRefrDryZenith\fP"
+.br
+.RI "\fIHydrostatic zenith delay model;'\&. \fP"
+.ti -1c
+.RI "\fBMRefrWetZenith\fP \fBRefrWetZenith\fP"
+.br
+.RI "\fIWet zenith delay model;'\&. \fP"
+.ti -1c
+.RI "\fBMRefrDryMapping\fP \fBRefrDryMapping\fP"
+.br
+.RI "\fIHydrostatic mapping function model;'\&. \fP"
+.ti -1c
+.RI "\fBMRefrWetMapping\fP \fBRefrWetMapping\fP"
+.br
+.RI "\fIWet mapping function model;'\&. \fP"
+.ti -1c
+.RI "bool \fBIsAltAxsCorr\fP"
+.br
+.RI "\fITake into axis offset altitude correction;'\&. \fP"
+.ti -1c
+.RI "bool \fBIsRollBack2NMF\fP"
+.br
+.RI "\fIUse NMFs in the case of bad/art metheo;'\&. \fP"
+.ti -1c
+.RI "int \fBQCodeThreshold\fP"
+.br
+.ti -1c
+.RI "int \fBDUFlagThreshold\fP"
+.br
+.ti -1c
+.RI "bool \fBIsUseDelay\fP"
+.br
+.ti -1c
+.RI "bool \fBIsUseRate\fP"
+.br
+.ti -1c
+.RI "bool \fBIsUseBadIon\fP"
+.br
+.ti -1c
+.RI "bool \fBReportMaps\fP"
+.br
+.ti -1c
+.RI "bool \fBReportCRF_Changes\fP"
+.br
+.ti -1c
+.RI "bool \fBReportTRF_Changes\fP"
+.br
+.ti -1c
+.RI "bool \fBReportCRF\fP"
+.br
+.ti -1c
+.RI "bool \fBReportTRF_SINEX\fP"
+.br
+.ti -1c
+.RI "bool \fBReportEOP\fP"
+.br
+.ti -1c
+.RI "bool \fBReportTechDesc\fP"
+.br
+.ti -1c
+.RI "bool \fBReportNormalEqs\fP"
+.br
+.RI "\fIMake report of NEQ in SINEX format;'\&. \fP"
+.ti -1c
+.RI "bool \fBReportNormalEqsSRCs\fP"
+.br
+.RI "\fIInclude sources in NEQ report;'\&. \fP"
+.ti -1c
+.RI "bool \fBReportNormalEqsSTCs\fP"
+.br
+.RI "\fIInclude stations in NEQ report;'\&. \fP"
+.ti -1c
+.RI "bool \fBReportNormalEqsEOPs\fP"
+.br
+.RI "\fIInclude EOP in NEQ report;'\&. \fP"
+.ti -1c
+.RI "bool \fBReportTroposhere\fP"
+.br
+.ti -1c
+.RI "double \fBTropSamplInterval\fP"
+.br
+.ti -1c
+.RI "int \fBTropStartSec\fP"
+.br
+.ti -1c
+.RI "bool \fBUseAltStations\fP"
+.br
+.ti -1c
+.RI "bool \fBUseAltSources\fP"
+.br
+.ti -1c
+.RI "bool \fBUseAltEOPs\fP"
+.br
+.ti -1c
+.RI "QString \fBAltStations\fP"
+.br
+.ti -1c
+.RI "QString \fBAltSources\fP"
+.br
+.ti -1c
+.RI "QString \fBAltEOPs\fP"
+.br
+.ti -1c
+.RI "bool \fBIsGenerateDSINEXes\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBConfig\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBConfig\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Runtime configuration of the models'\&. 
+.PP
+Definition at line 61 of file SbGeoProject\&.H'\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBSBConfig::MEOPDiurnal\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIEDM_NONE \fP\fP
+.TP
+\fB\fIEDM_Ray1995 \fP\fP
+.TP
+\fB\fIEDM_JPL92 \fP\fP
+.TP
+\fB\fIEDM_HD1994 \fP\fP
+.TP
+\fB\fIEDM_GSFC95 \fP\fP
+.TP
+\fB\fIEDM_Gipson1995 \fP\fP
+
+.PP
+Definition at line 67 of file SbGeoProject\&.H'\&.
+.SS "enum \fBSBConfig::MEOPDiurnalAtm\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIEDMA_NONE \fP\fP
+.TP
+\fB\fIEDMA_BBP \fP\fP
+
+.PP
+Definition at line 68 of file SbGeoProject\&.H'\&.
+.SS "enum \fBSBConfig::MEOPDiurnalNonTidal\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIEDMNT_NONE \fP\fP
+.TP
+\fB\fIEDMNT_Viron \fP\fP
+
+.PP
+Definition at line 69 of file SbGeoProject\&.H'\&.
+.SS "enum \fBSBConfig::MEphModel\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIEM_LEDE200 \fP\fP
+.TP
+\fB\fIEM_LEDE403 \fP\fP
+.TP
+\fB\fIEM_LEDE405 \fP\fP
+
+.PP
+Definition at line 72 of file SbGeoProject\&.H'\&.
+.SS "enum \fBSBConfig::MNutEqEquinox\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fINEE_IERS92 \fP\fP
+.TP
+\fB\fINEE_SOVERS \fP\fP
+.TP
+\fB\fINEE_IERS96 \fP\fP
+
+.PP
+Definition at line 71 of file SbGeoProject\&.H'\&.
+.SS "enum \fBSBConfig::MNutModel\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fINM_IAU1980 \fP\fP
+.TP
+\fB\fINM_IAU1996 \fP\fP
+.TP
+\fB\fINM_IAU2000 \fP\fP
+
+.PP
+Definition at line 70 of file SbGeoProject\&.H'\&.
+.SS "enum \fBSBConfig::MPlateMotion\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIPM_NNR_NUVEL1A \fP\fP
+.TP
+\fB\fIPM_NUVEL1A \fP\fP
+.TP
+\fB\fIPM_NONE \fP\fP
+
+.PP
+Definition at line 73 of file SbGeoProject\&.H'\&.
+.SS "enum \fBSBConfig::MRefrDryMapping\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIRDM_NONE \fP\fP
+.TP
+\fB\fIRDM_Chao \fP\fP
+.TP
+\fB\fIRDM_CfA2p2 \fP\fP
+.TP
+\fB\fIRDM_Ifadis \fP\fP
+.TP
+\fB\fIRDM_MTT \fP\fP
+.TP
+\fB\fIRDM_NMFH2 \fP\fP
+
+.PP
+Definition at line 76 of file SbGeoProject\&.H'\&.
+.SS "enum \fBSBConfig::MRefrDryZenith\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIRDZ_NONE \fP\fP
+.TP
+\fB\fIRDZ_Saastamoinen \fP\fP
+.TP
+\fB\fIRDZ_Hopfield \fP\fP
+
+.PP
+Definition at line 74 of file SbGeoProject\&.H'\&.
+.SS "enum \fBSBConfig::MRefrWetMapping\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIRWM_NONE \fP\fP
+.TP
+\fB\fIRWM_Chao \fP\fP
+.TP
+\fB\fIRWM_Ifadis \fP\fP
+.TP
+\fB\fIRWM_MTT \fP\fP
+.TP
+\fB\fIRDM_NMFW2 \fP\fP
+
+.PP
+Definition at line 77 of file SbGeoProject\&.H'\&.
+.SS "enum \fBSBConfig::MRefrWetZenith\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIRWZ_NONE \fP\fP
+.TP
+\fB\fIRWZ_Saastamoinen \fP\fP
+.TP
+\fB\fIRWZ_Hopfield \fP\fP
+
+.PP
+Definition at line 75 of file SbGeoProject\&.H'\&.
+.SS "enum \fBSBConfig::MSolidTideDegree\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fISTDEGREE_2 \fP\fP
+.TP
+\fB\fISTDEGREE_3 \fP\fP
+
+.PP
+Definition at line 66 of file SbGeoProject\&.H'\&.
+.SS "enum \fBSBConfig::MSolidTideLd\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIST_IERS92 \fP\fP
+.TP
+\fB\fIST_IERS96 \fP\fP
+
+.PP
+Definition at line 65 of file SbGeoProject\&.H'\&.
+.SS "enum \fBSBConfig::MSysTransform\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fISTR_Classic \fP\fP
+.TP
+\fB\fISTR_NRO \fP\fP
+
+.PP
+Definition at line 64 of file SbGeoProject\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBConfig::SBConfig ()"A constructor'\&.
+.PP
+A constructor'\&. Creates a copy of object'\&. 
+.PP
+Definition at line 64 of file SbGeoProject\&.C'\&.
+.PP
+References AltEOPs, AltSources, AltStations, DEG2RAD, DUFlagThreshold, EDM_Ray1995, EDMA_NONE, EDMNT_NONE, EM_LEDE405, EOPDiurnal, EOPDiurnalAtm, EOPDiurnalNonTidal, EOPNumIntrplPoints, EphemModel, GravHOThreshold, IsAltAxsCorr, IsChanged, IsEOP_IAU2K_XY, IsEOPResrerved_1, IsEphBody, IsGenerateDSINEXes, IsGravDelayHO, IsNutGeodNut, IsRemovePermTide, IsRollBack2NMF, IsRollBack2Plates, IsSolidTideAnelastic, IsSolidTideLatDepend, IsUseAploEphem, IsUseBadIon, IsUseDelay, IsUseRate, IsUseStationVelocity, NEE_IERS96, NM_IAU1980, NutEquinox, NutModel, PlateMotion, PM_NNR_NUVEL1A, QCodeThreshold, RDM_MTT, RDZ_Saastamoinen, RefrDryMapping, RefrDryZenith, RefrWetMapping, RefrWetZenith, ReportCRF, ReportCRF_Changes, ReportEOP, ReportMaps, ReportNormalEqs, ReportNormalEqsEOPs, ReportNormalEqsSRCs, ReportNormalEqsSTCs, ReportTechDesc, ReportTRF_Changes, ReportTRF_SINEX, ReportTroposhere, RWM_MTT, RWZ_Saastamoinen, SolidTideDegree, SolidTideLd, ST_IERS96, STDEGREE_3, STR_Classic, SysTransform, TropSamplInterval, TropStartSec, UseAltEOPs, UseAltSources, and UseAltStations\&.
+.SS "SBConfig::SBConfig (const \fBSBConfig\fP &Cfg_)\fC [inline]\fP"A constructor'\&. 
+.PP
+Definition at line 167 of file SbGeoProject\&.H'\&.
+.SS "virtual SBConfig::~SBConfig ()\fC [inline, virtual]\fP"A destructor'\&. 
+.PP
+Definition at line 169 of file SbGeoProject\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "const QString& SBConfig::altEOPs () const\fC [inline]\fP"
+.PP
+Definition at line 295 of file SbGeoProject\&.H'\&.
+.PP
+References AltEOPs\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), and SBModelEditor::wSysTransform()\&.
+.SS "const QString& SBConfig::altSources () const\fC [inline]\fP"
+.PP
+Definition at line 294 of file SbGeoProject\&.H'\&.
+.PP
+References AltSources\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), and SBModelEditor::wSysTransform()\&.
+.SS "const QString& SBConfig::altStations () const\fC [inline]\fP"
+.PP
+Definition at line 293 of file SbGeoProject\&.H'\&.
+.PP
+References AltStations\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), and SBModelEditor::wSysTransform()\&.
+.SS "virtual QString SBConfig::ClassName () const\fC [inline, virtual]\fP"Refers to a class name (debug info) 
+.PP
+Definition at line 172 of file SbGeoProject\&.H'\&.
+.SS "int SBConfig::dUFlagThreshold () const\fC [inline]\fP"
+.PP
+Definition at line 249 of file SbGeoProject\&.H'\&.
+.PP
+References DUFlagThreshold\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBObsVLBIEntry::isEligible(), SBModelEditor::makeDefault(), and SBModelEditor::wDataProcessing()\&.
+.SS "\fBMEOPDiurnal\fP SBConfig::eopDiurnal () const\fC [inline]\fP"
+.PP
+Definition at line 202 of file SbGeoProject\&.H'\&.
+.PP
+References EOPDiurnal\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBFrame::SBFrame(), and SBModelEditor::wEOPs()\&.
+.SS "\fBMEOPDiurnalAtm\fP SBConfig::eopDiurnalAtm () const\fC [inline]\fP"
+.PP
+Definition at line 203 of file SbGeoProject\&.H'\&.
+.PP
+References EOPDiurnalAtm\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBFrame::SBFrame(), and SBModelEditor::wEOPs()\&.
+.SS "\fBMEOPDiurnalNonTidal\fP SBConfig::eopDiurnalNonTidal () const\fC [inline]\fP"
+.PP
+Definition at line 204 of file SbGeoProject\&.H'\&.
+.PP
+References EOPDiurnalNonTidal\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBFrame::SBFrame(), and SBModelEditor::wEOPs()\&.
+.SS "int SBConfig::eopNumIntrplPoints () const\fC [inline]\fP"
+.PP
+Definition at line 205 of file SbGeoProject\&.H'\&.
+.PP
+References EOPNumIntrplPoints\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBFrame::SBFrame(), SBTestEOP::SBTestEOP(), SBTestNutation::SBTestNutation(), and SBModelEditor::wEOPs()\&.
+.SS "\fBMEphModel\fP SBConfig::ephemModel () const\fC [inline]\fP"
+.PP
+Definition at line 180 of file SbGeoProject\&.H'\&.
+.PP
+References EphemModel\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBStuffEphem::SBStuffEphem(), SBTestEphem::SBTestEphem(), SBTestSolidTides::SBTestSolidTides(), and SBModelEditor::wLightPropagation()\&.
+.SS "double SBConfig::gravHOThreshold () const\fC [inline]\fP"
+.PP
+Definition at line 183 of file SbGeoProject\&.H'\&.
+.PP
+References GravHOThreshold\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBDelay::calc(), SBModelEditor::makeDefault(), and SBModelEditor::wLightPropagation()\&.
+.SS "bool SBConfig::isAltAxsCorr () const\fC [inline]\fP"
+.PP
+Definition at line 238 of file SbGeoProject\&.H'\&.
+.PP
+References IsAltAxsCorr\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBRefraction::operator()(), and SBModelEditor::wRefraction()\&.
+.SS "bool SBConfig::isChanged () const\fC [inline]\fP"
+.PP
+Definition at line 308 of file SbGeoProject\&.H'\&.
+.PP
+References IsChanged\&.
+.PP
+Referenced by SBSetUp::SaveStuff()\&.
+.SS "bool SBConfig::isEOP_IAU2K_XY () const\fC [inline]\fP"
+.PP
+Definition at line 206 of file SbGeoProject\&.H'\&.
+.PP
+References IsEOP_IAU2K_XY\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBEOP::interpolateEOPs(), SBModelEditor::makeDefault(), and SBModelEditor::wEOPs()\&.
+.SS "bool SBConfig::isEOPResrerved_1 () const\fC [inline]\fP"
+.PP
+Definition at line 207 of file SbGeoProject\&.H'\&.
+.PP
+References IsEOPResrerved_1\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), and SBModelEditor::wEOPs()\&.
+.SS "bool SBConfig::isEphBody (inti) const\fC [inline]\fP"
+.PP
+Definition at line 181 of file SbGeoProject\&.H'\&.
+.PP
+References IsEphBody\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBEphem::SBEphem(), and SBModelEditor::wLightPropagation()\&.
+.SS "bool SBConfig::isGenerateDSINEXes () const\fC [inline]\fP"
+.PP
+Definition at line 304 of file SbGeoProject\&.H'\&.
+.PP
+References IsGenerateDSINEXes\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBEstimator::finisLocal(), SBRunManager::finisRun_m1(), and SBModelEditor::wDataProcessing()\&.
+.SS "bool SBConfig::isGravDelayHO () const\fC [inline]\fP"
+.PP
+Definition at line 182 of file SbGeoProject\&.H'\&.
+.PP
+References IsGravDelayHO\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBDelay::calc(), SBModelEditor::makeDefault(), and SBModelEditor::wLightPropagation()\&.
+.SS "bool SBConfig::isNeedGeodNut () const\fC [inline]\fP"
+.PP
+Definition at line 218 of file SbGeoProject\&.H'\&.
+.PP
+References IsNutGeodNut\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBNut_IAU1980::operator()(), and SBModelEditor::wNutation()\&.
+.SS "bool SBConfig::isRemovePermTide () const\fC [inline]\fP"
+.PP
+Definition at line 194 of file SbGeoProject\&.H'\&.
+.PP
+References IsRemovePermTide\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBSolidTideLd::operator()(), and SBModelEditor::wSolidTide()\&.
+.SS "bool SBConfig::isRollBack2NMF () const\fC [inline]\fP"
+.PP
+Definition at line 239 of file SbGeoProject\&.H'\&.
+.PP
+References IsRollBack2NMF\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBRefraction::SBRefraction(), sinex_tro_TropDescriptionBlock(), and SBModelEditor::wRefraction()\&.
+.SS "bool SBConfig::isRollBack2Plates () const\fC [inline]\fP"
+.PP
+Definition at line 227 of file SbGeoProject\&.H'\&.
+.PP
+References IsRollBack2Plates\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBStation::calcDisplacement(), SBStation::getGlobalParameters4Report(), SBStation::getGlobalParameters4Report4Axel(), SBStation::getGlobalParameters4UpdateTRF(), SBModelEditor::makeDefault(), SBStation::vModel(), and SBModelEditor::wPlateMotion()\&.
+.SS "bool SBConfig::isSolidTideAnelastic () const\fC [inline]\fP"
+.PP
+Definition at line 192 of file SbGeoProject\&.H'\&.
+.PP
+References IsSolidTideAnelastic\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBSolidTideLdIERS96::makeStep1(), SBSolidTideLdIERS96::makeStep2(), SBSolidTideLd::operator()(), SBSolidTideLd::SBSolidTideLd(), SBSolidTideLdIERS96::SBSolidTideLdIERS96(), and SBModelEditor::wSolidTide()\&.
+.SS "bool SBConfig::isSolidTideLatDepend () const\fC [inline]\fP"
+.PP
+Definition at line 193 of file SbGeoProject\&.H'\&.
+.PP
+References IsSolidTideLatDepend\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBSolidTideLd::h2(), SBSolidTideLd::l2(), SBModelEditor::makeDefault(), SBSolidTideLdIERS96::makeStep1(), SBSolidTideLd::operator()(), and SBModelEditor::wSolidTide()\&.
+.SS "bool SBConfig::isUseAploEphem () const\fC [inline]\fP"
+.PP
+Definition at line 228 of file SbGeoProject\&.H'\&.
+.PP
+References IsUseAploEphem\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBStation::calcDisplacement(), SBModelEditor::makeDefault(), and SBModelEditor::wPlateMotion()\&.
+.SS "bool SBConfig::isUseBadIon () const\fC [inline]\fP"
+.PP
+Definition at line 252 of file SbGeoProject\&.H'\&.
+.PP
+References IsUseBadIon\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBObsVLBIEntry::isEligible(), and SBModelEditor::wDataProcessing()\&.
+.SS "bool SBConfig::isUseDelay () const\fC [inline]\fP"
+.PP
+Definition at line 250 of file SbGeoProject\&.H'\&.
+.PP
+References IsUseDelay\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), and SBModelEditor::wDataProcessing()\&.
+.SS "bool SBConfig::isUseRate () const\fC [inline]\fP"
+.PP
+Definition at line 251 of file SbGeoProject\&.H'\&.
+.PP
+References IsUseRate\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), and SBModelEditor::wDataProcessing()\&.
+.SS "bool SBConfig::isUseStationVelocity () const\fC [inline]\fP"
+.PP
+Definition at line 226 of file SbGeoProject\&.H'\&.
+.PP
+References IsUseStationVelocity\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBStation::calcDisplacement(), SBStation::getGlobalParameters4Report(), SBStation::getGlobalParameters4Report4Axel(), SBStation::getGlobalParameters4UpdateTRF(), SBModelEditor::makeDefault(), SBStation::vModel(), and SBModelEditor::wPlateMotion()\&.
+.SS "\fBMNutEqEquinox\fP SBConfig::nutEquinox () const\fC [inline]\fP"
+.PP
+Definition at line 217 of file SbGeoProject\&.H'\&.
+.PP
+References NutEquinox\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBNut_IAU1980::operator()(), SBNut_IAU2000::operator()(), and SBModelEditor::wNutation()\&.
+.SS "\fBMNutModel\fP SBConfig::nutModel () const\fC [inline]\fP"
+.PP
+Definition at line 216 of file SbGeoProject\&.H'\&.
+.PP
+References NutModel\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBEOP::interpolateEOPs(), SBModelEditor::makeDefault(), operator<<(), SBFrame::SBFrame(), SBFrameClassic::SBFrameClassic(), SBNut_IAU1980::SBNut_IAU1980(), SBTestEOP::SBTestEOP(), SBTestNutation::SBTestNutation(), SBModelEditor::wNutation(), and writeNormalEquationSystem()\&.
+.SS "\fBSBConfig\fP & SBConfig::operator= (const \fBSBConfig\fP &C)"
+.PP
+Definition at line 148 of file SbGeoProject\&.C'\&.
+.PP
+References AltEOPs, AltSources, AltStations, DUFlagThreshold, EOPDiurnal, EOPDiurnalAtm, EOPDiurnalNonTidal, EOPNumIntrplPoints, EphemModel, GravHOThreshold, IsAltAxsCorr, IsChanged, IsEOP_IAU2K_XY, IsEOPResrerved_1, IsEphBody, IsGenerateDSINEXes, IsGravDelayHO, IsNutGeodNut, IsRemovePermTide, IsRollBack2NMF, IsRollBack2Plates, IsSolidTideAnelastic, IsSolidTideLatDepend, IsUseAploEphem, IsUseBadIon, IsUseDelay, IsUseRate, IsUseStationVelocity, NutEquinox, NutModel, P, PlateMotion, QCodeThreshold, RefrDryMapping, RefrDryZenith, RefrWetMapping, RefrWetZenith, ReportCRF, ReportCRF_Changes, ReportEOP, ReportMaps, ReportNormalEqs, ReportNormalEqsEOPs, ReportNormalEqsSRCs, ReportNormalEqsSTCs, ReportTechDesc, ReportTRF_Changes, ReportTRF_SINEX, ReportTroposhere, SolidTideDegree, SolidTideLd, SysTransform, TropSamplInterval, TropStartSec, UseAltEOPs, UseAltSources, and UseAltStations\&.
+.SS "const \fBSBParametersDesc\fP& SBConfig::p () const\fC [inline]\fP"
+.PP
+Definition at line 310 of file SbGeoProject\&.H'\&.
+.PP
+References P\&.
+.PP
+Referenced by SBDelay::calc(), SBDelay::calcDerivatives(), collectListOfSINEXParameters(), collectListOfSINEXParameters4NEQ(), SBRunManager::constrainClocks(), SBRunManager::constraintEOP(), SBRunManager::fillParameterList(), SBParametersEditor::makeDefault(), SBParEditor::makeDefault(), SBProject::p(), SBVLBIPreProcess::preProcess(), SBObsVLBIEntry::process(), SBRunManager::process_m1(), SBStationInfo::SBStationInfo(), sinex_tro_TropDescriptionBlock(), and SBVLBIPreProcess::wEstPars()\&.
+.SS "\fBMPlateMotion\fP SBConfig::plateMotion () const\fC [inline]\fP"
+.PP
+Definition at line 224 of file SbGeoProject\&.H'\&.
+.PP
+References PlateMotion\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBStation::calcDisplacement(), SBStation::getGlobalParameters4Report(), SBStation::getGlobalParameters4Report4Axel(), SBStation::getGlobalParameters4UpdateTRF(), SBModelEditor::makeDefault(), SBStation::vModel(), and SBModelEditor::wPlateMotion()\&.
+.SS "int SBConfig::qCodeThreshold () const\fC [inline]\fP"
+.PP
+Definition at line 248 of file SbGeoProject\&.H'\&.
+.PP
+References QCodeThreshold\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBObsVLBIEntry::isEligible(), SBModelEditor::makeDefault(), and SBModelEditor::wDataProcessing()\&.
+.SS "\fBMRefrDryMapping\fP SBConfig::refrDryMapping () const\fC [inline]\fP"
+.PP
+Definition at line 236 of file SbGeoProject\&.H'\&.
+.PP
+References RefrDryMapping\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBRefraction::SBRefraction(), sinex_tro_TropDescriptionBlock(), and SBModelEditor::wRefraction()\&.
+.SS "\fBMRefrDryZenith\fP SBConfig::refrDryZenith () const\fC [inline]\fP"
+.PP
+Definition at line 234 of file SbGeoProject\&.H'\&.
+.PP
+References RefrDryZenith\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBRefraction::SBRefraction(), sinex_tro_TropDescriptionBlock(), and SBModelEditor::wRefraction()\&.
+.SS "\fBMRefrWetMapping\fP SBConfig::refrWetMapping () const\fC [inline]\fP"
+.PP
+Definition at line 237 of file SbGeoProject\&.H'\&.
+.PP
+References RefrWetMapping\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBRefraction::SBRefraction(), sinex_tro_TropDescriptionBlock(), and SBModelEditor::wRefraction()\&.
+.SS "\fBMRefrWetZenith\fP SBConfig::refrWetZenith () const\fC [inline]\fP"
+.PP
+Definition at line 235 of file SbGeoProject\&.H'\&.
+.PP
+References RefrWetZenith\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBRefraction::SBRefraction(), sinex_tro_TropDescriptionBlock(), and SBModelEditor::wRefraction()\&.
+.SS "bool SBConfig::reportCRF () const\fC [inline]\fP"
+.PP
+Definition at line 263 of file SbGeoProject\&.H'\&.
+.PP
+References ReportCRF\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBRunManager::makeReports(), and SBModelEditor::wSolutionReports()\&.
+.SS "bool SBConfig::reportCRF_Changes () const\fC [inline]\fP"
+.PP
+Definition at line 261 of file SbGeoProject\&.H'\&.
+.PP
+References ReportCRF_Changes\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBRunManager::makeReports(), and SBModelEditor::wSolutionReports()\&.
+.SS "bool SBConfig::reportEOP () const\fC [inline]\fP"
+.PP
+Definition at line 265 of file SbGeoProject\&.H'\&.
+.PP
+References ReportEOP\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBRunManager::makeReports(), and SBModelEditor::wSolutionReports()\&.
+.SS "bool SBConfig::reportMaps () const\fC [inline]\fP"
+.PP
+Definition at line 260 of file SbGeoProject\&.H'\&.
+.PP
+References ReportMaps\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBRunManager::makeReports(), and SBModelEditor::wSolutionReports()\&.
+.SS "bool SBConfig::reportNormalEqs () const\fC [inline]\fP"
+.PP
+Definition at line 267 of file SbGeoProject\&.H'\&.
+.PP
+References ReportNormalEqs\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBRunManager::makeReports(), and SBModelEditor::wSolutionReports()\&.
+.SS "bool SBConfig::reportNormalEqsEOPs () const\fC [inline]\fP"
+.PP
+Definition at line 270 of file SbGeoProject\&.H'\&.
+.PP
+References ReportNormalEqsEOPs\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), writeNormalEquationSystem(), and SBModelEditor::wSolutionReports()\&.
+.SS "bool SBConfig::reportNormalEqsSRCs () const\fC [inline]\fP"
+.PP
+Definition at line 268 of file SbGeoProject\&.H'\&.
+.PP
+References ReportNormalEqsSRCs\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), writeNormalEquationSystem(), and SBModelEditor::wSolutionReports()\&.
+.SS "bool SBConfig::reportNormalEqsSTCs () const\fC [inline]\fP"
+.PP
+Definition at line 269 of file SbGeoProject\&.H'\&.
+.PP
+References ReportNormalEqsSTCs\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), writeNormalEquationSystem(), and SBModelEditor::wSolutionReports()\&.
+.SS "bool SBConfig::reportTechDesc () const\fC [inline]\fP"
+.PP
+Definition at line 266 of file SbGeoProject\&.H'\&.
+.PP
+References ReportTechDesc\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBRunManager::makeReports(), and SBModelEditor::wSolutionReports()\&.
+.SS "bool SBConfig::reportTRF_Changes () const\fC [inline]\fP"
+.PP
+Definition at line 262 of file SbGeoProject\&.H'\&.
+.PP
+References ReportTRF_Changes\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBRunManager::makeReports(), and SBModelEditor::wSolutionReports()\&.
+.SS "bool SBConfig::reportTRF_SINEX () const\fC [inline]\fP"
+.PP
+Definition at line 264 of file SbGeoProject\&.H'\&.
+.PP
+References ReportTRF_SINEX\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBRunManager::makeReports(), and SBModelEditor::wSolutionReports()\&.
+.SS "bool SBConfig::reportTroposhere () const\fC [inline]\fP"
+.PP
+Definition at line 271 of file SbGeoProject\&.H'\&.
+.PP
+References ReportTroposhere\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBRunManager::makeReports(), and SBModelEditor::wSolutionReports()\&.
+.SS "void SBConfig::setAllPars2Type (\fBSBParameterCfg::PType\fPType)"
+.PP
+Definition at line 233 of file SbGeoProject\&.C'\&.
+.PP
+References SBParametersDesc::num(), P, and SBParametersDesc::setType()\&.
+.PP
+Referenced by SBProject::setAllPars2Type()\&.
+.SS "void SBConfig::setAltEOPs (const QString &S_)\fC [inline]\fP"
+.PP
+Definition at line 301 of file SbGeoProject\&.H'\&.
+.PP
+References AltEOPs\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setAltSources (const QString &S_)\fC [inline]\fP"
+.PP
+Definition at line 300 of file SbGeoProject\&.H'\&.
+.PP
+References AltSources\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setAltStations (const QString &S_)\fC [inline]\fP"
+.PP
+Definition at line 299 of file SbGeoProject\&.H'\&.
+.PP
+References AltStations\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setDUFlagThreshold (intThreshold_)\fC [inline]\fP"
+.PP
+Definition at line 254 of file SbGeoProject\&.H'\&.
+.PP
+References DUFlagThreshold\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setEopDiurnal (\fBMEOPDiurnal\fPE_)\fC [inline]\fP"
+.PP
+Definition at line 208 of file SbGeoProject\&.H'\&.
+.PP
+References EOPDiurnal\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setEopDiurnalAtm (\fBMEOPDiurnalAtm\fPE_)\fC [inline]\fP"
+.PP
+Definition at line 209 of file SbGeoProject\&.H'\&.
+.PP
+References EOPDiurnalAtm\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setEopDiurnalNonTidal (\fBMEOPDiurnalNonTidal\fPE_)\fC [inline]\fP"
+.PP
+Definition at line 210 of file SbGeoProject\&.H'\&.
+.PP
+References EOPDiurnalNonTidal\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setEOPNumIntrplPoints (intN_)\fC [inline]\fP"
+.PP
+Definition at line 211 of file SbGeoProject\&.H'\&.
+.PP
+References EOPNumIntrplPoints\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setEphemModel (\fBMEphModel\fPE_)\fC [inline]\fP"
+.PP
+Definition at line 184 of file SbGeoProject\&.H'\&.
+.PP
+References EphemModel\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setGravHOThreshold (doubled_)\fC [inline]\fP"
+.PP
+Definition at line 187 of file SbGeoProject\&.H'\&.
+.PP
+References GravHOThreshold\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setIsAltAxsCorr (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 244 of file SbGeoProject\&.H'\&.
+.PP
+References IsAltAxsCorr\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setIsChanged (boolIs_ = \fCTRUE\fP)\fC [inline]\fP"
+.PP
+Definition at line 309 of file SbGeoProject\&.H'\&.
+.PP
+References IsChanged\&.
+.PP
+Referenced by SBVLBIPreProcess::preProcess()\&.
+.SS "void SBConfig::setIsEOP_IAU2K_XY (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 212 of file SbGeoProject\&.H'\&.
+.PP
+References IsEOP_IAU2K_XY\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setIsEOPResrerved_1 (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 213 of file SbGeoProject\&.H'\&.
+.PP
+References IsEOPResrerved_1\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setIsEphBody (inti, boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 185 of file SbGeoProject\&.H'\&.
+.PP
+References IsEphBody\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setIsGenerateDSINEXes (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 305 of file SbGeoProject\&.H'\&.
+.PP
+References IsGenerateDSINEXes\&.
+.PP
+Referenced by SBModelEditor::acquireData(), and SBRunManager::finisRun_m1()\&.
+.SS "void SBConfig::setIsGravDelayHO (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 186 of file SbGeoProject\&.H'\&.
+.PP
+References IsGravDelayHO\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setIsNeedGeodNut (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 221 of file SbGeoProject\&.H'\&.
+.PP
+References IsNutGeodNut\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setIsRemovePermTide (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 199 of file SbGeoProject\&.H'\&.
+.PP
+References IsRemovePermTide\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setIsRollBack2NMF (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 245 of file SbGeoProject\&.H'\&.
+.PP
+References IsRollBack2NMF\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setIsRollBack2Plates (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 230 of file SbGeoProject\&.H'\&.
+.PP
+References IsRollBack2Plates\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setIsSolidTideAnelastic (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 197 of file SbGeoProject\&.H'\&.
+.PP
+References IsSolidTideAnelastic\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setIsSolidTideLatDepend (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 198 of file SbGeoProject\&.H'\&.
+.PP
+References IsSolidTideLatDepend\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setIsUseAploEphem (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 231 of file SbGeoProject\&.H'\&.
+.PP
+References IsUseAploEphem\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setIsUseBadIon (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 257 of file SbGeoProject\&.H'\&.
+.PP
+References IsUseBadIon\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setIsUseDelay (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 255 of file SbGeoProject\&.H'\&.
+.PP
+References IsUseDelay\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setIsUseRate (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 256 of file SbGeoProject\&.H'\&.
+.PP
+References IsUseRate\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setIsUseStationVelocity (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 229 of file SbGeoProject\&.H'\&.
+.PP
+References IsUseStationVelocity\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setNutEquinox (\fBMNutEqEquinox\fPE_)\fC [inline]\fP"
+.PP
+Definition at line 220 of file SbGeoProject\&.H'\&.
+.PP
+References NutEquinox\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setNutModel (\fBMNutModel\fPM_)\fC [inline]\fP"
+.PP
+Definition at line 219 of file SbGeoProject\&.H'\&.
+.PP
+References NutModel\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setP (const \fBSBParametersDesc\fP &P_)\fC [inline]\fP"
+.PP
+Definition at line 311 of file SbGeoProject\&.H'\&.
+.PP
+References P\&.
+.PP
+Referenced by SBVLBIPreProcess::preProcess(), SBProject::setP(), and SBParametersEditor::~SBParametersEditor()\&.
+.SS "void SBConfig::setPlateMotion (\fBMPlateMotion\fPP_)\fC [inline]\fP"
+.PP
+Definition at line 225 of file SbGeoProject\&.H'\&.
+.PP
+References PlateMotion\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setQCodeThreshold (intThreshold_)\fC [inline]\fP"
+.PP
+Definition at line 253 of file SbGeoProject\&.H'\&.
+.PP
+References QCodeThreshold\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setRefrDryMapping (\fBMRefrDryMapping\fPDM_)\fC [inline]\fP"
+.PP
+Definition at line 242 of file SbGeoProject\&.H'\&.
+.PP
+References RefrDryMapping\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setRefrDryZenith (\fBMRefrDryZenith\fPDZ_)\fC [inline]\fP"
+.PP
+Definition at line 240 of file SbGeoProject\&.H'\&.
+.PP
+References RefrDryZenith\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setRefrWetMapping (\fBMRefrWetMapping\fPWM_)\fC [inline]\fP"
+.PP
+Definition at line 243 of file SbGeoProject\&.H'\&.
+.PP
+References RefrWetMapping\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setRefrWetZenith (\fBMRefrWetZenith\fPWZ_)\fC [inline]\fP"
+.PP
+Definition at line 241 of file SbGeoProject\&.H'\&.
+.PP
+References RefrWetZenith\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setReportCRF (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 277 of file SbGeoProject\&.H'\&.
+.PP
+References ReportCRF\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setReportCRF_Changes (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 275 of file SbGeoProject\&.H'\&.
+.PP
+References ReportCRF_Changes\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setReportEOP (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 279 of file SbGeoProject\&.H'\&.
+.PP
+References ReportEOP\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setReportMaps (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 274 of file SbGeoProject\&.H'\&.
+.PP
+References ReportMaps\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setReportNormalEqs (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 281 of file SbGeoProject\&.H'\&.
+.PP
+References ReportNormalEqs\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setReportNormalEqsEOPs (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 284 of file SbGeoProject\&.H'\&.
+.PP
+References ReportNormalEqsEOPs\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setReportNormalEqsSRCs (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 282 of file SbGeoProject\&.H'\&.
+.PP
+References ReportNormalEqsSRCs\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setReportNormalEqsSTCs (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 283 of file SbGeoProject\&.H'\&.
+.PP
+References ReportNormalEqsSTCs\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setReportTechDesc (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 280 of file SbGeoProject\&.H'\&.
+.PP
+References ReportTechDesc\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setReportTRF_Changes (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 276 of file SbGeoProject\&.H'\&.
+.PP
+References ReportTRF_Changes\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setReportTRF_SINEX (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 278 of file SbGeoProject\&.H'\&.
+.PP
+References ReportTRF_SINEX\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setReportTroposhere (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 285 of file SbGeoProject\&.H'\&.
+.PP
+References ReportTroposhere\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setSolidTideDegree (\fBMSolidTideDegree\fPD_)\fC [inline]\fP"
+.PP
+Definition at line 196 of file SbGeoProject\&.H'\&.
+.PP
+References SolidTideDegree\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setSolidTideLd (\fBMSolidTideLd\fPS_)\fC [inline]\fP"
+.PP
+Definition at line 195 of file SbGeoProject\&.H'\&.
+.PP
+References SolidTideLd\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setSysTransform (\fBMSysTransform\fPE_)\fC [inline]\fP"
+.PP
+Definition at line 177 of file SbGeoProject\&.H'\&.
+.PP
+References SysTransform\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setTropSamplInterval (doubled_)\fC [inline]\fP"
+.PP
+Definition at line 286 of file SbGeoProject\&.H'\&.
+.PP
+References TropSamplInterval\&.
+.PP
+Referenced by SBModelEditor::acquireData(), and SBRunManager::makeReportTroposphere()\&.
+.SS "void SBConfig::setTropStartSec (intn_)\fC [inline]\fP"
+.PP
+Definition at line 287 of file SbGeoProject\&.H'\&.
+.PP
+References TropStartSec\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setUseAltEOPs (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 298 of file SbGeoProject\&.H'\&.
+.PP
+References UseAltEOPs\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setUseAltSources (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 297 of file SbGeoProject\&.H'\&.
+.PP
+References UseAltSources\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "void SBConfig::setUseAltStations (boolIs_)\fC [inline]\fP"
+.PP
+Definition at line 296 of file SbGeoProject\&.H'\&.
+.PP
+References UseAltStations\&.
+.PP
+Referenced by SBModelEditor::acquireData()\&.
+.SS "\fBMSolidTideDegree\fP SBConfig::solidTideDegree () const\fC [inline]\fP"
+.PP
+Definition at line 191 of file SbGeoProject\&.H'\&.
+.PP
+References SolidTideDegree\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), and SBModelEditor::wSolidTide()\&.
+.SS "\fBMSolidTideLd\fP SBConfig::solidTideLd () const\fC [inline]\fP"
+.PP
+Definition at line 190 of file SbGeoProject\&.H'\&.
+.PP
+References SolidTideLd\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBTestSolidTides::SBTestSolidTides(), SBTideLd::SBTideLd(), and SBModelEditor::wSolidTide()\&.
+.SS "\fBMSysTransform\fP SBConfig::sysTransform () const\fC [inline]\fP"
+.PP
+Definition at line 176 of file SbGeoProject\&.H'\&.
+.PP
+References SysTransform\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBRunManager::makeReportEOP(), operator<<(), SBTestEphem::SBTestEphem(), SBTestFrame::SBTestFrame(), SBTestOceanTides::SBTestOceanTides(), SBTestPolarTides::SBTestPolarTides(), SBTestSolidTides::SBTestSolidTides(), writeNormalEquationSystem(), and SBModelEditor::wSysTransform()\&.
+.SS "double SBConfig::tropSamplInterval () const\fC [inline]\fP"
+.PP
+Definition at line 272 of file SbGeoProject\&.H'\&.
+.PP
+References TropSamplInterval\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), SBRunManager::makeReportTroposphere(), operator<<(), sinex_tro_TropDescriptionBlock(), and SBModelEditor::wSolutionReports()\&.
+.SS "int SBConfig::tropStartSec () const\fC [inline]\fP"
+.PP
+Definition at line 273 of file SbGeoProject\&.H'\&.
+.PP
+References TropStartSec\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), operator<<(), and SBModelEditor::wSolutionReports()\&.
+.SS "bool SBConfig::useAltEOPs () const\fC [inline]\fP"
+.PP
+Definition at line 292 of file SbGeoProject\&.H'\&.
+.PP
+References UseAltEOPs\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), and SBModelEditor::wSysTransform()\&.
+.SS "bool SBConfig::useAltSources () const\fC [inline]\fP"
+.PP
+Definition at line 291 of file SbGeoProject\&.H'\&.
+.PP
+References UseAltSources\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), and SBModelEditor::wSysTransform()\&.
+.SS "bool SBConfig::useAltStations () const\fC [inline]\fP"
+.PP
+Definition at line 290 of file SbGeoProject\&.H'\&.
+.PP
+References UseAltStations\&.
+.PP
+Referenced by SBModelEditor::acquireData(), SBModelEditor::makeDefault(), and SBModelEditor::wSysTransform()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "QDataStream & operator<< (QDataStream &s, const \fBSBConfig\fP &C)\fC [friend]\fP"Output to the data stream'\&. 
+.PP
+Definition at line 250 of file SbGeoProject\&.C'\&.
+.SS "QDataStream & operator>> (QDataStream &s, \fBSBConfig\fP &C)\fC [friend]\fP"Input from the data stream'\&. 
+.PP
+Definition at line 312 of file SbGeoProject\&.C'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString \fBSBConfig::AltEOPs\fP\fC [private]\fP"
+.PP
+Definition at line 156 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by altEOPs(), operator=(), SBConfig(), and setAltEOPs()\&.
+.SS "QString \fBSBConfig::AltSources\fP\fC [private]\fP"
+.PP
+Definition at line 155 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by altSources(), operator=(), SBConfig(), and setAltSources()\&.
+.SS "QString \fBSBConfig::AltStations\fP\fC [private]\fP"
+.PP
+Definition at line 154 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by altStations(), operator=(), SBConfig(), and setAltStations()\&.
+.SS "int \fBSBConfig::DUFlagThreshold\fP\fC [private]\fP"
+.PP
+Definition at line 129 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by dUFlagThreshold(), operator=(), SBConfig(), and setDUFlagThreshold()\&.
+.SS "\fBMEOPDiurnal\fP \fBSBConfig::EOPDiurnal\fP\fC [private]\fP"
+.PP
+Take into account diurnal variations in EOP'\&. 
+.PP
+Definition at line 101 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by eopDiurnal(), operator=(), SBConfig(), and setEopDiurnal()\&.
+.SS "\fBMEOPDiurnalAtm\fP \fBSBConfig::EOPDiurnalAtm\fP\fC [private]\fP"
+.PP
+Take into account diurnal variations in EOP (atmosphere) 
+.PP
+Definition at line 102 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by eopDiurnalAtm(), operator=(), SBConfig(), and setEopDiurnalAtm()\&.
+.SS "\fBMEOPDiurnalNonTidal\fP \fBSBConfig::EOPDiurnalNonTidal\fP\fC [private]\fP"
+.PP
+Take into account diurnal variations in EOP (non-tidal) 
+.PP
+Definition at line 103 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by eopDiurnalNonTidal(), operator=(), SBConfig(), and setEopDiurnalNonTidal()\&.
+.SS "int \fBSBConfig::EOPNumIntrplPoints\fP\fC [private]\fP"
+.PP
+Number of points for interpolation'\&. 
+.PP
+Definition at line 104 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by eopNumIntrplPoints(), operator=(), SBConfig(), and setEOPNumIntrplPoints()\&.
+.SS "\fBMEphModel\fP \fBSBConfig::EphemModel\fP\fC [private]\fP"
+.PP
+Ephemerides model'\&. 
+.PP
+Definition at line 88 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by ephemModel(), operator=(), SBConfig(), and setEphemModel()\&.
+.SS "double \fBSBConfig::GravHOThreshold\fP\fC [private]\fP"
+.PP
+Threshold for high order effects, rad'\&. 
+.PP
+Definition at line 91 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by gravHOThreshold(), operator=(), SBConfig(), and setGravHOThreshold()\&.
+.SS "bool \fBSBConfig::IsAltAxsCorr\fP\fC [private]\fP"
+.PP
+Take into axis offset altitude correction;'\&. 
+.PP
+Definition at line 124 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by isAltAxsCorr(), operator=(), SBConfig(), and setIsAltAxsCorr()\&.
+.SS "bool \fBSBConfig::IsChanged\fP\fC [private]\fP"
+.PP
+Definition at line 80 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by isChanged(), operator=(), SBConfig(), and setIsChanged()\&.
+.SS "bool \fBSBConfig::IsEOP_IAU2K_XY\fP\fC [private]\fP"
+.PP
+Nutations in EOP are dX and dY w/ respect to IAU2000'\&. 
+.PP
+Definition at line 105 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by isEOP_IAU2K_XY(), operator=(), SBConfig(), and setIsEOP_IAU2K_XY()\&.
+.SS "bool \fBSBConfig::IsEOPResrerved_1\fP\fC [private]\fP"
+.PP
+Reserved for use with EOP'\&. 
+.PP
+Definition at line 106 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by isEOPResrerved_1(), operator=(), SBConfig(), and setIsEOPResrerved_1()\&.
+.SS "bool \fBSBConfig::IsEphBody\fP[11]\fC [private]\fP"
+.PP
+Celestial bodies taking into account'\&. 
+.PP
+Definition at line 89 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by isEphBody(), operator=(), SBConfig(), and setIsEphBody()\&.
+.SS "bool \fBSBConfig::IsGenerateDSINEXes\fP\fC [private]\fP"
+.PP
+Definition at line 159 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by isGenerateDSINEXes(), operator=(), SBConfig(), and setIsGenerateDSINEXes()\&.
+.SS "bool \fBSBConfig::IsGravDelayHO\fP\fC [private]\fP"
+.PP
+High order effects'\&. 
+.PP
+Definition at line 90 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by isGravDelayHO(), operator=(), SBConfig(), and setIsGravDelayHO()\&.
+.SS "bool \fBSBConfig::IsNutGeodNut\fP\fC [private]\fP"
+.PP
+Take into account geodesic nutation'\&. 
+.PP
+Definition at line 111 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by isNeedGeodNut(), operator=(), SBConfig(), and setIsNeedGeodNut()\&.
+.SS "bool \fBSBConfig::IsRemovePermTide\fP\fC [private]\fP"
+.PP
+Remove permanent tide'\&. 
+.PP
+Definition at line 98 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by isRemovePermTide(), operator=(), SBConfig(), and setIsRemovePermTide()\&.
+.SS "bool \fBSBConfig::IsRollBack2NMF\fP\fC [private]\fP"
+.PP
+Use NMFs in the case of bad/art metheo;'\&. 
+.PP
+Definition at line 125 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by isRollBack2NMF(), operator=(), SBConfig(), and setIsRollBack2NMF()\&.
+.SS "bool \fBSBConfig::IsRollBack2Plates\fP\fC [private]\fP"
+.PP
+Use plate motion vel'\&. if V=0'\&. 
+.PP
+Definition at line 116 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by isRollBack2Plates(), operator=(), SBConfig(), and setIsRollBack2Plates()\&.
+.SS "bool \fBSBConfig::IsSolidTideAnelastic\fP\fC [private]\fP"
+.PP
+Anelastic or elastic model'\&. 
+.PP
+Definition at line 96 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by isSolidTideAnelastic(), operator=(), SBConfig(), and setIsSolidTideAnelastic()\&.
+.SS "bool \fBSBConfig::IsSolidTideLatDepend\fP\fC [private]\fP"
+.PP
+Include Solid Tide Latitude dependence'\&. 
+.PP
+Definition at line 97 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by isSolidTideLatDepend(), operator=(), SBConfig(), and setIsSolidTideLatDepend()\&.
+.SS "bool \fBSBConfig::IsUseAploEphem\fP\fC [private]\fP"
+.PP
+Use atmoshperic loading ephemerides'\&. 
+.PP
+Definition at line 117 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by isUseAploEphem(), operator=(), SBConfig(), and setIsUseAploEphem()\&.
+.SS "bool \fBSBConfig::IsUseBadIon\fP\fC [private]\fP"
+.PP
+Definition at line 132 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by isUseBadIon(), operator=(), SBConfig(), and setIsUseBadIon()\&.
+.SS "bool \fBSBConfig::IsUseDelay\fP\fC [private]\fP"
+.PP
+Definition at line 130 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by isUseDelay(), operator=(), SBConfig(), and setIsUseDelay()\&.
+.SS "bool \fBSBConfig::IsUseRate\fP\fC [private]\fP"
+.PP
+Definition at line 131 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by isUseRate(), operator=(), SBConfig(), and setIsUseRate()\&.
+.SS "bool \fBSBConfig::IsUseStationVelocity\fP\fC [private]\fP"
+.PP
+Use velocity of a station from a catalogue'\&. 
+.PP
+Definition at line 115 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by isUseStationVelocity(), operator=(), SBConfig(), and setIsUseStationVelocity()\&.
+.SS "\fBMNutEqEquinox\fP \fBSBConfig::NutEquinox\fP\fC [private]\fP"
+.PP
+Model of the Equation of equinoxes'\&. 
+.PP
+Definition at line 110 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by nutEquinox(), operator=(), SBConfig(), and setNutEquinox()\&.
+.SS "\fBMNutModel\fP \fBSBConfig::NutModel\fP\fC [private]\fP"
+.PP
+Nutation theory model'\&. 
+.PP
+Definition at line 109 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by nutModel(), operator=(), SBConfig(), and setNutModel()\&.
+.SS "\fBSBParametersDesc\fP \fBSBConfig::P\fP\fC [private]\fP"
+.PP
+Definition at line 82 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), p(), setAllPars2Type(), and setP()\&.
+.SS "\fBMPlateMotion\fP \fBSBConfig::PlateMotion\fP\fC [private]\fP"
+.PP
+Tectonic plate motion model'\&. 
+.PP
+Definition at line 114 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), plateMotion(), SBConfig(), and setPlateMotion()\&.
+.SS "int \fBSBConfig::QCodeThreshold\fP\fC [private]\fP"
+.PP
+Definition at line 128 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), qCodeThreshold(), SBConfig(), and setQCodeThreshold()\&.
+.SS "\fBMRefrDryMapping\fP \fBSBConfig::RefrDryMapping\fP\fC [private]\fP"
+.PP
+Hydrostatic mapping function model;'\&. 
+.PP
+Definition at line 122 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), refrDryMapping(), SBConfig(), and setRefrDryMapping()\&.
+.SS "\fBMRefrDryZenith\fP \fBSBConfig::RefrDryZenith\fP\fC [private]\fP"
+.PP
+Hydrostatic zenith delay model;'\&. 
+.PP
+Definition at line 120 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), refrDryZenith(), SBConfig(), and setRefrDryZenith()\&.
+.SS "\fBMRefrWetMapping\fP \fBSBConfig::RefrWetMapping\fP\fC [private]\fP"
+.PP
+Wet mapping function model;'\&. 
+.PP
+Definition at line 123 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), refrWetMapping(), SBConfig(), and setRefrWetMapping()\&.
+.SS "\fBMRefrWetZenith\fP \fBSBConfig::RefrWetZenith\fP\fC [private]\fP"
+.PP
+Wet zenith delay model;'\&. 
+.PP
+Definition at line 121 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), refrWetZenith(), SBConfig(), and setRefrWetZenith()\&.
+.SS "bool \fBSBConfig::ReportCRF\fP\fC [private]\fP"
+.PP
+Definition at line 138 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), reportCRF(), SBConfig(), and setReportCRF()\&.
+.SS "bool \fBSBConfig::ReportCRF_Changes\fP\fC [private]\fP"
+.PP
+Definition at line 136 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), reportCRF_Changes(), SBConfig(), and setReportCRF_Changes()\&.
+.SS "bool \fBSBConfig::ReportEOP\fP\fC [private]\fP"
+.PP
+Definition at line 140 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), reportEOP(), SBConfig(), and setReportEOP()\&.
+.SS "bool \fBSBConfig::ReportMaps\fP\fC [private]\fP"
+.PP
+Definition at line 135 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), reportMaps(), SBConfig(), and setReportMaps()\&.
+.SS "bool \fBSBConfig::ReportNormalEqs\fP\fC [private]\fP"
+.PP
+Make report of NEQ in SINEX format;'\&. 
+.PP
+Definition at line 142 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), reportNormalEqs(), SBConfig(), and setReportNormalEqs()\&.
+.SS "bool \fBSBConfig::ReportNormalEqsEOPs\fP\fC [private]\fP"
+.PP
+Include EOP in NEQ report;'\&. 
+.PP
+Definition at line 145 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), reportNormalEqsEOPs(), SBConfig(), and setReportNormalEqsEOPs()\&.
+.SS "bool \fBSBConfig::ReportNormalEqsSRCs\fP\fC [private]\fP"
+.PP
+Include sources in NEQ report;'\&. 
+.PP
+Definition at line 143 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), reportNormalEqsSRCs(), SBConfig(), and setReportNormalEqsSRCs()\&.
+.SS "bool \fBSBConfig::ReportNormalEqsSTCs\fP\fC [private]\fP"
+.PP
+Include stations in NEQ report;'\&. 
+.PP
+Definition at line 144 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), reportNormalEqsSTCs(), SBConfig(), and setReportNormalEqsSTCs()\&.
+.SS "bool \fBSBConfig::ReportTechDesc\fP\fC [private]\fP"
+.PP
+Definition at line 141 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), reportTechDesc(), SBConfig(), and setReportTechDesc()\&.
+.SS "bool \fBSBConfig::ReportTRF_Changes\fP\fC [private]\fP"
+.PP
+Definition at line 137 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), reportTRF_Changes(), SBConfig(), and setReportTRF_Changes()\&.
+.SS "bool \fBSBConfig::ReportTRF_SINEX\fP\fC [private]\fP"
+.PP
+Definition at line 139 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), reportTRF_SINEX(), SBConfig(), and setReportTRF_SINEX()\&.
+.SS "bool \fBSBConfig::ReportTroposhere\fP\fC [private]\fP"
+.PP
+Definition at line 146 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), reportTroposhere(), SBConfig(), and setReportTroposhere()\&.
+.SS "\fBMSolidTideDegree\fP \fBSBConfig::SolidTideDegree\fP\fC [private]\fP"
+.PP
+Maximum degree of solid tide loading model'\&. 
+.PP
+Definition at line 95 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), SBConfig(), setSolidTideDegree(), and solidTideDegree()\&.
+.SS "\fBMSolidTideLd\fP \fBSBConfig::SolidTideLd\fP\fC [private]\fP"
+.PP
+Site displacement load model due to solid tide'\&. 
+.PP
+Definition at line 94 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), SBConfig(), setSolidTideLd(), and solidTideLd()\&.
+.SS "\fBMSysTransform\fP \fBSBConfig::SysTransform\fP\fC [private]\fP"
+.PP
+Type of CRF<->TRF system transformation'\&. 
+.PP
+Definition at line 85 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), SBConfig(), setSysTransform(), and sysTransform()\&.
+.SS "double \fBSBConfig::TropSamplInterval\fP\fC [private]\fP"
+.PP
+Definition at line 147 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), SBConfig(), setTropSamplInterval(), and tropSamplInterval()\&.
+.SS "int \fBSBConfig::TropStartSec\fP\fC [private]\fP"
+.PP
+Definition at line 148 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), SBConfig(), setTropStartSec(), and tropStartSec()\&.
+.SS "bool \fBSBConfig::UseAltEOPs\fP\fC [private]\fP"
+.PP
+Definition at line 153 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), SBConfig(), setUseAltEOPs(), and useAltEOPs()\&.
+.SS "bool \fBSBConfig::UseAltSources\fP\fC [private]\fP"
+.PP
+Definition at line 152 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), SBConfig(), setUseAltSources(), and useAltSources()\&.
+.SS "bool \fBSBConfig::UseAltStations\fP\fC [private]\fP"
+.PP
+Definition at line 151 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by operator=(), SBConfig(), setUseAltStations(), and useAltStations()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

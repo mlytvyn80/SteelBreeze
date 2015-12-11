@@ -1,0 +1,2557 @@
+   SINEX -   Solution (Software/technique) INdependent EXchange Format 
+                      Version 1.00 (June 30, 1996)
+
+    INTRODUCTION
+
+    The SINEX acronym was suggested by Blewitt et al. (1994) and the first
+    versions,  0.04, 0.05 and 1.00 evolved from the work and contributions of
+    the SINEX Working Group (WG)  chaired by G. Blewitt.  The other SINEX WG
+    members consisted of Claude Boucher, Yehuda Bock, Jeff Freymueller, Gerd
+    Gendt, Werner Gurtner, Mike Heflin and Jan Kouba. Also contributions of Z.
+    Altamimi, T. Herring, Phil Davies, Remi Ferland, David Hutchison and other
+    IGS AC colleagues are noted and acknowledged here, in particular all the
+    ACs submitting and using SINEX(0.05) every week since mid 1995, as a part
+    of the IGS ITRF densification pilot project. 
+
+    SINEX was designed to be modular and general enough to handle GPS as well
+    as other techniques.  In particular the information on hardware (receiver,
+    antenna),  occupancy and various correspondence between hardware, solution
+    and input  files can be preserved, which is essential for any serious
+    analysis and interpretation of GPS results. It preserves input/output
+    compatibility so that output SINEX files can be used (latter on) as input
+    into subsequent computation/solutions. It also provides complete
+    information  on apriori information so that it can be removed whenever
+    required,  making it unnecessary to submit or distribute multiple (SINEX)
+    solution files, e.g. constrained and unconstrained (free) solution files.
+
+    CHANGES FROM VERSION 0.05 TO 1.00
+    
+    The version 0.05 has undergone some "fine tuning" as the result of the IGS
+    ITRF densification pilot project but it is yet to be proof tested by other
+    techniques. More specifically the following is a summary of the changes and
+    enhancements from the previous version 0.05 to the new version 1.00:
+    
+    1) Backward compatibility with the version 0.05 is assured my the version #,
+    which MUST be coded on the first line.
+
+    2) Strictly fixed format, all fields are now specified and described in
+    details in the Appendix I. In most cases the format fields are the same as
+    in the version 0.05 with some notable exceptions. For crucial fileds such
+    as SOLUTION/ESTIMATE and SOLUTION/MATRIX a generous field length of 21 is
+    specified which should be sufficient for up to 16 significant digits;
+    furthermore the field lengths for receiver and antenna types in the
+    SITE/RECEIVER and SITE/ANTENNA blocks were increased from 16 to 20 chars to
+    make them compatible with RINEX. Also strict adherence to IGS
+    receiver/antenna code names is now required (see the Appendix III for the
+    list of the IGS receiver/antenna standard names).
+
+    3) The version 1.00 accommodates the CORR matrix type in a different
+    fashion, namely when the CORR matrix type is used in the SOLUTION/MATRIX
+    blocks it is now required that standard deviations (STDs) are coded on the
+    main diagonal, in place of 1.000's. This way the STDs in the CORR
+    matrix could be given to the full precision and they take precedent over
+    any STDs in the SOLUTION/ESTIMATE & SOLUTION/APRIORI blocks which may not
+    be given to a sufficient precision. The other matrix form (e.g. COVA) is
+    still valid and acceptable. 
+
+    4) A new (mandatory for IGS) block  (SOLUTION/STATISTICS) is introduced for
+    needed solution statistics (see the example below)
+    
++SOLUTION/STATISTICS
+*_STATISTICAL PARAMETER________ __VALUE(S)____________
+ VARIANCE FACTOR                0.9260149874E-02
+ NUMBER OF OBSERVATIONS         811865           
+ NUMBER OF UNKNOWNS             22142
+ SAMPLING INTERVAL(SECONDS)      120
+-SOLUTION/STATISTICS
+    
+    Other possible headings/entries might include e.g.:
+    SQUARE SUM RESIDUALS (VTPV)
+    NUMBER OF DEGREES OF FREEDOM , etc.
+    
+    5) Additional standardized parameter code names were introduced to
+    accommodate some specific users, more parameter codes may be introduced as
+    the need arises. For future applications and to ease  interpretation, the
+    parameter code fields have been increased from four to six chars in all the
+    relevant (SOLUTION) blocks, with some minor changes in the format fields to
+    accommodate this change. It is suggested that the the current (four chars)
+    codes used by IGS (STAX, STAY, STAZ, VELY, VELY, VELZ, LOD, UT, XPO, YPO)
+    are retained  for compatibility/continuity reasons and that any new ones
+    take the advantage of the six chars field. E.g. for the orbit parameters
+    the following code names could be suggested:
+
+
+    SAT__X PR01   X state of PRN 01
+    SAT__Y PR01   Y  "       "
+    SAT__Z PR01   Z  "       "
+    
+    SAT_VX PR01   Vx "       "
+    .
+    .
+    SAT_RP PR01   Rp scale of PRN 01
+    SAT_GX PR01   Gx   "       "
+    SAT_GZ PR01   Gz   "       "
+    SATYBI PR01   Gy  bias     "
+    
+    TROTOT ALGO   Tropo delay (wet + dry) at ALGO
+    TRODRY ALGO   Tropo delay (dry)
+    TROWET ALGO   Tropo delay (wet)
+
+    etc.
+
+    Note: The use of SV rather PR could be considered here, as it is more
+    meaningful, but since the GPS users are accustomed to PRN's (and PRNs are
+    used in sp3) we may not have any other choice. Considering that "P" is used
+    by IERS as the technique code for GPS, it may not be (i.e. "PR") such a bad
+    choice. Other satellite system would then have to be assigned unique code
+    of two chars.
+
+    6) The version 1.00 discontinues the practice of using separate OCC_ and
+    SOLN codes in the SITE and SOLUTION blocks, respectively, as it serves 
+    no useful purpose. Further more it is suggested to use the SOLN codes for
+    the SITE blocks as well (i.e. SITE/ECCENTRICITY, ./RECEIVER; ./ANTENNA and
+    ./DATA). In most cases for the individual AC SINEXes, the SOLN codes should
+    then be coded with the default characters "-" which could mean that "this
+    record applies to all estimates" (note  SITE+PT+SOLN defines a unique
+    estimate, SITE+PT is equivalent to DOMES (DOMEX)and uniquely identifies a
+    geodetic mark). What is exactly meant should be clear from the examples
+    below:
+
+
++SITE/ANTENNA
+*Code PT SOLN T _Data Start_ __Data End__ __antenna type______ _S/N_
+* lines removed
+ GOLD  A ---- P 92:180:00000 95:304:79200 DORNE MARGOLIN R        95
+ GOLD  A ---- P 95:304:79200 00:000:00000 DORNE MARGOLIN T     -----
+* etc
+*   (NOTE: above ANTENNA TYPE FIELD = 20chars)
+ .
+       
++SITE/ECCENTRICITY
+*Code PT SOLN T _Data Start_ __Data End__ typ __ARP-benchmark (m)_______
+* lines removed
+ GOLD  A ---- P 92:180:00000 95:304:79200 UNE    .0000    .0000    .0000
+ GOLD  A ---- P 95:304:79200 00:000:00000 UNE    .0025    .0000    .0000
+* etc
+* NOTE: Continuity of multiple entry of a site must be adhered, i.e. the
+*    end epoch of the first ( must be coded) =< the start epoch of the second
+*    entry. 
+ .
+  
+    This would allow only one (e.g. SOLN=1) for GOLD in the ESTIMATE blocks. On
+    the other hand if one prefers two SOLNs (e.g. 1 & 2) for GOLD in the
+    ESTIMATE blocks, e.g. before and after an antenna change, then the same
+    (e.g. 1 & 2) SOLN must be used in all GOLD entries in the SITE blocks as
+    well. Conversely when two solutions (SOLN 1, 2) are introduced for some
+    reasons other than instrument/antenna change (e.g. as a result a coseismic
+    change, with the same rec/antenna/eccentricity) then, only one entry in the
+    SITE blocks with the default character codes ("-") in the SOLN filed need
+    to be coded or alternatively two identical entries with 1 and 2 in the SOLN
+    field could be used (except, of course, for the start and end epochs which
+    must be continuous and non overlapping).  This considerably  enhances the
+    SINEX effectiveness. 
+
+    SINEX SYNTAX
+
+    SINEX is an ASCII file with lines of 80chars or less. It consists  of a
+    number of blocks which are mutually referenced (related) through station
+    codes/names, epochs and/or index counters. Some blocks consist of
+    descriptive lines (starting in Col.2) and/or fixed format fields with
+    numerous headers and descriptive annotations. 
+
+    The first line is MANDATORY and must start with "%" in col 1, and  contains
+    information about the  agency, file identification, solution spans,
+    techniques, type of solution, etc. (for more details see the Appendix I or
+     II). The last line ends with "%ENDSNX". 
+
+    The SINEX format consists of a number BLOCKS  which start with "+" in the
+    first col. followed by a standardized block  labels, and each block ends
+    with  "-" and the block label. Each block data starts in the column 2 or
+    higher.  Blocks can be in any order, provided that they start with (+) and
+    end with (-) block labels.  The first header line and most blocks are
+    related through epochs or  time stamps in the following format:
+    YY:DOY:SECOD  YY-year; DOY- day of year; SECOD -sec of day;
+    E.g. the epoch 95:120:86399  denotes April 30, 1995 (23:59:59UT). The
+    epochs  00:00:00000 are allowed in all blocks (except the first header
+    line) and  default into the start or end epochs of the first header line
+    which must always  be coded. This is particularly useful for some blocks,
+    such as the ones  related to hardware, occupancy, which should be centrally
+    archived by IGSCB  with 00:00:00000 as the end (current) epochs, and which
+    should be readily  usable by ACs for SINEX and other analysis/processing as
+    official  (authoritative) IGS information.
+
+    COMMENT lines starts with "*" in Col. 1 and can be anywhere within or
+    outside  a block, though for the clarity sake, beginning and ends of blocks
+    are preferable.  For increased portability, the floating number exponent of
+    "E" should be used  rather than "D" or "d" which is not recognized by some
+    compiler/installations.  Fields not coded should be filled with "-"
+    characters to  allow efficient row and column format readings.
+
+    The most important blocks are the SOLUTION blocks. They are in fixed format
+    and have been adopted and used by IERS (ISEF1) submission format as well.
+    (For more information on the format, see the Appendix I). Only two SOLUTION
+    blocks (SOLUTION/ESTIMATE and SOLUTION/MATRIX_ESTIMATE) are MANDATORY and
+    must  be coded. They contain complete solutions (apriori + solution vector)
+    and the corresponding standard deviations, and the corresponding matrix.
+    Although various matrix forms are allowed in SINEX (as specified by a
+    matrix type code),  triangular correlation matrix (e.g.
+    SOLUTION/MATRIX_ESTIMATE L CORR) is preferred and  recommended for IGS
+    since it is easier to visualize. Important but not mandatory (though
+    RECOMMENDED for IGS purposes) are the next two blocks, i.e. the
+    SOLUTION/APRIORI and SOLUTION/MATRIX_APRIORI. The  scale of estimated and
+    apriori standard deviations can, in principle, be  arbitrary (note even
+    apriori scaling is arbitrary, depending on the observation  weighting).
+    However, both estimated and apriori standard deviations (and the
+    corresponding matrices) MUST use the same scaling (i.e. variance) factor. 
+    Otherwise the apriori information cannot be be  rigorously removed to form 
+    free solutions (e.g. normal matrices). Scaling between different SINEX 
+    solutions is beyond the SINEX format and must be dealt with at the 
+    combination/analysis stage. 
+
+    REFERENCES
+    
+    Blewitt, G., Y. Bock and J. Kouba: "Constraining the IGS Polyhedron by
+    Distributed Processing", workshop  proceedings : Densification of ITRF
+    through Regional GPS Networks, held at JPL, Nov30-Dec 2, 1994, pp. 21-37.
+           ------------------------------
+
+    
+
+
+
+
+
+
+			A P P E N D I X   I
+ 
+
+
+
+				S I N E X
+
+			V E R S I O N   1 . 0 0
+
+	D E T A I L   F O R M A T   D E S C R I P T I O N
+
+
+
+
+
+1.       INTRODUCTION                                    
+2.       DATA STRUCTURE                                  
+3.       HEADER LINE                                     
+4.       FILE/REFERENCE BLOCK                            
+5.       FILET/COMMENT BLOCK                            
+6.       INPUT/HISTORY BLOCK                             
+7.       INPUT/FILES BLOCK                               
+8.       INPUT/ACKNOWLEDGEMENT BLOCK                     
+9.       SITE/ID BLOCK                                   
+10.      SITE/DATA BLOCK                                 
+11.      SITE/RECEIVER BLOCK                             
+12.      SITE/ANTENNA BLOCK                              
+13.      SITE/GPS_PHASE_CENTER BLOCK                     
+14.      SITE/ECCENTRICITY BLOCK                         
+15.      SOLUTION/EPOCH BLOCK                            
+16.      SOLUTION/STATISTICS                             
+17.      SOLUTION/ESTIMATE BLOCK                         
+18.      SOLUTION/APRIORI BLOCK                          
+19.      SOLUTION/MATRIX_ESTIMATE BLOCK                  
+20.      SOLUTION/MATRIX_APRIORI BLOCK                   
+21.      FOOTER LINE                                     
+
+1. Introduction
+ 
+ This document describes the Software Independent Exchange (SINEX) format. The 
+need for such a format grew out of the increasing need to exchange 
+station coordinates information. It started in early 1995 by an effort from 
+a number of IGS participants. The format has quickly evolved beyond the 
+original objectives. The information is organized by blocks. The format is 
+designed to be easily extended as need may arise.
+
+ 
+2. Data Structure
+ 
+ Each SINEX line has at most 80 ASCII characters.
+The SINEX file is subdivided in groups of data called blocks. Each block is 
+enclosed by a header and trailer line. Each block has a fixed format. The 
+blocks contain information on the file, its input, the sites and the solution. 
+All elements within a line are defined. A character field without information 
+will have "-"s within its field and a missing numerical element will have a 
+value of 0 within its field. This lets the SINEX file to be accessible 
+"column-wise" as well as "line-wise". Character fields should be left hand
+justified whenever applicable.
+ 
+ The first character of each line identify the type of information that the 
+line contains. Five characters are reserved. They have the following 
+meaning when they are at the beginning of a line, they identify:
+ Character	Definition
+ "%"            Header and trailer line,
+ "*"            Comment line within the header and trailer line,
+ "+"            Title at the start of a block
+ "-"            Title at the end of a block
+ " "            Data line within a block
+
+ No other character is allowed at the beginning of a line.
+ 
+ A SINEX file must start with a Header line and ends with a footer line.
+ 
+ The following blocks are defined:
+ 
+ FILE/FERERENCE
+ FILE/COMMENT
+ INPUT/HISTORY
+ INPUT/FILES
+ INPUT/ACKNOWLEDGEMENTS
+ SITE/ID
+ SITE/DATA
+ SITE/RECEIVER
+ SITE/ANTENNA
+ SITE/GPS_PHASE_CENTER
+ SITE/ECCENTRICITY
+ SOLUTION/EPOCH
+ SOLUTION/STATISTICS
+ SOLUTION/ESTIMATE
+ SOLUTION/APRIORI
+ SOLUTION/MATRIX_ESTIMATE {p} {type}
+ SOLUTION/MATRIX_APRIORI  {p} {type}
+ 
+	Where:	{p}     L or U
+		{type}  CORR or COVA or INFO or SRIF
+ 
+These block titles are immediately preceded by a "+" or a "-" as 
+they mark the beginning or the end of a block. The block titles  must be in
+capital letters. After a block has started(+) it must be ended(-) before another
+block can begin. The general structure is as follow:
+
+%=SNX........... (Header line)----------|
+.............                           |
++(BLOCK TITLE)-------------|            |
+ ............              |            |
+ ............              |            |
+ ............              |            |
+-(BLOCK TITLE)-------------|            |
+.............                           |
++(BLOCK TITLE)-------------|            |
+ ............              |            |
+ ............              |            |
+ ............              |            |
+-(BLOCK TITLE)------------ |            |
+.............                           |
+%ENDSNX          (Trailer line)---------|
+
+ 
+Most fields within a SINEX line are separated by a single space. In the 
+following sections, each SINEX line is defined by its field name, a general 
+description and the (FORTRAN) format.
+
+The comment line (not to be confused with the FILE/COMMENT Block) can be written
+anywhere within the header and the footer line is defined as:
+ 
+	 ___________________________________________________________________
+	|______________________C_O_M_M_E_N_T___D_A_T_A___L_I_N_E____________|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| Comment        | Any general comment relevant to   |   1H*,A79    |
+	|                | the SINEX file.                   |              |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |      80      |
+                                                             |______________|
+ 
+For example, the use of "*" in the first column can be used to effectively hide
+information from the software without deleting it from the file.
+
+ Some fields are found in several blocks. To keep the description short, they 
+are described in detail here, and will be referred to in the sections with 
+additional information added when necessary. The fields defined below will be 
+referenced to by putting them within square brackets [] when encountered in the 
+following sections.
+ 
+	 ___________________________________________________________________
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| Time           | YY:DDD:SSSSS.  "UTC"              |   I2.2,      |
+	|                | YY = last 2 digits of the year,   |   1H:,I3.3,  |
+	|                | if YY <= 50 implies 21-st century,|   1H:,I5.5   |
+	|                | if YY > 50 implies 20-th century, |              |
+	|                | DDD = 3-digit day in year,        |              |
+	|                | SSSSS = 5-digit seconds in day.   |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Constraint Code| Single digit indicating the       |   A1         |
+	|                | constraints:                      |              |
+	|                | 0-fixed/tight constraints,        |              |
+	|                | 1-significant constraints,        |              |
+	|                | 2-unconstrained.                  |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Parameter Type | Type of parameter.                |   A6         |
+	|                | List of allowed parameters:       |              |
+	|                |                                   |              |
+	|                | STAX - station X coordinate,  m   |              |
+	|                | STAY - station Y coordinate,  m   |              |
+	|                | STAZ - station Z coordinate,  m   |              |
+	|                | VELX - station X velocity,    m/y |              |
+	|                | VELY - station Y velocity,    m/y |              |
+	|                | VELZ - station Z velocity,    m/y |              |
+	|                | LOD  - length of day,         ms  |              |
+	|                | UT   - delta time  UT1-UTC,   ms  |              |
+	|                | XPO  - X polar motion,        mas |              |
+	|                | YPO  - Y polar motion.        mas |              |
+	|                | XPOR - X polar motion rate,   ma/d|              |
+	|                | YPOR - Y polar motion rate,   ma/d|              |
+        |                | SAT__X - Satellite X coord.,  m   |              |
+        |                | SAT__Y - Satellite Y coord.,  m   |              |
+        |                | SAT__Z - Satellite Z coord.,  m   |              |
+        |                | SAT_VX - Satellite X velocity,m/s |              |
+        |                | SAT_VY - Satellite Y velocity,m/s |              |
+        |                | SAT_VZ - Satellite Z velocity,m/s |              |
+        |                | SAT_RP - Radiation pressure,      |              |
+        |                | SAT_GX - GX scale,                |              |
+        |                | SAT_GZ - GZ scale,                |              |
+        |                | SATYBI - GY bias,             m/s2|              |
+        |                | TROTOT - wet + dry Tropo dela m   |              |
+        |                | TRODRY - dry Tropo delay      m   |              |
+        |                | TROWET - wet Tropo delay      m   |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Site Code      | - For stations:                   |   A4         |
+	|                | Call sign for a site.(It should be|              |
+	|                | consistent with IGS convention).  |              |
+        |                | - For satellites:                 |              |
+        |                | Use "PRXX" where XX is the PRN    |              |
+        |                | number.                           |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Point Code     | A two character code identifying  |   A2         |
+	|                | physical monument within a site.  |              |
+	|                | Typically has a code  A, but      |              |
+	|                | could vary if the site has more   |              |
+	|                | than one monument.                |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Solution ID    | Character identifying the solution|   A4         |
+	|                | given for a point at a site.      |              |
+        |                | "----" applies to all.            |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Observation    | A single character indicating the |   A1         |
+	| Code.          | technique(s) used to arrive at the|              |
+	|                | solutions obtained in this SINEX  |              |
+	|                | file. It should be consistent with|              |
+	|                | the IERS convention.              |              |
+	|                | This character code may be:       |              |
+	|                | C-Combined techniques used.       |              |
+	|                | D-DORIS,                          |              |
+	|                | L-SLR,                            |              |
+	|                | M-LLR,                            |              |
+	|                | P-GPS,                            |              |
+	|                | R-VLBI.                           |              |
+	|________________|___________________________________|______________|
+ 
+
+
+ 
+3. Header Line (Mandatory)
+ 
+  Description
+ 
+ The Header line must be the first line in a SINEX file.
+ 
+  Contents:
+
+	 ___________________________________________________________________
+	|_____________H_E_A_D_E_R___L_I_N_E_________________________________|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| First Character| Single character '%' in column #1.|   A1         |
+	|                | No other character than '%' is al-|              |
+	|                | lowed.                            |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Second         | Single character '=' in column #2.|   A1         |
+	| Character      | Indicates 'resultant' solution.   |              |
+	|                | No other character than '=' is al-|              |
+	|                | lowed.                            |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Document Type  | Three characters 'SNX' in columns |   A3         |
+	|                | 3 to 5. Indicates that this is a  |              |
+	|                | SINEX document.                   |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Format Version | Four digits indicating the version|   1X,F4.2    |
+	|                | of SINEX format used.             |              |
+	|                | '1.00' for this version.          |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| File Agency    | Identify the agency creating the  |   1X,A3      |
+	| Code           | file.                             |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | Creation time of this SINEX file. |   1X,I2.2,   |
+	|                |                                   |   1H:,I3.3,  |
+	|                |                                   |   1H:,I5.5   |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Agency Code]  | Identify the agency providing the |   1X,A3      |
+	|                | data in the SINEX file            |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | Start time of the data used in the|   1X,I2.2,   |
+	|                | SINEX solution                    |   1H:,I3.3,  |
+	|                | Value 00:000:00000 should be      |   1H:,I5.5   |
+	|                | avoided.                          |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | End time of the data used in the  |   1X,I2.2,   |
+	|                | SINEX solution                    |   1H:,I3.3,  |
+	|                | Value 00:000:00000 should be      |   1H:,I5.5   |
+	|                | avoided.                          |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Observation   | Technique(s) used to generate the |   1X,A1      |
+	| Code]          | SINEX solution                    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Number of Est- | Number of parameters estimated in |   1X,I5.5    |
+	| timates        | this SINEX file.                  |              |
+	|                | Mandatory field.                  |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Constraint    | Single character indicating the   |   1X,A1      |
+	| Code]          | constraint in the SINEX solution. |              |
+	|                | Mandatory field.                  |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Solution       | Solution types contained in this  |   5(1X,A1)   |
+	| Contents       | SINEX file. Each character in this|              |
+	|                | field may be one of the following:|              |
+	|                |    X - Station Coordinates,       |              |
+	|                |    V - Station Velocities,        |              |
+	|                |    O - Orbits,                    |              |
+	|                |    E - Earth Rotation Parameters  |              |
+	|                |    T - Troposphere                |              |
+	|                |    BLANK                          |              |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |     77       |
+                                                             |______________|
+
+ Relationship with other blocks:
+ 
+ This line is duplicated as the resultant line of the INPUT/HISTORY Block with
+the exception of its first character.
+
+
+4. FILE/REFERENCE Block (Mandatory for IGS)
+ 
+  Description:
+ 
+  This block provides information on the Organization, point of contact, the
+  software and hardware involved in the creation of the file.
+
+  Contents:
+ 
+	 ___________________________________________________________________
+	|__________F_I_L_E___R_E_F_E_R_E_N_C_E___D_A_T_A___L_I_N_E__________|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| Information    | Describes the type of information |   1X,A18     |
+	| Type           | present in the next field. May    |              |
+	|                | take on the following values:     |              |
+	|                |                                   |              |
+	|                | 'DESCRIPTION' - Organization(s)   |              |
+	|                |                 gathering/altering|              |
+	|                |                 the file contents.|              |
+	|                | 'OUTPUT'      - Description of the|              |
+	|                |                 file contents.    |              |
+	|                | 'CONTACT'     - Address of the    |              |
+	|                |                 relevant contact. |              |
+        |                |                 e-mail            |              |
+	|                | 'SOFTWARE'    - Software used to  |              |
+	|                |                 generate the file.|              |
+	|                | 'HARDWARE'    - Computer hardware |              |
+	|                |                 on which above    |              |
+	|                |                 software was run. |              |
+	|                | 'INPUT'       - Brief description |              |
+	|                |                 of the input used |              |
+	|                |                 to generate this  |              |
+	|                |                 solution.         |              |
+	|                |                                   |              |
+	|                | Any of the above fields may be    |              |
+	|                | and in any order.                 |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Information    | Relevant information for the type |   1X,A60     |
+	|                | indicated by the previous field.  |              |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |     80       |
+                                                             |______________|
+ 
+ 
+
+ 
+5. FILE/COMMENT Block (Optional)
+ 
+ Description:
+ 
+ This Block can be used to provide general comments about the SINEX data file.
+ 
+ Contents:
+ 
+	 ___________________________________________________________________
+	|____________F_I_L_E___C_O_M_M_E_N_T___D_A_T_A___L_I_N_E____________|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| Comment        | Any general comment providing     |   1X,A79     |
+	|                | relevant information about the    |              |
+	|                | SINEX file.                       |              |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |     80       |
+                                                             |______________|
+
+
+ 
+6. INPUT/HISTORY Block (Recommended)
+ 
+ Description:
+ 
+ This block provides information about the source of the information used to 
+create the current SINEX file.
+ 
+ Contents:
+ 
+	 ___________________________________________________________________
+	|__________I_N_P_U_T___H_I_S_T_O_R_Y___D_A_T_A___L_I_N_E____________|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| File Code      | Only one of the following charac- |   1X,A1      |
+	|                | ters is permitted:                |              |
+	|                |    '+' - This character indicates |              |
+	|                |          that the information that|              |
+	|                |          the information that fol-|              |
+	|                |          lows identify an         |              |
+	|                |          input solution contribu- |              |
+	|                |          ting to this SINEX file. |              |
+	|                |    '=' - This character indicates |              |
+	|                |          that the information that|              |
+	|                |          the information that fol-|              |
+	|                |          lows identify the output |              |
+	|                |          solution file.           |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Document Type  | Three characters 'SNX' in columns |   A3         |
+	|                | 3 to 5. Indicates that this is a  |              |
+	|                | SINEX document.                   |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Format Version | Four digits indicating the version|   1X,F4.2    |
+	|                | of SINEX format used.             |              |
+	|                | '1.00' for this version.          |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Agency Code]  | Identify the agency creating the  |   1X,A3      |
+	|                | file.                             |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | Creation time of this SINEX file. |   1X,I2.2,   |
+	|                |                                   |   1H:,I3.3,  |
+	|                |                                   |   1H:,I5.5   |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Agency Code]  | Identify the agency providing the |   1X,A3      |
+	|                | data in the SINEX file.           |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | Start time of the data used in the|   1X,I2.2,   |
+	|                | SINEX solution.                   |   1H:,I3.3,  |
+	|                |                                   |   1H:,I5.5   |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | End time of the data used in the  |   1X,I2.2,   |
+	|                | SINEX solution.                   |   1H:,I3.3,  |
+	|                |                                   |   1H:,I5.5   |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Observation   | Technique(s) used to generate the |   1X,A1      |
+	| Technique]     | SINEX solution.                   |              |
+	|                |                                   |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Number of Est- | Number of parameters estimated in |   1X,I5.5    |
+	| timates        | this SINEX file.                  |              |
+	|                |                                   |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Constraint    | Single digit indicating the       |   1X,A1      |
+	| Code]          | constraint in the SINEX solution. |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Solution       | Solution types contained in this  |   6(1X,A1)   |
+	| Contents       | SINEX file. Each character in this|              |
+	|                | field may be one of the following:|              |
+	|                |    X - Station Coordinates,       |              |
+	|                |    V - Station Velocities,        |              |
+	|                |    O - Orbits,                    |              |
+	|                |    E - Earth Rotation Parameters  |              |
+        |                |    T - Troposphere                |              |
+	|                |    BLANK                          |              |
+	|                |                                   |              |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |     79       |
+                                                             |______________|
+ 
+ Comment:
+ 
+ The final data line "=" describes the current SINEX file and match the 
+Header line with the exception of the first character.
+ 
+
+
+
+7. INPUT/FILES Block (Optional)
+ 
+ Description:
+ 
+ This block identify the input files and allow for a short comment to be 
+added to describe those files.
+ 
+ Contents:
+ 
+	 ___________________________________________________________________
+	|____________I_N_P_U_T___F_I_L_E_S___D_A_T_A___L_I_N_E______________|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| [Agency   Code]| Agency creating the solution des- |   1X,A3      |
+	|                | cribed in this data line.         |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | Time of creation of the input     |   1X,I2.2,   |
+	|                | SINEX solution                    |   1H:,I3.3,  |
+	|                |                                   |   1H:,I5.5,  |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| File Name      | Name of the file containing the   |   1X,A29     |
+	|                | solution described in the current |              |
+	|                | data line.                        |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| File           | General description of the file   |   1X,A32     |
+	| Description    | referred to on this data line.    |              |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |     80       |
+                                                             |______________|
+ 
+ Comments:
+ 
+ There must be exactly one INPUT/FILES data line for every INPUT/HISTORY data
+line. The final data line must describe this current SINEX file.
+ 
+
+
+ 
+8. INPUT/ACKNOWLEDGEMENTS Block (Optional)
+ 
+ Description:
+ 
+ This block defines the agency codes contributing to the SINEX file.
+ 
+ Contents:
+ 
+	 ___________________________________________________________________
+	|___I_N_P_U_T___A_C_K_N_O_W_L_E_D_G_M_E_N_T_S___D_A_T_A___L_I_N_E___|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| [Agency Code]  | Agency(ies) contributing to this  |   1X,A3      |
+	|                | SINEX file.                       |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Agency         | Description of agency code.       |   1X,A75     |
+	| Description    |                                   |              |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |     80       |
+                                                             |______________|
+ 
+
+ 
+9. SITE/ID Block (Mandatory)
+ 
+ Description:
+ 
+ This block provides general information for each site containing estimated 
+parameters.
+ 
+ Contents:
+ 
+ 
+	 ___________________________________________________________________
+	|_________________S_I_T_E___I_D___D_A_T_A___L_I_N_E_________________|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| [Site Code]    | Call sign for a site.             |   1X,A4      |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Point Code]   | Physical monument used at a site  |   1X,A2      |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+        | Unique Monument| Unique alpha-nummeric monument    |   1X,A9      |
+        | Identification | identification. For ITRF purposes,|              |
+	|                | it is a nine character DOMES/DOMEX|              |
+	|                | number (five/six digits, followed |              |
+	|                | by  the single letter 'M' or 'S', |              |
+        |                | followed by four/three digits)    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Observation   | Observation technique(s) used.    |   1X,A1      |
+	| Code]          |                                   |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Station        | Free-format description of the    |   1X,A22     |
+	| Description    | site, typically the town and/or   |              |
+	|                | country.                          |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Approximate    | Approximate longitude of the site |   1X,I3,     |
+	| Longitude      | in degrees(W/+), minutes and      |   1X,I2,     |
+	|                | seconds.                          |   1X,F4.1    |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Approximate    | Approximate latitude of the site  |   1X,I3,     |
+	| Latitude       | in degrees(NS/+-), minutes and    |   1X,I2,     |
+	|                | seconds.                          |   1X,F4.1    |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Approximate    | Approximate height of the site in |   1X,F7.1    |
+	| Height         | metres.                           |              |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |     75       |
+                                                             |______________|
+ 
+
+ 
+10. SITE/DATA Block (Optional)
+ 
+ Description:
+ 
+ This block gives the relationship between the estimated station parameters 
+in the SINEX file and in the input files.
+ 
+ 
+ Contents:
+ 
+	 ___________________________________________________________________
+	|_________S_I_T_E___D_A_T_A___L_I_N_E_______________________________|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| [Site Code]    | Site Code for solved station      |   1X,A4      |
+	|                | coordinates.                      |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Point Code]   | Point Code for solved station     |   1X,A2      |
+	|                | coordinates.                      |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Solution ID]  | Solution number to which the input|   1X,A4      |
+	|                | in this data line is referred to. |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Site Code]    | Site Code from an input SINEX file|   1X,A4      |
+	|                |                                   |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Point Code]   | Point code from an input SINEX    |   1X,A2      |
+	|                | file.                             |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Solution ID]  | Solution Number for a Site/Point  |   1X,A4      |
+	|                | from an input SINEX file.         |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Observation   | Observation Code for a Site/Point/|   1X,A1      |
+	| Code]          | Solution Number from an input     |              |
+	|                | SINEX file.                       |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | Time of start of data for the     |   1X,I2.2,   |
+	|                | input SINEX file.                 |   1H:,I3.3,  |
+	|                |                                   |   1H:,I5.5   |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | Time of end of data for the input |   1X,I2.2,   |
+	|                | SINEX file.                       |   1H:,I3.3,  |
+	|                |                                   |   1H:,I5.5   |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Agency Code]  | Creation Agency Code for the input|   1X,A3      |
+	|                | SINEX file.                       |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | Creation time for the input SINEX |   1X,I2.2,   |
+	|                | file.                             |   1H:,I3.3,  |
+	|                |                                   |   1H:,I5.5   |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |     71       |
+                                                             |______________|
+ 
+ 
+
+ 
+11. SITE/RECEIVER Block (Mandatory for IGS)
+ 
+ Description:
+ 
+ List the receiver used at each site during the observation period of 
+interest.
+ 
+ Contents:
+ 
+ 
+	 ___________________________________________________________________
+	|_____S_I_T_E___R_E_C_E_I_V_E_R___D_A_T_A___L_I_N_E_________________|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| [Site Code]    | Site code for which some          |   1X,A4      |
+	|                | parameters are estimated.         |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Point Code]   | Point Code at a site for which    |   1X,A2      |
+	|                | some parameters are estimated.    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Solution ID]  | Solution Number at a Site/Point   |   1X,A4      |
+	|                | code for which some parameters    |              |
+	|                | are estimated.                    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Observation   | Identification of the observation |   1X,A1      |
+	| Code]          | technique used.                   |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | Time since the receiver has been  |   1X,I2.2,   |
+	|                | operating at the Site/Point.      |   1H:,I3.3,  |
+	|                | Value 00:000:00000 indicates that |   1H:,I5.5   |
+	|                | the receiver has been operating   |              |
+	|                | at least since the "File Epoch    |              |
+	|                | Start Time".                      |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | Time until the receiver is opera- |   1X,I2.2,   |
+	|                | ted at a Site/Point.              |   1H:,I3.3,  |
+	|                | Value 00:000:00000 indicates that |   1H:,I5.5   |
+	|                | the receiver has been operating   |              |
+	|                | at least until the "File Epoch    |              |
+	|                | End Time".                        |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Receiver Type  | Receiver Name & model.            |   1X,A20     |
+        |                | (See Appendix III for IGS Standard|              |
+        |                | receiver names)                   |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Receiver       | Serial number of the receiver.    |   1X,A5      |
+	| Serial Number  | Takes on value '-----' if unknown.|              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Receiver       | Firmware used by this receiver    |   1X,A11     |
+	| Firmware       | during the epoch specified above. |              |
+	|                | Takes on value '---------------'  |              |
+	|                | if unknown.                       |              |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |     80       |
+                                                             |______________|
+
+
+ 
+12. SITE/ANTENNA Block (Mandatory for IGS)
+ 
+ Description:
+ 
+ List of antennas used at each site used in the SINEX file.
+ 
+ Contents:
+ 
+ 
+	 ___________________________________________________________________
+	|_______S_I_T_E___A_N_T_E_N_N_A___D_A_T_A___L_I_N_E_________________|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| [Site Code]    | Site code for which some          |   1X,A4      |
+	|                | parameters are estimated.         |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Point Code]   | Point Code at a site for which    |   1X,A2      |
+	|                | some parameters are estimated.    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Solution ID]  | Solution Number at a Site/Point   |   1X,A4      |
+	|                | code for which some parameters    |              |
+	|                | are estimated.                    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Observation   | Identification of the observation |   1X,A1      |
+	| Code]          | technique used.                   |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | Time since the antenna  has been  |   1X,I2.2,   |
+	|                | installed at the Site/Point.      |   1H:,I3.3,  |
+	|                | Value 00:000:00000 indicates that |   1H:,I5.5   |
+	|                | the antenna has been installed    |              |
+	|                | at least since the "File Epoch    |              |
+	|                | Start Time".                      |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | Time until the antenna is instal- |   1X,I2.2,   |
+	|                | led at a Site/Point.              |   1H:,I3.3,  |
+	|                | Value 00:000:00000 indicates that |   1H:,I5.5   |
+	|                | the antenna has been installed    |              |
+	|                | at least until the "File Epoch    |              |
+	|                | End Time".                        |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Antenna Type   | Antenna name & model.             |   1X,A20     |
+        |                | (See Appendix III for IGS Standard|              |
+        |                | antenna names)                    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Antenna        | Serial number of the antenna.     |   1X,A5      |
+	| Serial Number  | Takes on value '-----' if unknown.|              |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |     68       |
+                                                             |______________|
+ 
+ 
+
+ 
+13. SITE/GPS_PHASE_CENTER Block (Mandatory for IGS)
+ 
+ Description:
+ 
+ List of GPS phase centres offset for all antennas described in the Site 
+Antenna block. The offset is given from th Antenna Reference Point (ARP) to 
+the L1 and L2 phase centers respectively. For IGS purposes see the IGS Central
+Bureau Information System for ARPs and antenna phase center offsets:
+ directory: igscb/station/general  ; files: antenna.gra and rcv_ant.tab    
+ 
+ Contents:
+ 
+	 ___________________________________________________________________
+	|_______G_P_S___P_H_A_S_E___C_E_N_T_E_R___D_A_T_A___L_I_N_E_________|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| Antenna Type   | Antenna name & model.             |   1X,A20     |
+        |                | (See Appendix III for IGS Standard|              |
+        |                | antenna names)                    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Antenna        | Serial number of the antenna.     |   1X,A5      |
+	| Serial Number  | Takes on value '-----' if unknown.|              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| L1 Phase Centre| Up(+) offset from the ARP to      |   1X,F6.4    |
+	| Up Offset      | the L1 phase center in meters.    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| L1 Phase Centre| North(+) offset from the ARP to   |   1X,F6.4    |
+	| North Offset   | the L1 phase center in meters.    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| L1 Phase Centre| East(+) offset from the ARP to    |   1X,F6.4    |
+	| East Offset    | the L1 phase center in meters.    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| L2 Phase Centre| Up(+) offset from the ARP to      |   1X,F6.4    |
+	| Up Offset      | the L2 phase center in meters.    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| L2 Phase Centre| North(+) offset from the ARP to   |   1X,F6.4    |
+	| North Offset   | the L2 phase center in meters.    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| L2 Phase Centre| East(+) offset from the ARP to    |   1X,F6.4    |
+	| East Offset    | the L2 phase center in meters.    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Antenna Cali-  | Name of the antenna model used in |   1X,A10     |
+	| bration model  | the correction of the observations|              |
+        |                | for phase center variations.      |              |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |     80       |
+                                                             |______________|
+
+
+ 
+14. SITE/ECCENTRICITY Block (Mandatory for IGS)
+ 
+ Description:
+ 
+ List of antenna eccentricities from the Marker to the Antenna Reference 
+Point (ARP). For IGS purposes see the IGS Central Bureau Information System
+for antenna eccentricities:
+ directory: igscb/station/tie ; files: localtie.tab and localtie.chg  
+ 
+ Contents:
+ 
+	 ___________________________________________________________________
+	|__S_I_T_E____E_C_C_E_N_T_R_I_C_I_T_Y___D_A_T_A___L_I_N_E___________|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| [Site Code]    | Site code for which some          |   1X,A4      |
+	|                | parameters are estimated.         |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Point Code]   | Point Code at a site for which    |   1X,A2      |
+	|                | some parameters are estimated.    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Solution ID]  | Solution ID at a Site/Point       |   1X,A4      |
+	|                | code for which some parameters    |              |
+	|                | are estimated.                    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Observation   | Identification of the observation |   1X,A1      |
+	| Code]          | technique used.                   |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | Time since the antenna has been   |   1X,I2.2,   |
+	|                | installed at the Site/Point.      |   1H:,I3.3,  |
+	|                | Value 00:000:00000 indicates that |   1H:,I5.5   |
+	|                | the antenna has been installed    |              |
+	|                | at least since the "File Epoch    |              |
+	|                | Start Time".                      |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | Time until the antenna is instal- |   1X,I2.2,   |
+	|                | led at a Site/Point.              |   1H:,I3.3,  |
+	|                | Value 00:000:00000 indicates that |   1H:,I5.5   |
+	|                | the antenna has been installed    |              |
+	|                | at least until the "File Epoch    |              |
+	|                | End Time".                        |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Eccentricity   | Reference system used to describe |   1X,A3      |
+	| Reference      | vector distance from monument     |              |
+	| System         | benchmark to the antenna reference|              |
+	|                | point:                            |              |
+	|                | 'UNE' - Local reference system    |              |
+	|                |         Up, North, East.          |              |
+	|                | 'XYZ' - Cartesian Reference System|              |
+	|                |         X, Y, Z.                  |              |
+	|                | All units are in meters.          |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Up / X         | Up / X  offset from the marker to |   1X,F8.4    |
+	| Eccentricity   | the Antenna reference point (ARP).|              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| North / Y      | North/Y offset from the marker to |   1X,F8.4    |
+	| Eccentricity   | the Antenna reference point (ARP).|              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| East / Z       | East/Z  offset from the marker to |   1X,F8.4    |
+	| Eccentricity   | the Antenna reference point (ARP).|              |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |     72       |
+                                                             |______________|
+ 
+
+ 
+15. SOLUTION/EPOCH Block (Mandatory)
+ 
+ Description:
+ 
+ List of solution epoch for each Site Code/Point Code/Solution 
+Number/Observation Code (SPNO) combination.
+ 
+ Contents:
+ 
+ 
+	 ___________________________________________________________________
+	|____S_O_L_U_T_I_O_N___E_P_O_C_H_S___D_A_T_A___L_I_N_E______________|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| [Site Code]    | Site code for which some          |   1X,A4      |
+	|                | parameters are estimated.         |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Point Code]   | Point Code at a site for which    |   1X,A2      |
+	|                | some parameters are estimated.    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Solution ID]  | Solution Number at a Site/Point   |   1X,A4      |
+	|                | code for which some parameters    |              |
+	|                | are estimated.                    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Observation   | Identification of the observation |   1X,A1      |
+	| Code]          | technique used.                   |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | Start time for which the solution |   1X,I2.2,   |
+	|                | identified (SPNO) has observations|   1H:,I3.3,  |
+	|                |                                   |   1H:,I5.5   |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | End time for which the solution   |   1X,I2.2,   |
+	|                | identified (SPNO) has observations|   1H:,I3.3,  |
+	|                |                                   |   1H:,I5.5   |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | Mean time of the observations for |   1X,I2.2,   |
+	|                | which the solution (SPNO) is      |   1H:,I3.3,  |
+	|                | derived.                          |   1H:,I5.5   |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |     54       |
+                                                             |______________|
+ 
+
+ 
+16. SOLUTION/STATISTICS Block (Optional)
+ 
+ Description:
+ 
+ List of solution epoch for each Site Code/Point Code/Solution 
+Number/Observation Code (SPNO) combination.
+ 
+ Contents:
+ 
+ 
+	 ___________________________________________________________________
+	|____S_O_L_U_T_I_O_N___S_T_A_T_I_S_T_I_C_S_____L_I_N_E______________|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| Information    | Describes the type of information |   1X,A30     |
+	| Type           | present in the next field. May    |              |
+	|                | take on the following values:     |              |
+	|                |                                   |              |
+	|                |'NUMBER OF OBSERVATIONS'           |              |
+	|                |   # of observations used in the   |              |
+	|                |   adjustment.                     |              |
+	|                |'NUMBER OF UNKNOWNS'               |              |
+	|                |   # of unknowns solved in the     |              |
+	|                |   adjustment.                     |              |
+	|                |'SAMPLING INTERVAL (SECONDS)'      |              |
+	|                |   Interval in seconds between     |              |
+	|                |   successives observations.       |              |
+	|                |'SQUARE SUM OF RESIDUALS (VTPV)'   |              |
+	|                |   Sum of squares of residuals.    |              |
+        |                |   (V'PV); V-resid. vector;        |              |
+        |                |           P- weight matrix        |              |
+	|                |'PHASE MEASUREMENTS SIGMA'         |              |
+	|                |   Sigma used for the phase        |              |
+	|                |   measurements.                   |              |
+	|                |'CODE MEASUREMENTS SIGMA'          |              |
+	|                |   Sigma used for the code (pseudo-|              |
+	|                |   range) measurements.            |              |
+	|                |'NUMBER OF DEGREES OF FREEDOM'     |              |
+	|                |    # of observations minus the    |              |
+	|                |    # of unknowns                  |              |
+        |                |    (df)                           |              |
+	|                |'VARIANCE FACTOR'                  |              |
+	|                |    Sum of squares of residuals    |              |
+	|                |    divided by the degrees of      |              |
+	|                |    freedom (V'PV/df). Equivalent  |              |
+        |                |    to  Chi-squared/df.            |              |
+	|                | Any of the above fields may be    |              |
+	|                | present and in any order.         |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Information    | Relevant information for the type |   1X,F22.15  |
+	|                | indicated by the previous field.  |              |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |     54       |
+                                                             |______________|
+ 
+
+ 
+17. SOLUTION/ESTIMATE Block (Mandatory)
+ 
+ Description:
+ 
+ Estimated parameters.
+ 
+ Contents:
+ 
+ 
+	 ___________________________________________________________________
+	|______S_O_L_U_T_I_O_N___E_S_T_I_M_A_T_E___D_A_T_A___L_I_N_E________|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| Estimated Para-| Index of estimated parameters.    |   1X,I5      |
+	| meters Index   | values from 1 to the number of    |              |
+	|                | parameters.                       |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	|[Parameter Type]| Identification of the type of     |   1X,A6      |
+	|                | parameter.                        |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Site Code]    | Site code for which some          |   1X,A4      |
+	|                | parameters are estimated.         |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Point Code]   | Point Code at a site for which    |   1X,A2      |
+	|                | some parameters are estimated.    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Solution ID]  | Solution ID at a Site/Point       |   1X,A4      |
+	|                | code for which some parameters    |              |
+	|                | are estimated.                    |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | Epoch at which the estimated      |   1X,I2.2,   |
+	|                | parameter is valid.               |   1H:,I3.3,  |
+	|                |                                   |   1H:,I5.5   |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Parameter Units| Units used for the estimates and  |   1X,A4      |
+	|                | sigmas. Typical units are:        |              |
+	|                | m (metres),                       |              |
+	|                | ms (milliseconds),                |              |
+	|                | mas (milli-arc-seconds).          |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Constraint    | Constraint applied to the parame- |   1X,A1      |
+	| Code]          | ter.                              |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Parameter      | Estimated value of the parameter. |   1X,E21.15  |
+	| Estimate       |                                   |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Parameter      | Estimated standard deviation for  |   1X,E11.6   |
+	| Standard       | the parameter.                    |              |
+	| Deviation      |                                   |              |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |     80       |
+                                                             |______________|
+ 
+
+ 
+18. SOLUTION/APRIORI Block (Recommended/Mandatory)
+ 
+
+ Description:
+ 
+ Apriori information for  estimated parameters. This block is mandatory if 
+ significant constraints have been applied to the estimated parameters in 
+ SOLUTION/ESTIMATE Block. 
+ 
+ Contents:
+ 
+ 
+	 ___________________________________________________________________
+	|______S_O_L_U_T_I_O_N___E_S_T_I_M_A_T_E___D_A_T_A___L_I_N_E________|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| Apriori Parame-| Index of apriori parameters.      |   1X,I5      |
+	| ters Index     | values from 1 to the number of    |              |
+	|                | parameters.                       |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	|[Parameter Type]| Identification of the type of     |   1X,A6      |
+	|                | parameter. Typical id's are:      |              |
+	|                |                                   |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Site Code]    | Site code with apriori parameter  |   1X,A4      |
+	|                | estimate.                         |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Point Code]   | Point Code with apriori parameter |   1X,A2      |
+	|                | estimate.                         |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Solution ID]  | Solution ID at a Site/Point       |   1X,A4      |
+	|                | code with apriori parameter       |              |
+	|                | estimate.                         |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Time]         | Epoch at which the apriori        |   1X,I2.2,   |
+	|                | parameter is valid.               |   1H:,I3.3,  |
+	|                |                                   |   1H:,I5.5   |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Parameter Units| Units used for the aprioris and   |   1X,A4      |
+	|                | sigmas. Typical units are:        |              |
+	|                | m (metres),                       |              |
+	|                | ms (milliseconds),                |              |
+	|                | mas (milli-arc-seconds).          |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| [Constraint    | Constraint applied to the parame- |   1X,A1      |
+	| Code]          | ter.                              |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Parameter      | Apriori value of the parameter.   |   1X,E21.15  |
+	| Apriori        |                                   |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Parameter      | Apriori standard deviation for    |   1X,E11.6   |
+	| Standard       | the parameter.                    |              |
+	| Deviation      |                                   |              |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |     80       |
+                                                             |______________|
+
+
+
+19. SOLUTION/MATRIX_ESTIMATE Block (Mandatory)
+
+ Description:
+ 
+ The Estimate Matrix can be stored in an Upper or Lower triangular form. Only
+ the Upper or Lower portion needs to be stored because the matrix is always
+ symmetrical.
+ The matrix contents can be:
+ CORR	- Correlation Matrix
+ COVA	- Covariance Matrix
+ INFO	- Information Matrix (of Normals)
+ SRIF	- Square Root Information Filter Matrix
+ The distinction between the form and its contents is given by the title block
+ which must take one of the following form:
+
+ SOLUTION/MATRIX_ESTIMATE L CORR
+ SOLUTION/MATRIX_ESTIMATE U CORR
+ SOLUTION/MATRIX_ESTIMATE L COVA
+ SOLUTION/MATRIX_ESTIMATE U COVA
+ SOLUTION/MATRIX_ESTIMATE L INFO
+ SOLUTION/MATRIX_ESTIMATE U INFO
+ SOLUTION/MATRIX_ESTIMATE L SRIF
+ SOLUTION/MATRIX_ESTIMATE U SRIF
+
+ Contents:
+ 
+	 ___________________________________________________________________
+	|S_O_L_U_T_I_O_N__M_A_T_R_I_X__E_S_T_I_M_A_T_E____D_A_T_A___L_I_N_E_|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| Matrix Estimate| Row index for the Matrix Estimate.|   1X,I5      |
+	| Row Number     | It must match the parameter index |              |
+	|                | in the SOLUTION/ESTIMATE block    |              |
+	|                | for the same parameter.           |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Matrix Estimate| Column index for the Matrix Esti- |   1X,I5      |
+	| Column Number  | mate. It must match the parameter |              |
+	|                | index in the SOLUTION/ESTIMATE    |              |
+	|                | block for the same parameter.     |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| First Matrix   | Matrix element at the location    |   1X,E21.14  |
+	|Estimate Element| ( Row Number , Column Number ).   |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Second Matrix  | Matrix element at the location    |   1X,E21.14  |
+	|Estimate Element| ( Row Number , Column Number + 1).|              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Third  Matrix  | Matrix element at the location    |   1X,E21.14  |
+	|Estimate Element| ( Row Number , Column Number + 2).|              |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |     78       |
+                                                             |______________|
+
+
+ Comment:
+
+ The Matrix Estimate Row/Column Number correspond to the Estimated Parameters 
+ Index in the SOLUTION/ESTIMATE block. If the CORR
+ matrix is used, standard deviations must be stored in the diagonal elements.
+ Missing elements in the matrix are assumed to be zero (0); consequently, zero
+ elements may be omitted. 
+
+ NOTE: The same scale (variance) factor MUST be used for both MATRIX_ESTIMATE
+ and MATRIX_APRIORI, as well as for the standard deviations in the ESTIMATE
+ and APRIORI Blocks.
+
+
+
+20. SOLUTION/MATRIX_APRIORI Block (Recommended/Mandatory)
+ 
+ Description:
+ 
+ The Apriori Matrix can be stored in an Upper or Lower triangular form. Only
+ the Upper or Lower portion needs to be stored because the matrix is always
+ symmetrical. Mandatory if any significant constraint have been applied to the 
+ SOLUTION/ESTIMATE.
+ The matrix contents can be:
+ CORR	- Correlation Matrix
+ COVA	- Covariance Matrix
+ INFO	- Information Matrix (of Normals)
+ SRIF	- Square Root Information Filter Martix
+ The distinction between the form and its contents is given by the title block
+ which must take one of the following form:
+
+ SOLUTION/MATRIX_APRIORI L CORR
+ SOLUTION/MATRIX_APRIORI U CORR
+ SOLUTION/MATRIX_APRIORI L COVA
+ SOLUTION/MATRIX_APRIORI U COVA
+ SOLUTION/MATRIX_APRIORI L INFO
+ SOLUTION/MATRIX_APRIORI U INFO
+ SOLUTION/MATRIX_APRIORI L SRIF
+ SOLUTION/MATRIX_APRIORI U SRIF
+
+ Contents:
+ 
+	 ___________________________________________________________________
+	|S_O_L_U_T_I_O_N__M_A_T_R_I_X__A_P_R_I_O_R_I______D_A_T_A___L_I_N_E_|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| Matrix Apriori | Row index for the Matrix Apriori. |   1X,I5      |
+	| Row Number     | It must match the parameter index |              |
+	|                | in the SOLUTION/APRIORI block     |              |
+	|                | for the same parameter.           |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Matrix Apriori | Column index for the Matrix Esti- |   1X,I5      |
+	| Column Number  | mate. It must match the parameter |              |
+	|                | index in the SOLUTION/APRIORI     |              |
+	|                | block for the same parameter.     |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| First Matrix   | Matrix element at the location    |   1X,E21.16  |
+	|Estimate Element| ( Row Number , Column Number ).   |              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Second Matrix  | Matrix element at the location    |   1X,E21.16  |
+	|Estimate Element| ( Row Number , Column Number + 1).|              |
+	|________________|___________________________________|______________|
+	|                |                                   |              |
+	| Third  Matrix  | Matrix element at the location    |   1X,E21.16  |
+	|Estimate Element| ( Row Number , Column Number + 2).|              |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |     78       |
+                                                             |______________|
+
+
+ Comment:
+
+ The Matrix Apriori Row/Column Number correspond to the Apriori Parameters Index
+ in the SOLUTION/APRIORI block. If the apriori constraint matrix is diagonal and
+ no loss of significant digits occurs by using the Parameter Standard Deviation
+ in the SOLUTION/APRIORI block, then, this block becomes redundant. If the CORR
+ matrix is used, Standard deviations must be stored in the diagonal elements.
+ Missing elements in the matrix are assumed to be zero (0); consequently, zero
+ elements may be omitted. 
+
+ NOTE: The same scale (variance) factor MUST be used for both MATRIX_ESTIMATE
+ and MATRIX_APRIORI, as well as for the standard deviations in the ESTIMATE
+ and APRIORI Blocks.
+
+
+
+21. Footer Line  (Mandatory)
+ 
+ Description:
+ 
+ Marks the end of the SINEX file.
+ 
+ Contents:
+ 
+ 
+        ___________________________________________________________________
+	|_____________F_O_O_T_E_R___L_I_N_E_________________________________|
+	|                |                                   |              |
+	|__Field_________|______Description__________________|___Format_____|
+	|                |                                   |              |
+	| End of SINEX   | The seven characters %ENDSNX at   |   A7         |
+        |                | the beginning of the last line    |              |
+        |                | mark the end of the SINEX file.   |              |
+	|                | Mandatory line.                   |              |
+	|________________|___________________________________|______________|
+                                                             |              |
+                                                             |      7       |
+                                                             |______________|
+
+
+             -----------------------------
+
+
+                 APPENDIX II:
+    
+ Annotated (real) SINEX sample
+(EMR07987.SNX annotated by Philip Davis of NCL (Newcastle AAC))
+
+%=SNX 1.00 NRC 95:123:55260 NRC 95:113:00000 95:120:00000 P 00117 1 X E
+*-------------------------------------------------------------------------------
+*
+* This is an annotated SINEX example, based on the first submission from
+* NRC. It has been amended and extended by NCL to illustrate the full
+* SINEX 1.00 format. Long blocks have been truncated.
+*
+
+*   The following convention is followed for start and end date:
+*    A start date of 00:000:00000 represents "since the beginning"
+*    An end date of 00:000:00000 represents "up to now"
+*  ***WARNING: NO overlapping epochs allowed, i.e. epochs referring to the
+*  ***         same site must be continuous   *****
+* 
+*       Constraints code S are determined as follows:
+*       (Note this is only SUGGESTION, common sense should be used here)
+*       ratio   = ( apriori std. dev. ) / ( estimated std. dev. )
+*
+*                       ratio   < sqrt( 2 )     code S = 0 (fixed/constrained)
+*       sqrt( 2 ) =<    ratio   < 10            code S = 1 (significant constr.)
+*            10   =<    ratio                   code S = 2 (loose or unconstr. )
+*
+*    WARNING: This has not yet been standardized by IGS.
+*
+* 
+*
+*  EOP parameter types:
+*               SINEX   Units                          
+*               XPO     mas     (milli-arc seconds)    pole x 
+*               YPO     mas     (milli-arc seconds)         y 
+*               XPOR    ma/s    (milli-arc seconds/s)  pole x rate 
+*               YPOR    ma/s    (milli-arc seconds/s)       y rate 
+*               UT      ms      (milli-seconds)        UT1-UTC
+*               LOD     ms      (milli-seconds)        Length of day
+*
+*       They are put at the end of the APRIORI and ESTIMATE blocks such they
+*       can be removed easily.
+*
+*   In floating-point fields, the E symbol should be used for exponent -
+*    other symbols (such as D) are not interpreted correctly by some
+*    software (e.g. the ANSI C I/O library).
+*
+*   Fields should not be left blank if data is not applicable or
+*    unavailable. These fields should be filled with a data-not-given
+*    character '-' is used here. This enables the file to be read either
+*    by column positions of fields, or by tokenising lines by whitespace.
+*
+* Block order should be kept consistent to aid readability. The format
+* allows any blocks to be omitted, though obviously some are essential for
+* solution submission, and the inclusion of all blocks is encouraged.
+*
+* Note the relational problem annotated in SITE/ANTENNA.
+*
+* The first and last lines begin '%'. Only '%', '*', '+', '-' and ' ' are
+* allowed in the first column, meaning 'begin/end SINEX', 'comment',
+* 'start block', 'end block' and 'data line' respectively.
+*
+* Header line explanation:
+*
+* '='                   Solution operator code. '=' means 'resultant' and is the
+*                       only legal code in a header line. See INPUT/HISTORY
+*                       notes.
+* 'SNX'                 This is a SINEX document. Other formats may use similar
+*                       headers.
+* '1.00'                SINEX version number. MUST be coded. It is used for
+*                       backward compatibity whenever required.
+* 'NRC 95:122:67080'    The SINEX reference for this file. SINEX files are
+*                       referred to by the three-character agency code, and a
+*                       creation time-stamp in yy:ddd:sssss format. Agency codes
+*                       should have entries in INPUT/ACKNOWLEDGEMENTS.
+* 'NRC 95:113:00000
+*         95:120:00000' The agency responsible for the data, and the overall
+*                       data time span. 'COM' means multiple agencies.
+* 'P'                   Technique code. 'P' (GPS) 'L' (SLR) 'R' (VLBI)
+*                       'C' (multiple) and 'M' (LLR) are allowed.
+* 00117                 This solution estimates 117 parameters.
+* 1                     Constraint code. '2' (unconstrained), '1'(significant
+*                       constraints), '0' (fixed/tight constraints) are allowed.
+* X E                   This solution includes coordinates and EOP. 'X', 'E'
+*                       and 'V' (velocities) 'O' (orbits) are allowed.
+*                       (Additional codes may be defined here) 
+*-------------------------------------------------------------------------------
+*        1         2         3         4         5         6         7         8
+*2345678901234567890123456789012345678901234567890123456789012345678901234567890
+*-------------------------------------------------------------------------------
++FILE/REFERENCE
+* This block always contains the following six records
+*info_type__________ info_______________________________________________________
+ DESCRIPTION         Natural Resources Canada / Geodetic Surveys, altered by NCL
+ OUTPUT              NRCan 1995 weekly solution.
+ CONTACT             ferland@gdim.geod.emr.ca
+ SOFTWARE            combine v0.01
+ HARDWARE            HP 750
+ INPUT               NRCan daily solution
+-FILE/REFERENCE
+*-------------------------------------------------------------------------------
++FILE/COMMENT
+* This is a free-format block for notes and comments. Substantial remarks
+* should go in here, not in * lines.
+*
+ NB This is not an original NRC document.
+ This is an example SINEX document with truncated blocks. Do not process.
+-FILE/COMMENT
+*-------------------------------------------------------------------------------
++INPUT/HISTORY
+* Each input solution used to create this solution is listed here. A series
+* of + lines give inputs to a combination - the = code is used for the
+* resultant. The format is identical to the header line. The last line should
+* always refer to this solution, i.e. match the header line.
+*
+*O_FM VER_ AGY TIME_STAMP__ DAT DATA_START__ DATA_END____ T PARAM C TYPE________
+ +SNX 0.04 NRC 95:123:52328 NRC 95:113:00000 95:114:00000 P 00081 2 X E
+ +SNX 0.04 NRC 95:123:52590 NRC 95:114:00000 95:115:00000 P 00082 2 X E
+ +SNX 0.04 NRC 95:123:52881 NRC 95:115:00000 95:116:00000 P 00082 2 X E
+ +SNX 0.04 NRC 95:123:53091 NRC 95:116:00000 95:117:00000 P 00076 2 X E
+ +SNX 0.04 NRC 95:123:53365 NRC 95:117:00000 95:118:00000 P 00073 2 X E
+ +SNX 0.04 NRC 95:123:53646 NRC 95:118:00000 95:119:00000 P 00079 2 X E
+ +SNX 0.04 NRC 95:123:53962 NRC 95:119:00000 95:120:00000 P 00082 2 X E
+* ITRF93 ssc/ssv for the 13 ITRF stations in the line below
+ +SNX 0.04 NRC 95:121:59613 NRC 95:116:00000 95:117:00000 P 00078 0 X V
+ =SNX 1.00 NRC 95:123:55260 NRC 95:113:00000 95:120:00000 P 00117 1 X E
+-INPUT/HISTORY
+*-------------------------------------------------------------------------------
++INPUT/FILES
+* Every SINEX file referenced in INPUT/HISTORY should have a filename entered
+* here. The last line of this block is always the name of the current file.
+* Path names should be given meaningful aliases to keep them short!
+*
+*AGY TIME_STAMP__ FILE_NAME____________________ DESCRIPTION_____________________
+ NRC 95:123:52328 1995/w_798/EMR07980.snx       NRC Daily solution
+ NRC 95:123:52590 1995/w_798/EMR07981.snx       NRC Daily solution
+ NRC 95:123:52881 1995/w_798/EMR07982.snx       NRC Daily solution
+ NRC 95:123:53091 1995/w_798/EMR07983.snx       NRC Daily solution
+ NRC 95:123:53365 1995/w_798/EMR07984.snx       NRC Daily solution
+ NRC 95:123:53646 1995/w_798/EMR07985.snx       NRC Daily solution
+ NRC 95:123:53962 1995/w_798/EMR07986.snx       NRC Daily solution
+ NRC 95:121:59613 stacomb_SINEX/950426_apr.snx  ITRF93 for 13 stations
+ NRC 95:123:55260 stacomb_SINEX/EMR07987.snx    Week 798 combination
+-INPUT/FILES
+*-------------------------------------------------------------------------------
++INPUT/ACKNOWLEDGMENTS
+* Each agency three-character code used in any other block is explained here.
+*
+*AGY DESCRIPTION________________________________________________________________
+ NRC Natural Resources Canada, Geodetic surveys
+ NCL Newcastle AAC, University of Newcastle upon Tyne, England.
+-INPUT/ACKNOWLEDGMENTS
+*-------------------------------------------------------------------------------
++SITE/ID
+* Each physical monument is known in SINEX by a four-character site code*
+*   (standardised) and an alphabetic point code (arbitrary). Each CODE+PT is
+*   equivalent to an IERS DOMES (or DOMEX) code. Each monument estimated in the
+*   solution  has an entry in this block. Unknown DOMES (DOMEX) codes are
+*   represented as M or S  following the IERS convention. 
+*
+*CODE PT DOMES____ T _STATION_DESCRIPTION___ APPROX_LON_ APPROX_LAT_ _APP_H_
+ ALBH  A 40129M003 P Albert Head, Canada     236 30 45.2  48 23 23.3    31.0
+ ALGO  A 40104M002 P Algonquin Park, Canada  281 55 43.1  45 57 20.9   200.0
+ AREQ  A 42202M005 P Arequipa, Peru          288 30 26.0 -16 27 55.9  2488.0
+ DAV1  A 66010M001 P Davis, Antartica        77 58 21.5 -68 34 38.4    96.0
+ DRAO  A 40105M002 P Dom. RAdio Obs.,Canada  240 22 30.1  49 19 21.5   541.0
+ FAIR  A 40408M001 P Fairbanks, U.S.A.       212 30  2.8  64 58 40.9   319.0
+ FORT  A 41602M001 P Fortaleza, Brazil       321 34 27.8  -3 52 38.9    19.0
+ GOLD  B 40405S031 P Goldstone, U.S.A.       243  6 38.8  35 25 30.6   986.0
+ GUAM  A 50501M002 P Dedego, Guam            144 52  6.2  13 35 21.4   206.0
+ KIT3  A 12334M001 P Kitab, Uzbekistan        66 53  7.6  39  8  5.2   622.0
+ KOKB  A 40424M004 P Kokee Park,Haw.,U.S.A.  200 20  6.3  22  7 34.6  1167.0
+ KOSG  A 13504M003 P Kootwijk, Netherlands     5 48 34.8  52 10 42.4    96.0
+ MADR  A 13407S012 P Madrid, Spain           355 45  1.3  40 25 45.0   829.0
+ MCM4  A 66001M003 P McMurdo, Antartica      166 40 31.2 -77 50 55.2    -1.0
+ NRC1  A      M    P NRC, Ottawa, Canada     284 22 30.0  45 27 15.0    82.0
+ KERG  A 91201M002 P Kerguelen Is.,Antartic   70 15 19.9 -49 21  5.3    73.0
+ RCM5  A 40499S018 P Richmond, Flor. U.S.A.  279 36 57.9  25 36 49.7   -15.0
+ SANT  A 41705M003 P Santiago, Chile         289 19 53.2 -33  9  1.1   723.0
+ SCHE  A      M    P Schefferville, Canada   293  0   .0  55  0   .0   200.0
+ STJO  A 40101M001 P St-John's, Canada       307 19 20.2  47 35 42.9   152.0
+ TIDB  A 50103M108 P Tidbila, Australia      148 58 48.0 -35 23 57.2   665.0
+ TROM  A 10302M003 P Tromso, Norway           18 56 18.0  69 39 45.9   132.0
+ TSKB  A 21730S005 P Tuskuba, Japan          140  5 15.0  36  6 20.4    67.0
+ WETT  A 14201M009 P Wettzell, Germany        12 52 44.1  49  8 39.3   666.0
+ YAR1  A 50107M004 P Yaragadee, Australia    115 20 49.2 -29  2 47.7   241.0
+ YELL  A 40127M003 P Yellowknife, Canada     245 31  9.5  62 28 51.3   180.0
+ TAIW  A 23601M001 P Taipei, Taiwan          121 32 11.6  25  1 16.8    44.0
+ HART  A 30302M002 P Hartebeesthoek, S. A.    27 42 28.0 -25 53 13.6  1555.0
+ CHUR  A      M    P Churchill, Canada       266  0   .0  59  0   .0      .0
+ WILL  A      M    P Williams Lake, Canada   237 49 55.9  52 14 12.9  1097.0
+-SITE/ID
+*-------------------------------------------------------------------------------
++SITE/DATA
+* This block contains information on the source of each station.
+* Since point and solution codes are
+* arbitrary, the station name (SITE+PT+SOLN codes) may be different in the
+* input solution - both are given here. Stations which are estimated in
+* multiple input files have several lines here.
+* The information here is fictional, to illustrate the format.
+* Each station is defined in SOLUTION/EPOCHS, and each file (AGY+TIME_STAMP__)
+* appears in INPUT/FILES.
+*
+*SOLUTION____ INPUT_______
+*SITE PT SOLN SITE PT SOLN T DATA_START__ DATA_END____ AGY TIME_STAMP__
+ ALBH  A    1 ALBH  B    1 P 95:113:00000 95:120:00000 NRC 95:123:52328
+ ALBH  A    1 ALBH  A    1 P 95:113:00000 95:120:00000 NRC 95:123:52590
+* etc
+ ALGO  A    1 ALGO  A    1 P 95:113:00000 95:120:00000 NRC 95:123:52328
+* etc
+-SITE/DATA
+*-------------------------------------------------------------------------------
++SITE/RECEIVER
+* Here each station (SITE+PT+SOLN codes) has receiver details attached. If
+* receivers change during the data span for that station, multiple lines are
+* used here. These data spans must fit within the overall station span
+* (given in SOLUTION/EPOCHS) and should cover the entire span for each station
+* and should not overlap.
+*
+* Note unknown fields are filled with - characters. No field is left blank.
+*            ***new to version 1.00***
+* The defaulat characters ("----" in the SOLN field means that the information
+* referes to all SOLN codes falling in between the  start and end epochs.
+*
+*SITE PT SOLN T DATA_START__ DATA_END____ DESCRIPTION_________ S/N__ FIRMWARE___    
+ ALBH  A    1 P 95:012:67680 00:000:00000 ROGUE SNR-8000         292 3.0.32.2
+ ALGO  A    1 P 94:355:00000 00:000:00000 ROGUE SNR-8000        T226 3.0.32.2
+ AREQ  A    1 P 94:032:00000 00:000:00000 ROGUE SNR-8000        T253 2.8.32.1x
+ DAV1  A    1 P 94:192:00000 00:000:00000 ROGUE SNR-8100        C119 2.8.1.1
+ DRAO  A    1 P 95:102:61530 00:000:00000 ROGUE SNR-8000         347 3.0.32.3
+ FAIR  A    1 P 94:125:00000 00:000:00000 ROGUE SNR-8            099 7.8
+ FORT  A    1 P 93:133:00000 00:000:00000 ROGUE SNR-8000        T119 2.8
+ GOLD  B    1 P 94:034:00000 00:000:00000 ROGUE SNR-8          ----- 7.6
+ GUAM  A    1 P 95:020:00000 00:000:00000 ROGUE SNR-8000         360 3.0
+ KIT3  A    1 P 94:274:00000 00:000:00000 ROGUE SNR-8000        T191 2.8.32.1x
+ KERG  A    1 P 94:320:00000 00:000:00000 ROGUE SNR-8C         CR306 7.8
+ KOKB  A    1 P 94:125:00000 00:000:00000 ROGUE SNR-8             10 7.8
+ KOSG  A    1 P 94:327:00000 00:000:00000 ROGUE SNR-8            117 7.8
+ MADR  A    1 P 94:035:00000 00:000:00000 ROGUE SNR-8          ----- 7.6
+ MCM4  A    1 P 95:025:00000 00:000:00000 ROGUE SNR-8000         275 3.0
+ NRC1  A    1 P 93:001:00000 00:000:00000 ROGUE SNR-8000       ----- -----------
+ RCM5  A    1 P 95:009:00000 00:000:00000 ROGUE SNR-8000        T160 3.0.32.2
+ SANT  A    1 P 94:131:00000 00:000:00000 ROGUE SNR-8             95 7.8
+ SCHE  A    1 P 95:103:00240 00:000:00000 ROGUE SNR-8000         164 3.0.32.2
+ STJO  A    1 P 95:061:54000 00:000:00000 ROGUE SNR-8000         161 3.3.32.2
+ TIDB  A    1 P 94:041:00000 00:000:00000 ROGUE SNR-8              3 7.6
+ TROM  A    1 P 92:259:00000 00:000:00000 ROGUE SNR-8          ----- 4.0
+ TSKB  A    1 P 93:349:00000 00:000:00000 ROGUE SNR-8000         102 2.8
+ WETT  A    1 P 91:203:00000 00:000:00000 ROGUE SNR-800          200 7.3
+ YAR1  A    1 P 94:138:00000 00:000:00000 ROGUE SNR-8              9 7.8
+ YELL  A    1 P 94:131:53520 00:000:00000 ROGUE SNR-8000        T302 2.8.32.1
+ TAIW  A    1 P 93:293:00000 00:000:00000 ROGUE SNR-8000         201 7.0
+ HART  A    1 P 91:001:00000 00:000:00000 ROGUE SNR-8            114 7.3
+ CHUR  A    1 P 94:103:72240 00:000:00000 ROGUE SNR-8000         305 3.0.32.1
+ WILL  A    1 P 93:279:68580 00:000:00000 ROGUE SNR-8000         165 -----------
+-SITE/RECEIVER
+*-------------------------------------------------------------------------------
++SITE/ANTENNA
+*
+* Here each station (SITE+PT+SOLN codes) has antenna details attached. If
+* antennae change during the data span for that station, multiple lines are
+* used here. These data spans must fit within the overall station span
+* (given in SOLUTION/EPOCHS) and should cover the entire span for each station
+* and should not ovelap.
+*
+* Note unknown fields filled with '-' characters. No field is left blank.
+*            ***new to version 1.00***
+* The defaulat characters ("----" in the SOLN field means that the information
+* referes to all SOLN codes falling in between start and end epoch.    
+*
+*SITE PT SOLN T DATA_START__ DATA_END____ DESCRIPTION_________ S/N__
+ ALBH  A    1 P 95:011:80100 00:000:00000 DORNE MARGOLIN T       368
+ ALGO  A    1 P 94:047:69300 00:000:00000 DORNE MARGOLIN T       173
+ AREQ  A    1 P 94:032:00000 00:000:00000 DORNE MARGOLIN T       294
+ DAV1  A    1 P 94:192:00000 00:000:00000 DORNE MARGOLIN T       277
+ DRAO  A    1 P 95:102:64260 00:000:00000 DORNE MARGOLIN T       172
+ FAIR  A    1 P 91:290:00000 00:000:00000 DORNE MARGOLIN R        96
+ FORT  A    1 P 93:133:00000 00:000:00000 DORNE MARGOLIN T       119
+ GOLD  B    1 P 92:180:00000 00:000:00000 DORNE MARGOLIN R        95
+ GUAM  A    1 P 95:020:00000 00:000:00000 DORNE MARGOLIN T       481
+ KIT3  A    1 P 94:274:00000 00:000:00000 DORNE MARGOLIN T       362
+ KERG  A    1 P 94:320:00000 00:000:00000 DORNE MARGOLIN T       154
+ KOKB  A    1 P 91:106:00000 00:000:00000 DORNE MARGOLIN R        10
+ KOSG  A    1 P 91:001:00000 00:000:00000 DORNE MARGOLIN B       119
+ MADR  A    1 P 89:349:00000 00:000:00000 DORNE MARGOLIN R     -----
+ MCM4  A    1 P 95:025:00000 00:000:00000 DORNE MARGOLIN T       363
+ NRC1  A    1 P 93:001:00000 00:000:00000 DORNE MARGOLIN T     -----
+ RCM5  A    1 P 94:195:00000 00:000:00000 DORNE MARGOLIN T       148
+ SANT  A    1 P 92:035:00000 00:000:00000 DORNE MARGOLIN R        95
+ SCHE  A    1 P 94:196:00420 00:000:00000 DORNE MARGOLIN T       386
+ STJO  A    1 P 95:061:78960 00:000:00000 DORNE MARGOLIN T       171
+ TIDB  A    1 P 92:033:00000 00:000:00000 DORNE MARGOLIN R         2
+ TROM  A    1 P 92:259:00000 00:000:00000 DORNE MARGOLIN B     -----
+ TSKB  A    1 P 94:227:00000 00:000:00000 DORNE MARGOLIN T       105
+ WETT  A    1 P 91:203:00000 00:000:00000 DORNE MARGOLIN B       113
+ YAR1  A    1 P 90:337:00000 00:000:00000 DORNE MARGOLIN R         3
+ YELL  A    1 P 94:075:72000 00:000:00000 DORNE MARGOLIN T       273
+ TAIW  A    1 P 90:335:00000 00:000:00000 DORNE MARGOLIN B       118
+ HART  A    1 P 95:026:00000 00:000:00000 DORNE MARGOLIN T     -----
+ CHUR  A    1 P 94:103:72240 00:000:00000 DORNE MARGOLIN T       387
+ WILL  A    1 P 93:279:68580 00:000:00000 DORNE MARGOLIN T     -----
+-SITE/ANTENNA
+*-------------------------------------------------------------------------------
++SITE/GPS_PHASE_CENTER
+*
+* Here each antenna (DESCRIPTION + S/N fields) listed in SITE/ANTENNA has phase
+* centre details attached.
+*
+* Note unknown fields filled with - characters. No field is left blank.
+*
+*                           UP____ NORTH_ EAST__ UP____ NORTH_ EAST__
+*DESCRIPTION_________ S/N__ L1->ARP(m)__________ __L2->ARP(m)________ AZ_EL____
+ DORNE MARGOLIN B     -----  .0780  .0000  .0000  .0960  .0000  .0000      None
+ DORNE MARGOLIN B       113  .0780  .0000  .0000  .0960  .0000  .0000      None
+ DORNE MARGOLIN B       119  .0780  .0000  .0000  .0960  .0000  .0000      None
+ DORNE MARGOLIN R     -----  .0780  .0000  .0000  .0960  .0000  .0000      None
+ DORNE MARGOLIN R         2  .0780  .0000  .0000  .0960  .0000  .0000      None
+ DORNE MARGOLIN R         3  .0780  .0000  .0000  .0960  .0000  .0000      None
+ DORNE MARGOLIN R        10  .0780  .0000  .0000  .0960  .0000  .0000      None
+ DORNE MARGOLIN R        95  .0780  .0000  .0000  .0960  .0000  .0000      None
+ DORNE MARGOLIN R        96  .0780  .0000  .0000  .0960  .0000  .0000      None
+ DORNE MARGOLIN T     -----  .1100  .0000  .0000  .1280  .0000  .0000      None
+ DORNE MARGOLIN T       105  .1100  .0000  .0000  .1280  .0000  .0000      None
+ DORNE MARGOLIN T       119  .1100  .0000  .0000  .1280  .0000  .0000      None
+ DORNE MARGOLIN T       148  .1100  .0000  .0000  .1280  .0000  .0000      None
+ DORNE MARGOLIN T       154  .1100  .0000  .0000  .1280  .0000  .0000      None
+ DORNE MARGOLIN T       171  .1100  .0000  .0000  .1280  .0000  .0000      None
+ DORNE MARGOLIN T       172  .1100  .0000  .0000  .1280  .0000  .0000      None
+-SITE/GPS_PHASE_CENTER
+*-------------------------------------------------------------------------------
++SITE/ECCENTRICITY
+*
+* Here each station (SITE+PT+SOLN codes) has eccentricity vectors attached. If
+* these change during the data span for that station, multiple lines are
+* used here. These data spans must fit within the overall station span
+* (given in SOLUTION/EPOCHS), should cover the entire span for each station and
+* must not ovelap.
+*
+*                                             UP______ NORTH___ EAST____
+*SITE PT SOLN T DATA_START__ DATA_END____ AXE ARP->BENCHMARK(m)_________
+ ALBH  A    1 P 95:011:80100 00:000:00000 UNE    .1000    .0000    .0000
+ ALGO  A    1 P 94:139:00000 00:000:00000 UNE    .1000    .0000    .0000
+ AREQ  A    1 P 94:088:00000 00:000:00000 UNE    .0610    .0000    .0000
+ DAV1  A    1 P 94:192:00000 00:000:00000 UNE    .0035    .0000    .0000
+ DRAO  A    1 P 95:102:64260 00:000:00000 UNE    .1000    .0000    .0000
+ FAIR  A    1 P 91:290:00000 00:000:00000 UNE    .1160    .0000    .0000
+ FORT  A    1 P 93:133:00000 00:000:00000 UNE    .6430    .0000    .0000
+ GOLD  B    1 P 92:180:00000 00:000:00000 UNE    .0000    .0000    .0000
+ GUAM  A    1 P 95:020:00000 00:000:00000 UNE    .0614    .0000    .0000
+ KIT3  A    1 P 94:274:00000 00:000:00000 UNE    .0460    .0000    .0000
+ KERG  A    1 P 94:320:00000 00:000:00000 UNE    .4200    .0000    .0000
+ KOKB  A    1 P 91:106:00000 00:000:00000 UNE    .0930    .0000    .0000
+ KOSG  A    1 P 94:001:00000 00:000:00000 UNE    .1050    .0000    .0000
+ MADR  A    1 P 89:349:00000 00:000:00000 UNE    .0000    .0000    .0000
+ MCM4  A    1 P 95:025:00000 00:000:00000 UNE    .1830    .0000    .0000
+ NRC1  A    1 P 93:001:00000 00:000:00000 UNE    .0000    .0000    .0000
+ RCM5  A    1 P 93:284:00000 00:000:00000 UNE    .0000    .0000    .0000
+ SANT  A    1 P 92:035:00000 00:000:00000 UNE    .0930    .0000    .0000
+ SCHE  A    1 P 94:196:00420 00:000:00000 UNE    .1000    .0000    .0000
+ STJO  A    1 P 95:057:48480 00:000:00000 UNE    .1000    .0000    .0000
+ TIDB  A    1 P 92:033:00000 00:000:00000 UNE    .0920    .0000    .0000
+ TROM  A    1 P 92:259:00000 00:000:00000 UNE   2.4734    .0000    .0000
+ TSKB  A    1 P 94:227:00000 00:000:00000 UNE    .0000    .0000    .0000
+ WETT  A    1 P 91:203:00000 00:000:00000 UNE    .0000    .0000    .0000
+ YAR1  A    1 P 90:337:00000 00:000:00000 UNE    .0730    .0000    .0000
+ YELL  A    1 P 94:287:00900 00:000:00000 UNE    .1000    .0000    .0000
+ TAIW  A    1 P 90:335:00000 00:000:00000 UNE   1.7685    .0000    .0000
+ HART  A    1 P 91:001:00000 00:000:00000 UNE   9.7540    .0000    .0000
+ CHUR  A    1 P 94:103:72240 00:000:00000 UNE    .0000    .0000    .0000
+ WILL  A    1 P 93:279:68580 00:000:00000 UNE    .0010    .0000    .0000
+-SITE/ECCENTRICITY
+*-------------------------------------------------------------------------------
++SOLUTION/EPOCHS
+*
+* This block is the logical starting-point for interpreting the file, since it
+* defines the stations in the solution. A station is particular solution for
+* a monument, referenced by SITE, PT and SOLN codes. Multiple integer solution
+* codes may be used (arbitrarily) to give multiple solutions for a point in the
+* same estimate - at different epochs, for instance.
+*
+* Each station invoked here should have one or more entries in each of
+* SITE/RECEIVER, SITE/ANTENNA, SITE/DATA and SITE/ECCENTRICITY.
+* The monument (SITE+PT) should be defined in SITE/ID.
+*
+*SITE PT SOLN T _DATA_START_ __DATA_END__ _MEAN_EPOCH_
+ ALBH  A    1 P 95:113:00000 95:120:00000 95:116:43200
+ ALGO  A    1 P 95:113:00000 95:120:00000 95:116:43200
+ AREQ  A    1 P 95:113:00000 95:120:00000 95:116:28800
+ CHUR  A    1 P 95:118:00000 95:120:00000 95:119:00000
+ DAV1  A    1 P 95:113:00000 95:114:00000 95:113:43200
+ DRAO  A    1 P 95:113:00000 95:120:00000 95:116:43200
+ FAIR  A    1 P 95:113:00000 95:120:00000 95:116:43200
+ FORT  A    1 P 95:113:00000 95:118:00000 95:115:21600
+ GOLD  B    1 P 95:113:00000 95:120:00000 95:116:43200
+ GUAM  A    1 P 95:113:00000 95:120:00000 95:116:43200
+ HART  A    1 P 95:115:00000 95:120:00000 95:117:28800
+ KERG  A    1 P 95:113:00000 95:120:00000 95:116:43200
+ KIT3  A    1 P 95:113:00000 95:119:00000 95:116:00000
+ KOKB  A    1 P 95:113:00000 95:120:00000 95:116:43200
+ KOSG  A    1 P 95:113:00000 95:120:00000 95:116:43200
+ MADR  A    1 P 95:113:00000 95:120:00000 95:116:43200
+ MCM4  A    1 P 95:113:00000 95:120:00000 95:116:14400
+ NRC1  A    1 P 95:113:00000 95:120:00000 95:116:43200
+ RCM5  A    1 P 95:113:00000 95:120:00000 95:116:43200
+ SANT  A    1 P 95:113:00000 95:120:00000 95:116:43200
+ SCHE  A    1 P 95:113:00000 95:116:00000 95:114:43200
+ STJO  A    1 P 95:113:00000 95:120:00000 95:116:43200
+ TAIW  A    1 P 95:114:00000 95:120:00000 95:117:43200
+ TIDB  A    1 P 95:113:00000 95:120:00000 95:116:43200
+ TROM  A    1 P 95:113:00000 95:120:00000 95:116:43200
+ TSKB  A    1 P 95:113:00000 95:120:00000 95:116:43200
+ WETT  A    1 P 95:113:00000 95:120:00000 95:116:00000
+ WILL  A    1 P 95:118:00000 95:120:00000 95:119:00000
+ YAR1  A    1 P 95:113:00000 95:120:00000 95:116:43200
+ YELL  A    1 P 95:113:00000 95:120:00000 95:116:43200
+-SOLUTION/EPOCHS
+*-------------------------------------------------------------------------------
++SOLUTION/ESTIMATE
+*
+* The parameter estimates are written here. Parameter types STAX, STAY, STAZ,
+* VELX, VELY, VELZ (coordinate and velocity x, y, z) are followed by a
+* station reference. Erp types LOD, UT, XPO, YPO have no station. The
+* constraint code (0, 1 or 2) is given here for each parameter - the empty
+* fields are filled with a data-not-given character (-)
+*
+*                 *** New to version 1.00 ***
+*    TYPE increaded to 6 chars, ESTIMATED Value field to 21 chars, STD
+*    decreased to 11chars (included here for information only) ***
+*    The STDs for consistency must be the same as the corresponding values
+*    derived from the MATRIX blocks, which are given to full num. precision.
+*INDEX TYPE__ CODE PT SOLN _REF_EPOCH__ UNIT S __ESTIMATED VALUE____ _STD_DEV___
+     1 STAX   ALBH  A    1 95:116:43200 m    2 -.234133292758691E+7  .1845776E-2
+     2 STAY   ALBH  A    1 95:116:43200 m    2 -.353904953122971E+7  .1890911E-2
+     3 STAZ   ALBH  A    1 95:116:43200 m    2 .4745791466277621E+7  .2075918E-2
+     4 STAX   ALGO  A    1 95:116:43200 m    1 .9181294929904674E+6  .1768625E-2
+     5 STAY   ALGO  A    1 95:116:43200 m    1 -.434607120901217E+7  .1797731E-2
+     6 STAZ   ALGO  A    1 95:116:43200 m    1 .4561977840428489E+7  .1878956E-2
+     7 STAX   AREQ  A    1 95:116:28800 m    2 .1942826687525561E+7  .6477347E-2
+     8 STAY   AREQ  A    1 95:116:28800 m    2 -.580407019776578E+7  .8829387E-2
+     9 STAZ   AREQ  A    1 95:116:28800 m    2 -.179689395509440E+7  .3872643E-2
+    10 STAX   CHUR  A    1 95:119:00000 m    2 -.236438707221352E+6  .2190659E-2
+    11 STAY   CHUR  A    1 95:119:00000 m    2 -.330761674613259E+7  .2499980E-2
+    12 STAZ   CHUR  A    1 95:119:00000 m    2 .5430049170384845E+7  .3338507E-2
+    13 STAX   DAV1  A    1 95:113:43200 m    2 .4868545524273632E+6  .5143560E-2
+    14 STAY   DAV1  A    1 95:113:43200 m    2 .2285099364466271E+7  .5465295E-2
+    15 STAZ   DAV1  A    1 95:113:43200 m    2 -.591495576584752E+7  .8718856E-2
+    16 STAX   DRAO  A    1 95:116:43200 m    2 -.205916467723249E+7  .1818058E-2
+    17 STAY   DRAO  A    1 95:116:43200 m    2 -.362110834605865E+7  .1859042E-2
+    18 STAZ   DRAO  A    1 95:116:43200 m    2 .4814432386809346E+7  .2053716E-2
+    19 STAX   FAIR  A    1 95:116:43200 m    0 -.228162142409438E+7  .2008781E-2
+    20 STAY   FAIR  A    1 95:116:43200 m    0 -.145359574941003E+7  .2100198E-2
+    21 STAZ   FAIR  A    1 95:116:43200 m    0 .5756961936406008E+7  .2509140E-2
+    22 STAX   FORT  A    1 95:115:21600 m    2 .4985386578502384E+7  .1084655E-1
+    23 STAY   FORT  A    1 95:115:21600 m    2 -.395499854274894E+7  .9229132E-2
+    24 STAZ   FORT  A    1 95:115:21600 m    2 -.428426474252779E+6  .2879426E-2
+    25 STAX   GOLD  B    1 95:116:43200 m    1 -.235361417310070E+7  .2060113E-2
+    26 STAY   GOLD  B    1 95:116:43200 m    1 -.464138536535744E+7  .2135362E-2
+    27 STAZ   GOLD  B    1 95:116:43200 m    1 .3676976474604919E+7  .2151652E-2
+    28 STAX   GUAM  A    1 95:116:43200 m    2 -.507131279252173E+7  .3359775E-2
+    29 STAY   GUAM  A    1 95:116:43200 m    2 .3568363515536474E+7  .3434317E-2
+    30 STAZ   GUAM  A    1 95:116:43200 m    2 .1488904271291384E+7  .2465369E-2
+    31 STAX   HART  A    1 95:117:28800 m    0 .5084625439996016E+7  .3117434E-2
+    32 STAY   HART  A    1 95:117:28800 m    0 .2670366550990838E+7  .2988406E-2
+    33 STAZ   HART  A    1 95:117:28800 m    1 -.276849396332954E+7  .2436794E-2
+    34 STAX   KERG  A    1 95:116:43200 m    2 .1406337354635808E+7  .3228912E-2
+    35 STAY   KERG  A    1 95:116:43200 m    2 .3918161143630010E+7  .3090251E-2
+    36 STAZ   KERG  A    1 95:116:43200 m    2 -.481616739541420E+7  .2887894E-2
+    37 STAX   KIT3  A    1 95:116:00000 m    2 .1944945408967126E+7  .3880638E-2
+    38 STAY   KIT3  A    1 95:116:00000 m    2 .4556652228809900E+7  .4395018E-2
+    39 STAZ   KIT3  A    1 95:116:00000 m    2 .4004325952269760E+7  .4075488E-2
+    40 STAX   KOKB  A    1 95:116:43200 m    0 -.554383812506372E+7  .2572993E-2
+    41 STAY   KOKB  A    1 95:116:43200 m    0 -.205458735000368E+7  .2349073E-2
+    42 STAZ   KOKB  A    1 95:116:43200 m    1 .2387809656652860E+7  .2100031E-2
+    43 STAX   KOSG  A    1 95:116:43200 m    1 .3899225249570046E+7  .1777152E-2
+    44 STAY   KOSG  A    1 95:116:43200 m    1 .3967318114717967E+6  .1725390E-2
+    45 STAZ   KOSG  A    1 95:116:43200 m    1 .5015078333904634E+7  .1593831E-2
+    46 STAX   MADR  A    1 95:116:43200 m    1 .4849202445485532E+7  .1730374E-2
+    47 STAY   MADR  A    1 95:116:43200 m    1 -.360329133978604E+6  .1739288E-2
+    48 STAZ   MADR  A    1 95:116:43200 m    1 .4114913089855005E+7  .1417137E-2
+    49 STAX   MCM4  A    1 95:116:14400 m    2 -.131170323900895E+7  .2978227E-2
+    50 STAY   MCM4  A    1 95:116:14400 m    2 .3108151420651672E+6  .3072598E-2
+    51 STAZ   MCM4  A    1 95:116:14400 m    2 -.621325504790322E+7  .4581133E-2
+    52 STAX   NRC1  A    1 95:116:43200 m    2 .1112777313114861E+7  .1834574E-2
+    53 STAY   NRC1  A    1 95:116:43200 m    2 -.434147580328482E+7  .1899372E-2
+    54 STAZ   NRC1  A    1 95:116:43200 m    2 .4522955793195269E+7  .2001532E-2
+    55 STAX   RCM5  A    1 95:116:43200 m    2 .9613347339731020E+6  .2721087E-2
+    56 STAY   RCM5  A    1 95:116:43200 m    2 -.567407417401052E+7  .4543879E-2
+    57 STAZ   RCM5  A    1 95:116:43200 m    2 .2740535190143120E+7  .2918609E-2
+    58 STAX   SANT  A    1 95:116:43200 m    0 .1769693284302684E+7  .3096912E-2
+    59 STAY   SANT  A    1 95:116:43200 m    0 -.504457411643344E+7  .3047045E-2
+    60 STAZ   SANT  A    1 95:116:43200 m    1 -.346832104809249E+7  .2679039E-2
+    61 STAX   SCHE  A    1 95:114:43200 m    2 .1450982826872315E+7  .2170755E-2
+    62 STAY   SCHE  A    1 95:114:43200 m    2 -.338693424191906E+7  .2378425E-2
+    63 STAZ   SCHE  A    1 95:114:43200 m    2 .5189301335610829E+7  .2882939E-2
+    64 STAX   STJO  A    1 95:116:43200 m    2 .2612631222496210E+7  .1852240E-2
+    65 STAY   STJO  A    1 95:116:43200 m    2 -.342680699958938E+7  .1909100E-2
+    66 STAZ   STJO  A    1 95:116:43200 m    2 .4686757814504888E+7  .1941888E-2
+    67 STAX   TAIW  A    1 95:117:43200 m    2 -.302478192993486E+7  .3600265E-2
+    68 STAY   TAIW  A    1 95:117:43200 m    2 .4928936907613859E+7  .4052780E-2
+    69 STAZ   TAIW  A    1 95:117:43200 m    2 .2681234449924764E+7  .2902421E-2
+    70 STAX   TIDB  A    1 95:116:43200 m    0 -.446099608394879E+7  .2950717E-2
+    71 STAY   TIDB  A    1 95:116:43200 m    0 .2682557122624863E+7  .2958276E-2
+    72 STAZ   TIDB  A    1 95:116:43200 m    1 -.367444382121832E+7  .2716867E-2
+    73 STAX   TROM  A    1 95:116:43200 m    1 .2102940345331658E+7  .2258738E-2
+    74 STAY   TROM  A    1 95:116:43200 m    1 .7215693988724571E+6  .2336037E-2
+    75 STAZ   TROM  A    1 95:116:43200 m    0 .5958192085393612E+7  .3604893E-2
+    76 STAX   TSKB  A    1 95:116:43200 m    2 -.395719924355657E+7  .2924832E-2
+    77 STAY   TSKB  A    1 95:116:43200 m    2 .3310199709624858E+7  .3038009E-2
+    78 STAZ   TSKB  A    1 95:116:43200 m    2 .3737711702012423E+7  .2546651E-2
+    79 STAX   WETT  A    1 95:116:00000 m    1 .4075578580084480E+7  .1776241E-2
+    80 STAY   WETT  A    1 95:116:00000 m    1 .9318526769029480E+6  .1731380E-2
+    81 STAZ   WETT  A    1 95:116:00000 m    0 .4801570021461830E+7  .1457045E-2
+    82 STAX   WILL  A    1 95:119:00000 m    2 -.208425800223933E+7  .2188081E-2
+    83 STAY   WILL  A    1 95:119:00000 m    2 -.331387295088804E+7  .2351786E-2
+    84 STAZ   WILL  A    1 95:119:00000 m    2 .5019853121097040E+7  .2824378E-2
+    85 STAX   YAR1  A    1 95:116:43200 m    1 -.238902544223632E+7  .2931452E-2
+    86 STAY   YAR1  A    1 95:116:43200 m    1 .5043316884438646E+7  .2937762E-2
+    87 STAZ   YAR1  A    1 95:116:43200 m    1 -.307853084113885E+7  .2538746E-2
+    88 STAX   YELL  A    1 95:116:43200 m    1 -.122445249322380E+7  .2055871E-2
+    89 STAY   YELL  A    1 95:116:43200 m    1 -.268921606751285E+7  .2061675E-2
+    90 STAZ   YELL  A    1 95:116:43200 m    1 .5633638286707014E+7  .3035230E-2
+    91 LOD    ---- --    1 95:113:43200 ms   2 .2871055744817214E+1  .1212729E-1
+    92 LOD    ---- --    2 95:114:43200 ms   2 .2959652540110830E+1  .1131045E-1
+    93 LOD    ---- --    3 95:115:43200 ms   2 .2973492029661421E+1  .1201761E-1
+    94 LOD    ---- --    4 95:116:43200 ms   2 .2919511470925497E+1  .1199782E-1
+    95 LOD    ---- --    5 95:117:43200 ms   2 .2799350739071390E+1  .1192584E-1
+    96 LOD    ---- --    6 95:118:43200 ms   2 .2600397770842830E+1  .1188556E-1
+    97 LOD    ---- --    7 95:119:43200 ms   2 .2430330357604413E+1  .1082158E-1
+    98 UT     ---- --    1 95:114:43200 ms   2 .8722024405764063E+2  .1318171E-1
+    99 UT     ---- --    2 95:115:43200 ms   2 .8430515991559695E+2  .1575504E-1
+   100 UT     ---- --    3 95:116:43200 ms   2 .8136510032786199E+2  .1745336E-1
+   101 UT     ---- --    4 95:117:43200 ms   2 .7849507028080811E+2  .1867862E-1
+   102 UT     ---- --    5 95:118:43200 ms   2 .7572503990368940E+2  .1998887E-1
+   103 UT     ---- --    6 95:119:43200 ms   2 .7312024540830212E+2  .2099974E-1
+   104 XPO    ---- --    1 95:113:43200 mas  2 .1029608387361842E+3  .7876117E-1
+   105 XPO    ---- --    2 95:114:43200 mas  2 .1069725602672064E+3  .7569313E-1
+   106 XPO    ---- --    3 95:115:43200 mas  2 .1113899879374726E+3  .7622913E-1
+   107 XPO    ---- --    4 95:116:43200 mas  2 .1154778670578098E+3  .7722355E-1
+   108 XPO    ---- --    5 95:117:43200 mas  2 .1194089883086856E+3  .7541868E-1
+   109 XPO    ---- --    6 95:118:43200 mas  2 .1236303461298091E+3  .7505631E-1
+   110 XPO    ---- --    7 95:119:43200 mas  2 .1275168152328533E+3  .7039234E-1
+   111 YPO    ---- --    1 95:113:43200 mas  2 .5530926512007116E+3  .9289514E-1
+   112 YPO    ---- --    2 95:114:43200 mas  2 .5521110887312243E+3  .8795571E-1
+   113 YPO    ---- --    3 95:115:43200 mas  2 .5512599272862197E+3  .8666021E-1
+   114 YPO    ---- --    4 95:116:43200 mas  2 .5497716474578965E+3  .8859832E-1
+   115 YPO    ---- --    5 95:117:43200 mas  2 .5485830683498143E+3  .8738927E-1
+   116 YPO    ---- --    6 95:118:43200 mas  2 .5470190294873472E+3  .8867092E-1
+   117 YPO    ---- --    7 95:119:43200 mas  2 .5455323053395770E+3  .8377195E-1
+-SOLUTION/ESTIMATE
+*-------------------------------------------------------------------------------
++SOLUTION/APRIORI
+*
+* The same format as the previous block, but parameters given, and their
+* order, can be different.
+*
+* ITRF93(1995.318) coord. constraints for the 13 stations applied (ITRF SSC+
+* SSV sigmas used, responsible for correlation in APRIORI matrix)
+*                 *** New to version 1.00 ***
+*    TYPE increaded to 6 chars, ESTIMATED Value field to 21 chars, STD
+*    decreased to 11chars (included here for information only) ***
+*    The STDs for consistency must be the same as the corresponding values
+*    derived from the  MATRIX blocks.
+*
+*INDEX TYPE__ CODE PT SOLN REF_EPOCH___ UNIT S __ESTIMATED VALUE____ _STD_DEV___
+     1 STAX   ALGO  A    1 95:116:43200 m    2  .91812950316301E+06  .300264E-02
+     2 STAY   ALGO  A    1 95:116:43200 m    2 -.43460712286616E+07  .300413E-02
+     3 STAZ   ALGO  A    1 95:116:43200 m    2  .45619778480795E+07  .300413E-02
+     4 STAX   FAIR  A    1 95:116:43200 m    2 -.22816214309794E+07  .300148E-02
+     5 STAY   FAIR  A    1 95:116:43200 m    2 -.14535957605986E+07  .300264E-02
+     6 STAZ   FAIR  A    1 95:116:43200 m    2  .57569619418178E+07  .300264E-02
+     7 STAX   GOLD  B    1 95:116:43200 m    2 -.23536141750178E+07  .400111E-02
+     8 STAY   GOLD  B    1 95:116:43200 m    2 -.46413853870781E+07  .500089E-02
+     9 STAZ   GOLD  B    1 95:116:43200 m    2  .36769764725192E+07  .500089E-02
+    10 STAX   HART  A    1 95:116:43200 m    2  .50846254292986E+07  .401782E-02
+    11 STAY   HART  A    1 95:116:43200 m    2  .26703665485452E+07  .400793E-02
+    12 STAZ   HART  A    1 95:116:43200 m    2 -.27684939831945E+07  .400607E-02
+    13 STAX   KOKB  A    1 95:116:43200 m    2 -.55438381300644E+07  .300413E-02
+    14 STAY   KOKB  A    1 95:116:43200 m    2 -.20545873456548E+07  .300264E-02
+    15 STAZ   KOKB  A    1 95:116:43200 m    2  .23878096512000E+07  .300413E-02
+    16 STAX   KOSG  A    1 95:116:43200 m    2  .38992252531315E+07  .502860E-02
+    17 STAY   KOSG  A    1 95:116:43200 m    2  .39673180967945E+06  .502534E-02
+    18 STAZ   KOSG  A    1 95:116:43200 m    2  .50150783278438E+07  .304205E-02
+    19 STAX   MADR  A    1 95:116:43200 m    2  .48492024545575E+07  .300595E-02
+    20 STAY   MADR  A    1 95:116:43200 m    2 -.36032914100548E+06  .300264E-02
+    21 STAZ   MADR  A    1 95:116:43200 m    2  .41149130953329E+07  .200891E-02
+    22 STAX   SANT  A    1 95:116:43200 m    2  .17696932851836E+07  .405435E-02
+    23 STAY   SANT  A    1 95:116:43200 m    2 -.50445741389849E+07  .403570E-02
+    24 STAZ   SANT  A    1 95:116:43200 m    2 -.34683210399342E+07  .406511E-02
+    25 STAX   TIDB  A    1 95:116:43200 m    2 -.44609960811534E+07  .400793E-02
+    26 STAY   TIDB  A    1 95:116:43200 m    2  .26825571044644E+07  .400446E-02
+    27 STAZ   TIDB  A    1 95:116:43200 m    2 -.36744438230192E+07  .400607E-02
+    28 STAX   TROM  A    1 95:116:43200 m    2  .21029403520603E+07  .422320E-02
+    29 STAY   TROM  A    1 95:116:43200 m    2  .72156940310411E+06  .413292E-02
+    30 STAZ   TROM  A    1 95:116:43200 m    2  .59581920940479E+07  .490313E-02
+    31 STAX   WETT  A    1 95:116:43200 m    2  .40755785850603E+07  .300264E-02
+    32 STAY   WETT  A    1 95:116:43200 m    2  .93185266801781E+06  .300148E-02
+    33 STAZ   WETT  A    1 95:116:43200 m    2  .48015700238753E+07  .200396E-02
+    34 STAX   YAR1  A    1 95:116:43200 m    2 -.23890254414616E+07  .500803E-02
+    35 STAY   YAR1  A    1 95:116:43200 m    2  .50433168528356E+07  .501674E-02
+    36 STAZ   YAR1  A    1 95:116:43200 m    2 -.30785308583027E+07  .401238E-02
+    37 STAX   YELL  A    1 95:116:43200 m    2 -.12244524961055E+07  .320725E-02
+    38 STAY   YELL  A    1 95:116:43200 m    2 -.26892160698110E+07  .338846E-02
+    39 STAZ   YELL  A    1 95:116:43200 m    2  .56336382822123E+07  .484908E-02
+    40 VELX   ALGO  A    1 95:116:43200 m/y  2 -.21700000000000E-01  .400000E-03
+    41 VELY   ALGO  A    1 95:116:43200 m/y  2 -.21000000000000E-02  .500000E-03
+    42 VELZ   ALGO  A    1 95:116:43200 m/y  2  .66000000000000E-02  .500000E-03
+    43 VELX   FAIR  A    1 95:116:43200 m/y  2 -.28500000000000E-01  .300000E-03
+    44 VELY   FAIR  A    1 95:116:43200 m/y  2 -.19000000000000E-02  .400000E-03
+    45 VELZ   FAIR  A    1 95:116:43200 m/y  2 -.10100000000000E-01  .400000E-03
+    46 VELX   GOLD  B    1 95:116:43200 m/y  2 -.19100000000000E-01  .300000E-03
+    47 VELY   GOLD  B    1 95:116:43200 m/y  2  .61000000000000E-02  .300000E-03
+    48 VELZ   GOLD  B    1 95:116:43200 m/y  2 -.47000000000000E-02  .300000E-03
+    49 VELX   HART  A    1 95:116:43200 m/y  2 -.54000000000000E-02  .120000E-02
+    50 VELY   HART  A    1 95:116:43200 m/y  2  .17600000000000E-01  .800000E-03
+    51 VELZ   HART  A    1 95:116:43200 m/y  2  .21600000000000E-01  .700000E-03
+    52 VELX   KOKB  A    1 95:116:43200 m/y  2 -.12900000000000E-01  .500000E-03
+    53 VELY   KOKB  A    1 95:116:43200 m/y  2  .61400000000000E-01  .400000E-03
+    54 VELZ   KOKB  A    1 95:116:43200 m/y  2  .29200000000000E-01  .500000E-03
+    55 VELX   KOSG  A    1 95:116:43200 m/y  2 -.21800000000000E-01  .170000E-02
+    56 VELY   KOSG  A    1 95:116:43200 m/y  2  .21200000000000E-01  .160000E-02
+    57 VELZ   KOSG  A    1 95:116:43200 m/y  2  .12200000000000E-01  .160000E-02
+    58 VELX   MADR  A    1 95:116:43200 m/y  2 -.14100000000000E-01  .600000E-03
+    59 VELY   MADR  A    1 95:116:43200 m/y  2  .22200000000000E-01  .400000E-03
+    60 VELZ   MADR  A    1 95:116:43200 m/y  2  .20100000000000E-01  .600000E-03
+    61 VELX   SANT  A    1 95:116:43200 m/y  2  .22800000000000E-01  .210000E-02
+    62 VELY   SANT  A    1 95:116:43200 m/y  2 -.63000000000000E-02  .170000E-02
+    63 VELZ   SANT  A    1 95:116:43200 m/y  2  .25600000000000E-01  .230000E-02
+    64 VELX   TIDB  A    1 95:116:43200 m/y  2 -.35400000000000E-01  .800000E-03
+    65 VELY   TIDB  A    1 95:116:43200 m/y  2 -.17000000000000E-02  .600000E-03
+    66 VELZ   TIDB  A    1 95:116:43200 m/y  2  .41200000000000E-01  .700000E-03
+    67 VELX   TROM  A    1 95:116:43200 m/y  2 -.25200000000000E-01  .430000E-02
+    68 VELY   TROM  A    1 95:116:43200 m/y  2  .16200000000000E-01  .330000E-02
+    69 VELZ   TROM  A    1 95:116:43200 m/y  2  .65000000000000E-02  .900000E-02
+    70 VELX   WETT  A    1 95:116:43200 m/y  2 -.25200000000000E-01  .400000E-03
+    71 VELY   WETT  A    1 95:116:43200 m/y  2  .19100000000000E-01  .300000E-03
+    72 VELZ   WETT  A    1 95:116:43200 m/y  2  .12300000000000E-01  .400000E-03
+    73 VELX   YAR1  A    1 95:116:43200 m/y  2 -.45900000000000E-01  .900000E-03
+    74 VELY   YAR1  A    1 95:116:43200 m/y  2  .90000000000000E-02  .130000E-02
+    75 VELZ   YAR1  A    1 95:116:43200 m/y  2  .40300000000000E-01  .100000E-02
+    76 VELX   YELL  A    1 95:116:43200 m/y  2 -.28900000000000E-01  .360000E-02
+    77 VELY   YELL  A    1 95:116:43200 m/y  2  .60000000000000E-03  .500000E-02
+    78 VELZ   YELL  A    1 95:116:43200 m/y  2 -.25000000000000E-02  .870000E-02
+-SOLUTION/APRIORI
+*-------------------------------------------------------------------------------
++SOLUTION/MATRIX_ESTIMATE L CORR
+* Lower triangular correlation matrix elements, referenced by two parameter
+* index numbers from SOLUTION/ESTIMATE, are given here. 
+*                 ***New to version 1.00 ***
+*    The PARA fileds increased to 21 chars, For CORR STDs must be given on
+*    the main diagonal
+*
+*PARA1 PARA2 ____PARA2+0__________ ____PARA2+1__________ ____PARA2+2__________
+     1     1  .184577690512345-02 
+     2     1  .29425156137028E-01   .18909112191234E-02
+     3     1 -.26004023015799E+00  -.28793741628090E+00   .20759188181234E+01
+     4     1  .54687523972711E+00  -.65452884277258E-01  -.43204669126067E-01
+     4     4  .17686254341234E-02
+     5     1 -.39819911260492E-01   .40433299131131E+00   .11136939059432E+00
+     5     4 -.50106659384620E-02   .17977311401234E-02
+     6     1 -.35321953180784E-01   .14019789950983E+00   .42813765846990E+00
+     6     4  .49918344878102E-01  -.26545148121353E+00   .18789567101234E-02
+     7     1  .69393516209264E-01  -.50927698251188E-01  -.18770770478848E-02
+     7     4  .11249919556344E+00   .36417010197355E-01  -.96512409551535E-02
+*..................2290 lines deleted .....................................
+   117     1  .39554853137016E-02  -.14701327842692E+00  -.21849261652602E+00
+   117     4  .61854528268407E-01  -.15582766664907E+00  -.35595192513222E+00
+   117     7 -.14839162033233E-01   .10088643393429E-01  -.34620521010973E+00
+   117    10  .24473678103268E-01  -.17719246220580E+00  -.11471841650685E+00
+   117    13  .13124059834379E-01   .19447280189975E+00   .55372167099218E-01
+   117    16  .11834483725591E-01  -.15394348548100E+00  -.23577099430936E+00
+   117    19 -.69920935880248E-02  -.15152016672011E+00  -.15707791358241E-01
+   117    22  .56262209482092E-02   .44664432377454E-01  -.29206116099859E+00
+   117    25  .13595733163360E-01  -.36791832813222E-01  -.34302028599229E+00
+   117    28  .49976730750360E-01  -.52603056350601E-02   .35995661727203E+00
+   117    31  .58434167118809E-01   .79162912401483E-01   .19036198391000E+00
+   117    34  .18742319369700E-01   .29877748842137E+00   .27423619442271E+00
+   117    37  .37293677828651E-01  -.26370207939877E-01   .28314439940865E+00
+   117    40 -.15793512947600E-01   .16902050747741E-01  -.68991757800683E-01
+   117    43  .13839204459350E-01  -.90319568728349E-01   .87241280008327E-01
+   117    46  .17373506530565E-02   .75995410738772E-02  -.22097307167853E-01
+   117    49 -.31558372465614E-02   .33086324692108E+00  -.21155116202680E-01
+   117    52  .52662048663150E-01  -.96698061270683E-01  -.38697065241955E+00
+   117    55  .17854027402451E-01   .45413441850211E-01  -.39199818754031E+00
+   117    58 -.20557084589204E-01   .17772427521895E+00  -.38888132782579E+00
+   117    61  .51717169153988E-01  -.12774683850231E+00  -.18640329670510E+00
+   117    64  .60566764029226E-01  -.96756801702711E-01  -.31097880769930E+00
+   117    67  .15946573701026E-01  -.52959490859687E-01   .43877479729634E+00
+   117    70 -.56965234511833E-01   .12258278357446E+00   .20637613018780E+00
+   117    73  .10379256768073E-01  -.13337986646258E+00   .34656771257246E-01
+   117    76  .45650296192972E-01  -.14097331082148E+00   .31904369696173E+00
+   117    79 -.15366288987877E-01  -.76872083582857E-01   .14681131961463E+00
+   117    82 -.71521817107470E-02  -.14261694699670E+00  -.12950060100137E+00
+   117    85 -.46279787222485E-01   .17675785161574E+00   .43321519299327E+00
+   117    88  .17270566844414E-02  -.17956461690783E+00  -.95965022007633E-01
+   117    91  .67279754048700E-02   .17105290276520E-01   .96879240353699E-02
+   117    94  .46879651728024E-02   .15162522246501E-02   .16405537485657E-01
+   117    97 -.33487318865767E-01  -.15479070213606E-01  -.17088921255237E-01
+   117   100 -.10651453627699E-01  -.97673708447794E-02  -.44763578708339E-02
+   117   103 -.10868132563959E-01   .55392984612278E-01   .38519367197329E-01
+   117   106  .56288295168491E-01   .61044503649448E-01   .62180451664303E-01
+   117   109  .48458825773687E-01   .64903577511731E-01   .46603628193206E+00
+   117   112  .50888540957265E+00   .49512938569870E+00   .49390806153475E+00
+   117   115  .49291348118876E+00   .51840633003163E+00   .83771951711234E-01
+-SOLUTION/MATRIX_ESTIMATE L CORR
+*-------------------------------------------------------------------------------
++SOLUTION/MATRIX_APRIORI L CORR
+*
+* Same format as SOLUTION/MATRIX_ESTIMATE, but a priori values. 
+*
+* Here NRC has only used the first column, This is valid, but wastes space.
+*                **New to version 1.00 ***
+*    The PARA fileds increased to 21 chars, For CORR, STDs must be given on
+*    the main diagonal
+*PARA1 PARA2 ____PARA2+0__________ ____PARA2+1__________ ____PARA2+2__________
+     1     1 .3002645981234567E-02
+     2     2 .3004133331239875E-02
+     3     3 .3004133333333333E-02
+     4     4 .3001488651234567E-02
+     5     5 .3002645982345343E-02
+     6     6 .3002645981234567E-02
+     7     7 .4001116611234567E-02
+     8     8 .5000893333333333E-02
+     9     9 .5000893333333333E-02
+    10    10 .4017828541234567E-02
+    11    11 .4007933581234567E-02
+    12    12 .4006075555555556E-02
+    13    13 .3004133333333333E-02
+    14    14 .3002645981234567E-02
+    15    15 .3004133333333333E-02
+    16    16 .5028606666666666E-02
+    17    17 .5025348391234567E-02
+    18    18 .3042059581234567E-02
+    19    19 .3005950191234567E-02
+    20    20 .3002645981234567E-02
+    21    21 .2008914271234567E-02
+    22    22 .4054352301234567E-02
+    23    23 .4035701301234567E-02
+    24    24 .4065111141234567E-02
+    25    25 .4007933581234567E-02
+    26    26 .4004464581234567E-02
+    27    27 .4006075555555556E-02
+    28    28 .4223205911234567E-02
+    29    29 .4132920301234567E-02
+    30    30 .4903133751234567E-02
+    31    31 .3002645981234567E-02
+    32    32 .3001488651234567E-02
+    33    33 .2003966791234567E-02
+    34    34 .5008034271234567E-02
+    35    35 .5016748271234567E-02
+    36    36 .4012389333333333E-02
+    37    37 .3207259781234567E-02
+    38    38 .3388466301234567E-02
+    39    39 .4849083081234567E-02
+-SOLUTION/MATRIX_APRIORI L CORR
+*-------------------------------------------------------------------------------
+%ENDSNX
+
+                  --------------
+
+    
+    
+     APPENDIX III
+    
+    The standard IGS Receiver/Antenna name list (IGSCB information System:
+    ftp igscb.jpl.nasa.gov; file: igscb/station/general/rcvr_ant.tab)
+
++----------------------+-----------------------------------------------------+
+| ROGUE Receivers      |  Description                                        |
++----------------------+-----------------------------------------------------+
+| ROGUE SNR-8          |  2 unit rack-mounted (big Rogue)                    |
+| ROGUE SNR-800        |  1 unit rack-mounted (big Rogue)                    |
+| ROGUE SNR-8A         |  MiniRogue -- not CONAN compatible                  |
+| ROGUE SNR-8C         |  MiniRogue -- CONAN compatible                      |
+| ROGUE SNR-8000       |  TurboRogue (field unit)                            |
+| ROGUE SNR-8100       |  TurboRogue (rack mount)                            |
+| ROGUE SNR-12         |  TurboRogue (12 channel )                           |
+| ROGUE SNR-12 RM      |  TurboRogue (12 channel, rack mount)                |
++----------------------+-----------------------------------------------------+
+| ROGUE Antennae       |  Description                                        |
++----------------------+-----------------------------------------------------+
+| DORNE MARGOLIN R     |  Antenna with chokering for Rogues (JPL design)     |
+| DORNE MARGOLIN B     |  Antenna with chokering for Rogues (AOA design)     |
+| DORNE MARGOLIN T     |  Antenna with chokering for TurboRogues             |
++----------------------+-----------------------------------------------------+
+
++----------------------+-----------------------------------------------------+
+| TRIMBLE Receivers    |  Description                                        |
++----------------------+-----------------------------------------------------+
+| TRIMBLE 4000S        |                                                     |
+| TRIMBLE 4000SE       |                                                     |
+| TRIMBLE 4000SL       |                                                     |
+| TRIMBLE 4000ST       |                                                     |
+| TRIMBLE 4000SX       |                                                     |
+| TRIMBLE 4000SLD      |  Dual freq. L1 c/a; L2 squaring                     |
+| TRIMBLE 4000SST      |  Dual freq. L1 c/a; L2 squaring; L2 p-code optional |
+| TRIMBLE 4000SSE      |  Dual freq. p-code on  L1 and L2; xcr Y-code        |
++----------------------+-----------------------------------------------------+
+| TRIMBLE Antennae     |  Description                                        |
++----------------------+-----------------------------------------------------+
+| 4000SE INTERNAL      |                                                     |
+| 4000SL MICRO         |  (Round)                                            |
+| 4000SLD L1/L2        |  Dual freq. geodetic receiver (SLD series)          |
+| 4000ST INTERNAL      |                                                     |
+| 4000ST KINEMATIC     |  Single freq. without a ground plane                |
+| 4000ST L1 GEODETIC   |  To use with single freq. geodetic receiver         |
+| 4000ST L1/L2 GEOD    |  Dual freq. geodetic receiver (Mod.14532)           |
+| 4000SX MICRO         |  (Square)                                           |
+| TR GEOD L1/L2 GP     |  Geod. L1/L2 compact; grd. plane incl .  (Mod.22020)|
+| TR GEOD L1/L2 W/O GP |  Geod. L1/L2 compact; grd. plane removed (Mod.22020)|
+| M-PULSE L1/L2 SURVEY |  MicroPulse L1/L2 GPS Surveying Antenna 90LL12300   |
+| DORNE MARGOLIN TRIM  |  Antenna with chokering (Trimble design)            |
++----------------------+-----------------------------------------------------+
+
++----------------------+-----------------------------------------------------+
+| MINIMAC Receivers    |  Description                                        |
++----------------------+-----------------------------------------------------+
+| MINIMAC 2816AT       |  Rack-mounted (used in CIGNET and NIED)             |
+| MINIMAC 2816         |  Field unit                                         |
++----------------------+-----------------------------------------------------+
+| MINIMAC Antennae     |  Description                                        |
++----------------------+-----------------------------------------------------+
+| MACROMETER X-DIPOLE  |  Crossed-dipole antenna with large ground plane     |
+| MINIMAC PATCH        |  Patch antenna                                      |
++----------------------+-----------------------------------------------------+
+
++----------------------+-----------------------------------------------------+
+| ASHTECH Receivers    |  Description                                        |
++----------------------+-----------------------------------------------------+
+| ASHTECH xxxxxxxx     |  xxxxxxxx is the receiver type to be found in the   |
+|                      |  receiver-generated S-file, e.g. LM-XII3 or L-XII   |
++----------------------+-----------------------------------------------------+
+| ASHTECH Antennae     |  Description                                        |
++----------------------+-----------------------------------------------------+
+| GEODETIC L1/L2 L     |  Dual freq. with ground plane (LD-XII & MD-XII)     |
+| GEODETIC L1/L2 P     |  Dual freq. with ground plane (P-12)                |
+| GEODETIC III L1/L2   |  Dual freq. with ground plane                       |
+| DORNE MARGOLIN ASH   |  Antenna with chokering (Ashtech design)            |
+| MARINE/RANGE         |  Single freq. with a smaller ground plane           |
+| A-C L1               |  Single freq. w/o ground plane for aircraft use     |
+| A-C L1/L2            |  Dual freq. without ground plane for aircraft use   |
++----------------------+-----------------------------------------------------+
+
++----------------------+-----------------------------------------------------+
+| LEICA Receivers      |  Description                                        |
++----------------------+-----------------------------------------------------+
+| SR299                |  Geodetic receiver, internal antenna                |
+| SR299E               |  Geodetic receiver, external antenna                |
++----------------------+-----------------------------------------------------+
+| LEICA Antenna        |  Description                                        |
++----------------------+-----------------------------------------------------+
+| INTERNAL             |  Internal antenna of SR299 receiver                 |
+| EXTERNAL WITH GP     |  External antenna of SR299E  with groundplane       |
+| EXTERNAL WITHOUT GP  |  External antenna of SR299E, without groundplane    |
++----------------------+-----------------------------------------------------+
+
+
+              APPENDIX IV
+
+CODING STATION INFORMATION CHANGES IN SINEX V1.00: A SAMPLE
+
+There are THREE valid ways of coding a mid-week station
+receiver/antenna change in weekly Sinex v1.00. To demonstrate this 
+a recent change at GRAZ (week 0859) to show them below. To quote
+Sinex v1.00 definition "SITE+PT+SOLN defines a unique estimate,
+SITE+PT is equivalent to DOMES (DOMEX) and uniquely identifies a
+geodetic mark".
+
+
+Case (i): To state two separate estimates at a site, assuming the 
+mark has changed. We call these marks GRAZ A and GRAZ B, and don't re-use
+the old DOMES code, but code the second estimate with unknown DOMES:
+
++SITE/ID
+ GRAZ  A 11001M002 P GRAZ                    15 29 36.5  47  4  1.7   538.3
+ GRAZ  B --------- P GRAZ                    15 29 36.5  47  4  1.7   538.3
+-SITE/ID
++SITE/RECEIVER
+ GRAZ  A ---- P 96:174:00000 96:176:86369 ROGUE SNR-8C         ----- -----------
+ GRAZ  B ---- P 96:177:00000 96:182:86369 ROGUE SNR-8000       ----- -----------
+-SITE/RECEIVER
++SITE/ANTENNA
+ GRAZ  A ---- P 96:174:00000 96:176:86369 DORNE MARGOLIN B       128
+ GRAZ  B ---- P 96:177:00000 96:182:86369 DORNE MARGOLIN T       457
+-SITE/ANTENNA
++SITE/ECCENTRICITY
+ GRAZ  A ---- P 96:174:00000 96:176:86369 UNE   2.0680   0.0000   0.0000
+ GRAZ  B ---- P 96:177:00000 96:182:86369 UNE   1.9640   0.0000   0.0000
+-SITE/ECCENTRICITY
++SOLUTION/EPOCHS
+ GRAZ  A    1 P 96:174:00000 96:176:86369 96:175:43185
+ GRAZ  B    1 P 96:177:00000 96:182:86369 96:179:86385
+-SOLUTION/EPOCHS
+
+It is illegal to give GRAZ B the same DOMES as GRAZ A (see quote 
+above).
+
+Case (ii) To state two separate estimates at a site, reduced to a 
+common mark. These are called GRAZ A 1 and GRAZ A 2, and both use 
+a single SITE/ID line because there's only one mark:
+
++SITE/ID
+ GRAZ  A 11001M002 P GRAZ                    15 29 36.5  47  4  1.7   538.3
+-SITE/ID
++SITE/RECEIVER
+ GRAZ  A 0001 P 96:174:00000 96:176:86369 ROGUE SNR-8C         ----- -----------
+ GRAZ  A 0002 P 96:177:00000 96:182:86369 ROGUE SNR-8000       ----- -----------
+-SITE/RECEIVER
++SITE/ANTENNA
+ GRAZ  A 0001 P 96:174:00000 96:176:86369 DORNE MARGOLIN B       128
+ GRAZ  A 0002 P 96:177:00000 96:182:86369 DORNE MARGOLIN T       457
+-SITE/ANTENNA
++SITE/ECCENTRICITY
+ GRAZ  A 0001 P 96:174:00000 96:176:86369 UNE   2.0680   0.0000   0.0000
+ GRAZ  A 0002 P 96:177:00000 96:182:86369 UNE   1.9640   0.0000   0.0000
+-SITE/ECCENTRICITY
++SOLUTION/EPOCHS
+ GRAZ  A 0001 P 96:174:00000 96:176:86369 96:175:43185
+ GRAZ  A 0002 P 96:177:00000 96:182:86369 96:179:86385
+-SOLUTION/EPOCHS
+
+
+Case (iii) To state a single estimate at a site, where the station
+information changed during the data span. In this case there should
+be only one SOLUTION/EPOCHS entry, for GRAZ A 1. As many SITE/...
+entries may be used as required, in this example we need two in each
+block.
+
++SITE/ID
+ GRAZ  A 11001M002 P GRAZ                    15 29 36.5  47  4  1.7   538.3
+-SITE/ID
++SITE/RECEIVER
+ GRAZ  A ---- P 96:174:00000 96:176:86369 ROGUE SNR-8C         ----- -----------
+ GRAZ  A ---- P 96:177:00000 96:182:86369 ROGUE SNR-8000       ----- -----------
+-SITE/RECEIVER
++SITE/ANTENNA
+ GRAZ  A ---- P 96:174:00000 96:176:86369 DORNE MARGOLIN B       128
+ GRAZ  A ---- P 96:177:00000 96:182:86369 DORNE MARGOLIN T       457
+-SITE/ANTENNA
++SITE/ECCENTRICITY
+ GRAZ  A ---- P 96:174:00000 96:176:86369 UNE   2.0680   0.0000   0.0000
+ GRAZ  A ---- P 96:177:00000 96:182:86369 UNE   1.9640   0.0000   0.0000
+-SITE/ECCENTRICITY
++SOLUTION/EPOCHS
+ GRAZ  A    1 P 96:174:00000 96:182:86369 96:178:00000
+-SOLUTION/EPOCHS
+
+Note that in this case no SOLN codes are required in the SITE/...
+blocks! The records are well ordered by their data start/stop
+fields. This is a change from the accepted Sinex v0.05 usage. 
+

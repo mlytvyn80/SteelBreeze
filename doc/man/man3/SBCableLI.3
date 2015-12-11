@@ -1,0 +1,79 @@
+.TH "SBCableLI" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBCableLI \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIPreProcessing\&.H>\fP
+.PP
+Inherits \fBQListViewItem\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBCableLI\fP (\fBQListView\fP *parent_, \fBSBParameter\fP *Par_, \fBSBStationInfo\fP *SI_)"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual QString \fBtext\fP (int) const "
+.br
+.ti -1c
+.RI "virtual QString \fBkey\fP (int, bool) const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBParameter\fP * \fBPar\fP"
+.br
+.ti -1c
+.RI "\fBSBStationInfo\fP * \fBSI\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 65 of file SbIPreProcessing\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBCableLI::SBCableLI (\fBQListView\fP *parent_, \fBSBParameter\fP *Par_, \fBSBStationInfo\fP *SI_)\fC [inline]\fP"
+.PP
+Definition at line 72 of file SbIPreProcessing\&.H'\&.
+.PP
+References Par, and SI\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBCableLI::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 74 of file SbIPreProcessing\&.H'\&.
+.SS "QString SBCableLI::key (intcol, bool) const\fC [virtual]\fP"
+.PP
+Definition at line 234 of file SbIPreProcessing\&.C'\&.
+.PP
+References SBObjectObsInfo::aka(), SBParameter::e(), SBObjectObsInfo::idx(), Par, SI, TmpString, SBStationID::toString(), and SBParameter::v()\&.
+.SS "QString SBCableLI::text (intcol) const\fC [virtual]\fP"
+.PP
+Definition at line 214 of file SbIPreProcessing\&.C'\&.
+.PP
+References SBObjectObsInfo::aka(), SBParameter::e(), SBObjectObsInfo::idx(), Par, SI, TmpString, SBStationID::toString(), and SBParameter::v()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSBParameter\fP* \fBSBCableLI::Par\fP\fC [protected]\fP"
+.PP
+Definition at line 68 of file SbIPreProcessing\&.H'\&.
+.PP
+Referenced by key(), SBCableLI(), and text()\&.
+.SS "\fBSBStationInfo\fP* \fBSBCableLI::SI\fP\fC [protected]\fP"
+.PP
+Definition at line 69 of file SbIPreProcessing\&.H'\&.
+.PP
+Referenced by key(), SBCableLI(), and text()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

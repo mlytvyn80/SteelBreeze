@@ -1,0 +1,99 @@
+.TH "SBSourceInfoList" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBSourceInfoList \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoObsVLBI\&.H>\fP
+.PP
+Inherits \fBQList< SBSourceInfo >\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual int \fBidx\fP (const \fBSBNamed\fP *item)"
+.br
+.ti -1c
+.RI "virtual \fBSBSourceInfo\fP * \fBfind\fP (const \fBSBNamed\fP *item)"
+.br
+.ti -1c
+.RI "void \fBdumpUserInfo\fP (\fBQTextStream\fP &ts)"
+.br
+.ti -1c
+.RI "bool \fBrestoreUserInfo\fP (\fBQTextStream\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBclearRMSs\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual int \fBcompareItems\fP (QCollection::Item item1, QCollection::Item item2)"
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBwrite\fP (QDataStream &s, QCollection::Item Entry) const "
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBread\fP (QDataStream &s, QCollection::Item &Entry)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+List of source infos'\&. 
+.PP
+Definition at line 499 of file SbGeoObsVLBI\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBSourceInfoList::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 511 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by restoreUserInfo()\&.
+.SS "virtual void SBSourceInfoList::clearRMSs ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 521 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by SBProject::clearRMSs(), and SBVLBISession::clearRMSs()\&.
+.SS "virtual int SBSourceInfoList::compareItems (QCollection::Itemitem1, QCollection::Itemitem2)\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 502 of file SbGeoObsVLBI\&.H'\&.
+.SS "void SBSourceInfoList::dumpUserInfo (\fBQTextStream\fP &ts)\fC [inline]\fP"
+.PP
+Definition at line 518 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by SBVLBISession::dumpUserInfo()\&.
+.SS "virtual \fBSBSourceInfo\fP* SBSourceInfoList::find (const \fBSBNamed\fP *item)\fC [inline, virtual]\fP"
+.PP
+Definition at line 513 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by SBSolutionBrowser::batch4StochSoChanged(), SBRunManager::fillParameterList(), idx(), SBObsVLBIEntry::isEligible(), SBSolutionBrowser::lookupParameters(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportMaps(), SBVLBISession::parseObsDumpString(), SBObsVLBIEntry::process(), restoreUserInfo(), sinex_SourceIDBlock(), SBRunManager::stripCRF(), SBSolutionBrowser::updateCRF(), and SBSolutionBrowser::wLocalSoPars()\&.
+.SS "virtual int SBSourceInfoList::idx (const \fBSBNamed\fP *item)\fC [inline, virtual]\fP"
+.PP
+Definition at line 512 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References find()\&.
+.SS "virtual QDataStream& SBSourceInfoList::read (QDataStream &s, QCollection::Item &Entry)\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 508 of file SbGeoObsVLBI\&.H'\&.
+.SS "bool SBSourceInfoList::restoreUserInfo (\fBQTextStream\fP &ts)"
+.PP
+Definition at line 481 of file SbGeoObsVLBI\&.C'\&.
+.PP
+References ClassName(), SBLog::DATA, SBLog::DBG, find(), Log, SBSourceInfo::restoreUserInfo(), SBNamed::setName(), and SBLog::write()\&.
+.PP
+Referenced by SBVLBISession::restoreUserInfo()\&.
+.SS "virtual QDataStream& SBSourceInfoList::write (QDataStream &s, QCollection::ItemEntry) const\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 506 of file SbGeoObsVLBI\&.H'\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

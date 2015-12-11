@@ -1,0 +1,427 @@
+.TH "SBSolutionName" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBSolutionName \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeo\&.H>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSNType\fP { \fBTYPE_EOP\fP, \fBTYPE_SSC\fP, \fBTYPE_SSV\fP, \fBTYPE_RSC\fP, \fBTYPE_AAM\fP, \fBTYPE_UNKN\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSolutionName\fP (\fBSNType\fP Type_=TYPE_UNKN)"
+.br
+.ti -1c
+.RI "\fBSBSolutionName\fP (const \fBSBSolutionName\fP &Solution)"
+.br
+.ti -1c
+.RI "\fBSBSolutionName\fP (\fBSNType\fP Type_, const QString &Acronym_, int Year_=0, \fBTechnique\fP Tech_=TECH_VLBI, int Serial_=1)"
+.br
+.ti -1c
+.RI "virtual \fB~SBSolutionName\fP ()"
+.br
+.ti -1c
+.RI "\fBSNType\fP \fBtype\fP () const "
+.br
+.ti -1c
+.RI "\fBTechnique\fP \fBtech\fP () const "
+.br
+.ti -1c
+.RI "QString \fBacronym\fP () const "
+.br
+.ti -1c
+.RI "int \fByear\fP () const "
+.br
+.ti -1c
+.RI "int \fBserial\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetType\fP (\fBSNType\fP Type_)"
+.br
+.ti -1c
+.RI "void \fBsetTech\fP (\fBTechnique\fP Tech_)"
+.br
+.ti -1c
+.RI "void \fBsetAcronym\fP (const QString &Acronym_)"
+.br
+.ti -1c
+.RI "void \fBsetYear\fP (int Year_)"
+.br
+.ti -1c
+.RI "void \fBsetSerial\fP (int Serial_)"
+.br
+.ti -1c
+.RI "void \fBsetAttr\fP (\fBSNType\fP Type_, const QString &Acronym_, int Year_=0, \fBTechnique\fP Tech_=TECH_VLBI, int Serial_=1)"
+.br
+.ti -1c
+.RI "const QString \fBType2Str\fP () const "
+.br
+.ti -1c
+.RI "const QString \fBTech2Str\fP () const "
+.br
+.ti -1c
+.RI "const QString \fBAcronym2Str\fP () const "
+.br
+.ti -1c
+.RI "QString \fBtoString\fP () const "
+.br
+.ti -1c
+.RI "void \fBfromString\fP (const QString &)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBSBSolutionName\fP &label)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBSBSolutionName\fP &label)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static const QString & \fBtechAbbrev\fP (\fBTechnique\fP T)"
+.br
+.ti -1c
+.RI "static const QString & \fBtechName\fP (\fBTechnique\fP T)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const QString \fBTypeNames\fP []"
+.br
+.ti -1c
+.RI "static const QString \fBTechNames\fP []"
+.br
+.ti -1c
+.RI "static const QString \fBTypes\fP []"
+.br
+.ti -1c
+.RI "static const QString \fBTechs\fP []"
+.br
+.ti -1c
+.RI "static const QString \fBTechAbbrev\fP []"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSNType\fP \fBType\fP"
+.br
+.ti -1c
+.RI "\fBTechnique\fP \fBTech\fP"
+.br
+.ti -1c
+.RI "QString \fBAcronym\fP"
+.br
+.ti -1c
+.RI "int \fBYear\fP"
+.br
+.ti -1c
+.RI "int \fBSerial\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBSolutionName\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBSolutionName\fP &)"
+.br
+.ti -1c
+.RI "\fBQTextStream\fP & \fBoperator<<\fP (\fBQTextStream\fP &, const \fBSBSolutionName\fP &)"
+.br
+.ti -1c
+.RI "\fBQTextStream\fP & \fBoperator>>\fP (\fBQTextStream\fP &, \fBSBSolutionName\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 365 of file SbGeo\&.H'\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBSBSolutionName::SNType\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fITYPE_EOP \fP\fP
+.TP
+\fB\fITYPE_SSC \fP\fP
+.TP
+\fB\fITYPE_SSV \fP\fP
+.TP
+\fB\fITYPE_RSC \fP\fP
+.TP
+\fB\fITYPE_AAM \fP\fP
+.TP
+\fB\fITYPE_UNKN \fP\fP
+
+.PP
+Definition at line 382 of file SbGeo\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBSolutionName::SBSolutionName (\fBSNType\fPType_ = \fCTYPE_UNKN\fP)\fC [inline]\fP"
+.PP
+Definition at line 419 of file SbGeo\&.H'\&.
+.PP
+References setAttr()\&.
+.SS "SBSolutionName::SBSolutionName (const \fBSBSolutionName\fP &Solution)\fC [inline]\fP"
+.PP
+Definition at line 420 of file SbGeo\&.H'\&.
+.PP
+References Acronym, Serial, setAttr(), Tech, Type, and Year\&.
+.SS "SBSolutionName::SBSolutionName (\fBSNType\fPType_, const QString &Acronym_, intYear_ = \fC0\fP, \fBTechnique\fPTech_ = \fCTECH_VLBI\fP, intSerial_ = \fC1\fP)\fC [inline]\fP"
+.PP
+Definition at line 423 of file SbGeo\&.H'\&.
+.PP
+References setAttr()\&.
+.SS "virtual SBSolutionName::~SBSolutionName ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 427 of file SbGeo\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QString SBSolutionName::acronym () const\fC [inline]\fP"
+.PP
+Definition at line 433 of file SbGeo\&.H'\&.
+.PP
+References Acronym\&.
+.SS "const QString SBSolutionName::Acronym2Str () const\fC [inline]\fP"
+.PP
+Definition at line 456 of file SbGeo\&.H'\&.
+.PP
+References Acronym, and SBInstitutionList::descr()\&.
+.SS "void SBSolutionName::fromString (const QString &str)"
+.PP
+Definition at line 209 of file SbGeo\&.C'\&.
+.PP
+Referenced by SBStuffEOPs::accept(), SBStuffSources::accept(), and SBStuffStations::accept()\&.
+.SS "bool SBSolutionName::operator!= (const \fBSBSolutionName\fP &label)\fC [inline]\fP"
+.PP
+Definition at line 465 of file SbGeo\&.H'\&.
+.SS "bool SBSolutionName::operator== (const \fBSBSolutionName\fP &label)\fC [inline]\fP"
+.PP
+Definition at line 461 of file SbGeo\&.H'\&.
+.PP
+References Acronym, Serial, Tech, Type, and Year\&.
+.SS "int SBSolutionName::serial () const\fC [inline]\fP"
+.PP
+Definition at line 435 of file SbGeo\&.H'\&.
+.PP
+References Serial\&.
+.SS "void SBSolutionName::setAcronym (const QString &Acronym_)\fC [inline]\fP"
+.PP
+Definition at line 438 of file SbGeo\&.H'\&.
+.PP
+References Acronym\&.
+.PP
+Referenced by SBStationImport::importITRF(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations4IVS(), and SBRunManager::makeReportTRF()\&.
+.SS "void SBSolutionName::setAttr (\fBSNType\fPType_, const QString &Acronym_, intYear_ = \fC0\fP, \fBTechnique\fPTech_ = \fCTECH_VLBI\fP, intSerial_ = \fC1\fP)\fC [inline]\fP"
+.PP
+Definition at line 441 of file SbGeo\&.H'\&.
+.PP
+References Acronym, Serial, Tech, Type, and Year\&.
+.PP
+Referenced by SBCatalog::SBCatalog(), SBEOP::SBEOP(), and SBSolutionName()\&.
+.SS "void SBSolutionName::setSerial (intSerial_)\fC [inline]\fP"
+.PP
+Definition at line 440 of file SbGeo\&.H'\&.
+.PP
+References Serial\&.
+.PP
+Referenced by SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations4IVS(), and SBRunManager::makeReportTRF()\&.
+.SS "void SBSolutionName::setTech (\fBTechnique\fPTech_)\fC [inline]\fP"
+.PP
+Definition at line 437 of file SbGeo\&.H'\&.
+.PP
+References Tech\&.
+.PP
+Referenced by SBStationImport::importITRF(), and SB_CRF::SB_CRF()\&.
+.SS "void SBSolutionName::setType (\fBSNType\fPType_)\fC [inline]\fP"
+.PP
+Definition at line 436 of file SbGeo\&.H'\&.
+.PP
+References Type\&.
+.PP
+Referenced by SB_CRF::SB_CRF(), and SB_TRF::SB_TRF()\&.
+.SS "void SBSolutionName::setYear (intYear_)\fC [inline]\fP"
+.PP
+Definition at line 439 of file SbGeo\&.H'\&.
+.PP
+References Year\&.
+.PP
+Referenced by SBStationImport::importITRF(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations4IVS(), and SBRunManager::makeReportTRF()\&.
+.SS "\fBTechnique\fP SBSolutionName::tech () const\fC [inline]\fP"
+.PP
+Definition at line 432 of file SbGeo\&.H'\&.
+.PP
+References Tech\&.
+.SS "const QString SBSolutionName::Tech2Str () const\fC [inline]\fP"
+.PP
+Definition at line 455 of file SbGeo\&.H'\&.
+.PP
+References Tech, and TechNames\&.
+.SS "static const QString& SBSolutionName::techAbbrev (\fBTechnique\fPT)\fC [inline, static]\fP"
+.PP
+Definition at line 457 of file SbGeo\&.H'\&.
+.PP
+References TechAbbrev\&.
+.PP
+Referenced by SBTestStationLI::key(), SBStationListItem::text(), and SBTestStationLI::text()\&.
+.SS "static const QString& SBSolutionName::techName (\fBTechnique\fPT)\fC [inline, static]\fP"
+.PP
+Definition at line 458 of file SbGeo\&.H'\&.
+.PP
+References TechNames\&.
+.PP
+Referenced by SBStationEditor::wTechs()\&.
+.SS "QString SBSolutionName::toString () const"
+.PP
+Definition at line 200 of file SbGeo\&.C'\&.
+.PP
+References Acronym, Serial, Tech, Techs, Type, Types, and Year\&.
+.PP
+Referenced by SBEOP::checkRanges(), SBRunManager::constraintSourceCoord(), SBRunManager::constraintStationCoord(), SBRunManager::constraintStationVeloc(), SBStuffEOPs::createInfoGroup(), SBStuffEOPs::draw(), SBStuffSources::drawInfo(), SBStuffStations::drawInfo(), operator<<(), SBStuffSources::SBStuffSources(), SBStuffStations::SBStuffStations(), SBTestEOP::SBTestEOP(), and writeNormalEquationSystem()\&.
+.SS "\fBSNType\fP SBSolutionName::type () const\fC [inline]\fP"
+.PP
+Definition at line 431 of file SbGeo\&.H'\&.
+.PP
+References Type\&.
+.SS "const QString SBSolutionName::Type2Str () const\fC [inline]\fP"
+.PP
+Definition at line 454 of file SbGeo\&.H'\&.
+.PP
+References Type, and TypeNames\&.
+.SS "int SBSolutionName::year () const\fC [inline]\fP"
+.PP
+Definition at line 434 of file SbGeo\&.H'\&.
+.PP
+References Year\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBSolutionName\fP &Sol)\fC [friend]\fP"
+.PP
+Definition at line 223 of file SbGeo\&.C'\&.
+.SS "\fBQTextStream\fP& operator<< (\fBQTextStream\fP &s, const \fBSBSolutionName\fP &Sol)\fC [friend]\fP"
+.PP
+Definition at line 233 of file SbGeo\&.C'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBSolutionName\fP &Sol)\fC [friend]\fP"
+.PP
+Definition at line 228 of file SbGeo\&.C'\&.
+.SS "\fBQTextStream\fP& operator>> (\fBQTextStream\fP &s, \fBSBSolutionName\fP &Sol)\fC [friend]\fP"
+.PP
+Definition at line 238 of file SbGeo\&.C'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString \fBSBSolutionName::Acronym\fP\fC [protected]\fP"
+.PP
+Definition at line 406 of file SbGeo\&.H'\&.
+.PP
+Referenced by acronym(), Acronym2Str(), operator<<(), operator==(), operator>>(), SBSolutionName(), setAcronym(), setAttr(), and toString()\&.
+.SS "int \fBSBSolutionName::Serial\fP\fC [protected]\fP"
+.PP
+Definition at line 408 of file SbGeo\&.H'\&.
+.PP
+Referenced by operator<<(), operator==(), operator>>(), SBSolutionName(), serial(), setAttr(), setSerial(), and toString()\&.
+.SS "\fBTechnique\fP \fBSBSolutionName::Tech\fP\fC [protected]\fP"
+.PP
+Definition at line 405 of file SbGeo\&.H'\&.
+.PP
+Referenced by operator<<(), operator==(), operator>>(), SBSolutionName(), setAttr(), setTech(), tech(), Tech2Str(), and toString()\&.
+.SS "const QString \fBSBSolutionName::TechAbbrev\fP\fC [static]\fP"\fBInitial value:\fP
+.PP
+.nf
+ 
+{ 'VLBI', 'OPTA', 'LLR', 'GPS', 'SLR', 'DORIS', 'COMB', 'CGEOD', 'ATM', 'TIE', 'UNKN'}
+.fi
+.PP
+Definition at line 415 of file SbGeo\&.H'\&.
+.PP
+Referenced by techAbbrev()\&.
+.SS "const QString \fBSBSolutionName::TechNames\fP\fC [static]\fP"\fBInitial value:\fP
+.PP
+.nf
+ 
+{
+  'Very Long Baseline Interferometry',
+  'Optical Astrometry',
+  'Lunar Laser Ranging',
+  'Global Positioning System',
+  'Satellite Laser Ranging',
+  'Doppler Orbit determination and Radiopositioning Intergrated on Satellite',
+  'Combination of techniques',
+  'Conventional Geodesy (for SSC)',
+  'Atmospheric data',
+  'TIE (I havn't found what it means)',
+  'unknown'
+}
+.fi
+.PP
+Definition at line 412 of file SbGeo\&.H'\&.
+.PP
+Referenced by Tech2Str(), and techName()\&.
+.SS "const QString \fBSBSolutionName::Techs\fP\fC [static]\fP"\fBInitial value:\fP
+.PP
+.nf
+ 
+{'R','A','M','P','L','D','C','G','*','T','?'}
+.fi
+.PP
+Definition at line 414 of file SbGeo\&.H'\&.
+.PP
+Referenced by toString()\&.
+.SS "\fBSNType\fP \fBSBSolutionName::Type\fP\fC [protected]\fP"
+.PP
+Definition at line 404 of file SbGeo\&.H'\&.
+.PP
+Referenced by operator<<(), operator==(), operator>>(), SBSolutionName(), setAttr(), setType(), toString(), type(), and Type2Str()\&.
+.SS "const QString \fBSBSolutionName::TypeNames\fP\fC [static]\fP"\fBInitial value:\fP
+.PP
+.nf
+ 
+{
+  'Earth Orientation Parameters',
+  'Sets of Station Coordinates',
+  'Sets of Station Velocities',
+  'Radio Source Coordinates',
+  'Atmospheric Angular Momentum',
+  'unknown'
+}
+.fi
+.PP
+Definition at line 411 of file SbGeo\&.H'\&.
+.PP
+Referenced by Type2Str()\&.
+.SS "const QString \fBSBSolutionName::Types\fP\fC [static]\fP"\fBInitial value:\fP
+.PP
+.nf
+ 
+{'EOP', 'SSC', 'SSV', 'RSC', 'AAM', '???'}
+.fi
+.PP
+Definition at line 413 of file SbGeo\&.H'\&.
+.PP
+Referenced by toString()\&.
+.SS "int \fBSBSolutionName::Year\fP\fC [protected]\fP"
+.PP
+Definition at line 407 of file SbGeo\&.H'\&.
+.PP
+Referenced by operator<<(), operator==(), operator>>(), SBSolutionName(), setAttr(), setYear(), toString(), and year()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

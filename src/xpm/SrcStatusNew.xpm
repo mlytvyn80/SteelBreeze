@@ -1,0 +1,22 @@
+/* XPM */
+static const char * SrcStatusNew_xpm[] = {
+"16 16 3 1",
+" 	c None",
+".	c green4",
+"X	c green",
+"      ...       ",
+"      .X.       ",
+"     ..X..      ",
+"     .XXX.      ",
+"    ..XXX..     ",
+"  ...XXXXX...   ",
+"...XXXXXXXXX... ",
+".XXXXXXXXXXXXX. ",
+"...XXXXXXXXX... ",
+"  ...XXXXX...   ",
+"    ..XXX..     ",
+"     .XXX.      ",
+"     ..X..      ",
+"      .X.       ",
+"      ...       ",
+"                "};

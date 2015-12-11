@@ -1,0 +1,905 @@
+.TH "SBSpectrumAnalyserMEM" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBSpectrumAnalyserMEM \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIMEM\&.H>\fP
+.PP
+Inherits \fBQDialog\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSpectrumAnalyserMEM\fP (\fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "\fB~SBSpectrumAnalyserMEM\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBaccept\fP ()"
+.br
+.ti -1c
+.RI "void \fBreject\fP ()"
+.br
+.ti -1c
+.RI "void \fBreadDataFile\fP ()"
+.br
+.ti -1c
+.RI "void \fBmakeAnalysis\fP ()"
+.br
+.ti -1c
+.RI "void \fBscan4FPE\fP ()"
+.br
+.ti -1c
+.RI "void \fBresetLimits\fP ()"
+.br
+.ti -1c
+.RI "void \fBchangeFilterOrder\fP (int)"
+.br
+.ti -1c
+.RI "void \fBsetMEMAssumeEquiDistant\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBsetMEMFillMissingImag\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBsetMEMRemoveShifts\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBsetMEMRemoveTrends\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBsetMEMType\fP (int)"
+.br
+.ti -1c
+.RI "void \fBchangeNumOfSpPts\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBchangeFStart\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBchangeFFinis\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBchangePStart\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBchangePFinis\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBsetRangeFreq\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBchangeFPE_Mstart\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBchangeFPE_Mfinis\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBchangeLine2Check\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBsetScalingCPD2CPY\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBbrowseLimits\fP ()"
+.br
+.ti -1c
+.RI "void \fBcheckLine\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQWidget\fP * \fBwOptions\fP ()"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBwBrowseData\fP ()"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBwBrowseSpectrum\fP ()"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBwMEMCoeffList\fP ()"
+.br
+.ti -1c
+.RI "void \fBcollectData\fP ()"
+.br
+.ti -1c
+.RI "void \fBredrawDataPlot\fP ()"
+.br
+.ti -1c
+.RI "void \fBredrawSpectrumPlot\fP ()"
+.br
+.ti -1c
+.RI "void \fBredrawFPEPlot\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBMEM\fP * \fBMESA\fP"
+.br
+.ti -1c
+.RI "\fBSBMEM::MEMType\fP \fBMEMType\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBM\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBMmin\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBMmax\fP"
+.br
+.ti -1c
+.RI "QString \fBName\fP"
+.br
+.ti -1c
+.RI "bool \fBIsAutoCalc\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBNSp\fP"
+.br
+.ti -1c
+.RI "bool \fBIsPlotFreq\fP"
+.br
+.ti -1c
+.RI "double \fBFStart\fP"
+.br
+.ti -1c
+.RI "double \fBFFinis\fP"
+.br
+.ti -1c
+.RI "double \fBPStart\fP"
+.br
+.ti -1c
+.RI "double \fBPFinis\fP"
+.br
+.ti -1c
+.RI "double \fBFLine\fP"
+.br
+.ti -1c
+.RI "int \fBFPE_Mstart\fP"
+.br
+.ti -1c
+.RI "int \fBFPE_Mfinis\fP"
+.br
+.ti -1c
+.RI "bool \fBIsScanning\fP"
+.br
+.ti -1c
+.RI "bool \fBIsScanStop\fP"
+.br
+.ti -1c
+.RI "int \fBMinFPEOrder\fP"
+.br
+.ti -1c
+.RI "double \fBMinFPE\fP"
+.br
+.ti -1c
+.RI "bool \fBScaleCPD2CPY\fP"
+.br
+.ti -1c
+.RI "QString \fBStr\fP"
+.br
+.ti -1c
+.RI "QTabWidget * \fBTab\fP"
+.br
+.ti -1c
+.RI "QSpinBox * \fBsbMval\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlImportedFileName\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlNumOfPts\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlDT\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlShiftR\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlTrendR\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlShiftI\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlTrendI\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlSampleVar\fP"
+.br
+.ti -1c
+.RI "QRadioButton * \fBrbMEMType\fP [4]"
+.br
+.ti -1c
+.RI "QCheckBox * \fBcbAssumeEquiDistant\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBcbFillMissingImag\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBcbRmShifts\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBcbRmTrends\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleNumOfSpPts\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleFStart\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleFFinis\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBlePStart\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBlePFinis\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleFPEMstart\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleFPEMfinis\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleLine2Check\fP"
+.br
+.ti -1c
+.RI "QDoubleValidator * \fBdvFStart\fP"
+.br
+.ti -1c
+.RI "QDoubleValidator * \fBdvFFinis\fP"
+.br
+.ti -1c
+.RI "QDoubleValidator * \fBdvFLine\fP"
+.br
+.ti -1c
+.RI "QDoubleValidator * \fBdvPStart\fP"
+.br
+.ti -1c
+.RI "QDoubleValidator * \fBdvPFinis\fP"
+.br
+.ti -1c
+.RI "QIntValidator * \fBivMscan\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlMinFPE\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlMinFPEOrder\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBcbScaleCPD2CPY\fP"
+.br
+.ti -1c
+.RI "QPushButton * \fBResetLimits\fP"
+.br
+.ti -1c
+.RI "QPushButton * \fBGetData\fP"
+.br
+.ti -1c
+.RI "QPushButton * \fBAnalyse\fP"
+.br
+.ti -1c
+.RI "QPushButton * \fBOk\fP"
+.br
+.ti -1c
+.RI "QPushButton * \fBScan\fP"
+.br
+.ti -1c
+.RI "\fBSBPlotCarrier\fP * \fBPCData\fP"
+.br
+.ti -1c
+.RI "\fBSBPlot\fP * \fBPlotData\fP"
+.br
+.ti -1c
+.RI "\fBSBPlotCarrier\fP * \fBPCSpectrum\fP"
+.br
+.ti -1c
+.RI "\fBSBPlot\fP * \fBPlotSpectrum\fP"
+.br
+.ti -1c
+.RI "\fBSBPlotCarrier\fP * \fBPCFPE\fP"
+.br
+.ti -1c
+.RI "\fBSBPlot\fP * \fBPlotFPE\fP"
+.br
+.ti -1c
+.RI "QAccel * \fBaccel\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 78 of file SbIMEM\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBSpectrumAnalyserMEM::SBSpectrumAnalyserMEM (\fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 97 of file SbIMEM\&.C'\&.
+.PP
+References accel, accept(), Analyse, changeFilterOrder(), checkLine(), FFinis, FLine, FPE_Mfinis, FPE_Mstart, FStart, GetData, IsAutoCalc, IsPlotFreq, IsScanning, IsScanStop, M, makeAnalysis(), MEMType, MESA, MinFPE, MinFPEOrder, Mmax, Mmin, Name, NSp, Ok, PFinis, PStart, readDataFile(), resetLimits(), ResetLimits, sbMval, ScaleCPD2CPY, Scan, scan4FPE(), SBMEM::setType(), Str, Tab, SBMEM::Type_Recursion, wBrowseData(), wBrowseSpectrum(), wMEMCoeffList(), and wOptions()\&.
+.SS "SBSpectrumAnalyserMEM::~SBSpectrumAnalyserMEM ()"
+.PP
+Definition at line 200 of file SbIMEM\&.C'\&.
+.PP
+References MESA, PCData, PCFPE, PCSpectrum, PlotData, PlotFPE, and PlotSpectrum\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBSpectrumAnalyserMEM::accept ()\fC [protected, slot]\fP"
+.PP
+Definition at line 647 of file SbIMEM\&.C'\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM()\&.
+.SS "void SBSpectrumAnalyserMEM::browseLimits ()\fC [protected, slot]\fP"
+.PP
+Definition at line 904 of file SbIMEM\&.C'\&.
+.PP
+References FFinis, FLine, FStart, leFFinis, leFStart, leLine2Check, lePFinis, lePStart, PFinis, PStart, and Str\&.
+.PP
+Referenced by resetLimits(), and setScalingCPD2CPY()\&.
+.SS "void SBSpectrumAnalyserMEM::changeFFinis (const QString &Str_)\fC [protected, slot]\fP"
+.PP
+Definition at line 938 of file SbIMEM\&.C'\&.
+.PP
+References FFinis\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBSpectrumAnalyserMEM::changeFilterOrder (intM_)\fC [protected, slot]\fP"
+.PP
+Definition at line 913 of file SbIMEM\&.C'\&.
+.PP
+References IsAutoCalc, M, and makeAnalysis()\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM()\&.
+.SS "void SBSpectrumAnalyserMEM::changeFPE_Mfinis (const QString &Str_)\fC [protected, slot]\fP"
+.PP
+Definition at line 983 of file SbIMEM\&.C'\&.
+.PP
+References FPE_Mfinis\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBSpectrumAnalyserMEM::changeFPE_Mstart (const QString &Str_)\fC [protected, slot]\fP"
+.PP
+Definition at line 974 of file SbIMEM\&.C'\&.
+.PP
+References FPE_Mstart\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBSpectrumAnalyserMEM::changeFStart (const QString &Str_)\fC [protected, slot]\fP"
+.PP
+Definition at line 929 of file SbIMEM\&.C'\&.
+.PP
+References FStart\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBSpectrumAnalyserMEM::changeLine2Check (const QString &Str_)\fC [protected, slot]\fP"
+.PP
+Definition at line 947 of file SbIMEM\&.C'\&.
+.PP
+References FLine\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBSpectrumAnalyserMEM::changeNumOfSpPts (const QString &Str_)\fC [protected, slot]\fP"
+.PP
+Definition at line 920 of file SbIMEM\&.C'\&.
+.PP
+References NSp\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBSpectrumAnalyserMEM::changePFinis (const QString &Str_)\fC [protected, slot]\fP"
+.PP
+Definition at line 965 of file SbIMEM\&.C'\&.
+.PP
+References PFinis\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBSpectrumAnalyserMEM::changePStart (const QString &Str_)\fC [protected, slot]\fP"
+.PP
+Definition at line 956 of file SbIMEM\&.C'\&.
+.PP
+References PStart\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBSpectrumAnalyserMEM::checkLine ()\fC [protected, slot]\fP"
+.PP
+Definition at line 1167 of file SbIMEM\&.C'\&.
+.PP
+References SBMatrix::at(), ClassName(), SBPlotBranch::data(), SBLog::DATA, SBLog::DBG, SBPlotCarrier::findBranch(), FLine, SBLog::INF, SBMEM::isReady(), Log, SBMEM::m(), MESA, SBMEM::n(), SBPlotBranch::nR(), PCSpectrum, SBMEM::psd(), SBMEM::sampleVar(), ScaleCPD2CPY, Str, and SBLog::write()\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM()\&.
+.SS "virtual QString SBSpectrumAnalyserMEM::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 84 of file SbIMEM\&.H'\&.
+.PP
+Referenced by checkLine(), makeAnalysis(), readDataFile(), and scan4FPE()\&.
+.SS "void SBSpectrumAnalyserMEM::collectData ()\fC [private]\fP"
+.PP
+Definition at line 821 of file SbIMEM\&.C'\&.
+.PP
+Referenced by makeAnalysis()\&.
+.SS "void SBSpectrumAnalyserMEM::makeAnalysis ()\fC [protected, slot]\fP"
+.PP
+Definition at line 826 of file SbIMEM\&.C'\&.
+.PP
+References ClassName(), collectData(), SBLog::DATA, SBMEM::fpe(), SBLog::INF, SBMEM::isOK(), SBMEM::isReady(), lMinFPE, lMinFPEOrder, Log, M, SBMEM::m(), MESA, MinFPE, MinFPEOrder, Name, SBMEM::prepareSpectrum(), redrawFPEPlot(), redrawSpectrumPlot(), SBMEM::setM(), Str, and SBLog::write()\&.
+.PP
+Referenced by changeFilterOrder(), readDataFile(), SBSpectrumAnalyserMEM(), and scan4FPE()\&.
+.SS "void SBSpectrumAnalyserMEM::readDataFile ()\fC [protected, slot]\fP"
+.PP
+Definition at line 762 of file SbIMEM\&.C'\&.
+.PP
+References ClassName(), SBLog::DATA, SBMEM::dt(), dvFFinis, dvFLine, dvFStart, FFinis, FStart, SBLog::INF, SBMEM::isOK(), ivMscan, lDT, leFPEMfinis, leFPEMstart, lImportedFileName, lNumOfPts, Log, lSampleVar, lShiftI, lShiftR, lTrendI, lTrendR, makeAnalysis(), MESA, MinFPE, MinFPEOrder, Mmax, Mmin, SBMEM::n(), Name, SBSetUp::path2TimeSeries(), SBMEM::readDataFile(), redrawDataPlot(), resetLimits(), SBMEM::sampleVar(), sbMval, SetUp, SBMEM::shiftI(), SBMEM::shiftR(), Str, SBMEM::trendI(), SBMEM::trendR(), SBMEM::validM(), and SBLog::write()\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM()\&.
+.SS "void SBSpectrumAnalyserMEM::redrawDataPlot ()\fC [private]\fP"
+.PP
+Definition at line 992 of file SbIMEM\&.C'\&.
+.PP
+References SBVector::at(), SBPlotCarrier::branches(), SBPlotCarrier::createBranch(), SBPlotCarrier::DA_IGN, SBPlotBranch::data(), SBPlot::dataChanged(), SBMEM::isOK(), MESA, SBMEM::n(), Name, SBSetUp::path2TimeSeries(), PCData, PlotData, SBMatrix::set(), SBPlotCarrier::setAbsFile4SaveBaseName(), SetUp, SBMEM::x(), SBMEM::z_i(), and SBMEM::z_r()\&.
+.PP
+Referenced by readDataFile()\&.
+.SS "void SBSpectrumAnalyserMEM::redrawFPEPlot ()\fC [private]\fP"
+.PP
+Definition at line 1131 of file SbIMEM\&.C'\&.
+.PP
+References SBPlotCarrier::branches(), SBPlotCarrier::createBranch(), SBPlotCarrier::DA_IGN, SBPlotBranch::data(), SBPlot::dataChanged(), SBMEM::fpe(), SBMEM::isReady(), SBMEM::m(), MESA, Mmax, Name, SBSetUp::path2TimeSeries(), PCFPE, PlotFPE, SBMatrix::set(), SBPlotCarrier::setAbsFile4SaveBaseName(), SBPlotBranch::setDataAttr(), and SetUp\&.
+.PP
+Referenced by makeAnalysis()\&.
+.SS "void SBSpectrumAnalyserMEM::redrawSpectrumPlot ()\fC [private]\fP"
+.PP
+Definition at line 1028 of file SbIMEM\&.C'\&.
+.PP
+References SBMatrix::at(), SBPlotCarrier::branches(), SBPlotCarrier::columnNames(), SBPlotCarrier::createBranch(), SBPlotCarrier::DA_BAR, SBPlotCarrier::DA_IGN, SBPlot::dataChanged(), FFinis, FLine, SBMEM::fN(), FStart, IsPlotFreq, SBMEM::isReady(), MESA, Name, NSp, SBSetUp::path2TimeSeries(), PCSpectrum, PFinis, PlotSpectrum, SBMEM::psd(), PStart, ScaleCPD2CPY, SBMatrix::set(), SBPlotCarrier::setAbsFile4SaveBaseName(), and SetUp\&.
+.PP
+Referenced by makeAnalysis(), setRangeFreq(), and setScalingCPD2CPY()\&.
+.SS "void SBSpectrumAnalyserMEM::reject ()\fC [protected, slot]\fP"
+.PP
+Definition at line 653 of file SbIMEM\&.C'\&.
+.SS "void SBSpectrumAnalyserMEM::resetLimits ()\fC [protected, slot]\fP"
+.PP
+Definition at line 889 of file SbIMEM\&.C'\&.
+.PP
+References browseLimits(), FFinis, SBMEM::fN(), FStart, SBMEM::interval(), MESA, PFinis, PStart, and ScaleCPD2CPY\&.
+.PP
+Referenced by readDataFile(), and SBSpectrumAnalyserMEM()\&.
+.SS "void SBSpectrumAnalyserMEM::scan4FPE ()\fC [protected, slot]\fP"
+.PP
+Definition at line 858 of file SbIMEM\&.C'\&.
+.PP
+References ClassName(), SBLog::DATA, FPE_Mfinis, FPE_Mstart, SBLog::INF, SBMEM::isOK(), IsScanning, IsScanStop, Log, M, makeAnalysis(), MESA, Name, Ok, sbMval, Scan, and SBLog::write()\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM()\&.
+.SS "void SBSpectrumAnalyserMEM::setMEMAssumeEquiDistant (boolIs_)\fC [protected, slot]\fP"
+.PP
+Definition at line 659 of file SbIMEM\&.C'\&.
+.PP
+References SBAttributed::addAttr(), SBAttributed::delAttr(), SBMEM::ignoreNotEquidistant, and MESA\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBSpectrumAnalyserMEM::setMEMFillMissingImag (boolIs_)\fC [protected, slot]\fP"
+.PP
+Definition at line 670 of file SbIMEM\&.C'\&.
+.PP
+References SBAttributed::addAttr(), SBAttributed::delAttr(), SBMEM::fillMissingImag, and MESA\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBSpectrumAnalyserMEM::setMEMRemoveShifts (boolIs_)\fC [protected, slot]\fP"
+.PP
+Definition at line 681 of file SbIMEM\&.C'\&.
+.PP
+References SBAttributed::addAttr(), SBAttributed::delAttr(), MESA, and SBMEM::removeShifts\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBSpectrumAnalyserMEM::setMEMRemoveTrends (boolIs_)\fC [protected, slot]\fP"
+.PP
+Definition at line 692 of file SbIMEM\&.C'\&.
+.PP
+References SBAttributed::addAttr(), SBAttributed::delAttr(), MESA, and SBMEM::removeTrends\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBSpectrumAnalyserMEM::setMEMType (intid_)\fC [protected, slot]\fP"
+.PP
+Definition at line 712 of file SbIMEM\&.C'\&.
+.PP
+References ivMscan, leFPEMfinis, MEMType, MESA, MinFPE, MinFPEOrder, Mmax, sbMval, SBMEM::setType(), Str, and SBMEM::validM()\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBSpectrumAnalyserMEM::setRangeFreq (boolIs_)\fC [protected, slot]\fP"
+.PP
+Definition at line 703 of file SbIMEM\&.C'\&.
+.PP
+References IsPlotFreq, and redrawSpectrumPlot()\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBSpectrumAnalyserMEM::setScalingCPD2CPY (boolIs_)\fC [protected, slot]\fP"
+.PP
+Definition at line 728 of file SbIMEM\&.C'\&.
+.PP
+References browseLimits(), dvFFinis, dvFLine, dvFStart, FFinis, FLine, SBMEM::fN(), FStart, MESA, redrawSpectrumPlot(), and ScaleCPD2CPY\&.
+.PP
+Referenced by wOptions()\&.
+.SS "\fBQWidget\fP * SBSpectrumAnalyserMEM::wBrowseData ()\fC [private]\fP"
+.PP
+Definition at line 559 of file SbIMEM\&.C'\&.
+.PP
+References SBPlotCarrier::branches(), SBPlotCarrier::columnNames(), SBPlotCarrier::createBranch(), SBPlotCarrier::DA_IGN, Name, SBSetUp::path2TimeSeries(), PCData, PlotData, SBPlotCarrier::setAbsFile4SaveBaseName(), and SetUp\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM()\&.
+.SS "\fBQWidget\fP * SBSpectrumAnalyserMEM::wBrowseSpectrum ()\fC [private]\fP"
+.PP
+Definition at line 587 of file SbIMEM\&.C'\&.
+.PP
+References SBPlotCarrier::branches(), SBPlotCarrier::columnNames(), SBPlotCarrier::createBranch(), SBPlotCarrier::DA_IGN, Name, SBSetUp::path2TimeSeries(), PCSpectrum, PlotSpectrum, SBPlot::PM_LINES, SBPlot::PM_WO_BRANCH_NAMES, SBPlot::PM_WO_DOTS, SBPlotCarrier::setAbsFile4SaveBaseName(), and SetUp\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM()\&.
+.SS "\fBQWidget\fP * SBSpectrumAnalyserMEM::wMEMCoeffList ()\fC [private]\fP"
+.PP
+Definition at line 621 of file SbIMEM\&.C'\&.
+.PP
+References SBPlotCarrier::branches(), SBPlotCarrier::columnNames(), SBPlotCarrier::createBranch(), SBPlotCarrier::DA_IGN, Name, SBSetUp::path2TimeSeries(), PCFPE, PlotFPE, SBPlot::PM_WO_BRANCH_NAMES, SBPlotCarrier::setAbsFile4SaveBaseName(), and SetUp\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM()\&.
+.SS "\fBQWidget\fP * SBSpectrumAnalyserMEM::wOptions ()\fC [private]\fP"
+.PP
+Definition at line 240 of file SbIMEM\&.C'\&.
+.PP
+References cbAssumeEquiDistant, cbFillMissingImag, cbRmShifts, cbRmTrends, cbScaleCPD2CPY, changeFFinis(), changeFPE_Mfinis(), changeFPE_Mstart(), changeFStart(), changeLine2Check(), changeNumOfSpPts(), changePFinis(), changePStart(), SBMEM::dt(), dvFFinis, dvFLine, dvFStart, dvPFinis, dvPStart, FFinis, FLine, FStart, ivMscan, lDT, leFFinis, leFPEMfinis, leFPEMstart, leFStart, leLine2Check, leNumOfSpPts, lePFinis, lePStart, lImportedFileName, lMinFPE, lMinFPEOrder, lNumOfPts, lSampleVar, lShiftI, lShiftR, lTrendI, lTrendR, MESA, MinFPE, MinFPEOrder, Mmax, Mmin, SBMEM::n(), NSp, PFinis, PStart, rbMEMType, SBMEM::sampleVar(), ScaleCPD2CPY, setMEMAssumeEquiDistant(), setMEMFillMissingImag(), setMEMRemoveShifts(), setMEMRemoveTrends(), setMEMType(), setRangeFreq(), setScalingCPD2CPY(), SBMEM::shiftI(), SBMEM::shiftR(), Str, SBMEM::trendI(), SBMEM::trendR(), and SBMEM::type()\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QAccel* \fBSBSpectrumAnalyserMEM::accel\fP\fC [private]\fP"
+.PP
+Definition at line 218 of file SbIMEM\&.H'\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM()\&.
+.SS "QPushButton* \fBSBSpectrumAnalyserMEM::Analyse\fP\fC [private]\fP"
+.PP
+Definition at line 189 of file SbIMEM\&.H'\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM()\&.
+.SS "QCheckBox* \fBSBSpectrumAnalyserMEM::cbAssumeEquiDistant\fP\fC [private]\fP"
+.PP
+Definition at line 159 of file SbIMEM\&.H'\&.
+.PP
+Referenced by wOptions()\&.
+.SS "QCheckBox* \fBSBSpectrumAnalyserMEM::cbFillMissingImag\fP\fC [private]\fP"
+.PP
+Definition at line 160 of file SbIMEM\&.H'\&.
+.PP
+Referenced by wOptions()\&.
+.SS "QCheckBox* \fBSBSpectrumAnalyserMEM::cbRmShifts\fP\fC [private]\fP"
+.PP
+Definition at line 161 of file SbIMEM\&.H'\&.
+.PP
+Referenced by wOptions()\&.
+.SS "QCheckBox* \fBSBSpectrumAnalyserMEM::cbRmTrends\fP\fC [private]\fP"
+.PP
+Definition at line 162 of file SbIMEM\&.H'\&.
+.PP
+Referenced by wOptions()\&.
+.SS "QCheckBox* \fBSBSpectrumAnalyserMEM::cbScaleCPD2CPY\fP\fC [private]\fP"
+.PP
+Definition at line 183 of file SbIMEM\&.H'\&.
+.PP
+Referenced by wOptions()\&.
+.SS "QDoubleValidator* \fBSBSpectrumAnalyserMEM::dvFFinis\fP\fC [private]\fP"
+.PP
+Definition at line 175 of file SbIMEM\&.H'\&.
+.PP
+Referenced by readDataFile(), setScalingCPD2CPY(), and wOptions()\&.
+.SS "QDoubleValidator* \fBSBSpectrumAnalyserMEM::dvFLine\fP\fC [private]\fP"
+.PP
+Definition at line 176 of file SbIMEM\&.H'\&.
+.PP
+Referenced by readDataFile(), setScalingCPD2CPY(), and wOptions()\&.
+.SS "QDoubleValidator* \fBSBSpectrumAnalyserMEM::dvFStart\fP\fC [private]\fP"
+.PP
+Definition at line 174 of file SbIMEM\&.H'\&.
+.PP
+Referenced by readDataFile(), setScalingCPD2CPY(), and wOptions()\&.
+.SS "QDoubleValidator* \fBSBSpectrumAnalyserMEM::dvPFinis\fP\fC [private]\fP"
+.PP
+Definition at line 178 of file SbIMEM\&.H'\&.
+.PP
+Referenced by wOptions()\&.
+.SS "QDoubleValidator* \fBSBSpectrumAnalyserMEM::dvPStart\fP\fC [private]\fP"
+.PP
+Definition at line 177 of file SbIMEM\&.H'\&.
+.PP
+Referenced by wOptions()\&.
+.SS "double \fBSBSpectrumAnalyserMEM::FFinis\fP\fC [private]\fP"
+.PP
+Definition at line 128 of file SbIMEM\&.H'\&.
+.PP
+Referenced by browseLimits(), changeFFinis(), readDataFile(), redrawSpectrumPlot(), resetLimits(), SBSpectrumAnalyserMEM(), setScalingCPD2CPY(), and wOptions()\&.
+.SS "double \fBSBSpectrumAnalyserMEM::FLine\fP\fC [private]\fP"
+.PP
+Definition at line 131 of file SbIMEM\&.H'\&.
+.PP
+Referenced by browseLimits(), changeLine2Check(), checkLine(), redrawSpectrumPlot(), SBSpectrumAnalyserMEM(), setScalingCPD2CPY(), and wOptions()\&.
+.SS "int \fBSBSpectrumAnalyserMEM::FPE_Mfinis\fP\fC [private]\fP"
+.PP
+Definition at line 133 of file SbIMEM\&.H'\&.
+.PP
+Referenced by changeFPE_Mfinis(), SBSpectrumAnalyserMEM(), and scan4FPE()\&.
+.SS "int \fBSBSpectrumAnalyserMEM::FPE_Mstart\fP\fC [private]\fP"
+.PP
+Definition at line 132 of file SbIMEM\&.H'\&.
+.PP
+Referenced by changeFPE_Mstart(), SBSpectrumAnalyserMEM(), and scan4FPE()\&.
+.SS "double \fBSBSpectrumAnalyserMEM::FStart\fP\fC [private]\fP"
+.PP
+Definition at line 127 of file SbIMEM\&.H'\&.
+.PP
+Referenced by browseLimits(), changeFStart(), readDataFile(), redrawSpectrumPlot(), resetLimits(), SBSpectrumAnalyserMEM(), setScalingCPD2CPY(), and wOptions()\&.
+.SS "QPushButton* \fBSBSpectrumAnalyserMEM::GetData\fP\fC [private]\fP"
+.PP
+Definition at line 188 of file SbIMEM\&.H'\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM()\&.
+.SS "bool \fBSBSpectrumAnalyserMEM::IsAutoCalc\fP\fC [private]\fP"
+.PP
+Definition at line 124 of file SbIMEM\&.H'\&.
+.PP
+Referenced by changeFilterOrder(), and SBSpectrumAnalyserMEM()\&.
+.SS "bool \fBSBSpectrumAnalyserMEM::IsPlotFreq\fP\fC [private]\fP"
+.PP
+Definition at line 126 of file SbIMEM\&.H'\&.
+.PP
+Referenced by redrawSpectrumPlot(), SBSpectrumAnalyserMEM(), and setRangeFreq()\&.
+.SS "bool \fBSBSpectrumAnalyserMEM::IsScanning\fP\fC [private]\fP"
+.PP
+Definition at line 134 of file SbIMEM\&.H'\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM(), and scan4FPE()\&.
+.SS "bool \fBSBSpectrumAnalyserMEM::IsScanStop\fP\fC [private]\fP"
+.PP
+Definition at line 135 of file SbIMEM\&.H'\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM(), and scan4FPE()\&.
+.SS "QIntValidator* \fBSBSpectrumAnalyserMEM::ivMscan\fP\fC [private]\fP"
+.PP
+Definition at line 179 of file SbIMEM\&.H'\&.
+.PP
+Referenced by readDataFile(), setMEMType(), and wOptions()\&.
+.SS "QLabel* \fBSBSpectrumAnalyserMEM::lDT\fP\fC [private]\fP"
+.PP
+Definition at line 151 of file SbIMEM\&.H'\&.
+.PP
+Referenced by readDataFile(), and wOptions()\&.
+.SS "QLineEdit* \fBSBSpectrumAnalyserMEM::leFFinis\fP\fC [private]\fP"
+.PP
+Definition at line 166 of file SbIMEM\&.H'\&.
+.PP
+Referenced by browseLimits(), and wOptions()\&.
+.SS "QLineEdit* \fBSBSpectrumAnalyserMEM::leFPEMfinis\fP\fC [private]\fP"
+.PP
+Definition at line 170 of file SbIMEM\&.H'\&.
+.PP
+Referenced by readDataFile(), setMEMType(), and wOptions()\&.
+.SS "QLineEdit* \fBSBSpectrumAnalyserMEM::leFPEMstart\fP\fC [private]\fP"
+.PP
+Definition at line 169 of file SbIMEM\&.H'\&.
+.PP
+Referenced by readDataFile(), and wOptions()\&.
+.SS "QLineEdit* \fBSBSpectrumAnalyserMEM::leFStart\fP\fC [private]\fP"
+.PP
+Definition at line 165 of file SbIMEM\&.H'\&.
+.PP
+Referenced by browseLimits(), and wOptions()\&.
+.SS "QLineEdit* \fBSBSpectrumAnalyserMEM::leLine2Check\fP\fC [private]\fP"
+.PP
+Definition at line 171 of file SbIMEM\&.H'\&.
+.PP
+Referenced by browseLimits(), and wOptions()\&.
+.SS "QLineEdit* \fBSBSpectrumAnalyserMEM::leNumOfSpPts\fP\fC [private]\fP"
+.PP
+Definition at line 163 of file SbIMEM\&.H'\&.
+.PP
+Referenced by wOptions()\&.
+.SS "QLineEdit* \fBSBSpectrumAnalyserMEM::lePFinis\fP\fC [private]\fP"
+.PP
+Definition at line 168 of file SbIMEM\&.H'\&.
+.PP
+Referenced by browseLimits(), and wOptions()\&.
+.SS "QLineEdit* \fBSBSpectrumAnalyserMEM::lePStart\fP\fC [private]\fP"
+.PP
+Definition at line 167 of file SbIMEM\&.H'\&.
+.PP
+Referenced by browseLimits(), and wOptions()\&.
+.SS "QLabel* \fBSBSpectrumAnalyserMEM::lImportedFileName\fP\fC [private]\fP"
+.PP
+Definition at line 149 of file SbIMEM\&.H'\&.
+.PP
+Referenced by readDataFile(), and wOptions()\&.
+.SS "QLabel* \fBSBSpectrumAnalyserMEM::lMinFPE\fP\fC [private]\fP"
+.PP
+Definition at line 181 of file SbIMEM\&.H'\&.
+.PP
+Referenced by makeAnalysis(), and wOptions()\&.
+.SS "QLabel* \fBSBSpectrumAnalyserMEM::lMinFPEOrder\fP\fC [private]\fP"
+.PP
+Definition at line 182 of file SbIMEM\&.H'\&.
+.PP
+Referenced by makeAnalysis(), and wOptions()\&.
+.SS "QLabel* \fBSBSpectrumAnalyserMEM::lNumOfPts\fP\fC [private]\fP"
+.PP
+Definition at line 150 of file SbIMEM\&.H'\&.
+.PP
+Referenced by readDataFile(), and wOptions()\&.
+.SS "QLabel* \fBSBSpectrumAnalyserMEM::lSampleVar\fP\fC [private]\fP"
+.PP
+Definition at line 156 of file SbIMEM\&.H'\&.
+.PP
+Referenced by readDataFile(), and wOptions()\&.
+.SS "QLabel* \fBSBSpectrumAnalyserMEM::lShiftI\fP\fC [private]\fP"
+.PP
+Definition at line 154 of file SbIMEM\&.H'\&.
+.PP
+Referenced by readDataFile(), and wOptions()\&.
+.SS "QLabel* \fBSBSpectrumAnalyserMEM::lShiftR\fP\fC [private]\fP"
+.PP
+Definition at line 152 of file SbIMEM\&.H'\&.
+.PP
+Referenced by readDataFile(), and wOptions()\&.
+.SS "QLabel* \fBSBSpectrumAnalyserMEM::lTrendI\fP\fC [private]\fP"
+.PP
+Definition at line 155 of file SbIMEM\&.H'\&.
+.PP
+Referenced by readDataFile(), and wOptions()\&.
+.SS "QLabel* \fBSBSpectrumAnalyserMEM::lTrendR\fP\fC [private]\fP"
+.PP
+Definition at line 153 of file SbIMEM\&.H'\&.
+.PP
+Referenced by readDataFile(), and wOptions()\&.
+.SS "unsigned int \fBSBSpectrumAnalyserMEM::M\fP\fC [private]\fP"
+.PP
+Definition at line 120 of file SbIMEM\&.H'\&.
+.PP
+Referenced by changeFilterOrder(), makeAnalysis(), SBSpectrumAnalyserMEM(), and scan4FPE()\&.
+.SS "\fBSBMEM::MEMType\fP \fBSBSpectrumAnalyserMEM::MEMType\fP\fC [private]\fP"
+.PP
+Definition at line 119 of file SbIMEM\&.H'\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM(), and setMEMType()\&.
+.SS "\fBSBMEM\fP* \fBSBSpectrumAnalyserMEM::MESA\fP\fC [private]\fP"
+.PP
+Definition at line 118 of file SbIMEM\&.H'\&.
+.PP
+Referenced by checkLine(), makeAnalysis(), readDataFile(), redrawDataPlot(), redrawFPEPlot(), redrawSpectrumPlot(), resetLimits(), SBSpectrumAnalyserMEM(), scan4FPE(), setMEMAssumeEquiDistant(), setMEMFillMissingImag(), setMEMRemoveShifts(), setMEMRemoveTrends(), setMEMType(), setScalingCPD2CPY(), wOptions(), and ~SBSpectrumAnalyserMEM()\&.
+.SS "double \fBSBSpectrumAnalyserMEM::MinFPE\fP\fC [private]\fP"
+.PP
+Definition at line 137 of file SbIMEM\&.H'\&.
+.PP
+Referenced by makeAnalysis(), readDataFile(), SBSpectrumAnalyserMEM(), setMEMType(), and wOptions()\&.
+.SS "int \fBSBSpectrumAnalyserMEM::MinFPEOrder\fP\fC [private]\fP"
+.PP
+Definition at line 136 of file SbIMEM\&.H'\&.
+.PP
+Referenced by makeAnalysis(), readDataFile(), SBSpectrumAnalyserMEM(), setMEMType(), and wOptions()\&.
+.SS "unsigned int \fBSBSpectrumAnalyserMEM::Mmax\fP\fC [private]\fP"
+.PP
+Definition at line 122 of file SbIMEM\&.H'\&.
+.PP
+Referenced by readDataFile(), redrawFPEPlot(), SBSpectrumAnalyserMEM(), setMEMType(), and wOptions()\&.
+.SS "unsigned int \fBSBSpectrumAnalyserMEM::Mmin\fP\fC [private]\fP"
+.PP
+Definition at line 121 of file SbIMEM\&.H'\&.
+.PP
+Referenced by readDataFile(), SBSpectrumAnalyserMEM(), and wOptions()\&.
+.SS "QString \fBSBSpectrumAnalyserMEM::Name\fP\fC [private]\fP"
+.PP
+Definition at line 123 of file SbIMEM\&.H'\&.
+.PP
+Referenced by makeAnalysis(), readDataFile(), redrawDataPlot(), redrawFPEPlot(), redrawSpectrumPlot(), SBSpectrumAnalyserMEM(), scan4FPE(), wBrowseData(), wBrowseSpectrum(), and wMEMCoeffList()\&.
+.SS "unsigned int \fBSBSpectrumAnalyserMEM::NSp\fP\fC [private]\fP"
+.PP
+Definition at line 125 of file SbIMEM\&.H'\&.
+.PP
+Referenced by changeNumOfSpPts(), redrawSpectrumPlot(), SBSpectrumAnalyserMEM(), and wOptions()\&.
+.SS "QPushButton* \fBSBSpectrumAnalyserMEM::Ok\fP\fC [private]\fP"
+.PP
+Definition at line 190 of file SbIMEM\&.H'\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM(), and scan4FPE()\&.
+.SS "\fBSBPlotCarrier\fP* \fBSBSpectrumAnalyserMEM::PCData\fP\fC [private]\fP"
+.PP
+Definition at line 203 of file SbIMEM\&.H'\&.
+.PP
+Referenced by redrawDataPlot(), wBrowseData(), and ~SBSpectrumAnalyserMEM()\&.
+.SS "\fBSBPlotCarrier\fP* \fBSBSpectrumAnalyserMEM::PCFPE\fP\fC [private]\fP"
+.PP
+Definition at line 213 of file SbIMEM\&.H'\&.
+.PP
+Referenced by redrawFPEPlot(), wMEMCoeffList(), and ~SBSpectrumAnalyserMEM()\&.
+.SS "\fBSBPlotCarrier\fP* \fBSBSpectrumAnalyserMEM::PCSpectrum\fP\fC [private]\fP"
+.PP
+Definition at line 208 of file SbIMEM\&.H'\&.
+.PP
+Referenced by checkLine(), redrawSpectrumPlot(), wBrowseSpectrum(), and ~SBSpectrumAnalyserMEM()\&.
+.SS "double \fBSBSpectrumAnalyserMEM::PFinis\fP\fC [private]\fP"
+.PP
+Definition at line 130 of file SbIMEM\&.H'\&.
+.PP
+Referenced by browseLimits(), changePFinis(), redrawSpectrumPlot(), resetLimits(), SBSpectrumAnalyserMEM(), and wOptions()\&.
+.SS "\fBSBPlot\fP* \fBSBSpectrumAnalyserMEM::PlotData\fP\fC [private]\fP"
+.PP
+Definition at line 204 of file SbIMEM\&.H'\&.
+.PP
+Referenced by redrawDataPlot(), wBrowseData(), and ~SBSpectrumAnalyserMEM()\&.
+.SS "\fBSBPlot\fP* \fBSBSpectrumAnalyserMEM::PlotFPE\fP\fC [private]\fP"
+.PP
+Definition at line 214 of file SbIMEM\&.H'\&.
+.PP
+Referenced by redrawFPEPlot(), wMEMCoeffList(), and ~SBSpectrumAnalyserMEM()\&.
+.SS "\fBSBPlot\fP* \fBSBSpectrumAnalyserMEM::PlotSpectrum\fP\fC [private]\fP"
+.PP
+Definition at line 209 of file SbIMEM\&.H'\&.
+.PP
+Referenced by redrawSpectrumPlot(), wBrowseSpectrum(), and ~SBSpectrumAnalyserMEM()\&.
+.SS "double \fBSBSpectrumAnalyserMEM::PStart\fP\fC [private]\fP"
+.PP
+Definition at line 129 of file SbIMEM\&.H'\&.
+.PP
+Referenced by browseLimits(), changePStart(), redrawSpectrumPlot(), resetLimits(), SBSpectrumAnalyserMEM(), and wOptions()\&.
+.SS "QRadioButton* \fBSBSpectrumAnalyserMEM::rbMEMType\fP[4]\fC [private]\fP"
+.PP
+Definition at line 158 of file SbIMEM\&.H'\&.
+.PP
+Referenced by wOptions()\&.
+.SS "QPushButton* \fBSBSpectrumAnalyserMEM::ResetLimits\fP\fC [private]\fP"
+.PP
+Definition at line 187 of file SbIMEM\&.H'\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM()\&.
+.SS "QSpinBox* \fBSBSpectrumAnalyserMEM::sbMval\fP\fC [private]\fP"
+.PP
+Definition at line 145 of file SbIMEM\&.H'\&.
+.PP
+Referenced by readDataFile(), SBSpectrumAnalyserMEM(), scan4FPE(), and setMEMType()\&.
+.SS "bool \fBSBSpectrumAnalyserMEM::ScaleCPD2CPY\fP\fC [private]\fP"
+.PP
+Definition at line 138 of file SbIMEM\&.H'\&.
+.PP
+Referenced by checkLine(), redrawSpectrumPlot(), resetLimits(), SBSpectrumAnalyserMEM(), setScalingCPD2CPY(), and wOptions()\&.
+.SS "QPushButton* \fBSBSpectrumAnalyserMEM::Scan\fP\fC [private]\fP"
+.PP
+Definition at line 191 of file SbIMEM\&.H'\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM(), and scan4FPE()\&.
+.SS "QString \fBSBSpectrumAnalyserMEM::Str\fP\fC [private]\fP"
+.PP
+Definition at line 141 of file SbIMEM\&.H'\&.
+.PP
+Referenced by browseLimits(), checkLine(), makeAnalysis(), readDataFile(), SBSpectrumAnalyserMEM(), setMEMType(), and wOptions()\&.
+.SS "QTabWidget* \fBSBSpectrumAnalyserMEM::Tab\fP\fC [private]\fP"
+.PP
+Definition at line 144 of file SbIMEM\&.H'\&.
+.PP
+Referenced by SBSpectrumAnalyserMEM()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

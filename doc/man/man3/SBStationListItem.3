@@ -1,0 +1,105 @@
+.TH "SBStationListItem" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBStationListItem \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIStuffStation\&.H>\fP
+.PP
+Inherits \fBQListViewItem\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBStationListItem\fP (\fBQListView\fP *, \fBSBStation\fP *)"
+.br
+.ti -1c
+.RI "\fB~SBStationListItem\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual QString \fBtext\fP (int) const "
+.br
+.ti -1c
+.RI "virtual QString \fBkey\fP (int, bool) const "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBStation\fP * \fBStation\fP"
+.br
+.ti -1c
+.RI "bool \fBisFaked\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSBSiteEditor\fP"
+.br
+.ti -1c
+.RI "class \fBSBStationEditor\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 59 of file SbIStuffStation\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBStationListItem::SBStationListItem (\fBQListView\fP *parent, \fBSBStation\fP *Station_)"
+.PP
+Definition at line 62 of file SbIStuffStation\&.C'\&.
+.PP
+References isFaked, and Station\&.
+.SS "SBStationListItem::~SBStationListItem ()"
+.PP
+Definition at line 74 of file SbIStuffStation\&.C'\&.
+.PP
+References isFaked, and Station\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBStationListItem::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 67 of file SbIStuffStation\&.H'\&.
+.SS "QString SBStationListItem::key (intcol, bool) const\fC [virtual]\fP"
+.PP
+Definition at line 117 of file SbIStuffStation\&.C'\&.
+.PP
+References SBStation::CDP(), SBStation::charID(), SBStation::domeMinor(), SBStation::hasOwnOLoad, SBAttributed::isAttr(), SBStation::mountType(), SBNamed::name(), SBStation::pointType(), SBStation::Pt_Antenna, SBSite::r(), SBStation::r_first(), SBStation::refPt(), SBStation::site(), Station, SBStation::tech(), TmpString, SBStation::v(), SBSite::v(), and v3Zero\&.
+.SS "QString SBStationListItem::text (intcol) const\fC [virtual]\fP"
+.PP
+Definition at line 80 of file SbIStuffStation\&.C'\&.
+.PP
+References SBStation::CDP(), SBStation::charID(), SBStation::domeMinor(), SBStation::hasOwnOLoad, SBAttributed::isAttr(), SBStation::mountType(), SBNamed::name(), SBStation::pointType(), SBStation::Pt_Antenna, SBSite::r(), SBStation::r_first(), SBStation::refPt(), SBStation::site(), Station, SBStation::tech(), SBSolutionName::techAbbrev(), TmpString, SBStation::v(), SBSite::v(), and v3Zero\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBSBSiteEditor\fP\fC [friend]\fP"
+.PP
+Definition at line 72 of file SbIStuffStation\&.H'\&.
+.SS "friend class \fBSBStationEditor\fP\fC [friend]\fP"
+.PP
+Definition at line 73 of file SbIStuffStation\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool \fBSBStationListItem::isFaked\fP\fC [private]\fP"
+.PP
+Definition at line 63 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by SBStationListItem(), and ~SBStationListItem()\&.
+.SS "\fBSBStation\fP* \fBSBStationListItem::Station\fP\fC [private]\fP"
+.PP
+Definition at line 62 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by SBSiteEditor::deleteEntry(), key(), SBStationEditor::SBStationEditor(), SBStationListItem(), text(), and ~SBStationListItem()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

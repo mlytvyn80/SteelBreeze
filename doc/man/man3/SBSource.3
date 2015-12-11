@@ -1,0 +1,1289 @@
+.TH "SBSource" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBSource \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoSources\&.H>\fP
+.PP
+Inherits \fBSBNamed\fP, and \fBSBAttributed\fP'\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSStatus\fP { \fBSTATUS_DEF\fP, \fBSTATUS_CAND\fP, \fBSTATUS_OTHER\fP, \fBSTATUS_NEW\fP, \fBSTATUS_UNKN\fP }"
+.br
+.ti -1c
+.RI "enum \fBSType\fP { \fBTYPE_QUASAR\fP, \fBTYPE_GALAXY\fP, \fBTYPE_BL_LAC\fP, \fBTYPE_BL_LAC_C\fP, \fBTYPE_OTHER\fP, \fBTYPE_UNKN\fP }"
+.br
+.ti -1c
+.RI "enum \fBSSpectrumClass\fP { \fBSP_SEYFERT\fP, \fBSP_SEYFERT1\fP, \fBSP_SEYFERT1_2\fP, \fBSP_SEYFERT2\fP, \fBSP_SEYFERT3\fP, \fBSP_HP\fP, \fBSP_OTHER\fP, \fBSP_UNKN\fP }"
+.br
+.ti -1c
+.RI "enum \fBAttributes\fP { \fBOrigImported\fP =  1<<0, \fBOrigEdited\fP =  1<<1, \fBOrigObsData\fP =  1<<2, \fBOrigEstimated\fP =  1<<3, \fBStatusSuspected\fP =  1<<4, \fBAnalysed\fP =  1<<5, \fBAnalysConstr\fP =  1<<6, \fBReserved_08\fP =  1<<7, \fBReserved_09\fP =  1<<8, \fBReserved_10\fP =  1<<9, \fBReserved_11\fP =  1<<10, \fBReserved_12\fP =  1<<11, \fBReserved_13\fP =  1<<12, \fBReserved_14\fP =  1<<13, \fBReserved_15\fP =  1<<14, \fBReserved_16\fP =  1<<15, \fBReserved_17\fP =  1<<16 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSource\fP (const QString &='0000+000', double=0\&.0, double=0\&.0)"
+.br
+.ti -1c
+.RI "\fBSBSource\fP (const \fBSBSource\fP &)"
+.br
+.ti -1c
+.RI "virtual \fB~SBSource\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual \fBSBSource\fP & \fBoperator=\fP (const \fBSBSource\fP &)"
+.br
+.ti -1c
+.RI "double \fBra\fP () const "
+.br
+.ti -1c
+.RI "double \fBdn\fP () const "
+.br
+.ti -1c
+.RI "double \fBra_t\fP () const "
+.br
+.ti -1c
+.RI "double \fBdn_t\fP () const "
+.br
+.ti -1c
+.RI "double \fBra_err\fP () const "
+.br
+.ti -1c
+.RI "double \fBdn_err\fP () const "
+.br
+.ti -1c
+.RI "QString \fBICRFName\fP () const "
+.br
+.ti -1c
+.RI "QString \fBobsName\fP () const "
+.br
+.ti -1c
+.RI "\fBSStatus\fP \fBstatus\fP () const "
+.br
+.ti -1c
+.RI "\fBSType\fP \fBtype\fP () const "
+.br
+.ti -1c
+.RI "\fBSSpectrumClass\fP \fBspectrum\fP () const "
+.br
+.ti -1c
+.RI "float \fBredShift\fP () const "
+.br
+.ti -1c
+.RI "float \fBflux1\fP () const "
+.br
+.ti -1c
+.RI "float \fBflux2\fP () const "
+.br
+.ti -1c
+.RI "float \fBspIdx\fP () const "
+.br
+.ti -1c
+.RI "float \fBmv\fP () const "
+.br
+.ti -1c
+.RI "int \fBnObsApr\fP () const "
+.br
+.ti -1c
+.RI "int \fBnSessApr\fP () const "
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP & \fBmeanMJD\fP () const "
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP & \fBfirstMJD\fP () const "
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP & \fBlastMJD\fP () const "
+.br
+.ti -1c
+.RI "double \fBcorrRA_DN\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisHLink\fP () const "
+.br
+.ti -1c
+.RI "int \fBstructIdxX\fP () const "
+.br
+.ti -1c
+.RI "int \fBstructIdxS\fP () const "
+.br
+.ti -1c
+.RI "\fBSBParameter\fP * \fBp_RA\fP ()"
+.br
+.ti -1c
+.RI "\fBSBParameter\fP * \fBp_DN\fP ()"
+.br
+.ti -1c
+.RI "\fBQList\fP< QString > * \fBaliasesList\fP ()"
+.br
+.ti -1c
+.RI "void \fBclearAliasesList\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetRA\fP (double RA_)"
+.br
+.ti -1c
+.RI "void \fBsetDN\fP (double DN_)"
+.br
+.ti -1c
+.RI "void \fBsetRA_err\fP (double dRA_)"
+.br
+.ti -1c
+.RI "void \fBsetDN_err\fP (double dDN_)"
+.br
+.ti -1c
+.RI "void \fBsetICRFName\fP (const QString &ICRF_)"
+.br
+.ti -1c
+.RI "void \fBsetObsName\fP (const QString &ObsN_)"
+.br
+.ti -1c
+.RI "void \fBsetStatus\fP (\fBSStatus\fP Status_)"
+.br
+.ti -1c
+.RI "void \fBsetType\fP (\fBSType\fP Type_)"
+.br
+.ti -1c
+.RI "void \fBsetSpectrum\fP (\fBSSpectrumClass\fP Sp_)"
+.br
+.ti -1c
+.RI "void \fBsetRedShift\fP (float RedShift_)"
+.br
+.ti -1c
+.RI "void \fBsetFlux1\fP (float Flux1_)"
+.br
+.ti -1c
+.RI "void \fBsetFlux2\fP (float Flux2_)"
+.br
+.ti -1c
+.RI "void \fBsetSpIdx\fP (float SpIdx_)"
+.br
+.ti -1c
+.RI "void \fBsetMv\fP (float Mv_)"
+.br
+.ti -1c
+.RI "void \fBsetNObsApr\fP (int NObsApr_)"
+.br
+.ti -1c
+.RI "void \fBsetNSessApr\fP (int NSessApr_)"
+.br
+.ti -1c
+.RI "void \fBsetMeanMJD\fP (const \fBSBMJD\fP &aMJD_)"
+.br
+.ti -1c
+.RI "void \fBsetFirstMJD\fP (const \fBSBMJD\fP &aMJD_)"
+.br
+.ti -1c
+.RI "void \fBsetLastMJD\fP (const \fBSBMJD\fP &aMJD_)"
+.br
+.ti -1c
+.RI "void \fBsetCorrRA_DN\fP (double RA_DN_)"
+.br
+.ti -1c
+.RI "void \fBsetIsHLink\fP (bool IsHLink_)"
+.br
+.ti -1c
+.RI "void \fBsetStructIdxX\fP (int Idx_)"
+.br
+.ti -1c
+.RI "void \fBsetStructIdxS\fP (int Idx_)"
+.br
+.ti -1c
+.RI "const QString & \fBsinexCharID\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetSINEXCharID\fP (const QString &S_)"
+.br
+.ti -1c
+.RI "void \fBcreateParameters\fP ()"
+.br
+.ti -1c
+.RI "void \fBreleaseParameters\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateParameters\fP (\fBSBRunManager\fP *, const \fBSBMJD\fP &, bool=TRUE)"
+.br
+.ti -1c
+.RI "void \fBgetGlobalParameters4Report\fP (\fBSBRunManager\fP *)"
+.br
+.ti -1c
+.RI "void \fBgetParameters4Report\fP (\fBSBRunManager\fP *)"
+.br
+.ti -1c
+.RI "QString \fBRA2str\fP () const "
+.br
+.ti -1c
+.RI "QString \fBDN2str\fP () const "
+.br
+.ti -1c
+.RI "virtual \fBVector3\fP \fBrt\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBname\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetName\fP (const QString &Name_)"
+.br
+.ti -1c
+.RI "uint \fBattributes\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetAttributes\fP (uint A_)"
+.br
+.ti -1c
+.RI "void \fBaddAttr\fP (uint A_)"
+.br
+.ti -1c
+.RI "void \fBdelAttr\fP (uint A_)"
+.br
+.ti -1c
+.RI "void \fBxorAttr\fP (uint A_)"
+.br
+.ti -1c
+.RI "bool \fBisAttr\fP (uint A_) const "
+.br
+.ti -1c
+.RI "void \fBclearAll\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBisValidICRFName\fP (QString)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBName\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBRA\fP"
+.br
+.ti -1c
+.RI "double \fBdRA\fP"
+.br
+.ti -1c
+.RI "double \fBDN\fP"
+.br
+.ti -1c
+.RI "double \fBdDN\fP"
+.br
+.ti -1c
+.RI "QString \fBICRF\fP"
+.br
+.ti -1c
+.RI "QString \fBObsName\fP"
+.br
+.ti -1c
+.RI "\fBSStatus\fP \fBStatus\fP"
+.br
+.ti -1c
+.RI "\fBSType\fP \fBType\fP"
+.br
+.ti -1c
+.RI "\fBSSpectrumClass\fP \fBSpectrumClass\fP"
+.br
+.ti -1c
+.RI "bool \fBIsHLink\fP"
+.br
+.ti -1c
+.RI "float \fBRedShift\fP"
+.br
+.ti -1c
+.RI "float \fBFlux1\fP"
+.br
+.ti -1c
+.RI "float \fBFlux2\fP"
+.br
+.ti -1c
+.RI "float \fBSpIdx\fP"
+.br
+.ti -1c
+.RI "float \fBMv\fP"
+.br
+.ti -1c
+.RI "int \fBNObsApr\fP"
+.br
+.ti -1c
+.RI "int \fBNSessApr\fP"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBMeanMJD\fP"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBFirstMJD\fP"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBLastMJD\fP"
+.br
+.ti -1c
+.RI "double \fBRA_DN\fP"
+.br
+.ti -1c
+.RI "int \fBStructIdxX\fP"
+.br
+.ti -1c
+.RI "int \fBStructIdxS\fP"
+.br
+.ti -1c
+.RI "\fBQList\fP< QString > * \fBaList\fP"
+.br
+.ti -1c
+.RI "\fBSBParameter\fP * \fBP_RA\fP"
+.br
+.RI "\fIestimation of the right ascension; \fP"
+.ti -1c
+.RI "\fBSBParameter\fP * \fBP_DN\fP"
+.br
+.RI "\fIestimation of the declination; \fP"
+.ti -1c
+.RI "double \fBRAt\fP"
+.br
+.ti -1c
+.RI "double \fBDNt\fP"
+.br
+.ti -1c
+.RI "QString \fBSINEXCharID\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSB_CRF\fP"
+.br
+.ti -1c
+.RI "\fBSBTS_dico\fP & \fBoperator<<\fP (\fBSBTS_dico\fP &, \fBSB_CRF\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBSource\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBSource\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_rsc\fP & \fBoperator<<\fP (\fBSBTS_rsc\fP &, const \fBSBSource\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_rsc\fP & \fBoperator>>\fP (\fBSBTS_rsc\fP &, \fBSBSource\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_car\fP & \fBoperator<<\fP (\fBSBTS_car\fP &, const \fBSBSource\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_car\fP & \fBoperator>>\fP (\fBSBTS_car\fP &, \fBSBSource\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_report\fP & \fBoperator<<\fP (\fBSBTS_report\fP &, const \fBSBSource\fP &)"
+.br
+.ti -1c
+.RI "\fBSBTS_report4IVS\fP & \fBoperator<<\fP (\fBSBTS_report4IVS\fP &, const \fBSBSource\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "int \fBcmp\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBAttributed\fP &A)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBAttributed\fP &A)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 80 of file SbGeoSources\&.H'\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBSBSource::Attributes\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIOrigImported \fP\fP
+Info origin: imported;'\&. 
+.TP
+\fB\fIOrigEdited \fP\fP
+Info origin: has been edited (alterated by hand);'\&. 
+.TP
+\fB\fIOrigObsData \fP\fP
+Info origin: from obs data files;'\&. 
+.TP
+\fB\fIOrigEstimated \fP\fP
+Info origin: has been estimated;'\&. 
+.TP
+\fB\fIStatusSuspected \fP\fP
+a la `substatus': "indicates that the source is suspected to be not suitable to define the axes in the future 
+.TP
+\fB\fIAnalysed \fP\fP
+temporary attr; 
+.TP
+\fB\fIAnalysConstr \fP\fP
+the coordinates of a source were used in constraint equations; 
+.TP
+\fB\fIReserved_08 \fP\fP
+reserved; 
+.TP
+\fB\fIReserved_09 \fP\fP
+reserved; 
+.TP
+\fB\fIReserved_10 \fP\fP
+reserved; 
+.TP
+\fB\fIReserved_11 \fP\fP
+reserved; 
+.TP
+\fB\fIReserved_12 \fP\fP
+reserved; 
+.TP
+\fB\fIReserved_13 \fP\fP
+reserved; 
+.TP
+\fB\fIReserved_14 \fP\fP
+reserved; 
+.TP
+\fB\fIReserved_15 \fP\fP
+reserved; 
+.TP
+\fB\fIReserved_16 \fP\fP
+reserved; 
+.TP
+\fB\fIReserved_17 \fP\fP
+reserved; 
+.PP
+Definition at line 92 of file SbGeoSources\&.H'\&.
+.SS "enum \fBSBSource::SSpectrumClass\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fISP_SEYFERT \fP\fP
+.TP
+\fB\fISP_SEYFERT1 \fP\fP
+.TP
+\fB\fISP_SEYFERT1_2 \fP\fP
+.TP
+\fB\fISP_SEYFERT2 \fP\fP
+.TP
+\fB\fISP_SEYFERT3 \fP\fP
+.TP
+\fB\fISP_HP \fP\fP
+.TP
+\fB\fISP_OTHER \fP\fP
+.TP
+\fB\fISP_UNKN \fP\fP
+
+.PP
+Definition at line 89 of file SbGeoSources\&.H'\&.
+.SS "enum \fBSBSource::SStatus\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fISTATUS_DEF \fP\fP
+.TP
+\fB\fISTATUS_CAND \fP\fP
+.TP
+\fB\fISTATUS_OTHER \fP\fP
+.TP
+\fB\fISTATUS_NEW \fP\fP
+.TP
+\fB\fISTATUS_UNKN \fP\fP
+
+.PP
+Definition at line 86 of file SbGeoSources\&.H'\&.
+.SS "enum \fBSBSource::SType\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fITYPE_QUASAR \fP\fP
+.TP
+\fB\fITYPE_GALAXY \fP\fP
+.TP
+\fB\fITYPE_BL_LAC \fP\fP
+.TP
+\fB\fITYPE_BL_LAC_C \fP\fP
+.TP
+\fB\fITYPE_OTHER \fP\fP
+.TP
+\fB\fITYPE_UNKN \fP\fP
+
+.PP
+Definition at line 87 of file SbGeoSources\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBSource::SBSource (const QString &Name_ = \fC'0000+000'\fP, doubleRA_ = \fC0\&.0\fP, doubleDN_ = \fC0\&.0\fP)"
+.PP
+Definition at line 38 of file SbGeoSources\&.C'\&.
+.PP
+References aList, dDN, DEG2RAD, DN, DNt, dRA, FirstMJD, Flux1, Flux2, HR2RAD, ICRF, IsHLink, LastMJD, MeanMJD, Mv, NObsApr, NSessApr, ObsName, P_DN, P_RA, RA, RA_DN, RAt, RedShift, SINEXCharID, SP_UNKN, SpectrumClass, SpIdx, Status, STATUS_UNKN, StructIdxS, StructIdxX, Type, and TYPE_UNKN\&.
+.SS "SBSource::SBSource (const \fBSBSource\fP &S)"
+.PP
+Definition at line 73 of file SbGeoSources\&.C'\&.
+.PP
+References aList, dDN, DN, DNt, dRA, FirstMJD, Flux1, Flux2, ICRF, IsHLink, LastMJD, MeanMJD, Mv, NObsApr, NSessApr, ObsName, P_DN, P_RA, RA, RA_DN, RAt, RedShift, SINEXCharID, SpectrumClass, SpIdx, Status, StructIdxS, StructIdxX, and Type\&.
+.SS "virtual SBSource::~SBSource ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 153 of file SbGeoSources\&.H'\&.
+.PP
+References aList\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBAttributed::addAttr (uintA_)\fC [inline, inherited]\fP"Adds the attribute to the storage'\&. 
+.PP
+Definition at line 247 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBVLBISession::checkArtMeteo(), SBVLBISession::checkAttributres(), SBStation::createOLoad(), SBVLBIPreProcess::fixSession(), SBAploChunk::import(), SBAploEphem::importHPS(), SBMaster::importMF(), SBFilteringGauss::makeAnalysisWith3Sigma(), SBSourceEditor::makeApply(), SBStationEditor::makeApply(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportTRF(), operator>>(), SBFilterGauss::prepareModels(), SBObsVLBIEntry::process(), SBStationInfo::restoreUserInfo(), SBBaseInfo::restoreUserInfo(), SBSourceInfo::restoreUserInfo(), SBVLBISession::restoreUserInfo(), SBEphem::SBEphem(), SBSourceInfo::SBSourceInfo(), SBStationInfo::SBStationInfo(), SBSpectrumAnalyserMEM::setMEMAssumeEquiDistant(), SBSpectrumAnalyserMEM::setMEMFillMissingImag(), SBSpectrumAnalyserMEM::setMEMRemoveShifts(), SBSpectrumAnalyserMEM::setMEMRemoveTrends(), SBParameter::tuneParameter(), SBSolutionBrowser::updateCRF(), and SBSolutionBrowser::updateTRF()\&.
+.SS "\fBQList\fP<QString>* SBSource::aliasesList ()\fC [inline]\fP"
+.PP
+Definition at line 187 of file SbGeoSources\&.H'\&.
+.PP
+References aList\&.
+.PP
+Referenced by SBSourceEditor::wCoordinates()\&.
+.SS "uint SBAttributed::attributes () const\fC [inline, inherited]\fP"Returns the attributes'\&. 
+.PP
+Definition at line 243 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBCoordinates::operator==(), and SBVLBISessionEditor::~SBVLBISessionEditor()\&.
+.SS "virtual QString SBSource::ClassName () const\fC [inline, virtual]\fP"Refers to a class name (debug info) 
+.PP
+Reimplemented from \fBSBAttributed\fP'\&.
+.PP
+Definition at line 154 of file SbGeoSources\&.H'\&.
+.SS "void SBSource::clearAliasesList ()\fC [inline]\fP"
+.PP
+Definition at line 188 of file SbGeoSources\&.H'\&.
+.PP
+References aList\&.
+.PP
+Referenced by SB_CRF::releaseObjAliases()\&.
+.SS "void SBAttributed::clearAll ()\fC [inline, inherited]\fP"Removes all attributes'\&. 
+.PP
+Definition at line 255 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.SS "double SBSource::corrRA_DN () const\fC [inline]\fP"
+.PP
+Definition at line 179 of file SbGeoSources\&.H'\&.
+.PP
+References RA_DN\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), operator<<(), and SBSourceEditor::wCoordinates()\&.
+.SS "void SBSource::createParameters ()"
+.PP
+Definition at line 180 of file SbGeoSources\&.C'\&.
+.PP
+References SBNamed::name(), P_DN, and P_RA\&.
+.SS "void SBAttributed::delAttr (uintA_)\fC [inline, inherited]\fP"Deletes the attribute from the storage'\&. 
+.PP
+Definition at line 249 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBProject::addSession(), SBVLBISession::checkAttributres(), SBVLBIPreProcess::clearPars(), SBStation::deleteOLoad(), SBObsVLBIEntry::isEligible(), SBFilteringGauss::makeAnalysisWith3Sigma(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportTRF(), SBStationInfo::restoreUserInfo(), SBBaseInfo::restoreUserInfo(), SBSourceInfo::restoreUserInfo(), SBVLBISession::restoreUserInfo(), SBParameter::rw(), SBEphem::SBEphem(), SBStation::SBStation(), SBSpectrumAnalyserMEM::setMEMAssumeEquiDistant(), SBSpectrumAnalyserMEM::setMEMFillMissingImag(), SBSpectrumAnalyserMEM::setMEMRemoveShifts(), SBSpectrumAnalyserMEM::setMEMRemoveTrends(), and SBParameter::tuneParameter()\&.
+.SS "double SBSource::dn () const\fC [inline]\fP"
+.PP
+Definition at line 159 of file SbGeoSources\&.H'\&.
+.PP
+References DN\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), SBRunManager::constraintSourceCoord(), SBSourceImport::importICRF(), SBSourceListItem::key(), SB_CRF::lookupNearest(), SBRunManager::makeReportCRFVariations(), and SBSourceEditor::wCoordinates()\&.
+.SS "QString SBSource::DN2str () const"
+.PP
+Definition at line 264 of file SbGeoSources\&.C'\&.
+.PP
+References DNt, and rad2dms()\&.
+.PP
+Referenced by SBSourceListItem::text()\&.
+.SS "double SBSource::dn_err () const\fC [inline]\fP"
+.PP
+Definition at line 163 of file SbGeoSources\&.H'\&.
+.PP
+References dDN\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), SBSourceImport::importICRF(), SBSourceListItem::key(), operator<<(), SBSourceListItem::text(), and SBSourceEditor::wCoordinates()\&.
+.SS "double SBSource::dn_t () const\fC [inline]\fP"
+.PP
+Definition at line 161 of file SbGeoSources\&.H'\&.
+.PP
+References DNt\&.
+.PP
+Referenced by SBDelay::calcDerivatives(), collectListOfSINEXParameters4NEQ(), operator<<(), rt(), and SBSolutionBrowser::updateCRF()\&.
+.SS "const \fBSBMJD\fP& SBSource::firstMJD () const\fC [inline]\fP"
+.PP
+Definition at line 177 of file SbGeoSources\&.H'\&.
+.PP
+References FirstMJD\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), SBSourceListItem::key(), operator<<(), SBSourceListItem::text(), and SBSourceEditor::wStats()\&.
+.SS "float SBSource::flux1 () const\fC [inline]\fP"
+.PP
+Definition at line 170 of file SbGeoSources\&.H'\&.
+.PP
+References Flux1\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), operator<<(), and SBSourceEditor::wPhysChars()\&.
+.SS "float SBSource::flux2 () const\fC [inline]\fP"
+.PP
+Definition at line 171 of file SbGeoSources\&.H'\&.
+.PP
+References Flux2\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), operator<<(), and SBSourceEditor::wPhysChars()\&.
+.SS "void SBSource::getGlobalParameters4Report (\fBSBRunManager\fP *Mgr)"
+.PP
+Definition at line 218 of file SbGeoSources\&.C'\&.
+.PP
+References dDN, DN, DNt, dRA, SBParameter::e(), FirstMJD, SBSolution::getGlobalParameter4Report(), LastMJD, MeanMJD, NObsApr, NSessApr, SBDerivation::num(), SBDerivation::numSes(), P_DN, P_RA, RA, RA_DN, RAt, SBRunManager::solution(), SBDerivation::tEpoch(), SBDerivation::tFinis(), SBDerivation::tStart(), and SBParameter::v()\&.
+.PP
+Referenced by SBRunManager::makeReportCRF(), and SBSolutionBrowser::updateCRF()\&.
+.SS "void SBSource::getParameters4Report (\fBSBRunManager\fP *Mgr)"
+.PP
+Definition at line 239 of file SbGeoSources\&.C'\&.
+.PP
+References dDN, dRA, SBParameter::e(), FirstMJD, LastMJD, MeanMJD, NObsApr, NSessApr, SBDerivation::num(), SBDerivation::numSes(), P_DN, P_RA, RA_DN, SBDerivation::tEpoch(), SBDerivation::tFinis(), SBDerivation::tStart(), TZero, and updateParameters()\&.
+.PP
+Referenced by SBRunManager::makeReportCRFVariations4IVS()\&.
+.SS "QString SBSource::ICRFName () const\fC [inline]\fP"
+.PP
+Definition at line 164 of file SbGeoSources\&.H'\&.
+.PP
+References ICRF\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), operator>>(), and SBSourceEditor::wCoordinates()\&.
+.SS "bool SBAttributed::isAttr (uintA_) const\fC [inline, inherited]\fP"Returns TRUE if the attribute is set'\&. 
+.PP
+Definition at line 253 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBStationEditor::acquireData(), SBStaParsEditor::acquireData(), SBObsVLBIEntry::ambientH_1(), SBObsVLBIEntry::ambientH_2(), SBObsVLBIEntry::ambientP_1(), SBObsVLBIEntry::ambientP_2(), SBObsVLBIEntry::ambientT_1(), SBObsVLBIEntry::ambientT_2(), SBDelay::calc(), SBVLBISession::checkArtMeteo(), SBVLBISession::checkAttributres(), collectListOfSINEXParameters(), SBStationInfo::dumpUserInfo(), SBBaseInfo::dumpUserInfo(), SBSourceInfo::dumpUserInfo(), SBVLBISession::dumpUserInfo(), SBFilterModel::eliminateAfter(), SBFilterModel::eliminateBefore(), SBVLBIPreProcess::fillObsListView(), SBRunManager::fillParameterList(), SBMEM::fpe(), SBFilterGauss::interpolate(), SBObservation::isEligible(), SBObsVLBIEntry::isEligible(), SBVLBIObsPPLI::key(), SBSourceListItem::key(), SBStationListItem::key(), SBVLBISesInfoLI::key(), SBVLBISesPreProcLI::key(), SBVLBIObsLI::key(), SBStaInfoLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBStationImport::loadOLoad(), SBParameter::m(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportMaps(), SBRunManager::makeReportTRF(), SBRunManager::makeReportTRFVariations(), operator<<(), operator>>(), SBVLBIObsPPLI::paintCell(), SBObsVLBIEntry::process(), SBRunManager::process_m1(), SBMEM::readDataFile(), SBParameter::rw(), SBStaParsEditor::SBStaParsEditor(), SBProjectCreate::selChanged(), sinex_SiteEccentricityBlock(), sinex_SiteIDBlock(), sinex_SourceIDBlock(), SBParameter::str4compare(), SBVLBIObsPPLI::text(), SBSourceListItem::text(), SBStationListItem::text(), SBVLBISesInfoLI::text(), SBVLBISesPreProcLI::text(), SBVLBIObsLI::text(), SBStaInfoLI::text(), SBBasInfoLI::text(), SBSouInfoLI::text(), SBMasterRecBrowser::SBMRListItem::text(), SBSolutionBrowser::updateCRF(), SBBrowseSources::updateList(), SBSolutionBrowser::updateTRF(), SBVLBISessionEditor::wObservs(), SBSourceEditor::wStats(), SBStationEditor::wStats(), and SBStation::~SBStation()\&.
+.SS "bool SBSource::isHLink () const\fC [inline]\fP"
+.PP
+Definition at line 180 of file SbGeoSources\&.H'\&.
+.PP
+References IsHLink\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), SBSourceListItem::key(), operator<<(), SBSourceListItem::pixmap(), and SBSourceEditor::wCoordinates()\&.
+.SS "bool SBSource::isValidICRFName (QStringsICRF)\fC [static]\fP"
+.PP
+Definition at line 149 of file SbGeoSources\&.C'\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), and operator>>()\&.
+.SS "const \fBSBMJD\fP& SBSource::lastMJD () const\fC [inline]\fP"
+.PP
+Definition at line 178 of file SbGeoSources\&.H'\&.
+.PP
+References LastMJD\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), SBSourceListItem::key(), operator<<(), SBSourceListItem::text(), and SBSourceEditor::wStats()\&.
+.SS "const \fBSBMJD\fP& SBSource::meanMJD () const\fC [inline]\fP"
+.PP
+Definition at line 176 of file SbGeoSources\&.H'\&.
+.PP
+References MeanMJD\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), operator<<(), and SBSourceEditor::wStats()\&.
+.SS "float SBSource::mv () const\fC [inline]\fP"
+.PP
+Definition at line 173 of file SbGeoSources\&.H'\&.
+.PP
+References Mv\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), SBSourceListItem::key(), operator<<(), SBSourceListItem::text(), and SBSourceEditor::wPhysChars()\&.
+.SS "const QString& SBNamed::name () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 215 of file SbGeo\&.H'\&.
+.PP
+References SBNamed::Name\&.
+.PP
+Referenced by SBVLBINetEntryEditor::accept(), SBSourceEditor::acquireData(), SBSiteEditor::acquireData(), SBStationEditor::acquireData(), SBStochParameter::addPar(), SBProject::addSession(), SBSite::addStation(), SBParameterList::append(), SBVector::at(), SBMatrix::at(), SBUpperMatrix::at(), SBSymMatrix::at(), SBStation::axisOffsetLenght(), SBSolutionBrowser::batch4StochEOPChanged(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBEphem::calc(), SBStation::calcDisplacement(), SBSetupDialog::chkPacker(), SBVLBIPreProcess::clearPars(), SBEstimator::collectContStochs4NextBatch(), collectListOfSINEXParameters(), collectListOfSINEXParameters4NEQ(), SB_CRF::collectObjAliases(), SBObsVLBIStatistics::collectStatistics(), SBRunManager::constraintSourceCoord(), SBRunManager::constraintStationCoord(), SBRunManager::constraintStationVeloc(), createParameters(), SBProjectCreate::createProject(), SBTestFrame::createWidget4Test(), SBTestEphem::createWidget4Test(), SBVLBIPreProcess::currentSesChange(), SBPlotArea::defineAreas(), SBSiteEditor::deleteEntry(), SBVLBISetView::deleteEntry(), SBStuffSources::deleteEntryS(), SBStuffStations::deleteEntryS(), SBSolution::deleteSolution(), SBSetupDialog::delInst(), SBSetupDialog::delPacker(), SBEstimator::Group::delParameter(), SBProjectEdit::delSession(), SBProject::delSession(), SBSite::delStation(), SBPlateMotion::displacement(), SBStuffAplo::draw(), SBPlotArea::drawFrames(), SBStochParameter::dump2File(), SBSolution::dumpParameters(), SBBaseInfo::dumpUserInfo(), SBSourceInfo::dumpUserInfo(), SBVLBISession::dumpUserInfo(), SBVLBISet::dumpUserInfo(), SBParametersEditor::editParameter(), SBAploChunk::fillDict(), SBVLBISet::fillDicts(), SBVLBIPreProcess::fillObsListView(), SBVLBIPreProcess::fillSessAttr(), SBCatalog::find(), SBSolution::getGlobalParameter4Report(), SBAploChunk::import(), SBVLBISet::import(), SBEcc::importEccDat(), SBAploEphem::importHPS(), SBMaster::importMF(), SBProjectCreate::init(), SBFCList::insert(), SBInstitutionList::insert(), SBCatalog::insert(), SBParameterList::inSort(), SBCatalog::inSort(), SBStochParameterList::inSort(), SB_TRF::inSort(), SBObsVLBIStatSrcLI::key(), SBParameterLI::key(), SBSourceListItem::key(), SBStationListItem::key(), SBObsVLBIStatStaLI::key(), SBVLBISesInfoLI::key(), SBSiteListItem::key(), SBObsVLBIStatRecordLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBAploEntryLI::key(), SBTestStationLI::key(), SBStationImport::loadNScodes(), SBStationImport::loadOLoad(), SBSolution::loadStatistics(), SBRunManager::loadVLBISession_m1(), SBRunManager::loadVLBISessions_m2(), SB_CRF::lookupNearest(), SB_TRF::lookupNearest(), SBSolutionBrowser::lookupParameters(), SBSourceEditor::makeApply(), SBSiteEditor::makeApply(), SBStationEditor::makeApply(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportEOP(), SBRunManager::makeReportMaps(), SBRunManager::makeReportNormalEqs(), SBRunManager::makeReports(), SBRunManager::makeReportSessionStatistics(), SBRunManager::makeReportTRF(), SBRunManager::makeReportTRFVariations(), SBRunManager::makeReportTroposphere(), SBEstimator::mapContStochs4NewBatch(), SBMaster::mapFiles(), SBMaster::mapRecords(), matT_x_mat(), SBEstimator::moveGlobalInfo(), SBEstimator::moveGlobalInfo_Old(), SBFileConv::open4In(), SBFileConv::open4Out(), SBEphem::openFile(), SBVector::operator()(), SBSolidTideLd::operator()(), SBTideLd::operator()(), SBMatrix::operator()(), SBRefraction::operator()(), SBUpperMatrix::operator()(), operator*(), operator+(), SBVector::operator+=(), SBMatrix::operator+=(), SBUpperMatrix::operator+=(), operator-(), SBVector::operator-=(), SBMatrix::operator-=(), SBUpperMatrix::operator-=(), SBObsVLBIEntry::operator<(), operator<<(), SBVector::operator=(), SBMatrix::operator=(), SBUpperMatrix::operator=(), SBVLBISesInfo::operator=(), SBVector::operator==(), SBObsVLBIEntry::operator==(), SBVLBISesInfo::operator==(), operator>>(), operator~(), SBSymMatrix::operator~(), SBPlotArea::output4Files(), SBSolution::path2GlbDir(), SBSolution::path2LocDir(), SBSolution::path2StcDir(), SBEstimator::prepare4Local(), SBSite::prepareDicts(), SBVLBIPreProcess::preProcess(), SBObsVLBIEntry::process(), SBRunManager::process_m1(), SBRunManager::process_m2(), SBVLBIPreProcess::procScenario_2(), SBProjectSel::ProjectListItem::ProjectListItem(), QuadraticForm(), SBRefraction::refrDir(), SBAploEphem::registerStation(), SBInstitutionList::remove(), SBParameterList::remove(), SBStochParameterList::remove(), SBVLBISet::removeSession(), SBParameterList::report(), SBStochParameter::report(), SBBaseInfo::restoreUserInfo(), SBSourceInfo::restoreUserInfo(), SBVLBISession::restoreUserInfo(), RRT(), RTR(), SBParameter::rw(), SBPlot::save2PS(), SBVLBISet::saveSession(), SBRunManager::saveVLBISessions_m1(), SBRunManager::saveVLBISessions_m2(), SBCoordsEditor::SBCoordsEditor(), SBEstimator::SBEstimator(), SBModelEditor::SBModelEditor(), SBObsVLBIStatBrowser::SBObsVLBIStatBrowser(), SBObsVLBIStatSrc::SBObsVLBIStatSrc(), SBObsVLBIStatSta::SBObsVLBIStatSta(), SBParametersEditor::SBParametersEditor(), SBPlateMotion::SBPlateMotion(), SBPlot::SBPlot(), SBPlotDialog::SBPlotDialog(), SBProjectEdit::SBProjectEdit(), SBRunManager::SBRunManager(), SBSolution::SBSolution(), SBSolutionBrowser::SBSolutionBrowser(), SBStuffEphem::SBStuffEphem(), SBTestAPLoad::SBTestAPLoad(), SBTestDiurnEOP::SBTestDiurnEOP(), SBTestEphem::SBTestEphem(), SBTestFrame::SBTestFrame(), SBTestNutation::SBTestNutation(), SBTestOceanTides::SBTestOceanTides(), SBTestPolarTides::SBTestPolarTides(), SBTestSolidTides::SBTestSolidTides(), SBVLBINetEntryEditor::SBVLBINetEntryEditor(), SBVLBISessionEditor::SBVLBISessionEditor(), SBVector::set(), SBMatrix::set(), SBUpperMatrix::set(), SBMatrix::setCol(), SBUpperMatrix::setCol(), SBFCList::setDefault(), SB_TRF::setSiteName(), SBMatrix::setVector(), SBUpperMatrix::setVector(), Solve(), SBEstimator::solveLocals(), SBObsVLBIEntry::source(), SBTestSolidTides::stationChange(), SBTestOceanTides::stationChange(), SBTestPolarTides::stationChange(), SBTestAPLoad::stationChange(), SBParameter::str4compare(), SBRunManager::stripTRF(), SBSolution::submitGlobalParameters(), SBSolution::submitLocalParameters(), SBSolution::submitStochasticParameters(), SBMatrix::T(), SBUpperMatrix::T(), SBFileConvLI::text(), SBParameterLI::text(), SBObsVLBIStatSrcLI::text(), SBSourceListItem::text(), SBStationListItem::text(), SBObsVLBIStatStaLI::text(), SBVLBISesInfoLI::text(), SBSolutionBatchLI::text(), SBSiteListItem::text(), SBVLBISesPreProcLI::text(), SBObsVLBIStatRecordLI::text(), SBSetupDialog::SBInstLI::text(), SBBasInfoLI::text(), SBSouInfoLI::text(), SBAploEntryLI::text(), SBTestStationLI::text(), SBVLBINetworkEditor::NetworkListItem::text(), SBMasterRecBrowser::SBMRListItem::text(), SBStochParameter::update(), SBSolution::updateParameter(), SBVLBIPreProcess::updateSession(), SBParameterList::updateSolution(), SBMainWindow::UtilitiesCollectStat4Prj(), SBPlateMotion::velocity(), SBVLBIPreProcess::wAttributes(), SBSourceEditor::wCoordinates(), SBParametersEditor::wEOPParameters(), SBSolutionBrowser::wLocalEOPPars(), SBSolutionBrowser::wLocalSoPars(), SBSolutionBrowser::wLocalStPars(), SBStationEditor::wNames(), SBVLBISessionEditor::wObservs(), SBParametersEditor::wOtherParameters(), SBVLBISessionEditor::wParameters(), writeNormalEquationSystem(), SBSiteEditor::wSite(), SBParametersEditor::wSourceParameters(), SBParametersEditor::wStationParameters(), SBSolutionBrowser::wStochEOPPars(), SBSolutionBrowser::wStochSoPars(), SBSolutionBrowser::wStochStPars(), SBParametersEditor::wTestParameters(), and SBSolutionBrowser::wWRMSs()\&.
+.SS "int SBSource::nObsApr () const\fC [inline]\fP"
+.PP
+Definition at line 174 of file SbGeoSources\&.H'\&.
+.PP
+References NObsApr\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), SBSourceListItem::key(), operator<<(), SBSourceListItem::text(), and SBSourceEditor::wStats()\&.
+.SS "int SBSource::nSessApr () const\fC [inline]\fP"
+.PP
+Definition at line 175 of file SbGeoSources\&.H'\&.
+.PP
+References NSessApr\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), SBSourceListItem::key(), operator<<(), SBSourceListItem::text(), and SBSourceEditor::wStats()\&.
+.SS "QString SBSource::obsName () const\fC [inline]\fP"
+.PP
+Definition at line 165 of file SbGeoSources\&.H'\&.
+.PP
+References ObsName\&.
+.SS "\fBSBSource\fP & SBSource::operator= (const \fBSBSource\fP &S)\fC [virtual]\fP"
+.PP
+Definition at line 108 of file SbGeoSources\&.C'\&.
+.PP
+References aList, dDN, DN, DNt, dRA, FirstMJD, Flux1, Flux2, ICRF, IsHLink, LastMJD, MeanMJD, Mv, NObsApr, NSessApr, ObsName, P_DN, P_RA, RA, RA_DN, RAt, RedShift, releaseParameters(), SINEXCharID, SpectrumClass, SpIdx, Status, StructIdxS, StructIdxX, and Type\&.
+.SS "\fBSBParameter\fP* SBSource::p_DN ()\fC [inline]\fP"
+.PP
+Definition at line 185 of file SbGeoSources\&.H'\&.
+.PP
+References P_DN\&.
+.PP
+Referenced by SBDelay::calcDerivatives(), collectListOfSINEXParameters4NEQ(), SBRunManager::constraintSourceCoord(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::process_m1(), and SBSolutionBrowser::updateCRF()\&.
+.SS "\fBSBParameter\fP* SBSource::p_RA ()\fC [inline]\fP"
+.PP
+Definition at line 184 of file SbGeoSources\&.H'\&.
+.PP
+References P_RA\&.
+.PP
+Referenced by SBDelay::calcDerivatives(), collectListOfSINEXParameters4NEQ(), SBRunManager::constraintSourceCoord(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::process_m1(), and SBSolutionBrowser::updateCRF()\&.
+.SS "double SBSource::ra () const\fC [inline]\fP"
+.PP
+Definition at line 158 of file SbGeoSources\&.H'\&.
+.PP
+References RA\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), SBRunManager::constraintSourceCoord(), SBSourceImport::importICRF(), SBSourceListItem::key(), SB_CRF::lookupNearest(), SBRunManager::makeReportCRFVariations(), and SBSourceEditor::wCoordinates()\&.
+.SS "QString SBSource::RA2str () const"
+.PP
+Definition at line 255 of file SbGeoSources\&.C'\&.
+.PP
+References rad2hms(), and RAt\&.
+.PP
+Referenced by SBSourceListItem::text()\&.
+.SS "double SBSource::ra_err () const\fC [inline]\fP"
+.PP
+Definition at line 162 of file SbGeoSources\&.H'\&.
+.PP
+References dRA\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), SBSourceImport::importICRF(), SBSourceListItem::key(), operator<<(), SBSourceListItem::text(), and SBSourceEditor::wCoordinates()\&.
+.SS "double SBSource::ra_t () const\fC [inline]\fP"
+.PP
+Definition at line 160 of file SbGeoSources\&.H'\&.
+.PP
+References RAt\&.
+.PP
+Referenced by SBRefraction::altitudeCorr(), SBDelay::calcDerivatives(), collectListOfSINEXParameters4NEQ(), operator<<(), rt(), and SBSolutionBrowser::updateCRF()\&.
+.SS "float SBSource::redShift () const\fC [inline]\fP"
+.PP
+Definition at line 169 of file SbGeoSources\&.H'\&.
+.PP
+References RedShift\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), operator<<(), and SBSourceEditor::wPhysChars()\&.
+.SS "void SBSource::releaseParameters ()"
+.PP
+Definition at line 191 of file SbGeoSources\&.C'\&.
+.PP
+References P_DN, and P_RA\&.
+.PP
+Referenced by operator=()\&.
+.SS "virtual \fBVector3\fP SBSource::rt () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 230 of file SbGeoSources\&.H'\&.
+.PP
+References dn_t(), ra_t(), and sincos()\&.
+.PP
+Referenced by SBDelay::calc()\&.
+.SS "void SBAttributed::setAttributes (uintA_)\fC [inline, inherited]\fP"Sets up the attributes'\&. 
+.PP
+Definition at line 245 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBCelestBody::SBCelestBody(), and SBVLBISessionEditor::~SBVLBISessionEditor()\&.
+.SS "void SBSource::setCorrRA_DN (doubleRA_DN_)\fC [inline]\fP"
+.PP
+Definition at line 209 of file SbGeoSources\&.H'\&.
+.PP
+References RA_DN\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations4IVS(), operator>>(), and SBSolutionBrowser::updateCRF()\&.
+.SS "void SBSource::setDN (doubleDN_)\fC [inline]\fP"
+.PP
+Definition at line 191 of file SbGeoSources\&.H'\&.
+.PP
+References DN\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), SBSourceImport::importICRF(), operator>>(), and SBSolutionBrowser::updateCRF()\&.
+.SS "void SBSource::setDN_err (doubledDN_)\fC [inline]\fP"
+.PP
+Definition at line 193 of file SbGeoSources\&.H'\&.
+.PP
+References dDN\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), SBSourceImport::importICRF(), and operator>>()\&.
+.SS "void SBSource::setFirstMJD (const \fBSBMJD\fP &aMJD_)\fC [inline]\fP"
+.PP
+Definition at line 207 of file SbGeoSources\&.H'\&.
+.PP
+References FirstMJD\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), and operator>>()\&.
+.SS "void SBSource::setFlux1 (floatFlux1_)\fC [inline]\fP"
+.PP
+Definition at line 200 of file SbGeoSources\&.H'\&.
+.PP
+References Flux1\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), and operator>>()\&.
+.SS "void SBSource::setFlux2 (floatFlux2_)\fC [inline]\fP"
+.PP
+Definition at line 201 of file SbGeoSources\&.H'\&.
+.PP
+References Flux2\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), and operator>>()\&.
+.SS "void SBSource::setICRFName (const QString &ICRF_)\fC [inline]\fP"
+.PP
+Definition at line 194 of file SbGeoSources\&.H'\&.
+.PP
+References ICRF\&.
+.PP
+Referenced by SBSourceEditor::acquireData()\&.
+.SS "void SBSource::setIsHLink (boolIsHLink_)\fC [inline]\fP"
+.PP
+Definition at line 210 of file SbGeoSources\&.H'\&.
+.PP
+References IsHLink\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), and operator>>()\&.
+.SS "void SBSource::setLastMJD (const \fBSBMJD\fP &aMJD_)\fC [inline]\fP"
+.PP
+Definition at line 208 of file SbGeoSources\&.H'\&.
+.PP
+References LastMJD\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), and operator>>()\&.
+.SS "void SBSource::setMeanMJD (const \fBSBMJD\fP &aMJD_)\fC [inline]\fP"
+.PP
+Definition at line 206 of file SbGeoSources\&.H'\&.
+.PP
+References MeanMJD\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), and operator>>()\&.
+.SS "void SBSource::setMv (floatMv_)\fC [inline]\fP"
+.PP
+Definition at line 203 of file SbGeoSources\&.H'\&.
+.PP
+References Mv\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), and operator>>()\&.
+.SS "void SBNamed::setName (const QString &Name_)\fC [inline, inherited]\fP"
+.PP
+Definition at line 216 of file SbGeo\&.H'\&.
+.PP
+References SBNamed::Name\&.
+.PP
+Referenced by SBVLBINetEntryEditor::accept(), SBSourceEditor::acquireData(), SBSiteEditor::acquireData(), SBStationEditor::acquireData(), SBObsVLBIStatistics::collectStatistics(), SBVLBIPreProcess::currentSesChange(), SBVLBISet::import(), SBVLBISet::loadSession(), SBVLBISesInfo::operator=(), operator>>(), SBPlotArea::output4Files(), SBFilteringGauss::redrawDataPlot_ExpMode(), SBBaseInfoList::restoreUserInfo(), SBSourceInfoList::restoreUserInfo(), SBMasterRecord::SBMasterRecord(), SBSolution::SBSolution(), SB_TRF::setSiteName(), SBTestSolidTides::stationChange(), SBTestOceanTides::stationChange(), SBTestPolarTides::stationChange(), SBTestAPLoad::stationChange(), and SBVLBIPreProcess::updateSession()\&.
+.SS "void SBSource::setNObsApr (intNObsApr_)\fC [inline]\fP"
+.PP
+Definition at line 204 of file SbGeoSources\&.H'\&.
+.PP
+References NObsApr\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), and operator>>()\&.
+.SS "void SBSource::setNSessApr (intNSessApr_)\fC [inline]\fP"
+.PP
+Definition at line 205 of file SbGeoSources\&.H'\&.
+.PP
+References NSessApr\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), and operator>>()\&.
+.SS "void SBSource::setObsName (const QString &ObsN_)\fC [inline]\fP"
+.PP
+Definition at line 195 of file SbGeoSources\&.H'\&.
+.PP
+References ObsName\&.
+.SS "void SBSource::setRA (doubleRA_)\fC [inline]\fP"
+.PP
+Definition at line 190 of file SbGeoSources\&.H'\&.
+.PP
+References RA\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), SBSourceImport::importICRF(), operator>>(), and SBSolutionBrowser::updateCRF()\&.
+.SS "void SBSource::setRA_err (doubledRA_)\fC [inline]\fP"
+.PP
+Definition at line 192 of file SbGeoSources\&.H'\&.
+.PP
+References dRA\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), SBSourceImport::importICRF(), and operator>>()\&.
+.SS "void SBSource::setRedShift (floatRedShift_)\fC [inline]\fP"
+.PP
+Definition at line 199 of file SbGeoSources\&.H'\&.
+.PP
+References RedShift\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), and operator>>()\&.
+.SS "void SBSource::setSINEXCharID (const QString &S_)\fC [inline]\fP"
+.PP
+Definition at line 216 of file SbGeoSources\&.H'\&.
+.PP
+References SINEXCharID\&.
+.PP
+Referenced by collectListOfSINEXParameters4NEQ()\&.
+.SS "void SBSource::setSpectrum (\fBSSpectrumClass\fPSp_)\fC [inline]\fP"
+.PP
+Definition at line 198 of file SbGeoSources\&.H'\&.
+.PP
+References SpectrumClass\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), and operator>>()\&.
+.SS "void SBSource::setSpIdx (floatSpIdx_)\fC [inline]\fP"
+.PP
+Definition at line 202 of file SbGeoSources\&.H'\&.
+.PP
+References SpIdx\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), and operator>>()\&.
+.SS "void SBSource::setStatus (\fBSStatus\fPStatus_)\fC [inline]\fP"
+.PP
+Definition at line 196 of file SbGeoSources\&.H'\&.
+.PP
+References Status\&.
+.PP
+Referenced by SBSourceEditor::acquireData()\&.
+.SS "void SBSource::setStructIdxS (intIdx_)\fC [inline]\fP"
+.PP
+Definition at line 212 of file SbGeoSources\&.H'\&.
+.PP
+References StructIdxS\&.
+.PP
+Referenced by operator>>()\&.
+.SS "void SBSource::setStructIdxX (intIdx_)\fC [inline]\fP"
+.PP
+Definition at line 211 of file SbGeoSources\&.H'\&.
+.PP
+References StructIdxX\&.
+.PP
+Referenced by operator>>()\&.
+.SS "void SBSource::setType (\fBSType\fPType_)\fC [inline]\fP"
+.PP
+Definition at line 197 of file SbGeoSources\&.H'\&.
+.PP
+References Type\&.
+.PP
+Referenced by SBSourceEditor::acquireData()\&.
+.SS "const QString& SBSource::sinexCharID () const\fC [inline]\fP"
+.PP
+Definition at line 215 of file SbGeoSources\&.H'\&.
+.PP
+References SINEXCharID\&.
+.PP
+Referenced by collectListOfSINEXParameters4NEQ()\&.
+.SS "\fBSSpectrumClass\fP SBSource::spectrum () const\fC [inline]\fP"
+.PP
+Definition at line 168 of file SbGeoSources\&.H'\&.
+.PP
+References SpectrumClass\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), and SBSourceEditor::wPhysChars()\&.
+.SS "float SBSource::spIdx () const\fC [inline]\fP"
+.PP
+Definition at line 172 of file SbGeoSources\&.H'\&.
+.PP
+References SpIdx\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), operator<<(), and SBSourceEditor::wPhysChars()\&.
+.SS "\fBSStatus\fP SBSource::status () const\fC [inline]\fP"
+.PP
+Definition at line 166 of file SbGeoSources\&.H'\&.
+.PP
+References Status\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), SBSourceListItem::key(), SBSourceListItem::pixmap(), SBBrowseSources::updateList(), and SBSourceEditor::wCoordinates()\&.
+.SS "int SBSource::structIdxS () const\fC [inline]\fP"
+.PP
+Definition at line 182 of file SbGeoSources\&.H'\&.
+.PP
+References StructIdxS\&.
+.SS "int SBSource::structIdxX () const\fC [inline]\fP"
+.PP
+Definition at line 181 of file SbGeoSources\&.H'\&.
+.PP
+References StructIdxX\&.
+.SS "\fBSType\fP SBSource::type () const\fC [inline]\fP"
+.PP
+Definition at line 167 of file SbGeoSources\&.H'\&.
+.PP
+References Type\&.
+.PP
+Referenced by SBSourceEditor::acquireData(), SBSourceListItem::key(), SBSourceListItem::text(), SBBrowseSources::updateList(), and SBSourceEditor::wPhysChars()\&.
+.SS "void SBSource::updateParameters (\fBSBRunManager\fP *Mgr, const \fBSBMJD\fP &T, boolIsRealRun = \fCTRUE\fP)"
+.PP
+Definition at line 205 of file SbGeoSources\&.C'\&.
+.PP
+References DN, DNt, P_DN, P_RA, RA, RAt, SBRunManager::solution(), SBSolution::updateParameter(), and SBParameter::v()\&.
+.PP
+Referenced by collectListOfSINEXParameters4NEQ(), getParameters4Report(), operator<<(), and SBObsVLBIEntry::process()\&.
+.SS "void SBAttributed::xorAttr (uintA_)\fC [inline, inherited]\fP"Toggles the attribute in the storage'\&. 
+.PP
+Definition at line 251 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBStaParsEditor::acquireData(), SBVLBIPreProcess::toggleEntryMarkEnable(), and SBVLBIPreProcess::toggleEntryMoveEnable()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "int cmp (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP, returns (-1:0:+1)'\&. 
+.PP
+Definition at line 253 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBStochParameterList::compareItems(), and SBMasterFile::compareItems()\&.
+.SS "bool operator!= (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 238 of file SbGeo\&.H'\&.
+.SS "bool operator< (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 243 of file SbGeo\&.H'\&.
+.SS "\fBSBTS_dico\fP& operator<< (\fBSBTS_dico\fP &s, \fBSB_CRF\fP &CRF)\fC [friend]\fP"
+.PP
+Definition at line 1299 of file SbGeoSources\&.C'\&.
+.SS "QDataStream & operator<< (QDataStream &s, const \fBSBNamed\fP &W)\fC [friend, inherited]\fP"Saves object to the data stream'\&. 
+.PP
+Definition at line 258 of file SbGeo\&.H'\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBSource\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 281 of file SbGeoSources\&.C'\&.
+.SS "\fBSBTS_rsc\fP& operator<< (\fBSBTS_rsc\fP &s, const \fBSBSource\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 441 of file SbGeoSources\&.C'\&.
+.SS "\fBSBTS_car\fP& operator<< (\fBSBTS_car\fP &s, const \fBSBSource\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 930 of file SbGeoSources\&.C'\&.
+.SS "\fBSBTS_report\fP& operator<< (\fBSBTS_report\fP &s, const \fBSBSource\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 305 of file SbGeoSources\&.C'\&.
+.SS "\fBSBTS_report4IVS\fP& operator<< (\fBSBTS_report4IVS\fP &s, const \fBSBSource\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 379 of file SbGeoSources\&.C'\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBAttributed\fP &A)\fC [friend, inherited]\fP"
+.PP
+Definition at line 259 of file SbGeneral\&.H'\&.
+.SS "bool operator== (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 233 of file SbGeo\&.H'\&.
+.SS "bool operator> (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 248 of file SbGeo\&.H'\&.
+.SS "QDataStream & operator>> (QDataStream &s, \fBSBNamed\fP &W)\fC [friend, inherited]\fP"Loads object from the data stream'\&. 
+.PP
+Definition at line 263 of file SbGeo\&.H'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBSource\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 291 of file SbGeoSources\&.C'\&.
+.SS "\fBSBTS_rsc\fP& operator>> (\fBSBTS_rsc\fP &s, \fBSBSource\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 494 of file SbGeoSources\&.C'\&.
+.SS "\fBSBTS_car\fP& operator>> (\fBSBTS_car\fP &s, \fBSBSource\fP &S)\fC [friend]\fP"
+.PP
+Definition at line 1009 of file SbGeoSources\&.C'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBAttributed\fP &A)\fC [friend, inherited]\fP"
+.PP
+Definition at line 260 of file SbGeneral\&.H'\&.
+.SS "friend class \fBSB_CRF\fP\fC [friend]\fP"
+.PP
+Definition at line 82 of file SbGeoSources\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBQList\fP<QString>* \fBSBSource::aList\fP\fC [private]\fP"
+.PP
+Definition at line 139 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by aliasesList(), clearAliasesList(), SB_CRF::collectObjAliases(), operator<<(), operator=(), SB_CRF::prepareAliases4Output(), SB_CRF::releaseAliases4Output(), SBSource(), and ~SBSource()\&.
+.SS "double \fBSBSource::dDN\fP\fC [private]\fP"
+.PP
+Definition at line 117 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by dn_err(), getGlobalParameters4Report(), getParameters4Report(), operator<<(), operator=(), operator>>(), SBSource(), and setDN_err()\&.
+.SS "double \fBSBSource::DN\fP\fC [private]\fP"
+.PP
+Definition at line 116 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by dn(), getGlobalParameters4Report(), operator<<(), operator=(), operator>>(), SBSource(), setDN(), and updateParameters()\&.
+.SS "double \fBSBSource::DNt\fP\fC [private]\fP"
+.PP
+Definition at line 145 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by DN2str(), dn_t(), getGlobalParameters4Report(), operator=(), operator>>(), SBSource(), and updateParameters()\&.
+.SS "double \fBSBSource::dRA\fP\fC [private]\fP"
+.PP
+Definition at line 115 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by getGlobalParameters4Report(), getParameters4Report(), operator<<(), operator=(), operator>>(), ra_err(), SBSource(), and setRA_err()\&.
+.SS "\fBSBMJD\fP \fBSBSource::FirstMJD\fP\fC [private]\fP"
+.PP
+Definition at line 132 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by firstMJD(), getGlobalParameters4Report(), getParameters4Report(), operator<<(), operator=(), operator>>(), SBSource(), and setFirstMJD()\&.
+.SS "float \fBSBSource::Flux1\fP\fC [private]\fP"
+.PP
+Definition at line 125 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by flux1(), operator<<(), operator=(), operator>>(), SBSource(), and setFlux1()\&.
+.SS "float \fBSBSource::Flux2\fP\fC [private]\fP"
+.PP
+Definition at line 126 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by flux2(), operator<<(), operator=(), operator>>(), SBSource(), and setFlux2()\&.
+.SS "QString \fBSBSource::ICRF\fP\fC [private]\fP"
+.PP
+Definition at line 118 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by ICRFName(), operator<<(), operator=(), operator>>(), SBSource(), and setICRFName()\&.
+.SS "bool \fBSBSource::IsHLink\fP\fC [private]\fP"
+.PP
+Definition at line 123 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by isHLink(), operator<<(), operator=(), operator>>(), SBSource(), and setIsHLink()\&.
+.SS "\fBSBMJD\fP \fBSBSource::LastMJD\fP\fC [private]\fP"
+.PP
+Definition at line 133 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by getGlobalParameters4Report(), getParameters4Report(), lastMJD(), operator<<(), operator=(), operator>>(), SBSource(), and setLastMJD()\&.
+.SS "\fBSBMJD\fP \fBSBSource::MeanMJD\fP\fC [private]\fP"
+.PP
+Definition at line 131 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by getGlobalParameters4Report(), getParameters4Report(), meanMJD(), operator<<(), operator=(), operator>>(), SBSource(), and setMeanMJD()\&.
+.SS "float \fBSBSource::Mv\fP\fC [private]\fP"
+.PP
+Definition at line 128 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by mv(), operator<<(), operator=(), operator>>(), SBSource(), and setMv()\&.
+.SS "QString \fBSBNamed::Name\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 206 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBVLBISesInfo::fileName(), SBNamed::name(), operator<<(), SBNamed::operator=(), SBStation::operator=(), SBSite::operator=(), SBOLoadCarrier::operator==(), operator>>(), SBStochParameter::report(), SBNamed::SBNamed(), SBNamed::setName(), SBSite::updateSite(), and SBStation::updateStation()\&.
+.SS "int \fBSBSource::NObsApr\fP\fC [private]\fP"
+.PP
+Definition at line 129 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by getGlobalParameters4Report(), getParameters4Report(), nObsApr(), operator<<(), operator=(), operator>>(), SBSource(), and setNObsApr()\&.
+.SS "int \fBSBSource::NSessApr\fP\fC [private]\fP"
+.PP
+Definition at line 130 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by getGlobalParameters4Report(), getParameters4Report(), nSessApr(), operator<<(), operator=(), operator>>(), SBSource(), and setNSessApr()\&.
+.SS "QString \fBSBSource::ObsName\fP\fC [private]\fP"
+.PP
+Definition at line 119 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by obsName(), operator=(), SBSource(), and setObsName()\&.
+.SS "\fBSBParameter\fP* \fBSBSource::P_DN\fP\fC [private]\fP"
+.PP
+estimation of the declination; 
+.PP
+Definition at line 143 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by createParameters(), getGlobalParameters4Report(), getParameters4Report(), operator=(), p_DN(), releaseParameters(), SBSource(), and updateParameters()\&.
+.SS "\fBSBParameter\fP* \fBSBSource::P_RA\fP\fC [private]\fP"
+.PP
+estimation of the right ascension; 
+.PP
+Definition at line 142 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by createParameters(), getGlobalParameters4Report(), getParameters4Report(), operator=(), p_RA(), releaseParameters(), SBSource(), and updateParameters()\&.
+.SS "double \fBSBSource::RA\fP\fC [private]\fP"
+.PP
+Definition at line 114 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by getGlobalParameters4Report(), operator<<(), operator=(), operator>>(), ra(), SBSource(), setRA(), and updateParameters()\&.
+.SS "double \fBSBSource::RA_DN\fP\fC [private]\fP"
+.PP
+Definition at line 134 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by corrRA_DN(), getGlobalParameters4Report(), getParameters4Report(), operator<<(), operator=(), operator>>(), SBSource(), and setCorrRA_DN()\&.
+.SS "double \fBSBSource::RAt\fP\fC [private]\fP"
+.PP
+Definition at line 144 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by getGlobalParameters4Report(), operator=(), operator>>(), RA2str(), ra_t(), SBSource(), and updateParameters()\&.
+.SS "float \fBSBSource::RedShift\fP\fC [private]\fP"
+.PP
+Definition at line 124 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by operator<<(), operator=(), operator>>(), redShift(), SBSource(), and setRedShift()\&.
+.SS "QString \fBSBSource::SINEXCharID\fP\fC [private]\fP"
+.PP
+Definition at line 148 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by operator=(), operator>>(), SBSource(), setSINEXCharID(), and sinexCharID()\&.
+.SS "\fBSSpectrumClass\fP \fBSBSource::SpectrumClass\fP\fC [private]\fP"
+.PP
+Definition at line 122 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by operator<<(), operator=(), operator>>(), SBSource(), setSpectrum(), and spectrum()\&.
+.SS "float \fBSBSource::SpIdx\fP\fC [private]\fP"
+.PP
+Definition at line 127 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by operator<<(), operator=(), operator>>(), SBSource(), setSpIdx(), and spIdx()\&.
+.SS "\fBSStatus\fP \fBSBSource::Status\fP\fC [private]\fP"
+.PP
+Definition at line 120 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by operator<<(), operator=(), operator>>(), SBSource(), setStatus(), and status()\&.
+.SS "int \fBSBSource::StructIdxS\fP\fC [private]\fP"
+.PP
+Definition at line 137 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by operator<<(), operator=(), operator>>(), SBSource(), setStructIdxS(), and structIdxS()\&.
+.SS "int \fBSBSource::StructIdxX\fP\fC [private]\fP"
+.PP
+Definition at line 136 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by operator<<(), operator=(), operator>>(), SBSource(), setStructIdxX(), and structIdxX()\&.
+.SS "\fBSType\fP \fBSBSource::Type\fP\fC [private]\fP"
+.PP
+Definition at line 121 of file SbGeoSources\&.H'\&.
+.PP
+Referenced by operator<<(), operator=(), operator>>(), SBSource(), setType(), and type()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

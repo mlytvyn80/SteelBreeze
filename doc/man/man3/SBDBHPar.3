@@ -1,0 +1,283 @@
+.TH "SBDBHPar" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBDBHPar \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoObsVLBI_IO\&.H>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPType\fP { \fBT_R8\fP, \fBT_I2\fP, \fBT_A2\fP, \fBT_D8\fP, \fBT_J4\fP, \fBT_UNKN\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBDBHPar\fP ()"
+.br
+.ti -1c
+.RI "const QString & \fBabbrev\fP ()"
+.br
+.ti -1c
+.RI "const QString & \fBdescr\fP ()"
+.br
+.ti -1c
+.RI "short \fBdim1\fP ()"
+.br
+.ti -1c
+.RI "short \fBdim2\fP ()"
+.br
+.ti -1c
+.RI "short \fBdim3\fP ()"
+.br
+.ti -1c
+.RI "short \fBverOfMod\fP ()"
+.br
+.ti -1c
+.RI "short \fBnTC\fP ()"
+.br
+.ti -1c
+.RI "short \fBnTE\fP ()"
+.br
+.ti -1c
+.RI "int \fBoffset\fP ()"
+.br
+.ti -1c
+.RI "\fBPType\fP \fBtype\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetOffset\fP (int Offset_)"
+.br
+.ti -1c
+.RI "void \fBsetType\fP (\fBPType\fP Type_)"
+.br
+.ti -1c
+.RI "void \fBsetNTC\fP (short NTC_)"
+.br
+.ti -1c
+.RI "void \fBsetNTE\fP (short NTE_)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBAbbrev\fP"
+.br
+.ti -1c
+.RI "QString \fBDescr\fP"
+.br
+.ti -1c
+.RI "\fBPType\fP \fBType\fP"
+.br
+.ti -1c
+.RI "short \fBDim1\fP"
+.br
+.ti -1c
+.RI "short \fBDim2\fP"
+.br
+.ti -1c
+.RI "short \fBDim3\fP"
+.br
+.ti -1c
+.RI "short \fBVerOfMod\fP"
+.br
+.ti -1c
+.RI "short \fBNTC\fP"
+.br
+.ti -1c
+.RI "short \fBNTE\fP"
+.br
+.ti -1c
+.RI "int \fBOffset\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSBDBHTEBlock\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 72 of file SbGeoObsVLBI_IO\&.H'\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBSBDBHPar::PType\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIT_R8 \fP\fP
+.TP
+\fB\fIT_I2 \fP\fP
+.TP
+\fB\fIT_A2 \fP\fP
+.TP
+\fB\fIT_D8 \fP\fP
+.TP
+\fB\fIT_J4 \fP\fP
+.TP
+\fB\fIT_UNKN \fP\fP
+
+.PP
+Definition at line 76 of file SbGeoObsVLBI_IO\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBDBHPar::SBDBHPar ()\fC [inline]\fP"
+.PP
+Definition at line 83 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References Abbrev, Descr, Dim1, Dim2, Dim3, NTC, NTE, Offset, T_UNKN, Type, and VerOfMod\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "const QString& SBDBHPar::abbrev ()\fC [inline]\fP"
+.PP
+Definition at line 84 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References Abbrev\&.
+.SS "const QString& SBDBHPar::descr ()\fC [inline]\fP"
+.PP
+Definition at line 85 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References Descr\&.
+.SS "short SBDBHPar::dim1 ()\fC [inline]\fP"
+.PP
+Definition at line 86 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References Dim1\&.
+.PP
+Referenced by SBDBHDRecString::val(), and SBDBHDRecT< short >::val()\&.
+.SS "short SBDBHPar::dim2 ()\fC [inline]\fP"
+.PP
+Definition at line 87 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References Dim2\&.
+.PP
+Referenced by SBDBHDRecString::val(), and SBDBHDRecT< short >::val()\&.
+.SS "short SBDBHPar::dim3 ()\fC [inline]\fP"
+.PP
+Definition at line 88 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References Dim3\&.
+.SS "short SBDBHPar::nTC ()\fC [inline]\fP"
+.PP
+Definition at line 90 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References NTC\&.
+.PP
+Referenced by SBDBHFormat::lookupPar()\&.
+.SS "short SBDBHPar::nTE ()\fC [inline]\fP"
+.PP
+Definition at line 91 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References NTE\&.
+.PP
+Referenced by SBDBHFormat::lookupPar(), and SBDBHFormat::parRecord()\&.
+.SS "int SBDBHPar::offset ()\fC [inline]\fP"
+.PP
+Definition at line 92 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References Offset\&.
+.PP
+Referenced by SBDBHDRecString::val(), and SBDBHDRecT< short >::val()\&.
+.SS "void SBDBHPar::setNTC (shortNTC_)\fC [inline]\fP"
+.PP
+Definition at line 96 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References NTC\&.
+.SS "void SBDBHPar::setNTE (shortNTE_)\fC [inline]\fP"
+.PP
+Definition at line 97 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References NTE\&.
+.SS "void SBDBHPar::setOffset (intOffset_)\fC [inline]\fP"
+.PP
+Definition at line 94 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References Offset\&.
+.SS "void SBDBHPar::setType (\fBPType\fPType_)\fC [inline]\fP"
+.PP
+Definition at line 95 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References Type\&.
+.SS "\fBPType\fP SBDBHPar::type ()\fC [inline]\fP"
+.PP
+Definition at line 93 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References Type\&.
+.PP
+Referenced by SBDBHFormat::lookupPar(), and SBDBHFormat::parRecord()\&.
+.SS "short SBDBHPar::verOfMod ()\fC [inline]\fP"
+.PP
+Definition at line 89 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References VerOfMod\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBSBDBHTEBlock\fP\fC [friend]\fP"
+.PP
+Definition at line 74 of file SbGeoObsVLBI_IO\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString \fBSBDBHPar::Abbrev\fP\fC [protected]\fP"
+.PP
+Definition at line 78 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by abbrev(), SBDBHTEBlock::parseP3Rec(), and SBDBHPar()\&.
+.SS "QString \fBSBDBHPar::Descr\fP\fC [protected]\fP"
+.PP
+Definition at line 78 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by descr(), and SBDBHPar()\&.
+.SS "short \fBSBDBHPar::Dim1\fP\fC [protected]\fP"
+.PP
+Definition at line 80 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by dim1(), SBDBHTEBlock::parseP3Rec(), and SBDBHPar()\&.
+.SS "short \fBSBDBHPar::Dim2\fP\fC [protected]\fP"
+.PP
+Definition at line 80 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by dim2(), SBDBHTEBlock::parseP3Rec(), and SBDBHPar()\&.
+.SS "short \fBSBDBHPar::Dim3\fP\fC [protected]\fP"
+.PP
+Definition at line 80 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by dim3(), SBDBHTEBlock::parseP3Rec(), and SBDBHPar()\&.
+.SS "short \fBSBDBHPar::NTC\fP\fC [protected]\fP"
+.PP
+Definition at line 80 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by nTC(), SBDBHPar(), and setNTC()\&.
+.SS "short \fBSBDBHPar::NTE\fP\fC [protected]\fP"
+.PP
+Definition at line 80 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by nTE(), SBDBHPar(), and setNTE()\&.
+.SS "int \fBSBDBHPar::Offset\fP\fC [protected]\fP"
+.PP
+Definition at line 81 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by offset(), SBDBHPar(), and setOffset()\&.
+.SS "\fBPType\fP \fBSBDBHPar::Type\fP\fC [protected]\fP"
+.PP
+Definition at line 79 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by SBDBHPar(), setType(), and type()\&.
+.SS "short \fBSBDBHPar::VerOfMod\fP\fC [protected]\fP"
+.PP
+Definition at line 80 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by SBDBHTEBlock::parseP3Rec(), SBDBHPar(), and verOfMod()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

@@ -1,0 +1,50 @@
+#!/bin/sh
+
+cat << EOT
+
+    This is a script just to remind about using autoconf & automake 
+    tools. It is assumed the autoconf-2.52 and automake-1.4-p5 using.
+
+    Running autoscan:
+EOT
+
+autoscan
+
+cat << EOT
+    
+    prepare: autoscan finished, see configure.scan;
+    Check created file and place essential thing into
+    configure.ac file. Then, run autoconf.
+    Running configure script: 
+
+EOT
+
+autoconf -W all
+
+cat << EOT
+    
+    prepare: autoconf finished;
+    Running autoheader script: 
+
+EOT
+
+autoheader
+
+cat << EOT
+    
+    prepare: autoheader finished;
+    Running aclocal script: 
+
+EOT
+
+aclocal
+
+cat << EOT
+    
+    prepare: aclocal finished;
+    Running automake script: 
+
+EOT
+
+automake --add-missing
+

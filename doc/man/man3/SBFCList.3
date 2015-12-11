@@ -1,0 +1,293 @@
+.TH "SBFCList" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBFCList \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbSetup\&.H>\fP
+.PP
+Inherits \fBSBNList\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBFCList\fP ()"
+.br
+.ti -1c
+.RI "\fBSBFCList\fP (const \fBSBFCList\fP &)"
+.br
+.ti -1c
+.RI "virtual \fBSBFCList\fP & \fBoperator=\fP (const \fBSBFCList\fP &)"
+.br
+.ti -1c
+.RI "virtual \fB~SBFCList\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "\fBSBFileConv\fP * \fBguessFileType\fP (const QString &)"
+.br
+.ti -1c
+.RI "\fBSBFileConv\fP * \fBdefaultFC\fP ()"
+.br
+.ti -1c
+.RI "QString \fBdefaultName\fP ()"
+.br
+.ti -1c
+.RI "QString \fBdefaultExt\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetDefault\fP (const QString &)"
+.br
+.ti -1c
+.RI "FILE * \fBopen4In\fP (const QString &, QFile &, QDataStream &)"
+.br
+.ti -1c
+.RI "FILE * \fBopen4In\fP (const QString &, QFile &, \fBQTextStream\fP &)"
+.br
+.ti -1c
+.RI "FILE * \fBopen4Out\fP (const QString &, QFile &, QDataStream &)"
+.br
+.ti -1c
+.RI "FILE * \fBopen4Out\fP (const QString &, QFile &, \fBQTextStream\fP &)"
+.br
+.ti -1c
+.RI "FILE * \fBopen4OutDflt\fP (const QString &, QFile &, QDataStream &)"
+.br
+.ti -1c
+.RI "FILE * \fBopen4OutDflt\fP (const QString &, QFile &, \fBQTextStream\fP &)"
+.br
+.ti -1c
+.RI "void \fBclose\fP (QFile &file, FILE *&p, QDataStream &ds)"
+.br
+.ti -1c
+.RI "void \fBclose\fP (QFile &file, FILE *&p, \fBQTextStream\fP &ts)"
+.br
+.ti -1c
+.RI "virtual void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBinsert\fP (const \fBSBFileConv\fP *)"
+.br
+.ti -1c
+.RI "virtual bool \fBremove\fP (const \fBSBFileConv\fP *N)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual QDataStream & \fBwrite\fP (QDataStream &s, QCollection::Item Entry) const "
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBread\fP (QDataStream &s, QCollection::Item &Entry)"
+.br
+.ti -1c
+.RI "virtual int \fBcompareItems\fP (QCollection::Item item1, QCollection::Item item2)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QDict< \fBSBFileConv\fP > * \fBExtDict\fP"
+.br
+.ti -1c
+.RI "\fBSBFileConv\fP * \fBDefaultFC\fP"
+.br
+.ti -1c
+.RI "QString \fBDefault\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBFCList\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBFCList\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBSBFCList\fP, a list of SBFileConv`s'\&. 
+.PP
+Definition at line 109 of file SbSetup\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBFCList::SBFCList ()"A constructor'\&. 
+.PP
+Definition at line 260 of file SbSetup\&.C'\&.
+.PP
+References Default, DefaultFC, and ExtDict\&.
+.SS "SBFCList::SBFCList (const \fBSBFCList\fP &L)"
+.PP
+Definition at line 269 of file SbSetup\&.C'\&.
+.PP
+References Default, ExtDict, and setDefault()\&.
+.SS "SBFCList::~SBFCList ()\fC [virtual]\fP"A destructor'\&. 
+.PP
+Definition at line 296 of file SbSetup\&.C'\&.
+.PP
+References DefaultFC, and ExtDict\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBFCList::ClassName () const\fC [inline, virtual]\fP"Refers to a class name (debug info) 
+.PP
+Definition at line 128 of file SbSetup\&.H'\&.
+.PP
+Referenced by insert()\&.
+.SS "virtual void SBFCList::clear ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 146 of file SbSetup\&.H'\&.
+.PP
+References ExtDict\&.
+.PP
+Referenced by operator=()\&.
+.SS "void SBFCList::close (QFile &file, FILE *&p, QDataStream &ds)\fC [inline]\fP"
+.PP
+Definition at line 143 of file SbSetup\&.H'\&.
+.PP
+Referenced by close(), SBVLBISession::dumpUserInfo(), SBEstimator::finisLocal(), SBEphem::import(), SBVLBISet::import(), SBAploEphem::importEphem(), SBAploEphem::loadChunk(), SBSolution::loadGlbCor(), SBSolution::loadGlbPar(), SBSolution::loadLocCor(), SBSolution::loadLocPar(), SBSolution::loadNormalEqs(), SBSolution::loadStcPar(), SBVLBISession::restoreUserInfo(), SBAploEphem::saveChunk(), SBSolution::saveGlbCor(), SBSolution::saveGlbPar(), SBSolution::saveLocCor(), SBSolution::saveLocPar(), SBSolution::saveNormalEqs(), SBSolution::saveStcPar(), SBEstimator::solveLocals(), and SBEstimator::solveStochs()\&.
+.SS "void SBFCList::close (QFile &file, FILE *&p, \fBQTextStream\fP &ts)\fC [inline]\fP"
+.PP
+Definition at line 144 of file SbSetup\&.H'\&.
+.PP
+References close()\&.
+.SS "virtual int SBNList::compareItems (QCollection::Itemitem1, QCollection::Itemitem2)\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP, \fBSBStationList\fP, and \fBSBStationIDList\fP'\&.
+.PP
+Definition at line 277 of file SbGeo\&.H'\&.
+.SS "QString SBFCList::defaultExt ()\fC [inline]\fP"
+.PP
+Definition at line 135 of file SbSetup\&.H'\&.
+.PP
+References DefaultFC, and SBFileConv::ext()\&.
+.PP
+Referenced by SBVLBISession::dumpUserInfo(), and SBVLBISet::import()\&.
+.SS "\fBSBFileConv\fP* SBFCList::defaultFC ()\fC [inline]\fP"
+.PP
+Definition at line 133 of file SbSetup\&.H'\&.
+.PP
+References DefaultFC\&.
+.SS "QString SBFCList::defaultName ()\fC [inline]\fP"
+.PP
+Definition at line 134 of file SbSetup\&.H'\&.
+.PP
+References Default\&.
+.PP
+Referenced by SBSetupDialog::packer(), and SBSetupDialog::setData()\&.
+.SS "\fBSBFileConv\fP * SBFCList::guessFileType (const QString &FileName)"Lookups a type, returns NULL if failed'\&. 
+.PP
+Definition at line 302 of file SbSetup\&.C'\&.
+.PP
+References ExtDict\&.
+.PP
+Referenced by open4In(), open4Out(), and SBVLBISession::restoreUserInfo()\&.
+.SS "bool SBFCList::insert (const \fBSBFileConv\fP *F)\fC [virtual]\fP"
+.PP
+Definition at line 370 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::ERR, SBFileConv::ext(), ExtDict, SBLog::IO, Log, SBNamed::name(), and SBLog::write()\&.
+.PP
+Referenced by SBSetupDialog::addPacker(), operator=(), and SBSetUp::SetDefaults()\&.
+.SS "FILE * SBFCList::open4In (const QString &FileName, QFile &file, QDataStream &ds)"
+.PP
+Definition at line 308 of file SbSetup\&.C'\&.
+.PP
+References guessFileType(), and SBFileConv::open4In()\&.
+.PP
+Referenced by SBEphem::import(), SBVLBISet::import(), SBAploEphem::importEphem(), SBAploEphem::loadChunk(), SBSolution::loadGlbCor(), SBSolution::loadGlbPar(), SBSolution::loadLocCor(), SBSolution::loadLocPar(), SBSolution::loadNormalEqs(), SBSolution::loadStcPar(), SBVLBISession::restoreUserInfo(), SBEstimator::solveLocals(), and SBEstimator::solveStochs()\&.
+.SS "FILE * SBFCList::open4In (const QString &FileName, QFile &file, \fBQTextStream\fP &ts)"
+.PP
+Definition at line 319 of file SbSetup\&.C'\&.
+.PP
+References guessFileType(), and SBFileConv::open4In()\&.
+.SS "FILE * SBFCList::open4Out (const QString &FileName, QFile &file, QDataStream &ds)"
+.PP
+Definition at line 330 of file SbSetup\&.C'\&.
+.PP
+References guessFileType(), and SBFileConv::open4Out()\&.
+.PP
+Referenced by SBEstimator::finisLocal(), SBEstimator::prepare4Local(), SBAploEphem::saveChunk(), SBSolution::saveGlbCor(), SBSolution::saveGlbPar(), SBSolution::saveLocCor(), SBSolution::saveLocPar(), SBSolution::saveNormalEqs(), and SBSolution::saveStcPar()\&.
+.SS "FILE * SBFCList::open4Out (const QString &FileName, QFile &file, \fBQTextStream\fP &ts)"
+.PP
+Definition at line 341 of file SbSetup\&.C'\&.
+.PP
+References guessFileType(), and SBFileConv::open4Out()\&.
+.SS "FILE * SBFCList::open4OutDflt (const QString &FileName, QFile &file, QDataStream &ds)"
+.PP
+Definition at line 352 of file SbSetup\&.C'\&.
+.PP
+References DefaultFC, and SBFileConv::open4Out()\&.
+.PP
+Referenced by SBVLBISession::dumpUserInfo()\&.
+.SS "FILE * SBFCList::open4OutDflt (const QString &FileName, QFile &file, \fBQTextStream\fP &ts)"
+.PP
+Definition at line 361 of file SbSetup\&.C'\&.
+.PP
+References DefaultFC, and SBFileConv::open4Out()\&.
+.SS "\fBSBFCList\fP & SBFCList::operator= (const \fBSBFCList\fP &L)\fC [virtual]\fP"
+.PP
+Definition at line 278 of file SbSetup\&.C'\&.
+.PP
+References clear(), Default, ExtDict, insert(), and setDefault()\&.
+.SS "virtual QDataStream& SBFCList::read (QDataStream &s, QCollection::Item &Entry)\fC [inline, protected, virtual]\fP"
+.PP
+Reimplemented from \fBSBNList\fP'\&.
+.PP
+Definition at line 114 of file SbSetup\&.H'\&.
+.SS "virtual bool SBFCList::remove (const \fBSBFileConv\fP *N)\fC [inline, virtual]\fP"
+.PP
+Definition at line 148 of file SbSetup\&.H'\&.
+.PP
+References ExtDict\&.
+.PP
+Referenced by SBSetupDialog::delPacker()\&.
+.SS "void SBFCList::setDefault (const QString &Default_)"
+.PP
+Definition at line 388 of file SbSetup\&.C'\&.
+.PP
+References SBFileConv::comCompr(), Default, DefaultFC, and SBNamed::name()\&.
+.PP
+Referenced by SBSetupDialog::acquireData(), operator=(), operator>>(), and SBFCList()\&.
+.SS "virtual QDataStream& SBFCList::write (QDataStream &s, QCollection::ItemEntry) const\fC [inline, protected, virtual]\fP"
+.PP
+Reimplemented from \fBSBNList\fP'\&.
+.PP
+Definition at line 112 of file SbSetup\&.H'\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBFCList\fP &L)\fC [friend]\fP"
+.PP
+Definition at line 406 of file SbSetup\&.C'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBFCList\fP &L)\fC [friend]\fP"
+.PP
+Definition at line 411 of file SbSetup\&.C'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString \fBSBFCList::Default\fP\fC [private]\fP"
+.PP
+Definition at line 119 of file SbSetup\&.H'\&.
+.PP
+Referenced by defaultName(), operator<<(), operator=(), operator>>(), SBFCList(), and setDefault()\&.
+.SS "\fBSBFileConv\fP* \fBSBFCList::DefaultFC\fP\fC [private]\fP"
+.PP
+Definition at line 118 of file SbSetup\&.H'\&.
+.PP
+Referenced by defaultExt(), defaultFC(), open4OutDflt(), SBFCList(), setDefault(), and ~SBFCList()\&.
+.SS "QDict<\fBSBFileConv\fP>* \fBSBFCList::ExtDict\fP\fC [private]\fP"
+.PP
+Definition at line 115 of file SbSetup\&.H'\&.
+.PP
+Referenced by clear(), guessFileType(), insert(), operator=(), operator>>(), remove(), SBFCList(), and ~SBFCList()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

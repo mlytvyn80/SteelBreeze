@@ -1,0 +1,105 @@
+.TH "SBEstimator::SmoothCarrier" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBEstimator::SmoothCarrier \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoEstimator\&.H>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSmoothCarrier\fP ()"
+.br
+.ti -1c
+.RI "\fB~SmoothCarrier\fP ()"
+.br
+.ti -1c
+.RI "void \fBload\fP (QDataStream &s)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBParameterList\fP * \fBPs\fP"
+.br
+.ti -1c
+.RI "\fBSBUpperMatrix\fP * \fBRp_s\fP"
+.br
+.ti -1c
+.RI "\fBSBMatrix\fP * \fBRpp_s\fP"
+.br
+.ti -1c
+.RI "\fBSBMatrix\fP * \fBRpx_s\fP"
+.br
+.ti -1c
+.RI "\fBSBMatrix\fP * \fBRpy_s\fP"
+.br
+.ti -1c
+.RI "\fBSBVector\fP * \fBZp_s\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 142 of file SbGeoEstimator\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBEstimator::SmoothCarrier::SmoothCarrier ()\fC [inline]\fP"
+.PP
+Definition at line 152 of file SbGeoEstimator\&.H'\&.
+.PP
+References Ps, Rp_s, Rpp_s, Rpx_s, Rpy_s, and Zp_s\&.
+.SS "SBEstimator::SmoothCarrier::~SmoothCarrier ()\fC [inline]\fP"
+.PP
+Definition at line 153 of file SbGeoEstimator\&.H'\&.
+.PP
+References Ps, Rp_s, Rpp_s, Rpx_s, Rpy_s, and Zp_s\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBEstimator::SmoothCarrier::load (QDataStream &s)\fC [inline]\fP"
+.PP
+Definition at line 158 of file SbGeoEstimator\&.H'\&.
+.PP
+References Ps, Rp_s, Rpp_s, Rpx_s, Rpy_s, and Zp_s\&.
+.PP
+Referenced by SBEstimator::solveStochs()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSBParameterList\fP* \fBSBEstimator::SmoothCarrier::Ps\fP"
+.PP
+Definition at line 145 of file SbGeoEstimator\&.H'\&.
+.PP
+Referenced by load(), SmoothCarrier(), SBEstimator::solveStochs(), and ~SmoothCarrier()\&.
+.SS "\fBSBUpperMatrix\fP* \fBSBEstimator::SmoothCarrier::Rp_s\fP"
+.PP
+Definition at line 146 of file SbGeoEstimator\&.H'\&.
+.PP
+Referenced by load(), SmoothCarrier(), SBEstimator::solveStochs(), and ~SmoothCarrier()\&.
+.SS "\fBSBMatrix\fP* \fBSBEstimator::SmoothCarrier::Rpp_s\fP"
+.PP
+Definition at line 147 of file SbGeoEstimator\&.H'\&.
+.PP
+Referenced by load(), SmoothCarrier(), SBEstimator::solveStochs(), and ~SmoothCarrier()\&.
+.SS "\fBSBMatrix\fP* \fBSBEstimator::SmoothCarrier::Rpx_s\fP"
+.PP
+Definition at line 148 of file SbGeoEstimator\&.H'\&.
+.PP
+Referenced by load(), SmoothCarrier(), SBEstimator::solveStochs(), and ~SmoothCarrier()\&.
+.SS "\fBSBMatrix\fP* \fBSBEstimator::SmoothCarrier::Rpy_s\fP"
+.PP
+Definition at line 149 of file SbGeoEstimator\&.H'\&.
+.PP
+Referenced by load(), SmoothCarrier(), SBEstimator::solveStochs(), and ~SmoothCarrier()\&.
+.SS "\fBSBVector\fP* \fBSBEstimator::SmoothCarrier::Zp_s\fP"
+.PP
+Definition at line 150 of file SbGeoEstimator\&.H'\&.
+.PP
+Referenced by load(), SmoothCarrier(), SBEstimator::solveStochs(), and ~SmoothCarrier()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

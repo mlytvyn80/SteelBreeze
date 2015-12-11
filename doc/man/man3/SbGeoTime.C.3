@@ -1,0 +1,48 @@
+.TH "SbGeoTime.C" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SbGeoTime.C \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SbGeoTime\&.H'\fP
+.br
+\fC#include 'SbGeoEop\&.H'\fP
+.br
+\fC#include <qdatetime\&.h>\fP
+.br
+
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const \fBSBMJD\fP \fBTEphem\fP (51544\&.5)"
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP \fBTZero\fP (1943, 9, 6)"
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP \fBTInf\fP (2100, 1, 1)"
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP \fBTUnix0\fP (1970, 1, 1)"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "const \fBSBMJD\fP \fBTEphem\fP(51544\&.5)"
+.PP
+Referenced by SBAploWave::angle(), SBFrameNRO::calc(), SBNutThIAU1980::calc(), SBNutThIAU1996::calc(), SBNutThIAU2000A::calc(), SBNROThIAU2000A::calc(), SBOTideEOPRay1994_1996::calc(), SBNutation::calcGST(), SBNut_IAU2000::calcGST(), SBTime::FundamentalArgs(), SBPrec_IAU1976::operator()(), SBPrec_IAU2000::operator()(), SBNut_IAU1980::operator()(), SBNut_IAU2000::operator()(), SBPolusNRO::operator()(), and SBTime::setUTC()\&.
+.SS "const \fBSBMJD\fP \fBTInf\fP(2100, 1, 1)"
+.PP
+Referenced by SBSolution::dumpParameters(), SBRunManager::makeReportCRFVariations(), and SBRunManager::makeReportTRFVariations()\&.
+.SS "const \fBSBMJD\fP \fBTUnix0\fP(1970, 1, 1)"
+.PP
+Referenced by SBMJD::toString()\&.
+.SS "const \fBSBMJD\fP \fBTZero\fP(1943, 9, 6)"
+.PP
+Referenced by SBStationEditor::addCoordinates(), SBDelay::calc(), SBStation::calcDisplacement(), SBObsVLBIEntry::check(), SBAploEphem::checkEphem(), SBObsVLBIStatRecord::clear(), SBStatistics::clearStatistics(), SBDerivation::clearValues(), SBDerivation::clearValues_aux(), SBObsVLBIStatistics::collectStatistics(), SBRunManager::constrainClocks(), SBRunManager::constraintEOP(), SBRunManager::constraintSourceCoord(), SBRunManager::constraintStationCoord(), SBRunManager::constraintStationVeloc(), SBAploEphem::dismissed(), SBSolution::dumpParameters(), SBSource::getParameters4Report(), SBEphem::import(), SBAploChunk::import(), SBAploEphem::importEphem(), SBAploEphem::importHPS(), SBStationEditor::makeApply(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportTRFVariations(), operator>>(), SBStochParameter::report(), SBAploEphem::SBAploEphem(), SBAploHeader::SBAploHeader(), SBCatalog::SBCatalog(), SBDerivation::SBDerivation(), SBEccentricity::SBEccentricity(), SBEOP::SBEOP(), SBEstimator::SBEstimator(), SBMasterFile::SBMasterFile(), SBRunManager::SBRunManager(), SBSINEXParameter::SBSINEXParameter(), SBStatistics::SBStatistics(), SBVLBISesInfo::SBVLBISesInfo(), SBDerivation::setD(), SBEOP::setPtNum(), sinex_SiteEccentricityBlock(), sinex_SolutionEpochsBlock(), SBDerivation::tEpoch(), SBStochParameter::tEpoch(), SBDerivation::tEpoch_aux(), SBObsVLBIStatSrcLI::text(), SBObsVLBIStatStaLI::text(), SBObsVLBIStatRecordLI::text(), SBProject::tFinis(), SBStochParameter::tFinis(), SBMJD::toString(), SBProject::tStart(), SBStochParameter::tStart(), and writeNormalEquationSystem()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

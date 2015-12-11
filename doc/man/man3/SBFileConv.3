@@ -1,0 +1,331 @@
+.TH "SBFileConv" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBFileConv \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbSetup\&.H>\fP
+.PP
+Inherits \fBSBNamed\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBFileConv\fP (const QString &Name_='NONE', const QString &ComC_='cat', const QString &ComU_='cat', const QString &Ext_=' ')"
+.br
+.ti -1c
+.RI "\fBSBFileConv\fP (const \fBSBFileConv\fP &W)"
+.br
+.ti -1c
+.RI "virtual \fBSBFileConv\fP & \fBoperator=\fP (const \fBSBFileConv\fP &W)"
+.br
+.ti -1c
+.RI "virtual \fB~SBFileConv\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBcomCompr\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBcomUncom\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBext\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetComCompr\fP (const QString &C_)"
+.br
+.ti -1c
+.RI "void \fBsetComUncom\fP (const QString &C_)"
+.br
+.ti -1c
+.RI "void \fBsetExt\fP (const QString &C_)"
+.br
+.ti -1c
+.RI "FILE * \fBopen4In\fP (const QString &, QFile &, QDataStream &)"
+.br
+.ti -1c
+.RI "FILE * \fBopen4In\fP (const QString &, QFile &, \fBQTextStream\fP &)"
+.br
+.ti -1c
+.RI "FILE * \fBopen4Out\fP (const QString &, QFile &, QDataStream &)"
+.br
+.ti -1c
+.RI "FILE * \fBopen4Out\fP (const QString &, QFile &, \fBQTextStream\fP &)"
+.br
+.ti -1c
+.RI "bool \fBcheck\fP ()"
+.br
+.ti -1c
+.RI "const QString & \fBname\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetName\fP (const QString &Name_)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBclose\fP (QFile &, FILE *&, QDataStream &)"
+.br
+.ti -1c
+.RI "static void \fBclose\fP (QFile &, FILE *&, \fBQTextStream\fP &)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBName\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBComCompr\fP"
+.br
+.ti -1c
+.RI "QString \fBComUncom\fP"
+.br
+.ti -1c
+.RI "QString \fBExt\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSBFCList\fP"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBFileConv\fP &F)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBFileConv\fP &F)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "int \fBcmp\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBNamed\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBSBFileConv\fP'\&. 
+.PP
+Definition at line 49 of file SbSetup\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBFileConv::SBFileConv (const QString &Name_ = \fC'NONE'\fP, const QString &ComC_ = \fC'cat'\fP, const QString &ComU_ = \fC'cat'\fP, const QString &Ext_ = \fC' '\fP)\fC [inline]\fP"A constructor'\&. 
+.PP
+Definition at line 58 of file SbSetup\&.H'\&.
+.PP
+References ComCompr, ComUncom, and Ext\&.
+.SS "SBFileConv::SBFileConv (const \fBSBFileConv\fP &W)\fC [inline]\fP"
+.PP
+Definition at line 61 of file SbSetup\&.H'\&.
+.PP
+References ComCompr, ComUncom, and Ext\&.
+.SS "virtual SBFileConv::~SBFileConv ()\fC [inline, virtual]\fP"A destructor'\&. 
+.PP
+Definition at line 73 of file SbSetup\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SBFileConv::check ()"
+.PP
+Definition at line 219 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), close(), ComCompr, ComUncom, SBLog::DBG, SBLog::ERR, SBLog::IO, Log, open4In(), open4Out(), and SBLog::write()\&.
+.PP
+Referenced by SBSetupDialog::addPacker(), and SBSetupDialog::chkPacker()\&.
+.SS "virtual QString SBFileConv::ClassName () const\fC [inline, virtual]\fP"Refers to a class name (debug info) 
+.PP
+Reimplemented from \fBSBNamed\fP'\&.
+.PP
+Definition at line 75 of file SbSetup\&.H'\&.
+.PP
+Referenced by check(), open4In(), and open4Out()\&.
+.SS "void SBFileConv::close (QFile &file, FILE *&p, QDataStream &ds)\fC [static]\fP"Closes compressed in/output'\&. Closes a pipe and corresponded QFile object'\&. 
+.PP
+Definition at line 197 of file SbSetup\&.C'\&.
+.PP
+Referenced by check()\&.
+.SS "void SBFileConv::close (QFile &file, FILE *&p, \fBQTextStream\fP &ts)\fC [static]\fP"
+.PP
+Definition at line 208 of file SbSetup\&.C'\&.
+.SS "const QString& SBFileConv::comCompr () const\fC [inline]\fP"
+.PP
+Definition at line 78 of file SbSetup\&.H'\&.
+.PP
+References ComCompr\&.
+.PP
+Referenced by SBSetupDialog::chkPacker(), SBFCList::setDefault(), and SBFileConvLI::text()\&.
+.SS "const QString& SBFileConv::comUncom () const\fC [inline]\fP"
+.PP
+Definition at line 79 of file SbSetup\&.H'\&.
+.PP
+References ComUncom\&.
+.PP
+Referenced by SBSetupDialog::chkPacker(), and SBFileConvLI::text()\&.
+.SS "const QString& SBFileConv::ext () const\fC [inline]\fP"
+.PP
+Definition at line 80 of file SbSetup\&.H'\&.
+.PP
+References Ext\&.
+.PP
+Referenced by SBFCList::defaultExt(), SBFCList::insert(), and SBFileConvLI::text()\&.
+.SS "const QString& SBNamed::name () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 215 of file SbGeo\&.H'\&.
+.PP
+References SBNamed::Name\&.
+.PP
+Referenced by SBVLBINetEntryEditor::accept(), SBSourceEditor::acquireData(), SBSiteEditor::acquireData(), SBStationEditor::acquireData(), SBStochParameter::addPar(), SBProject::addSession(), SBSite::addStation(), SBParameterList::append(), SBVector::at(), SBMatrix::at(), SBUpperMatrix::at(), SBSymMatrix::at(), SBStation::axisOffsetLenght(), SBSolutionBrowser::batch4StochEOPChanged(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBEphem::calc(), SBStation::calcDisplacement(), SBSetupDialog::chkPacker(), SBVLBIPreProcess::clearPars(), SBEstimator::collectContStochs4NextBatch(), collectListOfSINEXParameters(), collectListOfSINEXParameters4NEQ(), SB_CRF::collectObjAliases(), SBObsVLBIStatistics::collectStatistics(), SBRunManager::constraintSourceCoord(), SBRunManager::constraintStationCoord(), SBRunManager::constraintStationVeloc(), SBSource::createParameters(), SBProjectCreate::createProject(), SBTestFrame::createWidget4Test(), SBTestEphem::createWidget4Test(), SBVLBIPreProcess::currentSesChange(), SBPlotArea::defineAreas(), SBSiteEditor::deleteEntry(), SBVLBISetView::deleteEntry(), SBStuffSources::deleteEntryS(), SBStuffStations::deleteEntryS(), SBSolution::deleteSolution(), SBSetupDialog::delInst(), SBSetupDialog::delPacker(), SBEstimator::Group::delParameter(), SBProjectEdit::delSession(), SBProject::delSession(), SBSite::delStation(), SBPlateMotion::displacement(), SBStuffAplo::draw(), SBPlotArea::drawFrames(), SBStochParameter::dump2File(), SBSolution::dumpParameters(), SBBaseInfo::dumpUserInfo(), SBSourceInfo::dumpUserInfo(), SBVLBISession::dumpUserInfo(), SBVLBISet::dumpUserInfo(), SBParametersEditor::editParameter(), SBAploChunk::fillDict(), SBVLBISet::fillDicts(), SBVLBIPreProcess::fillObsListView(), SBVLBIPreProcess::fillSessAttr(), SBCatalog::find(), SBSolution::getGlobalParameter4Report(), SBAploChunk::import(), SBVLBISet::import(), SBEcc::importEccDat(), SBAploEphem::importHPS(), SBMaster::importMF(), SBProjectCreate::init(), SBFCList::insert(), SBInstitutionList::insert(), SBCatalog::insert(), SBParameterList::inSort(), SBCatalog::inSort(), SBStochParameterList::inSort(), SB_TRF::inSort(), SBObsVLBIStatSrcLI::key(), SBParameterLI::key(), SBSourceListItem::key(), SBStationListItem::key(), SBObsVLBIStatStaLI::key(), SBVLBISesInfoLI::key(), SBSiteListItem::key(), SBObsVLBIStatRecordLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBAploEntryLI::key(), SBTestStationLI::key(), SBStationImport::loadNScodes(), SBStationImport::loadOLoad(), SBSolution::loadStatistics(), SBRunManager::loadVLBISession_m1(), SBRunManager::loadVLBISessions_m2(), SB_CRF::lookupNearest(), SB_TRF::lookupNearest(), SBSolutionBrowser::lookupParameters(), SBSourceEditor::makeApply(), SBSiteEditor::makeApply(), SBStationEditor::makeApply(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportEOP(), SBRunManager::makeReportMaps(), SBRunManager::makeReportNormalEqs(), SBRunManager::makeReports(), SBRunManager::makeReportSessionStatistics(), SBRunManager::makeReportTRF(), SBRunManager::makeReportTRFVariations(), SBRunManager::makeReportTroposphere(), SBEstimator::mapContStochs4NewBatch(), SBMaster::mapFiles(), SBMaster::mapRecords(), matT_x_mat(), SBEstimator::moveGlobalInfo(), SBEstimator::moveGlobalInfo_Old(), open4In(), open4Out(), SBEphem::openFile(), SBVector::operator()(), SBSolidTideLd::operator()(), SBTideLd::operator()(), SBMatrix::operator()(), SBRefraction::operator()(), SBUpperMatrix::operator()(), operator*(), operator+(), SBVector::operator+=(), SBMatrix::operator+=(), SBUpperMatrix::operator+=(), operator-(), SBVector::operator-=(), SBMatrix::operator-=(), SBUpperMatrix::operator-=(), SBObsVLBIEntry::operator<(), operator<<(), SBVector::operator=(), SBMatrix::operator=(), SBUpperMatrix::operator=(), SBVLBISesInfo::operator=(), SBVector::operator==(), SBObsVLBIEntry::operator==(), SBVLBISesInfo::operator==(), operator>>(), operator~(), SBSymMatrix::operator~(), SBPlotArea::output4Files(), SBSolution::path2GlbDir(), SBSolution::path2LocDir(), SBSolution::path2StcDir(), SBEstimator::prepare4Local(), SBSite::prepareDicts(), SBVLBIPreProcess::preProcess(), SBObsVLBIEntry::process(), SBRunManager::process_m1(), SBRunManager::process_m2(), SBVLBIPreProcess::procScenario_2(), SBProjectSel::ProjectListItem::ProjectListItem(), QuadraticForm(), SBRefraction::refrDir(), SBAploEphem::registerStation(), SBInstitutionList::remove(), SBParameterList::remove(), SBStochParameterList::remove(), SBVLBISet::removeSession(), SBParameterList::report(), SBStochParameter::report(), SBBaseInfo::restoreUserInfo(), SBSourceInfo::restoreUserInfo(), SBVLBISession::restoreUserInfo(), RRT(), RTR(), SBParameter::rw(), SBPlot::save2PS(), SBVLBISet::saveSession(), SBRunManager::saveVLBISessions_m1(), SBRunManager::saveVLBISessions_m2(), SBCoordsEditor::SBCoordsEditor(), SBEstimator::SBEstimator(), SBModelEditor::SBModelEditor(), SBObsVLBIStatBrowser::SBObsVLBIStatBrowser(), SBObsVLBIStatSrc::SBObsVLBIStatSrc(), SBObsVLBIStatSta::SBObsVLBIStatSta(), SBParametersEditor::SBParametersEditor(), SBPlateMotion::SBPlateMotion(), SBPlot::SBPlot(), SBPlotDialog::SBPlotDialog(), SBProjectEdit::SBProjectEdit(), SBRunManager::SBRunManager(), SBSolution::SBSolution(), SBSolutionBrowser::SBSolutionBrowser(), SBStuffEphem::SBStuffEphem(), SBTestAPLoad::SBTestAPLoad(), SBTestDiurnEOP::SBTestDiurnEOP(), SBTestEphem::SBTestEphem(), SBTestFrame::SBTestFrame(), SBTestNutation::SBTestNutation(), SBTestOceanTides::SBTestOceanTides(), SBTestPolarTides::SBTestPolarTides(), SBTestSolidTides::SBTestSolidTides(), SBVLBINetEntryEditor::SBVLBINetEntryEditor(), SBVLBISessionEditor::SBVLBISessionEditor(), SBVector::set(), SBMatrix::set(), SBUpperMatrix::set(), SBMatrix::setCol(), SBUpperMatrix::setCol(), SBFCList::setDefault(), SB_TRF::setSiteName(), SBMatrix::setVector(), SBUpperMatrix::setVector(), Solve(), SBEstimator::solveLocals(), SBObsVLBIEntry::source(), SBTestSolidTides::stationChange(), SBTestOceanTides::stationChange(), SBTestPolarTides::stationChange(), SBTestAPLoad::stationChange(), SBParameter::str4compare(), SBRunManager::stripTRF(), SBSolution::submitGlobalParameters(), SBSolution::submitLocalParameters(), SBSolution::submitStochasticParameters(), SBMatrix::T(), SBUpperMatrix::T(), SBFileConvLI::text(), SBParameterLI::text(), SBObsVLBIStatSrcLI::text(), SBSourceListItem::text(), SBStationListItem::text(), SBObsVLBIStatStaLI::text(), SBVLBISesInfoLI::text(), SBSolutionBatchLI::text(), SBSiteListItem::text(), SBVLBISesPreProcLI::text(), SBObsVLBIStatRecordLI::text(), SBSetupDialog::SBInstLI::text(), SBBasInfoLI::text(), SBSouInfoLI::text(), SBAploEntryLI::text(), SBTestStationLI::text(), SBVLBINetworkEditor::NetworkListItem::text(), SBMasterRecBrowser::SBMRListItem::text(), SBStochParameter::update(), SBSolution::updateParameter(), SBVLBIPreProcess::updateSession(), SBParameterList::updateSolution(), SBMainWindow::UtilitiesCollectStat4Prj(), SBPlateMotion::velocity(), SBVLBIPreProcess::wAttributes(), SBSourceEditor::wCoordinates(), SBParametersEditor::wEOPParameters(), SBSolutionBrowser::wLocalEOPPars(), SBSolutionBrowser::wLocalSoPars(), SBSolutionBrowser::wLocalStPars(), SBStationEditor::wNames(), SBVLBISessionEditor::wObservs(), SBParametersEditor::wOtherParameters(), SBVLBISessionEditor::wParameters(), writeNormalEquationSystem(), SBSiteEditor::wSite(), SBParametersEditor::wSourceParameters(), SBParametersEditor::wStationParameters(), SBSolutionBrowser::wStochEOPPars(), SBSolutionBrowser::wStochSoPars(), SBSolutionBrowser::wStochStPars(), SBParametersEditor::wTestParameters(), and SBSolutionBrowser::wWRMSs()\&.
+.SS "FILE * SBFileConv::open4In (const QString &FileName, QFile &file, QDataStream &ds)"Create compressed input'\&. Opens a pipe through uncompress command, opens corresponded QFile, returns opened pipe or NULL if popen failed'\&. 
+.PP
+\fBWarning:\fP
+.RS 4
+caller have to pclose returned value manually or call a \fBSBFileConv::close\fP'\&. 
+.RE
+.PP
+
+.PP
+Definition at line 121 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), ComUncom, SBLog::ERR, SBLog::IO, Log, SBNamed::name(), and SBLog::write()\&.
+.PP
+Referenced by check(), and SBFCList::open4In()\&.
+.SS "FILE * SBFileConv::open4In (const QString &FileName, QFile &file, \fBQTextStream\fP &ts)"
+.PP
+Definition at line 138 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), ComUncom, SBLog::ERR, SBLog::IO, Log, SBNamed::name(), and SBLog::write()\&.
+.SS "FILE * SBFileConv::open4Out (const QString &FileName, QFile &file, QDataStream &ds)"Create compressed output'\&. Opens a pipe through compress command, opens corresponded QFile, returns opened pipe or NULL if popen failed'\&. 
+.PP
+\fBWarning:\fP
+.RS 4
+caller have to pclose returned value manually or call a \fBSBFileConv::close()\fP'\&. 
+.RE
+.PP
+
+.PP
+Definition at line 160 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), ComCompr, SBLog::ERR, SBLog::IO, Log, SBNamed::name(), and SBLog::write()\&.
+.PP
+Referenced by check(), SBFCList::open4Out(), and SBFCList::open4OutDflt()\&.
+.SS "FILE * SBFileConv::open4Out (const QString &FileName, QFile &file, \fBQTextStream\fP &ts)"
+.PP
+Definition at line 177 of file SbSetup\&.C'\&.
+.PP
+References ClassName(), ComCompr, SBLog::ERR, SBLog::IO, Log, SBNamed::name(), and SBLog::write()\&.
+.SS "virtual \fBSBFileConv\fP& SBFileConv::operator= (const \fBSBFileConv\fP &W)\fC [inline, virtual]\fP"
+.PP
+Definition at line 63 of file SbSetup\&.H'\&.
+.PP
+References ComCompr, ComUncom, and Ext\&.
+.SS "void SBFileConv::setComCompr (const QString &C_)\fC [inline]\fP"
+.PP
+Definition at line 81 of file SbSetup\&.H'\&.
+.PP
+References ComCompr\&.
+.SS "void SBFileConv::setComUncom (const QString &C_)\fC [inline]\fP"
+.PP
+Definition at line 82 of file SbSetup\&.H'\&.
+.PP
+References ComUncom\&.
+.SS "void SBFileConv::setExt (const QString &C_)\fC [inline]\fP"
+.PP
+Definition at line 83 of file SbSetup\&.H'\&.
+.PP
+References Ext\&.
+.SS "void SBNamed::setName (const QString &Name_)\fC [inline, inherited]\fP"
+.PP
+Definition at line 216 of file SbGeo\&.H'\&.
+.PP
+References SBNamed::Name\&.
+.PP
+Referenced by SBVLBINetEntryEditor::accept(), SBSourceEditor::acquireData(), SBSiteEditor::acquireData(), SBStationEditor::acquireData(), SBObsVLBIStatistics::collectStatistics(), SBVLBIPreProcess::currentSesChange(), SBVLBISet::import(), SBVLBISet::loadSession(), SBVLBISesInfo::operator=(), operator>>(), SBPlotArea::output4Files(), SBFilteringGauss::redrawDataPlot_ExpMode(), SBBaseInfoList::restoreUserInfo(), SBSourceInfoList::restoreUserInfo(), SBMasterRecord::SBMasterRecord(), SBSolution::SBSolution(), SB_TRF::setSiteName(), SBTestSolidTides::stationChange(), SBTestOceanTides::stationChange(), SBTestPolarTides::stationChange(), SBTestAPLoad::stationChange(), and SBVLBIPreProcess::updateSession()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "int cmp (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP, returns (-1:0:+1)'\&. 
+.PP
+Definition at line 253 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBStochParameterList::compareItems(), and SBMasterFile::compareItems()\&.
+.SS "bool operator!= (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 238 of file SbGeo\&.H'\&.
+.SS "bool operator< (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 243 of file SbGeo\&.H'\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBFileConv\fP &F)\fC [friend]\fP"
+.PP
+Definition at line 95 of file SbSetup\&.H'\&.
+.SS "QDataStream & operator<< (QDataStream &s, const \fBSBNamed\fP &W)\fC [friend, inherited]\fP"Saves object to the data stream'\&. 
+.PP
+Definition at line 258 of file SbGeo\&.H'\&.
+.SS "bool operator== (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 233 of file SbGeo\&.H'\&.
+.SS "bool operator> (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 248 of file SbGeo\&.H'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBFileConv\fP &F)\fC [friend]\fP"
+.PP
+Definition at line 97 of file SbSetup\&.H'\&.
+.SS "QDataStream & operator>> (QDataStream &s, \fBSBNamed\fP &W)\fC [friend, inherited]\fP"Loads object from the data stream'\&. 
+.PP
+Definition at line 263 of file SbGeo\&.H'\&.
+.SS "friend class \fBSBFCList\fP\fC [friend]\fP"
+.PP
+Definition at line 51 of file SbSetup\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString \fBSBFileConv::ComCompr\fP\fC [private]\fP"
+.PP
+Definition at line 53 of file SbSetup\&.H'\&.
+.PP
+Referenced by check(), comCompr(), open4Out(), operator=(), SBFileConv(), and setComCompr()\&.
+.SS "QString \fBSBFileConv::ComUncom\fP\fC [private]\fP"
+.PP
+Definition at line 54 of file SbSetup\&.H'\&.
+.PP
+Referenced by check(), comUncom(), open4In(), operator=(), SBFileConv(), and setComUncom()\&.
+.SS "QString \fBSBFileConv::Ext\fP\fC [private]\fP"
+.PP
+Definition at line 55 of file SbSetup\&.H'\&.
+.PP
+Referenced by ext(), operator=(), SBFileConv(), and setExt()\&.
+.SS "QString \fBSBNamed::Name\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 206 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBVLBISesInfo::fileName(), SBNamed::name(), operator<<(), SBNamed::operator=(), SBStation::operator=(), SBSite::operator=(), SBOLoadCarrier::operator==(), operator>>(), SBStochParameter::report(), SBNamed::SBNamed(), SBNamed::setName(), SBSite::updateSite(), and SBStation::updateStation()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

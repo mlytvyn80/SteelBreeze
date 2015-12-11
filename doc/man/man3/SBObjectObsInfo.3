@@ -1,0 +1,344 @@
+.TH "SBObjectObsInfo" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBObjectObsInfo \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoObsVLBI\&.H>\fP
+.PP
+Inherits \fBSBAttributed\fP'\&.
+.PP
+Inherited by \fBSBBaseInfo\fP, \fBSBSourceInfo\fP, and \fBSBStationInfo\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBObjectObsInfo\fP (int Idx_=0, const QString &Aka_='unkn')"
+.br
+.ti -1c
+.RI "virtual \fB~SBObjectObsInfo\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "short int \fBidx\fP () const "
+.br
+.ti -1c
+.RI "unsigned int \fBnum\fP () const "
+.br
+.ti -1c
+.RI "unsigned int \fBprocNum\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBaka\fP () const "
+.br
+.ti -1c
+.RI "double \fBwrms\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetIdx\fP (int Idx_)"
+.br
+.ti -1c
+.RI "void \fBsetNum\fP (unsigned int Num_)"
+.br
+.ti -1c
+.RI "void \fBsetProcNum\fP (unsigned int ProcNum_)"
+.br
+.ti -1c
+.RI "void \fBsetAka\fP (const QString &Aka_)"
+.br
+.ti -1c
+.RI "void \fBincNum\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddWRMS\fP (double o_c_, double w_)"
+.br
+.ti -1c
+.RI "void \fBclearRMSs\fP ()"
+.br
+.ti -1c
+.RI "uint \fBattributes\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetAttributes\fP (uint A_)"
+.br
+.ti -1c
+.RI "void \fBaddAttr\fP (uint A_)"
+.br
+.ti -1c
+.RI "void \fBdelAttr\fP (uint A_)"
+.br
+.ti -1c
+.RI "void \fBxorAttr\fP (uint A_)"
+.br
+.ti -1c
+.RI "bool \fBisAttr\fP (uint A_) const "
+.br
+.ti -1c
+.RI "void \fBclearAll\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "short int \fBIdx\fP"
+.br
+.RI "\fIsession's local index \fP"
+.ti -1c
+.RI "unsigned int \fBNum\fP"
+.br
+.RI "\fInumber of obs per object \fP"
+.ti -1c
+.RI "unsigned int \fBProcNum\fP"
+.br
+.RI "\fInumber of processed observations per object \fP"
+.ti -1c
+.RI "QString \fBAka\fP"
+.br
+.RI "\fIan alias (how it's called in datafile) \fP"
+.ti -1c
+.RI "double \fBSWRMS2\fP"
+.br
+.RI "\fIsum of WRMS^2 per object \fP"
+.ti -1c
+.RI "double \fBSWeight\fP"
+.br
+.RI "\fIsum of weights per object \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBObjectObsInfo\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBObjectObsInfo\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBAttributed\fP &A)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBAttributed\fP &A)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides basic session's objects information for \fBSBVLBISession\fP'\&. Keeps necessary information on objects (stations, sources, etc) to make a reasonably quick/usefull session management'\&. 
+.PP
+Definition at line 69 of file SbGeoObsVLBI\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBObjectObsInfo::SBObjectObsInfo (intIdx_ = \fC0\fP, const QString &Aka_ = \fC'unkn'\fP)\fC [inline]\fP"A constructor'\&. Creates a copy of object'\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIIdx_\fP session index of the object (default is 0); 
+.br
+\fIAka_\fP session alias of the object (default is 'unkn')'\&. 
+.RE
+.PP
+
+.PP
+Definition at line 84 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References Aka, Idx, Num, ProcNum, SWeight, and SWRMS2\&.
+.SS "virtual SBObjectObsInfo::~SBObjectObsInfo ()\fC [inline, virtual]\fP"A destructor'\&. 
+.PP
+Definition at line 87 of file SbGeoObsVLBI\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBAttributed::addAttr (uintA_)\fC [inline, inherited]\fP"Adds the attribute to the storage'\&. 
+.PP
+Definition at line 247 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBVLBISession::checkArtMeteo(), SBVLBISession::checkAttributres(), SBStation::createOLoad(), SBVLBIPreProcess::fixSession(), SBAploChunk::import(), SBAploEphem::importHPS(), SBMaster::importMF(), SBFilteringGauss::makeAnalysisWith3Sigma(), SBSourceEditor::makeApply(), SBStationEditor::makeApply(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportTRF(), operator>>(), SBFilterGauss::prepareModels(), SBObsVLBIEntry::process(), SBStationInfo::restoreUserInfo(), SBBaseInfo::restoreUserInfo(), SBSourceInfo::restoreUserInfo(), SBVLBISession::restoreUserInfo(), SBEphem::SBEphem(), SBSourceInfo::SBSourceInfo(), SBStationInfo::SBStationInfo(), SBSpectrumAnalyserMEM::setMEMAssumeEquiDistant(), SBSpectrumAnalyserMEM::setMEMFillMissingImag(), SBSpectrumAnalyserMEM::setMEMRemoveShifts(), SBSpectrumAnalyserMEM::setMEMRemoveTrends(), SBParameter::tuneParameter(), SBSolutionBrowser::updateCRF(), and SBSolutionBrowser::updateTRF()\&.
+.SS "void SBObjectObsInfo::addWRMS (doubleo_c_, doublew_)\fC [inline]\fP"Increments number of observation by one, adds RMS^2 to sum of (RMS^2)'\&. 
+.PP
+Definition at line 112 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References ProcNum, SWeight, and SWRMS2\&.
+.PP
+Referenced by SBObsVLBIEntry::process()\&.
+.SS "const QString& SBObjectObsInfo::aka () const\fC [inline]\fP"Returns alias'\&. 
+.PP
+Definition at line 98 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References Aka\&.
+.PP
+Referenced by SBProject::addSession(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBProject::delSession(), SBStationInfo::dumpUserInfo(), SBBaseInfo::dumpUserInfo(), SBSourceInfo::dumpUserInfo(), SBVLBISession::fillDicts(), SBVLBIPreProcess::fillObsListView(), SBSolution::guessParameterName(), SBObsVLBIEntry::isEligible(), SBCableLI::key(), SBStaInfoLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBSolutionBrowser::lookupParameters(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportMaps(), SBRunManager::makeReportTRFVariations(), operator<<(), SBObsVLBIEntry::process(), SBSourceInfo::restoreUserInfo(), SBStaParsEditor::SBStaParsEditor(), sinex_tro_TropSolutionStation(), SBCableLI::text(), SBStaInfoLI::text(), SBBasInfoLI::text(), SBSouInfoLI::text(), SBSolutionBrowser::wLocalSoPars(), SBSolutionBrowser::wLocalStPars(), and SBVLBISessionEditor::wObservs()\&.
+.SS "uint SBAttributed::attributes () const\fC [inline, inherited]\fP"Returns the attributes'\&. 
+.PP
+Definition at line 243 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBCoordinates::operator==(), and SBVLBISessionEditor::~SBVLBISessionEditor()\&.
+.SS "virtual QString SBObjectObsInfo::ClassName () const\fC [inline, virtual]\fP"Refers to a class name (debug info) 
+.PP
+Reimplemented from \fBSBAttributed\fP'\&.
+.PP
+Reimplemented in \fBSBSourceInfo\fP, \fBSBBaseInfo\fP, and \fBSBStationInfo\fP'\&.
+.PP
+Definition at line 89 of file SbGeoObsVLBI\&.H'\&.
+.SS "void SBAttributed::clearAll ()\fC [inline, inherited]\fP"Removes all attributes'\&. 
+.PP
+Definition at line 255 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.SS "void SBObjectObsInfo::clearRMSs ()\fC [inline]\fP"
+.PP
+Definition at line 113 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References ProcNum, SWeight, and SWRMS2\&.
+.SS "void SBAttributed::delAttr (uintA_)\fC [inline, inherited]\fP"Deletes the attribute from the storage'\&. 
+.PP
+Definition at line 249 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBProject::addSession(), SBVLBISession::checkAttributres(), SBVLBIPreProcess::clearPars(), SBStation::deleteOLoad(), SBObsVLBIEntry::isEligible(), SBFilteringGauss::makeAnalysisWith3Sigma(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportTRF(), SBStationInfo::restoreUserInfo(), SBBaseInfo::restoreUserInfo(), SBSourceInfo::restoreUserInfo(), SBVLBISession::restoreUserInfo(), SBParameter::rw(), SBEphem::SBEphem(), SBStation::SBStation(), SBSpectrumAnalyserMEM::setMEMAssumeEquiDistant(), SBSpectrumAnalyserMEM::setMEMFillMissingImag(), SBSpectrumAnalyserMEM::setMEMRemoveShifts(), SBSpectrumAnalyserMEM::setMEMRemoveTrends(), and SBParameter::tuneParameter()\&.
+.SS "short int SBObjectObsInfo::idx () const\fC [inline]\fP"Returns local index'\&. 
+.PP
+Definition at line 92 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References Idx\&.
+.PP
+Referenced by SBVLBISession::checkArtMeteo(), SBVLBISession::checkAttributres(), SBVLBISession::fillDicts(), SBCableLI::key(), SBStaInfoLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBVLBISession::parseObsDumpString(), SBStationInfo::restoreUserInfo(), SBCableLI::text(), SBStaInfoLI::text(), SBBasInfoLI::text(), and SBSouInfoLI::text()\&.
+.SS "void SBObjectObsInfo::incNum ()\fC [inline]\fP"Increments number of observation by one'\&. 
+.PP
+Definition at line 110 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References Num\&.
+.SS "bool SBAttributed::isAttr (uintA_) const\fC [inline, inherited]\fP"Returns TRUE if the attribute is set'\&. 
+.PP
+Definition at line 253 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBStationEditor::acquireData(), SBStaParsEditor::acquireData(), SBObsVLBIEntry::ambientH_1(), SBObsVLBIEntry::ambientH_2(), SBObsVLBIEntry::ambientP_1(), SBObsVLBIEntry::ambientP_2(), SBObsVLBIEntry::ambientT_1(), SBObsVLBIEntry::ambientT_2(), SBDelay::calc(), SBVLBISession::checkArtMeteo(), SBVLBISession::checkAttributres(), collectListOfSINEXParameters(), SBStationInfo::dumpUserInfo(), SBBaseInfo::dumpUserInfo(), SBSourceInfo::dumpUserInfo(), SBVLBISession::dumpUserInfo(), SBFilterModel::eliminateAfter(), SBFilterModel::eliminateBefore(), SBVLBIPreProcess::fillObsListView(), SBRunManager::fillParameterList(), SBMEM::fpe(), SBFilterGauss::interpolate(), SBObservation::isEligible(), SBObsVLBIEntry::isEligible(), SBVLBIObsPPLI::key(), SBSourceListItem::key(), SBStationListItem::key(), SBVLBISesInfoLI::key(), SBVLBISesPreProcLI::key(), SBVLBIObsLI::key(), SBStaInfoLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBStationImport::loadOLoad(), SBParameter::m(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportMaps(), SBRunManager::makeReportTRF(), SBRunManager::makeReportTRFVariations(), operator<<(), operator>>(), SBVLBIObsPPLI::paintCell(), SBObsVLBIEntry::process(), SBRunManager::process_m1(), SBMEM::readDataFile(), SBParameter::rw(), SBStaParsEditor::SBStaParsEditor(), SBProjectCreate::selChanged(), sinex_SiteEccentricityBlock(), sinex_SiteIDBlock(), sinex_SourceIDBlock(), SBParameter::str4compare(), SBVLBIObsPPLI::text(), SBSourceListItem::text(), SBStationListItem::text(), SBVLBISesInfoLI::text(), SBVLBISesPreProcLI::text(), SBVLBIObsLI::text(), SBStaInfoLI::text(), SBBasInfoLI::text(), SBSouInfoLI::text(), SBMasterRecBrowser::SBMRListItem::text(), SBSolutionBrowser::updateCRF(), SBBrowseSources::updateList(), SBSolutionBrowser::updateTRF(), SBVLBISessionEditor::wObservs(), SBSourceEditor::wStats(), SBStationEditor::wStats(), and SBStation::~SBStation()\&.
+.SS "unsigned int SBObjectObsInfo::num () const\fC [inline]\fP"Returns number of observations'\&. 
+.PP
+Definition at line 94 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References Num\&.
+.PP
+Referenced by SBProject::addSession(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBProject::delSession(), SBStaInfoLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBRunManager::makeReportCRFVariations4IVS(), SBStaInfoLI::text(), SBBasInfoLI::text(), SBSouInfoLI::text(), SBSolutionBrowser::wLocalSoPars(), and SBSolutionBrowser::wLocalStPars()\&.
+.SS "unsigned int SBObjectObsInfo::procNum () const\fC [inline]\fP"Returns number of processed observations'\&. 
+.PP
+Definition at line 96 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References ProcNum\&.
+.PP
+Referenced by SBStaInfoLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBStaInfoLI::text(), SBBasInfoLI::text(), and SBSouInfoLI::text()\&.
+.SS "void SBObjectObsInfo::setAka (const QString &Aka_)\fC [inline]\fP"Sets up alias'\&. 
+.PP
+Definition at line 108 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References Aka\&.
+.SS "void SBAttributed::setAttributes (uintA_)\fC [inline, inherited]\fP"Sets up the attributes'\&. 
+.PP
+Definition at line 245 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBCelestBody::SBCelestBody(), and SBVLBISessionEditor::~SBVLBISessionEditor()\&.
+.SS "void SBObjectObsInfo::setIdx (intIdx_)\fC [inline]\fP"Sets up index'\&. 
+.PP
+Definition at line 102 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References Idx\&.
+.SS "void SBObjectObsInfo::setNum (unsigned intNum_)\fC [inline]\fP"Sets up number of observations per object'\&. 
+.PP
+Definition at line 104 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References Num\&.
+.PP
+Referenced by SBProject::addSession(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBProject::delSession(), and SBSolutionBrowser::lookupParameters()\&.
+.SS "void SBObjectObsInfo::setProcNum (unsigned intProcNum_)\fC [inline]\fP"Sets up number of processed observations per object'\&. 
+.PP
+Definition at line 106 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References ProcNum\&.
+.SS "double SBObjectObsInfo::wrms () const\fC [inline]\fP"
+.PP
+Definition at line 99 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References SWeight, and SWRMS2\&.
+.PP
+Referenced by SBStaInfoLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBStaInfoLI::text(), SBBasInfoLI::text(), and SBSouInfoLI::text()\&.
+.SS "void SBAttributed::xorAttr (uintA_)\fC [inline, inherited]\fP"Toggles the attribute in the storage'\&. 
+.PP
+Definition at line 251 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBStaParsEditor::acquireData(), SBVLBIPreProcess::toggleEntryMarkEnable(), and SBVLBIPreProcess::toggleEntryMoveEnable()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "QDataStream & operator<< (QDataStream &s, const \fBSBObjectObsInfo\fP &Oi)\fC [friend]\fP"Output to the data stream'\&. 
+.PP
+Definition at line 122 of file SbGeoObsVLBI\&.H'\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBAttributed\fP &A)\fC [friend, inherited]\fP"
+.PP
+Definition at line 259 of file SbGeneral\&.H'\&.
+.SS "QDataStream & operator>> (QDataStream &s, \fBSBObjectObsInfo\fP &Oi)\fC [friend]\fP"Input from the data stream'\&. 
+.PP
+Definition at line 128 of file SbGeoObsVLBI\&.H'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBAttributed\fP &A)\fC [friend, inherited]\fP"
+.PP
+Definition at line 260 of file SbGeneral\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString \fBSBObjectObsInfo::Aka\fP\fC [private]\fP"
+.PP
+an alias (how it's called in datafile) 
+.PP
+Definition at line 75 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by aka(), SBObjectObsInfo(), and setAka()\&.
+.SS "short int \fBSBObjectObsInfo::Idx\fP\fC [private]\fP"
+.PP
+session's local index 
+.PP
+Definition at line 72 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by idx(), SBObjectObsInfo(), and setIdx()\&.
+.SS "unsigned int \fBSBObjectObsInfo::Num\fP\fC [private]\fP"
+.PP
+number of obs per object 
+.PP
+Definition at line 73 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by incNum(), num(), SBObjectObsInfo(), and setNum()\&.
+.SS "unsigned int \fBSBObjectObsInfo::ProcNum\fP\fC [private]\fP"
+.PP
+number of processed observations per object 
+.PP
+Definition at line 74 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by addWRMS(), clearRMSs(), procNum(), SBObjectObsInfo(), and setProcNum()\&.
+.SS "double \fBSBObjectObsInfo::SWeight\fP\fC [private]\fP"
+.PP
+sum of weights per object 
+.PP
+Definition at line 77 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by addWRMS(), clearRMSs(), SBObjectObsInfo(), and wrms()\&.
+.SS "double \fBSBObjectObsInfo::SWRMS2\fP\fC [private]\fP"
+.PP
+sum of WRMS^2 per object 
+.PP
+Definition at line 76 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by addWRMS(), clearRMSs(), SBObjectObsInfo(), and wrms()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

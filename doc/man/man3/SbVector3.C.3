@@ -1,0 +1,58 @@
+.TH "SbVector3.C" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SbVector3.C \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SbVector3\&.H'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMatrix3\fP \fBoperator*\fP (const \fBMatrix3\fP &M1, const \fBMatrix3\fP &M2)"
+.br
+.ti -1c
+.RI "\fBMatrix3\fP \fBoperator~\fP (const \fBMatrix3\fP &M1)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const \fBVector3\fP \fBv3Zero\fP (0\&.0, 0\&.0, 0\&.0)"
+.br
+.ti -1c
+.RI "const \fBVector3\fP \fBv3Unit\fP (1\&.0, 1\&.0, 1\&.0)"
+.br
+.ti -1c
+.RI "const \fBMatrix3\fP \fBm3E\fP (\fBVector3\fP(1\&.0, 0\&.0, 0\&.0), \fBVector3\fP(0\&.0, 1\&.0, 0\&.0), \fBVector3\fP(0\&.0, 0\&.0, 1\&.0))"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBMatrix3\fP operator* (const \fBMatrix3\fP &M1, const \fBMatrix3\fP &M2)"
+.PP
+Definition at line 59 of file SbVector3\&.C'\&.
+.PP
+References Matrix3::mat\&.
+.SS "\fBMatrix3\fP operator~ (const \fBMatrix3\fP &M1)"Returns inversed matrix: A*~A=~A*A=1 (original matrix does'n change)'\&. 
+.PP
+Definition at line 95 of file SbVector3\&.C'\&.
+.PP
+References Matrix3::ClassName(), SBLog::ERR, Log, Matrix3::mat, SBLog::MATRIX3D, Matrix3::module(), and SBLog::write()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const \fBMatrix3\fP \fBm3E\fP(\fBVector3\fP(1\&.0, 0\&.0, 0\&.0), \fBVector3\fP(0\&.0, 1\&.0, 0\&.0), \fBVector3\fP(0\&.0, 0\&.0, 1\&.0))"
+.SS "const \fBVector3\fP \fBv3Unit\fP(1\&.0, 1\&.0, 1\&.0)"
+.PP
+Referenced by SBStationEditor::addCoordinates(), SBAploChunk::import(), SBAploEphem::importHPS(), and operator>>()\&.
+.SS "const \fBVector3\fP \fBv3Zero\fP(0\&.0, 0\&.0, 0\&.0)"
+.PP
+Referenced by SBStationEditor::addCoordinates(), SBStationImport::applyFilter(), SBStation::calcDisplacement(), SBSite::calcRLF(), SBRunManager::constraintStationVeloc(), SBPlateMotion::displacement(), SBAploEphem::displacement(), SBReferencePoint::dR(), SBReferencePoint::dR_0(), SBReferencePoint::dV(), SBReferencePoint::dV_0(), SBTestSolidTides::fillData4Plotting(), SBTestOceanTides::fillData4Plotting(), SBTestPolarTides::fillData4Plotting(), SBTestAPLoad::fillData4Plotting(), SBStation::getGlobalParameters4Report(), SBStation::getGlobalParameters4Report4Axel(), SBStation::getGlobalParameters4UpdateTRF(), SBAploChunk::import(), SBAploEphem::importHPS(), SBStationImport::importITRF(), SBStationListItem::key(), SBStationImport::loadOLoad(), SBRunManager::makeReportTRFVariations(), SBSolidTideLdIERS96::makeStep1(), operator<<(), operator>>(), SBReferencePoint::r(), SBReferencePoint::r_0(), SBReferencePoint::registerCoords(), SBEcc::registerEcc(), SBCoordinates::SBCoordinates(), SBEccentricity::SBEccentricity(), SBTestOceanTides::SBTestOceanTides(), SBTestPolarTides::SBTestPolarTides(), SBTestSolidTides::SBTestSolidTides(), sinex_tro_StaCoordinatesBlock(), SBStationListItem::text(), SBStation::updateGeodCoo(), SBReferencePoint::v(), SBReferencePoint::v_0(), SBPlateEntry::velocity(), SBPlateMotion::velocity(), and SBStation::vModel()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

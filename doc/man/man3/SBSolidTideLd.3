@@ -1,0 +1,696 @@
+.TH "SBSolidTideLd" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBSolidTideLd \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoTide\&.H>\fP
+.PP
+Inherits \fBVector3\fP'\&.
+.PP
+Inherited by \fBSBSolidTideLdIERS92\fP, and \fBSBSolidTideLdIERS96\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSolidTideLd\fP (const \fBSBConfig\fP *)"
+.br
+.ti -1c
+.RI "virtual \fB~SBSolidTideLd\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual const \fBVector3\fP & \fBoperator()\fP (\fBSBStation\fP *, \fBSBEphem\fP *, const \fBSBFrame\fP &)"
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBtideDeg2ip\fP () const "
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBtideDeg3ip\fP () const "
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBtideDeg2op\fP () const "
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBtideLatDepend\fP () const "
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBstep1\fP () const "
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBstep2\fP () const "
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBdTide_dLag\fP (\fBSBStation\fP *, \fBSBEphem\fP *)"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBdTide_dH2\fP (\fBSBStation\fP *, \fBSBEphem\fP *)"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBdTide_dL2\fP (\fBSBStation\fP *, \fBSBEphem\fP *)"
+.br
+.ti -1c
+.RI "double & \fBoperator[]\fP (\fBDIRECTION\fP i)"
+.br
+.ti -1c
+.RI "double \fBat\fP (\fBDIRECTION\fP i) const "
+.br
+.ti -1c
+.RI "double \fBmodule\fP () const "
+.br
+.ti -1c
+.RI "double \fBphi\fP () const "
+.br
+.ti -1c
+.RI "double \fBlambda\fP () const "
+.br
+.ti -1c
+.RI "\fBVector3\fP & \fBunify\fP ()"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBunit\fP () const "
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "\fBVector3\fP & \fBoperator+=\fP (const \fBVector3\fP &)"
+.br
+.ti -1c
+.RI "\fBVector3\fP & \fBoperator-=\fP (const \fBVector3\fP &)"
+.br
+.ti -1c
+.RI "\fBVector3\fP & \fBoperator*=\fP (double)"
+.br
+.ti -1c
+.RI "\fBVector3\fP & \fBoperator/=\fP (double)"
+.br
+.ti -1c
+.RI "virtual void \fBreport2Log\fP (\fBSBLog::LogLevel\fP, uint, const QString &, int, int, double=1\&.0) const "
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBVector3\fP &v) const "
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBVector3\fP &v) const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual double \fBh2\fP (double phi, \fBSBStation\fP *) const "
+.br
+.ti -1c
+.RI "virtual double \fBl2\fP (double phi, \fBSBStation\fP *) const "
+.br
+.ti -1c
+.RI "virtual double \fBh3\fP () const "
+.br
+.ti -1c
+.RI "virtual double \fBl3\fP () const "
+.br
+.ti -1c
+.RI "virtual \fBVector3\fP \fBdeg2InPhase\fP (\fBSBStation\fP *, const \fBVector3\fP &)"
+.br
+.ti -1c
+.RI "virtual const \fBVector3\fP & \fBmakeStep1\fP (\fBSBStation\fP *, \fBSBEphem\fP *)"
+.br
+.ti -1c
+.RI "virtual const \fBVector3\fP & \fBmakeStep2\fP (\fBSBStation\fP *, const \fBSBFrame\fP &)"
+.br
+.ti -1c
+.RI "virtual \fBVector3\fP \fBpermTide\fP (\fBSBStation\fP *)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "const \fBSBConfig\fP * \fBCfg\fP"
+.br
+.ti -1c
+.RI "double \fBh_0\fP"
+.br
+.ti -1c
+.RI "double \fBh_2\fP"
+.br
+.ti -1c
+.RI "double \fBl_0\fP"
+.br
+.ti -1c
+.RI "double \fBl_2\fP"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBTideDeg2ip\fP"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBTideDeg3ip\fP"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBTideDeg2op\fP"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBTideLatDepend\fP"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBStep1\fP"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBStep2\fP"
+.br
+.ti -1c
+.RI "double \fBCoeffSun\fP"
+.br
+.ti -1c
+.RI "double \fBCoeffMoon\fP"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBMoon_TRS\fP"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBSun_TRS\fP"
+.br
+.ti -1c
+.RI "\fBMatrix3\fP \fBFmREN\fP"
+.br
+.RI "\fItransforms local radial-transverse coords to TRF \fP"
+.ti -1c
+.RI "double \fBvec\fP [3]"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const double \fBh_0_el\fP = 0\&.6026"
+.br
+.RI "\fInominal value for h^(0), elastic \fP"
+.ti -1c
+.RI "static const double \fBh_2_el\fP = -0\&.0006"
+.br
+.RI "\fInominal value for h^(2), elastic \fP"
+.ti -1c
+.RI "static const double \fBl_0_el\fP = 0\&.0831"
+.br
+.RI "\fInominal value for l^(0), elastic \fP"
+.ti -1c
+.RI "static const double \fBl_2_el\fP = 0\&.0002"
+.br
+.RI "\fInominal value for l^(2), elastic \fP"
+.ti -1c
+.RI "static const double \fBh_0_an\fP = 0\&.6078"
+.br
+.RI "\fInominal value for h^(0), anelastic \fP"
+.ti -1c
+.RI "static const double \fBh_2_an\fP = -0\&.0006"
+.br
+.RI "\fInominal value for h^(2), anelastic \fP"
+.ti -1c
+.RI "static const double \fBl_0_an\fP = 0\&.0847"
+.br
+.RI "\fInominal value for l^(0), anelastic \fP"
+.ti -1c
+.RI "static const double \fBl_2_an\fP = 0\&.0002"
+.br
+.RI "\fInominal value for l^(2), anelastic \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "\fBVector3\fP \fBoperator-\fP (const \fBVector3\fP &)"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBoperator-\fP (const \fBVector3\fP &, const \fBVector3\fP &)"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBoperator+\fP (const \fBVector3\fP &, const \fBVector3\fP &)"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBoperator/\fP (const \fBVector3\fP &, double)"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBoperator*\fP (const \fBVector3\fP &, double)"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBoperator*\fP (double, const \fBVector3\fP &)"
+.br
+.ti -1c
+.RI "double \fBoperator*\fP (const \fBVector3\fP &, const \fBVector3\fP &)"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBoperator*\fP (const \fBMatrix3\fP &, const \fBVector3\fP &)"
+.br
+.ti -1c
+.RI "\fBVector3\fP \fBoperator%\fP (const \fBVector3\fP &, const \fBVector3\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBVector3\fP &v)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBVector3\fP &v)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Station's displacement due to Solid Earth Tides (general interface)'\&. Inherits \fBVector3\fP, represents local displacement in TRF'\&. 
+.PP
+Definition at line 103 of file SbGeoTide\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBSolidTideLd::SBSolidTideLd (const \fBSBConfig\fP *Cfg_)"A constructor'\&. Creates a copy of object, inits love numbers with the corresponded values (anelastic or elastic case)'\&.
+.PP
+A constructor'\&. Creates a copy of object'\&. 
+.PP
+Definition at line 290 of file SbGeoTide\&.C'\&.
+.PP
+References Cfg, CoeffMoon, CoeffSun, h_0, h_0_an, h_0_el, h_2, h_2_an, h_2_el, SBConfig::isSolidTideAnelastic(), l_0, l_0_an, l_0_el, l_2, l_2_an, and l_2_el\&.
+.SS "virtual SBSolidTideLd::~SBSolidTideLd ()\fC [inline, virtual]\fP"A destructor'\&. 
+.PP
+Definition at line 163 of file SbGeoTide\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double Vector3::at (\fBDIRECTION\fPi) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 72 of file SbVector3\&.H'\&.
+.PP
+References Vector3::vec\&.
+.PP
+Referenced by SBStationEditor::acquireData(), SBDelay::calc(), SBDelay::calcDerivatives(), collectListOfSINEXParameters(), collectListOfSINEXParameters4NEQ(), SBRunManager::constraintStationCoord(), SBRunManager::constraintStationVeloc(), SBTestEphem::createWidget4Test(), SBPlateMotion::displacement(), SBTestEphem::displayCoo(), SBTestAPLoad::fillData4Plotting(), SBEccListItem::key(), SBCoordsListItem::key(), SBRunManager::makeReportMaps(), Matrix3::Matrix3(), operator<<(), SB_TRF::prepareEccs4Session(), SBRefraction::refrDir(), SBStationEcc::registerEcc(), SBCoordsEditor::SBCoordsEditor(), sinex_SiteEccentricityBlock(), sinex_tro_StaCoordinatesBlock(), SBEccListItem::text(), SBCoordsListItem::text(), SBPlateEntry::velocity(), SBPlateMotion::velocity(), SBStationEditor::wCoordinates(), and SBSiteEditor::wSite()\&.
+.SS "virtual QString SBSolidTideLd::ClassName () const\fC [inline, virtual]\fP"Refers to a class name (debug info) 
+.PP
+Reimplemented from \fBVector3\fP'\&.
+.PP
+Reimplemented in \fBSBSolidTideLdIERS96\fP, and \fBSBSolidTideLdIERS92\fP'\&.
+.PP
+Definition at line 165 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by operator()()\&.
+.SS "void Vector3::clear ()\fC [inline, inherited]\fP"
+.PP
+Definition at line 79 of file SbVector3\&.H'\&.
+.PP
+References Vector3::vec\&.
+.PP
+Referenced by SBDelay::calc(), SBOceanTideLd::operator()(), SBPolarTideLd::operator()(), and operator()()\&.
+.SS "\fBVector3\fP SBSolidTideLd::deg2InPhase (\fBSBStation\fP *Station, const \fBVector3\fP &B)\fC [protected, virtual]\fP"
+.PP
+Definition at line 349 of file SbGeoTide\&.C'\&.
+.PP
+References h2(), l2(), Vector3::module(), SBStation::p_TideLag(), Vector3::phi(), SBStation::rt(), Vector3::unify(), SBParameter::v(), and Z_AXIS\&.
+.PP
+Referenced by makeStep1()\&.
+.SS "\fBVector3\fP SBSolidTideLd::dTide_dH2 (\fBSBStation\fP *Station, \fBSBEphem\fP *Ephem)"
+.PP
+Definition at line 408 of file SbGeoTide\&.C'\&.
+.PP
+References SBEphem::earth(), SBEphem::emRat(), SBCelestBody::gm(), Vector3::module(), Moon_TRS, SBStation::rt(), SBEphem::sun(), Sun_TRS, and Vector3::unit()\&.
+.PP
+Referenced by SBDelay::calcDerivatives()\&.
+.SS "\fBVector3\fP SBSolidTideLd::dTide_dL2 (\fBSBStation\fP *Station, \fBSBEphem\fP *Ephem)"
+.PP
+Definition at line 435 of file SbGeoTide\&.C'\&.
+.PP
+References SBEphem::earth(), SBEphem::emRat(), SBCelestBody::gm(), Vector3::module(), Moon_TRS, SBStation::rt(), SBEphem::sun(), Sun_TRS, and Vector3::unit()\&.
+.PP
+Referenced by SBDelay::calcDerivatives()\&.
+.SS "\fBVector3\fP SBSolidTideLd::dTide_dLag (\fBSBStation\fP *Station, \fBSBEphem\fP *Ephem)"
+.PP
+Definition at line 364 of file SbGeoTide\&.C'\&.
+.PP
+References SBEphem::earth(), SBEphem::emRat(), SBCelestBody::gm(), h2(), l2(), Vector3::module(), Moon_TRS, SBStation::p_TideLag(), Vector3::phi(), SBStation::rt(), SBEphem::sun(), Sun_TRS, SBParameter::v(), and Z_AXIS\&.
+.PP
+Referenced by SBDelay::calcDerivatives()\&.
+.SS "double SBSolidTideLd::h2 (doublephi, \fBSBStation\fP *Station) const\fC [protected, virtual]\fP"Returns Love number h_2'\&. Returns nominal Love number h_2 (in the case of no latitude dependancy) or latitude dependent h_2'\&. 
+.PP
+Reimplemented in \fBSBSolidTideLdIERS92\fP'\&.
+.PP
+Definition at line 315 of file SbGeoTide\&.C'\&.
+.PP
+References Cfg, h_0, h_2, SBConfig::isSolidTideLatDepend(), SBStation::p_TideH2(), and SBParameter::v()\&.
+.PP
+Referenced by deg2InPhase(), dTide_dLag(), and SBSolidTideLdIERS96::permTide()\&.
+.SS "virtual double SBSolidTideLd::h3 () const\fC [inline, protected, virtual]\fP"Returns Love number h_3'\&. 
+.PP
+Definition at line 146 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by SBSolidTideLdIERS96::deg3InPhase()\&.
+.SS "double SBSolidTideLd::l2 (doublephi, \fBSBStation\fP *Station) const\fC [protected, virtual]\fP"Returns Love number l_2'\&. Returns nominal Love number l_2 (in the case of no latitude dependancy) or latitude dependent l_2'\&. 
+.PP
+Reimplemented in \fBSBSolidTideLdIERS92\fP'\&.
+.PP
+Definition at line 327 of file SbGeoTide\&.C'\&.
+.PP
+References Cfg, SBConfig::isSolidTideLatDepend(), l_0, l_2, SBStation::p_TideL2(), and SBParameter::v()\&.
+.PP
+Referenced by deg2InPhase(), dTide_dLag(), and SBSolidTideLdIERS96::permTide()\&.
+.SS "virtual double SBSolidTideLd::l3 () const\fC [inline, protected, virtual]\fP"Returns Love number l_3'\&. 
+.PP
+Definition at line 148 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by SBSolidTideLdIERS96::deg3InPhase()\&.
+.SS "double Vector3::lambda () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 75 of file SbVector3\&.H'\&.
+.PP
+References Vector3::module(), and Vector3::vec\&.
+.PP
+Referenced by SBSolidTideLdIERS96::deg2OutPhase(), SBTestEphem::displayCoo(), SBSolidTideLdIERS96::latDepend(), SBSolidTideLdIERS96::makeStep2(), and operator()()\&.
+.SS "const \fBVector3\fP & SBSolidTideLd::makeStep1 (\fBSBStation\fP *Station, \fBSBEphem\fP *Ephem)\fC [protected, virtual]\fP"
+.PP
+Reimplemented in \fBSBSolidTideLdIERS96\fP'\&.
+.PP
+Definition at line 462 of file SbGeoTide\&.C'\&.
+.PP
+References CoeffMoon, CoeffSun, deg2InPhase(), SBEphem::earth(), SBEphem::emRat(), SBCelestBody::gm(), Vector3::module(), Moon_TRS, SBStation::rt(), Step1, SBEphem::sun(), Sun_TRS, and TideDeg2ip\&.
+.PP
+Referenced by operator()()\&.
+.SS "const \fBVector3\fP & SBSolidTideLd::makeStep2 (\fBSBStation\fP *St, const \fBSBFrame\fP &Frame)\fC [protected, virtual]\fP"
+.PP
+Reimplemented in \fBSBSolidTideLdIERS96\fP'\&.
+.PP
+Definition at line 480 of file SbGeoTide\&.C'\&.
+.PP
+References FmREN, SBFrame::gmst(), SBStation::latitude(), SBStation::longitude(), Step2, and Vector3::Vector3()\&.
+.PP
+Referenced by operator()()\&.
+.SS "double Vector3::module () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 73 of file SbVector3\&.H'\&.
+.PP
+References Vector3::vec\&.
+.PP
+Referenced by SBDelay::calc(), deg2InPhase(), SBSolidTideLdIERS96::deg2OutPhase(), SBSolidTideLdIERS96::deg3InPhase(), SBTestEphem::displayCoo(), dTide_dH2(), dTide_dL2(), dTide_dLag(), SBStationImport::importITRF(), Vector3::lambda(), SBSolidTideLdIERS96::latDepend(), SBRunManager::makeReportMaps(), makeStep1(), Vector3::phi(), Vector3::report2Log(), Vector3::unify(), and Vector3::unit()\&.
+.SS "bool Vector3::operator!= (const \fBVector3\fP &v) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 102 of file SbVector3\&.H'\&.
+.SS "const \fBVector3\fP & SBSolidTideLd::operator() (\fBSBStation\fP *Station, \fBSBEphem\fP *Ephem, const \fBSBFrame\fP &Frame)\fC [virtual]\fP"Calculates site's displacement vector corresponds to time T'\&. Calls \fBSBSolidTideLd::makeStep1()\fP and \fBSBSolidTideLd::makeStep1()\fP, then, if it is necessary, removes permanent tide'\&. 
+.PP
+Definition at line 486 of file SbGeoTide\&.C'\&.
+.PP
+References Cfg, ClassName(), Vector3::clear(), CoeffMoon, CoeffSun, SBFrame::crs2trs(), SBLog::DBG, SBEphem::earth(), EAST, SBLog::ERR, SBMJD::F_MJD, SBMJD::F_Short, FmREN, SBStation::fmVEN(), SBEphem::geoMoon(), SBStation::id(), SBLog::isEligible(), SBConfig::isRemovePermTide(), SBConfig::isSolidTideAnelastic(), SBConfig::isSolidTideLatDepend(), Vector3::lambda(), Log, makeStep1(), makeStep2(), Moon_TRS, SBNamed::name(), NORT, permTide(), Vector3::phi(), SBCelestBody::r(), Vector3::report2Log(), Matrix3::report2Log(), SBStation::rt(), Step1, Step2, SBEphem::sun(), Sun_TRS, SBTime::TAI(), SBLog::TIDES, SBFrame::time(), SBMJD::toString(), SBStationID::toString(), and SBLog::write()\&.
+.SS "\fBVector3\fP & Vector3::operator*= (doublev)\fC [inline, inherited]\fP"
+.PP
+Definition at line 247 of file SbVector3\&.H'\&.
+.PP
+References Vector3::vec\&.
+.SS "\fBVector3\fP & Vector3::operator+= (const \fBVector3\fP &V)\fC [inline, inherited]\fP"
+.PP
+Definition at line 235 of file SbVector3\&.H'\&.
+.PP
+References Vector3::vec\&.
+.SS "\fBVector3\fP & Vector3::operator-= (const \fBVector3\fP &V)\fC [inline, inherited]\fP"
+.PP
+Definition at line 241 of file SbVector3\&.H'\&.
+.PP
+References Vector3::vec\&.
+.SS "\fBVector3\fP & Vector3::operator/= (doublev)\fC [inline, inherited]\fP"
+.PP
+Definition at line 253 of file SbVector3\&.H'\&.
+.PP
+References Vector3::vec\&.
+.SS "bool Vector3::operator== (const \fBVector3\fP &v) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 100 of file SbVector3\&.H'\&.
+.PP
+References Vector3::vec\&.
+.SS "double& Vector3::operator[] (\fBDIRECTION\fPi)\fC [inline, inherited]\fP"
+.PP
+Definition at line 71 of file SbVector3\&.H'\&.
+.PP
+References Vector3::vec\&.
+.SS "\fBVector3\fP SBSolidTideLd::permTide (\fBSBStation\fP *St)\fC [protected, virtual]\fP"Returns permanent tide displacement (TRF coordinate system)'\&. 
+.PP
+Reimplemented in \fBSBSolidTideLdIERS96\fP'\&.
+.PP
+Definition at line 339 of file SbGeoTide\&.C'\&.
+.PP
+References SBStation::fmVEN(), Vector3::phi(), SBStation::rt(), sincos(), and Vector3::Vector3()\&.
+.PP
+Referenced by operator()()\&.
+.SS "double Vector3::phi () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 74 of file SbVector3\&.H'\&.
+.PP
+References Vector3::module(), and Vector3::vec\&.
+.PP
+Referenced by deg2InPhase(), SBSolidTideLdIERS96::deg2OutPhase(), SBTestEphem::displayCoo(), dTide_dLag(), SBSolidTideLdIERS96::latDepend(), SBSolidTideLdIERS96::makeStep2(), operator()(), permTide(), and SBSolidTideLdIERS96::permTide()\&.
+.SS "void Vector3::report2Log (\fBSBLog::LogLevel\fPLev, uintFac, const QString &Pref, intw_, intd_, doubleScale = \fC1\&.0\fP) const\fC [virtual, inherited]\fP"
+.PP
+Definition at line 39 of file SbVector3\&.C'\&.
+.PP
+References Log, Vector3::module(), Vector3::vec, and SBLog::write()\&.
+.PP
+Referenced by SBStation::axisOffsetLenght(), SBDelay::calc(), SBEphem::calc(), SBAploEphem::displacement(), operator()(), SBTideLd::operator()(), and SBRefraction::operator()()\&.
+.SS "const \fBVector3\fP& SBSolidTideLd::step1 () const\fC [inline]\fP"
+.PP
+Definition at line 176 of file SbGeoTide\&.H'\&.
+.PP
+References Step1\&.
+.PP
+Referenced by SBTestSolidTides::fillData4Plotting()\&.
+.SS "const \fBVector3\fP& SBSolidTideLd::step2 () const\fC [inline]\fP"
+.PP
+Definition at line 177 of file SbGeoTide\&.H'\&.
+.PP
+References Step2\&.
+.PP
+Referenced by SBTestSolidTides::fillData4Plotting()\&.
+.SS "const \fBVector3\fP& SBSolidTideLd::tideDeg2ip () const\fC [inline]\fP"
+.PP
+Definition at line 171 of file SbGeoTide\&.H'\&.
+.PP
+References TideDeg2ip\&.
+.PP
+Referenced by SBTestSolidTides::fillData4Plotting()\&.
+.SS "const \fBVector3\fP& SBSolidTideLd::tideDeg2op () const\fC [inline]\fP"
+.PP
+Definition at line 173 of file SbGeoTide\&.H'\&.
+.PP
+References TideDeg2op\&.
+.PP
+Referenced by SBTestSolidTides::fillData4Plotting()\&.
+.SS "const \fBVector3\fP& SBSolidTideLd::tideDeg3ip () const\fC [inline]\fP"
+.PP
+Definition at line 172 of file SbGeoTide\&.H'\&.
+.PP
+References TideDeg3ip\&.
+.PP
+Referenced by SBTestSolidTides::fillData4Plotting()\&.
+.SS "const \fBVector3\fP& SBSolidTideLd::tideLatDepend () const\fC [inline]\fP"
+.PP
+Definition at line 174 of file SbGeoTide\&.H'\&.
+.PP
+References TideLatDepend\&.
+.PP
+Referenced by SBTestSolidTides::fillData4Plotting()\&.
+.SS "\fBVector3\fP& Vector3::unify ()\fC [inline, inherited]\fP"
+.PP
+Definition at line 77 of file SbVector3\&.H'\&.
+.PP
+References Vector3::module()\&.
+.PP
+Referenced by SBDelay::calc(), deg2InPhase(), SBSolidTideLdIERS96::deg3InPhase(), and SBSolidTideLdIERS96::latDepend()\&.
+.SS "\fBVector3\fP Vector3::unit () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 78 of file SbVector3\&.H'\&.
+.PP
+References Vector3::module(), and Vector3::Vector3()\&.
+.PP
+Referenced by SBDelay::calc(), SBRunManager::constraintStationVeloc(), dTide_dH2(), and dTide_dL2()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "\fBVector3\fP operator% (const \fBVector3\fP &V1, const \fBVector3\fP &V2)\fC [friend, inherited]\fP"makes a vector product of two vectors (because '%' has a priority of '*')
+.PP
+makes vector product of two vectors'\&. 
+.PP
+Definition at line 326 of file SbVector3\&.H'\&.
+.SS "\fBVector3\fP operator* (const \fBVector3\fP &V1, doublev2)\fC [friend, inherited]\fP"multiplies vector by scalar'\&. 
+.PP
+Definition at line 302 of file SbVector3\&.H'\&.
+.SS "\fBVector3\fP operator* (doublev1, const \fBVector3\fP &V2)\fC [friend, inherited]\fP"multiplies vector by scalar'\&. 
+.PP
+Definition at line 310 of file SbVector3\&.H'\&.
+.SS "double operator* (const \fBVector3\fP &V1, const \fBVector3\fP &V2)\fC [friend, inherited]\fP"makes a scalar product of two vectors
+.PP
+makes scalar product of two vectors'\&. 
+.PP
+Definition at line 318 of file SbVector3\&.H'\&.
+.SS "\fBVector3\fP operator* (const \fBMatrix3\fP &M, const \fBVector3\fP &V)\fC [friend, inherited]\fP"makes a product of matrix and vector
+.PP
+\fBMatrix3\fP makes product of matrix and vector'\&. 
+.PP
+Definition at line 519 of file SbVector3\&.H'\&.
+.SS "\fBVector3\fP operator+ (const \fBVector3\fP &V1, const \fBVector3\fP &V2)\fC [friend, inherited]\fP"
+.PP
+Definition at line 278 of file SbVector3\&.H'\&.
+.SS "\fBVector3\fP operator- (const \fBVector3\fP &V)\fC [friend, inherited]\fP"
+.PP
+Definition at line 270 of file SbVector3\&.H'\&.
+.SS "\fBVector3\fP operator- (const \fBVector3\fP &V1, const \fBVector3\fP &V2)\fC [friend, inherited]\fP"
+.PP
+Definition at line 286 of file SbVector3\&.H'\&.
+.SS "\fBVector3\fP operator/ (const \fBVector3\fP &V1, doublev2)\fC [friend, inherited]\fP"
+.PP
+Definition at line 294 of file SbVector3\&.H'\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBVector3\fP &v)\fC [friend, inherited]\fP"
+.PP
+Definition at line 103 of file SbVector3\&.H'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBVector3\fP &v)\fC [friend, inherited]\fP"
+.PP
+Definition at line 105 of file SbVector3\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const \fBSBConfig\fP* \fBSBSolidTideLd::Cfg\fP\fC [protected]\fP"
+.PP
+Definition at line 106 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by h2(), l2(), SBSolidTideLdIERS96::makeStep1(), SBSolidTideLdIERS96::makeStep2(), operator()(), SBSolidTideLd(), and SBSolidTideLdIERS96::SBSolidTideLdIERS96()\&.
+.SS "double \fBSBSolidTideLd::CoeffMoon\fP\fC [protected]\fP"
+.PP
+Definition at line 129 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by makeStep1(), operator()(), and SBSolidTideLd()\&.
+.SS "double \fBSBSolidTideLd::CoeffSun\fP\fC [protected]\fP"
+.PP
+Definition at line 128 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by makeStep1(), operator()(), and SBSolidTideLd()\&.
+.SS "\fBMatrix3\fP \fBSBSolidTideLd::FmREN\fP\fC [protected]\fP"
+.PP
+transforms local radial-transverse coords to TRF 
+.PP
+Definition at line 134 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by SBSolidTideLdIERS96::deg2OutPhase(), SBSolidTideLdIERS96::latDepend(), makeStep2(), SBSolidTideLdIERS96::makeStep2(), and operator()()\&.
+.SS "double \fBSBSolidTideLd::h_0\fP\fC [protected]\fP"
+.PP
+Definition at line 116 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by h2(), and SBSolidTideLd()\&.
+.SS "const double \fBSBSolidTideLd::h_0_an\fP = 0\&.6078\fC [static, protected]\fP"
+.PP
+nominal value for h^(0), anelastic 
+.PP
+Definition at line 111 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by SBSolidTideLd()\&.
+.SS "const double \fBSBSolidTideLd::h_0_el\fP = 0\&.6026\fC [static, protected]\fP"
+.PP
+nominal value for h^(0), elastic 
+.PP
+Definition at line 107 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by SBSolidTideLd()\&.
+.SS "double \fBSBSolidTideLd::h_2\fP\fC [protected]\fP"
+.PP
+Definition at line 117 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by h2(), and SBSolidTideLd()\&.
+.SS "const double \fBSBSolidTideLd::h_2_an\fP = -0\&.0006\fC [static, protected]\fP"
+.PP
+nominal value for h^(2), anelastic 
+.PP
+Definition at line 112 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by SBSolidTideLd()\&.
+.SS "const double \fBSBSolidTideLd::h_2_el\fP = -0\&.0006\fC [static, protected]\fP"
+.PP
+nominal value for h^(2), elastic 
+.PP
+Definition at line 108 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by SBSolidTideLd()\&.
+.SS "double \fBSBSolidTideLd::l_0\fP\fC [protected]\fP"
+.PP
+Definition at line 118 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by l2(), and SBSolidTideLd()\&.
+.SS "const double \fBSBSolidTideLd::l_0_an\fP = 0\&.0847\fC [static, protected]\fP"
+.PP
+nominal value for l^(0), anelastic 
+.PP
+Definition at line 113 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by SBSolidTideLd()\&.
+.SS "const double \fBSBSolidTideLd::l_0_el\fP = 0\&.0831\fC [static, protected]\fP"
+.PP
+nominal value for l^(0), elastic 
+.PP
+Definition at line 109 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by SBSolidTideLd()\&.
+.SS "double \fBSBSolidTideLd::l_2\fP\fC [protected]\fP"
+.PP
+Definition at line 119 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by l2(), and SBSolidTideLd()\&.
+.SS "const double \fBSBSolidTideLd::l_2_an\fP = 0\&.0002\fC [static, protected]\fP"
+.PP
+nominal value for l^(2), anelastic 
+.PP
+Definition at line 114 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by SBSolidTideLd()\&.
+.SS "const double \fBSBSolidTideLd::l_2_el\fP = 0\&.0002\fC [static, protected]\fP"
+.PP
+nominal value for l^(2), elastic 
+.PP
+Definition at line 110 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by SBSolidTideLd()\&.
+.SS "\fBVector3\fP \fBSBSolidTideLd::Moon_TRS\fP\fC [protected]\fP"
+.PP
+Definition at line 132 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by dTide_dH2(), dTide_dL2(), dTide_dLag(), makeStep1(), SBSolidTideLdIERS96::makeStep1(), and operator()()\&.
+.SS "\fBVector3\fP \fBSBSolidTideLd::Step1\fP\fC [protected]\fP"
+.PP
+Definition at line 125 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by makeStep1(), SBSolidTideLdIERS96::makeStep1(), operator()(), and step1()\&.
+.SS "\fBVector3\fP \fBSBSolidTideLd::Step2\fP\fC [protected]\fP"
+.PP
+Definition at line 126 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by makeStep2(), SBSolidTideLdIERS96::makeStep2(), operator()(), and step2()\&.
+.SS "\fBVector3\fP \fBSBSolidTideLd::Sun_TRS\fP\fC [protected]\fP"
+.PP
+Definition at line 133 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by dTide_dH2(), dTide_dL2(), dTide_dLag(), makeStep1(), SBSolidTideLdIERS96::makeStep1(), and operator()()\&.
+.SS "\fBVector3\fP \fBSBSolidTideLd::TideDeg2ip\fP\fC [protected]\fP"
+.PP
+Definition at line 121 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by makeStep1(), SBSolidTideLdIERS96::makeStep1(), and tideDeg2ip()\&.
+.SS "\fBVector3\fP \fBSBSolidTideLd::TideDeg2op\fP\fC [protected]\fP"
+.PP
+Definition at line 123 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by SBSolidTideLdIERS96::makeStep1(), and tideDeg2op()\&.
+.SS "\fBVector3\fP \fBSBSolidTideLd::TideDeg3ip\fP\fC [protected]\fP"
+.PP
+Definition at line 122 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by SBSolidTideLdIERS96::makeStep1(), and tideDeg3ip()\&.
+.SS "\fBVector3\fP \fBSBSolidTideLd::TideLatDepend\fP\fC [protected]\fP"
+.PP
+Definition at line 124 of file SbGeoTide\&.H'\&.
+.PP
+Referenced by SBSolidTideLdIERS96::makeStep1(), and tideLatDepend()\&.
+.SS "double \fBVector3::vec\fP[3]\fC [protected, inherited]\fP"
+.PP
+Definition at line 53 of file SbVector3\&.H'\&.
+.PP
+Referenced by Vector3::at(), Vector3::clear(), Vector3::lambda(), Vector3::module(), SBOceanTideLd::operator()(), SBPolarTideLd::operator()(), Vector3::operator*=(), Vector3::operator+=(), Vector3::operator-=(), Vector3::operator/=(), Vector3::operator=(), Vector3::operator==(), Vector3::operator[](), Vector3::phi(), Vector3::report2Log(), and Vector3::Vector3()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

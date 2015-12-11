@@ -1,0 +1,185 @@
+.TH "SBClockBreakEditor" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBClockBreakEditor \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIObsVLBI\&.H>\fP
+.PP
+Inherits \fBQDialog\fP'\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBclockBreakModified\fP (bool)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBClockBreakEditor\fP (\fBSBClockBreakLI\fP *, \fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "virtual \fB~SBClockBreakEditor\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBaccept\fP ()"
+.br
+.ti -1c
+.RI "void \fBreject\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBacquireData\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBClockBreakLI\fP * \fBBli\fP"
+.br
+.ti -1c
+.RI "\fBSBParameterBreak\fP * \fBB\fP"
+.br
+.ti -1c
+.RI "bool \fBisModified\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleYr\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleMo\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleDy\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleHr\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleMi\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleSe\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleVal\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 730 of file SbIObsVLBI\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBClockBreakEditor::SBClockBreakEditor (\fBSBClockBreakLI\fP *Bli_, \fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 3253 of file SbIObsVLBI\&.C'\&.
+.PP
+References accept(), SBParameterBreak::b(), B, Bli, SBClockBreakLI::clockBreak(), SBMJD::day(), SBMJD::hour(), isModified, leDy, leHr, leMi, leMo, leSe, leVal, leYr, SBMJD::min(), SBMJD::month(), reject(), SBMJD::sec(), and SBMJD::year()\&.
+.SS "virtual SBClockBreakEditor::~SBClockBreakEditor ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 735 of file SbIObsVLBI\&.H'\&.
+.PP
+References B\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBClockBreakEditor::accept ()\fC [protected, slot]\fP"
+.PP
+Definition at line 3400 of file SbIObsVLBI\&.C'\&.
+.PP
+References acquireData(), Bli, clockBreakModified(), and isModified\&.
+.PP
+Referenced by SBClockBreakEditor()\&.
+.SS "void SBClockBreakEditor::acquireData ()\fC [private, virtual]\fP"
+.PP
+Definition at line 3417 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBParameterBreak::b(), B, Bli, isModified, leDy, leHr, leMi, leMo, leSe, leVal, leYr, and SBParameterBreak::setB()\&.
+.PP
+Referenced by accept()\&.
+.SS "virtual QString SBClockBreakEditor::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 736 of file SbIObsVLBI\&.H'\&.
+.SS "void SBClockBreakEditor::clockBreakModified (boolt0)\fC [signal]\fP"
+.PP
+Definition at line 1279 of file SbIObsVLBI\&.moc\&.C'\&.
+.PP
+Referenced by accept(), and reject()\&.
+.SS "void SBClockBreakEditor::reject ()\fC [protected, slot]\fP"
+.PP
+Definition at line 3410 of file SbIObsVLBI\&.C'\&.
+.PP
+References clockBreakModified()\&.
+.PP
+Referenced by SBClockBreakEditor()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSBParameterBreak\fP* \fBSBClockBreakEditor::B\fP\fC [private]\fP"
+.PP
+Definition at line 748 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by acquireData(), SBClockBreakEditor(), and ~SBClockBreakEditor()\&.
+.SS "\fBSBClockBreakLI\fP* \fBSBClockBreakEditor::Bli\fP\fC [private]\fP"
+.PP
+Definition at line 747 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by accept(), acquireData(), and SBClockBreakEditor()\&.
+.SS "bool \fBSBClockBreakEditor::isModified\fP\fC [private]\fP"
+.PP
+Definition at line 749 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by accept(), acquireData(), and SBClockBreakEditor()\&.
+.SS "QLineEdit* \fBSBClockBreakEditor::leDy\fP\fC [private]\fP"
+.PP
+Definition at line 754 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by acquireData(), and SBClockBreakEditor()\&.
+.SS "QLineEdit* \fBSBClockBreakEditor::leHr\fP\fC [private]\fP"
+.PP
+Definition at line 755 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by acquireData(), and SBClockBreakEditor()\&.
+.SS "QLineEdit* \fBSBClockBreakEditor::leMi\fP\fC [private]\fP"
+.PP
+Definition at line 756 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by acquireData(), and SBClockBreakEditor()\&.
+.SS "QLineEdit* \fBSBClockBreakEditor::leMo\fP\fC [private]\fP"
+.PP
+Definition at line 753 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by acquireData(), and SBClockBreakEditor()\&.
+.SS "QLineEdit* \fBSBClockBreakEditor::leSe\fP\fC [private]\fP"
+.PP
+Definition at line 757 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by acquireData(), and SBClockBreakEditor()\&.
+.SS "QLineEdit* \fBSBClockBreakEditor::leVal\fP\fC [private]\fP"
+.PP
+Definition at line 758 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by acquireData(), and SBClockBreakEditor()\&.
+.SS "QLineEdit* \fBSBClockBreakEditor::leYr\fP\fC [private]\fP"
+.PP
+Definition at line 752 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by acquireData(), and SBClockBreakEditor()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

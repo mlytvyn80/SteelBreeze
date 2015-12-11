@@ -1,0 +1,413 @@
+.TH "SBCatalog" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBCatalog \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeo\&.H>\fP
+.PP
+Inherits \fBSBNList\fP'\&.
+.PP
+Inherited by \fBSB_CRF\fP, and \fBSB_TRF\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBCatalog\fP ()"
+.br
+.ti -1c
+.RI "\fBSBCatalog\fP (const \fBSBCatalog\fP &Catalog)"
+.br
+.ti -1c
+.RI "virtual \fB~SBCatalog\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetLabel\fP (const \fBSBSolutionName\fP &Label_)"
+.br
+.ti -1c
+.RI "void \fBsetEpoch\fP (const \fBSBMJD\fP &Epoch_)"
+.br
+.ti -1c
+.RI "void \fBsetComment\fP (const QString &Comment_)"
+.br
+.ti -1c
+.RI "const \fBSBSolutionName\fP & \fBlabel\fP () const "
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP & \fBepoch\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBcomment\fP () const "
+.br
+.ti -1c
+.RI "QDict< QString > * \fBaliasDict\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBprepareAliases4Output\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBreleaseAliases4Output\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBcollectObjAliases\fP (QString)"
+.br
+.ti -1c
+.RI "virtual void \fBreleaseObjAliases\fP (QString)"
+.br
+.ti -1c
+.RI "virtual void \fBprepareReferences\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBSBNList\fP * \fBreferenceList\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBSBNamed\fP * \fBfind\fP (const \fBSBNamed\fP &N) const "
+.br
+.ti -1c
+.RI "virtual \fBSBNamed\fP * \fBfind\fP (const QString &S) const "
+.br
+.ti -1c
+.RI "virtual \fBSBNamed\fP * \fBoperator[]\fP (const \fBSBNamed\fP &N) const "
+.br
+.ti -1c
+.RI "virtual \fBSBNamed\fP * \fBoperator[]\fP (const QString &S) const "
+.br
+.ti -1c
+.RI "virtual void \fBinsert\fP (const \fBSBNamed\fP *N)"
+.br
+.ti -1c
+.RI "virtual void \fBinSort\fP (const \fBSBNamed\fP *N)"
+.br
+.ti -1c
+.RI "virtual bool \fBremove\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBremove\fP (uint i)"
+.br
+.ti -1c
+.RI "virtual bool \fBremove\fP (const \fBSBNamed\fP *N)"
+.br
+.ti -1c
+.RI "virtual bool \fBremoveFirst\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBremoveLast\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBSBNamed\fP * \fBtake\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBSBNamed\fP * \fBtake\fP (uint i)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual int \fBcompareItems\fP (QCollection::Item item1, QCollection::Item item2)"
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBwrite\fP (QDataStream &s, QCollection::Item Entry) const "
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBread\fP (QDataStream &s, QCollection::Item &Entry)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSolutionName\fP \fBLabel\fP"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBEpoch\fP"
+.br
+.ti -1c
+.RI "QString \fBComment\fP"
+.br
+.ti -1c
+.RI "QDict< \fBSBNamed\fP > * \fBDict\fP"
+.br
+.ti -1c
+.RI "QDict< QString > * \fBAliases\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBCatalog\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBCatalog\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 483 of file SbGeo\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBCatalog::SBCatalog ()"
+.PP
+Definition at line 406 of file SbGeo\&.C'\&.
+.PP
+References Aliases, Comment, Dict, Epoch, Label, SBSolutionName::setAttr(), TECH_UNKN, SBSolutionName::TYPE_UNKN, and TZero\&.
+.SS "SBCatalog::SBCatalog (const \fBSBCatalog\fP &Catalog)"
+.PP
+Definition at line 418 of file SbGeo\&.C'\&.
+.PP
+References Aliases, Comment, Dict, Epoch, and Label\&.
+.SS "virtual SBCatalog::~SBCatalog ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 494 of file SbGeo\&.H'\&.
+.PP
+References Aliases, and Dict\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QDict<QString>* SBCatalog::aliasDict ()\fC [inline]\fP"
+.PP
+Definition at line 504 of file SbGeo\&.H'\&.
+.PP
+References Aliases\&.
+.PP
+Referenced by SBAliasEditor::accept(), SBStuffSources::CRFModified(), SBStuffSources::deleteEntryA(), SBStuffStations::deleteEntryA(), SBStuffSources::deleteEntryS(), SBStuffStations::deleteEntryS(), SBStuffSources::drawInfo(), SBStuffStations::drawInfo(), SBEcc::importEccDat(), SBSourceImport::importICRF(), SBStationImport::importITRF(), SBStationImport::loadNScodes(), SBStuffSources::reloadCRF(), SBStuffStations::reloadTRF(), SBStuffSources::SBStuffSources(), SBStuffStations::SBStuffStations(), and SBStuffStations::TRFModified()\&.
+.SS "virtual QString SBCatalog::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP, and \fBSB_CRF\fP'\&.
+.PP
+Definition at line 495 of file SbGeo\&.H'\&.
+.SS "virtual void SBCatalog::clear ()\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP'\&.
+.PP
+Definition at line 516 of file SbGeo\&.H'\&.
+.PP
+References Dict\&.
+.SS "virtual void SBCatalog::collectObjAliases (QString)\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP, and \fBSB_CRF\fP'\&.
+.PP
+Definition at line 510 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBAliasEditor::accept()\&.
+.SS "const QString& SBCatalog::comment () const\fC [inline]\fP"
+.PP
+Definition at line 503 of file SbGeo\&.H'\&.
+.PP
+References Comment\&.
+.PP
+Referenced by SBStuffSources::accept(), SBStuffStations::accept(), SBStuffSources::drawInfo(), SBStuffStations::drawInfo(), SBSourceImport::importICRF(), SBStationImport::importITRF(), SBStuffSources::SBStuffSources(), and SBStuffStations::SBStuffStations()\&.
+.SS "virtual int SBNList::compareItems (QCollection::Itemitem1, QCollection::Itemitem2)\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP, \fBSBStationList\fP, and \fBSBStationIDList\fP'\&.
+.PP
+Definition at line 277 of file SbGeo\&.H'\&.
+.SS "const \fBSBMJD\fP& SBCatalog::epoch () const\fC [inline]\fP"
+.PP
+Definition at line 502 of file SbGeo\&.H'\&.
+.PP
+References Epoch\&.
+.PP
+Referenced by SBStuffSources::accept(), SBStuffStations::accept(), SBDelay::calcDerivatives(), SBStation::calcDisplacement(), collectListOfSINEXParameters(), collectListOfSINEXParameters4NEQ(), SBStuffSources::drawInfo(), SBStuffStations::drawInfo(), SBAploChunk::import(), SBAploEphem::importHPS(), operator<<(), operator>>(), SBStuffSources::SBStuffSources(), and SBStuffStations::SBStuffStations()\&.
+.SS "virtual \fBSBNamed\fP* SBCatalog::find (const \fBSBNamed\fP &N) const\fC [inline, virtual]\fP"
+.PP
+Definition at line 517 of file SbGeo\&.H'\&.
+.PP
+References Dict, and SBNamed::name()\&.
+.PP
+Referenced by operator[]()\&.
+.SS "virtual \fBSBNamed\fP* SBCatalog::find (const QString &S) const\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSB_CRF\fP'\&.
+.PP
+Definition at line 518 of file SbGeo\&.H'\&.
+.PP
+References Dict\&.
+.SS "virtual void SBCatalog::insert (const \fBSBNamed\fP *N)\fC [inline, virtual]\fP"
+.PP
+Definition at line 521 of file SbGeo\&.H'\&.
+.PP
+References Dict, inSort(), and SBNamed::name()\&.
+.SS "virtual void SBCatalog::inSort (const \fBSBNamed\fP *N)\fC [inline, virtual]\fP"
+.PP
+Definition at line 522 of file SbGeo\&.H'\&.
+.PP
+References Dict, and SBNamed::name()\&.
+.PP
+Referenced by SBSourceImport::importICRF(), insert(), SBSourceEditor::makeApply(), operator>>(), and SBStuffSources::SBStuffSources()\&.
+.SS "const \fBSBSolutionName\fP& SBCatalog::label () const\fC [inline]\fP"
+.PP
+Definition at line 501 of file SbGeo\&.H'\&.
+.PP
+References Label\&.
+.PP
+Referenced by SBStuffSources::accept(), SBStuffStations::accept(), SBRunManager::constraintSourceCoord(), SBRunManager::constraintStationCoord(), SBRunManager::constraintStationVeloc(), SBStuffSources::drawInfo(), SBStuffStations::drawInfo(), SBStationImport::importITRF(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportTRF(), operator<<(), SBStuffSources::SBStuffSources(), and SBStuffStations::SBStuffStations()\&.
+.SS "virtual \fBSBNamed\fP* SBCatalog::operator[] (const \fBSBNamed\fP &N) const\fC [inline, virtual]\fP"
+.PP
+Definition at line 519 of file SbGeo\&.H'\&.
+.PP
+References find()\&.
+.SS "virtual \fBSBNamed\fP* SBCatalog::operator[] (const QString &S) const\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSB_CRF\fP'\&.
+.PP
+Definition at line 520 of file SbGeo\&.H'\&.
+.PP
+References find()\&.
+.SS "virtual void SBCatalog::prepareAliases4Output ()\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP, and \fBSB_CRF\fP'\&.
+.PP
+Definition at line 508 of file SbGeo\&.H'\&.
+.SS "virtual void SBCatalog::prepareReferences ()\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP'\&.
+.PP
+Definition at line 512 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBAliasEditor::init()\&.
+.SS "virtual QDataStream& SBNList::read (QDataStream &s, QCollection::Item &Entry)\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP, \fBSBStationList\fP, \fBSBStationIDList\fP, \fBSBInstitutionList\fP, \fBSB_CRF\fP, and \fBSBFCList\fP'\&.
+.PP
+Definition at line 284 of file SbGeo\&.H'\&.
+.SS "virtual \fBSBNList\fP* SBCatalog::referenceList ()\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP'\&.
+.PP
+Definition at line 513 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBAliasEditor::init()\&.
+.SS "virtual void SBCatalog::releaseAliases4Output ()\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP, and \fBSB_CRF\fP'\&.
+.PP
+Definition at line 509 of file SbGeo\&.H'\&.
+.SS "virtual void SBCatalog::releaseObjAliases (QString)\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP, and \fBSB_CRF\fP'\&.
+.PP
+Definition at line 511 of file SbGeo\&.H'\&.
+.SS "virtual bool SBCatalog::remove ()\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP'\&.
+.PP
+Definition at line 523 of file SbGeo\&.H'\&.
+.PP
+References Dict\&.
+.PP
+Referenced by SBStuffSources::deleteEntryS(), SBRunManager::makeReportCRF(), remove(), and SBRunManager::stripCRF()\&.
+.SS "virtual bool SBCatalog::remove (uinti)\fC [inline, virtual]\fP"
+.PP
+Definition at line 524 of file SbGeo\&.H'\&.
+.PP
+References Dict, and remove()\&.
+.SS "virtual bool SBCatalog::remove (const \fBSBNamed\fP *N)\fC [inline, virtual]\fP"
+.PP
+Definition at line 525 of file SbGeo\&.H'\&.
+.PP
+References Dict, and remove()\&.
+.SS "virtual bool SBCatalog::removeFirst ()\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP'\&.
+.PP
+Definition at line 526 of file SbGeo\&.H'\&.
+.PP
+References Dict\&.
+.SS "virtual bool SBCatalog::removeLast ()\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP'\&.
+.PP
+Definition at line 527 of file SbGeo\&.H'\&.
+.PP
+References Dict\&.
+.SS "void SBCatalog::setComment (const QString &Comment_)\fC [inline]\fP"
+.PP
+Definition at line 500 of file SbGeo\&.H'\&.
+.PP
+References Comment\&.
+.PP
+Referenced by SBStuffSources::accept(), SBStuffStations::accept(), and SBStationImport::importITRF()\&.
+.SS "void SBCatalog::setEpoch (const \fBSBMJD\fP &Epoch_)\fC [inline]\fP"
+.PP
+Definition at line 499 of file SbGeo\&.H'\&.
+.PP
+References Epoch\&.
+.PP
+Referenced by SBStuffSources::accept(), SBStuffStations::accept(), and operator>>()\&.
+.SS "void SBCatalog::setLabel (const \fBSBSolutionName\fP &Label_)\fC [inline]\fP"
+.PP
+Definition at line 498 of file SbGeo\&.H'\&.
+.PP
+References Label\&.
+.PP
+Referenced by SBStuffSources::accept(), SBStuffStations::accept(), SBStationImport::importITRF(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations4IVS(), and SBRunManager::makeReportTRF()\&.
+.SS "virtual \fBSBNamed\fP* SBCatalog::take ()\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP'\&.
+.PP
+Definition at line 528 of file SbGeo\&.H'\&.
+.PP
+References Dict\&.
+.PP
+Referenced by take()\&.
+.SS "virtual \fBSBNamed\fP* SBCatalog::take (uinti)\fC [inline, virtual]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP'\&.
+.PP
+Definition at line 529 of file SbGeo\&.H'\&.
+.PP
+References Dict, and take()\&.
+.SS "virtual QDataStream& SBNList::write (QDataStream &s, QCollection::ItemEntry) const\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSB_TRF\fP, \fBSBStationList\fP, \fBSBStationIDList\fP, \fBSBInstitutionList\fP, \fBSB_CRF\fP, and \fBSBFCList\fP'\&.
+.PP
+Definition at line 282 of file SbGeo\&.H'\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBCatalog\fP &C)\fC [friend]\fP"
+.PP
+Definition at line 438 of file SbGeo\&.C'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBCatalog\fP &C)\fC [friend]\fP"
+.PP
+Definition at line 450 of file SbGeo\&.C'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QDict<QString>* \fBSBCatalog::Aliases\fP\fC [protected]\fP"
+.PP
+Definition at line 490 of file SbGeo\&.H'\&.
+.PP
+Referenced by aliasDict(), SB_CRF::collectObjAliases(), SB_CRF::lookupAlias(), SB_TRF::lookupID(), SB_TRF::lookupStation(), operator<<(), operator>>(), SB_CRF::prepareAliases4Output(), SBCatalog(), and ~SBCatalog()\&.
+.SS "QString \fBSBCatalog::Comment\fP\fC [protected]\fP"
+.PP
+Definition at line 488 of file SbGeo\&.H'\&.
+.PP
+Referenced by comment(), operator<<(), operator>>(), SBCatalog(), and setComment()\&.
+.SS "QDict<\fBSBNamed\fP>* \fBSBCatalog::Dict\fP\fC [protected]\fP"
+.PP
+Definition at line 489 of file SbGeo\&.H'\&.
+.PP
+Referenced by clear(), find(), insert(), inSort(), operator>>(), remove(), removeFirst(), removeLast(), SBCatalog(), SB_TRF::setSiteName(), take(), and ~SBCatalog()\&.
+.SS "\fBSBMJD\fP \fBSBCatalog::Epoch\fP\fC [protected]\fP"
+.PP
+Definition at line 487 of file SbGeo\&.H'\&.
+.PP
+Referenced by epoch(), SB_TRF::lookupNearest(), operator<<(), operator>>(), SBCatalog(), and setEpoch()\&.
+.SS "\fBSBSolutionName\fP \fBSBCatalog::Label\fP\fC [protected]\fP"
+.PP
+Definition at line 486 of file SbGeo\&.H'\&.
+.PP
+Referenced by label(), operator<<(), operator>>(), SB_CRF::SB_CRF(), SB_TRF::SB_TRF(), SBCatalog(), and setLabel()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

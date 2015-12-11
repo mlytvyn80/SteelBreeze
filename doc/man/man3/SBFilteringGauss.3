@@ -1,0 +1,591 @@
+.TH "SBFilteringGauss" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBFilteringGauss \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIFilters\&.H>\fP
+.PP
+Inherits \fBQDialog\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBFilteringGauss\fP (\fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "\fB~SBFilteringGauss\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBaccept\fP ()"
+.br
+.ti -1c
+.RI "void \fBreject\fP ()"
+.br
+.ti -1c
+.RI "void \fBreadDataFile\fP ()"
+.br
+.ti -1c
+.RI "void \fBmakeAnalysis\fP ()"
+.br
+.ti -1c
+.RI "void \fBwrote2File\fP ()"
+.br
+.ti -1c
+.RI "void \fBchangeNInterpolate\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBchangeFWHM\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBchangeStep\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBchangeEpoch\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBchangeByNum\fP (int)"
+.br
+.ti -1c
+.RI "void \fBsetSigmasMode\fP (int)"
+.br
+.ti -1c
+.RI "void \fBsetFilterType\fP (int)"
+.br
+.ti -1c
+.RI "void \fBcalcSigmas\fP ()"
+.br
+.ti -1c
+.RI "void \fBmakeAnalysisWith3Sigma\fP ()"
+.br
+.ti -1c
+.RI "void \fBsubstractFilter\fP ()"
+.br
+.in -1c
+.SS "Private Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSIGMASMODE\fP { \fBSIG_MODE_0\fP = 0, \fBSIG_MODE_1\fP = 1, \fBSIG_MODE_2\fP = 2 }"
+.br
+.ti -1c
+.RI "enum \fBFILTERTYPE\fP { \fBFILT_GAUSS\fP = 0, \fBFILT_GAUSS_APRIORY\fP = 1 }"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQWidget\fP * \fBwOptions\fP ()"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBwBrowseData\fP ()"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBwBrowseTF\fP ()"
+.br
+.ti -1c
+.RI "void \fBcollectData\fP ()"
+.br
+.ti -1c
+.RI "void \fBredrawDataPlot\fP ()"
+.br
+.ti -1c
+.RI "void \fBredrawDataPlot_ExpMode\fP ()"
+.br
+.ti -1c
+.RI "void \fBredrawTFPlot\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBName\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBNInterpolate\fP"
+.br
+.ti -1c
+.RI "double \fBStep\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBNumOfCols\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBNumOfDataCols\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBNperTF\fP"
+.br
+.ti -1c
+.RI "double \fBFWHM\fP"
+.br
+.ti -1c
+.RI "double \fBEpoch\fP"
+.br
+.ti -1c
+.RI "\fBSBFilterGauss\fP * \fBFilter\fP"
+.br
+.ti -1c
+.RI "bool \fBIsByNum\fP"
+.br
+.ti -1c
+.RI "bool \fBIsFilterSubstracted\fP"
+.br
+.ti -1c
+.RI "\fBSIGMASMODE\fP \fBSMode\fP"
+.br
+.ti -1c
+.RI "\fBFILTERTYPE\fP \fBFType\fP"
+.br
+.ti -1c
+.RI "QTabWidget * \fBTab\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlImportedFileName\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlNumOfPts\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlNumOfCols\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlDT\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlDTMinMax\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBlInterval\fP"
+.br
+.ti -1c
+.RI "QRadioButton * \fBrbFilterType\fP [1]"
+.br
+.ti -1c
+.RI "QRadioButton * \fBrbSigmasMode\fP [3]"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleNInterpolate\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleStep\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleFWHM\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleEpoch\fP"
+.br
+.ti -1c
+.RI "QPushButton * \fBSave\fP"
+.br
+.ti -1c
+.RI "QPushButton * \fBGetData\fP"
+.br
+.ti -1c
+.RI "QPushButton * \fBAnalyse\fP"
+.br
+.ti -1c
+.RI "QPushButton * \fBOk\fP"
+.br
+.ti -1c
+.RI "\fBSBPlotCarrier\fP * \fBPCData\fP"
+.br
+.ti -1c
+.RI "\fBSBPlot\fP * \fBPlotData\fP"
+.br
+.ti -1c
+.RI "\fBSBPlotCarrier\fP * \fBPCTF\fP"
+.br
+.ti -1c
+.RI "\fBSBPlot\fP * \fBPlotTF\fP"
+.br
+.ti -1c
+.RI "QAccel * \fBaccel\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 53 of file SbIFilters\&.H'\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBSBFilteringGauss::FILTERTYPE\fP\fC [private]\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIFILT_GAUSS \fP\fP
+.TP
+\fB\fIFILT_GAUSS_APRIORY \fP\fP
+
+.PP
+Definition at line 84 of file SbIFilters\&.H'\&.
+.SS "enum \fBSBFilteringGauss::SIGMASMODE\fP\fC [private]\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fISIG_MODE_0 \fP\fP
+.TP
+\fB\fISIG_MODE_1 \fP\fP
+.TP
+\fB\fISIG_MODE_2 \fP\fP
+
+.PP
+Definition at line 83 of file SbIFilters\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBFilteringGauss::SBFilteringGauss (\fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 58 of file SbIFilters\&.C'\&.
+.PP
+References accel, accept(), Analyse, calcSigmas(), Epoch, FILT_GAUSS, Filter, FType, FWHM, GetData, IsByNum, IsFilterSubstracted, makeAnalysis(), makeAnalysisWith3Sigma(), Name, NInterpolate, NperTF, NumOfCols, NumOfDataCols, Ok, readDataFile(), Save, SIG_MODE_0, SMode, Step, substractFilter(), Tab, wBrowseData(), wBrowseTF(), wOptions(), and wrote2File()\&.
+.SS "SBFilteringGauss::~SBFilteringGauss ()"
+.PP
+Definition at line 130 of file SbIFilters\&.C'\&.
+.PP
+References Filter, PCData, and PlotData\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBFilteringGauss::accept ()\fC [protected, slot]\fP"
+.PP
+Definition at line 401 of file SbIFilters\&.C'\&.
+.PP
+Referenced by SBFilteringGauss()\&.
+.SS "void SBFilteringGauss::calcSigmas ()\fC [protected, slot]\fP"
+.PP
+Definition at line 799 of file SbIFilters\&.C'\&.
+.PP
+References SBFilterGauss::calcSigma(), ClassName(), SBLog::DATA, Filter, SBLog::INF, SBFilterGauss::isOK(), Log, NumOfDataCols, SIG_MODE_0, SIG_MODE_1, SIG_MODE_2, SBFilterGauss::sigma(), SMode, and SBLog::write()\&.
+.PP
+Referenced by SBFilteringGauss()\&.
+.SS "void SBFilteringGauss::changeByNum (intid)\fC [protected, slot]\fP"
+.PP
+Definition at line 647 of file SbIFilters\&.C'\&.
+.PP
+References Filter, IsByNum, SBFilterGauss::isOK(), leNInterpolate, leStep, NInterpolate, Step, SBFilterGauss::tFinis(), and SBFilterGauss::tStart()\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBFilteringGauss::changeEpoch (const QString &Str)\fC [protected, slot]\fP"
+.PP
+Definition at line 610 of file SbIFilters\&.C'\&.
+.PP
+References Epoch\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBFilteringGauss::changeFWHM (const QString &Str)\fC [protected, slot]\fP"
+.PP
+Definition at line 619 of file SbIFilters\&.C'\&.
+.PP
+References Filter, FWHM, redrawTFPlot(), and SBFilterGauss::setFWHM()\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBFilteringGauss::changeNInterpolate (const QString &Str)\fC [protected, slot]\fP"
+.PP
+Definition at line 592 of file SbIFilters\&.C'\&.
+.PP
+References NInterpolate\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBFilteringGauss::changeStep (const QString &Str)\fC [protected, slot]\fP"
+.PP
+Definition at line 601 of file SbIFilters\&.C'\&.
+.PP
+References Step\&.
+.PP
+Referenced by wOptions()\&.
+.SS "virtual QString SBFilteringGauss::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 59 of file SbIFilters\&.H'\&.
+.PP
+Referenced by calcSigmas(), makeAnalysisWith3Sigma(), readDataFile(), redrawDataPlot_ExpMode(), and wrote2File()\&.
+.SS "void SBFilteringGauss::collectData ()\fC [private]\fP"
+.PP
+Definition at line 537 of file SbIFilters\&.C'\&.
+.SS "void SBFilteringGauss::makeAnalysis ()\fC [protected, slot]\fP"
+.PP
+Definition at line 542 of file SbIFilters\&.C'\&.
+.PP
+References FILT_GAUSS_APRIORY, FType, redrawDataPlot(), and redrawDataPlot_ExpMode()\&.
+.PP
+Referenced by SBFilteringGauss(), and substractFilter()\&.
+.SS "void SBFilteringGauss::makeAnalysisWith3Sigma ()\fC [protected, slot]\fP"
+.PP
+Definition at line 566 of file SbIFilters\&.C'\&.
+.PP
+References SBAttributed::addAttr(), ClassName(), SBLog::DATA, SBAttributed::delAttr(), Filter, SBLog::INF, SBFilterGauss::isOK(), SBFilterGauss::IsOmit3Sigma, Log, NumOfDataCols, redrawDataPlot(), SIG_MODE_0, SIG_MODE_1, SIG_MODE_2, SBFilterGauss::sigma(), SMode, and SBLog::write()\&.
+.PP
+Referenced by SBFilteringGauss()\&.
+.SS "void SBFilteringGauss::readDataFile ()\fC [protected, slot]\fP"
+.PP
+Definition at line 472 of file SbIFilters\&.C'\&.
+.PP
+References ClassName(), SBLog::DATA, SBLog::DBG, SBDataSeries::dT(), SBDataSeries::dTMax(), SBDataSeries::dTMin(), Filter, SBLog::INF, IsByNum, IsFilterSubstracted, SBFilterGauss::isOK(), lDT, lDTMinMax, leNInterpolate, leStep, lImportedFileName, lInterval, lNumOfCols, lNumOfPts, Log, SBFilterGauss::n(), Name, NInterpolate, NumOfCols, NumOfDataCols, SBDataSeries::numOfDataColumns(), SBSetUp::path2TimeSeries(), rbSigmasMode, SBFilterGauss::readDataFile(), redrawDataPlot(), redrawTFPlot(), SBFilterGauss::series(), SetUp, SIG_MODE_0, SMode, Step, SBFilterGauss::tFinis(), SBFilterGauss::tStart(), and SBLog::write()\&.
+.PP
+Referenced by SBFilteringGauss()\&.
+.SS "void SBFilteringGauss::redrawDataPlot ()\fC [private]\fP"
+.PP
+Definition at line 671 of file SbIFilters\&.C'\&.
+.PP
+References SBPlotCarrier::branches(), SBPlotCarrier::createBranch(), SBPlotCarrier::DA_IGN, SBPlotBranch::data(), SBPlot::dataChanged(), SBDataSeries::dT(), Epoch, Filter, SBFilterGauss::interpolate(), IsByNum, SBFilterGauss::isOK(), leNInterpolate, leStep, SBFilterGauss::n(), Name, NInterpolate, NumOfDataCols, SBSetUp::path2TimeSeries(), PCData, PlotData, SBFilterGauss::series(), SBMatrix::set(), SBPlotCarrier::setAbsFile4SaveBaseName(), SetUp, SIG_MODE_0, SIG_MODE_1, SIG_MODE_2, SMode, SBFilterGauss::stdVar(), Step, SBFilterGauss::tFinis(), and SBFilterGauss::tStart()\&.
+.PP
+Referenced by makeAnalysis(), makeAnalysisWith3Sigma(), and readDataFile()\&.
+.SS "void SBFilteringGauss::redrawDataPlot_ExpMode ()\fC [private]\fP"
+.PP
+Definition at line 827 of file SbIFilters\&.C'\&.
+.PP
+References SBFilterGauss::addModel(), SBPlotCarrier::branches(), ClassName(), SBPlotCarrier::createBranch(), SBPlotCarrier::DA_IGN, SBPlotBranch::data(), SBLog::DATA, SBPlot::dataChanged(), SBDataSeries::dT(), Epoch, SBLog::ERR, Filter, SBPlotBranchList::find(), SBFilterGauss::interpolateMinusModel(), IsByNum, SBFilterGauss::isOK(), leNInterpolate, leStep, Log, SBFilterGauss::modelByIdx(), SBFilterModel::modelFull(), SBFilterModel::modelKeep(), SBFilterGauss::modelList(), SBFilterGauss::n(), Name, NInterpolate, NumOfDataCols, SBSetUp::path2TimeSeries(), PCData, PlotData, SBFilterGauss::prepareModels(), SBFilterGauss::seriesMinusModel(), SBMatrix::set(), SBPlotCarrier::setAbsFile4SaveBaseName(), SBNamed::setName(), SetUp, SIG_MODE_0, SIG_MODE_1, SIG_MODE_2, SMode, SBFilterGauss::stdVar(), Step, SBFilterGauss::tFinis(), SBFilterGauss::tStart(), and SBLog::write()\&.
+.PP
+Referenced by makeAnalysis()\&.
+.SS "void SBFilteringGauss::redrawTFPlot ()\fC [private]\fP"
+.PP
+Definition at line 772 of file SbIFilters\&.C'\&.
+.PP
+References SBPlotCarrier::branches(), SBPlotCarrier::DA_IGN, SBPlotBranch::data(), SBPlot::dataChanged(), SBDataSeries::dT(), Filter, SBFilterGauss::isOK(), NperTF, PCTF, PlotTF, SBFilterGauss::respFunc(), SBFilterGauss::series(), SBMatrix::set(), SBPlotBranch::setDataAttr(), SBFilterGauss::tFinis(), and SBFilterGauss::tStart()\&.
+.PP
+Referenced by changeFWHM(), and readDataFile()\&.
+.SS "void SBFilteringGauss::reject ()\fC [protected, slot]\fP"
+.PP
+Definition at line 407 of file SbIFilters\&.C'\&.
+.SS "void SBFilteringGauss::setFilterType (intid)\fC [protected, slot]\fP"
+.PP
+Definition at line 641 of file SbIFilters\&.C'\&.
+.PP
+References FType\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBFilteringGauss::setSigmasMode (intid)\fC [protected, slot]\fP"
+.PP
+Definition at line 635 of file SbIFilters\&.C'\&.
+.PP
+References SMode\&.
+.PP
+Referenced by wOptions()\&.
+.SS "void SBFilteringGauss::substractFilter ()\fC [protected, slot]\fP"
+.PP
+Definition at line 550 of file SbIFilters\&.C'\&.
+.PP
+References FILT_GAUSS_APRIORY, Filter, FType, IsFilterSubstracted, SBFilterGauss::isOK(), makeAnalysis(), SMode, and SBFilterGauss::substractFilter()\&.
+.PP
+Referenced by SBFilteringGauss()\&.
+.SS "\fBQWidget\fP * SBFilteringGauss::wBrowseData ()\fC [private]\fP"
+.PP
+Definition at line 344 of file SbIFilters\&.C'\&.
+.PP
+References SBPlotCarrier::branches(), SBPlotCarrier::columnNames(), SBPlotCarrier::createBranch(), SBPlotCarrier::DA_IGN, Name, SBSetUp::path2TimeSeries(), PCData, PlotData, SBPlotCarrier::setAbsFile4SaveBaseName(), SBPlotCarrier::setStdVarIdx(), and SetUp\&.
+.PP
+Referenced by SBFilteringGauss()\&.
+.SS "\fBQWidget\fP * SBFilteringGauss::wBrowseTF ()\fC [private]\fP"
+.PP
+Definition at line 370 of file SbIFilters\&.C'\&.
+.PP
+References SBPlotCarrier::branches(), SBPlotCarrier::columnNames(), SBPlotCarrier::createBranch(), SBPlotCarrier::DA_IGN, SBPlotBranch::data(), Name, NperTF, SBSetUp::path2TimeSeries(), PCTF, PlotTF, SBPlot::PM_HAS_HAVE_ZERO, SBPlot::PM_LINES, SBPlot::PM_WO_BRANCH_NAMES, SBPlot::PM_WO_DOTS, SBMatrix::set(), SBPlotCarrier::setAbsFile4SaveBaseName(), SBPlotBranch::setDataAttr(), and SetUp\&.
+.PP
+Referenced by SBFilteringGauss()\&.
+.SS "\fBQWidget\fP * SBFilteringGauss::wOptions ()\fC [private]\fP"
+.PP
+Definition at line 150 of file SbIFilters\&.C'\&.
+.PP
+References changeByNum(), changeEpoch(), changeFWHM(), changeNInterpolate(), changeStep(), Epoch, FWHM, lDT, lDTMinMax, leEpoch, leFWHM, leNInterpolate, leStep, lImportedFileName, lInterval, lNumOfCols, lNumOfPts, NInterpolate, NumOfCols, rbFilterType, rbSigmasMode, setFilterType(), setSigmasMode(), SMode, and Step\&.
+.PP
+Referenced by SBFilteringGauss()\&.
+.SS "void SBFilteringGauss::wrote2File ()\fC [protected, slot]\fP"
+.PP
+Definition at line 413 of file SbIFilters\&.C'\&.
+.PP
+References SBPlotCarrier::branches(), ClassName(), SBLog::DATA, SBLog::DBG, Filter, IsFilterSubstracted, SBFilterGauss::isOK(), Log, Name, NInterpolate, NumOfCols, NumOfDataCols, SBSetUp::path2TimeSeries(), PCData, SBFilterGauss::series(), SetUp, and SBLog::write()\&.
+.PP
+Referenced by SBFilteringGauss()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QAccel* \fBSBFilteringGauss::accel\fP\fC [private]\fP"
+.PP
+Definition at line 147 of file SbIFilters\&.H'\&.
+.PP
+Referenced by SBFilteringGauss()\&.
+.SS "QPushButton* \fBSBFilteringGauss::Analyse\fP\fC [private]\fP"
+.PP
+Definition at line 124 of file SbIFilters\&.H'\&.
+.PP
+Referenced by SBFilteringGauss()\&.
+.SS "double \fBSBFilteringGauss::Epoch\fP\fC [private]\fP"
+.PP
+Definition at line 93 of file SbIFilters\&.H'\&.
+.PP
+Referenced by changeEpoch(), redrawDataPlot(), redrawDataPlot_ExpMode(), SBFilteringGauss(), and wOptions()\&.
+.SS "\fBSBFilterGauss\fP* \fBSBFilteringGauss::Filter\fP\fC [private]\fP"
+.PP
+Definition at line 94 of file SbIFilters\&.H'\&.
+.PP
+Referenced by calcSigmas(), changeByNum(), changeFWHM(), makeAnalysisWith3Sigma(), readDataFile(), redrawDataPlot(), redrawDataPlot_ExpMode(), redrawTFPlot(), SBFilteringGauss(), substractFilter(), wrote2File(), and ~SBFilteringGauss()\&.
+.SS "\fBFILTERTYPE\fP \fBSBFilteringGauss::FType\fP\fC [private]\fP"
+.PP
+Definition at line 98 of file SbIFilters\&.H'\&.
+.PP
+Referenced by makeAnalysis(), SBFilteringGauss(), setFilterType(), and substractFilter()\&.
+.SS "double \fBSBFilteringGauss::FWHM\fP\fC [private]\fP"
+.PP
+Definition at line 92 of file SbIFilters\&.H'\&.
+.PP
+Referenced by changeFWHM(), SBFilteringGauss(), and wOptions()\&.
+.SS "QPushButton* \fBSBFilteringGauss::GetData\fP\fC [private]\fP"
+.PP
+Definition at line 123 of file SbIFilters\&.H'\&.
+.PP
+Referenced by SBFilteringGauss()\&.
+.SS "bool \fBSBFilteringGauss::IsByNum\fP\fC [private]\fP"
+.PP
+Definition at line 95 of file SbIFilters\&.H'\&.
+.PP
+Referenced by changeByNum(), readDataFile(), redrawDataPlot(), redrawDataPlot_ExpMode(), and SBFilteringGauss()\&.
+.SS "bool \fBSBFilteringGauss::IsFilterSubstracted\fP\fC [private]\fP"
+.PP
+Definition at line 96 of file SbIFilters\&.H'\&.
+.PP
+Referenced by readDataFile(), SBFilteringGauss(), substractFilter(), and wrote2File()\&.
+.SS "QLabel* \fBSBFilteringGauss::lDT\fP\fC [private]\fP"
+.PP
+Definition at line 108 of file SbIFilters\&.H'\&.
+.PP
+Referenced by readDataFile(), and wOptions()\&.
+.SS "QLabel* \fBSBFilteringGauss::lDTMinMax\fP\fC [private]\fP"
+.PP
+Definition at line 109 of file SbIFilters\&.H'\&.
+.PP
+Referenced by readDataFile(), and wOptions()\&.
+.SS "QLineEdit* \fBSBFilteringGauss::leEpoch\fP\fC [private]\fP"
+.PP
+Definition at line 118 of file SbIFilters\&.H'\&.
+.PP
+Referenced by wOptions()\&.
+.SS "QLineEdit* \fBSBFilteringGauss::leFWHM\fP\fC [private]\fP"
+.PP
+Definition at line 117 of file SbIFilters\&.H'\&.
+.PP
+Referenced by wOptions()\&.
+.SS "QLineEdit* \fBSBFilteringGauss::leNInterpolate\fP\fC [private]\fP"
+.PP
+Definition at line 115 of file SbIFilters\&.H'\&.
+.PP
+Referenced by changeByNum(), readDataFile(), redrawDataPlot(), redrawDataPlot_ExpMode(), and wOptions()\&.
+.SS "QLineEdit* \fBSBFilteringGauss::leStep\fP\fC [private]\fP"
+.PP
+Definition at line 116 of file SbIFilters\&.H'\&.
+.PP
+Referenced by changeByNum(), readDataFile(), redrawDataPlot(), redrawDataPlot_ExpMode(), and wOptions()\&.
+.SS "QLabel* \fBSBFilteringGauss::lImportedFileName\fP\fC [private]\fP"
+.PP
+Definition at line 105 of file SbIFilters\&.H'\&.
+.PP
+Referenced by readDataFile(), and wOptions()\&.
+.SS "QLabel* \fBSBFilteringGauss::lInterval\fP\fC [private]\fP"
+.PP
+Definition at line 110 of file SbIFilters\&.H'\&.
+.PP
+Referenced by readDataFile(), and wOptions()\&.
+.SS "QLabel* \fBSBFilteringGauss::lNumOfCols\fP\fC [private]\fP"
+.PP
+Definition at line 107 of file SbIFilters\&.H'\&.
+.PP
+Referenced by readDataFile(), and wOptions()\&.
+.SS "QLabel* \fBSBFilteringGauss::lNumOfPts\fP\fC [private]\fP"
+.PP
+Definition at line 106 of file SbIFilters\&.H'\&.
+.PP
+Referenced by readDataFile(), and wOptions()\&.
+.SS "QString \fBSBFilteringGauss::Name\fP\fC [private]\fP"
+.PP
+Definition at line 86 of file SbIFilters\&.H'\&.
+.PP
+Referenced by readDataFile(), redrawDataPlot(), redrawDataPlot_ExpMode(), SBFilteringGauss(), wBrowseData(), wBrowseTF(), and wrote2File()\&.
+.SS "unsigned int \fBSBFilteringGauss::NInterpolate\fP\fC [private]\fP"
+.PP
+Definition at line 87 of file SbIFilters\&.H'\&.
+.PP
+Referenced by changeByNum(), changeNInterpolate(), readDataFile(), redrawDataPlot(), redrawDataPlot_ExpMode(), SBFilteringGauss(), wOptions(), and wrote2File()\&.
+.SS "unsigned int \fBSBFilteringGauss::NperTF\fP\fC [private]\fP"
+.PP
+Definition at line 91 of file SbIFilters\&.H'\&.
+.PP
+Referenced by redrawTFPlot(), SBFilteringGauss(), and wBrowseTF()\&.
+.SS "unsigned int \fBSBFilteringGauss::NumOfCols\fP\fC [private]\fP"
+.PP
+Definition at line 89 of file SbIFilters\&.H'\&.
+.PP
+Referenced by readDataFile(), SBFilteringGauss(), wOptions(), and wrote2File()\&.
+.SS "unsigned int \fBSBFilteringGauss::NumOfDataCols\fP\fC [private]\fP"
+.PP
+Definition at line 90 of file SbIFilters\&.H'\&.
+.PP
+Referenced by calcSigmas(), makeAnalysisWith3Sigma(), readDataFile(), redrawDataPlot(), redrawDataPlot_ExpMode(), SBFilteringGauss(), and wrote2File()\&.
+.SS "QPushButton* \fBSBFilteringGauss::Ok\fP\fC [private]\fP"
+.PP
+Definition at line 125 of file SbIFilters\&.H'\&.
+.PP
+Referenced by SBFilteringGauss()\&.
+.SS "\fBSBPlotCarrier\fP* \fBSBFilteringGauss::PCData\fP\fC [private]\fP"
+.PP
+Definition at line 136 of file SbIFilters\&.H'\&.
+.PP
+Referenced by redrawDataPlot(), redrawDataPlot_ExpMode(), wBrowseData(), wrote2File(), and ~SBFilteringGauss()\&.
+.SS "\fBSBPlotCarrier\fP* \fBSBFilteringGauss::PCTF\fP\fC [private]\fP"
+.PP
+Definition at line 142 of file SbIFilters\&.H'\&.
+.PP
+Referenced by redrawTFPlot(), and wBrowseTF()\&.
+.SS "\fBSBPlot\fP* \fBSBFilteringGauss::PlotData\fP\fC [private]\fP"
+.PP
+Definition at line 137 of file SbIFilters\&.H'\&.
+.PP
+Referenced by redrawDataPlot(), redrawDataPlot_ExpMode(), wBrowseData(), and ~SBFilteringGauss()\&.
+.SS "\fBSBPlot\fP* \fBSBFilteringGauss::PlotTF\fP\fC [private]\fP"
+.PP
+Definition at line 143 of file SbIFilters\&.H'\&.
+.PP
+Referenced by redrawTFPlot(), and wBrowseTF()\&.
+.SS "QRadioButton* \fBSBFilteringGauss::rbFilterType\fP[1]\fC [private]\fP"
+.PP
+Definition at line 112 of file SbIFilters\&.H'\&.
+.PP
+Referenced by wOptions()\&.
+.SS "QRadioButton* \fBSBFilteringGauss::rbSigmasMode\fP[3]\fC [private]\fP"
+.PP
+Definition at line 113 of file SbIFilters\&.H'\&.
+.PP
+Referenced by readDataFile(), and wOptions()\&.
+.SS "QPushButton* \fBSBFilteringGauss::Save\fP\fC [private]\fP"
+.PP
+Definition at line 122 of file SbIFilters\&.H'\&.
+.PP
+Referenced by SBFilteringGauss()\&.
+.SS "\fBSIGMASMODE\fP \fBSBFilteringGauss::SMode\fP\fC [private]\fP"
+.PP
+Definition at line 97 of file SbIFilters\&.H'\&.
+.PP
+Referenced by calcSigmas(), makeAnalysisWith3Sigma(), readDataFile(), redrawDataPlot(), redrawDataPlot_ExpMode(), SBFilteringGauss(), setSigmasMode(), substractFilter(), and wOptions()\&.
+.SS "double \fBSBFilteringGauss::Step\fP\fC [private]\fP"
+.PP
+Definition at line 88 of file SbIFilters\&.H'\&.
+.PP
+Referenced by changeByNum(), changeStep(), readDataFile(), redrawDataPlot(), redrawDataPlot_ExpMode(), SBFilteringGauss(), and wOptions()\&.
+.SS "QTabWidget* \fBSBFilteringGauss::Tab\fP\fC [private]\fP"
+.PP
+Definition at line 101 of file SbIFilters\&.H'\&.
+.PP
+Referenced by SBFilteringGauss()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

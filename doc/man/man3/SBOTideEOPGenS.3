@@ -1,0 +1,227 @@
+.TH "SBOTideEOPGenS" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBOTideEOPGenS \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoRefFrame\&.H>\fP
+.PP
+Inherits \fBSBOTideEOPGeneral\fP'\&.
+.PP
+Inherited by \fBSBOTideEOP_Gipson1995\fP, \fBSBOTideEOP_GSFC95\fP, \fBSBOTideEOP_HD1994\fP, and \fBSBOTideEOP_JPL92\fP'\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBTableEntry\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBOTideEOPGenS\fP (const QString &Name_='Diurnal EOP general interface 2')"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBcalc\fP (const \fBSBTime\fP &)"
+.br
+.ti -1c
+.RI "virtual double \fBdUT1_UT1D\fP ()"
+.br
+.ti -1c
+.RI "virtual double \fBdx_xD\fP ()"
+.br
+.ti -1c
+.RI "virtual double \fBdy_yD\fP ()"
+.br
+.ti -1c
+.RI "const QString & \fBname\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetName\fP (const QString &Name_)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "const \fBTableEntry\fP * \fBTab\fP"
+.br
+.ti -1c
+.RI "int \fBN\fP"
+.br
+.ti -1c
+.RI "double \fBDUT1D\fP"
+.br
+.RI "\fIcalculated value of UT1D \fP"
+.ti -1c
+.RI "double \fBDXD\fP"
+.br
+.RI "\fIcalculated value of dXD \fP"
+.ti -1c
+.RI "double \fBDYD\fP"
+.br
+.RI "\fIcalculated value of dYD \fP"
+.ti -1c
+.RI "QString \fBName\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "int \fBcmp\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBNamed\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Ocean tide variations (diurnal and semidiurnal) in UT1 and Polar Motion'\&. General interface for models described in Sovers, Jacobs, 1996'\&. 
+.PP
+Definition at line 187 of file SbGeoRefFrame\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBOTideEOPGenS::SBOTideEOPGenS (const QString &Name_ = \fC'Diurnal EOP general interface 2'\fP)\fC [inline]\fP"
+.PP
+Definition at line 198 of file SbGeoRefFrame\&.H'\&.
+.PP
+References N\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBOTideEOPGenS::calc (const \fBSBTime\fP &T)\fC [virtual]\fP"Calculates diurnal EOPs for the time T'\&. 
+.PP
+Reimplemented from \fBSBOTideEOPGeneral\fP'\&.
+.PP
+Definition at line 1188 of file SbGeoRefFrame\&.C'\&.
+.PP
+References SBOTideEOPGenS::TableEntry::A, SBOTideEOPGenS::TableEntry::B, SBOTideEOPGeneral::DUT1D, SBOTideEOPGeneral::DXD, SBOTideEOPGeneral::DYD, SBTime::fArg_D(), SBTime::fArg_F(), SBTime::fArg_l(), SBTime::fArg_lPrime(), SBTime::fArg_Omega(), SBTime::fArg_theta(), SBOTideEOPGenS::TableEntry::k, N, SEC2RAD, sincos(), and Tab\&.
+.SS "virtual QString SBOTideEOPGenS::ClassName () const\fC [inline, virtual]\fP"Refers to a class name (debug info) 
+.PP
+Reimplemented from \fBSBOTideEOPGeneral\fP'\&.
+.PP
+Definition at line 200 of file SbGeoRefFrame\&.H'\&.
+.SS "virtual double SBOTideEOPGeneral::dUT1_UT1D ()\fC [inline, virtual, inherited]\fP"Returns calculated DUT1D'\&. 
+.PP
+Definition at line 171 of file SbGeoRefFrame\&.H'\&.
+.PP
+References SBOTideEOPGeneral::DUT1D\&.
+.PP
+Referenced by SBFrame::diurnalDUT1()\&.
+.SS "virtual double SBOTideEOPGeneral::dx_xD ()\fC [inline, virtual, inherited]\fP"Returns calculated dXD'\&. 
+.PP
+Definition at line 173 of file SbGeoRefFrame\&.H'\&.
+.PP
+References SBOTideEOPGeneral::DXD\&.
+.PP
+Referenced by SBFrame::diurnalDX()\&.
+.SS "virtual double SBOTideEOPGeneral::dy_yD ()\fC [inline, virtual, inherited]\fP"Returns calculated dYD'\&. 
+.PP
+Definition at line 175 of file SbGeoRefFrame\&.H'\&.
+.PP
+References SBOTideEOPGeneral::DYD\&.
+.PP
+Referenced by SBFrame::diurnalDY()\&.
+.SS "const QString& SBNamed::name () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 215 of file SbGeo\&.H'\&.
+.PP
+References SBNamed::Name\&.
+.PP
+Referenced by SBVLBINetEntryEditor::accept(), SBSourceEditor::acquireData(), SBSiteEditor::acquireData(), SBStationEditor::acquireData(), SBStochParameter::addPar(), SBProject::addSession(), SBSite::addStation(), SBParameterList::append(), SBVector::at(), SBMatrix::at(), SBUpperMatrix::at(), SBSymMatrix::at(), SBStation::axisOffsetLenght(), SBSolutionBrowser::batch4StochEOPChanged(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBEphem::calc(), SBStation::calcDisplacement(), SBSetupDialog::chkPacker(), SBVLBIPreProcess::clearPars(), SBEstimator::collectContStochs4NextBatch(), collectListOfSINEXParameters(), collectListOfSINEXParameters4NEQ(), SB_CRF::collectObjAliases(), SBObsVLBIStatistics::collectStatistics(), SBRunManager::constraintSourceCoord(), SBRunManager::constraintStationCoord(), SBRunManager::constraintStationVeloc(), SBSource::createParameters(), SBProjectCreate::createProject(), SBTestFrame::createWidget4Test(), SBTestEphem::createWidget4Test(), SBVLBIPreProcess::currentSesChange(), SBPlotArea::defineAreas(), SBSiteEditor::deleteEntry(), SBVLBISetView::deleteEntry(), SBStuffSources::deleteEntryS(), SBStuffStations::deleteEntryS(), SBSolution::deleteSolution(), SBSetupDialog::delInst(), SBSetupDialog::delPacker(), SBEstimator::Group::delParameter(), SBProjectEdit::delSession(), SBProject::delSession(), SBSite::delStation(), SBPlateMotion::displacement(), SBStuffAplo::draw(), SBPlotArea::drawFrames(), SBStochParameter::dump2File(), SBSolution::dumpParameters(), SBBaseInfo::dumpUserInfo(), SBSourceInfo::dumpUserInfo(), SBVLBISession::dumpUserInfo(), SBVLBISet::dumpUserInfo(), SBParametersEditor::editParameter(), SBAploChunk::fillDict(), SBVLBISet::fillDicts(), SBVLBIPreProcess::fillObsListView(), SBVLBIPreProcess::fillSessAttr(), SBCatalog::find(), SBSolution::getGlobalParameter4Report(), SBAploChunk::import(), SBVLBISet::import(), SBEcc::importEccDat(), SBAploEphem::importHPS(), SBMaster::importMF(), SBProjectCreate::init(), SBFCList::insert(), SBInstitutionList::insert(), SBCatalog::insert(), SBParameterList::inSort(), SBCatalog::inSort(), SBStochParameterList::inSort(), SB_TRF::inSort(), SBObsVLBIStatSrcLI::key(), SBParameterLI::key(), SBSourceListItem::key(), SBStationListItem::key(), SBObsVLBIStatStaLI::key(), SBVLBISesInfoLI::key(), SBSiteListItem::key(), SBObsVLBIStatRecordLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBAploEntryLI::key(), SBTestStationLI::key(), SBStationImport::loadNScodes(), SBStationImport::loadOLoad(), SBSolution::loadStatistics(), SBRunManager::loadVLBISession_m1(), SBRunManager::loadVLBISessions_m2(), SB_CRF::lookupNearest(), SB_TRF::lookupNearest(), SBSolutionBrowser::lookupParameters(), SBSourceEditor::makeApply(), SBSiteEditor::makeApply(), SBStationEditor::makeApply(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportEOP(), SBRunManager::makeReportMaps(), SBRunManager::makeReportNormalEqs(), SBRunManager::makeReports(), SBRunManager::makeReportSessionStatistics(), SBRunManager::makeReportTRF(), SBRunManager::makeReportTRFVariations(), SBRunManager::makeReportTroposphere(), SBEstimator::mapContStochs4NewBatch(), SBMaster::mapFiles(), SBMaster::mapRecords(), matT_x_mat(), SBEstimator::moveGlobalInfo(), SBEstimator::moveGlobalInfo_Old(), SBFileConv::open4In(), SBFileConv::open4Out(), SBEphem::openFile(), SBVector::operator()(), SBSolidTideLd::operator()(), SBTideLd::operator()(), SBMatrix::operator()(), SBRefraction::operator()(), SBUpperMatrix::operator()(), operator*(), operator+(), SBVector::operator+=(), SBMatrix::operator+=(), SBUpperMatrix::operator+=(), operator-(), SBVector::operator-=(), SBMatrix::operator-=(), SBUpperMatrix::operator-=(), SBObsVLBIEntry::operator<(), operator<<(), SBVector::operator=(), SBMatrix::operator=(), SBUpperMatrix::operator=(), SBVLBISesInfo::operator=(), SBVector::operator==(), SBObsVLBIEntry::operator==(), SBVLBISesInfo::operator==(), operator>>(), operator~(), SBSymMatrix::operator~(), SBPlotArea::output4Files(), SBSolution::path2GlbDir(), SBSolution::path2LocDir(), SBSolution::path2StcDir(), SBEstimator::prepare4Local(), SBSite::prepareDicts(), SBVLBIPreProcess::preProcess(), SBObsVLBIEntry::process(), SBRunManager::process_m1(), SBRunManager::process_m2(), SBVLBIPreProcess::procScenario_2(), SBProjectSel::ProjectListItem::ProjectListItem(), QuadraticForm(), SBRefraction::refrDir(), SBAploEphem::registerStation(), SBInstitutionList::remove(), SBParameterList::remove(), SBStochParameterList::remove(), SBVLBISet::removeSession(), SBParameterList::report(), SBStochParameter::report(), SBBaseInfo::restoreUserInfo(), SBSourceInfo::restoreUserInfo(), SBVLBISession::restoreUserInfo(), RRT(), RTR(), SBParameter::rw(), SBPlot::save2PS(), SBVLBISet::saveSession(), SBRunManager::saveVLBISessions_m1(), SBRunManager::saveVLBISessions_m2(), SBCoordsEditor::SBCoordsEditor(), SBEstimator::SBEstimator(), SBModelEditor::SBModelEditor(), SBObsVLBIStatBrowser::SBObsVLBIStatBrowser(), SBObsVLBIStatSrc::SBObsVLBIStatSrc(), SBObsVLBIStatSta::SBObsVLBIStatSta(), SBParametersEditor::SBParametersEditor(), SBPlateMotion::SBPlateMotion(), SBPlot::SBPlot(), SBPlotDialog::SBPlotDialog(), SBProjectEdit::SBProjectEdit(), SBRunManager::SBRunManager(), SBSolution::SBSolution(), SBSolutionBrowser::SBSolutionBrowser(), SBStuffEphem::SBStuffEphem(), SBTestAPLoad::SBTestAPLoad(), SBTestDiurnEOP::SBTestDiurnEOP(), SBTestEphem::SBTestEphem(), SBTestFrame::SBTestFrame(), SBTestNutation::SBTestNutation(), SBTestOceanTides::SBTestOceanTides(), SBTestPolarTides::SBTestPolarTides(), SBTestSolidTides::SBTestSolidTides(), SBVLBINetEntryEditor::SBVLBINetEntryEditor(), SBVLBISessionEditor::SBVLBISessionEditor(), SBVector::set(), SBMatrix::set(), SBUpperMatrix::set(), SBMatrix::setCol(), SBUpperMatrix::setCol(), SBFCList::setDefault(), SB_TRF::setSiteName(), SBMatrix::setVector(), SBUpperMatrix::setVector(), Solve(), SBEstimator::solveLocals(), SBObsVLBIEntry::source(), SBTestSolidTides::stationChange(), SBTestOceanTides::stationChange(), SBTestPolarTides::stationChange(), SBTestAPLoad::stationChange(), SBParameter::str4compare(), SBRunManager::stripTRF(), SBSolution::submitGlobalParameters(), SBSolution::submitLocalParameters(), SBSolution::submitStochasticParameters(), SBMatrix::T(), SBUpperMatrix::T(), SBFileConvLI::text(), SBParameterLI::text(), SBObsVLBIStatSrcLI::text(), SBSourceListItem::text(), SBStationListItem::text(), SBObsVLBIStatStaLI::text(), SBVLBISesInfoLI::text(), SBSolutionBatchLI::text(), SBSiteListItem::text(), SBObsVLBIStatRecordLI::text(), SBVLBISesPreProcLI::text(), SBSetupDialog::SBInstLI::text(), SBBasInfoLI::text(), SBSouInfoLI::text(), SBAploEntryLI::text(), SBTestStationLI::text(), SBVLBINetworkEditor::NetworkListItem::text(), SBMasterRecBrowser::SBMRListItem::text(), SBStochParameter::update(), SBSolution::updateParameter(), SBVLBIPreProcess::updateSession(), SBParameterList::updateSolution(), SBMainWindow::UtilitiesCollectStat4Prj(), SBPlateMotion::velocity(), SBVLBIPreProcess::wAttributes(), SBSourceEditor::wCoordinates(), SBParametersEditor::wEOPParameters(), SBSolutionBrowser::wLocalEOPPars(), SBSolutionBrowser::wLocalSoPars(), SBSolutionBrowser::wLocalStPars(), SBStationEditor::wNames(), SBVLBISessionEditor::wObservs(), SBParametersEditor::wOtherParameters(), SBVLBISessionEditor::wParameters(), writeNormalEquationSystem(), SBSiteEditor::wSite(), SBParametersEditor::wSourceParameters(), SBParametersEditor::wStationParameters(), SBSolutionBrowser::wStochEOPPars(), SBSolutionBrowser::wStochSoPars(), SBSolutionBrowser::wStochStPars(), SBParametersEditor::wTestParameters(), and SBSolutionBrowser::wWRMSs()\&.
+.SS "void SBNamed::setName (const QString &Name_)\fC [inline, inherited]\fP"
+.PP
+Definition at line 216 of file SbGeo\&.H'\&.
+.PP
+References SBNamed::Name\&.
+.PP
+Referenced by SBVLBINetEntryEditor::accept(), SBSourceEditor::acquireData(), SBSiteEditor::acquireData(), SBStationEditor::acquireData(), SBObsVLBIStatistics::collectStatistics(), SBVLBIPreProcess::currentSesChange(), SBVLBISet::import(), SBVLBISet::loadSession(), SBVLBISesInfo::operator=(), operator>>(), SBPlotArea::output4Files(), SBFilteringGauss::redrawDataPlot_ExpMode(), SBBaseInfoList::restoreUserInfo(), SBSourceInfoList::restoreUserInfo(), SBMasterRecord::SBMasterRecord(), SBSolution::SBSolution(), SB_TRF::setSiteName(), SBTestSolidTides::stationChange(), SBTestOceanTides::stationChange(), SBTestPolarTides::stationChange(), SBTestAPLoad::stationChange(), and SBVLBIPreProcess::updateSession()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "int cmp (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP, returns (-1:0:+1)'\&. 
+.PP
+Definition at line 253 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBStochParameterList::compareItems(), and SBMasterFile::compareItems()\&.
+.SS "bool operator!= (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 238 of file SbGeo\&.H'\&.
+.SS "bool operator< (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 243 of file SbGeo\&.H'\&.
+.SS "QDataStream & operator<< (QDataStream &s, const \fBSBNamed\fP &W)\fC [friend, inherited]\fP"Saves object to the data stream'\&. 
+.PP
+Definition at line 258 of file SbGeo\&.H'\&.
+.SS "bool operator== (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 233 of file SbGeo\&.H'\&.
+.SS "bool operator> (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 248 of file SbGeo\&.H'\&.
+.SS "QDataStream & operator>> (QDataStream &s, \fBSBNamed\fP &W)\fC [friend, inherited]\fP"Loads object from the data stream'\&. 
+.PP
+Definition at line 263 of file SbGeo\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double \fBSBOTideEOPGeneral::DUT1D\fP\fC [protected, inherited]\fP"
+.PP
+calculated value of UT1D 
+.PP
+Definition at line 155 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc(), SBOTideEOPRay1994_1996::calc(), SBOTideEOPRay1994_2003::calc(), SBATideEOP_BBP_02::calc(), SBNonTideEOP_Viron_02::calc(), SBGravTideEOP_B_02::calc(), SBOTideEOPGeneral::dUT1_UT1D(), and SBOTideEOPGeneral::SBOTideEOPGeneral()\&.
+.SS "double \fBSBOTideEOPGeneral::DXD\fP\fC [protected, inherited]\fP"
+.PP
+calculated value of dXD 
+.PP
+Definition at line 156 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc(), SBOTideEOPRay1994_1996::calc(), SBOTideEOPRay1994_2003::calc(), SBATideEOP_BBP_02::calc(), SBNonTideEOP_Viron_02::calc(), SBGravTideEOP_B_02::calc(), SBOTideEOPGeneral::dx_xD(), and SBOTideEOPGeneral::SBOTideEOPGeneral()\&.
+.SS "double \fBSBOTideEOPGeneral::DYD\fP\fC [protected, inherited]\fP"
+.PP
+calculated value of dYD 
+.PP
+Definition at line 157 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc(), SBOTideEOPRay1994_1996::calc(), SBOTideEOPRay1994_2003::calc(), SBATideEOP_BBP_02::calc(), SBNonTideEOP_Viron_02::calc(), SBGravTideEOP_B_02::calc(), SBOTideEOPGeneral::dy_yD(), and SBOTideEOPGeneral::SBOTideEOPGeneral()\&.
+.SS "int \fBSBOTideEOPGenS::N\fP\fC [protected]\fP"
+.PP
+Definition at line 196 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc(), SBOTideEOP_Gipson1995::SBOTideEOP_Gipson1995(), SBOTideEOP_GSFC95::SBOTideEOP_GSFC95(), SBOTideEOP_HD1994::SBOTideEOP_HD1994(), SBOTideEOP_JPL92::SBOTideEOP_JPL92(), and SBOTideEOPGenS()\&.
+.SS "QString \fBSBNamed::Name\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 206 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBVLBISesInfo::fileName(), SBNamed::name(), operator<<(), SBNamed::operator=(), SBStation::operator=(), SBSite::operator=(), SBOLoadCarrier::operator==(), operator>>(), SBStochParameter::report(), SBNamed::SBNamed(), SBNamed::setName(), SBSite::updateSite(), and SBStation::updateStation()\&.
+.SS "const \fBTableEntry\fP* \fBSBOTideEOPGenS::Tab\fP\fC [protected]\fP"
+.PP
+Definition at line 195 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc(), SBOTideEOP_Gipson1995::SBOTideEOP_Gipson1995(), SBOTideEOP_GSFC95::SBOTideEOP_GSFC95(), SBOTideEOP_HD1994::SBOTideEOP_HD1994(), and SBOTideEOP_JPL92::SBOTideEOP_JPL92()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

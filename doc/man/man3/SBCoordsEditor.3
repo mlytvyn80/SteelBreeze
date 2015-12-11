@@ -1,0 +1,231 @@
+.TH "SBCoordsEditor" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBCoordsEditor \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIStuffStation\&.H>\fP
+.PP
+Inherits \fBQDialog\fP'\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBcoordinatesModified\fP (bool)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBCoordsEditor\fP (\fBSBCoordsListItem\fP *, \fBSBStation\fP *, \fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "virtual \fB~SBCoordsEditor\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBaccept\fP ()"
+.br
+.ti -1c
+.RI "void \fBreject\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBacquireData\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBStation\fP * \fBStation\fP"
+.br
+.ti -1c
+.RI "\fBSBCoordsListItem\fP * \fBCooli\fP"
+.br
+.ti -1c
+.RI "\fBSBCoordinates\fP * \fBCoo\fP"
+.br
+.ti -1c
+.RI "bool \fBisModified\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleYr\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleMo\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleDy\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleHr\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleMi\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleSe\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBle_R\fP [3]"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleDR\fP [3]"
+.br
+.ti -1c
+.RI "QLineEdit * \fBle_V\fP [3]"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleDV\fP [3]"
+.br
+.ti -1c
+.RI "QCheckBox * \fBcbIsUseVels\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBleEventName\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 614 of file SbIStuffStation\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBCoordsEditor::SBCoordsEditor (\fBSBCoordsListItem\fP *Cli_, \fBSBStation\fP *Station_, \fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 4044 of file SbIStuffStation\&.C'\&.
+.PP
+References accept(), Vector3::at(), cbIsUseVels, SBCoordinates::coo(), Coo, SBCoordinates::cooErrors(), Cooli, SBCoordsListItem::coords(), SBMJD::day(), SBCoordinates::eventName(), SBMJD::hour(), SBStation::id(), isModified, SBCoordinates::isUseVels(), le_R, le_V, leDR, leDV, leDy, leEventName, leHr, leMi, leMo, leSe, leYr, SBMJD::min(), SBMJD::month(), SBNamed::name(), reject(), SBMJD::sec(), Station, SBStationID::toString(), SBCoordinates::vel(), SBCoordinates::velErrors(), and SBMJD::year()\&.
+.SS "virtual SBCoordsEditor::~SBCoordsEditor ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 619 of file SbIStuffStation\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBCoordsEditor::accept ()\fC [protected, slot]\fP"
+.PP
+Definition at line 4292 of file SbIStuffStation\&.C'\&.
+.PP
+References acquireData(), Cooli, coordinatesModified(), and isModified\&.
+.PP
+Referenced by SBCoordsEditor()\&.
+.SS "void SBCoordsEditor::acquireData ()\fC [private, virtual]\fP"
+.PP
+Definition at line 4309 of file SbIStuffStation\&.C'\&.
+.PP
+References cbIsUseVels, SBCoordinates::coo(), Coo, SBCoordinates::cooErrors(), Cooli, SBCoordinates::eventName(), isModified, SBCoordinates::isUseVels(), le_R, le_V, leDR, leDV, leDy, leEventName, leHr, leMi, leMo, leSe, leYr, SBCoordinates::setCoo(), SBCoordinates::setCooErrors(), SBCoordinates::setEventName(), SBCoordinates::setIsUseVels(), SBCoordinates::setVel(), SBCoordinates::setVelErrors(), SBCoordinates::vel(), SBCoordinates::velErrors(), X_AXIS, Y_AXIS, and Z_AXIS\&.
+.PP
+Referenced by accept()\&.
+.SS "virtual QString SBCoordsEditor::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 620 of file SbIStuffStation\&.H'\&.
+.SS "void SBCoordsEditor::coordinatesModified (boolt0)\fC [signal]\fP"
+.PP
+Definition at line 1054 of file SbIStuffStation\&.moc\&.C'\&.
+.PP
+Referenced by accept(), and reject()\&.
+.SS "void SBCoordsEditor::reject ()\fC [protected, slot]\fP"
+.PP
+Definition at line 4302 of file SbIStuffStation\&.C'\&.
+.PP
+References coordinatesModified()\&.
+.PP
+Referenced by SBCoordsEditor()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QCheckBox* \fBSBCoordsEditor::cbIsUseVels\fP\fC [private]\fP"
+.PP
+Definition at line 649 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by acquireData(), and SBCoordsEditor()\&.
+.SS "\fBSBCoordinates\fP* \fBSBCoordsEditor::Coo\fP\fC [private]\fP"
+.PP
+Definition at line 633 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by acquireData(), and SBCoordsEditor()\&.
+.SS "\fBSBCoordsListItem\fP* \fBSBCoordsEditor::Cooli\fP\fC [private]\fP"
+.PP
+Definition at line 632 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by accept(), acquireData(), and SBCoordsEditor()\&.
+.SS "bool \fBSBCoordsEditor::isModified\fP\fC [private]\fP"
+.PP
+Definition at line 634 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by accept(), acquireData(), and SBCoordsEditor()\&.
+.SS "QLineEdit* \fBSBCoordsEditor::le_R\fP[3]\fC [private]\fP"
+.PP
+Definition at line 644 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by acquireData(), and SBCoordsEditor()\&.
+.SS "QLineEdit* \fBSBCoordsEditor::le_V\fP[3]\fC [private]\fP"
+.PP
+Definition at line 646 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by acquireData(), and SBCoordsEditor()\&.
+.SS "QLineEdit* \fBSBCoordsEditor::leDR\fP[3]\fC [private]\fP"
+.PP
+Definition at line 645 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by acquireData(), and SBCoordsEditor()\&.
+.SS "QLineEdit* \fBSBCoordsEditor::leDV\fP[3]\fC [private]\fP"
+.PP
+Definition at line 647 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by acquireData(), and SBCoordsEditor()\&.
+.SS "QLineEdit* \fBSBCoordsEditor::leDy\fP\fC [private]\fP"
+.PP
+Definition at line 639 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by acquireData(), and SBCoordsEditor()\&.
+.SS "QLineEdit* \fBSBCoordsEditor::leEventName\fP\fC [private]\fP"
+.PP
+Definition at line 650 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by acquireData(), and SBCoordsEditor()\&.
+.SS "QLineEdit* \fBSBCoordsEditor::leHr\fP\fC [private]\fP"
+.PP
+Definition at line 640 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by acquireData(), and SBCoordsEditor()\&.
+.SS "QLineEdit* \fBSBCoordsEditor::leMi\fP\fC [private]\fP"
+.PP
+Definition at line 641 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by acquireData(), and SBCoordsEditor()\&.
+.SS "QLineEdit* \fBSBCoordsEditor::leMo\fP\fC [private]\fP"
+.PP
+Definition at line 638 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by acquireData(), and SBCoordsEditor()\&.
+.SS "QLineEdit* \fBSBCoordsEditor::leSe\fP\fC [private]\fP"
+.PP
+Definition at line 642 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by acquireData(), and SBCoordsEditor()\&.
+.SS "QLineEdit* \fBSBCoordsEditor::leYr\fP\fC [private]\fP"
+.PP
+Definition at line 637 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by acquireData(), and SBCoordsEditor()\&.
+.SS "\fBSBStation\fP* \fBSBCoordsEditor::Station\fP\fC [private]\fP"
+.PP
+Definition at line 631 of file SbIStuffStation\&.H'\&.
+.PP
+Referenced by SBCoordsEditor()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

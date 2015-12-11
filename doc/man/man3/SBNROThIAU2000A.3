@@ -1,0 +1,700 @@
+.TH "SBNROThIAU2000A" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBNROThIAU2000A \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoRefFrame\&.H>\fP
+.PP
+Inherits \fBSBNROThGeneral\fP'\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBGeneralTableEntry\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBNROThIAU2000A\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBcalc\fP (const \fBSBTime\fP &)"
+.br
+.ti -1c
+.RI "virtual double \fBx\fP () const "
+.br
+.ti -1c
+.RI "virtual double \fBy\fP () const "
+.br
+.ti -1c
+.RI "virtual double \fBs\fP () const "
+.br
+.ti -1c
+.RI "virtual double \fBdT\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBname\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetName\fP (const QString &Name_)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBsum\fP (int, const \fBGeneralTableEntry\fP *, double *)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBX\fP"
+.br
+.RI "\fIX'\&. \fP"
+.ti -1c
+.RI "double \fBY\fP"
+.br
+.RI "\fIY'\&. \fP"
+.ti -1c
+.RI "double \fBS\fP"
+.br
+.RI "\fIs \fP"
+.ti -1c
+.RI "double \fBDT\fP"
+.br
+.RI "\fIdT \fP"
+.ti -1c
+.RI "QString \fBName\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBNXT0\fP"
+.br
+.ti -1c
+.RI "static const int \fBNXT1\fP"
+.br
+.ti -1c
+.RI "static const int \fBNXT2\fP"
+.br
+.ti -1c
+.RI "static const int \fBNXT3\fP"
+.br
+.ti -1c
+.RI "static const int \fBNXT4\fP"
+.br
+.ti -1c
+.RI "static const int \fBNYT0\fP"
+.br
+.ti -1c
+.RI "static const int \fBNYT1\fP"
+.br
+.ti -1c
+.RI "static const int \fBNYT2\fP"
+.br
+.ti -1c
+.RI "static const int \fBNYT3\fP"
+.br
+.ti -1c
+.RI "static const int \fBNYT4\fP"
+.br
+.ti -1c
+.RI "static const int \fBNDThetaT0\fP"
+.br
+.ti -1c
+.RI "static const int \fBNDThetaT1\fP"
+.br
+.ti -1c
+.RI "static const int \fBNDThetaT2\fP"
+.br
+.ti -1c
+.RI "static const int \fBNDThetaT3\fP"
+.br
+.ti -1c
+.RI "static const int \fBNDThetaT4\fP"
+.br
+.ti -1c
+.RI "static const int \fBNDtT0\fP"
+.br
+.ti -1c
+.RI "static const int \fBNDtT1\fP"
+.br
+.ti -1c
+.RI "static const \fBGeneralTableEntry\fP \fBXTabT0\fP []"
+.br
+.ti -1c
+.RI "static const \fBGeneralTableEntry\fP \fBXTabT1\fP []"
+.br
+.ti -1c
+.RI "static const \fBGeneralTableEntry\fP \fBXTabT2\fP []"
+.br
+.ti -1c
+.RI "static const \fBGeneralTableEntry\fP \fBXTabT3\fP []"
+.br
+.ti -1c
+.RI "static const \fBGeneralTableEntry\fP \fBXTabT4\fP []"
+.br
+.ti -1c
+.RI "static const \fBGeneralTableEntry\fP \fBYTabT0\fP []"
+.br
+.ti -1c
+.RI "static const \fBGeneralTableEntry\fP \fBYTabT1\fP []"
+.br
+.ti -1c
+.RI "static const \fBGeneralTableEntry\fP \fBYTabT2\fP []"
+.br
+.ti -1c
+.RI "static const \fBGeneralTableEntry\fP \fBYTabT3\fP []"
+.br
+.ti -1c
+.RI "static const \fBGeneralTableEntry\fP \fBYTabT4\fP []"
+.br
+.ti -1c
+.RI "static const \fBGeneralTableEntry\fP \fBDThetaTabT0\fP []"
+.br
+.ti -1c
+.RI "static const \fBGeneralTableEntry\fP \fBDThetaTabT1\fP []"
+.br
+.ti -1c
+.RI "static const \fBGeneralTableEntry\fP \fBDThetaTabT2\fP []"
+.br
+.ti -1c
+.RI "static const \fBGeneralTableEntry\fP \fBDThetaTabT3\fP []"
+.br
+.ti -1c
+.RI "static const \fBGeneralTableEntry\fP \fBDThetaTabT4\fP []"
+.br
+.ti -1c
+.RI "static const \fBGeneralTableEntry\fP \fBDtTabT0\fP []"
+.br
+.ti -1c
+.RI "static const \fBGeneralTableEntry\fP \fBDtTabT1\fP []"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "int \fBcmp\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBNamed\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+IAU 2000A Nutation theory'\&. Implements The IAU 2000A Theory of Nutation'\&. 
+.PP
+Definition at line 967 of file SbGeoRefFrame\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBNROThIAU2000A::SBNROThIAU2000A ()\fC [inline]\fP"
+.PP
+Definition at line 1019 of file SbGeoRefFrame\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBNROThIAU2000A::calc (const \fBSBTime\fP &)\fC [virtual]\fP"Calculates nutation angles for the time T'\&. 
+.PP
+Implements \fBSBNROThGeneral\fP'\&.
+.PP
+Definition at line 1409 of file SbGeoRefFrame\&.C'\&.
+.PP
+References SBNROThGeneral::DT, DThetaTabT0, DThetaTabT1, DThetaTabT2, DThetaTabT3, DThetaTabT4, DtTabT0, DtTabT1, SBTime::fArg_D(), SBTime::fArg_F(), SBTime::fArg_l(), SBTime::fArg_lPrime(), SBTime::fArg_Omega(), NDThetaT0, NDThetaT1, NDThetaT2, NDThetaT3, NDThetaT4, NDtT0, NDtT1, NXT0, NXT1, NXT2, NXT3, NXT4, NYT0, NYT1, NYT2, NYT3, NYT4, SBNROThGeneral::S, SEC2RAD, sum(), TEphem, SBTime::TT(), SBNROThGeneral::X, XTabT0, XTabT1, XTabT2, XTabT3, XTabT4, SBNROThGeneral::Y, YTabT0, YTabT1, YTabT2, YTabT3, and YTabT4\&.
+.SS "virtual QString SBNROThIAU2000A::ClassName () const\fC [inline, virtual]\fP"Refers to a class name (debug info) 
+.PP
+Reimplemented from \fBSBNROThGeneral\fP'\&.
+.PP
+Definition at line 1020 of file SbGeoRefFrame\&.H'\&.
+.SS "virtual double SBNROThGeneral::dT () const\fC [inline, virtual, inherited]\fP"Returns calculated dT'\&. 
+.PP
+Definition at line 106 of file SbGeoRefFrame\&.H'\&.
+.PP
+References SBNROThGeneral::DT\&.
+.SS "const QString& SBNamed::name () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 215 of file SbGeo\&.H'\&.
+.PP
+References SBNamed::Name\&.
+.PP
+Referenced by SBVLBINetEntryEditor::accept(), SBSourceEditor::acquireData(), SBSiteEditor::acquireData(), SBStationEditor::acquireData(), SBStochParameter::addPar(), SBProject::addSession(), SBSite::addStation(), SBParameterList::append(), SBVector::at(), SBMatrix::at(), SBUpperMatrix::at(), SBSymMatrix::at(), SBStation::axisOffsetLenght(), SBSolutionBrowser::batch4StochEOPChanged(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBEphem::calc(), SBStation::calcDisplacement(), SBSetupDialog::chkPacker(), SBVLBIPreProcess::clearPars(), SBEstimator::collectContStochs4NextBatch(), collectListOfSINEXParameters(), collectListOfSINEXParameters4NEQ(), SB_CRF::collectObjAliases(), SBObsVLBIStatistics::collectStatistics(), SBRunManager::constraintSourceCoord(), SBRunManager::constraintStationCoord(), SBRunManager::constraintStationVeloc(), SBSource::createParameters(), SBProjectCreate::createProject(), SBTestFrame::createWidget4Test(), SBTestEphem::createWidget4Test(), SBVLBIPreProcess::currentSesChange(), SBPlotArea::defineAreas(), SBSiteEditor::deleteEntry(), SBVLBISetView::deleteEntry(), SBStuffSources::deleteEntryS(), SBStuffStations::deleteEntryS(), SBSolution::deleteSolution(), SBSetupDialog::delInst(), SBSetupDialog::delPacker(), SBEstimator::Group::delParameter(), SBProjectEdit::delSession(), SBProject::delSession(), SBSite::delStation(), SBPlateMotion::displacement(), SBStuffAplo::draw(), SBPlotArea::drawFrames(), SBStochParameter::dump2File(), SBSolution::dumpParameters(), SBBaseInfo::dumpUserInfo(), SBSourceInfo::dumpUserInfo(), SBVLBISession::dumpUserInfo(), SBVLBISet::dumpUserInfo(), SBParametersEditor::editParameter(), SBAploChunk::fillDict(), SBVLBISet::fillDicts(), SBVLBIPreProcess::fillObsListView(), SBVLBIPreProcess::fillSessAttr(), SBCatalog::find(), SBSolution::getGlobalParameter4Report(), SBAploChunk::import(), SBVLBISet::import(), SBEcc::importEccDat(), SBAploEphem::importHPS(), SBMaster::importMF(), SBProjectCreate::init(), SBFCList::insert(), SBInstitutionList::insert(), SBCatalog::insert(), SBParameterList::inSort(), SBCatalog::inSort(), SBStochParameterList::inSort(), SB_TRF::inSort(), SBObsVLBIStatSrcLI::key(), SBParameterLI::key(), SBSourceListItem::key(), SBStationListItem::key(), SBObsVLBIStatStaLI::key(), SBVLBISesInfoLI::key(), SBSiteListItem::key(), SBObsVLBIStatRecordLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBAploEntryLI::key(), SBTestStationLI::key(), SBStationImport::loadNScodes(), SBStationImport::loadOLoad(), SBSolution::loadStatistics(), SBRunManager::loadVLBISession_m1(), SBRunManager::loadVLBISessions_m2(), SB_CRF::lookupNearest(), SB_TRF::lookupNearest(), SBSolutionBrowser::lookupParameters(), SBSourceEditor::makeApply(), SBSiteEditor::makeApply(), SBStationEditor::makeApply(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportEOP(), SBRunManager::makeReportMaps(), SBRunManager::makeReportNormalEqs(), SBRunManager::makeReports(), SBRunManager::makeReportSessionStatistics(), SBRunManager::makeReportTRF(), SBRunManager::makeReportTRFVariations(), SBRunManager::makeReportTroposphere(), SBEstimator::mapContStochs4NewBatch(), SBMaster::mapFiles(), SBMaster::mapRecords(), matT_x_mat(), SBEstimator::moveGlobalInfo(), SBEstimator::moveGlobalInfo_Old(), SBFileConv::open4In(), SBFileConv::open4Out(), SBEphem::openFile(), SBVector::operator()(), SBSolidTideLd::operator()(), SBTideLd::operator()(), SBMatrix::operator()(), SBRefraction::operator()(), SBUpperMatrix::operator()(), operator*(), operator+(), SBVector::operator+=(), SBMatrix::operator+=(), SBUpperMatrix::operator+=(), operator-(), SBVector::operator-=(), SBMatrix::operator-=(), SBUpperMatrix::operator-=(), SBObsVLBIEntry::operator<(), operator<<(), SBVector::operator=(), SBMatrix::operator=(), SBUpperMatrix::operator=(), SBVLBISesInfo::operator=(), SBVector::operator==(), SBObsVLBIEntry::operator==(), SBVLBISesInfo::operator==(), operator>>(), operator~(), SBSymMatrix::operator~(), SBPlotArea::output4Files(), SBSolution::path2GlbDir(), SBSolution::path2LocDir(), SBSolution::path2StcDir(), SBEstimator::prepare4Local(), SBSite::prepareDicts(), SBVLBIPreProcess::preProcess(), SBObsVLBIEntry::process(), SBRunManager::process_m1(), SBRunManager::process_m2(), SBVLBIPreProcess::procScenario_2(), SBProjectSel::ProjectListItem::ProjectListItem(), QuadraticForm(), SBRefraction::refrDir(), SBAploEphem::registerStation(), SBInstitutionList::remove(), SBParameterList::remove(), SBStochParameterList::remove(), SBVLBISet::removeSession(), SBParameterList::report(), SBStochParameter::report(), SBBaseInfo::restoreUserInfo(), SBSourceInfo::restoreUserInfo(), SBVLBISession::restoreUserInfo(), RRT(), RTR(), SBParameter::rw(), SBPlot::save2PS(), SBVLBISet::saveSession(), SBRunManager::saveVLBISessions_m1(), SBRunManager::saveVLBISessions_m2(), SBCoordsEditor::SBCoordsEditor(), SBEstimator::SBEstimator(), SBModelEditor::SBModelEditor(), SBObsVLBIStatBrowser::SBObsVLBIStatBrowser(), SBObsVLBIStatSrc::SBObsVLBIStatSrc(), SBObsVLBIStatSta::SBObsVLBIStatSta(), SBParametersEditor::SBParametersEditor(), SBPlateMotion::SBPlateMotion(), SBPlot::SBPlot(), SBPlotDialog::SBPlotDialog(), SBProjectEdit::SBProjectEdit(), SBRunManager::SBRunManager(), SBSolution::SBSolution(), SBSolutionBrowser::SBSolutionBrowser(), SBStuffEphem::SBStuffEphem(), SBTestAPLoad::SBTestAPLoad(), SBTestDiurnEOP::SBTestDiurnEOP(), SBTestEphem::SBTestEphem(), SBTestFrame::SBTestFrame(), SBTestNutation::SBTestNutation(), SBTestOceanTides::SBTestOceanTides(), SBTestPolarTides::SBTestPolarTides(), SBTestSolidTides::SBTestSolidTides(), SBVLBINetEntryEditor::SBVLBINetEntryEditor(), SBVLBISessionEditor::SBVLBISessionEditor(), SBVector::set(), SBMatrix::set(), SBUpperMatrix::set(), SBMatrix::setCol(), SBUpperMatrix::setCol(), SBFCList::setDefault(), SB_TRF::setSiteName(), SBMatrix::setVector(), SBUpperMatrix::setVector(), Solve(), SBEstimator::solveLocals(), SBObsVLBIEntry::source(), SBTestSolidTides::stationChange(), SBTestOceanTides::stationChange(), SBTestPolarTides::stationChange(), SBTestAPLoad::stationChange(), SBParameter::str4compare(), SBRunManager::stripTRF(), SBSolution::submitGlobalParameters(), SBSolution::submitLocalParameters(), SBSolution::submitStochasticParameters(), SBMatrix::T(), SBUpperMatrix::T(), SBFileConvLI::text(), SBParameterLI::text(), SBObsVLBIStatSrcLI::text(), SBSourceListItem::text(), SBStationListItem::text(), SBObsVLBIStatStaLI::text(), SBVLBISesInfoLI::text(), SBSolutionBatchLI::text(), SBSiteListItem::text(), SBVLBISesPreProcLI::text(), SBObsVLBIStatRecordLI::text(), SBSetupDialog::SBInstLI::text(), SBBasInfoLI::text(), SBSouInfoLI::text(), SBAploEntryLI::text(), SBTestStationLI::text(), SBVLBINetworkEditor::NetworkListItem::text(), SBMasterRecBrowser::SBMRListItem::text(), SBStochParameter::update(), SBSolution::updateParameter(), SBVLBIPreProcess::updateSession(), SBParameterList::updateSolution(), SBMainWindow::UtilitiesCollectStat4Prj(), SBPlateMotion::velocity(), SBVLBIPreProcess::wAttributes(), SBSourceEditor::wCoordinates(), SBParametersEditor::wEOPParameters(), SBSolutionBrowser::wLocalEOPPars(), SBSolutionBrowser::wLocalSoPars(), SBSolutionBrowser::wLocalStPars(), SBStationEditor::wNames(), SBVLBISessionEditor::wObservs(), SBParametersEditor::wOtherParameters(), SBVLBISessionEditor::wParameters(), writeNormalEquationSystem(), SBSiteEditor::wSite(), SBParametersEditor::wSourceParameters(), SBParametersEditor::wStationParameters(), SBSolutionBrowser::wStochEOPPars(), SBSolutionBrowser::wStochSoPars(), SBSolutionBrowser::wStochStPars(), SBParametersEditor::wTestParameters(), and SBSolutionBrowser::wWRMSs()\&.
+.SS "virtual double SBNROThGeneral::s () const\fC [inline, virtual, inherited]\fP"Returns calculated s'\&. 
+.PP
+Definition at line 104 of file SbGeoRefFrame\&.H'\&.
+.PP
+References SBNROThGeneral::S\&.
+.PP
+Referenced by SBPrecNutNRO::operator()()\&.
+.SS "void SBNamed::setName (const QString &Name_)\fC [inline, inherited]\fP"
+.PP
+Definition at line 216 of file SbGeo\&.H'\&.
+.PP
+References SBNamed::Name\&.
+.PP
+Referenced by SBVLBINetEntryEditor::accept(), SBSourceEditor::acquireData(), SBSiteEditor::acquireData(), SBStationEditor::acquireData(), SBObsVLBIStatistics::collectStatistics(), SBVLBIPreProcess::currentSesChange(), SBVLBISet::import(), SBVLBISet::loadSession(), SBVLBISesInfo::operator=(), operator>>(), SBPlotArea::output4Files(), SBFilteringGauss::redrawDataPlot_ExpMode(), SBBaseInfoList::restoreUserInfo(), SBSourceInfoList::restoreUserInfo(), SBMasterRecord::SBMasterRecord(), SBSolution::SBSolution(), SB_TRF::setSiteName(), SBTestSolidTides::stationChange(), SBTestOceanTides::stationChange(), SBTestPolarTides::stationChange(), SBTestAPLoad::stationChange(), and SBVLBIPreProcess::updateSession()\&.
+.SS "double SBNROThIAU2000A::sum (intN, const \fBGeneralTableEntry\fP *Table, double *Arg)\fC [protected]\fP"
+.PP
+Definition at line 1389 of file SbGeoRefFrame\&.C'\&.
+.PP
+References SBNROThIAU2000A::GeneralTableEntry::C, SBNROThIAU2000A::GeneralTableEntry::N, SBNROThIAU2000A::GeneralTableEntry::S, and sincos()\&.
+.PP
+Referenced by calc()\&.
+.SS "virtual double SBNROThGeneral::x () const\fC [inline, virtual, inherited]\fP"Returns calculated X'\&. 
+.PP
+Definition at line 100 of file SbGeoRefFrame\&.H'\&.
+.PP
+References SBNROThGeneral::X\&.
+.PP
+Referenced by SBPrecNutNRO::operator()()\&.
+.SS "virtual double SBNROThGeneral::y () const\fC [inline, virtual, inherited]\fP"Returns calculated Y'\&. 
+.PP
+Definition at line 102 of file SbGeoRefFrame\&.H'\&.
+.PP
+References SBNROThGeneral::Y\&.
+.PP
+Referenced by SBPrecNutNRO::operator()()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "int cmp (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP, returns (-1:0:+1)'\&. 
+.PP
+Definition at line 253 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBStochParameterList::compareItems(), and SBMasterFile::compareItems()\&.
+.SS "bool operator!= (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 238 of file SbGeo\&.H'\&.
+.SS "bool operator< (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 243 of file SbGeo\&.H'\&.
+.SS "QDataStream & operator<< (QDataStream &s, const \fBSBNamed\fP &W)\fC [friend, inherited]\fP"Saves object to the data stream'\&. 
+.PP
+Definition at line 258 of file SbGeo\&.H'\&.
+.SS "bool operator== (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 233 of file SbGeo\&.H'\&.
+.SS "bool operator> (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 248 of file SbGeo\&.H'\&.
+.SS "QDataStream & operator>> (QDataStream &s, \fBSBNamed\fP &W)\fC [friend, inherited]\fP"Loads object from the data stream'\&. 
+.PP
+Definition at line 263 of file SbGeo\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double \fBSBNROThGeneral::DT\fP\fC [protected, inherited]\fP"
+.PP
+dT 
+.PP
+Definition at line 86 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc(), and SBNROThGeneral::dT()\&.
+.SS "const \fBSBNROThIAU2000A::GeneralTableEntry\fP \fBSBNROThIAU2000A::DThetaTabT0\fP\fC [static, protected]\fP"
+.PP
+Definition at line 1008 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const \fBSBNROThIAU2000A::GeneralTableEntry\fP \fBSBNROThIAU2000A::DThetaTabT1\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+{
+  {      -0\&.07,        3\&.57, {  0,  0,  0,  0,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       1\&.71,       -0\&.03, {  0,  0,  0,  0,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       0\&.00,        0\&.48, {  0,  0,  2, -2,  3,  0,  0,  0,  0,  0,  0,  0,  0,  0}}
+}
+.fi
+.PP
+Definition at line 1009 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const \fBSBNROThIAU2000A::GeneralTableEntry\fP \fBSBNROThIAU2000A::DThetaTabT2\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+{
+  {     743\&.53,       -0\&.17, {  0,  0,  0,  0,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {      56\&.91,        0\&.06, {  0,  0,  2, -2,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       9\&.84,       -0\&.01, {  0,  0,  2,  0,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {      -8\&.85,        0\&.01, {  0,  0,  0,  0,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {      -6\&.38,       -0\&.05, {  0,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {      -3\&.07,        0\&.00, {  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       2\&.23,        0\&.00, {  0,  1,  2, -2,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       1\&.67,        0\&.00, {  0,  0,  2,  0,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       1\&.30,        0\&.00, {  1,  0,  2,  0,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       0\&.93,        0\&.00, {  0,  1, -2,  2, -2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       0\&.68,        0\&.00, {  1,  0,  0, -2,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {      -0\&.55,        0\&.00, {  0,  0,  2, -2,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       0\&.53,        0\&.00, {  1,  0, -2,  0, -2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {      -0\&.27,        0\&.00, {  0,  0,  0,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {      -0\&.27,        0\&.00, {  1,  0,  0,  0,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {      -0\&.26,        0\&.00, {  1,  0, -2, -2, -2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {      -0\&.25,        0\&.00, {  1,  0,  0,  0, -1,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       0\&.22,        0\&.00, {  1,  0,  2,  0,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {      -0\&.21,        0\&.00, {  2,  0,  0, -2,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       0\&.20,        0\&.00, {  2,  0, -2,  0, -1,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       0\&.17,        0\&.00, {  0,  0,  2,  2,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       0\&.13,        0\&.00, {  2,  0,  2,  0,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {      -0\&.13,        0\&.00, {  2,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {      -0\&.12,        0\&.00, {  1,  0,  2, -2,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {      -0\&.11,        0\&.00, {  0,  0,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0}}
+}
+.fi
+.PP
+Definition at line 1010 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const \fBSBNROThIAU2000A::GeneralTableEntry\fP \fBSBNROThIAU2000A::DThetaTabT3\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+{
+  {       0\&.30,      -23\&.51, {  0,  0,  0,  0,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {      -0\&.03,       -1\&.39, {  0,  0,  2, -2,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {      -0\&.01,       -0\&.24, {  0,  0,  2,  0,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       0\&.00,        0\&.22, {  0,  0,  0,  0,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0}}
+}
+.fi
+.PP
+Definition at line 1011 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const \fBSBNROThIAU2000A::GeneralTableEntry\fP \fBSBNROThIAU2000A::DThetaTabT4\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+{
+  {      -0\&.26,       -0\&.01, {  0,  0,  0,  0,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0}}
+}
+.fi
+.PP
+Definition at line 1012 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const \fBSBNROThIAU2000A::GeneralTableEntry\fP \fBSBNROThIAU2000A::DtTabT0\fP\fC [static, protected]\fP"
+.PP
+Definition at line 1014 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const \fBSBNROThIAU2000A::GeneralTableEntry\fP \fBSBNROThIAU2000A::DtTabT1\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+{
+  {      -0\&.87,        0\&.00, {  0,  0,  0,  0,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0}}
+}
+.fi
+.PP
+Definition at line 1015 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "QString \fBSBNamed::Name\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 206 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBVLBISesInfo::fileName(), SBNamed::name(), operator<<(), SBNamed::operator=(), SBStation::operator=(), SBSite::operator=(), SBOLoadCarrier::operator==(), operator>>(), SBStochParameter::report(), SBNamed::SBNamed(), SBNamed::setName(), SBSite::updateSite(), and SBStation::updateStation()\&.
+.SS "const int \fBSBNROThIAU2000A::NDThetaT0\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+sizeof(SBNROThIAU2000A::DThetaTabT0)/sizeof(struct SBNROThIAU2000A::GeneralTableEntry)
+.fi
+.PP
+Definition at line 987 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const int \fBSBNROThIAU2000A::NDThetaT1\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+sizeof(SBNROThIAU2000A::DThetaTabT1)/sizeof(struct SBNROThIAU2000A::GeneralTableEntry)
+.fi
+.PP
+Definition at line 988 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const int \fBSBNROThIAU2000A::NDThetaT2\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+sizeof(SBNROThIAU2000A::DThetaTabT2)/sizeof(struct SBNROThIAU2000A::GeneralTableEntry)
+.fi
+.PP
+Definition at line 989 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const int \fBSBNROThIAU2000A::NDThetaT3\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+sizeof(SBNROThIAU2000A::DThetaTabT3)/sizeof(struct SBNROThIAU2000A::GeneralTableEntry)
+.fi
+.PP
+Definition at line 990 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const int \fBSBNROThIAU2000A::NDThetaT4\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+sizeof(SBNROThIAU2000A::DThetaTabT4)/sizeof(struct SBNROThIAU2000A::GeneralTableEntry)
+.fi
+.PP
+Definition at line 991 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const int \fBSBNROThIAU2000A::NDtT0\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+sizeof(SBNROThIAU2000A::DtTabT0)/sizeof(struct SBNROThIAU2000A::GeneralTableEntry)
+.fi
+.PP
+Definition at line 993 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const int \fBSBNROThIAU2000A::NDtT1\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+sizeof(SBNROThIAU2000A::DtTabT1)/sizeof(struct SBNROThIAU2000A::GeneralTableEntry)
+.fi
+.PP
+Definition at line 994 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const int \fBSBNROThIAU2000A::NXT0\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+sizeof(SBNROThIAU2000A::XTabT0)/sizeof(struct SBNROThIAU2000A::GeneralTableEntry)
+.fi
+.PP
+Definition at line 975 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const int \fBSBNROThIAU2000A::NXT1\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+sizeof(SBNROThIAU2000A::XTabT1)/sizeof(struct SBNROThIAU2000A::GeneralTableEntry)
+.fi
+.PP
+Definition at line 976 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const int \fBSBNROThIAU2000A::NXT2\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+sizeof(SBNROThIAU2000A::XTabT2)/sizeof(struct SBNROThIAU2000A::GeneralTableEntry)
+.fi
+.PP
+Definition at line 977 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const int \fBSBNROThIAU2000A::NXT3\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+sizeof(SBNROThIAU2000A::XTabT3)/sizeof(struct SBNROThIAU2000A::GeneralTableEntry)
+.fi
+.PP
+Definition at line 978 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const int \fBSBNROThIAU2000A::NXT4\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+sizeof(SBNROThIAU2000A::XTabT4)/sizeof(struct SBNROThIAU2000A::GeneralTableEntry)
+.fi
+.PP
+Definition at line 979 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const int \fBSBNROThIAU2000A::NYT0\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+sizeof(SBNROThIAU2000A::YTabT0)/sizeof(struct SBNROThIAU2000A::GeneralTableEntry)
+.fi
+.PP
+Definition at line 981 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const int \fBSBNROThIAU2000A::NYT1\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+sizeof(SBNROThIAU2000A::YTabT1)/sizeof(struct SBNROThIAU2000A::GeneralTableEntry)
+.fi
+.PP
+Definition at line 982 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const int \fBSBNROThIAU2000A::NYT2\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+sizeof(SBNROThIAU2000A::YTabT2)/sizeof(struct SBNROThIAU2000A::GeneralTableEntry)
+.fi
+.PP
+Definition at line 983 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const int \fBSBNROThIAU2000A::NYT3\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+sizeof(SBNROThIAU2000A::YTabT3)/sizeof(struct SBNROThIAU2000A::GeneralTableEntry)
+.fi
+.PP
+Definition at line 984 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const int \fBSBNROThIAU2000A::NYT4\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+sizeof(SBNROThIAU2000A::YTabT4)/sizeof(struct SBNROThIAU2000A::GeneralTableEntry)
+.fi
+.PP
+Definition at line 985 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "double \fBSBNROThGeneral::S\fP\fC [protected, inherited]\fP"
+.PP
+s 
+.PP
+Definition at line 85 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc(), SBNROThGeneral::s(), and SBNROThGeneral::SBNROThGeneral()\&.
+.SS "double \fBSBNROThGeneral::X\fP\fC [protected, inherited]\fP"
+.PP
+X'\&. 
+.PP
+Definition at line 83 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc(), SBNROThGeneral::SBNROThGeneral(), and SBNROThGeneral::x()\&.
+.SS "const \fBSBNROThIAU2000A::GeneralTableEntry\fP \fBSBNROThIAU2000A::XTabT0\fP\fC [static, protected]\fP"
+.PP
+Definition at line 996 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const \fBSBNROThIAU2000A::GeneralTableEntry\fP \fBSBNROThIAU2000A::XTabT1\fP\fC [static, protected]\fP"
+.PP
+Definition at line 997 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const \fBSBNROThIAU2000A::GeneralTableEntry\fP \fBSBNROThIAU2000A::XTabT2\fP\fC [static, protected]\fP"
+.PP
+Definition at line 998 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const \fBSBNROThIAU2000A::GeneralTableEntry\fP \fBSBNROThIAU2000A::XTabT3\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+{
+  {       1\&.76,      -20\&.39, {  0,  0,  0,  0,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       0\&.00,       -1\&.27, {  0,  0,  2, -2,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       0\&.00,       -0\&.22, {  0,  0,  2,  0,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       0\&.00,        0\&.20, {  0,  0,  0,  0,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0}}
+}
+.fi
+.PP
+Definition at line 999 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const \fBSBNROThIAU2000A::GeneralTableEntry\fP \fBSBNROThIAU2000A::XTabT4\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+{
+  {      -0\&.10,       -0\&.02, {  0,  0,  0,  0,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0}}
+}
+.fi
+.PP
+Definition at line 1000 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "double \fBSBNROThGeneral::Y\fP\fC [protected, inherited]\fP"
+.PP
+Y'\&. 
+.PP
+Definition at line 84 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc(), SBNROThGeneral::SBNROThGeneral(), and SBNROThGeneral::y()\&.
+.SS "const \fBSBNROThIAU2000A::GeneralTableEntry\fP \fBSBNROThIAU2000A::YTabT0\fP\fC [static, protected]\fP"
+.PP
+Definition at line 1002 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const \fBSBNROThIAU2000A::GeneralTableEntry\fP \fBSBNROThIAU2000A::YTabT1\fP\fC [static, protected]\fP"
+.PP
+Definition at line 1003 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const \fBSBNROThIAU2000A::GeneralTableEntry\fP \fBSBNROThIAU2000A::YTabT2\fP\fC [static, protected]\fP"
+.PP
+Definition at line 1004 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const \fBSBNROThIAU2000A::GeneralTableEntry\fP \fBSBNROThIAU2000A::YTabT3\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+{
+  {     -15\&.23,       -1\&.62, {  0,  0,  0,  0,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {      -1\&.16,       -0\&.01, {  0,  0,  2, -2,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {      -0\&.20,        0\&.00, {  0,  0,  2,  0,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       0\&.18,        0\&.00, {  0,  0,  0,  0,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0}},
+  {       0\&.13,        0\&.00, {  0,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0}}
+}
+.fi
+.PP
+Definition at line 1005 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+.SS "const \fBSBNROThIAU2000A::GeneralTableEntry\fP \fBSBNROThIAU2000A::YTabT4\fP\fC [static, protected]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+{
+  {      -0\&.01,        0\&.11, {  0,  0,  0,  0,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0}}
+}
+.fi
+.PP
+Definition at line 1006 of file SbGeoRefFrame\&.H'\&.
+.PP
+Referenced by calc()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

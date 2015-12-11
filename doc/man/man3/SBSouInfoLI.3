@@ -1,0 +1,111 @@
+.TH "SBSouInfoLI" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBSouInfoLI \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIObsVLBI\&.H>\fP
+.PP
+Inherits \fBQListViewItem\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSouInfoLI\fP (\fBQListView\fP *parent, \fBSBSourceInfo\fP *SI_, \fBBrowseMode\fP Mode_, \fBSBSource::SStatus\fP Status_=SBSource::STATUS_UNKN, \fBSBSource::SType\fP Type_=SBSource::TYPE_UNKN, bool IsSuspected_=FALSE)"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "\fBSBSourceInfo\fP * \fBsourceInfo\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBtext\fP (int) const "
+.br
+.ti -1c
+.RI "virtual QString \fBkey\fP (int, bool) const "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSourceInfo\fP * \fBSouInf\fP"
+.br
+.ti -1c
+.RI "\fBBrowseMode\fP \fBMode\fP"
+.br
+.ti -1c
+.RI "\fBSBSource::SStatus\fP \fBStatus\fP"
+.br
+.ti -1c
+.RI "\fBSBSource::SType\fP \fBType\fP"
+.br
+.ti -1c
+.RI "bool \fBIsSuspected\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 174 of file SbIObsVLBI\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBSouInfoLI::SBSouInfoLI (\fBQListView\fP *parent, \fBSBSourceInfo\fP *SI_, \fBBrowseMode\fPMode_, \fBSBSource::SStatus\fPStatus_ = \fCSBSource::STATUS_UNKN\fP, \fBSBSource::SType\fPType_ = \fCSBSource::TYPE_UNKN\fP, boolIsSuspected_ = \fCFALSE\fP)\fC [inline]\fP"
+.PP
+Definition at line 183 of file SbIObsVLBI\&.H'\&.
+.PP
+References IsSuspected, Mode, SouInf, Status, and Type\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBSouInfoLI::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 187 of file SbIObsVLBI\&.H'\&.
+.SS "QString SBSouInfoLI::key (intcol, bool) const\fC [virtual]\fP"
+.PP
+Definition at line 834 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBObjectObsInfo::aka(), BM_GENERAL, BM_PROJECT, SBSourceInfo::ConstrCoo, SBSourceInfo::EstCoo, SBObjectObsInfo::idx(), SBAttributed::isAttr(), IsSuspected, Mode, SBNamed::name(), SBSourceInfo::notValid, SBObjectObsInfo::num(), SBObjectObsInfo::procNum(), SBSetUp::scale(), SetUp, SouInf, Status, TmpString, Type, and SBObjectObsInfo::wrms()\&.
+.SS "\fBSBSourceInfo\fP* SBSouInfoLI::sourceInfo ()\fC [inline]\fP"
+.PP
+Definition at line 188 of file SbIObsVLBI\&.H'\&.
+.PP
+References SouInf\&.
+.SS "QString SBSouInfoLI::text (intcol) const\fC [virtual]\fP"
+.PP
+Definition at line 772 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBObjectObsInfo::aka(), BM_GENERAL, BM_PROJECT, SBSourceInfo::ConstrCoo, SBSourceInfo::EstCoo, SBObjectObsInfo::idx(), SBAttributed::isAttr(), IsSuspected, Mode, SBNamed::name(), SBSourceInfo::notValid, SBObjectObsInfo::num(), SBObjectObsInfo::procNum(), SBSetUp::scale(), SetUp, SouInf, Status, TmpString, Type, and SBObjectObsInfo::wrms()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool \fBSBSouInfoLI::IsSuspected\fP\fC [private]\fP"
+.PP
+Definition at line 181 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by key(), SBSouInfoLI(), and text()\&.
+.SS "\fBBrowseMode\fP \fBSBSouInfoLI::Mode\fP\fC [private]\fP"
+.PP
+Definition at line 178 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by key(), SBSouInfoLI(), and text()\&.
+.SS "\fBSBSourceInfo\fP* \fBSBSouInfoLI::SouInf\fP\fC [private]\fP"
+.PP
+Definition at line 177 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by key(), SBSouInfoLI(), sourceInfo(), and text()\&.
+.SS "\fBSBSource::SStatus\fP \fBSBSouInfoLI::Status\fP\fC [private]\fP"
+.PP
+Definition at line 179 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by key(), SBSouInfoLI(), and text()\&.
+.SS "\fBSBSource::SType\fP \fBSBSouInfoLI::Type\fP\fC [private]\fP"
+.PP
+Definition at line 180 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by key(), SBSouInfoLI(), and text()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

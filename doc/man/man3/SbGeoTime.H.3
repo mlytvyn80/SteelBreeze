@@ -1,0 +1,150 @@
+.TH "SbGeoTime.H" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SbGeoTime.H \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <config\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <qdatastream\&.h>\fP
+.br
+\fC#include <qdict\&.h>\fP
+.br
+\fC#include <qlist\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSBMJD\fP"
+.br
+.ti -1c
+.RI "class \fBSBTime\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator+\fP (const \fBSBMJD\fP &A, const \fBSBMJD\fP &B)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator+\fP (const \fBSBMJD\fP &A, long double b)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator+\fP (const \fBSBMJD\fP &A, double b)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator+\fP (const \fBSBMJD\fP &A, float b)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator+\fP (long double a, const \fBSBMJD\fP &B)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator+\fP (double a, const \fBSBMJD\fP &B)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator+\fP (float a, const \fBSBMJD\fP &B)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator-\fP (const \fBSBMJD\fP &A, const \fBSBMJD\fP &B)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator-\fP (const \fBSBMJD\fP &A, long double b)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator-\fP (const \fBSBMJD\fP &A, double b)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator-\fP (long double a, const \fBSBMJD\fP &B)"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBoperator-\fP (int a, const \fBSBMJD\fP &B)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBMJD\fP &MJD)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBMJD\fP &MJD)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const \fBSBMJD\fP \fBTEphem\fP"
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP \fBTZero\fP"
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP \fBTInf\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBSBMJD\fP operator+ (const \fBSBMJD\fP &A, const \fBSBMJD\fP &B)\fC [inline]\fP"
+.PP
+Definition at line 270 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator+ (const \fBSBMJD\fP &A, long doubleb)\fC [inline]\fP"
+.PP
+Definition at line 275 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator+ (const \fBSBMJD\fP &A, doubleb)\fC [inline]\fP"
+.PP
+Definition at line 280 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator+ (const \fBSBMJD\fP &A, floatb)\fC [inline]\fP"
+.PP
+Definition at line 285 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator+ (long doublea, const \fBSBMJD\fP &B)\fC [inline]\fP"
+.PP
+Definition at line 290 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator+ (doublea, const \fBSBMJD\fP &B)\fC [inline]\fP"
+.PP
+Definition at line 295 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator+ (floata, const \fBSBMJD\fP &B)\fC [inline]\fP"
+.PP
+Definition at line 300 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator- (const \fBSBMJD\fP &A, const \fBSBMJD\fP &B)\fC [inline]\fP"
+.PP
+Definition at line 305 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator- (const \fBSBMJD\fP &A, long doubleb)\fC [inline]\fP"
+.PP
+Definition at line 310 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator- (const \fBSBMJD\fP &A, doubleb)\fC [inline]\fP"
+.PP
+Definition at line 315 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator- (long doublea, const \fBSBMJD\fP &B)\fC [inline]\fP"
+.PP
+Definition at line 320 of file SbGeoTime\&.H'\&.
+.SS "\fBSBMJD\fP operator- (inta, const \fBSBMJD\fP &B)\fC [inline]\fP"
+.PP
+Definition at line 325 of file SbGeoTime\&.H'\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBMJD\fP &MJD)\fC [inline]\fP"
+.PP
+Definition at line 330 of file SbGeoTime\&.H'\&.
+.PP
+References SBMJD::Date, and SBMJD::Time\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBMJD\fP &MJD)\fC [inline]\fP"
+.PP
+Definition at line 337 of file SbGeoTime\&.H'\&.
+.PP
+References SBMJD::Date, and SBMJD::Time\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const \fBSBMJD\fP \fBTEphem\fP"
+.PP
+Referenced by SBAploWave::angle(), SBFrameNRO::calc(), SBNutThIAU1980::calc(), SBNutThIAU1996::calc(), SBNutThIAU2000A::calc(), SBNROThIAU2000A::calc(), SBOTideEOPRay1994_1996::calc(), SBNutation::calcGST(), SBNut_IAU2000::calcGST(), SBTime::FundamentalArgs(), SBPrec_IAU1976::operator()(), SBPrec_IAU2000::operator()(), SBNut_IAU1980::operator()(), SBNut_IAU2000::operator()(), SBPolusNRO::operator()(), and SBTime::setUTC()\&.
+.SS "const \fBSBMJD\fP \fBTInf\fP"
+.PP
+Referenced by SBSolution::dumpParameters(), SBRunManager::makeReportCRFVariations(), and SBRunManager::makeReportTRFVariations()\&.
+.SS "const \fBSBMJD\fP \fBTZero\fP"
+.PP
+Referenced by SBStationEditor::addCoordinates(), SBDelay::calc(), SBStation::calcDisplacement(), SBObsVLBIEntry::check(), SBAploEphem::checkEphem(), SBObsVLBIStatRecord::clear(), SBStatistics::clearStatistics(), SBDerivation::clearValues(), SBDerivation::clearValues_aux(), SBObsVLBIStatistics::collectStatistics(), SBRunManager::constrainClocks(), SBRunManager::constraintEOP(), SBRunManager::constraintSourceCoord(), SBRunManager::constraintStationCoord(), SBRunManager::constraintStationVeloc(), SBAploEphem::dismissed(), SBSolution::dumpParameters(), SBSource::getParameters4Report(), SBEphem::import(), SBAploChunk::import(), SBAploEphem::importEphem(), SBAploEphem::importHPS(), SBStationEditor::makeApply(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportTRFVariations(), operator>>(), SBStochParameter::report(), SBAploEphem::SBAploEphem(), SBAploHeader::SBAploHeader(), SBCatalog::SBCatalog(), SBDerivation::SBDerivation(), SBEccentricity::SBEccentricity(), SBEOP::SBEOP(), SBEstimator::SBEstimator(), SBMasterFile::SBMasterFile(), SBRunManager::SBRunManager(), SBSINEXParameter::SBSINEXParameter(), SBStatistics::SBStatistics(), SBVLBISesInfo::SBVLBISesInfo(), SBDerivation::setD(), SBEOP::setPtNum(), sinex_SiteEccentricityBlock(), sinex_SolutionEpochsBlock(), SBDerivation::tEpoch(), SBStochParameter::tEpoch(), SBDerivation::tEpoch_aux(), SBObsVLBIStatSrcLI::text(), SBObsVLBIStatStaLI::text(), SBObsVLBIStatRecordLI::text(), SBProject::tFinis(), SBStochParameter::tFinis(), SBMJD::toString(), SBProject::tStart(), SBStochParameter::tStart(), and writeNormalEquationSystem()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

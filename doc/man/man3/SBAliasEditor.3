@@ -1,0 +1,213 @@
+.TH "SBAliasEditor" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBAliasEditor \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIStuffSource\&.H>\fP
+.PP
+Inherits \fBQDialog\fP'\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBAliasModified\fP (bool)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBAliasEditor\fP (\fBSBAliasListItem\fP *, \fBSBCatalog\fP *, \fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "\fBSBAliasEditor\fP (\fBQListView\fP *, \fBSBCatalog\fP *, \fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "\fB~SBAliasEditor\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBaccept\fP ()"
+.br
+.ti -1c
+.RI "void \fBreject\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBcloseEvent\fP (QCloseEvent *)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBacquireData\fP ()"
+.br
+.ti -1c
+.RI "void \fBinit\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQListView\fP * \fBAliasesLV\fP"
+.br
+.ti -1c
+.RI "\fBSBAliasListItem\fP * \fBAkaItem\fP"
+.br
+.ti -1c
+.RI "bool \fBisModified\fP"
+.br
+.ti -1c
+.RI "bool \fBisNew\fP"
+.br
+.ti -1c
+.RI "QString \fBAlias\fP"
+.br
+.ti -1c
+.RI "QString \fBReference\fP"
+.br
+.ti -1c
+.RI "QString \fBOldReference\fP"
+.br
+.ti -1c
+.RI "\fBSBCatalog\fP * \fBWcrf\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBEAlias\fP"
+.br
+.ti -1c
+.RI "QComboBox * \fBCBReference\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 378 of file SbIStuffSource\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBAliasEditor::SBAliasEditor (\fBSBAliasListItem\fP *AkaItem_, \fBSBCatalog\fP *Wcrf_, \fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 2371 of file SbIStuffSource\&.C'\&.
+.PP
+References AkaItem, SBAliasListItem::Alias, Alias, AliasesLV, init(), isNew, OldReference, SBAliasListItem::Reference, Reference, and Wcrf\&.
+.SS "SBAliasEditor::SBAliasEditor (\fBQListView\fP *AliasesLV_, \fBSBCatalog\fP *Wcrf_, \fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 2386 of file SbIStuffSource\&.C'\&.
+.PP
+References AkaItem, Alias, AliasesLV, init(), isNew, OldReference, Reference, and Wcrf\&.
+.SS "SBAliasEditor::~SBAliasEditor ()"
+.PP
+Definition at line 2511 of file SbIStuffSource\&.C'\&.
+.PP
+References AliasModified(), and isModified\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBAliasEditor::accept ()\fC [protected, slot]\fP"
+.PP
+Definition at line 2516 of file SbIStuffSource\&.C'\&.
+.PP
+References acquireData(), AkaItem, Alias, SBCatalog::aliasDict(), AliasesLV, ClassName(), SBCatalog::collectObjAliases(), SBLog::DBG, SBLog::INTERFACE, isModified, isNew, Log, OldReference, SBAliasListItem::Reference, Reference, Wcrf, and SBLog::write()\&.
+.PP
+Referenced by init()\&.
+.SS "void SBAliasEditor::acquireData ()\fC [private, virtual]\fP"
+.PP
+Definition at line 2577 of file SbIStuffSource\&.C'\&.
+.PP
+References Alias, CBReference, EAlias, isModified, isNew, and Reference\&.
+.PP
+Referenced by accept()\&.
+.SS "void SBAliasEditor::AliasModified (boolt0)\fC [signal]\fP"
+.PP
+Definition at line 674 of file SbIStuffSource\&.moc\&.C'\&.
+.PP
+Referenced by ~SBAliasEditor()\&.
+.SS "virtual QString SBAliasEditor::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 387 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by accept()\&.
+.SS "virtual void SBAliasEditor::closeEvent (QCloseEvent *)\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 398 of file SbIStuffSource\&.H'\&.
+.SS "void SBAliasEditor::init ()\fC [private]\fP"
+.PP
+Definition at line 2401 of file SbIStuffSource\&.C'\&.
+.PP
+References accept(), Alias, CBReference, EAlias, isModified, isNew, SBCatalog::prepareReferences(), Reference, SBCatalog::referenceList(), reject(), and Wcrf\&.
+.PP
+Referenced by SBAliasEditor()\&.
+.SS "void SBAliasEditor::reject ()\fC [protected, slot]\fP"
+.PP
+Definition at line 2571 of file SbIStuffSource\&.C'\&.
+.PP
+Referenced by init()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSBAliasListItem\fP* \fBSBAliasEditor::AkaItem\fP\fC [private]\fP"
+.PP
+Definition at line 405 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by accept(), and SBAliasEditor()\&.
+.SS "QString \fBSBAliasEditor::Alias\fP\fC [private]\fP"
+.PP
+Definition at line 409 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by accept(), acquireData(), init(), and SBAliasEditor()\&.
+.SS "\fBQListView\fP* \fBSBAliasEditor::AliasesLV\fP\fC [private]\fP"
+.PP
+Definition at line 404 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by accept(), and SBAliasEditor()\&.
+.SS "QComboBox* \fBSBAliasEditor::CBReference\fP\fC [private]\fP"
+.PP
+Definition at line 416 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by acquireData(), and init()\&.
+.SS "QLineEdit* \fBSBAliasEditor::EAlias\fP\fC [private]\fP"
+.PP
+Definition at line 415 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by acquireData(), and init()\&.
+.SS "bool \fBSBAliasEditor::isModified\fP\fC [private]\fP"
+.PP
+Definition at line 407 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by accept(), acquireData(), init(), and ~SBAliasEditor()\&.
+.SS "bool \fBSBAliasEditor::isNew\fP\fC [private]\fP"
+.PP
+Definition at line 408 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by accept(), acquireData(), init(), and SBAliasEditor()\&.
+.SS "QString \fBSBAliasEditor::OldReference\fP\fC [private]\fP"
+.PP
+Definition at line 411 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by accept(), and SBAliasEditor()\&.
+.SS "QString \fBSBAliasEditor::Reference\fP\fC [private]\fP"
+.PP
+Definition at line 410 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by accept(), acquireData(), init(), and SBAliasEditor()\&.
+.SS "\fBSBCatalog\fP* \fBSBAliasEditor::Wcrf\fP\fC [private]\fP"
+.PP
+Definition at line 412 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by accept(), init(), and SBAliasEditor()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

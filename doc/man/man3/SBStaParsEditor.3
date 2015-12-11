@@ -1,0 +1,245 @@
+.TH "SBStaParsEditor" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBStaParsEditor \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIObsVLBI\&.H>\fP
+.PP
+Inherits \fBQDialog\fP'\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBstaInfoModified\fP (bool)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBStaParsEditor\fP (\fBSBStationInfo\fP *, const \fBSBMJD\fP &, \fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "virtual \fB~SBStaParsEditor\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBaccept\fP ()"
+.br
+.ti -1c
+.RI "void \fBreject\fP ()"
+.br
+.ti -1c
+.RI "void \fBeditEntry\fP ()"
+.br
+.ti -1c
+.RI "void \fBdeleteEntry\fP ()"
+.br
+.ti -1c
+.RI "void \fBinsertEntry\fP ()"
+.br
+.ti -1c
+.RI "void \fBmodified\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBeditClocksPar\fP ()"
+.br
+.ti -1c
+.RI "void \fBeditZenithPar\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBacquireData\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBStationInfo\fP * \fBSI\fP"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBT0\fP"
+.br
+.ti -1c
+.RI "bool \fBisModified\fP"
+.br
+.ti -1c
+.RI "\fBQListView\fP * \fBClockBreaksLV\fP"
+.br
+.ti -1c
+.RI "QSpinBox * \fBsbOrder\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBcbClocks\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBcbZenith\fP"
+.br
+.ti -1c
+.RI "QCheckBox * \fBcbAttrs\fP [6]"
+.br
+.ti -1c
+.RI "QPushButton * \fBCPButton\fP"
+.br
+.ti -1c
+.RI "QPushButton * \fBZPButton\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 771 of file SbIObsVLBI\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBStaParsEditor::SBStaParsEditor (\fBSBStationInfo\fP *SI_, const \fBSBMJD\fP &T0_, \fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 3467 of file SbIObsVLBI\&.C'\&.
+.PP
+References accept(), SBObjectObsInfo::aka(), SBStationInfo::ArtMeteo, SBStationInfo::BadCable, SBStationInfo::BadMeteo, cbAttrs, cbClocks, cbZenith, SBStationInfo::cl_Order(), SBStationInfo::clockBreaks(), ClockBreaksLV, CPButton, deleteEntry(), editClocksPar(), editEntry(), editZenithPar(), insertEntry(), SBStationInfo::InvCable, SBAttributed::isAttr(), isModified, SBStationInfo::notValid, SBStationInfo::refClock, reject(), sbOrder, SI, T0, SBStationInfo::UseLocalClocks, SBStationInfo::UseLocalZenith, and ZPButton\&.
+.SS "SBStaParsEditor::~SBStaParsEditor ()\fC [virtual]\fP"
+.PP
+Definition at line 3603 of file SbIObsVLBI\&.C'\&.
+.PP
+References isModified, SI, and staInfoModified()\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBStaParsEditor::accept ()\fC [protected, slot]\fP"
+.PP
+Definition at line 3609 of file SbIObsVLBI\&.C'\&.
+.PP
+References acquireData()\&.
+.PP
+Referenced by SBStaParsEditor()\&.
+.SS "void SBStaParsEditor::acquireData ()\fC [private, virtual]\fP"
+.PP
+Definition at line 3616 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBStationInfo::ArtMeteo, SBStationInfo::BadCable, SBStationInfo::BadMeteo, cbAttrs, cbClocks, cbZenith, SBStationInfo::cl_Order(), SBStationInfo::InvCable, SBAttributed::isAttr(), isModified, SBStationInfo::notValid, SBStationInfo::refClock, sbOrder, SBStationInfo::setCl_Order(), SI, SBStationInfo::UseLocalClocks, SBStationInfo::UseLocalZenith, and SBAttributed::xorAttr()\&.
+.PP
+Referenced by accept()\&.
+.SS "virtual QString SBStaParsEditor::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 777 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by deleteEntry()\&.
+.SS "void SBStaParsEditor::deleteEntry ()\fC [protected, slot]\fP"
+.PP
+Definition at line 3670 of file SbIObsVLBI\&.C'\&.
+.PP
+References ClassName(), SBClockBreakLI::clockBreak(), SBStationInfo::clockBreaks(), ClockBreaksLV, SBLog::ERR, SBLog::INTERFACE, isModified, Log, SI, SBMJD::toString(), and SBLog::write()\&.
+.PP
+Referenced by SBStaParsEditor()\&.
+.SS "void SBStaParsEditor::editClocksPar ()\fC [protected, slot]\fP"
+.PP
+Definition at line 3725 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBStationInfo::clocks(), modified(), and SI\&.
+.PP
+Referenced by SBStaParsEditor()\&.
+.SS "void SBStaParsEditor::editEntry ()\fC [protected, slot]\fP"
+.PP
+Definition at line 3708 of file SbIObsVLBI\&.C'\&.
+.PP
+References ClockBreaksLV, and modified()\&.
+.PP
+Referenced by SBStaParsEditor()\&.
+.SS "void SBStaParsEditor::editZenithPar ()\fC [protected, slot]\fP"
+.PP
+Definition at line 3732 of file SbIObsVLBI\&.C'\&.
+.PP
+References modified(), SI, and SBStationInfo::zenith()\&.
+.PP
+Referenced by SBStaParsEditor()\&.
+.SS "void SBStaParsEditor::insertEntry ()\fC [protected, slot]\fP"
+.PP
+Definition at line 3697 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBStationInfo::clockBreaks(), ClockBreaksLV, modified(), SI, and T0\&.
+.PP
+Referenced by SBStaParsEditor()\&.
+.SS "void SBStaParsEditor::modified (boolIsModified_)\fC [protected, slot]\fP"
+.PP
+Definition at line 3719 of file SbIObsVLBI\&.C'\&.
+.PP
+References ClockBreaksLV, and isModified\&.
+.PP
+Referenced by editClocksPar(), editEntry(), editZenithPar(), and insertEntry()\&.
+.SS "void SBStaParsEditor::reject ()\fC [inline, protected, slot]\fP"
+.PP
+Definition at line 786 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by SBStaParsEditor()\&.
+.SS "void SBStaParsEditor::staInfoModified (boolt0)\fC [signal]\fP"
+.PP
+Definition at line 1403 of file SbIObsVLBI\&.moc\&.C'\&.
+.PP
+Referenced by ~SBStaParsEditor()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QCheckBox* \fBSBStaParsEditor::cbAttrs\fP[6]\fC [private]\fP"
+.PP
+Definition at line 805 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by acquireData(), and SBStaParsEditor()\&.
+.SS "QCheckBox* \fBSBStaParsEditor::cbClocks\fP\fC [private]\fP"
+.PP
+Definition at line 802 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by acquireData(), and SBStaParsEditor()\&.
+.SS "QCheckBox* \fBSBStaParsEditor::cbZenith\fP\fC [private]\fP"
+.PP
+Definition at line 803 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by acquireData(), and SBStaParsEditor()\&.
+.SS "\fBQListView\fP* \fBSBStaParsEditor::ClockBreaksLV\fP\fC [private]\fP"
+.PP
+Definition at line 800 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by deleteEntry(), editEntry(), insertEntry(), modified(), and SBStaParsEditor()\&.
+.SS "QPushButton* \fBSBStaParsEditor::CPButton\fP\fC [private]\fP"
+.PP
+Definition at line 807 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by SBStaParsEditor()\&.
+.SS "bool \fBSBStaParsEditor::isModified\fP\fC [private]\fP"
+.PP
+Definition at line 797 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by acquireData(), deleteEntry(), modified(), SBStaParsEditor(), and ~SBStaParsEditor()\&.
+.SS "QSpinBox* \fBSBStaParsEditor::sbOrder\fP\fC [private]\fP"
+.PP
+Definition at line 801 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by acquireData(), and SBStaParsEditor()\&.
+.SS "\fBSBStationInfo\fP* \fBSBStaParsEditor::SI\fP\fC [private]\fP"
+.PP
+Definition at line 795 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by acquireData(), deleteEntry(), editClocksPar(), editZenithPar(), insertEntry(), SBStaParsEditor(), and ~SBStaParsEditor()\&.
+.SS "\fBSBMJD\fP \fBSBStaParsEditor::T0\fP\fC [private]\fP"
+.PP
+Definition at line 796 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by insertEntry(), and SBStaParsEditor()\&.
+.SS "QPushButton* \fBSBStaParsEditor::ZPButton\fP\fC [private]\fP"
+.PP
+Definition at line 808 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by SBStaParsEditor()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

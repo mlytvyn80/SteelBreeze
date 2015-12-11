@@ -1,0 +1,127 @@
+.TH "SBListView" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBListView \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbInterface\&.H>\fP
+.PP
+Inherits \fBQListView\fP'\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBmoveUponItem\fP (\fBQListViewItem\fP *, int)"
+.br
+.ti -1c
+.RI "void \fBselChanged4Item\fP (\fBQListViewItem\fP *, bool)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBListView\fP (\fBQWidget\fP *=0, const char *=0)"
+.br
+.ti -1c
+.RI "virtual void \fBsetSelected\fP (\fBQListViewItem\fP *, bool)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcontentsMouseMoveEvent\fP (QMouseEvent *)"
+.br
+.ti -1c
+.RI "void \fBcontentsMouseReleaseEvent\fP (QMouseEvent *)"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBmovingStarted\fP (\fBQListViewItem\fP *, const QPoint &, int)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBIsMoving\fP"
+.br
+.ti -1c
+.RI "int \fBMCol\fP"
+.br
+.ti -1c
+.RI "\fBQListViewItem\fP * \fBMItem\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 102 of file SbInterface\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBListView::SBListView (\fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP)"
+.PP
+Definition at line 86 of file SbInterface\&.C'\&.
+.PP
+References IsMoving, MCol, MItem, and movingStarted()\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBListView::contentsMouseMoveEvent (QMouseEvent *e)\fC [protected]\fP"
+.PP
+Definition at line 115 of file SbInterface\&.C'\&.
+.PP
+References IsMoving, MCol, MItem, and moveUponItem()\&.
+.SS "void SBListView::contentsMouseReleaseEvent (QMouseEvent *e)\fC [protected]\fP"
+.PP
+Definition at line 130 of file SbInterface\&.C'\&.
+.PP
+References IsMoving, MCol, and MItem\&.
+.SS "void SBListView::moveUponItem (\fBQListViewItem\fP *t0, intt1)\fC [signal]\fP"
+.PP
+Definition at line 176 of file SbInterface\&.moc\&.C'\&.
+.PP
+Referenced by contentsMouseMoveEvent(), and movingStarted()\&.
+.SS "void SBListView::movingStarted (\fBQListViewItem\fP *item, const QPoint &, intc)\fC [private, slot]\fP"
+.PP
+Definition at line 104 of file SbInterface\&.C'\&.
+.PP
+References IsMoving, MCol, MItem, and moveUponItem()\&.
+.PP
+Referenced by SBListView()\&.
+.SS "void SBListView::selChanged4Item (\fBQListViewItem\fP *t0, boolt1)\fC [signal]\fP"
+.PP
+Definition at line 225 of file SbInterface\&.moc\&.C'\&.
+.PP
+Referenced by setSelected()\&.
+.SS "void SBListView::setSelected (\fBQListViewItem\fP *item, boolselected)\fC [virtual]\fP"
+.PP
+Definition at line 98 of file SbInterface\&.C'\&.
+.PP
+References selChanged4Item()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool \fBSBListView::IsMoving\fP\fC [private]\fP"
+.PP
+Definition at line 111 of file SbInterface\&.H'\&.
+.PP
+Referenced by contentsMouseMoveEvent(), contentsMouseReleaseEvent(), movingStarted(), and SBListView()\&.
+.SS "int \fBSBListView::MCol\fP\fC [private]\fP"
+.PP
+Definition at line 112 of file SbInterface\&.H'\&.
+.PP
+Referenced by contentsMouseMoveEvent(), contentsMouseReleaseEvent(), movingStarted(), and SBListView()\&.
+.SS "\fBQListViewItem\fP* \fBSBListView::MItem\fP\fC [private]\fP"
+.PP
+Definition at line 113 of file SbInterface\&.H'\&.
+.PP
+Referenced by contentsMouseMoveEvent(), contentsMouseReleaseEvent(), movingStarted(), and SBListView()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

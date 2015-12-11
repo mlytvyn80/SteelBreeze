@@ -1,0 +1,166 @@
+.TH "SbGeoSources.C" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SbGeoSources.C \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SbGeoSources\&.H'\fP
+.br
+\fC#include <qmessagebox\&.h>\fP
+.br
+\fC#include 'SbSetup\&.H'\fP
+.br
+\fC#include 'SbGeoParameter\&.H'\fP
+.br
+\fC#include 'SbGeoProject\&.H'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBSource\fP &S)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBSource\fP &S)"
+.br
+.ti -1c
+.RI "\fBSBTS_report\fP & \fBoperator<<\fP (\fBSBTS_report\fP &s, const \fBSBSource\fP &S)"
+.br
+.ti -1c
+.RI "\fBSBTS_report4IVS\fP & \fBoperator<<\fP (\fBSBTS_report4IVS\fP &s, const \fBSBSource\fP &S)"
+.br
+.ti -1c
+.RI "\fBSBTS_rsc\fP & \fBoperator<<\fP (\fBSBTS_rsc\fP &s, const \fBSBSource\fP &S)"
+.br
+.ti -1c
+.RI "\fBSBTS_rsc\fP & \fBoperator>>\fP (\fBSBTS_rsc\fP &s, \fBSBSource\fP &S)"
+.br
+.ti -1c
+.RI "\fBSBTS_car\fP & \fBoperator<<\fP (\fBSBTS_car\fP &s, const \fBSBSource\fP &S)"
+.br
+.ti -1c
+.RI "\fBSBTS_car\fP & \fBoperator>>\fP (\fBSBTS_car\fP &s, \fBSBSource\fP &S)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSB_CRF\fP &CRF)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSB_CRF\fP &CRF)"
+.br
+.ti -1c
+.RI "\fBSBTS_dico\fP & \fBoperator<<\fP (\fBSBTS_dico\fP &s, \fBSB_CRF\fP &CRF)"
+.br
+.ti -1c
+.RI "\fBSBTS_dico\fP & \fBoperator>>\fP (\fBSBTS_dico\fP &s, \fBSB_CRF\fP &CRF)"
+.br
+.ti -1c
+.RI "\fBSBTS_report\fP & \fBoperator<<\fP (\fBSBTS_report\fP &s, const \fBSB_CRF\fP &CRF)"
+.br
+.ti -1c
+.RI "\fBSBTS_report4IVS\fP & \fBoperator<<\fP (\fBSBTS_report4IVS\fP &s, const \fBSB_CRF\fP &CRF)"
+.br
+.ti -1c
+.RI "\fBSBTS_rsc\fP & \fBoperator<<\fP (\fBSBTS_rsc\fP &s, const \fBSB_CRF\fP &CRF)"
+.br
+.ti -1c
+.RI "\fBSBTS_rsc\fP & \fBoperator>>\fP (\fBSBTS_rsc\fP &s, \fBSB_CRF\fP &CRF)"
+.br
+.ti -1c
+.RI "\fBSBTS_car\fP & \fBoperator<<\fP (\fBSBTS_car\fP &s, const \fBSB_CRF\fP &CRF)"
+.br
+.ti -1c
+.RI "\fBSBTS_car\fP & \fBoperator>>\fP (\fBSBTS_car\fP &s, \fBSB_CRF\fP &CRF)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBSource\fP &S)"
+.PP
+Definition at line 281 of file SbGeoSources\&.C'\&.
+.PP
+References SBSource::dDN, SBSource::DN, SBSource::dRA, SBSource::FirstMJD, SBSource::Flux1, SBSource::Flux2, SBSource::ICRF, SBSource::IsHLink, SBSource::LastMJD, SBSource::MeanMJD, SBSource::Mv, SBSource::NObsApr, SBSource::NSessApr, SBSource::RA, SBSource::RA_DN, SBSource::RedShift, SBSource::SpectrumClass, SBSource::SpIdx, SBSource::Status, SBSource::StructIdxS, SBSource::StructIdxX, and SBSource::Type\&.
+.SS "\fBSBTS_report\fP& operator<< (\fBSBTS_report\fP &s, const \fBSBSource\fP &S)"
+.PP
+Definition at line 305 of file SbGeoSources\&.C'\&.
+.PP
+References SBSource::corrRA_DN(), SBSource::dn_err(), SBSource::dn_t(), SBSource::firstMJD(), SBSource::ICRF, SBSource::lastMJD(), SBSource::meanMJD(), SBNamed::name(), SBSource::nObsApr(), SBSource::nSessApr(), SBSource::ra_err(), SBSource::ra_t(), RAD2DEG, rad2dms(), rad2hms(), and RAD2HR\&.
+.SS "\fBSBTS_report4IVS\fP& operator<< (\fBSBTS_report4IVS\fP &s, const \fBSBSource\fP &S)"
+.PP
+Definition at line 379 of file SbGeoSources\&.C'\&.
+.PP
+References SBSource::aList, SBSource::AnalysConstr, SBSource::corrRA_DN(), SBSource::dn_err(), SBSource::dn_t(), SBSource::firstMJD(), SBAttributed::isAttr(), SBSource::lastMJD(), SBSource::meanMJD(), SBNamed::name(), SBSource::nObsApr(), SBSource::nSessApr(), SBSource::ra_err(), SBSource::ra_t(), RAD2DEG, rad2dms(), rad2hms(), and RAD2HR\&.
+.SS "\fBSBTS_rsc\fP& operator<< (\fBSBTS_rsc\fP &s, const \fBSBSource\fP &S)"
+.PP
+Definition at line 441 of file SbGeoSources\&.C'\&.
+.PP
+References SBSource::corrRA_DN(), SBSource::dn_err(), SBSource::dn_t(), SBSource::firstMJD(), SBSource::ICRF, SBSource::isHLink(), SBSource::lastMJD(), SBSource::meanMJD(), SBNamed::name(), SBSource::nObsApr(), SBSource::nSessApr(), SBSource::ra_err(), SBSource::ra_t(), RAD2DEG, rad2dms(), rad2hms(), RAD2HR, SBSource::Status, SBSource::STATUS_CAND, SBSource::STATUS_DEF, SBSource::STATUS_NEW, SBSource::STATUS_OTHER, and SBSource::STATUS_UNKN\&.
+.SS "\fBSBTS_car\fP& operator<< (\fBSBTS_car\fP &s, const \fBSBSource\fP &S)"
+.PP
+Definition at line 930 of file SbGeoSources\&.C'\&.
+.PP
+References SBSource::flux1(), SBSource::flux2(), SBSource::ICRF, SBSource::mv(), SBNamed::name(), SBSource::redShift(), SBSource::SP_HP, SBSource::SP_OTHER, SBSource::SP_SEYFERT, SBSource::SP_SEYFERT1, SBSource::SP_SEYFERT1_2, SBSource::SP_SEYFERT2, SBSource::SP_SEYFERT3, SBSource::SP_UNKN, SBSource::SpectrumClass, SBSource::spIdx(), SBSource::Type, SBSource::TYPE_BL_LAC, SBSource::TYPE_BL_LAC_C, SBSource::TYPE_GALAXY, SBSource::TYPE_OTHER, SBSource::TYPE_QUASAR, and SBSource::TYPE_UNKN\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSB_CRF\fP &CRF)"
+.PP
+Definition at line 1287 of file SbGeoSources\&.C'\&.
+.SS "\fBSBTS_dico\fP& operator<< (\fBSBTS_dico\fP &s, \fBSB_CRF\fP &CRF)"
+.PP
+Definition at line 1299 of file SbGeoSources\&.C'\&.
+.PP
+References SBSource::aList, SBSource::ICRF, SBNamed::name(), SB_CRF::prepareAliases4Output(), and SB_CRF::releaseAliases4Output()\&.
+.SS "\fBSBTS_report\fP& operator<< (\fBSBTS_report\fP &s, const \fBSB_CRF\fP &CRF)"
+.PP
+Definition at line 1372 of file SbGeoSources\&.C'\&.
+.PP
+References SBCatalog::Label\&.
+.SS "\fBSBTS_report4IVS\fP& operator<< (\fBSBTS_report4IVS\fP &s, const \fBSB_CRF\fP &CRF)"
+.PP
+Definition at line 1396 of file SbGeoSources\&.C'\&.
+.PP
+References SBSource::Analysed\&.
+.SS "\fBSBTS_rsc\fP& operator<< (\fBSBTS_rsc\fP &s, const \fBSB_CRF\fP &CRF)"
+.PP
+Definition at line 1416 of file SbGeoSources\&.C'\&.
+.PP
+References SBCatalog::Label\&.
+.SS "\fBSBTS_car\fP& operator<< (\fBSBTS_car\fP &s, const \fBSB_CRF\fP &CRF)"
+.PP
+Definition at line 1501 of file SbGeoSources\&.C'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBSource\fP &S)"
+.PP
+Definition at line 291 of file SbGeoSources\&.C'\&.
+.PP
+References SBSource::dDN, SBSource::DN, SBSource::DNt, SBSource::dRA, SBSource::FirstMJD, SBSource::Flux1, SBSource::Flux2, SBSource::ICRF, SBSource::IsHLink, SBSource::LastMJD, SBSource::MeanMJD, SBSource::Mv, SBSource::NObsApr, SBSource::NSessApr, SBSource::RA, SBSource::RA_DN, SBSource::RAt, SBSource::RedShift, SBSource::SINEXCharID, SBSource::SpectrumClass, SBSource::SpIdx, SBSource::Status, SBSource::StructIdxS, SBSource::StructIdxX, and SBSource::Type\&.
+.SS "\fBSBTS_rsc\fP& operator>> (\fBSBTS_rsc\fP &s, \fBSBSource\fP &S)"
+.PP
+Definition at line 494 of file SbGeoSources\&.C'\&.
+.PP
+References SBAttributed::addAttr(), SBTS_rsc::assignedStatus(), SBLog::DBG, dms2rad(), hms2rad(), SBSource::ICRF, SBLog::INF, SBSource::isValidICRFName(), Log, SBSource::OrigImported, SBSource::setCorrRA_DN(), SBSource::setDN(), SBSource::setDN_err(), SBSource::setFirstMJD(), SBSource::setIsHLink(), SBSource::setLastMJD(), SBSource::setMeanMJD(), SBNamed::setName(), SBSource::setNObsApr(), SBSource::setNSessApr(), SBSource::setRA(), SBSource::setRA_err(), SBSource::setStructIdxS(), SBSource::setStructIdxX(), SBLog::SOURCE, SBSource::Status, SBSource::STATUS_CAND, SBSource::STATUS_DEF, SBSource::STATUS_NEW, SBSource::STATUS_OTHER, SBSource::STATUS_UNKN, SBSource::StatusSuspected, and SBLog::write()\&.
+.SS "\fBSBTS_car\fP& operator>> (\fBSBTS_car\fP &s, \fBSBSource\fP &S)"
+.PP
+Definition at line 1009 of file SbGeoSources\&.C'\&.
+.PP
+References SBLog::DBG, SBSource::ICRF, SBLog::INF, SBSource::isValidICRFName(), Log, SBSource::setFlux1(), SBSource::setFlux2(), SBSource::setMv(), SBNamed::setName(), SBSource::setRedShift(), SBSource::setSpectrum(), SBSource::setSpIdx(), SBLog::SOURCE, SBSource::SP_HP, SBSource::SP_OTHER, SBSource::SP_SEYFERT, SBSource::SP_SEYFERT1, SBSource::SP_SEYFERT1_2, SBSource::SP_SEYFERT2, SBSource::SP_SEYFERT3, SBSource::SP_UNKN, SBSource::Type, SBSource::TYPE_BL_LAC, SBSource::TYPE_BL_LAC_C, SBSource::TYPE_GALAXY, SBSource::TYPE_OTHER, SBSource::TYPE_QUASAR, SBSource::TYPE_UNKN, and SBLog::write()\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSB_CRF\fP &CRF)"
+.PP
+Definition at line 1293 of file SbGeoSources\&.C'\&.
+.SS "\fBSBTS_dico\fP& operator>> (\fBSBTS_dico\fP &s, \fBSB_CRF\fP &CRF)"
+.PP
+Definition at line 1327 of file SbGeoSources\&.C'\&.
+.PP
+References SBCatalog::Aliases, SBLog::DBG, SBLog::ERR, SB_CRF::find(), SBSource::isValidICRFName(), Log, SBLog::SOURCE, SBLog::write(), and SBLog::WRN\&.
+.SS "\fBSBTS_rsc\fP& operator>> (\fBSBTS_rsc\fP &s, \fBSB_CRF\fP &CRF)"
+.PP
+Definition at line 1451 of file SbGeoSources\&.C'\&.
+.PP
+References SBLog::DBG, SBLog::ERR, SB_CRF::find(), SBSource::ICRFName(), SBCatalog::inSort(), Log, SBSource::OrigImported, SBLog::SOURCE, and SBLog::write()\&.
+.SS "\fBSBTS_car\fP& operator>> (\fBSBTS_car\fP &s, \fBSB_CRF\fP &CRF)"
+.PP
+Definition at line 1526 of file SbGeoSources\&.C'\&.
+.PP
+References SBLog::DBG, SBLog::ERR, SB_CRF::find(), SBSource::ICRFName(), SBCatalog::inSort(), Log, SBLog::SOURCE, and SBLog::write()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

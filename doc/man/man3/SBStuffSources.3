@@ -1,0 +1,287 @@
+.TH "SBStuffSources" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBStuffSources \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIStuffSource\&.H>\fP
+.PP
+Inherits \fBQDialog\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBStuffSources\fP (\fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "\fB~SBStuffSources\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBcloseEvent\fP (QCloseEvent *e)"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBimportData\fP ()"
+.br
+.ti -1c
+.RI "void \fBexportData\fP ()"
+.br
+.ti -1c
+.RI "void \fBaccept\fP ()"
+.br
+.ti -1c
+.RI "void \fBreject\fP ()"
+.br
+.ti -1c
+.RI "void \fBreloadCRF\fP ()"
+.br
+.ti -1c
+.RI "void \fBeditEntryA\fP (\fBQListViewItem\fP *)"
+.br
+.ti -1c
+.RI "void \fBinsertEntryA\fP ()"
+.br
+.ti -1c
+.RI "void \fBdeleteEntryA\fP ()"
+.br
+.ti -1c
+.RI "void \fBeditEntryS\fP (\fBQListViewItem\fP *)"
+.br
+.ti -1c
+.RI "void \fBinsertEntryS\fP ()"
+.br
+.ti -1c
+.RI "void \fBdeleteEntryS\fP ()"
+.br
+.ti -1c
+.RI "void \fBCRFModified\fP (bool)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdrawInfo\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSB_CRF\fP * \fBWcrf\fP"
+.br
+.ti -1c
+.RI "QString \fBstr\fP"
+.br
+.ti -1c
+.RI "\fBQListView\fP * \fBSourcesLV\fP"
+.br
+.ti -1c
+.RI "\fBQListView\fP * \fBAliasesLV\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBCRFEpoch\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBCRFLabel\fP"
+.br
+.ti -1c
+.RI "QLineEdit * \fBCRFComment\fP"
+.br
+.ti -1c
+.RI "QLabel * \fBNumSA\fP"
+.br
+.ti -1c
+.RI "bool \fBisModifiedCRF\fP"
+.br
+.ti -1c
+.RI "int \fBnumOpenedWindows\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 105 of file SbIStuffSource\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBStuffSources::SBStuffSources (\fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 240 of file SbIStuffSource\&.C'\&.
+.PP
+References accept(), SBCatalog::aliasDict(), AliasesLV, SBCatalog::comment(), CRFComment, CRFEpoch, CRFLabel, deleteEntryA(), deleteEntryS(), editEntryA(), editEntryS(), SBCatalog::epoch(), exportData(), SBMJD::F_Year, SB_CRF::first(), importData(), insertEntryA(), insertEntryS(), SBCatalog::inSort(), isModifiedCRF, SBCatalog::label(), SBSetUp::loadCRF(), SB_CRF::next(), numOpenedWindows, NumSA, SB_CRF::prepareAliases4Output(), reject(), SetUp, SourcesLV, str, SBMJD::toString(), SBSolutionName::toString(), and Wcrf\&.
+.SS "SBStuffSources::~SBStuffSources ()"
+.PP
+Definition at line 440 of file SbIStuffSource\&.C'\&.
+.PP
+References SB_CRF::releaseAliases4Output(), and Wcrf\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBStuffSources::accept ()\fC [private, slot]\fP"
+.PP
+Definition at line 449 of file SbIStuffSource\&.C'\&.
+.PP
+References SBCatalog::comment(), CRFComment, CRFEpoch, CRFLabel, SBCatalog::epoch(), SBMJD::F_Year, SBSolutionName::fromString(), isModifiedCRF, SBCatalog::label(), numOpenedWindows, SBSetUp::saveCRF(), SBCatalog::setComment(), SBCatalog::setEpoch(), SBCatalog::setLabel(), SBMJD::setMJD(), SetUp, str, SBMJD::toString(), SBSolutionName::TYPE_RSC, and Wcrf\&.
+.PP
+Referenced by SBStuffSources()\&.
+.SS "virtual QString SBStuffSources::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 112 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by deleteEntryA(), deleteEntryS(), editEntryA(), editEntryS(), exportData(), importData(), insertEntryA(), and insertEntryS()\&.
+.SS "virtual void SBStuffSources::closeEvent (QCloseEvent *e)\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 147 of file SbIStuffSource\&.H'\&.
+.PP
+References numOpenedWindows\&.
+.SS "void SBStuffSources::CRFModified (boolModified)\fC [private, slot]\fP"
+.PP
+Definition at line 717 of file SbIStuffSource\&.C'\&.
+.PP
+References SBCatalog::aliasDict(), isModifiedCRF, numOpenedWindows, NumSA, str, and Wcrf\&.
+.PP
+Referenced by editEntryA(), editEntryS(), insertEntryA(), and insertEntryS()\&.
+.SS "void SBStuffSources::deleteEntryA ()\fC [private, slot]\fP"
+.PP
+Definition at line 629 of file SbIStuffSource\&.C'\&.
+.PP
+References SBAliasListItem::Alias, SBCatalog::aliasDict(), AliasesLV, ClassName(), SBLog::DBG, SBLog::ERR, SBLog::INTERFACE, isModifiedCRF, Log, numOpenedWindows, NumSA, SBAliasListItem::Reference, str, Wcrf, and SBLog::write()\&.
+.PP
+Referenced by SBStuffSources()\&.
+.SS "void SBStuffSources::deleteEntryS ()\fC [private, slot]\fP"
+.PP
+Definition at line 683 of file SbIStuffSource\&.C'\&.
+.PP
+References SBCatalog::aliasDict(), ClassName(), SBLog::DBG, SBLog::ERR, SBLog::INTERFACE, isModifiedCRF, Log, SBNamed::name(), numOpenedWindows, NumSA, SBCatalog::remove(), SBSourceListItem::Source, SourcesLV, str, Wcrf, and SBLog::write()\&.
+.PP
+Referenced by SBStuffSources()\&.
+.SS "void SBStuffSources::drawInfo ()\fC [private]\fP"
+.PP
+Definition at line 524 of file SbIStuffSource\&.C'\&.
+.PP
+References SBCatalog::aliasDict(), SBCatalog::comment(), CRFComment, CRFEpoch, CRFLabel, SBCatalog::epoch(), SBMJD::F_Year, SBCatalog::label(), NumSA, str, SBMJD::toString(), SBSolutionName::toString(), and Wcrf\&.
+.PP
+Referenced by reloadCRF()\&.
+.SS "void SBStuffSources::editEntryA (\fBQListViewItem\fP *AkaItem)\fC [private, slot]\fP"
+.PP
+Definition at line 609 of file SbIStuffSource\&.C'\&.
+.PP
+References ClassName(), CRFModified(), SBLog::DBG, SBLog::INTERFACE, Log, numOpenedWindows, Wcrf, and SBLog::write()\&.
+.PP
+Referenced by SBStuffSources()\&.
+.SS "void SBStuffSources::editEntryS (\fBQListViewItem\fP *SrcItem)\fC [private, slot]\fP"
+.PP
+Definition at line 663 of file SbIStuffSource\&.C'\&.
+.PP
+References ClassName(), CRFModified(), SBLog::DBG, SBLog::INTERFACE, Log, numOpenedWindows, and SBLog::write()\&.
+.PP
+Referenced by SBStuffSources()\&.
+.SS "void SBStuffSources::exportData ()\fC [private, slot]\fP"
+.PP
+Definition at line 555 of file SbIStuffSource\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::ERR, SBLog::INTERFACE, SBLog::IO, Log, SBSetUp::path2Output(), SetUp, SBSetUp::sources(), Wcrf, and SBLog::write()\&.
+.PP
+Referenced by SBStuffSources()\&.
+.SS "void SBStuffSources::importData ()\fC [private, slot]\fP"
+.PP
+Definition at line 535 of file SbIStuffSource\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::INTERFACE, isModifiedCRF, Log, numOpenedWindows, reloadCRF(), SBSetUp::saveCRF(), SetUp, Wcrf, and SBLog::write()\&.
+.PP
+Referenced by SBStuffSources()\&.
+.SS "void SBStuffSources::insertEntryA ()\fC [private, slot]\fP"
+.PP
+Definition at line 619 of file SbIStuffSource\&.C'\&.
+.PP
+References AliasesLV, ClassName(), CRFModified(), SBLog::DBG, SBLog::INTERFACE, Log, numOpenedWindows, Wcrf, and SBLog::write()\&.
+.PP
+Referenced by SBStuffSources()\&.
+.SS "void SBStuffSources::insertEntryS ()\fC [private, slot]\fP"
+.PP
+Definition at line 673 of file SbIStuffSource\&.C'\&.
+.PP
+References ClassName(), CRFModified(), SBLog::DBG, SBLog::INTERFACE, Log, numOpenedWindows, SourcesLV, Wcrf, and SBLog::write()\&.
+.PP
+Referenced by SBStuffSources()\&.
+.SS "void SBStuffSources::reject ()\fC [private, slot]\fP"
+.PP
+Definition at line 487 of file SbIStuffSource\&.C'\&.
+.PP
+References numOpenedWindows\&.
+.PP
+Referenced by SBStuffSources()\&.
+.SS "void SBStuffSources::reloadCRF ()\fC [private, slot]\fP"
+.PP
+Definition at line 495 of file SbIStuffSource\&.C'\&.
+.PP
+References SBCatalog::aliasDict(), AliasesLV, drawInfo(), SB_CRF::first(), SBSetUp::loadCRF(), SB_CRF::next(), SB_CRF::prepareAliases4Output(), SetUp, SourcesLV, and Wcrf\&.
+.PP
+Referenced by importData()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBQListView\fP* \fBSBStuffSources::AliasesLV\fP\fC [private]\fP"
+.PP
+Definition at line 136 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by deleteEntryA(), insertEntryA(), reloadCRF(), and SBStuffSources()\&.
+.SS "QLineEdit* \fBSBStuffSources::CRFComment\fP\fC [private]\fP"
+.PP
+Definition at line 139 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by accept(), drawInfo(), and SBStuffSources()\&.
+.SS "QLineEdit* \fBSBStuffSources::CRFEpoch\fP\fC [private]\fP"
+.PP
+Definition at line 137 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by accept(), drawInfo(), and SBStuffSources()\&.
+.SS "QLineEdit* \fBSBStuffSources::CRFLabel\fP\fC [private]\fP"
+.PP
+Definition at line 138 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by accept(), drawInfo(), and SBStuffSources()\&.
+.SS "bool \fBSBStuffSources::isModifiedCRF\fP\fC [private]\fP"
+.PP
+Definition at line 141 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by accept(), CRFModified(), deleteEntryA(), deleteEntryS(), importData(), and SBStuffSources()\&.
+.SS "int \fBSBStuffSources::numOpenedWindows\fP\fC [private]\fP"
+.PP
+Definition at line 142 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by accept(), closeEvent(), CRFModified(), deleteEntryA(), deleteEntryS(), editEntryA(), editEntryS(), importData(), insertEntryA(), insertEntryS(), reject(), and SBStuffSources()\&.
+.SS "QLabel* \fBSBStuffSources::NumSA\fP\fC [private]\fP"
+.PP
+Definition at line 140 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by CRFModified(), deleteEntryA(), deleteEntryS(), drawInfo(), and SBStuffSources()\&.
+.SS "\fBQListView\fP* \fBSBStuffSources::SourcesLV\fP\fC [private]\fP"
+.PP
+Definition at line 135 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by deleteEntryS(), insertEntryS(), reloadCRF(), and SBStuffSources()\&.
+.SS "QString \fBSBStuffSources::str\fP\fC [private]\fP"
+.PP
+Definition at line 132 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by accept(), CRFModified(), deleteEntryA(), deleteEntryS(), drawInfo(), and SBStuffSources()\&.
+.SS "\fBSB_CRF\fP* \fBSBStuffSources::Wcrf\fP\fC [private]\fP"
+.PP
+Definition at line 131 of file SbIStuffSource\&.H'\&.
+.PP
+Referenced by accept(), CRFModified(), deleteEntryA(), deleteEntryS(), drawInfo(), editEntryA(), exportData(), importData(), insertEntryA(), insertEntryS(), reloadCRF(), SBStuffSources(), and ~SBStuffSources()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

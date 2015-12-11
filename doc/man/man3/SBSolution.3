@@ -1,0 +1,645 @@
+.TH "SBSolution" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBSolution \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoParameter\&.H>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSolution\fP (\fBSBProject\fP *=NULL, bool=TRUE)"
+.br
+.ti -1c
+.RI "\fB~SBSolution\fP ()"
+.br
+.ti -1c
+.RI "QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "\fBSBProject\fP * \fBproject\fP () const "
+.br
+.ti -1c
+.RI "\fBSBStatistics\fP * \fBstatGeneral\fP ()"
+.br
+.ti -1c
+.RI "\fBSBStatisticsList\fP & \fBstatByBatch\fP ()"
+.br
+.ti -1c
+.RI "\fBSBParameterList\fP & \fBglobal\fP ()"
+.br
+.ti -1c
+.RI "\fBSBParameterList\fP & \fBlocal\fP ()"
+.br
+.ti -1c
+.RI "\fBSBStochParameterList\fP & \fBstochastic\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetProject\fP (\fBSBProject\fP *const P_)"
+.br
+.ti -1c
+.RI "void \fBprepare4Batch\fP (const QString &, bool=FALSE)"
+.br
+.ti -1c
+.RI "void \fBsubmitGlobalParameters\fP (\fBSBParameterList\fP *, const \fBSBSymMatrix\fP *)"
+.br
+.ti -1c
+.RI "void \fBreportGlobalParameters\fP ()"
+.br
+.ti -1c
+.RI "void \fBsubmitLocalParameters\fP (\fBSBParameterList\fP *, const \fBSBSymMatrix\fP *)"
+.br
+.ti -1c
+.RI "void \fBreportLocalParameters\fP ()"
+.br
+.ti -1c
+.RI "void \fBsubmitStochasticParameters\fP (\fBSBParameterList\fP *, const \fBSBSymMatrix\fP *)"
+.br
+.ti -1c
+.RI "void \fBsaveStochasticParameters\fP ()"
+.br
+.ti -1c
+.RI "void \fBreportStochasticParameters\fP ()"
+.br
+.ti -1c
+.RI "void \fBdumpParameters\fP ()"
+.br
+.ti -1c
+.RI "bool \fBloadGlbCor\fP (\fBSBParameterList\fP *&, \fBSBSymMatrix\fP *&)"
+.br
+.ti -1c
+.RI "bool \fBloadLocCor\fP (const QString &, \fBSBParameterList\fP *&, \fBSBSymMatrix\fP *&)"
+.br
+.ti -1c
+.RI "\fBSBStatistics\fP * \fBstat4CurrentBatch\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateParameter\fP (\fBSBParameter\fP *, const \fBSBMJD\fP &, bool=TRUE)"
+.br
+.ti -1c
+.RI "void \fBgetGlobalParameter4Report\fP (\fBSBParameter\fP *)"
+.br
+.ti -1c
+.RI "void \fBdeleteSolution\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisLocalModified\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetIsLocalModified\fP (bool IsModified_)"
+.br
+.ti -1c
+.RI "QString \fBguessParameterName\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBsaveNormalEqs\fP (\fBSBParameterList\fP *, \fBSBVector\fP *, \fBSBUpperMatrix\fP *, \fBSBParameterList\fP *, \fBSBVector\fP *, \fBSBUpperMatrix\fP *, \fBSBMatrix\fP *, const QString &)"
+.br
+.ti -1c
+.RI "void \fBloadNormalEqs\fP (\fBSBParameterList\fP *&, \fBSBVector\fP *&, \fBSBUpperMatrix\fP *&, \fBSBParameterList\fP *&, \fBSBVector\fP *&, \fBSBUpperMatrix\fP *&, \fBSBMatrix\fP *&, const QString &)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBloadStatistics\fP ()"
+.br
+.ti -1c
+.RI "bool \fBloadGlbPar\fP ()"
+.br
+.ti -1c
+.RI "bool \fBloadLocPar\fP (const QString &)"
+.br
+.ti -1c
+.RI "bool \fBloadStcPar\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBsaveStatistics\fP ()"
+.br
+.ti -1c
+.RI "void \fBsaveGlbPar\fP ()"
+.br
+.ti -1c
+.RI "void \fBsaveGlbCor\fP (\fBSBParameterList\fP *, const \fBSBSymMatrix\fP *)"
+.br
+.ti -1c
+.RI "void \fBsaveLocPar\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBsaveLocCor\fP (const QString &, \fBSBParameterList\fP *, const \fBSBSymMatrix\fP *)"
+.br
+.ti -1c
+.RI "void \fBsaveStcPar\fP (const QString &)"
+.br
+.ti -1c
+.RI "bool \fBcheckPath\fP (const QString &, const QString &)"
+.br
+.ti -1c
+.RI "QString \fBpath2GlbDir\fP () const "
+.br
+.ti -1c
+.RI "QString \fBpath2LocDir\fP () const "
+.br
+.ti -1c
+.RI "QString \fBpath2StcDir\fP () const "
+.br
+.ti -1c
+.RI "QString \fBpath2GlbFile\fP () const "
+.br
+.ti -1c
+.RI "QString \fBpath2GlbFileCorr\fP () const "
+.br
+.ti -1c
+.RI "QString \fBpath2LocFile\fP (const QString &name_) const "
+.br
+.ti -1c
+.RI "QString \fBpath2LocFileCorr\fP (const QString &name_) const "
+.br
+.ti -1c
+.RI "QString \fBpath2StcFile\fP (const QString &name_) const "
+.br
+.ti -1c
+.RI "QString \fBpath2LocFileNormEqs\fP (const QString &name_) const "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBProject\fP * \fBPrj\fP"
+.br
+.RI "\fIproject (not an owner of); \fP"
+.ti -1c
+.RI "\fBSBStatistics\fP \fBStatGeneral\fP"
+.br
+.RI "\fIgeneral statistics information \fP"
+.ti -1c
+.RI "\fBSBStatisticsList\fP \fBStatByBatch\fP"
+.br
+.RI "\fIlist of statistics info per a batch \fP"
+.ti -1c
+.RI "bool \fBIsModified\fP"
+.br
+.ti -1c
+.RI "\fBSBStatistics\fP * \fBStat4CurrentBatch\fP"
+.br
+.ti -1c
+.RI "QString \fBStatisticsFile\fP"
+.br
+.ti -1c
+.RI "\fBSBParameterList\fP \fBGlobal\fP"
+.br
+.RI "\fIlist of global parameters; \fP"
+.ti -1c
+.RI "bool \fBIsGlobalModified\fP"
+.br
+.ti -1c
+.RI "\fBSBParameterList\fP \fBLocal\fP"
+.br
+.RI "\fIlist of local parameters; \fP"
+.ti -1c
+.RI "bool \fBIsLocalModified\fP"
+.br
+.ti -1c
+.RI "QString \fBCurrentBatch\fP"
+.br
+.ti -1c
+.RI "\fBSBStochParameterList\fP \fBStochastic\fP"
+.br
+.RI "\fIlist of stochastic parameters; \fP"
+.ti -1c
+.RI "bool \fBIsStochasticModified\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const QString \fBDirGlobal\fP"
+.br
+.ti -1c
+.RI "static const QString \fBDirArc\fP"
+.br
+.ti -1c
+.RI "static const QString \fBDirLocal\fP"
+.br
+.ti -1c
+.RI "static const QString \fBDirStoch\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class \fBSBSolution\fP, describes solution'\&. The solution is the set of global parameters (common for all data), local parameters (wich are depended on date of observation) and a stochastic parameters (date and time dependant)'\&. 
+.PP
+Definition at line 821 of file SbGeoParameter\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBSolution::SBSolution (\fBSBProject\fP *Prj_ = \fCNULL\fP, boolisRealRun = \fCTRUE\fP)"
+.PP
+Definition at line 1085 of file SbGeoParameter\&.C'\&.
+.PP
+References ClassName(), SBParameterList::clear(), SBStochParameterList::clear(), SBLog::CONFIG, SBLog::DBG, SBLog::ERR, SBLog::ESTIMATOR, Global, IsGlobalModified, IsLocalModified, IsModified, IsStochasticModified, loadGlbPar(), loadStatistics(), Local, Log, SBNamed::name(), SBSetUp::path2Output(), SBSetUp::path2Sols(), Prj, SBLog::RUN, SBVersion::selfName(), SBNamed::setName(), SetUp, Stat4CurrentBatch, StatByBatch, StatGeneral, StatisticsFile, Stochastic, Version, and SBLog::write()\&.
+.SS "SBSolution::~SBSolution ()"
+.PP
+Definition at line 1152 of file SbGeoParameter\&.C'\&.
+.PP
+References IsGlobalModified, IsModified, saveGlbPar(), saveStatistics(), Stat4CurrentBatch, and StatByBatch\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SBSolution::checkPath (const QString &Path, const QString &File)\fC [private]\fP"
+.PP
+Definition at line 1179 of file SbGeoParameter\&.C'\&.
+.PP
+References ClassName(), SBLog::CONFIG, SBLog::DBG, SBLog::ERR, SBLog::ESTIMATOR, Log, SBVersion::selfName(), Version, and SBLog::write()\&.
+.PP
+Referenced by dumpParameters(), loadGlbCor(), loadGlbPar(), loadLocCor(), loadLocPar(), loadNormalEqs(), loadStatistics(), and loadStcPar()\&.
+.SS "QString SBSolution::ClassName () const\fC [inline]\fP"
+.PP
+Definition at line 901 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by checkPath(), deleteSolution(), dumpParameters(), loadGlbCor(), loadGlbPar(), loadLocCor(), loadLocPar(), loadNormalEqs(), loadStatistics(), loadStcPar(), saveGlbCor(), saveGlbPar(), saveLocCor(), saveLocPar(), saveNormalEqs(), saveStatistics(), saveStcPar(), and SBSolution()\&.
+.SS "void SBSolution::deleteSolution ()"
+.PP
+Definition at line 1725 of file SbGeoParameter\&.C'\&.
+.PP
+References ClassName(), SBStatistics::clearStatistics(), SBLog::ERR, SBLog::ESTIMATOR, SBLog::IO, loadStatistics(), Log, SBNamed::name(), path2GlbDir(), path2GlbFile(), path2GlbFileCorr(), path2LocDir(), path2LocFile(), path2LocFileCorr(), path2LocFileNormEqs(), SBSetUp::path2Sols(), path2StcDir(), path2StcFile(), Prj, SetUp, StatByBatch, StatGeneral, StatisticsFile, and SBLog::write()\&.
+.PP
+Referenced by SBVLBIPreProcess::clearPars(), SBProjectCreate::createProject(), SBVLBIPreProcess::currentSesChange(), SBMainWindow::ExecuteDrop(), and SBVLBIPreProcess::~SBVLBIPreProcess()\&.
+.SS "void SBSolution::dumpParameters ()"
+.PP
+Definition at line 1861 of file SbGeoParameter\&.C'\&.
+.PP
+References SBStochParameter::addPar(), checkPath(), ClassName(), SBStochParameterList::clear(), SBLog::DBG, SBStochParameter::dump2File(), SBLog::ESTIMATOR, SBMJD::F_MJD, SBStochParameterList::find(), guessParameterName(), SBStochParameterList::inSort(), SBStationID::isValidStr(), Local, Log, SBVersion::name(), SBNamed::name(), SBSetUp::path2Output(), prepare4Batch(), Prj, SetUp, StatByBatch, Stochastic, SBStochParameter::tFinis(), TInf, SBMJD::toString(), SBStochParameter::tStart(), TZero, Version, and SBLog::write()\&.
+.PP
+Referenced by SBSolutionBrowser::dumpSolution()\&.
+.SS "void SBSolution::getGlobalParameter4Report (\fBSBParameter\fP *P)"
+.PP
+Definition at line 1711 of file SbGeoParameter\&.C'\&.
+.PP
+References SBParameter::e(), SBParameterList::find(), Global, SBNamed::name(), SBParameter::setE(), SBDerivation::setTimes(), SBParameter::setV(), and SBParameter::v()\&.
+.PP
+Referenced by SBSource::getGlobalParameters4Report(), SBStation::getGlobalParameters4Report(), SBStation::getGlobalParameters4Report4Axel(), and SBStation::getGlobalParameters4UpdateTRF()\&.
+.SS "\fBSBParameterList\fP& SBSolution::global ()\fC [inline]\fP"Returns the list of global parameters'\&. 
+.PP
+Definition at line 912 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBSolutionBrowser::lookupParameters(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportTRFVariations(), and SBSolutionBrowser::wGlobalPars()\&.
+.SS "QString SBSolution::guessParameterName (const QString &ParName)"
+.PP
+Definition at line 1789 of file SbGeoParameter\&.C'\&.
+.PP
+References SBObjectObsInfo::aka(), SBStationInfoList::find(), SBStationID::isValidStr(), Prj, SBStationID::setID(), SBProject::stationList(), and SBStationID::toString()\&.
+.PP
+Referenced by dumpParameters()\&.
+.SS "bool SBSolution::isLocalModified () const\fC [inline]\fP"
+.PP
+Definition at line 942 of file SbGeoParameter\&.H'\&.
+.SS "bool SBSolution::loadGlbCor (\fBSBParameterList\fP *&List, \fBSBSymMatrix\fP *&P)"
+.PP
+Definition at line 1274 of file SbGeoParameter\&.C'\&.
+.PP
+References checkPath(), ClassName(), SBParameterList::clear(), SBFCList::close(), SBLog::DBG, SBLog::ESTIMATOR, SBSetUp::fcList(), SBLog::IO, Log, SBFCList::open4In(), path2GlbDir(), path2GlbFileCorr(), SetUp, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by SBRunManager::makeReportCRF(), operator<<(), and SBSolutionBrowser::updateCRF()\&.
+.SS "bool SBSolution::loadGlbPar ()\fC [private]\fP"
+.PP
+Definition at line 1248 of file SbGeoParameter\&.C'\&.
+.PP
+References checkPath(), ClassName(), SBParameterList::clear(), SBFCList::close(), SBLog::DBG, SBLog::ESTIMATOR, SBSetUp::fcList(), Global, SBLog::IO, Log, SBFCList::open4In(), path2GlbDir(), path2GlbFile(), SetUp, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by SBSolution()\&.
+.SS "bool SBSolution::loadLocCor (const QString &BatchName, \fBSBParameterList\fP *&List, \fBSBSymMatrix\fP *&P)"
+.PP
+Definition at line 1343 of file SbGeoParameter\&.C'\&.
+.PP
+References checkPath(), ClassName(), SBParameterList::clear(), SBFCList::close(), SBLog::DBG, SBLog::ESTIMATOR, SBSetUp::fcList(), SBLog::IO, Log, SBFCList::open4In(), path2LocDir(), path2LocFileCorr(), SetUp, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by SBRunManager::makeReportCRFVariations4IVS(), and SBRunManager::makeReportEOP()\&.
+.SS "bool SBSolution::loadLocPar (const QString &BatchName)\fC [private]\fP"
+.PP
+Definition at line 1317 of file SbGeoParameter\&.C'\&.
+.PP
+References checkPath(), ClassName(), SBParameterList::clear(), SBFCList::close(), SBLog::DBG, SBLog::ESTIMATOR, SBSetUp::fcList(), SBLog::IO, Local, Log, SBFCList::open4In(), path2LocDir(), path2LocFile(), SetUp, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by prepare4Batch()\&.
+.SS "void SBSolution::loadNormalEqs (\fBSBParameterList\fP *&Ys, \fBSBVector\fP *&Zy, \fBSBUpperMatrix\fP *&Ry, \fBSBParameterList\fP *&Xs, \fBSBVector\fP *&Zx, \fBSBUpperMatrix\fP *&Rx, \fBSBMatrix\fP *&Rxy, const QString &BatchName)"
+.PP
+Definition at line 2142 of file SbGeoParameter\&.C'\&.
+.PP
+References checkPath(), ClassName(), SBParameterList::clear(), SBFCList::close(), SBLog::DBG, SBLog::ESTIMATOR, SBSetUp::fcList(), SBLog::IO, Log, SBFCList::open4In(), path2LocDir(), path2LocFileNormEqs(), SetUp, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by SBRunManager::makeReportNormalEqs()\&.
+.SS "void SBSolution::loadStatistics ()\fC [private]\fP"
+.PP
+Definition at line 1219 of file SbGeoParameter\&.C'\&.
+.PP
+References checkPath(), ClassName(), SBLog::DBG, SBLog::ERR, SBLog::ESTIMATOR, SBLog::IO, Log, SBNamed::name(), SBSetUp::path2Sols(), Prj, SetUp, StatByBatch, StatGeneral, StatisticsFile, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by deleteSolution(), and SBSolution()\&.
+.SS "bool SBSolution::loadStcPar (const QString &BatchName)\fC [private]\fP"
+.PP
+Definition at line 1379 of file SbGeoParameter\&.C'\&.
+.PP
+References checkPath(), ClassName(), SBStochParameterList::clear(), SBFCList::close(), SBLog::DBG, SBLog::ESTIMATOR, SBSetUp::fcList(), SBLog::IO, Log, SBFCList::open4In(), path2StcDir(), path2StcFile(), SetUp, Stochastic, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by prepare4Batch()\&.
+.SS "\fBSBParameterList\fP& SBSolution::local ()\fC [inline]\fP"Returns the list of curent local parameters'\&. 
+.PP
+Definition at line 914 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBSolutionBrowser::lookupParameters(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportEOP(), SBRunManager::makeReportTRFVariations(), SBVLBIPreProcess::preProcess(), and SBVLBIPreProcess::procScenario_2()\&.
+.SS "QString SBSolution::path2GlbDir () const\fC [private]\fP"
+.PP
+Definition at line 1162 of file SbGeoParameter\&.C'\&.
+.PP
+References DirGlobal, SBNamed::name(), SBSetUp::path2Sols(), Prj, and SetUp\&.
+.PP
+Referenced by deleteSolution(), loadGlbCor(), and loadGlbPar()\&.
+.SS "QString SBSolution::path2GlbFile () const\fC [inline, private]\fP"
+.PP
+Definition at line 872 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by deleteSolution(), loadGlbPar(), and saveGlbPar()\&.
+.SS "QString SBSolution::path2GlbFileCorr () const\fC [inline, private]\fP"
+.PP
+Definition at line 875 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by deleteSolution(), loadGlbCor(), and saveGlbCor()\&.
+.SS "QString SBSolution::path2LocDir () const\fC [private]\fP"
+.PP
+Definition at line 1167 of file SbGeoParameter\&.C'\&.
+.PP
+References DirLocal, SBNamed::name(), SBSetUp::path2Sols(), Prj, and SetUp\&.
+.PP
+Referenced by deleteSolution(), loadLocCor(), loadLocPar(), and loadNormalEqs()\&.
+.SS "QString SBSolution::path2LocFile (const QString &name_) const\fC [inline, private]\fP"
+.PP
+Definition at line 878 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by deleteSolution(), loadLocPar(), and saveLocPar()\&.
+.SS "QString SBSolution::path2LocFileCorr (const QString &name_) const\fC [inline, private]\fP"
+.PP
+Definition at line 881 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by deleteSolution(), loadLocCor(), and saveLocCor()\&.
+.SS "QString SBSolution::path2LocFileNormEqs (const QString &name_) const\fC [inline, private]\fP"
+.PP
+Definition at line 890 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by deleteSolution(), loadNormalEqs(), and saveNormalEqs()\&.
+.SS "QString SBSolution::path2StcDir () const\fC [private]\fP"
+.PP
+Definition at line 1174 of file SbGeoParameter\&.C'\&.
+.PP
+References DirStoch, SBNamed::name(), SBSetUp::path2Sols(), Prj, and SetUp\&.
+.PP
+Referenced by deleteSolution(), and loadStcPar()\&.
+.SS "QString SBSolution::path2StcFile (const QString &name_) const\fC [inline, private]\fP"
+.PP
+Definition at line 884 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by deleteSolution(), loadStcPar(), and saveStcPar()\&.
+.SS "void SBSolution::prepare4Batch (const QString &BatchName, boolIsRealRun = \fCFALSE\fP)"
+.PP
+Definition at line 1564 of file SbGeoParameter\&.C'\&.
+.PP
+References SBStatistics::clearStatistics(), CurrentBatch, loadLocPar(), loadStcPar(), Stat4CurrentBatch, and StatByBatch\&.
+.PP
+Referenced by SBSolutionBrowser::batch4StochEOPChanged(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), dumpParameters(), SBVLBIPreProcess::fillObsListView(), SBSolutionBrowser::lookupParameters(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportEOP(), SBRunManager::makeReportNormalEqs(), SBRunManager::makeReportTRFVariations(), SBRunManager::makeReportTroposphere(), SBRunManager::process_m1(), and SBEstimator::solveLocals()\&.
+.SS "\fBSBProject\fP* SBSolution::project () const\fC [inline]\fP"Returns project'\&. 
+.PP
+Definition at line 906 of file SbGeoParameter\&.H'\&.
+.SS "void SBSolution::reportGlobalParameters ()"
+.PP
+Definition at line 1606 of file SbGeoParameter\&.C'\&.
+.PP
+References Global, and SBParameterList::report()\&.
+.PP
+Referenced by SBEstimator::solveGlobals()\&.
+.SS "void SBSolution::reportLocalParameters ()"
+.PP
+Definition at line 1639 of file SbGeoParameter\&.C'\&.
+.PP
+References Local, and SBParameterList::report()\&.
+.PP
+Referenced by SBEstimator::solveLocals()\&.
+.SS "void SBSolution::reportStochasticParameters ()"
+.PP
+Definition at line 1669 of file SbGeoParameter\&.C'\&.
+.PP
+References SBStochParameterList::report(), and Stochastic\&.
+.PP
+Referenced by SBEstimator::solveStochs()\&.
+.SS "void SBSolution::saveGlbCor (\fBSBParameterList\fP *List, const \fBSBSymMatrix\fP *P_GLB)\fC [private]\fP"
+.PP
+Definition at line 1452 of file SbGeoParameter\&.C'\&.
+.PP
+References ClassName(), SBFCList::close(), SBLog::DBG, SBLog::ERR, SBLog::ESTIMATOR, SBSetUp::fcList(), SBLog::IO, Log, SBFCList::open4Out(), path2GlbFileCorr(), SetUp, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by submitGlobalParameters()\&.
+.SS "void SBSolution::saveGlbPar ()\fC [private]\fP"
+.PP
+Definition at line 1425 of file SbGeoParameter\&.C'\&.
+.PP
+References ClassName(), SBFCList::close(), SBLog::DBG, SBLog::ERR, SBLog::ESTIMATOR, SBSetUp::fcList(), Global, SBLog::IO, IsGlobalModified, Log, SBFCList::open4Out(), path2GlbFile(), SetUp, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by ~SBSolution()\&.
+.SS "void SBSolution::saveLocCor (const QString &BatchName, \fBSBParameterList\fP *List, const \fBSBSymMatrix\fP *P_LOC)\fC [private]\fP"
+.PP
+Definition at line 1511 of file SbGeoParameter\&.C'\&.
+.PP
+References ClassName(), SBFCList::close(), SBLog::DBG, SBLog::ERR, SBLog::ESTIMATOR, SBSetUp::fcList(), SBLog::IO, Log, SBFCList::open4Out(), path2LocFileCorr(), SetUp, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by submitLocalParameters()\&.
+.SS "void SBSolution::saveLocPar (const QString &BatchName)\fC [private]\fP"
+.PP
+Definition at line 1484 of file SbGeoParameter\&.C'\&.
+.PP
+References ClassName(), SBFCList::close(), SBLog::DBG, SBLog::ERR, SBLog::ESTIMATOR, SBSetUp::fcList(), SBLog::IO, IsLocalModified, Local, Log, SBFCList::open4Out(), path2LocFile(), SetUp, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by submitLocalParameters()\&.
+.SS "void SBSolution::saveNormalEqs (\fBSBParameterList\fP *Ys, \fBSBVector\fP *Zy, \fBSBUpperMatrix\fP *Ry, \fBSBParameterList\fP *Xs, \fBSBVector\fP *Zx, \fBSBUpperMatrix\fP *Rx, \fBSBMatrix\fP *Rxy, const QString &BatchName)"
+.PP
+Definition at line 2110 of file SbGeoParameter\&.C'\&.
+.PP
+References ClassName(), SBFCList::close(), SBLog::DBG, SBLog::ERR, SBLog::ESTIMATOR, SBSetUp::fcList(), SBLog::IO, Log, SBFCList::open4Out(), path2LocFileNormEqs(), SetUp, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by SBEstimator::finisLocal()\&.
+.SS "void SBSolution::saveStatistics ()\fC [private]\fP"
+.PP
+Definition at line 1406 of file SbGeoParameter\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::ERR, SBLog::ESTIMATOR, SBLog::IO, Log, StatByBatch, StatGeneral, StatisticsFile, and SBLog::write()\&.
+.PP
+Referenced by ~SBSolution()\&.
+.SS "void SBSolution::saveStcPar (const QString &BatchName)\fC [private]\fP"
+.PP
+Definition at line 1537 of file SbGeoParameter\&.C'\&.
+.PP
+References ClassName(), SBFCList::close(), SBLog::DBG, SBLog::ERR, SBLog::ESTIMATOR, SBSetUp::fcList(), SBLog::IO, IsStochasticModified, Log, SBFCList::open4Out(), path2StcFile(), SetUp, Stochastic, SBLog::write(), and SBLog::WRN\&.
+.SS "void SBSolution::saveStochasticParameters ()\fC [inline]\fP"
+.PP
+Definition at line 929 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBEstimator::solveStochs()\&.
+.SS "void SBSolution::setIsLocalModified (boolIsModified_)\fC [inline]\fP"
+.PP
+Definition at line 943 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBVLBIPreProcess::preProcess()\&.
+.SS "void SBSolution::setProject (\fBSBProject\fP *constP_)\fC [inline]\fP"Sets up the project'\&. 
+.PP
+Definition at line 919 of file SbGeoParameter\&.H'\&.
+.SS "\fBSBStatistics\fP* SBSolution::stat4CurrentBatch ()\fC [inline]\fP"
+.PP
+Definition at line 937 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBEstimator::dataUpdate(), SBEstimator::dataUpdateGlobalConstr(), SBEstimator::moveGlobalInfo(), SBEstimator::moveGlobalInfo_Old(), SBRunManager::process_m1(), SBEstimator::processConstr(), SBEstimator::processGlobalConstr(), SBEstimator::processObs(), SBEstimator::solveLocals(), and writeNormalEquationSystem()\&.
+.SS "\fBSBStatisticsList\fP& SBSolution::statByBatch ()\fC [inline]\fP"Returns the list of statistics per batch'\&. 
+.PP
+Definition at line 910 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBSolutionBrowser::lookupParameters(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportEOP(), SBRunManager::makeReportNormalEqs(), SBRunManager::makeReportTRFVariations(), SBRunManager::makeReportTroposphere(), SBSolutionBrowser::wGeneralInfo(), SBSolutionBrowser::wStochEOPPars(), SBSolutionBrowser::wStochSoPars(), and SBSolutionBrowser::wStochStPars()\&.
+.SS "\fBSBStatistics\fP* SBSolution::statGeneral ()\fC [inline]\fP"Returns general statistics'\&. 
+.PP
+Definition at line 908 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBEstimator::dataUpdate(), SBEstimator::dataUpdateGlobalConstr(), SBEstimator::moveGlobalInfo(), SBEstimator::moveGlobalInfo_Old(), operator<<(), SBRunManager::prepare4Run_m1(), SBRunManager::process_m1(), SBEstimator::processConstr(), SBEstimator::processGlobalConstr(), SBEstimator::processObs(), and SBSolutionBrowser::wGeneralInfo()\&.
+.SS "\fBSBStochParameterList\fP& SBSolution::stochastic ()\fC [inline]\fP"Returns the list of curent stochastic parameters'\&. 
+.PP
+Definition at line 916 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBSolutionBrowser::batch4StochEOPChanged(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBVLBIPreProcess::fillObsListView(), SBSolutionBrowser::lookupParameters(), SBRunManager::makeReportCRFVariations(), and SBRunManager::makeReportTRFVariations()\&.
+.SS "void SBSolution::submitGlobalParameters (\fBSBParameterList\fP *List, const \fBSBSymMatrix\fP *P)"
+.PP
+Definition at line 1581 of file SbGeoParameter\&.C'\&.
+.PP
+References SBParameterList::find(), Global, SBParameterList::inSort(), IsGlobalModified, IsModified, SBNamed::name(), SBParameter::s(), saveGlbCor(), SBParameter::setV(), SBParameter::update(), and SBParameter::v()\&.
+.PP
+Referenced by SBEstimator::solveGlobals()\&.
+.SS "void SBSolution::submitLocalParameters (\fBSBParameterList\fP *List, const \fBSBSymMatrix\fP *P)"
+.PP
+Definition at line 1611 of file SbGeoParameter\&.C'\&.
+.PP
+References CurrentBatch, SBParameterList::find(), SBParameterList::inSort(), IsLocalModified, IsModified, Local, SBNamed::name(), SBParameter::s(), saveLocCor(), saveLocPar(), SBParameter::setV(), and SBParameter::update()\&.
+.PP
+Referenced by SBVLBIPreProcess::preProcess(), and SBEstimator::solveLocals()\&.
+.SS "void SBSolution::submitStochasticParameters (\fBSBParameterList\fP *List, const \fBSBSymMatrix\fP *P)"
+.PP
+Definition at line 1644 of file SbGeoParameter\&.C'\&.
+.PP
+References SBStochParameterList::find(), SBStochParameterList::inSort(), IsModified, IsStochasticModified, SBNamed::name(), SBParameter::scale(), Stochastic, and SBStochParameter::update()\&.
+.PP
+Referenced by SBEstimator::solveStochs()\&.
+.SS "void SBSolution::updateParameter (\fBSBParameter\fP *P, const \fBSBMJD\fP &T, boolIsRealRun = \fCTRUE\fP)"
+.PP
+Definition at line 1674 of file SbGeoParameter\&.C'\&.
+.PP
+References SBParameter::e(), SBStochParameter::e(), SBParameterList::find(), SBStochParameterList::find(), Global, Local, SBNamed::name(), SBDerivation::num(), SBStochParameter::num(), SBParameter::setE(), SBDerivation::setNum(), SBDerivation::setTimes(), SBParameter::setV(), Stochastic, SBParameter::v(), and SBStochParameter::v()\&.
+.PP
+Referenced by SBSource::updateParameters(), SBEOP::updateParameters(), and SBStation::updateParameters()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString \fBSBSolution::CurrentBatch\fP\fC [private]\fP"
+.PP
+Definition at line 840 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by prepare4Batch(), and submitLocalParameters()\&.
+.SS "const QString \fBSBSolution::DirArc\fP\fC [static, private]\fP"
+.PP
+Definition at line 847 of file SbGeoParameter\&.H'\&.
+.SS "const QString \fBSBSolution::DirGlobal\fP\fC [static, private]\fP"
+.PP
+Definition at line 846 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by path2GlbDir()\&.
+.SS "const QString \fBSBSolution::DirLocal\fP\fC [static, private]\fP"
+.PP
+Definition at line 848 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by path2LocDir()\&.
+.SS "const QString \fBSBSolution::DirStoch\fP\fC [static, private]\fP"
+.PP
+Definition at line 849 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by path2StcDir()\&.
+.SS "\fBSBParameterList\fP \fBSBSolution::Global\fP\fC [private]\fP"
+.PP
+list of global parameters; 
+.PP
+Definition at line 833 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by getGlobalParameter4Report(), loadGlbPar(), reportGlobalParameters(), saveGlbPar(), SBSolution(), submitGlobalParameters(), and updateParameter()\&.
+.SS "bool \fBSBSolution::IsGlobalModified\fP\fC [private]\fP"
+.PP
+Definition at line 834 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by saveGlbPar(), SBSolution(), submitGlobalParameters(), and ~SBSolution()\&.
+.SS "bool \fBSBSolution::IsLocalModified\fP\fC [private]\fP"
+.PP
+Definition at line 839 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by saveLocPar(), SBSolution(), and submitLocalParameters()\&.
+.SS "bool \fBSBSolution::IsModified\fP\fC [private]\fP"
+.PP
+Definition at line 828 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBSolution(), submitGlobalParameters(), submitLocalParameters(), submitStochasticParameters(), and ~SBSolution()\&.
+.SS "bool \fBSBSolution::IsStochasticModified\fP\fC [private]\fP"
+.PP
+Definition at line 844 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by saveStcPar(), SBSolution(), and submitStochasticParameters()\&.
+.SS "\fBSBParameterList\fP \fBSBSolution::Local\fP\fC [private]\fP"
+.PP
+list of local parameters; 
+.PP
+Definition at line 838 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by dumpParameters(), loadLocPar(), reportLocalParameters(), saveLocPar(), SBSolution(), submitLocalParameters(), and updateParameter()\&.
+.SS "\fBSBProject\fP* \fBSBSolution::Prj\fP\fC [private]\fP"
+.PP
+project (not an owner of); 
+.PP
+Definition at line 825 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by deleteSolution(), dumpParameters(), guessParameterName(), loadStatistics(), path2GlbDir(), path2LocDir(), path2StcDir(), and SBSolution()\&.
+.SS "\fBSBStatistics\fP* \fBSBSolution::Stat4CurrentBatch\fP\fC [private]\fP"
+.PP
+Definition at line 829 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by prepare4Batch(), SBSolution(), and ~SBSolution()\&.
+.SS "\fBSBStatisticsList\fP \fBSBSolution::StatByBatch\fP\fC [private]\fP"
+.PP
+list of statistics info per a batch 
+.PP
+Definition at line 827 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by deleteSolution(), dumpParameters(), loadStatistics(), prepare4Batch(), saveStatistics(), SBSolution(), and ~SBSolution()\&.
+.SS "\fBSBStatistics\fP \fBSBSolution::StatGeneral\fP\fC [private]\fP"
+.PP
+general statistics information 
+.PP
+Definition at line 826 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by deleteSolution(), loadStatistics(), saveStatistics(), and SBSolution()\&.
+.SS "QString \fBSBSolution::StatisticsFile\fP\fC [private]\fP"
+.PP
+Definition at line 830 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by deleteSolution(), loadStatistics(), saveStatistics(), and SBSolution()\&.
+.SS "\fBSBStochParameterList\fP \fBSBSolution::Stochastic\fP\fC [private]\fP"
+.PP
+list of stochastic parameters; 
+.PP
+Definition at line 843 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by dumpParameters(), loadStcPar(), reportStochasticParameters(), saveStcPar(), SBSolution(), submitStochasticParameters(), and updateParameter()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

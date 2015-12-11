@@ -1,0 +1,176 @@
+.TH "SBHistory::SBHistoryEntry" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBHistory::SBHistoryEntry \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoObsVLBI\&.H>\fP
+.PP
+Inherits \fBSBDated\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBHistoryEntry\fP (int Version_=0, const \fBSBMJD\fP &MJD_=\fBTZero\fP, const QString &Text_='')"
+.br
+.ti -1c
+.RI "const QString & \fBtext\fP ()"
+.br
+.ti -1c
+.RI "int \fBversion\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual double \fBdate\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetDate\fP (double d_)"
+.br
+.ti -1c
+.RI "virtual QString \fBdate2str\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBDate\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBVersion\fP"
+.br
+.RI "\fIDatafile's version when the entry was entered'\&. \fP"
+.ti -1c
+.RI "QString \fBText\fP"
+.br
+.RI "\fIText of the history line'\&. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBHistoryEntry\fP &E)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBHistoryEntry\fP &E)"
+.br
+.ti -1c
+.RI "int \fBcompare_dated\fP (\fBSBDated\fP *d1, \fBSBDated\fP *d2)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBDated\fP &D)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBDated\fP &D)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+History entry'\&. Consist of date of creation, version and history text line'\&. The idea is stolen from MkIII DBH format'\&. 
+.PP
+Definition at line 539 of file SbGeoObsVLBI\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBHistory::SBHistoryEntry::SBHistoryEntry (intVersion_ = \fC0\fP, const \fBSBMJD\fP &MJD_ = \fC\fBTZero\fP\fP, const QString &Text_ = \fC''\fP)\fC [inline]\fP"A constructor'\&. Creates a copy of object'\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIVersion_\fP version; 
+.br
+\fIMJD_\fP date of history; 
+.br
+\fIText_\fP text'\&. 
+.RE
+.PP
+
+.PP
+Definition at line 550 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References Text, and Version\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBDated::ClassName () const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 164 of file SbGeo\&.H'\&.
+.SS "virtual double SBDated::date () const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 166 of file SbGeo\&.H'\&.
+.PP
+References SBDated::Date\&.
+.PP
+Referenced by SBBrowseHistory::deleteHistoryLine(), SBHistoryLI::key(), and SBHistoryLI::text()\&.
+.SS "QString SBDated::date2str ()\fC [virtual, inherited]\fP"
+.PP
+Definition at line 35 of file SbGeo\&.C'\&.
+.PP
+References SBDated::Date\&.
+.SS "virtual void SBDated::setDate (doubled_)\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 167 of file SbGeo\&.H'\&.
+.PP
+References SBDated::Date\&.
+.SS "const QString& SBHistory::SBHistoryEntry::text ()\fC [inline]\fP"Returns history's text'\&. 
+.PP
+Definition at line 553 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References Text\&.
+.PP
+Referenced by SBHistoryLI::key(), and SBHistoryLI::text()\&.
+.SS "int SBHistory::SBHistoryEntry::version ()\fC [inline]\fP"Returns history's version'\&. 
+.PP
+Definition at line 555 of file SbGeoObsVLBI\&.H'\&.
+.PP
+References Version\&.
+.PP
+Referenced by SBHistoryLI::key(), and SBHistoryLI::text()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "int compare_dated (\fBSBDated\fP *d1, \fBSBDated\fP *d2)\fC [friend, inherited]\fP"
+.PP
+Definition at line 170 of file SbGeo\&.H'\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBDated\fP &D)\fC [friend, inherited]\fP"
+.PP
+Definition at line 173 of file SbGeo\&.H'\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBHistoryEntry\fP &E)\fC [friend]\fP"
+.PP
+Definition at line 556 of file SbGeoObsVLBI\&.H'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBDated\fP &D)\fC [friend, inherited]\fP"
+.PP
+Definition at line 174 of file SbGeo\&.H'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBHistoryEntry\fP &E)\fC [friend]\fP"
+.PP
+Definition at line 558 of file SbGeoObsVLBI\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double \fBSBDated::Date\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 158 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBDated::date(), SBDated::date2str(), SBDated::SBDated(), and SBDated::setDate()\&.
+.SS "QString \fBSBHistory::SBHistoryEntry::Text\fP\fC [private]\fP"
+.PP
+Text of the history line'\&. 
+.PP
+Definition at line 542 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by SBHistoryEntry(), and text()\&.
+.SS "int \fBSBHistory::SBHistoryEntry::Version\fP\fC [private]\fP"
+.PP
+Datafile's version when the entry was entered'\&. 
+.PP
+Definition at line 541 of file SbGeoObsVLBI\&.H'\&.
+.PP
+Referenced by SBHistoryEntry(), and version()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

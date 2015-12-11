@@ -1,0 +1,92 @@
+.TH "SbVector.H" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SbVector.H \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <config\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include 'SbGeneral\&.H'\fP
+.br
+\fC#include 'SbGeo\&.H'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSBVector\fP"
+.br
+.ti -1c
+.RI "class \fBSBMatrix\fP"
+.br
+.ti -1c
+.RI "class \fBSBUpperMatrix\fP"
+.br
+.ti -1c
+.RI "class \fBSBSymMatrix\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBMatrix\fP \fBoperator+\fP (const \fBSBMatrix\fP &M1, const \fBSBMatrix\fP &M2)"
+.br
+.ti -1c
+.RI "\fBSBMatrix\fP \fBoperator-\fP (const \fBSBMatrix\fP &M1, const \fBSBMatrix\fP &M2)"
+.br
+.ti -1c
+.RI "\fBSBUpperMatrix\fP \fBoperator+\fP (const \fBSBUpperMatrix\fP &M1, const \fBSBUpperMatrix\fP &M2)"
+.br
+.ti -1c
+.RI "\fBSBUpperMatrix\fP \fBoperator-\fP (const \fBSBUpperMatrix\fP &M1, const \fBSBUpperMatrix\fP &M2)"
+.br
+.ti -1c
+.RI "\fBSBSymMatrix\fP \fBoperator+\fP (const \fBSBSymMatrix\fP &M1, const \fBSBSymMatrix\fP &M2)"
+.br
+.ti -1c
+.RI "\fBSBSymMatrix\fP \fBoperator-\fP (const \fBSBSymMatrix\fP &M1, const \fBSBSymMatrix\fP &M2)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBSBMatrix\fP operator+ (const \fBSBMatrix\fP &M1, const \fBSBMatrix\fP &M2)"Returns a sum of two matrices'\&. 
+.PP
+Definition at line 1133 of file SbVector\&.H'\&.
+.PP
+References SBMatrix::ClassName(), SBLog::ERR, Log, SBLog::MATRIX, SBNamed::name(), SBMatrix::NCol, SBMatrix::NRow, and SBLog::write()\&.
+.SS "\fBSBUpperMatrix\fP operator+ (const \fBSBUpperMatrix\fP &M1, const \fBSBUpperMatrix\fP &M2)"Returns a sum of two matrices'\&. 
+.PP
+Definition at line 1167 of file SbVector\&.H'\&.
+.PP
+References SBUpperMatrix::ClassName(), SBLog::ERR, Log, SBLog::MATRIX, SBNamed::name(), SBMatrix::NCol, SBMatrix::NRow, and SBLog::write()\&.
+.SS "\fBSBSymMatrix\fP operator+ (const \fBSBSymMatrix\fP &M1, const \fBSBSymMatrix\fP &M2)"Returns a sum of two matrices'\&. 
+.PP
+Definition at line 1201 of file SbVector\&.H'\&.
+.PP
+References SBSymMatrix::ClassName(), SBLog::ERR, Log, SBLog::MATRIX, SBNamed::name(), SBMatrix::NCol, SBMatrix::NRow, and SBLog::write()\&.
+.SS "\fBSBMatrix\fP operator- (const \fBSBMatrix\fP &M1, const \fBSBMatrix\fP &M2)"Returns a difference of two matrices'\&. 
+.PP
+Definition at line 1146 of file SbVector\&.H'\&.
+.PP
+References SBMatrix::ClassName(), SBLog::ERR, Log, SBLog::MATRIX, SBNamed::name(), SBMatrix::NCol, SBMatrix::NRow, and SBLog::write()\&.
+.SS "\fBSBUpperMatrix\fP operator- (const \fBSBUpperMatrix\fP &M1, const \fBSBUpperMatrix\fP &M2)"Returns a difference of two matrices'\&. 
+.PP
+Definition at line 1180 of file SbVector\&.H'\&.
+.PP
+References SBUpperMatrix::ClassName(), SBLog::ERR, Log, SBLog::MATRIX, SBNamed::name(), SBMatrix::NCol, SBMatrix::NRow, and SBLog::write()\&.
+.SS "\fBSBSymMatrix\fP operator- (const \fBSBSymMatrix\fP &M1, const \fBSBSymMatrix\fP &M2)"Returns a difference of two matrices'\&. 
+.PP
+Definition at line 1214 of file SbVector\&.H'\&.
+.PP
+References SBSymMatrix::ClassName(), SBLog::ERR, Log, SBLog::MATRIX, SBNamed::name(), SBMatrix::NCol, SBMatrix::NRow, and SBLog::write()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

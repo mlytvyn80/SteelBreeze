@@ -1,0 +1,93 @@
+.TH "SBCablesBrowser" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBCablesBrowser \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIPreProcessing\&.H>\fP
+.PP
+Inherits \fBQDialog\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBCablesBrowser\fP (\fBSBStationInfoList\fP *, \fBSBParameterList\fP *, const QString &, \fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "virtual \fB~SBCablesBrowser\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBreject\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBStationInfoList\fP \fBStations\fP"
+.br
+.ti -1c
+.RI "\fBSBParameterList\fP * \fBCables\fP"
+.br
+.ti -1c
+.RI "\fBQListView\fP * \fBCablesLV\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 87 of file SbIPreProcessing\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBCablesBrowser::SBCablesBrowser (\fBSBStationInfoList\fP *Stations_, \fBSBParameterList\fP *Cables_, const QString &SessionName_, \fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 262 of file SbIPreProcessing\&.C'\&.
+.PP
+References Cables, CablesLV, ClassName(), SBLog::ERR, SBStationInfoList::find(), Log, SBLog::PREPROC, reject(), SBStationID::setID(), Stations, and SBLog::write()\&.
+.SS "SBCablesBrowser::~SBCablesBrowser ()\fC [virtual]\fP"
+.PP
+Definition at line 342 of file SbIPreProcessing\&.C'\&.
+.PP
+References Cables\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBCablesBrowser::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 94 of file SbIPreProcessing\&.H'\&.
+.PP
+Referenced by SBCablesBrowser()\&.
+.SS "void SBCablesBrowser::reject ()\fC [inline, protected, slot]\fP"
+.PP
+Definition at line 99 of file SbIPreProcessing\&.H'\&.
+.PP
+Referenced by SBCablesBrowser()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSBParameterList\fP* \fBSBCablesBrowser::Cables\fP\fC [private]\fP"
+.PP
+Definition at line 103 of file SbIPreProcessing\&.H'\&.
+.PP
+Referenced by SBCablesBrowser(), and ~SBCablesBrowser()\&.
+.SS "\fBQListView\fP* \fBSBCablesBrowser::CablesLV\fP\fC [private]\fP"
+.PP
+Definition at line 106 of file SbIPreProcessing\&.H'\&.
+.PP
+Referenced by SBCablesBrowser()\&.
+.SS "\fBSBStationInfoList\fP \fBSBCablesBrowser::Stations\fP\fC [private]\fP"
+.PP
+Definition at line 99 of file SbIPreProcessing\&.H'\&.
+.PP
+Referenced by SBCablesBrowser()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

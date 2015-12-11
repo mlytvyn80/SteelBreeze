@@ -1,0 +1,176 @@
+.TH "SbVector.C" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SbVector.C \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SbVector\&.H'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBVector\fP &V)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBVector\fP &V)"
+.br
+.ti -1c
+.RI "\fBSBMatrix\fP \fBoperator*\fP (const \fBSBMatrix\fP &M1, const \fBSBMatrix\fP &M2)"
+.br
+.ti -1c
+.RI "\fBSBMatrix\fP \fBmatT_x_mat\fP (const \fBSBMatrix\fP &M1, const \fBSBMatrix\fP &M2)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBMatrix\fP &M)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBMatrix\fP &M)"
+.br
+.ti -1c
+.RI "\fBSBUpperMatrix\fP \fBoperator*\fP (const \fBSBUpperMatrix\fP &M1, const \fBSBUpperMatrix\fP &M2)"
+.br
+.ti -1c
+.RI "\fBSBSymMatrix\fP \fBmatT_x_mat\fP (const \fBSBUpperMatrix\fP &M1, const \fBSBUpperMatrix\fP &M2)"
+.br
+.ti -1c
+.RI "\fBSBSymMatrix\fP & \fBRRT\fP (\fBSBSymMatrix\fP &M, const \fBSBUpperMatrix\fP &R)"
+.br
+.ti -1c
+.RI "\fBSBSymMatrix\fP & \fBRTR\fP (\fBSBSymMatrix\fP &M, const \fBSBUpperMatrix\fP &R)"
+.br
+.ti -1c
+.RI "\fBSBVector\fP & \fBSolve\fP (const \fBSBUpperMatrix\fP &R, \fBSBVector\fP &x, const \fBSBVector\fP &z)"
+.br
+.ti -1c
+.RI "\fBSBUpperMatrix\fP \fBoperator~\fP (const \fBSBUpperMatrix\fP &R)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBUpperMatrix\fP &M)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBUpperMatrix\fP &M)"
+.br
+.ti -1c
+.RI "\fBSBSymMatrix\fP \fBoperator*\fP (const \fBSBSymMatrix\fP &M1, const \fBSBSymMatrix\fP &M2)"
+.br
+.ti -1c
+.RI "\fBSBSymMatrix\fP \fBQuadraticForm\fP (const \fBSBSymMatrix\fP &P, const \fBSBMatrix\fP &A)"
+.br
+.ti -1c
+.RI "\fBSBSymMatrix\fP \fBQuadraticForm\fP (const \fBSBSymMatrix\fP &P, const \fBSBUpperMatrix\fP &R)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBSymMatrix\fP &M)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBSymMatrix\fP &M)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBSBMatrix\fP matT_x_mat (const \fBSBMatrix\fP &M1, const \fBSBMatrix\fP &M2)"Returns a product of a transposed matrix and a matrix'\&. This function is equal to `M1'\&.T()*M2', but implements a more efficient realization'\&. 
+.PP
+Definition at line 116 of file SbVector\&.C'\&.
+.PP
+References SBMatrix::B, SBMatrix::ClassName(), SBLog::ERR, Log, SBLog::MATRIX, SBNamed::name(), SBMatrix::NCol, SBMatrix::NRow, and SBLog::write()\&.
+.SS "\fBSBSymMatrix\fP matT_x_mat (const \fBSBUpperMatrix\fP &M1, const \fBSBUpperMatrix\fP &M2)"Returns a product of a transposed matrix and a matrix'\&. This function is equal to `M1'\&.T()*M2', but implements a more efficient realization'\&. 
+.PP
+Definition at line 195 of file SbVector\&.C'\&.
+.PP
+References SBMatrix::B, SBUpperMatrix::ClassName(), SBLog::ERR, Log, SBLog::MATRIX, SBNamed::name(), SBMatrix::NCol, SBMatrix::NRow, and SBLog::write()\&.
+.SS "\fBSBMatrix\fP operator* (const \fBSBMatrix\fP &M1, const \fBSBMatrix\fP &M2)"Returns product of two matrices'\&. 
+.PP
+Definition at line 98 of file SbVector\&.C'\&.
+.PP
+References SBMatrix::B, SBMatrix::ClassName(), SBLog::ERR, Log, SBLog::MATRIX, SBNamed::name(), SBMatrix::NCol, SBMatrix::NRow, and SBLog::write()\&.
+.SS "\fBSBUpperMatrix\fP operator* (const \fBSBUpperMatrix\fP &M1, const \fBSBUpperMatrix\fP &M2)"Returns product of two matrices'\&. 
+.PP
+Definition at line 177 of file SbVector\&.C'\&.
+.PP
+References SBMatrix::B, SBUpperMatrix::ClassName(), SBLog::ERR, Log, SBLog::MATRIX, SBNamed::name(), SBMatrix::NCol, SBMatrix::NRow, and SBLog::write()\&.
+.SS "\fBSBSymMatrix\fP operator* (const \fBSBSymMatrix\fP &M1, const \fBSBSymMatrix\fP &M2)"Returns product of two matrices'\&. 
+.PP
+Definition at line 445 of file SbVector\&.C'\&.
+.PP
+References SBSymMatrix::at(), SBSymMatrix::ClassName(), SBLog::ERR, Log, SBLog::MATRIX, SBUpperMatrix::n(), SBNamed::name(), SBMatrix::NCol, SBMatrix::NRow, and SBLog::write()\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBVector\fP &V)"
+.PP
+Definition at line 42 of file SbVector\&.C'\&.
+.PP
+References SBVector::B, and SBVector::N\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBMatrix\fP &M)"
+.PP
+Definition at line 135 of file SbVector\&.C'\&.
+.PP
+References SBMatrix::B, SBMatrix::NCol, and SBMatrix::NRow\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBUpperMatrix\fP &M)"
+.PP
+Definition at line 352 of file SbVector\&.C'\&.
+.PP
+References SBMatrix::B, and SBMatrix::NCol\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBSymMatrix\fP &M)"
+.PP
+Definition at line 532 of file SbVector\&.C'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBVector\fP &V)"
+.PP
+Definition at line 48 of file SbVector\&.C'\&.
+.PP
+References SBVector::B, and SBVector::N\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBMatrix\fP &M)"
+.PP
+Definition at line 143 of file SbVector\&.C'\&.
+.PP
+References SBMatrix::B, SBLog::ERR, SBLog::IO, Log, SBLog::MATRIX, SBMatrix::NCol, SBMatrix::NRow, and SBLog::write()\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBUpperMatrix\fP &M)"
+.PP
+Definition at line 360 of file SbVector\&.C'\&.
+.PP
+References SBMatrix::B, SBLog::ERR, SBLog::IO, Log, SBLog::MATRIX, SBMatrix::NCol, SBMatrix::NRow, and SBLog::write()\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBSymMatrix\fP &M)"
+.PP
+Definition at line 537 of file SbVector\&.C'\&.
+.SS "\fBSBUpperMatrix\fP operator~ (const \fBSBUpperMatrix\fP &R)"Returns inversed matrix'\&. This is time consumed operation, shouldn't use in ordinary operations'\&. M*~M==~M*M==1 (original matrix doesn't change)'\&. 
+.PP
+Definition at line 323 of file SbVector\&.C'\&.
+.PP
+References SBUpperMatrix::at(), SBUpperMatrix::ClassName(), SBLog::ERR, Log, SBLog::MATRIX, SBUpperMatrix::n(), SBNamed::name(), and SBLog::write()\&.
+.SS "\fBSBSymMatrix\fP QuadraticForm (const \fBSBSymMatrix\fP &P, const \fBSBMatrix\fP &A)"Calculates the product of `A*P*A'\&.T()''\&. Returns symmetric matrix'\&. 
+.PP
+Definition at line 468 of file SbVector\&.C'\&.
+.PP
+References SBMatrix::at(), SBSymMatrix::at(), SBSymMatrix::ClassName(), SBLog::ERR, Log, SBLog::MATRIX, SBNamed::name(), SBMatrix::NCol, SBMatrix::NRow, and SBLog::write()\&.
+.PP
+Referenced by SBEstimator::solveLocals(), and SBEstimator::solveStochs()\&.
+.SS "\fBSBSymMatrix\fP QuadraticForm (const \fBSBSymMatrix\fP &P, const \fBSBUpperMatrix\fP &R)"Calculates the product of `A*P*A'\&.T()''\&. Returns symmetric matrix'\&. 
+.PP
+Definition at line 500 of file SbVector\&.C'\&.
+.PP
+References SBUpperMatrix::at(), SBSymMatrix::at(), SBSymMatrix::ClassName(), SBLog::ERR, Log, SBLog::MATRIX, SBNamed::name(), SBMatrix::NCol, SBMatrix::NRow, SBMatrix::nRow(), and SBLog::write()\&.
+.SS "\fBSBSymMatrix\fP& RRT (\fBSBSymMatrix\fP &M, const \fBSBUpperMatrix\fP &R)"Returns a product of a `R*R'\&.T()' -- a matrix and its transposed one'\&. This function is equal to `M1*M1'\&.T()', but [should] implements a more efficient realization'\&. 
+.PP
+Definition at line 246 of file SbVector\&.C'\&.
+.PP
+References SBUpperMatrix::at(), SBSymMatrix::ClassName(), SBLog::ERR, Log, SBLog::MATRIX, SBNamed::name(), SBMatrix::NCol, SBMatrix::NRow, and SBLog::write()\&.
+.PP
+Referenced by SBFilterModel::analyseSeries(), SBEstimator::solveGlobals(), SBEstimator::solveLocals(), and SBEstimator::solveStochs()\&.
+.SS "\fBSBSymMatrix\fP& RTR (\fBSBSymMatrix\fP &M, const \fBSBUpperMatrix\fP &R)"Returns a product of a `R'\&.T()*R' -- a transposed matrix and the one'\&. This function is equal to `M1'\&.T()*M1', but [should] implements a more efficient realization'\&. 
+.PP
+Definition at line 268 of file SbVector\&.C'\&.
+.PP
+References SBUpperMatrix::at(), SBSymMatrix::ClassName(), SBLog::ERR, Log, SBLog::MATRIX, SBNamed::name(), SBMatrix::NCol, SBMatrix::NRow, and SBLog::write()\&.
+.PP
+Referenced by writeNormalEquationSystem()\&.
+.SS "\fBSBVector\fP& Solve (const \fBSBUpperMatrix\fP &R, \fBSBVector\fP &x, const \fBSBVector\fP &z)"Solves an equation `R*x=z''\&. Returns vector x'\&. The order of arguments is the same as in the equation: R, x and z'\&. 
+.PP
+Definition at line 290 of file SbVector\&.C'\&.
+.PP
+References SBVector::at(), SBUpperMatrix::at(), SBUpperMatrix::ClassName(), SBLog::ERR, Log, SBLog::MATRIX, SBVector::N, SBNamed::name(), SBMatrix::NRow, and SBLog::write()\&.
+.PP
+Referenced by SBFilterModel::analyseSeries(), SBMEM::calcA_LSBackward(), SBMEM::calcA_LSFnB(), SBMEM::calcA_LSForward(), SBEstimator::solveGlobals(), SBEstimator::solveLocals(), and SBEstimator::solveStochs()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

@@ -1,0 +1,633 @@
+.TH "SBProject" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBProject \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoProject\&.H>\fP
+.PP
+Inherits \fBSBNamed\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBProject\fP (const QString &)"
+.br
+.ti -1c
+.RI "virtual \fB~SBProject\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "\fBSBConfig\fP & \fBcfg\fP ()"
+.br
+.ti -1c
+.RI "const QString & \fBcomments\fP () const "
+.br
+.ti -1c
+.RI "int \fBversion\fP () const "
+.br
+.ti -1c
+.RI "\fBSBHistory\fP * \fBhistory\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetCfg\fP (const \fBSBConfig\fP &Cfg_)"
+.br
+.ti -1c
+.RI "void \fBincVersion\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddHistoryLine\fP (const QString &Txt_)"
+.br
+.ti -1c
+.RI "bool \fBdelHistoryLine\fP (const \fBSBHistory::SBHistoryEntry\fP *E_)"
+.br
+.ti -1c
+.RI "void \fBsetComments\fP (const QString &Comments_)"
+.br
+.ti -1c
+.RI "const \fBSBParametersDesc\fP & \fBp\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetP\fP (const \fBSBParametersDesc\fP &P_)"
+.br
+.ti -1c
+.RI "void \fBsetAllPars2Type\fP (\fBSBParameterCfg::PType\fP Type)"
+.br
+.ti -1c
+.RI "\fBSBVLBISesInfoList\fP * \fBVLBIsessionList\fP ()"
+.br
+.ti -1c
+.RI "\fBSBStationInfoList\fP * \fBstationList\fP ()"
+.br
+.ti -1c
+.RI "\fBSBSourceInfoList\fP * \fBsourceList\fP ()"
+.br
+.ti -1c
+.RI "\fBSBBaseInfoList\fP * \fBbaseList\fP ()"
+.br
+.ti -1c
+.RI "\fBSBVLBISesInfo\fP * \fBsessionByName\fP (const char *Name_)"
+.br
+.ti -1c
+.RI "\fBSBStationInfo\fP * \fBstationByAka\fP (const char *Aka_)"
+.br
+.ti -1c
+.RI "\fBSBSourceInfo\fP * \fBsourceByAka\fP (const char *Aka_)"
+.br
+.ti -1c
+.RI "\fBSBBaseInfo\fP * \fBbaseByAka\fP (const char *Aka_)"
+.br
+.ti -1c
+.RI "bool \fBaddSession\fP (const \fBSBVLBISet\fP *, const \fBSBVLBISesInfo\fP *)"
+.br
+.ti -1c
+.RI "bool \fBdelSession\fP (const \fBSBVLBISet\fP *, const \fBSBVLBISesInfo\fP *)"
+.br
+.ti -1c
+.RI "int \fBnumObs\fP () const "
+.br
+.ti -1c
+.RI "int \fBnumVLBISessions\fP () const "
+.br
+.ti -1c
+.RI "int \fBnumStations\fP () const "
+.br
+.ti -1c
+.RI "int \fBnumSources\fP () const "
+.br
+.ti -1c
+.RI "int \fBnumBases\fP () const "
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP & \fBtStart\fP () const "
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP & \fBtFinis\fP () const "
+.br
+.ti -1c
+.RI "double \fBtInterval\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBclearRMSs\fP ()"
+.br
+.ti -1c
+.RI "const QString & \fBname\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetName\fP (const QString &Name_)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBfillDicts\fP ()"
+.br
+.ti -1c
+.RI "void \fBfillSessionDict\fP (int=5)"
+.br
+.ti -1c
+.RI "void \fBfillStationDict\fP (int=5)"
+.br
+.ti -1c
+.RI "void \fBfillSourceDict\fP (int=5)"
+.br
+.ti -1c
+.RI "void \fBfillBaseDict\fP (int=5)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBConfig\fP \fBCfg\fP"
+.br
+.RI "\fIproject's config \fP"
+.ti -1c
+.RI "int \fBVersion\fP"
+.br
+.RI "\fIproject's version \fP"
+.ti -1c
+.RI "\fBSBHistory\fP \fBHistory\fP"
+.br
+.RI "\fIproject's history \fP"
+.ti -1c
+.RI "QString \fBComments\fP"
+.br
+.RI "\fIsome comments \fP"
+.ti -1c
+.RI "\fBSBVLBISesInfoList\fP \fBVLBISessionList\fP"
+.br
+.RI "\fIlist of VLBI sessions \fP"
+.ti -1c
+.RI "QDict< \fBSBVLBISesInfo\fP > * \fBSessionByName\fP"
+.br
+.ti -1c
+.RI "\fBSBStationInfoList\fP \fBStationList\fP"
+.br
+.RI "\fIlist of stations \fP"
+.ti -1c
+.RI "QDict< \fBSBStationInfo\fP > * \fBStationByAka\fP"
+.br
+.ti -1c
+.RI "\fBSBSourceInfoList\fP \fBSourceList\fP"
+.br
+.RI "\fIlist of sources \fP"
+.ti -1c
+.RI "QDict< \fBSBSourceInfo\fP > * \fBSourceByAka\fP"
+.br
+.ti -1c
+.RI "\fBSBBaseInfoList\fP \fBBaseList\fP"
+.br
+.RI "\fIlist of bases \fP"
+.ti -1c
+.RI "QDict< \fBSBBaseInfo\fP > * \fBBaseByAka\fP"
+.br
+.ti -1c
+.RI "int \fBNumObs\fP"
+.br
+.ti -1c
+.RI "QString \fBName\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBProject\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBProject\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "int \fBcmp\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBNamed\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Project'\&. 
+.PP
+Definition at line 328 of file SbGeoProject\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBProject::SBProject (const QString &Name_)"A constructor'\&. 
+.PP
+Definition at line 389 of file SbGeoProject\&.C'\&.
+.PP
+References BaseByAka, BaseList, NumObs, SessionByName, SourceByAka, SourceList, StationByAka, StationList, Version, and VLBISessionList\&.
+.SS "SBProject::~SBProject ()\fC [virtual]\fP"A destructor'\&. 
+.PP
+Definition at line 411 of file SbGeoProject\&.C'\&.
+.PP
+References BaseByAka, SessionByName, SourceByAka, and StationByAka\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBProject::addHistoryLine (const QString &Txt_)\fC [inline]\fP"
+.PP
+Definition at line 375 of file SbGeoProject\&.H'\&.
+.PP
+References SBHistory::addHistoryLine(), History, and Version\&.
+.PP
+Referenced by SBProjectCreate::createProject()\&.
+.SS "bool SBProject::addSession (const \fBSBVLBISet\fP *Wvlbi, const \fBSBVLBISesInfo\fP *SI)"Adds a session to the list of sessions, returns TRUE if success'\&. 
+.PP
+Definition at line 474 of file SbGeoProject\&.C'\&.
+.PP
+References SBObjectObsInfo::aka(), BaseByAka, BaseList, SBVLBISession::baseList(), ClassName(), SBVLBISesInfo::clearRMSs(), SBLog::DATA, SBLog::DBG, SBAttributed::delAttr(), fillBaseDict(), fillSessionDict(), fillSourceDict(), fillStationDict(), SBVLBISet::loadSession(), Log, SBNamed::name(), SBVLBISesInfo::notValid, SBObjectObsInfo::num(), SessionByName, SBObjectObsInfo::setNum(), SourceByAka, SourceList, SBVLBISession::sourceList(), StationByAka, StationList, SBVLBISession::stationList(), VLBISessionList, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by SBProjectCreate::createProject(), SBVLBIPreProcess::currentSesChange(), and SBVLBIPreProcess::preProcess()\&.
+.SS "\fBSBBaseInfo\fP* SBProject::baseByAka (const char *Aka_)\fC [inline]\fP"Returns BaseInfo corresponding to the name; 
+.PP
+Definition at line 401 of file SbGeoProject\&.H'\&.
+.PP
+References BaseByAka\&.
+.SS "\fBSBBaseInfoList\fP* SBProject::baseList ()\fC [inline]\fP"Returns list of the bases; 
+.PP
+Definition at line 392 of file SbGeoProject\&.H'\&.
+.PP
+References BaseList\&.
+.PP
+Referenced by SBObsVLBIEntry::isEligible(), SBObsVLBIEntry::process(), and SBProjectEdit::SBProjectEdit()\&.
+.SS "\fBSBConfig\fP& SBProject::cfg ()\fC [inline]\fP"
+.PP
+Definition at line 368 of file SbGeoProject\&.H'\&.
+.PP
+References Cfg\&.
+.PP
+Referenced by SBDelay::calc(), SBDelay::calcDerivatives(), SBStation::calcDisplacement(), collectListOfSINEXParameters(), collectListOfSINEXParameters4NEQ(), SBRunManager::constrainClocks(), SBRunManager::constraintEOP(), SBRunManager::fillParameterList(), SBEstimator::finisLocal(), SBRunManager::finisRun_m1(), SBStation::getGlobalParameters4Report(), SBStation::getGlobalParameters4Report4Axel(), SBStation::getGlobalParameters4UpdateTRF(), SBEOP::interpolateEOPs(), SBObsVLBIEntry::isEligible(), SBRunManager::makeReportEOP(), SBRunManager::makeReports(), SBRunManager::makeReportTroposphere(), operator<<(), SBObsVLBIEntry::process(), SBRunManager::process_m1(), SBModelEditor::SBModelEditor(), SBRunManager::SBRunManager(), sinex_tro_TropDescriptionBlock(), SBStation::vModel(), and writeNormalEquationSystem()\&.
+.SS "virtual QString SBProject::ClassName () const\fC [inline, virtual]\fP"Refers to a class name (debug info)'\&. 
+.PP
+Reimplemented from \fBSBNamed\fP'\&.
+.PP
+Definition at line 363 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by addSession(), delSession(), fillBaseDict(), fillSessionDict(), fillSourceDict(), and fillStationDict()\&.
+.SS "virtual void SBProject::clearRMSs ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 431 of file SbGeoProject\&.H'\&.
+.PP
+References BaseList, SBStationInfoList::clearRMSs(), SBBaseInfoList::clearRMSs(), SBSourceInfoList::clearRMSs(), SourceList, and StationList\&.
+.PP
+Referenced by SBRunManager::prepare4Run_m1()\&.
+.SS "const QString& SBProject::comments () const\fC [inline]\fP"
+.PP
+Definition at line 369 of file SbGeoProject\&.H'\&.
+.PP
+References Comments\&.
+.PP
+Referenced by SBProjectEdit::comments()\&.
+.SS "bool SBProject::delHistoryLine (const \fBSBHistory::SBHistoryEntry\fP *E_)\fC [inline]\fP"
+.PP
+Definition at line 377 of file SbGeoProject\&.H'\&.
+.PP
+References History\&.
+.SS "bool SBProject::delSession (const \fBSBVLBISet\fP *Wvlbi, const \fBSBVLBISesInfo\fP *SI)"Deletes a session from the list of sessions, returns TRUE if success'\&. 
+.PP
+Definition at line 543 of file SbGeoProject\&.C'\&.
+.PP
+References SBObjectObsInfo::aka(), BaseByAka, BaseList, SBVLBISession::baseList(), ClassName(), SBLog::DATA, SBLog::DBG, SBVLBISet::loadSession(), Log, SBNamed::name(), SBObjectObsInfo::num(), SessionByName, SBObjectObsInfo::setNum(), SourceByAka, SourceList, SBVLBISession::sourceList(), StationByAka, StationList, SBVLBISession::stationList(), VLBISessionList, SBLog::write(), and SBLog::WRN\&.
+.PP
+Referenced by SBProjectEdit::delSession()\&.
+.SS "void SBProject::fillBaseDict (intN = \fC5\fP)\fC [protected]\fP"
+.PP
+Definition at line 461 of file SbGeoProject\&.C'\&.
+.PP
+References BaseByAka, BaseList, ClassName(), SBLog::DATA, SBLog::ERR, Log, and SBLog::write()\&.
+.PP
+Referenced by addSession(), and fillDicts()\&.
+.SS "void SBProject::fillDicts ()\fC [inline, protected]\fP"
+.PP
+Definition at line 349 of file SbGeoProject\&.H'\&.
+.PP
+References fillBaseDict(), fillSessionDict(), fillSourceDict(), and fillStationDict()\&.
+.SS "void SBProject::fillSessionDict (intN = \fC5\fP)\fC [protected]\fP"
+.PP
+Definition at line 419 of file SbGeoProject\&.C'\&.
+.PP
+References ClassName(), SBLog::DATA, SBLog::ERR, Log, NumObs, SessionByName, VLBISessionList, and SBLog::write()\&.
+.PP
+Referenced by addSession(), and fillDicts()\&.
+.SS "void SBProject::fillSourceDict (intN = \fC5\fP)\fC [protected]\fP"
+.PP
+Definition at line 448 of file SbGeoProject\&.C'\&.
+.PP
+References ClassName(), SBLog::DATA, SBLog::ERR, Log, SourceByAka, SourceList, and SBLog::write()\&.
+.PP
+Referenced by addSession(), and fillDicts()\&.
+.SS "void SBProject::fillStationDict (intN = \fC5\fP)\fC [protected]\fP"
+.PP
+Definition at line 435 of file SbGeoProject\&.C'\&.
+.PP
+References ClassName(), SBLog::DATA, SBLog::ERR, Log, StationByAka, StationList, and SBLog::write()\&.
+.PP
+Referenced by addSession(), and fillDicts()\&.
+.SS "\fBSBHistory\fP* SBProject::history ()\fC [inline]\fP"
+.PP
+Definition at line 371 of file SbGeoProject\&.H'\&.
+.PP
+References History\&.
+.PP
+Referenced by SBProjectEdit::SBProjectEdit()\&.
+.SS "void SBProject::incVersion ()\fC [inline]\fP"
+.PP
+Definition at line 374 of file SbGeoProject\&.H'\&.
+.PP
+References Version\&.
+.PP
+Referenced by SBProjectEdit::histVerInced()\&.
+.SS "const QString& SBNamed::name () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 215 of file SbGeo\&.H'\&.
+.PP
+References SBNamed::Name\&.
+.PP
+Referenced by SBVLBINetEntryEditor::accept(), SBSourceEditor::acquireData(), SBSiteEditor::acquireData(), SBStationEditor::acquireData(), SBStochParameter::addPar(), addSession(), SBSite::addStation(), SBParameterList::append(), SBVector::at(), SBMatrix::at(), SBUpperMatrix::at(), SBSymMatrix::at(), SBStation::axisOffsetLenght(), SBSolutionBrowser::batch4StochEOPChanged(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBEphem::calc(), SBStation::calcDisplacement(), SBSetupDialog::chkPacker(), SBVLBIPreProcess::clearPars(), SBEstimator::collectContStochs4NextBatch(), collectListOfSINEXParameters(), collectListOfSINEXParameters4NEQ(), SB_CRF::collectObjAliases(), SBObsVLBIStatistics::collectStatistics(), SBRunManager::constraintSourceCoord(), SBRunManager::constraintStationCoord(), SBRunManager::constraintStationVeloc(), SBSource::createParameters(), SBProjectCreate::createProject(), SBTestFrame::createWidget4Test(), SBTestEphem::createWidget4Test(), SBVLBIPreProcess::currentSesChange(), SBPlotArea::defineAreas(), SBSiteEditor::deleteEntry(), SBVLBISetView::deleteEntry(), SBStuffSources::deleteEntryS(), SBStuffStations::deleteEntryS(), SBSolution::deleteSolution(), SBSetupDialog::delInst(), SBSetupDialog::delPacker(), SBEstimator::Group::delParameter(), SBProjectEdit::delSession(), delSession(), SBSite::delStation(), SBPlateMotion::displacement(), SBStuffAplo::draw(), SBPlotArea::drawFrames(), SBStochParameter::dump2File(), SBSolution::dumpParameters(), SBBaseInfo::dumpUserInfo(), SBSourceInfo::dumpUserInfo(), SBVLBISession::dumpUserInfo(), SBVLBISet::dumpUserInfo(), SBParametersEditor::editParameter(), SBAploChunk::fillDict(), SBVLBISet::fillDicts(), SBVLBIPreProcess::fillObsListView(), SBVLBIPreProcess::fillSessAttr(), SBCatalog::find(), SBSolution::getGlobalParameter4Report(), SBAploChunk::import(), SBVLBISet::import(), SBEcc::importEccDat(), SBAploEphem::importHPS(), SBMaster::importMF(), SBProjectCreate::init(), SBFCList::insert(), SBInstitutionList::insert(), SBCatalog::insert(), SBParameterList::inSort(), SBCatalog::inSort(), SBStochParameterList::inSort(), SB_TRF::inSort(), SBObsVLBIStatSrcLI::key(), SBParameterLI::key(), SBSourceListItem::key(), SBStationListItem::key(), SBObsVLBIStatStaLI::key(), SBVLBISesInfoLI::key(), SBSiteListItem::key(), SBObsVLBIStatRecordLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBAploEntryLI::key(), SBTestStationLI::key(), SBStationImport::loadNScodes(), SBStationImport::loadOLoad(), SBSolution::loadStatistics(), SBRunManager::loadVLBISession_m1(), SBRunManager::loadVLBISessions_m2(), SB_CRF::lookupNearest(), SB_TRF::lookupNearest(), SBSolutionBrowser::lookupParameters(), SBSourceEditor::makeApply(), SBSiteEditor::makeApply(), SBStationEditor::makeApply(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportEOP(), SBRunManager::makeReportMaps(), SBRunManager::makeReportNormalEqs(), SBRunManager::makeReports(), SBRunManager::makeReportSessionStatistics(), SBRunManager::makeReportTRF(), SBRunManager::makeReportTRFVariations(), SBRunManager::makeReportTroposphere(), SBEstimator::mapContStochs4NewBatch(), SBMaster::mapFiles(), SBMaster::mapRecords(), matT_x_mat(), SBEstimator::moveGlobalInfo(), SBEstimator::moveGlobalInfo_Old(), SBFileConv::open4In(), SBFileConv::open4Out(), SBEphem::openFile(), SBVector::operator()(), SBSolidTideLd::operator()(), SBTideLd::operator()(), SBMatrix::operator()(), SBRefraction::operator()(), SBUpperMatrix::operator()(), operator*(), operator+(), SBVector::operator+=(), SBMatrix::operator+=(), SBUpperMatrix::operator+=(), operator-(), SBVector::operator-=(), SBMatrix::operator-=(), SBUpperMatrix::operator-=(), SBObsVLBIEntry::operator<(), operator<<(), SBVector::operator=(), SBMatrix::operator=(), SBUpperMatrix::operator=(), SBVLBISesInfo::operator=(), SBVector::operator==(), SBObsVLBIEntry::operator==(), SBVLBISesInfo::operator==(), operator>>(), operator~(), SBSymMatrix::operator~(), SBPlotArea::output4Files(), SBSolution::path2GlbDir(), SBSolution::path2LocDir(), SBSolution::path2StcDir(), SBEstimator::prepare4Local(), SBSite::prepareDicts(), SBVLBIPreProcess::preProcess(), SBObsVLBIEntry::process(), SBRunManager::process_m1(), SBRunManager::process_m2(), SBVLBIPreProcess::procScenario_2(), SBProjectSel::ProjectListItem::ProjectListItem(), QuadraticForm(), SBRefraction::refrDir(), SBAploEphem::registerStation(), SBInstitutionList::remove(), SBParameterList::remove(), SBStochParameterList::remove(), SBVLBISet::removeSession(), SBParameterList::report(), SBStochParameter::report(), SBBaseInfo::restoreUserInfo(), SBSourceInfo::restoreUserInfo(), SBVLBISession::restoreUserInfo(), RRT(), RTR(), SBParameter::rw(), SBPlot::save2PS(), SBVLBISet::saveSession(), SBRunManager::saveVLBISessions_m1(), SBRunManager::saveVLBISessions_m2(), SBCoordsEditor::SBCoordsEditor(), SBEstimator::SBEstimator(), SBModelEditor::SBModelEditor(), SBObsVLBIStatBrowser::SBObsVLBIStatBrowser(), SBObsVLBIStatSrc::SBObsVLBIStatSrc(), SBObsVLBIStatSta::SBObsVLBIStatSta(), SBParametersEditor::SBParametersEditor(), SBPlateMotion::SBPlateMotion(), SBPlot::SBPlot(), SBPlotDialog::SBPlotDialog(), SBProjectEdit::SBProjectEdit(), SBRunManager::SBRunManager(), SBSolution::SBSolution(), SBSolutionBrowser::SBSolutionBrowser(), SBStuffEphem::SBStuffEphem(), SBTestAPLoad::SBTestAPLoad(), SBTestDiurnEOP::SBTestDiurnEOP(), SBTestEphem::SBTestEphem(), SBTestFrame::SBTestFrame(), SBTestNutation::SBTestNutation(), SBTestOceanTides::SBTestOceanTides(), SBTestPolarTides::SBTestPolarTides(), SBTestSolidTides::SBTestSolidTides(), SBVLBINetEntryEditor::SBVLBINetEntryEditor(), SBVLBISessionEditor::SBVLBISessionEditor(), SBVector::set(), SBMatrix::set(), SBUpperMatrix::set(), SBMatrix::setCol(), SBUpperMatrix::setCol(), SBFCList::setDefault(), SB_TRF::setSiteName(), SBMatrix::setVector(), SBUpperMatrix::setVector(), Solve(), SBEstimator::solveLocals(), SBObsVLBIEntry::source(), SBTestSolidTides::stationChange(), SBTestOceanTides::stationChange(), SBTestPolarTides::stationChange(), SBTestAPLoad::stationChange(), SBParameter::str4compare(), SBRunManager::stripTRF(), SBSolution::submitGlobalParameters(), SBSolution::submitLocalParameters(), SBSolution::submitStochasticParameters(), SBMatrix::T(), SBUpperMatrix::T(), SBFileConvLI::text(), SBParameterLI::text(), SBObsVLBIStatSrcLI::text(), SBSourceListItem::text(), SBStationListItem::text(), SBObsVLBIStatStaLI::text(), SBVLBISesInfoLI::text(), SBSolutionBatchLI::text(), SBSiteListItem::text(), SBObsVLBIStatRecordLI::text(), SBVLBISesPreProcLI::text(), SBSetupDialog::SBInstLI::text(), SBBasInfoLI::text(), SBSouInfoLI::text(), SBAploEntryLI::text(), SBTestStationLI::text(), SBVLBINetworkEditor::NetworkListItem::text(), SBMasterRecBrowser::SBMRListItem::text(), SBStochParameter::update(), SBSolution::updateParameter(), SBVLBIPreProcess::updateSession(), SBParameterList::updateSolution(), SBMainWindow::UtilitiesCollectStat4Prj(), SBPlateMotion::velocity(), SBVLBIPreProcess::wAttributes(), SBSourceEditor::wCoordinates(), SBParametersEditor::wEOPParameters(), SBSolutionBrowser::wLocalEOPPars(), SBSolutionBrowser::wLocalSoPars(), SBSolutionBrowser::wLocalStPars(), SBStationEditor::wNames(), SBVLBISessionEditor::wObservs(), SBParametersEditor::wOtherParameters(), SBVLBISessionEditor::wParameters(), writeNormalEquationSystem(), SBSiteEditor::wSite(), SBParametersEditor::wSourceParameters(), SBParametersEditor::wStationParameters(), SBSolutionBrowser::wStochEOPPars(), SBSolutionBrowser::wStochSoPars(), SBSolutionBrowser::wStochStPars(), SBParametersEditor::wTestParameters(), and SBSolutionBrowser::wWRMSs()\&.
+.SS "int SBProject::numBases () const\fC [inline]\fP"Returns number of the bases in the project'\&. 
+.PP
+Definition at line 418 of file SbGeoProject\&.H'\&.
+.PP
+References BaseList\&.
+.PP
+Referenced by SBProjectSel::ProjectListItem::ProjectListItem()\&.
+.SS "int SBProject::numObs () const\fC [inline]\fP"Returns number of the observations in the project'\&. 
+.PP
+Definition at line 410 of file SbGeoProject\&.H'\&.
+.PP
+References NumObs\&.
+.PP
+Referenced by SBRunManager::process_m1(), SBRunManager::process_m2(), and SBProjectSel::ProjectListItem::ProjectListItem()\&.
+.SS "int SBProject::numSources () const\fC [inline]\fP"Returns number of the sources in the project'\&. 
+.PP
+Definition at line 416 of file SbGeoProject\&.H'\&.
+.PP
+References SourceList\&.
+.PP
+Referenced by SBProjectSel::ProjectListItem::ProjectListItem()\&.
+.SS "int SBProject::numStations () const\fC [inline]\fP"Returns number of the stations in the project'\&. 
+.PP
+Definition at line 414 of file SbGeoProject\&.H'\&.
+.PP
+References StationList\&.
+.PP
+Referenced by SBProjectSel::ProjectListItem::ProjectListItem()\&.
+.SS "int SBProject::numVLBISessions () const\fC [inline]\fP"Returns number of the VLBI sessions in the project'\&. 
+.PP
+Definition at line 412 of file SbGeoProject\&.H'\&.
+.PP
+References VLBISessionList\&.
+.PP
+Referenced by SBProjectSel::ProjectListItem::ProjectListItem(), SBRunManager::saveVLBISessions_m1(), and SBRunManager::saveVLBISessions_m2()\&.
+.SS "const \fBSBParametersDesc\fP& SBProject::p () const\fC [inline]\fP"
+.PP
+Definition at line 380 of file SbGeoProject\&.H'\&.
+.PP
+References Cfg, and SBConfig::p()\&.
+.PP
+Referenced by SBVLBIPreProcess::preProcess(), and SBParametersEditor::SBParametersEditor()\&.
+.SS "\fBSBVLBISesInfo\fP* SBProject::sessionByName (const char *Name_)\fC [inline]\fP"Returns SessionInfo corresponding to the name; 
+.PP
+Definition at line 395 of file SbGeoProject\&.H'\&.
+.PP
+References SessionByName\&.
+.PP
+Referenced by SBBrowseSessions::updateList()\&.
+.SS "void SBProject::setAllPars2Type (\fBSBParameterCfg::PType\fPType)\fC [inline]\fP"
+.PP
+Definition at line 382 of file SbGeoProject\&.H'\&.
+.PP
+References Cfg, and SBConfig::setAllPars2Type()\&.
+.PP
+Referenced by SBVLBIPreProcess::preProcess()\&.
+.SS "void SBProject::setCfg (const \fBSBConfig\fP &Cfg_)\fC [inline]\fP"
+.PP
+Definition at line 373 of file SbGeoProject\&.H'\&.
+.PP
+References Cfg\&.
+.PP
+Referenced by SBRunManager::makeReportTroposphere(), SBVLBIPreProcess::preProcess(), and SBModelEditor::~SBModelEditor()\&.
+.SS "void SBProject::setComments (const QString &Comments_)\fC [inline]\fP"
+.PP
+Definition at line 379 of file SbGeoProject\&.H'\&.
+.PP
+References Comments\&.
+.PP
+Referenced by SBProjectEdit::acquireData()\&.
+.SS "void SBNamed::setName (const QString &Name_)\fC [inline, inherited]\fP"
+.PP
+Definition at line 216 of file SbGeo\&.H'\&.
+.PP
+References SBNamed::Name\&.
+.PP
+Referenced by SBVLBINetEntryEditor::accept(), SBSourceEditor::acquireData(), SBSiteEditor::acquireData(), SBStationEditor::acquireData(), SBObsVLBIStatistics::collectStatistics(), SBVLBIPreProcess::currentSesChange(), SBVLBISet::import(), SBVLBISet::loadSession(), SBVLBISesInfo::operator=(), operator>>(), SBPlotArea::output4Files(), SBFilteringGauss::redrawDataPlot_ExpMode(), SBBaseInfoList::restoreUserInfo(), SBSourceInfoList::restoreUserInfo(), SBMasterRecord::SBMasterRecord(), SBSolution::SBSolution(), SB_TRF::setSiteName(), SBTestSolidTides::stationChange(), SBTestOceanTides::stationChange(), SBTestPolarTides::stationChange(), SBTestAPLoad::stationChange(), and SBVLBIPreProcess::updateSession()\&.
+.SS "void SBProject::setP (const \fBSBParametersDesc\fP &P_)\fC [inline]\fP"
+.PP
+Definition at line 381 of file SbGeoProject\&.H'\&.
+.PP
+References Cfg, and SBConfig::setP()\&.
+.PP
+Referenced by SBVLBIPreProcess::preProcess(), and SBParametersEditor::~SBParametersEditor()\&.
+.SS "\fBSBSourceInfo\fP* SBProject::sourceByAka (const char *Aka_)\fC [inline]\fP"Returns SourceInfo corresponding to the name; 
+.PP
+Definition at line 399 of file SbGeoProject\&.H'\&.
+.PP
+References SourceByAka\&.
+.SS "\fBSBSourceInfoList\fP* SBProject::sourceList ()\fC [inline]\fP"Returns list of the sources; 
+.PP
+Definition at line 390 of file SbGeoProject\&.H'\&.
+.PP
+References SourceList\&.
+.PP
+Referenced by SBSolutionBrowser::batch4StochSoChanged(), SBRunManager::constraintSourceCoord(), SBRunManager::fillParameterList(), SBObsVLBIEntry::isEligible(), SBSolutionBrowser::lookupParameters(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportMaps(), SBObsVLBIEntry::process(), SBProjectEdit::SBProjectEdit(), sinex_SourceIDBlock(), SBRunManager::stripCRF(), and SBSolutionBrowser::updateCRF()\&.
+.SS "\fBSBStationInfo\fP* SBProject::stationByAka (const char *Aka_)\fC [inline]\fP"Returns StationInfo corresponding to the name; 
+.PP
+Definition at line 397 of file SbGeoProject\&.H'\&.
+.PP
+References StationByAka\&.
+.SS "\fBSBStationInfoList\fP* SBProject::stationList ()\fC [inline]\fP"Returns list of the stations; 
+.PP
+Definition at line 388 of file SbGeoProject\&.H'\&.
+.PP
+References StationList\&.
+.PP
+Referenced by SBSolutionBrowser::batch4StochStChanged(), collectListOfSINEXParameters(), SBRunManager::constraintStationCoord(), SBRunManager::constraintStationVeloc(), SBRunManager::fillParameterList(), SBSolution::guessParameterName(), SBObsVLBIEntry::isEligible(), SBSolutionBrowser::lookupParameters(), SBRunManager::makeReportMaps(), SBRunManager::makeReportTRF(), SBRunManager::makeReportTRFVariations(), SBObsVLBIEntry::process(), SBProjectEdit::SBProjectEdit(), sinex_SiteIDBlock(), SBRunManager::stripTRF(), and SBSolutionBrowser::updateTRF()\&.
+.SS "const \fBSBMJD\fP& SBProject::tFinis () const\fC [inline]\fP"Returns last date of observations'\&. 
+.PP
+Definition at line 425 of file SbGeoProject\&.H'\&.
+.PP
+References TZero, and VLBISessionList\&.
+.PP
+Referenced by operator<<(), SBProjectSel::ProjectListItem::ProjectListItem(), SBRunManager::SBRunManager(), sinex_SiteEccentricityBlock(), and tInterval()\&.
+.SS "double SBProject::tInterval () const\fC [inline]\fP"Returns the interval of the observations'\&. 
+.PP
+Definition at line 430 of file SbGeoProject\&.H'\&.
+.PP
+References tFinis(), and tStart()\&.
+.PP
+Referenced by SBProjectSel::ProjectListItem::ProjectListItem()\&.
+.SS "const \fBSBMJD\fP& SBProject::tStart () const\fC [inline]\fP"Returns first date of observations'\&. 
+.PP
+Definition at line 420 of file SbGeoProject\&.H'\&.
+.PP
+References TZero, and VLBISessionList\&.
+.PP
+Referenced by operator<<(), SBProjectSel::ProjectListItem::ProjectListItem(), SBProjectEdit::SBProjectEdit(), SBRunManager::SBRunManager(), sinex_SiteEccentricityBlock(), and tInterval()\&.
+.SS "int SBProject::version () const\fC [inline]\fP"
+.PP
+Definition at line 370 of file SbGeoProject\&.H'\&.
+.PP
+References Version\&.
+.PP
+Referenced by SBProjectSel::ProjectListItem::ProjectListItem(), and SBProjectEdit::SBProjectEdit()\&.
+.SS "\fBSBVLBISesInfoList\fP* SBProject::VLBIsessionList ()\fC [inline]\fP"Returns list of the VLBI sessions; 
+.PP
+Definition at line 386 of file SbGeoProject\&.H'\&.
+.PP
+References VLBISessionList\&.
+.PP
+Referenced by SBRunManager::makeReportSessionStatistics(), SBRunManager::prepare4Run_m1(), SBRunManager::prepare4Run_m2(), SBProjectEdit::SBProjectEdit(), sinex_SiteEccentricityBlock(), SBMainWindow::UtilitiesCollectStat4Prj(), and SBSolutionBrowser::wWRMSs()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "int cmp (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP, returns (-1:0:+1)'\&. 
+.PP
+Definition at line 253 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBStochParameterList::compareItems(), and SBMasterFile::compareItems()\&.
+.SS "bool operator!= (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 238 of file SbGeo\&.H'\&.
+.SS "bool operator< (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 243 of file SbGeo\&.H'\&.
+.SS "QDataStream & operator<< (QDataStream &s, const \fBSBNamed\fP &W)\fC [friend, inherited]\fP"Saves object to the data stream'\&. 
+.PP
+Definition at line 258 of file SbGeo\&.H'\&.
+.SS "QDataStream & operator<< (QDataStream &s, const \fBSBProject\fP &P)\fC [friend]\fP"Output to the data stream'\&. 
+.PP
+Definition at line 650 of file SbGeoProject\&.C'\&.
+.SS "bool operator== (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 233 of file SbGeo\&.H'\&.
+.SS "bool operator> (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 248 of file SbGeo\&.H'\&.
+.SS "QDataStream & operator>> (QDataStream &s, \fBSBNamed\fP &W)\fC [friend, inherited]\fP"Loads object from the data stream'\&. 
+.PP
+Definition at line 263 of file SbGeo\&.H'\&.
+.SS "QDataStream & operator>> (QDataStream &s, \fBSBProject\fP &P)\fC [friend]\fP"Input from the data stream'\&. 
+.PP
+Definition at line 659 of file SbGeoProject\&.C'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QDict<\fBSBBaseInfo\fP>* \fBSBProject::BaseByAka\fP\fC [protected]\fP"
+.PP
+Definition at line 346 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by addSession(), baseByAka(), delSession(), fillBaseDict(), SBProject(), and ~SBProject()\&.
+.SS "\fBSBBaseInfoList\fP \fBSBProject::BaseList\fP\fC [protected]\fP"
+.PP
+list of bases 
+.PP
+Definition at line 345 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by addSession(), baseList(), clearRMSs(), delSession(), fillBaseDict(), numBases(), and SBProject()\&.
+.SS "\fBSBConfig\fP \fBSBProject::Cfg\fP\fC [protected]\fP"
+.PP
+project's config 
+.PP
+Definition at line 331 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by cfg(), p(), setAllPars2Type(), setCfg(), and setP()\&.
+.SS "QString \fBSBProject::Comments\fP\fC [protected]\fP"
+.PP
+some comments 
+.PP
+Definition at line 334 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by comments(), and setComments()\&.
+.SS "\fBSBHistory\fP \fBSBProject::History\fP\fC [protected]\fP"
+.PP
+project's history 
+.PP
+Definition at line 333 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by addHistoryLine(), delHistoryLine(), and history()\&.
+.SS "QString \fBSBNamed::Name\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 206 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBVLBISesInfo::fileName(), SBNamed::name(), operator<<(), SBNamed::operator=(), SBStation::operator=(), SBSite::operator=(), SBOLoadCarrier::operator==(), operator>>(), SBStochParameter::report(), SBNamed::SBNamed(), SBNamed::setName(), SBSite::updateSite(), and SBStation::updateStation()\&.
+.SS "int \fBSBProject::NumObs\fP\fC [protected]\fP"
+.PP
+Definition at line 347 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by fillSessionDict(), numObs(), and SBProject()\&.
+.SS "QDict<\fBSBVLBISesInfo\fP>* \fBSBProject::SessionByName\fP\fC [protected]\fP"
+.PP
+Definition at line 337 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by addSession(), delSession(), fillSessionDict(), SBProject(), sessionByName(), and ~SBProject()\&.
+.SS "QDict<\fBSBSourceInfo\fP>* \fBSBProject::SourceByAka\fP\fC [protected]\fP"
+.PP
+Definition at line 343 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by addSession(), delSession(), fillSourceDict(), SBProject(), sourceByAka(), and ~SBProject()\&.
+.SS "\fBSBSourceInfoList\fP \fBSBProject::SourceList\fP\fC [protected]\fP"
+.PP
+list of sources 
+.PP
+Definition at line 342 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by addSession(), clearRMSs(), delSession(), fillSourceDict(), numSources(), SBProject(), and sourceList()\&.
+.SS "QDict<\fBSBStationInfo\fP>* \fBSBProject::StationByAka\fP\fC [protected]\fP"
+.PP
+Definition at line 340 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by addSession(), delSession(), fillStationDict(), SBProject(), stationByAka(), and ~SBProject()\&.
+.SS "\fBSBStationInfoList\fP \fBSBProject::StationList\fP\fC [protected]\fP"
+.PP
+list of stations 
+.PP
+Definition at line 339 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by addSession(), clearRMSs(), delSession(), fillStationDict(), numStations(), SBProject(), and stationList()\&.
+.SS "int \fBSBProject::Version\fP\fC [protected]\fP"
+.PP
+project's version 
+.PP
+Definition at line 332 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by addHistoryLine(), incVersion(), SBProject(), and version()\&.
+.SS "\fBSBVLBISesInfoList\fP \fBSBProject::VLBISessionList\fP\fC [protected]\fP"
+.PP
+list of VLBI sessions 
+.PP
+Definition at line 336 of file SbGeoProject\&.H'\&.
+.PP
+Referenced by addSession(), delSession(), fillSessionDict(), numVLBISessions(), SBProject(), tFinis(), tStart(), and VLBIsessionList()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

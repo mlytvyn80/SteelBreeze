@@ -1,0 +1,79 @@
+.TH "SBMasterRecBrowser::SBMRListItem" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBMasterRecBrowser::SBMRListItem \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQListViewItem\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBMRListItem\fP (\fBQListView\fP *parent, \fBSBMasterRecord\fP *R_, const QString &MFName_)"
+.br
+.ti -1c
+.RI "virtual QString \fBtext\fP (int) const "
+.br
+.ti -1c
+.RI "virtual QString \fBkey\fP (int, bool) const "
+.br
+.ti -1c
+.RI "\fBSBMasterRecord\fP * \fBrecord\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBMasterRecord\fP * \fBRec\fP"
+.br
+.ti -1c
+.RI "QString \fBMFName\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 698 of file SbIObsVLBI\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBMasterRecBrowser::SBMRListItem::SBMRListItem (\fBQListView\fP *parent, \fBSBMasterRecord\fP *R_, const QString &MFName_)\fC [inline]\fP"
+.PP
+Definition at line 704 of file SbIObsVLBI\&.H'\&.
+.PP
+References MFName, and Rec\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QString SBMasterRecBrowser::SBMRListItem::key (intcol, bool) const\fC [virtual]\fP"
+.PP
+Definition at line 3129 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBMasterRecord::Exists, and TmpString\&.
+.SS "\fBSBMasterRecord\fP* SBMasterRecBrowser::SBMRListItem::record ()\fC [inline]\fP"
+.PP
+Definition at line 708 of file SbIObsVLBI\&.H'\&.
+.PP
+References Rec\&.
+.SS "QString SBMasterRecBrowser::SBMRListItem::text (intcol) const\fC [virtual]\fP"
+.PP
+Definition at line 3103 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBMasterRecord::correlatorName(), SBMasterRecord::Exists, SBAttributed::isAttr(), MFName, SBNamed::name(), Rec, SBMasterRecord::sessionCode(), SBMasterRecord::sessionDate(), SBMasterRecord::sessionName(), and TmpString\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString \fBSBMasterRecBrowser::SBMRListItem::MFName\fP\fC [private]\fP"
+.PP
+Definition at line 702 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by SBMRListItem(), and text()\&.
+.SS "\fBSBMasterRecord\fP* \fBSBMasterRecBrowser::SBMRListItem::Rec\fP\fC [private]\fP"
+.PP
+Definition at line 701 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by record(), SBMRListItem(), and text()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

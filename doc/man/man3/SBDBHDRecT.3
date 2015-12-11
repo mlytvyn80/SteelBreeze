@@ -1,0 +1,159 @@
+.TH "SBDBHDRecT< Class >" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBDBHDRecT< Class > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoObsVLBI_IO\&.H>\fP
+.PP
+Inherits \fBSBDBHPhysRec\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBDBHDRecT\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~SBDBHDRecT\fP ()"
+.br
+.ti -1c
+.RI "virtual Class \fBoperator[]\fP (int i)"
+.br
+.ti -1c
+.RI "virtual Class \fBval\fP (\fBSBDBHPar\fP *Par, int dim1, int dim2, int dim3)"
+.br
+.ti -1c
+.RI "int \fBnum\fP ()"
+.br
+.ti -1c
+.RI "virtual int \fBparseLR\fP (\fBSBDS_dbh\fP &s)"
+.br
+.ti -1c
+.RI "bool \fBisOk\fP ()"
+.br
+.ti -1c
+.RI "int \fBlength\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBSBDBHPar::PType\fP \fBtype\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "Class * \fBnD\fP"
+.br
+.ti -1c
+.RI "int \fBNum\fP"
+.br
+.ti -1c
+.RI "int \fBLength\fP"
+.br
+.ti -1c
+.RI "char * \fBLogRec\fP"
+.br
+.ti -1c
+.RI "bool \fBisOK\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "\fBSBDS_dbh\fP & \fBoperator>>\fP (\fBSBDS_dbh\fP &, \fBSBDBHPhysRec\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class Class>class SBDBHDRecT< Class >"
+
+.PP
+Definition at line 350 of file SbGeoObsVLBI_IO\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class Class> \fBSBDBHDRecT\fP< Class >::\fBSBDBHDRecT\fP ()\fC [inline]\fP"
+.PP
+Definition at line 356 of file SbGeoObsVLBI_IO\&.H'\&.
+.SS "template<class Class> virtual \fBSBDBHDRecT\fP< Class >::~\fBSBDBHDRecT\fP ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 357 of file SbGeoObsVLBI_IO\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SBDBHPhysRec::isOk ()\fC [inline, inherited]\fP"
+.PP
+Definition at line 117 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References SBDBHPhysRec::isOK\&.
+.PP
+Referenced by operator>>()\&.
+.SS "int SBDBHPhysRec::length ()\fC [inline, inherited]\fP"
+.PP
+Definition at line 118 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References SBDBHPhysRec::Length\&.
+.PP
+Referenced by operator>>()\&.
+.SS "template<class Class> int \fBSBDBHDRecT\fP< Class >::num ()\fC [inline]\fP"
+.PP
+Definition at line 365 of file SbGeoObsVLBI_IO\&.H'\&.
+.SS "template<class Class> virtual Class \fBSBDBHDRecT\fP< Class >::operator[] (inti)\fC [inline, virtual]\fP"
+.PP
+Definition at line 358 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by SBDBHDRecT< short >::val()\&.
+.SS "template<class Class> virtual int \fBSBDBHDRecT\fP< Class >::parseLR (\fBSBDS_dbh\fP &s)\fC [inline, virtual]\fP"
+.PP
+Reimplemented from \fBSBDBHPhysRec\fP'\&.
+.PP
+Definition at line 366 of file SbGeoObsVLBI_IO\&.H'\&.
+.SS "virtual \fBSBDBHPar::PType\fP SBDBHPhysRec::type ()\fC [inline, virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSBDBHDRecString\fP'\&.
+.PP
+Definition at line 119 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+References SBDBHPar::T_UNKN\&.
+.SS "template<class Class> virtual Class \fBSBDBHDRecT\fP< Class >::val (\fBSBDBHPar\fP *Par, intdim1, intdim2, intdim3)\fC [inline, virtual]\fP"
+.PP
+Definition at line 359 of file SbGeoObsVLBI_IO\&.H'\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "\fBSBDS_dbh\fP& operator>> (\fBSBDS_dbh\fP &s, \fBSBDBHPhysRec\fP &PH)\fC [friend, inherited]\fP"
+.PP
+Definition at line 2325 of file SbGeoObsVLBI_IO\&.C'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool \fBSBDBHPhysRec::isOK\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 112 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by SBDBHPhysRec::isOk(), SBDBHLRecPrefixed::isPrefixParsed(), operator>>(), SBDBHLRecTC::parseLR(), SBDBHLRecDE::parseLR(), SBDBHDRecString::parseLR(), and SBDBHPhysRec::SBDBHPhysRec()\&.
+.SS "int \fBSBDBHPhysRec::Length\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 110 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by SBDBHPhysRec::length(), operator>>(), SBDBHPhysRec::parseLR(), SBDBHDRecT< short >::parseLR(), and SBDBHPhysRec::SBDBHPhysRec()\&.
+.SS "char* \fBSBDBHPhysRec::LogRec\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 111 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by SBDBHPhysRec::parseLR(), SBDBHDRecString::parseLR(), SBDBHPhysRec::SBDBHPhysRec(), SBDBHDRecString::val(), and SBDBHPhysRec::~SBDBHPhysRec()\&.
+.SS "template<class Class> Class* \fBSBDBHDRecT\fP< Class >::\fBnD\fP\fC [protected]\fP"
+.PP
+Definition at line 353 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by SBDBHDRecT< short >::operator[](), SBDBHDRecT< short >::parseLR(), SBDBHDRecT< short >::SBDBHDRecT(), and SBDBHDRecT< short >::~SBDBHDRecT()\&.
+.SS "template<class Class> int \fBSBDBHDRecT\fP< Class >::\fBNum\fP\fC [protected]\fP"
+.PP
+Definition at line 354 of file SbGeoObsVLBI_IO\&.H'\&.
+.PP
+Referenced by SBDBHDRecT< short >::num(), SBDBHDRecT< short >::operator[](), SBDBHDRecT< short >::parseLR(), and SBDBHDRecT< short >::SBDBHDRecT()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

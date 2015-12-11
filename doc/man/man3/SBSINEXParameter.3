@@ -1,0 +1,1179 @@
+.TH "SBSINEXParameter" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBSINEXParameter \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoSINEX\&.H>\fP
+.PP
+Inherits \fBSBParameter\fP'\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSType\fP { \fBST_STAX\fP, \fBST_STAY\fP, \fBST_STAZ\fP, \fBST_VELX\fP, \fBST_VELY\fP, \fBST_VELZ\fP, \fBST_XGC\fP, \fBST_YGC\fP, \fBST_ZGC\fP, \fBST_RS_RA\fP, \fBST_RS_DE\fP, \fBST_RS_RAR\fP, \fBST_RS_DER\fP, \fBST_RS_PL\fP, \fBST_LOD\fP, \fBST_UT\fP, \fBST_XPO\fP, \fBST_YPO\fP, \fBST_XPOR\fP, \fBST_YPOR\fP, \fBST_NUT_LN\fP, \fBST_NUT_OB\fP, \fBST_NUTRLN\fP, \fBST_NUTROB\fP, \fBST_UNKN\fP }"
+.br
+.ti -1c
+.RI "enum \fBAttributes\fP { \fBIsBreak\fP =  (1<<0), \fBIsPropagated\fP =  (1<<1), \fBIsInRun\fP =  (1<<2) }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBSINEXParameter\fP (const \fBSBSINEXParameter\fP &)"
+.br
+.ti -1c
+.RI "\fBSBSINEXParameter\fP (\fBSBParameter\fP *)"
+.br
+.ti -1c
+.RI "virtual \fB~SBSINEXParameter\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "int \fBidx\fP () const "
+.br
+.ti -1c
+.RI "\fBSType\fP \fBtype\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBsiteCode\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBpointCode\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBsolutionID\fP () const "
+.br
+.ti -1c
+.RI "double \fBaPrioriValue\fP () const "
+.br
+.ti -1c
+.RI "double \fBtotValue\fP () const "
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP & \fBtValidEpoch\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBconstraintCode\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetIdx\fP (int I_)"
+.br
+.ti -1c
+.RI "void \fBsetType\fP (\fBSType\fP T_)"
+.br
+.ti -1c
+.RI "void \fBsetSiteCode\fP (const QString &S_)"
+.br
+.ti -1c
+.RI "void \fBsetPointCode\fP (const QString &P_)"
+.br
+.ti -1c
+.RI "void \fBsetSolutionID\fP (const QString &ID_)"
+.br
+.ti -1c
+.RI "void \fBsetAPrioriValue\fP (double Val_)"
+.br
+.ti -1c
+.RI "void \fBsetTValidEpoch\fP (const \fBSBMJD\fP &T_)"
+.br
+.ti -1c
+.RI "void \fBsetConstraintCode\fP (const QString &C_)"
+.br
+.ti -1c
+.RI "QString \fBparameterUnits\fP ()"
+.br
+.ti -1c
+.RI "QString \fBparameterType\fP ()"
+.br
+.ti -1c
+.RI "virtual double \fBv\fP (const \fBSBMJD\fP &=\fBTZero\fP) const "
+.br
+.ti -1c
+.RI "virtual double \fBs\fP (const \fBSBMJD\fP &=\fBTZero\fP) const "
+.br
+.ti -1c
+.RI "virtual double \fBe\fP (const \fBSBMJD\fP &=\fBTZero\fP) const "
+.br
+.ti -1c
+.RI "virtual double \fBscale\fP () const "
+.br
+.ti -1c
+.RI "virtual double \fBsigmaAPriori\fP () const "
+.br
+.ti -1c
+.RI "virtual double \fBtau\fP () const "
+.br
+.ti -1c
+.RI "virtual double \fBpsd_RWN\fP () const "
+.br
+.ti -1c
+.RI "virtual double \fBpsd_BN\fP () const "
+.br
+.ti -1c
+.RI "virtual \fBSBParameterCfg::StochType\fP \fBsType\fP () const "
+.br
+.ti -1c
+.RI "virtual char \fBprefix\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetV\fP (double d_)"
+.br
+.ti -1c
+.RI "virtual void \fBsetS\fP (double d_)"
+.br
+.ti -1c
+.RI "virtual void \fBsetE\fP (double d_)"
+.br
+.ti -1c
+.RI "virtual void \fBsetScale\fP (double s_)"
+.br
+.ti -1c
+.RI "virtual void \fBsetSigmaAPriori\fP (double d_)"
+.br
+.ti -1c
+.RI "virtual void \fBsetTau\fP (double d_)"
+.br
+.ti -1c
+.RI "virtual void \fBsetPSD_RWN\fP (double d_)"
+.br
+.ti -1c
+.RI "virtual void \fBsetPSD_BN\fP (double d_)"
+.br
+.ti -1c
+.RI "virtual void \fBsetSType\fP (\fBSBParameterCfg::StochType\fP ST_)"
+.br
+.ti -1c
+.RI "virtual void \fBsetPrefix\fP (char c_)"
+.br
+.ti -1c
+.RI "virtual void \fBtuneParameter\fP (const \fBSBParameterCfg\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP (const \fBSBParameter\fP *)"
+.br
+.ti -1c
+.RI "QString \fBtimeStamp\fP () const "
+.br
+.ti -1c
+.RI "virtual double \fBm\fP (double)"
+.br
+.ti -1c
+.RI "virtual double \fBrw\fP (double)"
+.br
+.ti -1c
+.RI "virtual void \fBclearValues\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBstr4compare\fP () const "
+.br
+.ti -1c
+.RI "virtual double \fBd\fP (const \fBSBMJD\fP &=\fBTZero\fP) const "
+.br
+.ti -1c
+.RI "virtual int \fBnum\fP (const \fBSBMJD\fP &=\fBTZero\fP) const "
+.br
+.ti -1c
+.RI "virtual int \fBnumSes\fP (const \fBSBMJD\fP &=\fBTZero\fP) const "
+.br
+.ti -1c
+.RI "virtual \fBSBMJD\fP \fBtStart\fP (const \fBSBMJD\fP &=\fBTZero\fP) const "
+.br
+.ti -1c
+.RI "virtual \fBSBMJD\fP \fBtFinis\fP (const \fBSBMJD\fP &=\fBTZero\fP) const "
+.br
+.ti -1c
+.RI "virtual \fBSBMJD\fP \fBtEpoch\fP (const \fBSBMJD\fP &=\fBTZero\fP) const "
+.br
+.ti -1c
+.RI "virtual double \fBtInterval\fP (const \fBSBMJD\fP &=\fBTZero\fP) const "
+.br
+.ti -1c
+.RI "virtual void \fBsetD\fP (double, const \fBSBMJD\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBsetNum\fP (int Num_)"
+.br
+.ti -1c
+.RI "virtual void \fBsetNumSes\fP (int Num_)"
+.br
+.ti -1c
+.RI "virtual void \fBaddNumSes\fP (int Num_)"
+.br
+.ti -1c
+.RI "virtual void \fBsetTimes\fP (const \fBSBDerivation\fP &Der)"
+.br
+.ti -1c
+.RI "virtual int \fBnum_aux\fP (const \fBSBMJD\fP &=\fBTZero\fP) const "
+.br
+.ti -1c
+.RI "virtual \fBSBMJD\fP \fBtStart_aux\fP (const \fBSBMJD\fP &=\fBTZero\fP) const "
+.br
+.ti -1c
+.RI "virtual \fBSBMJD\fP \fBtFinis_aux\fP (const \fBSBMJD\fP &=\fBTZero\fP) const "
+.br
+.ti -1c
+.RI "virtual \fBSBMJD\fP \fBtEpoch_aux\fP (const \fBSBMJD\fP &=\fBTZero\fP) const "
+.br
+.ti -1c
+.RI "virtual double \fBtInterval_aux\fP (const \fBSBMJD\fP &=\fBTZero\fP) const "
+.br
+.ti -1c
+.RI "virtual void \fBclearValues_aux\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBinvertAux\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBzero\fP ()"
+.br
+.ti -1c
+.RI "const QString & \fBname\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetName\fP (const QString &Name_)"
+.br
+.ti -1c
+.RI "uint \fBattributes\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetAttributes\fP (uint A_)"
+.br
+.ti -1c
+.RI "void \fBaddAttr\fP (uint A_)"
+.br
+.ti -1c
+.RI "void \fBdelAttr\fP (uint A_)"
+.br
+.ti -1c
+.RI "void \fBxorAttr\fP (uint A_)"
+.br
+.ti -1c
+.RI "bool \fBisAttr\fP (uint A_) const "
+.br
+.ti -1c
+.RI "void \fBclearAll\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBAPrioriValue\fP"
+.br
+.ti -1c
+.RI "int \fBIdx\fP"
+.br
+.ti -1c
+.RI "\fBSType\fP \fBType\fP"
+.br
+.ti -1c
+.RI "QString \fBSiteCode\fP"
+.br
+.ti -1c
+.RI "QString \fBPointCode\fP"
+.br
+.ti -1c
+.RI "QString \fBSolutionID\fP"
+.br
+.ti -1c
+.RI "\fBSBMJD\fP \fBTValidEpoch\fP"
+.br
+.ti -1c
+.RI "QString \fBConstraintCode\fP"
+.br
+.ti -1c
+.RI "double \fBV\fP"
+.br
+.RI "\fIvalue of the parameter; \fP"
+.ti -1c
+.RI "double \fBS\fP"
+.br
+.RI "\fIvalue of the solution; \fP"
+.ti -1c
+.RI "double \fBE\fP"
+.br
+.RI "\fIformal error; \fP"
+.ti -1c
+.RI "double \fBScale\fP"
+.br
+.RI "\fIscale factor; \fP"
+.ti -1c
+.RI "double \fBSigmaAPriori\fP"
+.br
+.RI "\fIa priori std'\&. deviation (to init the Inform'\&. matrix) \fP"
+.ti -1c
+.RI "double \fBTau\fP"
+.br
+.RI "\fItime of relaxation (for stochastic parameters) \fP"
+.ti -1c
+.RI "double \fBPSD_RWN\fP"
+.br
+.RI "\fIPSD of Ruled White Noise'\&. \fP"
+.ti -1c
+.RI "double \fBPSD_BN\fP"
+.br
+.RI "\fIPSD of White Noise used in break'\&. \fP"
+.ti -1c
+.RI "char \fBPrefix\fP"
+.br
+.ti -1c
+.RI "double \fBD\fP"
+.br
+.RI "\fIvalue of a derivation; \fP"
+.ti -1c
+.RI "int \fBNum\fP"
+.br
+.RI "\fInumber of points per derivation; \fP"
+.ti -1c
+.RI "int \fBNumSes\fP"
+.br
+.RI "\fInumber of sessions per derivation; \fP"
+.ti -1c
+.RI "\fBSBMJD\fP \fBTStart\fP"
+.br
+.RI "\fIMJD of the first measurement;'\&. \fP"
+.ti -1c
+.RI "\fBSBMJD\fP \fBTFinis\fP"
+.br
+.RI "\fIMJD of the last measurement;'\&. \fP"
+.ti -1c
+.RI "long double \fBTSum\fP"
+.br
+.RI "\fIthe sum of the epochs of observation; \fP"
+.ti -1c
+.RI "int \fBNum_aux\fP"
+.br
+.RI "\fInumber of points per derivation; \fP"
+.ti -1c
+.RI "\fBSBMJD\fP \fBTStart_aux\fP"
+.br
+.RI "\fIMJD of the first measurement;'\&. \fP"
+.ti -1c
+.RI "\fBSBMJD\fP \fBTFinis_aux\fP"
+.br
+.RI "\fIMJD of the last measurement;'\&. \fP"
+.ti -1c
+.RI "long double \fBTSum_aux\fP"
+.br
+.RI "\fIthe sum of the epochs of observation; \fP"
+.ti -1c
+.RI "QString \fBName\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBParameter\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBDerivation\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBAttributed\fP &A)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBParameter\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBDerivation\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBAttributed\fP &A)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.ti -1c
+.RI "int \fBcmp\fP (const \fBSBNamed\fP &, const \fBSBNamed\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class \fBSBSINEXParameter\fP 
+.PP
+Definition at line 61 of file SbGeoSINEX\&.H'\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBSBDerivation::Attributes\fP\fC [inherited]\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIIsBreak \fP\fP
+there is a break in the parameter's behaviour 
+.TP
+\fB\fIIsPropagated \fP\fP
+the parameter's info have to be propagated in future 
+.TP
+\fB\fIIsInRun \fP\fP
+
+.PP
+Definition at line 281 of file SbGeoParameter\&.H'\&.
+.SS "enum \fBSBSINEXParameter::SType\fP"Types of SINEX parameters 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIST_STAX \fP\fP
+.TP
+\fB\fIST_STAY \fP\fP
+.TP
+\fB\fIST_STAZ \fP\fP
+.TP
+\fB\fIST_VELX \fP\fP
+.TP
+\fB\fIST_VELY \fP\fP
+.TP
+\fB\fIST_VELZ \fP\fP
+.TP
+\fB\fIST_XGC \fP\fP
+.TP
+\fB\fIST_YGC \fP\fP
+.TP
+\fB\fIST_ZGC \fP\fP
+.TP
+\fB\fIST_RS_RA \fP\fP
+.TP
+\fB\fIST_RS_DE \fP\fP
+.TP
+\fB\fIST_RS_RAR \fP\fP
+.TP
+\fB\fIST_RS_DER \fP\fP
+.TP
+\fB\fIST_RS_PL \fP\fP
+.TP
+\fB\fIST_LOD \fP\fP
+.TP
+\fB\fIST_UT \fP\fP
+.TP
+\fB\fIST_XPO \fP\fP
+.TP
+\fB\fIST_YPO \fP\fP
+.TP
+\fB\fIST_XPOR \fP\fP
+.TP
+\fB\fIST_YPOR \fP\fP
+.TP
+\fB\fIST_NUT_LN \fP\fP
+.TP
+\fB\fIST_NUT_OB \fP\fP
+.TP
+\fB\fIST_NUTRLN \fP\fP
+.TP
+\fB\fIST_NUTROB \fP\fP
+.TP
+\fB\fIST_UNKN \fP\fP
+
+.PP
+Reimplemented from \fBSBParameter\fP'\&.
+.PP
+Definition at line 65 of file SbGeoSINEX\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBSINEXParameter::SBSINEXParameter (const \fBSBSINEXParameter\fP &P)"A constructor'\&. 
+.PP
+Definition at line 51 of file SbGeoSINEX\&.C'\&.
+.PP
+References APrioriValue, ConstraintCode, Idx, PointCode, SiteCode, SolutionID, ST_UNKN, TValidEpoch, Type, and TZero\&.
+.SS "SBSINEXParameter::SBSINEXParameter (\fBSBParameter\fP *P)"
+.PP
+Definition at line 64 of file SbGeoSINEX\&.C'\&.
+.PP
+References APrioriValue, ConstraintCode, Idx, PointCode, SiteCode, SolutionID, ST_UNKN, TValidEpoch, Type, and TZero\&.
+.SS "virtual SBSINEXParameter::~SBSINEXParameter ()\fC [inline, virtual]\fP"A destructor'\&. 
+.PP
+Definition at line 90 of file SbGeoSINEX\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SBAttributed::addAttr (uintA_)\fC [inline, inherited]\fP"Adds the attribute to the storage'\&. 
+.PP
+Definition at line 247 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBVLBISession::checkArtMeteo(), SBVLBISession::checkAttributres(), SBStation::createOLoad(), SBVLBIPreProcess::fixSession(), SBAploChunk::import(), SBAploEphem::importHPS(), SBMaster::importMF(), SBFilteringGauss::makeAnalysisWith3Sigma(), SBSourceEditor::makeApply(), SBStationEditor::makeApply(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportTRF(), operator>>(), SBFilterGauss::prepareModels(), SBObsVLBIEntry::process(), SBStationInfo::restoreUserInfo(), SBBaseInfo::restoreUserInfo(), SBSourceInfo::restoreUserInfo(), SBVLBISession::restoreUserInfo(), SBEphem::SBEphem(), SBSourceInfo::SBSourceInfo(), SBStationInfo::SBStationInfo(), SBSpectrumAnalyserMEM::setMEMAssumeEquiDistant(), SBSpectrumAnalyserMEM::setMEMFillMissingImag(), SBSpectrumAnalyserMEM::setMEMRemoveShifts(), SBSpectrumAnalyserMEM::setMEMRemoveTrends(), SBParameter::tuneParameter(), SBSolutionBrowser::updateCRF(), and SBSolutionBrowser::updateTRF()\&.
+.SS "virtual void SBDerivation::addNumSes (intNum_)\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 337 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBRunManager::process_m1()\&.
+.SS "double SBSINEXParameter::aPrioriValue () const\fC [inline]\fP"
+.PP
+Definition at line 101 of file SbGeoSINEX\&.H'\&.
+.PP
+References APrioriValue\&.
+.SS "uint SBAttributed::attributes () const\fC [inline, inherited]\fP"Returns the attributes'\&. 
+.PP
+Definition at line 243 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBCoordinates::operator==(), and SBVLBISessionEditor::~SBVLBISessionEditor()\&.
+.SS "virtual QString SBSINEXParameter::ClassName () const\fC [inline, virtual]\fP"Refers to a class name (debug info)'\&. 
+.PP
+Reimplemented from \fBSBParameter\fP'\&.
+.PP
+Definition at line 92 of file SbGeoSINEX\&.H'\&.
+.SS "void SBAttributed::clearAll ()\fC [inline, inherited]\fP"Removes all attributes'\&. 
+.PP
+Definition at line 255 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.SS "void SBParameter::clearValues ()\fC [virtual, inherited]\fP"
+.PP
+Reimplemented from \fBSBDerivation\fP'\&.
+.PP
+Definition at line 438 of file SbGeoParameter\&.C'\&.
+.PP
+References SBParameter::E, SBParameter::S, and SBParameter::V\&.
+.SS "void SBDerivation::clearValues_aux ()\fC [virtual, inherited]\fP"
+.PP
+Definition at line 320 of file SbGeoParameter\&.C'\&.
+.PP
+References SBDerivation::D, SBDerivation::Num_aux, SBDerivation::TFinis_aux, SBDerivation::TStart_aux, SBDerivation::TSum_aux, and TZero\&.
+.SS "const QString& SBSINEXParameter::constraintCode () const\fC [inline]\fP"
+.PP
+Definition at line 104 of file SbGeoSINEX\&.H'\&.
+.PP
+References ConstraintCode\&.
+.SS "virtual double SBDerivation::d (const \fBSBMJD\fP & = \fC\fBTZero\fP\fP) const\fC [inline, virtual, inherited]\fP"Returns the value of the derivation'\&. 
+.PP
+Definition at line 318 of file SbGeoParameter\&.H'\&.
+.PP
+References SBDerivation::D\&.
+.PP
+Referenced by SBStatistics::addWPFR(), SBEstimator::processConstr(), SBEstimator::processGlobalConstr(), SBEstimator::processObs(), SBStatistics::setWPFR(), and SBStatistics::setWRMS()\&.
+.SS "void SBAttributed::delAttr (uintA_)\fC [inline, inherited]\fP"Deletes the attribute from the storage'\&. 
+.PP
+Definition at line 249 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBProject::addSession(), SBVLBISession::checkAttributres(), SBVLBIPreProcess::clearPars(), SBStation::deleteOLoad(), SBObsVLBIEntry::isEligible(), SBFilteringGauss::makeAnalysisWith3Sigma(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportTRF(), SBStationInfo::restoreUserInfo(), SBBaseInfo::restoreUserInfo(), SBSourceInfo::restoreUserInfo(), SBVLBISession::restoreUserInfo(), SBParameter::rw(), SBEphem::SBEphem(), SBStation::SBStation(), SBSpectrumAnalyserMEM::setMEMAssumeEquiDistant(), SBSpectrumAnalyserMEM::setMEMFillMissingImag(), SBSpectrumAnalyserMEM::setMEMRemoveShifts(), SBSpectrumAnalyserMEM::setMEMRemoveTrends(), and SBParameter::tuneParameter()\&.
+.SS "virtual double SBParameter::e (const \fBSBMJD\fP & = \fC\fBTZero\fP\fP) const\fC [inline, virtual, inherited]\fP"Returns value of the formal error'\&. 
+.PP
+Reimplemented in \fBSBStochParameter\fP'\&.
+.PP
+Definition at line 415 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBSolutionBrowser::batch4StochEOPChanged(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBStochParameter::dump2File(), SBStochParameter::e(), SBSolution::getGlobalParameter4Report(), SBSource::getGlobalParameters4Report(), SBStation::getGlobalParameters4Report4Axel(), SBStation::getGlobalParameters4UpdateTRF(), SBSource::getParameters4Report(), SBParameterLI::key(), SBCableLI::key(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportEOP(), SBRunManager::makeReportTRFVariations(), operator<<(), SBVLBIPreProcess::preProcess(), SBParameterList::report(), SBStochParameter::report(), SBParameterLI::text(), SBCableLI::text(), SBParameter::update(), SBSolution::updateParameter(), SBSolutionBrowser::wLocalEOPPars(), SBSolutionBrowser::wLocalSoPars(), and SBSolutionBrowser::wLocalStPars()\&.
+.SS "int SBSINEXParameter::idx () const\fC [inline]\fP"
+.PP
+Definition at line 96 of file SbGeoSINEX\&.H'\&.
+.PP
+References Idx\&.
+.SS "virtual void SBDerivation::invertAux ()\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 358 of file SbGeoParameter\&.H'\&.
+.PP
+References SBDerivation::Num_aux, SBDerivation::TFinis_aux, SBDerivation::TStart_aux, and SBDerivation::TSum_aux\&.
+.SS "bool SBAttributed::isAttr (uintA_) const\fC [inline, inherited]\fP"Returns TRUE if the attribute is set'\&. 
+.PP
+Definition at line 253 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBStationEditor::acquireData(), SBStaParsEditor::acquireData(), SBObsVLBIEntry::ambientH_1(), SBObsVLBIEntry::ambientH_2(), SBObsVLBIEntry::ambientP_1(), SBObsVLBIEntry::ambientP_2(), SBObsVLBIEntry::ambientT_1(), SBObsVLBIEntry::ambientT_2(), SBDelay::calc(), SBVLBISession::checkArtMeteo(), SBVLBISession::checkAttributres(), collectListOfSINEXParameters(), SBStationInfo::dumpUserInfo(), SBBaseInfo::dumpUserInfo(), SBSourceInfo::dumpUserInfo(), SBVLBISession::dumpUserInfo(), SBFilterModel::eliminateAfter(), SBFilterModel::eliminateBefore(), SBVLBIPreProcess::fillObsListView(), SBRunManager::fillParameterList(), SBMEM::fpe(), SBFilterGauss::interpolate(), SBObservation::isEligible(), SBObsVLBIEntry::isEligible(), SBVLBIObsPPLI::key(), SBSourceListItem::key(), SBStationListItem::key(), SBVLBISesInfoLI::key(), SBVLBISesPreProcLI::key(), SBVLBIObsLI::key(), SBStaInfoLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBStationImport::loadOLoad(), SBParameter::m(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportMaps(), SBRunManager::makeReportTRF(), SBRunManager::makeReportTRFVariations(), operator<<(), operator>>(), SBVLBIObsPPLI::paintCell(), SBObsVLBIEntry::process(), SBRunManager::process_m1(), SBMEM::readDataFile(), SBParameter::rw(), SBStaParsEditor::SBStaParsEditor(), SBProjectCreate::selChanged(), sinex_SiteEccentricityBlock(), sinex_SiteIDBlock(), sinex_SourceIDBlock(), SBParameter::str4compare(), SBVLBIObsPPLI::text(), SBSourceListItem::text(), SBStationListItem::text(), SBVLBISesInfoLI::text(), SBVLBISesPreProcLI::text(), SBVLBIObsLI::text(), SBStaInfoLI::text(), SBBasInfoLI::text(), SBSouInfoLI::text(), SBMasterRecBrowser::SBMRListItem::text(), SBSolutionBrowser::updateCRF(), SBBrowseSources::updateList(), SBSolutionBrowser::updateTRF(), SBVLBISessionEditor::wObservs(), SBSourceEditor::wStats(), SBStationEditor::wStats(), and SBStation::~SBStation()\&.
+.SS "double SBParameter::m (doubledT)\fC [virtual, inherited]\fP"
+.PP
+Definition at line 444 of file SbGeoParameter\&.C'\&.
+.PP
+References SBAttributed::isAttr(), SBDerivation::IsBreak, SBParameterCfg::ST_MARKOVPROCESS, SBParameterCfg::ST_NONE, SBParameterCfg::ST_RANDWALK, SBParameterCfg::ST_UNKN, SBParameterCfg::ST_WHITENOISE, SBParameter::SType, and SBParameter::Tau\&.
+.PP
+Referenced by SBEstimator::mapContStochs4NewBatch(), SBEstimator::propagateStochasticPars(), and SBParameter::rw()\&.
+.SS "const QString& SBNamed::name () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 215 of file SbGeo\&.H'\&.
+.PP
+References SBNamed::Name\&.
+.PP
+Referenced by SBVLBINetEntryEditor::accept(), SBSourceEditor::acquireData(), SBSiteEditor::acquireData(), SBStationEditor::acquireData(), SBStochParameter::addPar(), SBProject::addSession(), SBSite::addStation(), SBParameterList::append(), SBVector::at(), SBMatrix::at(), SBUpperMatrix::at(), SBSymMatrix::at(), SBStation::axisOffsetLenght(), SBSolutionBrowser::batch4StochEOPChanged(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBEphem::calc(), SBStation::calcDisplacement(), SBSetupDialog::chkPacker(), SBVLBIPreProcess::clearPars(), SBEstimator::collectContStochs4NextBatch(), collectListOfSINEXParameters(), collectListOfSINEXParameters4NEQ(), SB_CRF::collectObjAliases(), SBObsVLBIStatistics::collectStatistics(), SBRunManager::constraintSourceCoord(), SBRunManager::constraintStationCoord(), SBRunManager::constraintStationVeloc(), SBSource::createParameters(), SBProjectCreate::createProject(), SBTestFrame::createWidget4Test(), SBTestEphem::createWidget4Test(), SBVLBIPreProcess::currentSesChange(), SBPlotArea::defineAreas(), SBSiteEditor::deleteEntry(), SBVLBISetView::deleteEntry(), SBStuffSources::deleteEntryS(), SBStuffStations::deleteEntryS(), SBSolution::deleteSolution(), SBSetupDialog::delInst(), SBSetupDialog::delPacker(), SBEstimator::Group::delParameter(), SBProjectEdit::delSession(), SBProject::delSession(), SBSite::delStation(), SBPlateMotion::displacement(), SBStuffAplo::draw(), SBPlotArea::drawFrames(), SBStochParameter::dump2File(), SBSolution::dumpParameters(), SBBaseInfo::dumpUserInfo(), SBSourceInfo::dumpUserInfo(), SBVLBISession::dumpUserInfo(), SBVLBISet::dumpUserInfo(), SBParametersEditor::editParameter(), SBAploChunk::fillDict(), SBVLBISet::fillDicts(), SBVLBIPreProcess::fillObsListView(), SBVLBIPreProcess::fillSessAttr(), SBCatalog::find(), SBSolution::getGlobalParameter4Report(), SBAploChunk::import(), SBVLBISet::import(), SBEcc::importEccDat(), SBAploEphem::importHPS(), SBMaster::importMF(), SBProjectCreate::init(), SBFCList::insert(), SBInstitutionList::insert(), SBCatalog::insert(), SBParameterList::inSort(), SBCatalog::inSort(), SBStochParameterList::inSort(), SB_TRF::inSort(), SBObsVLBIStatSrcLI::key(), SBParameterLI::key(), SBSourceListItem::key(), SBStationListItem::key(), SBObsVLBIStatStaLI::key(), SBVLBISesInfoLI::key(), SBSiteListItem::key(), SBObsVLBIStatRecordLI::key(), SBBasInfoLI::key(), SBSouInfoLI::key(), SBAploEntryLI::key(), SBTestStationLI::key(), SBStationImport::loadNScodes(), SBStationImport::loadOLoad(), SBSolution::loadStatistics(), SBRunManager::loadVLBISession_m1(), SBRunManager::loadVLBISessions_m2(), SB_CRF::lookupNearest(), SB_TRF::lookupNearest(), SBSolutionBrowser::lookupParameters(), SBSourceEditor::makeApply(), SBSiteEditor::makeApply(), SBStationEditor::makeApply(), SBRunManager::makeReportCRF(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportEOP(), SBRunManager::makeReportMaps(), SBRunManager::makeReportNormalEqs(), SBRunManager::makeReports(), SBRunManager::makeReportSessionStatistics(), SBRunManager::makeReportTRF(), SBRunManager::makeReportTRFVariations(), SBRunManager::makeReportTroposphere(), SBEstimator::mapContStochs4NewBatch(), SBMaster::mapFiles(), SBMaster::mapRecords(), matT_x_mat(), SBEstimator::moveGlobalInfo(), SBEstimator::moveGlobalInfo_Old(), SBFileConv::open4In(), SBFileConv::open4Out(), SBEphem::openFile(), SBVector::operator()(), SBSolidTideLd::operator()(), SBTideLd::operator()(), SBMatrix::operator()(), SBRefraction::operator()(), SBUpperMatrix::operator()(), operator*(), operator+(), SBVector::operator+=(), SBMatrix::operator+=(), SBUpperMatrix::operator+=(), operator-(), SBVector::operator-=(), SBMatrix::operator-=(), SBUpperMatrix::operator-=(), SBObsVLBIEntry::operator<(), operator<<(), SBVector::operator=(), SBMatrix::operator=(), SBUpperMatrix::operator=(), SBVLBISesInfo::operator=(), SBVector::operator==(), SBObsVLBIEntry::operator==(), SBVLBISesInfo::operator==(), operator>>(), operator~(), SBSymMatrix::operator~(), SBPlotArea::output4Files(), SBSolution::path2GlbDir(), SBSolution::path2LocDir(), SBSolution::path2StcDir(), SBEstimator::prepare4Local(), SBSite::prepareDicts(), SBVLBIPreProcess::preProcess(), SBObsVLBIEntry::process(), SBRunManager::process_m1(), SBRunManager::process_m2(), SBVLBIPreProcess::procScenario_2(), SBProjectSel::ProjectListItem::ProjectListItem(), QuadraticForm(), SBRefraction::refrDir(), SBAploEphem::registerStation(), SBInstitutionList::remove(), SBParameterList::remove(), SBStochParameterList::remove(), SBVLBISet::removeSession(), SBParameterList::report(), SBStochParameter::report(), SBBaseInfo::restoreUserInfo(), SBSourceInfo::restoreUserInfo(), SBVLBISession::restoreUserInfo(), RRT(), RTR(), SBParameter::rw(), SBPlot::save2PS(), SBVLBISet::saveSession(), SBRunManager::saveVLBISessions_m1(), SBRunManager::saveVLBISessions_m2(), SBCoordsEditor::SBCoordsEditor(), SBEstimator::SBEstimator(), SBModelEditor::SBModelEditor(), SBObsVLBIStatBrowser::SBObsVLBIStatBrowser(), SBObsVLBIStatSrc::SBObsVLBIStatSrc(), SBObsVLBIStatSta::SBObsVLBIStatSta(), SBParametersEditor::SBParametersEditor(), SBPlateMotion::SBPlateMotion(), SBPlot::SBPlot(), SBPlotDialog::SBPlotDialog(), SBProjectEdit::SBProjectEdit(), SBRunManager::SBRunManager(), SBSolution::SBSolution(), SBSolutionBrowser::SBSolutionBrowser(), SBStuffEphem::SBStuffEphem(), SBTestAPLoad::SBTestAPLoad(), SBTestDiurnEOP::SBTestDiurnEOP(), SBTestEphem::SBTestEphem(), SBTestFrame::SBTestFrame(), SBTestNutation::SBTestNutation(), SBTestOceanTides::SBTestOceanTides(), SBTestPolarTides::SBTestPolarTides(), SBTestSolidTides::SBTestSolidTides(), SBVLBINetEntryEditor::SBVLBINetEntryEditor(), SBVLBISessionEditor::SBVLBISessionEditor(), SBVector::set(), SBMatrix::set(), SBUpperMatrix::set(), SBMatrix::setCol(), SBUpperMatrix::setCol(), SBFCList::setDefault(), SB_TRF::setSiteName(), SBMatrix::setVector(), SBUpperMatrix::setVector(), Solve(), SBEstimator::solveLocals(), SBObsVLBIEntry::source(), SBTestSolidTides::stationChange(), SBTestOceanTides::stationChange(), SBTestPolarTides::stationChange(), SBTestAPLoad::stationChange(), SBParameter::str4compare(), SBRunManager::stripTRF(), SBSolution::submitGlobalParameters(), SBSolution::submitLocalParameters(), SBSolution::submitStochasticParameters(), SBMatrix::T(), SBUpperMatrix::T(), SBFileConvLI::text(), SBParameterLI::text(), SBObsVLBIStatSrcLI::text(), SBSourceListItem::text(), SBStationListItem::text(), SBObsVLBIStatStaLI::text(), SBVLBISesInfoLI::text(), SBSolutionBatchLI::text(), SBSiteListItem::text(), SBVLBISesPreProcLI::text(), SBObsVLBIStatRecordLI::text(), SBSetupDialog::SBInstLI::text(), SBBasInfoLI::text(), SBSouInfoLI::text(), SBAploEntryLI::text(), SBTestStationLI::text(), SBVLBINetworkEditor::NetworkListItem::text(), SBMasterRecBrowser::SBMRListItem::text(), SBStochParameter::update(), SBSolution::updateParameter(), SBVLBIPreProcess::updateSession(), SBParameterList::updateSolution(), SBMainWindow::UtilitiesCollectStat4Prj(), SBPlateMotion::velocity(), SBVLBIPreProcess::wAttributes(), SBSourceEditor::wCoordinates(), SBParametersEditor::wEOPParameters(), SBSolutionBrowser::wLocalEOPPars(), SBSolutionBrowser::wLocalSoPars(), SBSolutionBrowser::wLocalStPars(), SBStationEditor::wNames(), SBVLBISessionEditor::wObservs(), SBParametersEditor::wOtherParameters(), SBVLBISessionEditor::wParameters(), writeNormalEquationSystem(), SBSiteEditor::wSite(), SBParametersEditor::wSourceParameters(), SBParametersEditor::wStationParameters(), SBSolutionBrowser::wStochEOPPars(), SBSolutionBrowser::wStochSoPars(), SBSolutionBrowser::wStochStPars(), SBParametersEditor::wTestParameters(), and SBSolutionBrowser::wWRMSs()\&.
+.SS "virtual int SBDerivation::num (const \fBSBMJD\fP & = \fC\fBTZero\fP\fP) const\fC [inline, virtual, inherited]\fP"Returns the number of observations'\&. 
+.PP
+Reimplemented in \fBSBStochParameter\fP'\&.
+.PP
+Definition at line 320 of file SbGeoParameter\&.H'\&.
+.PP
+References SBDerivation::Num\&.
+.PP
+Referenced by SBStochParameter::addPar(), SBStochParameter::dump2File(), SBSource::getGlobalParameters4Report(), SBStation::getGlobalParameters4Report4Axel(), SBStation::getGlobalParameters4UpdateTRF(), SBSource::getParameters4Report(), SBParameterLI::key(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportEOP(), SBStochParameter::num(), operator<<(), SBParameterList::report(), SBStochParameter::report(), sinex_SolutionEpochsBlock(), SBParameterLI::text(), SBStochParameter::update(), and SBSolution::updateParameter()\&.
+.SS "virtual int SBDerivation::num_aux (const \fBSBMJD\fP & = \fC\fBTZero\fP\fP) const\fC [inline, virtual, inherited]\fP"Returns the number of observations'\&. 
+.PP
+Definition at line 344 of file SbGeoParameter\&.H'\&.
+.PP
+References SBDerivation::Num_aux\&.
+.SS "virtual int SBDerivation::numSes (const \fBSBMJD\fP & = \fC\fBTZero\fP\fP) const\fC [inline, virtual, inherited]\fP"Returns the number of sessions'\&. 
+.PP
+Definition at line 322 of file SbGeoParameter\&.H'\&.
+.PP
+References SBDerivation::NumSes\&.
+.PP
+Referenced by SBSource::getGlobalParameters4Report(), and SBSource::getParameters4Report()\&.
+.SS "QString SBSINEXParameter::parameterType ()"
+.PP
+Definition at line 122 of file SbGeoSINEX\&.C'\&.
+.PP
+References ST_NUT_LN, ST_NUT_OB, ST_RS_DE, ST_RS_RA, ST_STAX, ST_STAY, ST_STAZ, ST_UNKN, ST_UT, ST_VELX, ST_VELY, ST_VELZ, ST_XPO, ST_YPO, and Type\&.
+.SS "QString SBSINEXParameter::parameterUnits ()"
+.PP
+Definition at line 77 of file SbGeoSINEX\&.C'\&.
+.PP
+References ST_NUT_LN, ST_NUT_OB, ST_RS_DE, ST_RS_RA, ST_STAX, ST_STAY, ST_STAZ, ST_UNKN, ST_UT, ST_VELX, ST_VELY, ST_VELZ, ST_XPO, ST_YPO, and Type\&.
+.SS "const QString& SBSINEXParameter::pointCode () const\fC [inline]\fP"
+.PP
+Definition at line 99 of file SbGeoSINEX\&.H'\&.
+.PP
+References PointCode\&.
+.SS "virtual char SBParameter::prefix () const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 424 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBParameter::operator=()\&.
+.SS "virtual double SBParameter::psd_BN () const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 422 of file SbGeoParameter\&.H'\&.
+.SS "virtual double SBParameter::psd_RWN () const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 421 of file SbGeoParameter\&.H'\&.
+.SS "double SBParameter::rw (doubledT)\fC [virtual, inherited]\fP"
+.PP
+Definition at line 468 of file SbGeoParameter\&.C'\&.
+.PP
+References SBParameter::ClassName(), SBAttributed::delAttr(), SBParameter::E, SBLog::ESTIMATOR, SBLog::INF, SBAttributed::isAttr(), SBDerivation::IsBreak, Log, SBParameter::m(), SBNamed::name(), SBParameter::PSD_BN, SBParameter::PSD_RWN, SBParameter::SigmaAPriori, SBParameterCfg::ST_MARKOVPROCESS, SBParameterCfg::ST_NONE, SBParameterCfg::ST_RANDWALK, SBParameterCfg::ST_UNKN, SBParameterCfg::ST_WHITENOISE, SBParameter::SType, SBParameter::Tau, and SBLog::write()\&.
+.PP
+Referenced by SBEstimator::mapContStochs4NewBatch(), and SBEstimator::propagateStochasticPars()\&.
+.SS "virtual double SBParameter::s (const \fBSBMJD\fP & = \fC\fBTZero\fP\fP) const\fC [inline, virtual, inherited]\fP"Returns value of the last solution'\&. 
+.PP
+Reimplemented in \fBSBStochParameter\fP'\&.
+.PP
+Definition at line 413 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBSolutionBrowser::batch4StochEOPChanged(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBParameterList::report(), SBStochParameter::report(), SBStochParameter::s(), SBSolution::submitGlobalParameters(), SBSolution::submitLocalParameters(), SBParameter::update(), SBStochParameter::update(), SBSolutionBrowser::wLocalEOPPars(), SBSolutionBrowser::wLocalSoPars(), and SBSolutionBrowser::wLocalStPars()\&.
+.SS "virtual double SBParameter::scale () const\fC [inline, virtual, inherited]\fP"Returns value of the scale factor'\&. 
+.PP
+Definition at line 417 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBSolutionBrowser::batch4StochEOPChanged(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBStochParameter::dump2File(), SBParameterLI::key(), SBSolutionBrowser::lookupParameters(), SBRunManager::makeReportCRFVariations(), SBParameter::operator=(), SBParameterList::report(), SBStochParameter::report(), SBSolution::submitStochasticParameters(), SBParameterLI::text(), SBSolutionBrowser::wLocalEOPPars(), SBSolutionBrowser::wLocalSoPars(), and SBSolutionBrowser::wLocalStPars()\&.
+.SS "void SBSINEXParameter::setAPrioriValue (doubleVal_)\fC [inline]\fP"
+.PP
+Definition at line 112 of file SbGeoSINEX\&.H'\&.
+.PP
+References APrioriValue\&.
+.PP
+Referenced by collectListOfSINEXParameters(), and collectListOfSINEXParameters4NEQ()\&.
+.SS "void SBAttributed::setAttributes (uintA_)\fC [inline, inherited]\fP"Sets up the attributes'\&. 
+.PP
+Definition at line 245 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBCelestBody::SBCelestBody(), and SBVLBISessionEditor::~SBVLBISessionEditor()\&.
+.SS "void SBSINEXParameter::setConstraintCode (const QString &C_)\fC [inline]\fP"
+.PP
+Definition at line 114 of file SbGeoSINEX\&.H'\&.
+.PP
+References ConstraintCode\&.
+.PP
+Referenced by collectListOfSINEXParameters(), and collectListOfSINEXParameters4NEQ()\&.
+.SS "void SBDerivation::setD (doubleD_, const \fBSBMJD\fP &T)\fC [virtual, inherited]\fP"Sets up the value of the derivation'\&. 
+.PP
+Definition at line 291 of file SbGeoParameter\&.C'\&.
+.PP
+References SBDerivation::D, SBDerivation::Num, SBDerivation::Num_aux, SBDerivation::TFinis, SBDerivation::TFinis_aux, SBDerivation::TStart, SBDerivation::TStart_aux, SBDerivation::TSum, SBDerivation::TSum_aux, and TZero\&.
+.PP
+Referenced by SBStation::axisOffsetLenght(), SBDelay::calcDerivatives(), SBRunManager::constrainClocks(), SBRunManager::constraintEOP(), SBRunManager::constraintSourceCoord(), SBRunManager::constraintStationCoord(), SBRunManager::constraintStationVeloc(), and SBObsVLBIEntry::process()\&.
+.SS "virtual void SBParameter::setE (doubled_)\fC [inline, virtual, inherited]\fP"Sets the value of the formal error'\&. 
+.PP
+Definition at line 431 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBSolution::getGlobalParameter4Report(), and SBSolution::updateParameter()\&.
+.SS "void SBSINEXParameter::setIdx (intI_)\fC [inline]\fP"
+.PP
+Definition at line 107 of file SbGeoSINEX\&.H'\&.
+.PP
+References Idx\&.
+.PP
+Referenced by collectListOfSINEXParameters(), and collectListOfSINEXParameters4NEQ()\&.
+.SS "void SBNamed::setName (const QString &Name_)\fC [inline, inherited]\fP"
+.PP
+Definition at line 216 of file SbGeo\&.H'\&.
+.PP
+References SBNamed::Name\&.
+.PP
+Referenced by SBVLBINetEntryEditor::accept(), SBSourceEditor::acquireData(), SBSiteEditor::acquireData(), SBStationEditor::acquireData(), SBObsVLBIStatistics::collectStatistics(), SBVLBIPreProcess::currentSesChange(), SBVLBISet::import(), SBVLBISet::loadSession(), SBVLBISesInfo::operator=(), operator>>(), SBPlotArea::output4Files(), SBFilteringGauss::redrawDataPlot_ExpMode(), SBBaseInfoList::restoreUserInfo(), SBSourceInfoList::restoreUserInfo(), SBMasterRecord::SBMasterRecord(), SBSolution::SBSolution(), SB_TRF::setSiteName(), SBTestSolidTides::stationChange(), SBTestOceanTides::stationChange(), SBTestPolarTides::stationChange(), SBTestAPLoad::stationChange(), and SBVLBIPreProcess::updateSession()\&.
+.SS "virtual void SBDerivation::setNum (intNum_)\fC [inline, virtual, inherited]\fP"Sets up the value of the number of observations'\&. 
+.PP
+Definition at line 335 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBSolution::updateParameter()\&.
+.SS "virtual void SBDerivation::setNumSes (intNum_)\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 336 of file SbGeoParameter\&.H'\&.
+.SS "void SBSINEXParameter::setPointCode (const QString &P_)\fC [inline]\fP"
+.PP
+Definition at line 110 of file SbGeoSINEX\&.H'\&.
+.PP
+References PointCode\&.
+.PP
+Referenced by collectListOfSINEXParameters(), and collectListOfSINEXParameters4NEQ()\&.
+.SS "virtual void SBParameter::setPrefix (charc_)\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 440 of file SbGeoParameter\&.H'\&.
+.SS "virtual void SBParameter::setPSD_BN (doubled_)\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 438 of file SbGeoParameter\&.H'\&.
+.SS "virtual void SBParameter::setPSD_RWN (doubled_)\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 437 of file SbGeoParameter\&.H'\&.
+.SS "virtual void SBParameter::setS (doubled_)\fC [inline, virtual, inherited]\fP"Sets the value of the last udjustment'\&. 
+.PP
+Definition at line 429 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBVLBIPreProcess::preProcess(), and SBParameterList::updateSolution()\&.
+.SS "virtual void SBParameter::setScale (doubles_)\fC [inline, virtual, inherited]\fP"Sets the value of the scale factor'\&. 
+.PP
+Definition at line 433 of file SbGeoParameter\&.H'\&.
+.SS "virtual void SBParameter::setSigmaAPriori (doubled_)\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 435 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by collectListOfSINEXParameters4NEQ()\&.
+.SS "void SBSINEXParameter::setSiteCode (const QString &S_)\fC [inline]\fP"
+.PP
+Definition at line 109 of file SbGeoSINEX\&.H'\&.
+.PP
+References SiteCode\&.
+.PP
+Referenced by collectListOfSINEXParameters(), and collectListOfSINEXParameters4NEQ()\&.
+.SS "void SBSINEXParameter::setSolutionID (const QString &ID_)\fC [inline]\fP"
+.PP
+Definition at line 111 of file SbGeoSINEX\&.H'\&.
+.PP
+References SolutionID\&.
+.PP
+Referenced by collectListOfSINEXParameters(), and collectListOfSINEXParameters4NEQ()\&.
+.SS "virtual void SBParameter::setSType (\fBSBParameterCfg::StochType\fPST_)\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 439 of file SbGeoParameter\&.H'\&.
+.SS "virtual void SBParameter::setTau (doubled_)\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 436 of file SbGeoParameter\&.H'\&.
+.SS "virtual void SBDerivation::setTimes (const \fBSBDerivation\fP &Der)\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 338 of file SbGeoParameter\&.H'\&.
+.PP
+References SBDerivation::Num, SBDerivation::NumSes, SBDerivation::TFinis, SBDerivation::TStart, and SBDerivation::TSum\&.
+.PP
+Referenced by SBSolution::getGlobalParameter4Report(), and SBSolution::updateParameter()\&.
+.SS "void SBSINEXParameter::setTValidEpoch (const \fBSBMJD\fP &T_)\fC [inline]\fP"
+.PP
+Definition at line 113 of file SbGeoSINEX\&.H'\&.
+.PP
+References TValidEpoch\&.
+.PP
+Referenced by collectListOfSINEXParameters(), and collectListOfSINEXParameters4NEQ()\&.
+.SS "void SBSINEXParameter::setType (\fBSType\fPT_)\fC [inline]\fP"
+.PP
+Definition at line 108 of file SbGeoSINEX\&.H'\&.
+.PP
+References Type\&.
+.PP
+Referenced by collectListOfSINEXParameters(), and collectListOfSINEXParameters4NEQ()\&.
+.SS "virtual void SBParameter::setV (doubled_)\fC [inline, virtual, inherited]\fP"Sets the value of the parameter'\&. 
+.PP
+Definition at line 427 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBSolution::getGlobalParameter4Report(), SBVLBIPreProcess::preProcess(), SBSolution::submitGlobalParameters(), SBSolution::submitLocalParameters(), SBStochParameter::update(), and SBSolution::updateParameter()\&.
+.SS "virtual double SBParameter::sigmaAPriori () const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 419 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by collectListOfSINEXParameters4NEQ()\&.
+.SS "const QString& SBSINEXParameter::siteCode () const\fC [inline]\fP"
+.PP
+Definition at line 98 of file SbGeoSINEX\&.H'\&.
+.PP
+References SiteCode\&.
+.PP
+Referenced by sinex_SourceIDBlock()\&.
+.SS "const QString& SBSINEXParameter::solutionID () const\fC [inline]\fP"
+.PP
+Definition at line 100 of file SbGeoSINEX\&.H'\&.
+.PP
+References SolutionID\&.
+.SS "virtual QString SBParameter::str4compare () const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 452 of file SbGeoParameter\&.H'\&.
+.PP
+References SBAttributed::isAttr(), SBDerivation::IsPropagated, and SBNamed::name()\&.
+.PP
+Referenced by SBSINEXParameterList::compareItems(), and SBParameterList::compareItems()\&.
+.SS "virtual \fBSBParameterCfg::StochType\fP SBParameter::sType () const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 423 of file SbGeoParameter\&.H'\&.
+.SS "virtual double SBParameter::tau () const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 420 of file SbGeoParameter\&.H'\&.
+.SS "virtual \fBSBMJD\fP SBDerivation::tEpoch (const \fBSBMJD\fP & = \fC\fBTZero\fP\fP) const\fC [inline, virtual, inherited]\fP"Returns date of the mean observation'\&. 
+.PP
+Reimplemented in \fBSBStochParameter\fP'\&.
+.PP
+Definition at line 328 of file SbGeoParameter\&.H'\&.
+.PP
+References TZero\&.
+.PP
+Referenced by SBSolutionBrowser::batch4StochEOPChanged(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), collectListOfSINEXParameters(), collectListOfSINEXParameters4NEQ(), SBStochParameter::dump2File(), SBSource::getGlobalParameters4Report(), SBStation::getGlobalParameters4Report(), SBStation::getGlobalParameters4Report4Axel(), SBStation::getGlobalParameters4UpdateTRF(), SBSource::getParameters4Report(), SBParameterLI::key(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportEOP(), SBRunManager::makeReportTRFVariations(), SBParameterList::report(), SBStochParameter::report(), sinex_SolutionEpochsBlock(), SBStochParameter::tEpoch(), SBParameterLI::text(), SBParameter::timeStamp(), SBSolutionBrowser::wLocalEOPPars(), SBSolutionBrowser::wLocalSoPars(), and SBSolutionBrowser::wLocalStPars()\&.
+.SS "virtual \fBSBMJD\fP SBDerivation::tEpoch_aux (const \fBSBMJD\fP & = \fC\fBTZero\fP\fP) const\fC [inline, virtual, inherited]\fP"Returns date of the mean observation'\&. 
+.PP
+Definition at line 350 of file SbGeoParameter\&.H'\&.
+.PP
+References TZero\&.
+.SS "virtual \fBSBMJD\fP SBDerivation::tFinis (const \fBSBMJD\fP & = \fC\fBTZero\fP\fP) const\fC [inline, virtual, inherited]\fP"Returns date of the last observation'\&. 
+.PP
+Reimplemented in \fBSBStochParameter\fP'\&.
+.PP
+Definition at line 326 of file SbGeoParameter\&.H'\&.
+.PP
+References SBDerivation::TFinis\&.
+.PP
+Referenced by SBSource::getGlobalParameters4Report(), SBSource::getParameters4Report(), SBParameterLI::key(), SBParameterList::report(), SBStochParameter::report(), sinex_SolutionEpochsBlock(), SBParameterLI::text(), and SBStochParameter::tFinis()\&.
+.SS "virtual \fBSBMJD\fP SBDerivation::tFinis_aux (const \fBSBMJD\fP & = \fC\fBTZero\fP\fP) const\fC [inline, virtual, inherited]\fP"Returns date of the last observation'\&. 
+.PP
+Definition at line 348 of file SbGeoParameter\&.H'\&.
+.PP
+References SBDerivation::TFinis_aux\&.
+.SS "QString SBParameter::timeStamp () const\fC [inline, inherited]\fP"
+.PP
+Definition at line 447 of file SbGeoParameter\&.H'\&.
+.PP
+References SBMJD::F_INTERNAL, SBDerivation::tEpoch(), and SBMJD::toString()\&.
+.PP
+Referenced by SBStochParameter::addPar(), SBStochParameter::operator=(), and SBStochParameter::update()\&.
+.SS "virtual double SBDerivation::tInterval (const \fBSBMJD\fP & = \fC\fBTZero\fP\fP) const\fC [inline, virtual, inherited]\fP"Returns interval of the observations'\&. 
+.PP
+Reimplemented in \fBSBStochParameter\fP'\&.
+.PP
+Definition at line 330 of file SbGeoParameter\&.H'\&.
+.PP
+References SBDerivation::TStart\&.
+.PP
+Referenced by SBRunManager::makeReportEOP(), and SBStochParameter::tInterval()\&.
+.SS "virtual double SBDerivation::tInterval_aux (const \fBSBMJD\fP & = \fC\fBTZero\fP\fP) const\fC [inline, virtual, inherited]\fP"Returns interval of the observations'\&. 
+.PP
+Definition at line 352 of file SbGeoParameter\&.H'\&.
+.PP
+References SBDerivation::TStart_aux\&.
+.SS "double SBSINEXParameter::totValue () const\fC [inline]\fP"
+.PP
+Definition at line 102 of file SbGeoSINEX\&.H'\&.
+.PP
+References APrioriValue, and SBParameter::v()\&.
+.SS "virtual \fBSBMJD\fP SBDerivation::tStart (const \fBSBMJD\fP & = \fC\fBTZero\fP\fP) const\fC [inline, virtual, inherited]\fP"Returns date of the first observation'\&. 
+.PP
+Reimplemented in \fBSBStochParameter\fP'\&.
+.PP
+Definition at line 324 of file SbGeoParameter\&.H'\&.
+.PP
+References SBDerivation::TStart\&.
+.PP
+Referenced by SBSource::getGlobalParameters4Report(), SBSource::getParameters4Report(), SBParameterLI::key(), SBParameterList::report(), SBStochParameter::report(), sinex_SolutionEpochsBlock(), SBParameterLI::text(), and SBStochParameter::tStart()\&.
+.SS "virtual \fBSBMJD\fP SBDerivation::tStart_aux (const \fBSBMJD\fP & = \fC\fBTZero\fP\fP) const\fC [inline, virtual, inherited]\fP"Returns date of the first observation'\&. 
+.PP
+Definition at line 346 of file SbGeoParameter\&.H'\&.
+.PP
+References SBDerivation::TStart_aux\&.
+.SS "void SBParameter::tuneParameter (const \fBSBParameterCfg\fP &Cfg)\fC [virtual, inherited]\fP"
+.PP
+Definition at line 412 of file SbGeoParameter\&.C'\&.
+.PP
+References SBAttributed::addAttr(), SBParameterCfg::breakNoise(), SBParameterCfg::convAPriori(), SBAttributed::delAttr(), SBParameterCfg::isPropagated(), SBDerivation::IsPropagated, SBParameter::PSD_BN, SBParameter::PSD_RWN, SBParameterCfg::PT_STH, SBParameterCfg::scale(), SBParameter::Scale, SBParameter::SigmaAPriori, SBParameterCfg::stocAPriori(), SBParameterCfg::stochasticType(), SBParameter::SType, SBParameterCfg::tau(), SBParameter::Tau, SBParameterCfg::type(), and SBParameterCfg::whiteNoise()\&.
+.PP
+Referenced by collectListOfSINEXParameters(), collectListOfSINEXParameters4NEQ(), and SBRunManager::fillParameterList()\&.
+.SS "const \fBSBMJD\fP& SBSINEXParameter::tValidEpoch () const\fC [inline]\fP"
+.PP
+Definition at line 103 of file SbGeoSINEX\&.H'\&.
+.PP
+References TValidEpoch\&.
+.SS "\fBSType\fP SBSINEXParameter::type () const\fC [inline]\fP"
+.PP
+Definition at line 97 of file SbGeoSINEX\&.H'\&.
+.PP
+References Type\&.
+.PP
+Referenced by collectListOfSINEXParameters()\&.
+.SS "void SBParameter::update (const \fBSBParameter\fP *P_)\fC [virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSBStochParameter\fP'\&.
+.PP
+Definition at line 426 of file SbGeoParameter\&.C'\&.
+.PP
+References SBParameter::ClassName(), SBParameter::E, SBParameter::e(), SBLog::ERR, SBLog::ESTIMATOR, Log, SBParameter::S, SBParameter::s(), SBParameter::V, and SBLog::write()\&.
+.PP
+Referenced by SBSolution::submitGlobalParameters(), SBSolution::submitLocalParameters(), and SBStochParameter::update()\&.
+.SS "virtual double SBParameter::v (const \fBSBMJD\fP & = \fC\fBTZero\fP\fP) const\fC [inline, virtual, inherited]\fP"Returns value of the parameter'\&. 
+.PP
+Reimplemented in \fBSBStochParameter\fP'\&.
+.PP
+Definition at line 411 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBStation::axisOffsett(), SBSolutionBrowser::batch4StochEOPChanged(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBStation::calcDisplacement(), collectListOfSINEXParameters4NEQ(), SBSolidTideLd::deg2InPhase(), SBSolidTideLd::dTide_dLag(), SBStochParameter::dump2File(), SBEOP::dUT1_UTC(), SBEOP::dX(), SBEOP::dY(), SBSolution::getGlobalParameter4Report(), SBSource::getGlobalParameters4Report(), SBStation::getGlobalParameters4Report(), SBStation::getGlobalParameters4Report4Axel(), SBStation::getGlobalParameters4UpdateTRF(), SBSolidTideLd::h2(), SBSolidTideLdIERS92::h2(), SBEOP::interpolateEOPs(), SBParameterLI::key(), SBCableLI::key(), SBSolidTideLd::l2(), SBSolidTideLdIERS92::l2(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportTRFVariations(), SBRefraction::operator()(), operator<<(), SBVLBIPreProcess::preProcess(), SBObsVLBIEntry::process(), SBParameterList::report(), SBStochParameter::report(), sinex_tro_StaCoordinatesBlock(), SBSolution::submitGlobalParameters(), SBParameterLI::text(), SBCableLI::text(), totValue(), SBSolution::updateParameter(), SBSource::updateParameters(), SBStochParameter::v(), SBSolutionBrowser::wLocalEOPPars(), SBSolutionBrowser::wLocalSoPars(), and SBSolutionBrowser::wLocalStPars()\&.
+.SS "void SBAttributed::xorAttr (uintA_)\fC [inline, inherited]\fP"Toggles the attribute in the storage'\&. 
+.PP
+Definition at line 251 of file SbGeneral\&.H'\&.
+.PP
+References SBAttributed::Attr\&.
+.PP
+Referenced by SBStaParsEditor::acquireData(), SBVLBIPreProcess::toggleEntryMarkEnable(), and SBVLBIPreProcess::toggleEntryMoveEnable()\&.
+.SS "virtual void SBDerivation::zero ()\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 361 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBEstimator::processConstr(), SBEstimator::processGlobalConstr(), and SBEstimator::processObs()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "int cmp (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP, returns (-1:0:+1)'\&. 
+.PP
+Definition at line 253 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBStochParameterList::compareItems(), and SBMasterFile::compareItems()\&.
+.SS "bool operator!= (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 238 of file SbGeo\&.H'\&.
+.SS "bool operator< (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 243 of file SbGeo\&.H'\&.
+.SS "QDataStream & operator<< (QDataStream &s, const \fBSBNamed\fP &W)\fC [friend, inherited]\fP"Saves object to the data stream'\&. 
+.PP
+Definition at line 258 of file SbGeo\&.H'\&.
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBAttributed\fP &A)\fC [friend, inherited]\fP"
+.PP
+Definition at line 259 of file SbGeneral\&.H'\&.
+.SS "QDataStream & operator<< (QDataStream &s, const \fBSBDerivation\fP &D)\fC [friend, inherited]\fP"Output to the data stream'\&. 
+.PP
+Definition at line 342 of file SbGeoParameter\&.C'\&.
+.SS "QDataStream & operator<< (QDataStream &s, const \fBSBParameter\fP &P)\fC [friend, inherited]\fP"Output to the data stream'\&. 
+.PP
+Definition at line 511 of file SbGeoParameter\&.C'\&.
+.SS "bool operator== (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 233 of file SbGeo\&.H'\&.
+.SS "bool operator> (const \fBSBNamed\fP &N1, const \fBSBNamed\fP &N2)\fC [friend, inherited]\fP"Compares two instances of \fBSBNamed\fP'\&. 
+.PP
+Definition at line 248 of file SbGeo\&.H'\&.
+.SS "QDataStream & operator>> (QDataStream &s, \fBSBNamed\fP &W)\fC [friend, inherited]\fP"Loads object from the data stream'\&. 
+.PP
+Definition at line 263 of file SbGeo\&.H'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBAttributed\fP &A)\fC [friend, inherited]\fP"
+.PP
+Definition at line 260 of file SbGeneral\&.H'\&.
+.SS "QDataStream & operator>> (QDataStream &s, \fBSBDerivation\fP &D)\fC [friend, inherited]\fP"Input from the data stream'\&. 
+.PP
+Definition at line 358 of file SbGeoParameter\&.C'\&.
+.SS "QDataStream & operator>> (QDataStream &s, \fBSBParameter\fP &P)\fC [friend, inherited]\fP"Input from the data stream'\&. 
+.PP
+Definition at line 519 of file SbGeoParameter\&.C'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double \fBSBSINEXParameter::APrioriValue\fP\fC [protected]\fP"
+.PP
+Definition at line 73 of file SbGeoSINEX\&.H'\&.
+.PP
+Referenced by aPrioriValue(), SBSINEXParameter(), setAPrioriValue(), and totValue()\&.
+.SS "QString \fBSBSINEXParameter::ConstraintCode\fP\fC [protected]\fP"
+.PP
+Definition at line 81 of file SbGeoSINEX\&.H'\&.
+.PP
+Referenced by constraintCode(), SBSINEXParameter(), and setConstraintCode()\&.
+.SS "double \fBSBDerivation::D\fP\fC [protected, inherited]\fP"
+.PP
+value of a derivation; 
+.PP
+Definition at line 289 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBDerivation::clearValues(), SBDerivation::clearValues_aux(), SBDerivation::d(), SBDerivation::operator=(), SBDerivation::SBDerivation(), and SBDerivation::setD()\&.
+.SS "double \fBSBParameter::E\fP\fC [protected, inherited]\fP"
+.PP
+formal error; 
+.PP
+Definition at line 383 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBParameter::clearValues(), SBParameter::operator=(), SBParameter::rw(), SBParameter::SBParameter(), and SBParameter::update()\&.
+.SS "int \fBSBSINEXParameter::Idx\fP\fC [protected]\fP"
+.PP
+Definition at line 74 of file SbGeoSINEX\&.H'\&.
+.PP
+Referenced by idx(), SBSINEXParameter(), and setIdx()\&.
+.SS "QString \fBSBNamed::Name\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 206 of file SbGeo\&.H'\&.
+.PP
+Referenced by SBVLBISesInfo::fileName(), SBNamed::name(), operator<<(), SBNamed::operator=(), SBStation::operator=(), SBSite::operator=(), SBOLoadCarrier::operator==(), operator>>(), SBStochParameter::report(), SBNamed::SBNamed(), SBNamed::setName(), SBSite::updateSite(), and SBStation::updateStation()\&.
+.SS "int \fBSBDerivation::Num\fP\fC [protected, inherited]\fP"
+.PP
+number of points per derivation; 
+.PP
+Definition at line 290 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBDerivation::clearValues(), SBDerivation::num(), SBDerivation::operator=(), SBDerivation::SBDerivation(), SBDerivation::setD(), and SBDerivation::setTimes()\&.
+.SS "int \fBSBDerivation::Num_aux\fP\fC [protected, inherited]\fP"
+.PP
+number of points per derivation; 
+.PP
+Definition at line 297 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBDerivation::clearValues_aux(), SBDerivation::invertAux(), SBDerivation::num_aux(), SBDerivation::operator=(), SBDerivation::SBDerivation(), and SBDerivation::setD()\&.
+.SS "int \fBSBDerivation::NumSes\fP\fC [protected, inherited]\fP"
+.PP
+number of sessions per derivation; 
+.PP
+Definition at line 291 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBDerivation::clearValues(), SBDerivation::numSes(), SBDerivation::operator=(), SBDerivation::SBDerivation(), and SBDerivation::setTimes()\&.
+.SS "QString \fBSBSINEXParameter::PointCode\fP\fC [protected]\fP"
+.PP
+Definition at line 77 of file SbGeoSINEX\&.H'\&.
+.PP
+Referenced by pointCode(), SBSINEXParameter(), and setPointCode()\&.
+.SS "char \fBSBParameter::Prefix\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 393 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBParameter::operator=(), and SBParameter::SBParameter()\&.
+.SS "double \fBSBParameter::PSD_BN\fP\fC [protected, inherited]\fP"
+.PP
+PSD of White Noise used in break'\&. 
+.PP
+Definition at line 391 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBParameter::operator=(), SBParameter::rw(), SBParameter::SBParameter(), and SBParameter::tuneParameter()\&.
+.SS "double \fBSBParameter::PSD_RWN\fP\fC [protected, inherited]\fP"
+.PP
+PSD of Ruled White Noise'\&. 
+.PP
+Definition at line 390 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBParameter::operator=(), SBParameter::rw(), SBParameter::SBParameter(), and SBParameter::tuneParameter()\&.
+.SS "double \fBSBParameter::S\fP\fC [protected, inherited]\fP"
+.PP
+value of the solution; 
+.PP
+Definition at line 382 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBParameter::clearValues(), SBParameter::operator=(), SBParameter::SBParameter(), and SBParameter::update()\&.
+.SS "double \fBSBParameter::Scale\fP\fC [protected, inherited]\fP"
+.PP
+scale factor; 
+.PP
+Definition at line 384 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBParameter::operator=(), SBStochParameter::report(), SBParameter::SBParameter(), and SBParameter::tuneParameter()\&.
+.SS "double \fBSBParameter::SigmaAPriori\fP\fC [protected, inherited]\fP"
+.PP
+a priori std'\&. deviation (to init the Inform'\&. matrix) 
+.PP
+Definition at line 388 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBParameter::operator=(), SBParameter::rw(), SBParameter::SBParameter(), and SBParameter::tuneParameter()\&.
+.SS "QString \fBSBSINEXParameter::SiteCode\fP\fC [protected]\fP"
+.PP
+Definition at line 76 of file SbGeoSINEX\&.H'\&.
+.PP
+Referenced by SBSINEXParameter(), setSiteCode(), and siteCode()\&.
+.SS "QString \fBSBSINEXParameter::SolutionID\fP\fC [protected]\fP"
+.PP
+Definition at line 78 of file SbGeoSINEX\&.H'\&.
+.PP
+Referenced by SBSINEXParameter(), setSolutionID(), and solutionID()\&.
+.SS "double \fBSBParameter::Tau\fP\fC [protected, inherited]\fP"
+.PP
+time of relaxation (for stochastic parameters) 
+.PP
+Definition at line 389 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBParameter::m(), SBParameter::operator=(), SBParameter::rw(), SBParameter::SBParameter(), and SBParameter::tuneParameter()\&.
+.SS "\fBSBMJD\fP \fBSBDerivation::TFinis\fP\fC [protected, inherited]\fP"
+.PP
+MJD of the last measurement;'\&. 
+.PP
+Definition at line 293 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBDerivation::clearValues(), SBDerivation::operator=(), SBDerivation::SBDerivation(), SBDerivation::setD(), SBDerivation::setTimes(), and SBDerivation::tFinis()\&.
+.SS "\fBSBMJD\fP \fBSBDerivation::TFinis_aux\fP\fC [protected, inherited]\fP"
+.PP
+MJD of the last measurement;'\&. 
+.PP
+Definition at line 299 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBDerivation::clearValues_aux(), SBDerivation::invertAux(), SBDerivation::operator=(), SBDerivation::SBDerivation(), SBDerivation::setD(), and SBDerivation::tFinis_aux()\&.
+.SS "\fBSBMJD\fP \fBSBDerivation::TStart\fP\fC [protected, inherited]\fP"
+.PP
+MJD of the first measurement;'\&. 
+.PP
+Definition at line 292 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBDerivation::clearValues(), SBDerivation::operator=(), SBDerivation::SBDerivation(), SBDerivation::setD(), SBDerivation::setTimes(), SBStatistics::setTStart(), SBDerivation::tInterval(), SBDerivation::tStart(), and SBStatistics::tStart()\&.
+.SS "\fBSBMJD\fP \fBSBDerivation::TStart_aux\fP\fC [protected, inherited]\fP"
+.PP
+MJD of the first measurement;'\&. 
+.PP
+Definition at line 298 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBDerivation::clearValues_aux(), SBDerivation::invertAux(), SBDerivation::operator=(), SBDerivation::SBDerivation(), SBDerivation::setD(), SBDerivation::tInterval_aux(), and SBDerivation::tStart_aux()\&.
+.SS "long double \fBSBDerivation::TSum\fP\fC [protected, inherited]\fP"
+.PP
+the sum of the epochs of observation; 
+.PP
+Definition at line 294 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBDerivation::clearValues(), SBDerivation::operator=(), SBDerivation::SBDerivation(), SBDerivation::setD(), and SBDerivation::setTimes()\&.
+.SS "long double \fBSBDerivation::TSum_aux\fP\fC [protected, inherited]\fP"
+.PP
+the sum of the epochs of observation; 
+.PP
+Definition at line 300 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBDerivation::clearValues_aux(), SBDerivation::invertAux(), SBDerivation::operator=(), SBDerivation::SBDerivation(), and SBDerivation::setD()\&.
+.SS "\fBSBMJD\fP \fBSBSINEXParameter::TValidEpoch\fP\fC [protected]\fP"
+.PP
+Definition at line 80 of file SbGeoSINEX\&.H'\&.
+.PP
+Referenced by SBSINEXParameter(), setTValidEpoch(), and tValidEpoch()\&.
+.SS "\fBSType\fP \fBSBSINEXParameter::Type\fP\fC [protected]\fP"
+.PP
+Definition at line 75 of file SbGeoSINEX\&.H'\&.
+.PP
+Referenced by parameterType(), parameterUnits(), SBSINEXParameter(), setType(), and type()\&.
+.SS "double \fBSBParameter::V\fP\fC [protected, inherited]\fP"
+.PP
+value of the parameter; 
+.PP
+Definition at line 381 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBParameter::clearValues(), SBParameter::operator=(), SBParameter::SBParameter(), and SBParameter::update()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

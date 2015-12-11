@@ -1,0 +1,173 @@
+.TH "SBObsVLBIStatBrowser" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBObsVLBIStatBrowser \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIObsVLBIStat\&.H>\fP
+.PP
+Inherits \fBSBTabDialog\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBObsVLBIStatBrowser\fP (bool=FALSE, \fBQWidget\fP *=0, const char *=0, bool=FALSE, WFlags=0)"
+.br
+.ti -1c
+.RI "virtual \fB~SBObsVLBIStatBrowser\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBeditSrcEntry\fP (\fBQListViewItem\fP *)"
+.br
+.ti -1c
+.RI "void \fBeditStaEntry\fP (\fBQListViewItem\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBmakeApply\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBmakeDefaults\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBdone\fP (int r)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBcloseEvent\fP (QCloseEvent *)"
+.br
+.ti -1c
+.RI "virtual void \fBacquireData\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQWidget\fP * \fBwStationStatistics\fP ()"
+.br
+.ti -1c
+.RI "\fBQWidget\fP * \fBwSourceStatistics\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBObsVLBIStatistics\fP * \fBStatistics\fP"
+.br
+.ti -1c
+.RI "\fBQListView\fP * \fBStaLV\fP"
+.br
+.ti -1c
+.RI "\fBQListView\fP * \fBSrcLV\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 106 of file SbIObsVLBIStat\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBObsVLBIStatBrowser::SBObsVLBIStatBrowser (boolIsGlobal = \fCFALSE\fP, \fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, boolmodal = \fCFALSE\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 250 of file SbIObsVLBIStat\&.C'\&.
+.PP
+References SBSetUp::loadObsVLBIStatistics(), SBNamed::name(), SetUp, Statistics, wSourceStatistics(), and wStationStatistics()\&.
+.SS "SBObsVLBIStatBrowser::~SBObsVLBIStatBrowser ()\fC [virtual]\fP"
+.PP
+Definition at line 270 of file SbIObsVLBIStat\&.C'\&.
+.PP
+References Statistics\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void SBTabDialog::acquireData ()\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSBVLBISessionEditor\fP, \fBSBStationEditor\fP, \fBSBSiteEditor\fP, \fBSBParametersEditor\fP, \fBSBSourceEditor\fP, \fBSBModelEditor\fP, \fBSBProjectEdit\fP, and \fBSBSetupDialog\fP'\&.
+.PP
+Definition at line 91 of file SbInterface\&.H'\&.
+.PP
+Referenced by SBTabDialog::done(), and SBTabDialog::makeApply()\&.
+.SS "virtual QString SBObsVLBIStatBrowser::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 112 of file SbIObsVLBIStat\&.H'\&.
+.SS "virtual void SBTabDialog::closeEvent (QCloseEvent *)\fC [inline, protected, virtual, inherited]\fP"
+.PP
+Reimplemented in \fBSBSiteEditor\fP, and \fBSBParametersEditor\fP'\&.
+.PP
+Definition at line 90 of file SbInterface\&.H'\&.
+.SS "virtual void SBTabDialog::done (intr)\fC [inline, protected, virtual, slot, inherited]\fP"
+.PP
+Reimplemented in \fBSBSiteEditor\fP, and \fBSBProjectEdit\fP'\&.
+.PP
+Definition at line 82 of file SbInterface\&.H'\&.
+.PP
+References SBTabDialog::acquireData()\&.
+.SS "void SBObsVLBIStatBrowser::editSrcEntry (\fBQListViewItem\fP *Item)\fC [protected, slot]\fP"
+.PP
+Definition at line 381 of file SbIObsVLBIStat\&.C'\&.
+.PP
+Referenced by wSourceStatistics()\&.
+.SS "void SBObsVLBIStatBrowser::editStaEntry (\fBQListViewItem\fP *Item)\fC [protected, slot]\fP"
+.PP
+Definition at line 388 of file SbIObsVLBIStat\&.C'\&.
+.PP
+Referenced by wStationStatistics()\&.
+.SS "virtual void SBTabDialog::makeApply ()\fC [inline, protected, virtual, slot, inherited]\fP"
+.PP
+Reimplemented in \fBSBVLBISessionEditor\fP, \fBSBStationEditor\fP, \fBSBSiteEditor\fP, \fBSBParametersEditor\fP, \fBSBSourceEditor\fP, \fBSBModelEditor\fP, \fBSBProjectEdit\fP, and \fBSBSetupDialog\fP'\&.
+.PP
+Definition at line 78 of file SbInterface\&.H'\&.
+.PP
+References SBTabDialog::acquireData()\&.
+.SS "virtual void SBTabDialog::makeDefaults ()\fC [inline, protected, virtual, slot, inherited]\fP"
+.PP
+Reimplemented in \fBSBSetupDialog\fP'\&.
+.PP
+Definition at line 79 of file SbInterface\&.H'\&.
+.SS "\fBQWidget\fP * SBObsVLBIStatBrowser::wSourceStatistics ()\fC [private]\fP"
+.PP
+Definition at line 330 of file SbIObsVLBIStat\&.C'\&.
+.PP
+References editSrcEntry(), SBObsVLBIStatistics::sourcesStatistics(), SrcLV, and Statistics\&.
+.PP
+Referenced by SBObsVLBIStatBrowser()\&.
+.SS "\fBQWidget\fP * SBObsVLBIStatBrowser::wStationStatistics ()\fC [private]\fP"
+.PP
+Definition at line 279 of file SbIObsVLBIStat\&.C'\&.
+.PP
+References editStaEntry(), StaLV, SBObsVLBIStatistics::stationsStatistics(), and Statistics\&.
+.PP
+Referenced by SBObsVLBIStatBrowser()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBQListView\fP* \fBSBObsVLBIStatBrowser::SrcLV\fP\fC [private]\fP"
+.PP
+Definition at line 129 of file SbIObsVLBIStat\&.H'\&.
+.PP
+Referenced by wSourceStatistics()\&.
+.SS "\fBQListView\fP* \fBSBObsVLBIStatBrowser::StaLV\fP\fC [private]\fP"
+.PP
+Definition at line 125 of file SbIObsVLBIStat\&.H'\&.
+.PP
+Referenced by wStationStatistics()\&.
+.SS "\fBSBObsVLBIStatistics\fP* \fBSBObsVLBIStatBrowser::Statistics\fP\fC [private]\fP"
+.PP
+Definition at line 120 of file SbIObsVLBIStat\&.H'\&.
+.PP
+Referenced by SBObsVLBIStatBrowser(), wSourceStatistics(), wStationStatistics(), and ~SBObsVLBIStatBrowser()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

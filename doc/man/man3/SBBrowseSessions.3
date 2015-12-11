@@ -1,0 +1,161 @@
+.TH "SBBrowseSessions" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBBrowseSessions \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIObsVLBI\&.H>\fP
+.PP
+Inherits \fBQWidget\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBBrowseSessions\fP (\fBSBVLBISesInfoList\fP *, \fBBrowseMode\fP, \fBSBProject\fP *=NULL, \fBQWidget\fP *=0, const char *=0, WFlags=0)"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "void \fBupdateList\fP ()"
+.br
+.ti -1c
+.RI "\fBQListView\fP * \fBlvSessions\fP ()"
+.br
+.ti -1c
+.RI "QBoxLayout * \fBlayout\fP ()"
+.br
+.ti -1c
+.RI "const \fBSBVLBISesInfoList\fP * \fBsesInfoList\fP () const "
+.br
+.ti -1c
+.RI "int \fBnumPPSess\fP () const "
+.br
+.ti -1c
+.RI "int \fBnumObs\fP () const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBProject\fP * \fBProject\fP"
+.br
+.ti -1c
+.RI "\fBSBVLBISesInfoList\fP * \fBSesInfoList\fP"
+.br
+.ti -1c
+.RI "\fBQListView\fP * \fBLVSessions\fP"
+.br
+.ti -1c
+.RI "QBoxLayout * \fBLayout\fP"
+.br
+.ti -1c
+.RI "\fBBrowseMode\fP \fBBrwsMode\fP"
+.br
+.ti -1c
+.RI "int \fBNumPPSess\fP"
+.br
+.ti -1c
+.RI "int \fBNumObs\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 247 of file SbIObsVLBI\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBBrowseSessions::SBBrowseSessions (\fBSBVLBISesInfoList\fP *SIList_, \fBBrowseMode\fPBrwsMode_, \fBSBProject\fP *Project_ = \fCNULL\fP, \fBQWidget\fP *parent = \fC0\fP, const char *name = \fC0\fP, WFlagsf = \fC0\fP)"
+.PP
+Definition at line 1003 of file SbIObsVLBI\&.C'\&.
+.PP
+References BM_PREPROCESS, BM_PROJECT, BrwsMode, Layout, LVSessions, Project, SesInfoList, and updateList()\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBBrowseSessions::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 260 of file SbIObsVLBI\&.H'\&.
+.SS "QBoxLayout* SBBrowseSessions::layout ()\fC [inline]\fP"
+.PP
+Definition at line 263 of file SbIObsVLBI\&.H'\&.
+.PP
+References Layout\&.
+.PP
+Referenced by SBVLBIPreProcess::VLBIList()\&.
+.SS "\fBQListView\fP* SBBrowseSessions::lvSessions ()\fC [inline]\fP"
+.PP
+Definition at line 262 of file SbIObsVLBI\&.H'\&.
+.PP
+References LVSessions\&.
+.PP
+Referenced by SBVLBIPreProcess::auxWindowsChanged(), SBVLBIPreProcess::blockInput(), SBProjectCreate::createProject(), SBVLBISetView::deleteEntry(), SBProjectEdit::delSession(), SBProjectCreate::init(), SBVLBIPreProcess::procScenario_4(), SBVLBIPreProcess::restoreInput(), SBProjectEdit::SBProjectEdit(), SBProjectCreate::selectAll(), SBProjectCreate::unselectAll(), SBVLBIPreProcess::VLBIList(), and SBVLBISetViewBase::VLBIList()\&.
+.SS "int SBBrowseSessions::numObs () const\fC [inline]\fP"
+.PP
+Definition at line 266 of file SbIObsVLBI\&.H'\&.
+.PP
+References NumObs\&.
+.PP
+Referenced by SBProjectCreate::drawInfo(), and SBVLBISetViewBase::infoGroup()\&.
+.SS "int SBBrowseSessions::numPPSess () const\fC [inline]\fP"
+.PP
+Definition at line 265 of file SbIObsVLBI\&.H'\&.
+.PP
+References NumPPSess\&.
+.PP
+Referenced by SBProjectCreate::drawInfo(), SBVLBISetViewBase::drawInfo(), and SBVLBISetViewBase::infoGroup()\&.
+.SS "const \fBSBVLBISesInfoList\fP* SBBrowseSessions::sesInfoList () const\fC [inline]\fP"
+.PP
+Definition at line 264 of file SbIObsVLBI\&.H'\&.
+.PP
+References SesInfoList\&.
+.SS "void SBBrowseSessions::updateList ()"
+.PP
+Definition at line 1088 of file SbIObsVLBI\&.C'\&.
+.PP
+References BM_PREPROCESS, BM_PROJECT, BrwsMode, LVSessions, NumObs, NumPPSess, SBVLBISesInfo::preProc, Project, SesInfoList, and SBProject::sessionByName()\&.
+.PP
+Referenced by SBProjectCreate::createProject(), SBVLBISetView::import(), SBBrowseSessions(), and SBProjectEdit::sessionListChanged()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBBrowseMode\fP \fBSBBrowseSessions::BrwsMode\fP\fC [protected]\fP"
+.PP
+Definition at line 254 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by SBBrowseSessions(), and updateList()\&.
+.SS "QBoxLayout* \fBSBBrowseSessions::Layout\fP\fC [protected]\fP"
+.PP
+Definition at line 253 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by layout(), and SBBrowseSessions()\&.
+.SS "\fBQListView\fP* \fBSBBrowseSessions::LVSessions\fP\fC [protected]\fP"
+.PP
+Definition at line 252 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by lvSessions(), SBBrowseSessions(), and updateList()\&.
+.SS "int \fBSBBrowseSessions::NumObs\fP\fC [protected]\fP"
+.PP
+Definition at line 256 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by numObs(), and updateList()\&.
+.SS "int \fBSBBrowseSessions::NumPPSess\fP\fC [protected]\fP"
+.PP
+Definition at line 255 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by numPPSess(), and updateList()\&.
+.SS "\fBSBProject\fP* \fBSBBrowseSessions::Project\fP\fC [protected]\fP"
+.PP
+Definition at line 250 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by SBBrowseSessions(), and updateList()\&.
+.SS "\fBSBVLBISesInfoList\fP* \fBSBBrowseSessions::SesInfoList\fP\fC [protected]\fP"
+.PP
+Definition at line 251 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by SBBrowseSessions(), sesInfoList(), and updateList()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

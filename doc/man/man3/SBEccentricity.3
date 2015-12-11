@@ -1,0 +1,303 @@
+.TH "SBEccentricity" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBEccentricity \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoStations\&.H>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBEccType\fP { \fBET_NEU\fP, \fBET_XYZ\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBEccentricity\fP ()"
+.br
+.ti -1c
+.RI "\fBSBEccentricity\fP (const \fBSBEccentricity\fP &)"
+.br
+.ti -1c
+.RI "\fBSBEccentricity\fP & \fBoperator=\fP (const \fBSBEccentricity\fP &)"
+.br
+.ti -1c
+.RI "virtual \fB~SBEccentricity\fP ()"
+.br
+.ti -1c
+.RI "QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBaka\fP () const "
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP & \fBtStart\fP () const "
+.br
+.ti -1c
+.RI "const \fBSBMJD\fP & \fBtFinis\fP () const "
+.br
+.ti -1c
+.RI "const \fBVector3\fP & \fBecc\fP () const "
+.br
+.ti -1c
+.RI "\fBEccType\fP \fBtype\fP () const "
+.br
+.ti -1c
+.RI "const QString & \fBsessionName\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetAka\fP (const QString &Aka_)"
+.br
+.ti -1c
+.RI "void \fBsetTStart\fP (const \fBSBMJD\fP &T_)"
+.br
+.ti -1c
+.RI "void \fBsetTFinis\fP (const \fBSBMJD\fP &T_)"
+.br
+.ti -1c
+.RI "void \fBsetEcc\fP (const \fBVector3\fP &V_)"
+.br
+.ti -1c
+.RI "void \fBsetType\fP (\fBEccType\fP Type_)"
+.br
+.ti -1c
+.RI "void \fBsetSessionName\fP (const QString &SN_)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBSBEccentricity\fP &) const "
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBSBEccentricity\fP &) const "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBAka\fP"
+.br
+.RI "\fIaka of a station \fP"
+.ti -1c
+.RI "\fBSBMJD\fP \fBTStart\fP"
+.br
+.RI "\fIfirst obs with the ecc \fP"
+.ti -1c
+.RI "\fBSBMJD\fP \fBTFinis\fP"
+.br
+.RI "\fIlast obs with the ecc \fP"
+.ti -1c
+.RI "\fBVector3\fP \fBEcc\fP"
+.br
+.RI "\fIvector of eccentricity \fP"
+.ti -1c
+.RI "\fBEccType\fP \fBType\fP"
+.br
+.RI "\fIthe type of the Ecc vector \fP"
+.ti -1c
+.RI "QString \fBSessionName\fP"
+.br
+.RI "\fIname of the session \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &s, const \fBSBEccentricity\fP &\fBEcc\fP)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &s, \fBSBEccentricity\fP &\fBEcc\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 989 of file SbGeoStations\&.H'\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBSBEccentricity::EccType\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIET_NEU \fP\fP
+.TP
+\fB\fIET_XYZ \fP\fP
+
+.PP
+Definition at line 992 of file SbGeoStations\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBEccentricity::SBEccentricity ()"
+.PP
+Definition at line 2303 of file SbGeoStations\&.C'\&.
+.PP
+References Aka, Ecc, ET_XYZ, SessionName, TFinis, TStart, Type, TZero, and v3Zero\&.
+.SS "SBEccentricity::SBEccentricity (const \fBSBEccentricity\fP &Ecc_)"
+.PP
+Definition at line 2313 of file SbGeoStations\&.C'\&.
+.SS "virtual SBEccentricity::~SBEccentricity ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 1008 of file SbGeoStations\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "const QString& SBEccentricity::aka () const\fC [inline]\fP"
+.PP
+Definition at line 1013 of file SbGeoStations\&.H'\&.
+.PP
+References Aka\&.
+.PP
+Referenced by SBStuffStationsEcc::deleteEntry(), SBEccListItem::key(), operator<(), operator=(), operator==(), SBStationEcc::registerEcc(), and SBEccListItem::text()\&.
+.SS "QString SBEccentricity::ClassName () const\fC [inline]\fP"
+.PP
+Definition at line 1009 of file SbGeoStations\&.H'\&.
+.SS "const \fBVector3\fP& SBEccentricity::ecc () const\fC [inline]\fP"
+.PP
+Definition at line 1016 of file SbGeoStations\&.H'\&.
+.PP
+References Ecc\&.
+.PP
+Referenced by SBEccListItem::key(), operator=(), operator==(), SB_TRF::prepareEccs4Session(), SBStationEcc::registerEcc(), SBEcc::registerEcc(), sinex_SiteEccentricityBlock(), and SBEccListItem::text()\&.
+.SS "bool SBEccentricity::operator< (const \fBSBEccentricity\fP &Ecc_) const"
+.PP
+Definition at line 2340 of file SbGeoStations\&.C'\&.
+.PP
+References Aka, aka(), TFinis, tFinis(), TStart, and tStart()\&.
+.SS "\fBSBEccentricity\fP & SBEccentricity::operator= (const \fBSBEccentricity\fP &Ecc_)"
+.PP
+Definition at line 2318 of file SbGeoStations\&.C'\&.
+.PP
+References Aka, aka(), Ecc, ecc(), SessionName, sessionName(), TFinis, tFinis(), TStart, tStart(), Type, and type()\&.
+.SS "bool SBEccentricity::operator== (const \fBSBEccentricity\fP &Ecc_) const"
+.PP
+Definition at line 2329 of file SbGeoStations\&.C'\&.
+.PP
+References Aka, aka(), Ecc, ecc(), SessionName, sessionName(), TFinis, tFinis(), TStart, tStart(), Type, and type()\&.
+.SS "const QString& SBEccentricity::sessionName () const\fC [inline]\fP"
+.PP
+Definition at line 1018 of file SbGeoStations\&.H'\&.
+.PP
+References SessionName\&.
+.PP
+Referenced by SBEccListItem::key(), operator=(), operator==(), and SBEccListItem::text()\&.
+.SS "void SBEccentricity::setAka (const QString &Aka_)\fC [inline]\fP"
+.PP
+Definition at line 1020 of file SbGeoStations\&.H'\&.
+.PP
+References Aka\&.
+.PP
+Referenced by SBEcc::importEccDat()\&.
+.SS "void SBEccentricity::setEcc (const \fBVector3\fP &V_)\fC [inline]\fP"
+.PP
+Definition at line 1023 of file SbGeoStations\&.H'\&.
+.PP
+References Ecc\&.
+.PP
+Referenced by SBEcc::importEccDat()\&.
+.SS "void SBEccentricity::setSessionName (const QString &SN_)\fC [inline]\fP"
+.PP
+Definition at line 1025 of file SbGeoStations\&.H'\&.
+.PP
+References SessionName\&.
+.SS "void SBEccentricity::setTFinis (const \fBSBMJD\fP &T_)\fC [inline]\fP"
+.PP
+Definition at line 1022 of file SbGeoStations\&.H'\&.
+.PP
+References TFinis\&.
+.PP
+Referenced by SBEcc::importEccDat(), and SBStationEcc::registerEcc()\&.
+.SS "void SBEccentricity::setTStart (const \fBSBMJD\fP &T_)\fC [inline]\fP"
+.PP
+Definition at line 1021 of file SbGeoStations\&.H'\&.
+.PP
+References TStart\&.
+.PP
+Referenced by SBEcc::importEccDat(), and SBStationEcc::registerEcc()\&.
+.SS "void SBEccentricity::setType (\fBEccType\fPType_)\fC [inline]\fP"
+.PP
+Definition at line 1024 of file SbGeoStations\&.H'\&.
+.PP
+References Type\&.
+.PP
+Referenced by SBEcc::importEccDat()\&.
+.SS "const \fBSBMJD\fP& SBEccentricity::tFinis () const\fC [inline]\fP"
+.PP
+Definition at line 1015 of file SbGeoStations\&.H'\&.
+.PP
+References TFinis\&.
+.PP
+Referenced by SBStuffStationsEcc::deleteEntry(), SBEccListItem::key(), operator<(), operator=(), operator==(), SBStationEcc::registerEcc(), sinex_SiteEccentricityBlock(), and SBEccListItem::text()\&.
+.SS "const \fBSBMJD\fP& SBEccentricity::tStart () const\fC [inline]\fP"
+.PP
+Definition at line 1014 of file SbGeoStations\&.H'\&.
+.PP
+References TStart\&.
+.PP
+Referenced by SBStuffStationsEcc::deleteEntry(), SBEccListItem::key(), operator<(), operator=(), operator==(), SBStationEcc::registerEcc(), sinex_SiteEccentricityBlock(), and SBEccListItem::text()\&.
+.SS "\fBEccType\fP SBEccentricity::type () const\fC [inline]\fP"
+.PP
+Definition at line 1017 of file SbGeoStations\&.H'\&.
+.PP
+References Type\&.
+.PP
+Referenced by SBEccListItem::key(), operator=(), operator==(), SB_TRF::prepareEccs4Session(), SBStationEcc::registerEcc(), sinex_SiteEccentricityBlock(), and SBEccListItem::text()\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "QDataStream& operator<< (QDataStream &s, const \fBSBEccentricity\fP &Ecc)\fC [friend]\fP"
+.PP
+Definition at line 1034 of file SbGeoStations\&.H'\&.
+.SS "QDataStream& operator>> (QDataStream &s, \fBSBEccentricity\fP &Ecc)\fC [friend]\fP"
+.PP
+Definition at line 1036 of file SbGeoStations\&.H'\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString \fBSBEccentricity::Aka\fP\fC [private]\fP"
+.PP
+aka of a station 
+.PP
+Definition at line 995 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by aka(), operator<(), operator=(), operator==(), SBEccentricity(), and setAka()\&.
+.SS "\fBVector3\fP \fBSBEccentricity::Ecc\fP\fC [private]\fP"
+.PP
+vector of eccentricity 
+.PP
+Definition at line 998 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by ecc(), operator=(), operator==(), SBEccentricity(), and setEcc()\&.
+.SS "QString \fBSBEccentricity::SessionName\fP\fC [private]\fP"
+.PP
+name of the session 
+.PP
+Definition at line 1000 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by operator=(), operator==(), SBEccentricity(), sessionName(), and setSessionName()\&.
+.SS "\fBSBMJD\fP \fBSBEccentricity::TFinis\fP\fC [private]\fP"
+.PP
+last obs with the ecc 
+.PP
+Definition at line 997 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by operator<(), operator=(), operator==(), SBEccentricity(), setTFinis(), and tFinis()\&.
+.SS "\fBSBMJD\fP \fBSBEccentricity::TStart\fP\fC [private]\fP"
+.PP
+first obs with the ecc 
+.PP
+Definition at line 996 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by operator<(), operator=(), operator==(), SBEccentricity(), setTStart(), and tStart()\&.
+.SS "\fBEccType\fP \fBSBEccentricity::Type\fP\fC [private]\fP"
+.PP
+the type of the Ecc vector 
+.PP
+Definition at line 999 of file SbGeoStations\&.H'\&.
+.PP
+Referenced by operator=(), operator==(), SBEccentricity(), setType(), and type()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

@@ -1,0 +1,183 @@
+.TH "SBStochParameterList" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBStochParameterList \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbGeoParameter\&.H>\fP
+.PP
+Inherits \fBQList< SBStochParameter >\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBStochParameterList\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~SBStochParameterList\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBinSort\fP (const \fBSBStochParameter\fP *)"
+.br
+.ti -1c
+.RI "virtual bool \fBremove\fP (const QString &)"
+.br
+.ti -1c
+.RI "virtual \fBSBStochParameter\fP * \fBfind\fP (const QString &p_) const "
+.br
+.ti -1c
+.RI "virtual int \fBidx\fP (const \fBSBStochParameter\fP *p_)"
+.br
+.ti -1c
+.RI "virtual int \fBidx\fP (const QString &p_)"
+.br
+.ti -1c
+.RI "virtual void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBreport\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual int \fBcompareItems\fP (QCollection::Item p1, QCollection::Item p2)"
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBwrite\fP (QDataStream &s, QCollection::Item E) const "
+.br
+.ti -1c
+.RI "virtual QDataStream & \fBread\fP (QDataStream &s, QCollection::Item &E)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QDict< \fBSBStochParameter\fP > * \fBParByName\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBremove\fP (uint idx_)"
+.br
+.ti -1c
+.RI "virtual bool \fBremove\fP ()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "QDataStream & \fBoperator<<\fP (QDataStream &, const \fBSBStochParameterList\fP &)"
+.br
+.ti -1c
+.RI "QDataStream & \fBoperator>>\fP (QDataStream &, \fBSBStochParameterList\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBSBStochParameterList\fP'\&. List of stochastic parameters, ordered by name'\&. 
+.PP
+Definition at line 641 of file SbGeoParameter\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBStochParameterList::SBStochParameterList ()\fC [inline]\fP"A constructor'\&. Creates a copy of the object'\&. 
+.PP
+Definition at line 659 of file SbGeoParameter\&.H'\&.
+.SS "virtual SBStochParameterList::~SBStochParameterList ()\fC [inline, virtual]\fP"A destructor'\&. 
+.PP
+Definition at line 666 of file SbGeoParameter\&.H'\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBStochParameterList::ClassName () const\fC [inline, virtual]\fP"Refers to a class name (debug info)'\&. 
+.PP
+Definition at line 668 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by inSort(), remove(), and report()\&.
+.SS "virtual void SBStochParameterList::clear ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 682 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by SBSolutionBrowser::batch4StochEOPChanged(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBSolution::dumpParameters(), SBSolution::loadStcPar(), SBSolutionBrowser::lookupParameters(), SBParameterList::operator>>(), and SBSolution::SBSolution()\&.
+.SS "virtual int SBStochParameterList::compareItems (QCollection::Itemp1, QCollection::Itemp2)\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 645 of file SbGeoParameter\&.H'\&.
+.PP
+References SBNamed::cmp\&.
+.SS "virtual \fBSBStochParameter\fP* SBStochParameterList::find (const QString &p_) const\fC [inline, virtual]\fP"
+.PP
+Definition at line 677 of file SbGeoParameter\&.H'\&.
+.PP
+References SBStochParameter::find()\&.
+.PP
+Referenced by SBSolutionBrowser::batch4StochEOPChanged(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBSolution::dumpParameters(), SBVLBIPreProcess::fillObsListView(), SBSolutionBrowser::lookupParameters(), SBRunManager::makeReportCRFVariations(), SBRunManager::makeReportTRFVariations(), SBSolution::submitStochasticParameters(), and SBSolution::updateParameter()\&.
+.SS "virtual int SBStochParameterList::idx (const \fBSBStochParameter\fP *p_)\fC [inline, virtual]\fP"Returns an index of the parameter in the list 
+.PP
+Definition at line 680 of file SbGeoParameter\&.H'\&.
+.SS "virtual int SBStochParameterList::idx (const QString &p_)\fC [inline, virtual]\fP"
+.PP
+Definition at line 681 of file SbGeoParameter\&.H'\&.
+.SS "void SBStochParameterList::inSort (const \fBSBStochParameter\fP *p)\fC [virtual]\fP"
+.PP
+Definition at line 936 of file SbGeoParameter\&.C'\&.
+.PP
+References ClassName(), SBLog::ERR, SBLog::ESTIMATOR, Log, SBNamed::name(), ParByName, and SBLog::write()\&.
+.PP
+Referenced by SBSolutionBrowser::batch4StochEOPChanged(), SBSolutionBrowser::batch4StochSoChanged(), SBSolutionBrowser::batch4StochStChanged(), SBSolution::dumpParameters(), SBSolutionBrowser::lookupParameters(), and SBSolution::submitStochasticParameters()\&.
+.SS "virtual QDataStream& SBStochParameterList::read (QDataStream &s, QCollection::Item &E)\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 650 of file SbGeoParameter\&.H'\&.
+.SS "bool SBStochParameterList::remove (const QString &key)\fC [virtual]\fP"
+.PP
+Definition at line 956 of file SbGeoParameter\&.C'\&.
+.PP
+References ClassName(), SBLog::ERR, SBLog::ESTIMATOR, Log, ParByName, remove(), and SBLog::write()\&.
+.SS "virtual bool SBStochParameterList::remove (uintidx_)\fC [inline, private, virtual]\fP"
+.PP
+Definition at line 686 of file SbGeoParameter\&.H'\&.
+.PP
+References SBNamed::name()\&.
+.SS "virtual bool SBStochParameterList::remove ()\fC [inline, private, virtual]\fP"
+.PP
+Definition at line 689 of file SbGeoParameter\&.H'\&.
+.PP
+References SBNamed::name()\&.
+.PP
+Referenced by remove()\&.
+.SS "void SBStochParameterList::report ()\fC [virtual]\fP"
+.PP
+Definition at line 970 of file SbGeoParameter\&.C'\&.
+.PP
+References ClassName(), SBLog::DBG, SBLog::ESTIMATOR, Log, SBStochParameter::report(), SBLog::STOCHPARS, and SBLog::write()\&.
+.PP
+Referenced by SBSolution::reportStochasticParameters()\&.
+.SS "virtual QDataStream& SBStochParameterList::write (QDataStream &s, QCollection::ItemE) const\fC [inline, protected, virtual]\fP"
+.PP
+Definition at line 648 of file SbGeoParameter\&.H'\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "QDataStream & operator<< (QDataStream &s, const \fBSBStochParameterList\fP &P)\fC [friend]\fP"Output to the data stream'\&. 
+.PP
+Definition at line 991 of file SbGeoParameter\&.C'\&.
+.SS "QDataStream& operator>> (QDataStream &, \fBSBStochParameterList\fP &)\fC [friend]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "QDict<\fBSBStochParameter\fP>* \fBSBStochParameterList::ParByName\fP\fC [protected]\fP"
+.PP
+Definition at line 644 of file SbGeoParameter\&.H'\&.
+.PP
+Referenced by inSort(), SBParameterList::operator>>(), and remove()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

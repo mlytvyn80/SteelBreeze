@@ -1,0 +1,81 @@
+.TH "SBClockBreakLI" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SBClockBreakLI \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SbIObsVLBI\&.H>\fP
+.PP
+Inherits \fBQListViewItem\fP'\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSBClockBreakLI\fP (\fBQListView\fP *parent_, \fBSBParameterBreak\fP *Br_)"
+.br
+.ti -1c
+.RI "\fBSBParameterBreak\fP * \fBclockBreak\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBClassName\fP () const "
+.br
+.ti -1c
+.RI "virtual QString \fBtext\fP (int) const "
+.br
+.ti -1c
+.RI "virtual QString \fBkey\fP (int, bool) const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSBParameterBreak\fP * \fBBr\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 227 of file SbIObsVLBI\&.H'\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SBClockBreakLI::SBClockBreakLI (\fBQListView\fP *parent_, \fBSBParameterBreak\fP *Br_)\fC [inline]\fP"
+.PP
+Definition at line 232 of file SbIObsVLBI\&.H'\&.
+.PP
+References Br\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual QString SBClockBreakLI::ClassName () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 234 of file SbIObsVLBI\&.H'\&.
+.SS "\fBSBParameterBreak\fP* SBClockBreakLI::clockBreak ()\fC [inline]\fP"
+.PP
+Definition at line 233 of file SbIObsVLBI\&.H'\&.
+.PP
+References Br\&.
+.PP
+Referenced by SBStaParsEditor::deleteEntry(), and SBClockBreakEditor::SBClockBreakEditor()\&.
+.SS "QString SBClockBreakLI::key (intcol, bool) const\fC [virtual]\fP"
+.PP
+Definition at line 978 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBParameterBreak::b(), Br, and TmpString\&.
+.SS "QString SBClockBreakLI::text (intcol) const\fC [virtual]\fP"
+.PP
+Definition at line 964 of file SbIObsVLBI\&.C'\&.
+.PP
+References SBParameterBreak::b(), Br, SBMJD::F_YYYYMMDDHHMMSSSS, TmpString, and SBMJD::toString()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSBParameterBreak\fP* \fBSBClockBreakLI::Br\fP\fC [protected]\fP"
+.PP
+Definition at line 230 of file SbIObsVLBI\&.H'\&.
+.PP
+Referenced by clockBreak(), key(), SBClockBreakLI(), and text()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.

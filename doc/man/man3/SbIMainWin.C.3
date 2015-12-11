@@ -1,0 +1,296 @@
+.TH "SbIMainWin.C" 3 "Mon May 14 2012" "Version 2.0.2" "SteelBreeze Reference Manual" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SbIMainWin.C \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SbIMainWin\&.H'\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <qaccel\&.h>\fP
+.br
+\fC#include <qapplication\&.h>\fP
+.br
+\fC#include <qdatetime\&.h>\fP
+.br
+\fC#include <qfile\&.h>\fP
+.br
+\fC#include <qfileinfo\&.h>\fP
+.br
+\fC#include <qfont\&.h>\fP
+.br
+\fC#include <qfontdialog\&.h>\fP
+.br
+\fC#include <qlabel\&.h>\fP
+.br
+\fC#include <qlayout\&.h>\fP
+.br
+\fC#include <qmenubar\&.h>\fP
+.br
+\fC#include <qmessagebox\&.h>\fP
+.br
+\fC#include <qpixmap\&.h>\fP
+.br
+\fC#include <qpopupmenu\&.h>\fP
+.br
+\fC#include <qprogressbar\&.h>\fP
+.br
+\fC#include <qsplitter\&.h>\fP
+.br
+\fC#include <qstatusbar\&.h>\fP
+.br
+\fC#include <qmotifstyle\&.h>\fP
+.br
+\fC#include <qwindowsstyle\&.h>\fP
+.br
+\fC#include <qplatinumstyle\&.h>\fP
+.br
+\fC#include <qcdestyle\&.h>\fP
+.br
+\fC#include <qinterlacestyle\&.h>\fP
+.br
+\fC#include <qmotifplusstyle\&.h>\fP
+.br
+\fC#include <qsgistyle\&.h>\fP
+.br
+\fC#include <qtoolbar\&.h>\fP
+.br
+\fC#include <qtoolbutton\&.h>\fP
+.br
+\fC#include <qtooltip\&.h>\fP
+.br
+\fC#include <qwhatsthis\&.h>\fP
+.br
+\fC#include 'SbSetup\&.H'\fP
+.br
+\fC#include 'SbGeoEop\&.H'\fP
+.br
+\fC#include 'SbGeoObsVLBIStat\&.H'\fP
+.br
+\fC#include 'SbGeoProject\&.H'\fP
+.br
+\fC#include 'SbISetup\&.H'\fP
+.br
+\fC#include 'SbIStuff\&.H'\fP
+.br
+\fC#include 'SbIStuffSource\&.H'\fP
+.br
+\fC#include 'SbIStuffStation\&.H'\fP
+.br
+\fC#include 'SbIObsVLBI\&.H'\fP
+.br
+\fC#include 'SbISolution\&.H'\fP
+.br
+\fC#include 'SbITest\&.H'\fP
+.br
+\fC#include 'SbIProject\&.H'\fP
+.br
+\fC#include 'SbIPreProcessing\&.H'\fP
+.br
+\fC#include 'SbIObsVLBIStat\&.H'\fP
+.br
+\fC#include 'SbIMEM\&.H'\fP
+.br
+\fC#include 'SbIFilters\&.H'\fP
+.br
+\fC#include 'xpm/Settings\&.xpm'\fP
+.br
+\fC#include 'xpm/Exit\&.xpm'\fP
+.br
+\fC#include 'xpm/Antenna\&.xpm'\fP
+.br
+\fC#include 'xpm/Quasar\&.xpm'\fP
+.br
+\fC#include 'xpm/Earth\&.xpm'\fP
+.br
+\fC#include 'xpm/Database\&.xpm'\fP
+.br
+\fC#include 'xpm/Stop\&.xpm'\fP
+.br
+\fC#include 'xpm/Stop_disabled\&.xpm'\fP
+.br
+\fC#include 'xpm/SrcStatusDefining\&.xpm'\fP
+.br
+\fC#include 'xpm/SrcStatusCandidate\&.xpm'\fP
+.br
+\fC#include 'xpm/SrcStatusOther\&.xpm'\fP
+.br
+\fC#include 'xpm/SrcStatusNew\&.xpm'\fP
+.br
+\fC#include 'xpm/SrcStatusUnknown\&.xpm'\fP
+.br
+\fC#include 'xpm/SrcHLink\&.xpm'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBmainMessage\fP (const QString &S)"
+.br
+.ti -1c
+.RI "void \fBmainPrBarReset\fP ()"
+.br
+.ti -1c
+.RI "void \fBmainPrBarSetTotalSteps\fP (int ts)"
+.br
+.ti -1c
+.RI "void \fBmainPrBarSetProgress\fP (int p)"
+.br
+.ti -1c
+.RI "void \fBmainSetTRFName\fP (const QString &S)"
+.br
+.ti -1c
+.RI "void \fBmainSetCRFName\fP (const QString &S)"
+.br
+.ti -1c
+.RI "void \fBmainSetEOPName\fP (const QString &S)"
+.br
+.ti -1c
+.RI "void \fBmainSetPrjName\fP (const QString &S)"
+.br
+.ti -1c
+.RI "void \fBmainSetStatus\fP (const QString &S)"
+.br
+.ti -1c
+.RI "void \fBmainSetOperation\fP (const QString &S)"
+.br
+.ti -1c
+.RI "void \fBmainSetProcSes\fP (int n, int Total)"
+.br
+.ti -1c
+.RI "void \fBmainSetProcObs\fP (int n, int Total)"
+.br
+.ti -1c
+.RI "void \fBmainSetSessName\fP (const QString &N_)"
+.br
+.ti -1c
+.RI "void \fBmainSetCacheSizes\fP (int nObs, int nSes, int nCRF, int nTRF)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBSBMainWindow\fP * \fBMainWin\fP"
+.br
+.ti -1c
+.RI "bool \fBIsNeedToStop\fP = FALSE"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void mainMessage (const QString &S)"
+.PP
+Definition at line 1255 of file SbIMainWin\&.C'\&.
+.PP
+References SBMainWindow::setMessage()\&.
+.PP
+Referenced by SBObsVLBIStatistics::collectStatistics(), SBVLBISet::dumpUserInfo(), SBStuffEOPs::import(), SBEphem::import(), SBVLBISet::restoreUserInfo(), and SBStuffEOPs::showSeries()\&.
+.SS "void mainPrBarReset ()"
+.PP
+Definition at line 1256 of file SbIMainWin\&.C'\&.
+.PP
+References SBMainWindow::stBarReset()\&.
+.PP
+Referenced by SBObsVLBIStatistics::collectStatistics(), SBVLBISet::dumpUserInfo(), SBStuffEOPs::import(), SBEphem::import(), and SBVLBISet::restoreUserInfo()\&.
+.SS "void mainPrBarSetProgress (intp)"
+.PP
+Definition at line 1258 of file SbIMainWin\&.C'\&.
+.PP
+References SBMainWindow::stBarSetProgress()\&.
+.PP
+Referenced by SBObsVLBIStatistics::collectStatistics(), SBVLBISet::dumpUserInfo(), SBStuffEOPs::import(), SBEphem::import(), SBRunManager::process_m1(), SBRunManager::process_m2(), and SBVLBISet::restoreUserInfo()\&.
+.SS "void mainPrBarSetTotalSteps (intts)"
+.PP
+Definition at line 1257 of file SbIMainWin\&.C'\&.
+.PP
+References SBMainWindow::stBarSetTotalSteps()\&.
+.PP
+Referenced by SBObsVLBIStatistics::collectStatistics(), SBVLBISet::dumpUserInfo(), SBStuffEOPs::import(), SBEphem::import(), SBRunManager::process_m1(), SBRunManager::process_m2(), and SBVLBISet::restoreUserInfo()\&.
+.SS "void mainSetCacheSizes (intnObs, intnSes, intnCRF, intnTRF)"
+.PP
+Definition at line 1270 of file SbIMainWin\&.C'\&.
+.PP
+References SBMainWindow::setCacheSizes()\&.
+.PP
+Referenced by SBRunManager::loadVLBISession_m1(), SBRunManager::loadVLBISessions_m2(), SBRunManager::saveVLBISessions_m1(), and SBRunManager::saveVLBISessions_m2()\&.
+.SS "void mainSetCRFName (const QString &S)"
+.PP
+Definition at line 1261 of file SbIMainWin\&.C'\&.
+.PP
+References SBMainWindow::setCRFName()\&.
+.PP
+Referenced by SBSetupDialog::makeApply(), SBSetupDialog::makeDefaults(), and SBSetUp::setSources()\&.
+.SS "void mainSetEOPName (const QString &S)"
+.PP
+Definition at line 1262 of file SbIMainWin\&.C'\&.
+.PP
+References SBMainWindow::setEOPName()\&.
+.PP
+Referenced by SBSetupDialog::makeApply(), SBSetupDialog::makeDefaults(), and SBSetUp::setEOPs()\&.
+.SS "void mainSetOperation (const QString &S)"
+.PP
+Definition at line 1266 of file SbIMainWin\&.C'\&.
+.PP
+References SBMainWindow::setOperation()\&.
+.PP
+Referenced by SBObsVLBIStatistics::collectStatistics(), SBVLBISet::dumpUserInfo(), SBRunManager::loadVLBISession_m1(), SBRunManager::loadVLBISessions_m2(), SBRunManager::makeReportCRFVariations4IVS(), SBRunManager::makeReportEOP(), SBRunManager::makeReportNormalEqs(), SBRunManager::makeReportSessionStatistics(), SBRunManager::makeReportTRF(), SBRunManager::makeReportTroposphere(), SBRunManager::prepare4Run_m1(), SBRunManager::prepare4Run_m2(), SBVLBISet::restoreUserInfo(), SBRunManager::saveVLBISessions_m1(), SBRunManager::saveVLBISessions_m2(), SBRunManager::SBRunManager(), and SBSolutionBrowser::SBSolutionBrowser()\&.
+.SS "void mainSetPrjName (const QString &S)"
+.PP
+Definition at line 1263 of file SbIMainWin\&.C'\&.
+.PP
+References SBMainWindow::setPrjName()\&.
+.PP
+Referenced by SBSetupDialog::makeApply(), SBSetupDialog::makeDefaults(), and SBSetUp::setProject()\&.
+.SS "void mainSetProcObs (intn, intTotal)"
+.PP
+Definition at line 1268 of file SbIMainWin\&.C'\&.
+.PP
+References SBMainWindow::setProcObs()\&.
+.PP
+Referenced by SBRunManager::process_m1(), and SBRunManager::process_m2()\&.
+.SS "void mainSetProcSes (intn, intTotal)"
+.PP
+Definition at line 1267 of file SbIMainWin\&.C'\&.
+.PP
+References SBMainWindow::setProcSes()\&.
+.PP
+Referenced by SBObsVLBIStatistics::collectStatistics(), SBVLBISet::dumpUserInfo(), SBVLBISet::restoreUserInfo(), SBRunManager::saveVLBISessions_m1(), and SBRunManager::saveVLBISessions_m2()\&.
+.SS "void mainSetSessName (const QString &N_)"
+.PP
+Definition at line 1269 of file SbIMainWin\&.C'\&.
+.PP
+References SBMainWindow::setSessName()\&.
+.PP
+Referenced by SBObsVLBIStatistics::collectStatistics(), SBVLBISet::dumpUserInfo(), SBRunManager::loadVLBISession_m1(), SBRunManager::loadVLBISessions_m2(), SBRunManager::process_m1(), SBVLBISet::restoreUserInfo(), SBRunManager::saveVLBISessions_m1(), and SBRunManager::saveVLBISessions_m2()\&.
+.SS "void mainSetStatus (const QString &S)"
+.PP
+Definition at line 1264 of file SbIMainWin\&.C'\&.
+.PP
+References SBMainWindow::setStatus()\&.
+.SS "void mainSetTRFName (const QString &S)"
+.PP
+Definition at line 1260 of file SbIMainWin\&.C'\&.
+.PP
+References SBMainWindow::setTRFName()\&.
+.PP
+Referenced by SBSetupDialog::makeApply(), SBSetupDialog::makeDefaults(), and SBSetUp::setStations()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "bool \fBIsNeedToStop\fP = FALSE"
+.PP
+Definition at line 101 of file SbIMainWin\&.C'\&.
+.PP
+Referenced by SBMainWindow::ExecuteDoubleRunProj(), SBMainWindow::ExecuteRunProj(), SBRunManager::process_m1(), SBRunManager::process_m2(), SBMainWindow::SBMainWindow(), and SBMainWindow::stopRunning()\&.
+.SS "\fBSBMainWindow\fP* \fBMainWin\fP"
+.PP
+Definition at line 100 of file SbIMainWin\&.C'\&.
+.PP
+Referenced by SBProjectCreate::init(), SBVLBIPreProcess::init(), SBVLBISetView::init(), main(), SBStuffAplo::SBStuffAplo(), and SBStuffEphem::SBStuffEphem()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SteelBreeze Reference Manual from the source code'\&.
