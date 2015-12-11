@@ -8,11 +8,9 @@
 
    ## Introduction
    
+   SteelBreeze is the software for data processing of geodetic VLBI observations. It is developed in the Main Astronomical Observatory (MAO) Ukrainian National Academy of Science (Kiev, Ukraine). The version 2 reflects the third generations of the software, which is intended for public release. 
+   
    ## Availability
-   
-   ### Original archives
-   
-   
 
    1. FTP: You can download the software from the following ftp sites:
 	ftp://ftp.mao.kiev.ua/pub/SteelBreeze,
@@ -30,9 +28,10 @@ the software using GNU's configure.
 
    This software requires Qt library. You can get the library and information
 how to install it from the http://www.troll.no. Usually, it is assumed that the
-environment variable `QTDIR' is set and pointing into root Qt directory. If it
+environment variable `QTDIR` is set and pointing into root Qt directory. If it
 is not set, you can tell to the configure script where it is located using 
 `--with-qt`, `--with-qt-includes` and `--with-qt-libraries` options.
+
    This is a beta release and configure's default options are `--enable-debug`
 (which enables debug info in the executable) and `--disable-optimization` (turns
 off all optimization flags); these options are useful for developing. However,
