@@ -1492,8 +1492,10 @@ void SBSolutionBrowser::updateTRF()
   for (Site = TRF->first(); Site; Site = TRF->next())
     for (Station = Site->stations().first(); Station; Station = Site->stations().next())
       {
-
-	if ((SI = Prj->stationList()->find(&Station->id())) &&
+	// Changed by ML
+	SBStationID stationIDtoFind = Station->id();
+	//if ((SI = Prj->stationList()->find(&Station->id())) &&
+	if ((SI = Prj->stationList()->find(&stationIDtoFind)) &&
 	    !SI->isAttr(SBStationInfo::notValid) && SI->isAttr(SBStationInfo::EstCoo))
 	  {
 	    Station->getGlobalParameters4UpdateTRF(Runner);

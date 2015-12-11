@@ -228,7 +228,7 @@ bool SBFileConv::check()
   char*		tmpl=strdup(sFileTemplate);
 
   //  if (!(pipe=open4Out((tmpNam=tempnam(NULL, "Vasia")), f, s))) return FALSE;
-  if (!(pipe=open4Out((tmpNam=mktemp(tmpl)), f, s))) 
+  if (!(pipe=open4Out((tmpNam=mkstemp(tmpl)), f, s))) 
     {
       free(tmpl);
       return FALSE;
