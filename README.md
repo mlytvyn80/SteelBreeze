@@ -57,10 +57,9 @@ OS      | Version       | Arch/CPU      |  Compiler    |  GNU C Library
 --------|---------------|---------------|--------------|--------------
 FreeBSD | 2.2.2-RELEASE | PC/Pentium    |  gcc-2.7.2.1 |
 Linux   | 2.0.35        | PC/Pentium    |  egcs-1.0.2  |  libc-5.4.38
---------|---------------|---------------|--------------|--------------
         | 2.2.6         | PC/Pentium II |  egcs-1.1.2  |  glibc-2.1
 Solaris | 2.5.1         | SS-20/SPARC   |  egcs-1.1.2  |
---------|---------------|---------------|--------------|---------------
+
 
 If you have experience on other platforms, please, let me know about it.
 
