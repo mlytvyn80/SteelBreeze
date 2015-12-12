@@ -36,4 +36,8 @@ config.h
 Makefile
 *.moc.C
 src/SteelBreeze
+CMakeFiles/*
+doc/*
+CMakeCache.txt
+
 
