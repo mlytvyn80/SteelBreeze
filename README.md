@@ -1,8 +1,7 @@
+# SteelBreeze
 
-## SteelBreeze
-   
 SteelBreeze is the software for data processing of geodetic VLBI observations. It is developed in the Main Astronomical Observatory (MAO) Ukrainian National Academy of Science (Kiev, Ukraine). The version 2 reflects the third generations of the software, which is intended for public release.
-   
+
 
 ## Availability
 
